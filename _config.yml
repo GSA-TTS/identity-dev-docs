@@ -1,0 +1,12 @@
+# Site settings
+title: TODO
+email: foo@bar.com
+description: >
+  Write an awesome description here.
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+sass:
+  style: compressed
