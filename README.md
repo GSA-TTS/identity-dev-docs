@@ -5,7 +5,7 @@
 #### Dependencies
 
 - Ruby 2.3.0
-- (Jekyll)[http://jekyllrb.com]
+- [Jekyll](http://jekyllrb.com)
 
 #### Running Locally
 
