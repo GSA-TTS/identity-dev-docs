@@ -3,28 +3,28 @@
 layout: default
 sections:
   - label: Getting started
-    link:
+    link: /
   - label: Application configuration
-    link: http://federalist.18f.gov.s3-website-us-east-1.amazonaws.com/site/18F/identity-dev-docs/application_configuration
+    link: /application_configuration
   - label: Available Attributes
-    link: http://federalist.18f.gov.s3-website-us-east-1.amazonaws.com/site/18F/identity-dev-docs/available_attributes
+    link: /available_attributes
   - label: Testing
-    link: http://federalist.18f.gov.s3-website-us-east-1.amazonaws.com/site/18F/identity-dev-docs/testing
+    link: /testing
 #  - Security
 #  - Fraud protection
 #  - Webhooks
   - label: SAML reference
-    link: http://federalist.18f.gov.s3-website-us-east-1.amazonaws.com/site/18F/identity-dev-docs/saml_references
+    link: /saml_references
   - label: SAML/OAUTH libraries
-    link: http://federalist.18f.gov.s3-website-us-east-1.amazonaws.com/site/18F/identity-dev-docs/saml_libraries
+    link: /saml_libraries
   - label: Troubleshooting
-    link: http://federalist.18f.gov.s3-website-us-east-1.amazonaws.com/site/18F/identity-dev-docs/troubleshooting
+    link: /troubleshooting
   - label: Sample Metadata
-    link: http://federalist.18f.gov.s3-website-us-east-1.amazonaws.com/site/18F/identity-dev-docs/sample_metadata
+    link: /sample_metadata
   - label: Glossary
-    link: http://federalist.18f.gov.s3-website-us-east-1.amazonaws.com/site/18F/identity-dev-docs/glossary
+    link: /glossary
   - label: Contact us
-    link: http://federalist.18f.gov.s3-website-us-east-1.amazonaws.com/site/18F/identity-dev-docs/contact_us
+    link: /contact_us
 ---
 
 <div class="container px2 py3">
@@ -33,7 +33,7 @@ sections:
       <p class="h6 caps">Core Resources</p>
       <div class="bg-white border rounded">
       {% for s in layout.sections %}
-        <a href="{{ s.link }}" class="btn block regular {% if forloop.last != true %}border-bottom{% endif %}">
+        <a href="{{ s.link | prepend: site.baseurl }}" class="btn block regular {% if forloop.last != true %}border-bottom{% endif %}">
           {{ s.label }}
         </a>
       {% endfor %}
