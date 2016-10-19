@@ -8,7 +8,7 @@ permalink: /contact_us/
 
 #### Application Configuration Support
 
-If you need assistance with application configuration, please [email us](mailto: LOGIN-TEAM-ALL@listserv.gsa.gov).
+If you need assistance with application configuration, please [email us](mailto: developer@login.gov).
 
 You can also speak to members of the login.gov team via our `#identity-public` slack channel.
 
