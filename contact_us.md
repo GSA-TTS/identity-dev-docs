@@ -18,4 +18,4 @@ If you have any bugs or feature requests, please [open an issue](https://github.
 
 #### Other Questions
 
-For any other questions, please [email us](mailto: LOGIN-TEAM-ALL@listserv.gsa.gov).
+For any other questions, please [email us](mailto:hello@login.gov).
