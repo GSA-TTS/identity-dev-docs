@@ -8,7 +8,7 @@ permalink: /contact_us/
 
 #### Application Configuration Support
 
-If you need assistance with application configuration, please [email us](mailto:developers@login.gov).
+If you need assistance with application configuration, please [email us](mailto:18f@gsa.gov?subject=login.gov%3A%20).
 
 You can also speak to members of the login.gov team via our `#identity-public` slack channel.
 
@@ -18,4 +18,4 @@ If you have any bugs or feature requests, please [open an issue](https://github.
 
 #### Other Questions
 
-For any other questions, please [email us](mailto:hello@login.gov).
+For any other questions, please [email us](mailto:18f@gsa.gov?subject=login.gov%3A%20).
