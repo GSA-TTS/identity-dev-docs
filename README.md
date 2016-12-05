@@ -1,22 +1,12 @@
-### Identity developer documention hub
+# Login.gov Dev Docs
 
-**Work in progress!!!**
+[View it live ❯](https://pages.18f.gov/identity-dev-docs/)
 
-#### Dependencies
+Serve locally with `jekyll serve`
 
-- Ruby 2.3.0
-- [Jekyll](http://jekyllrb.com)
+## Updating the U.S. Web Design Standards in this template
 
-#### Running Locally
-
-```
-$ jekyll serve
-```
-
-#### Public domain
-
-This project is in the worldwide [public domain](LICENSE.md).   As stated in [CONTRIBUTING](CONTRIBUTING.md):
-
-> This project is in the public domain within   the United States, and copyright and related rights in the work worldwide are waived through   the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).  
->
-> All contributions to this project will be released under the CC0 dedication. By submitting a   pull request, you are agreeing to comply with this waiver of copyright interest.
+1. Download the [latest release](https://standards.usa.gov)
+2. Copy contents to `assets/`
+3. Rename to `uswds`
+4. Download latest [anchor.js](https://github.com/bryanbraun/anchorjs), put in `assets/js/`

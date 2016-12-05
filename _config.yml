@@ -1,11 +1,22 @@
 # Site settings
-title: login.gov docs
-description: >
-  Write an awesome description here.
+title: Login.gov Developer Docs
+description: Welcome to the Login.gov developer documentation!
 baseurl: '/identity-dev-docs'
-url: 'https://pages.18f.gov'
+uswds: "/assets/uswds"
+
+# Pages
+collections:
+  pages:
+    output: true
+    permalink: /:path/
 
 # Build settings
-markdown: kramdown
-sass:
-  style: compressed
+kramdown:
+  hard_wrap: true
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: main

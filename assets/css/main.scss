@@ -1,0 +1,44 @@
+---
+---
+
+/* Custom Styles */
+
+#main {
+  h1:first-of-type {
+    margin-top: 1em
+  }
+  
+  a:visited {
+    color: #0071bc;  // $color-primary
+  }
+}
+
+mark {
+  background: #fff1d2;  // $color-gold-lightest
+}
+
+code {
+  word-wrap: break-word;
+}
+
+.usa-header .usa-logo {
+  span {
+    font-size: 2rem;
+    color: #e31c3d;
+  }
+}
+
+@media screen and (max-width: 951px) {
+  .usa-header .usa-logo {
+    img {
+      position: relative;
+      top: 5px;
+      padding-right: 10px;
+      width: 150px;
+    }
+    
+    span {
+      font-size: inherit;
+    }
+  }
+}
