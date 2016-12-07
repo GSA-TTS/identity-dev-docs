@@ -19,6 +19,6 @@ First, [configure your application]({{site.baseurl}}/config).
 Reference material:
 
 - [SAML Libraries]({{site.baseurl}}/saml_libs)
-- [SAML Reference Implementations]({{site.baseurl}}/saml_refs)
 - [Sample Metadata]({{site.baseurl}}/sample_metadata)
+- [Service Provider Reference Implementations]({{site.baseurl}}/sp_refs)
 - [Available Attributes]({{site.baseurl}}/attributes)
