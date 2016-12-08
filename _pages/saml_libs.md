@@ -2,7 +2,7 @@
 title: SAML Libraries
 ---
 
-# SAML Libraries
+# SAML libraries
 
 Here's a list of open-source libraries to help speed up your SAML development.
 

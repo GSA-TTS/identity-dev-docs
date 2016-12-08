@@ -1,42 +1,8 @@
 ---
-title: Application Configuration
+title: Generating self-signed certificates
 ---
 
-# Application Configuration
-
-## Prerequisite information
-
-Integrating with login.gov is easy and just requires a few simple steps:
-
-1. Talk to us to provide configuration options, or make a code change (in .yml file).
-2. Give us a copy of your public cert and/or cert fingerprint. Ideally just give us the cert. 2048 bits is the preferred minimum length.
-3. Make sure your application supports HTTPS.
-4. Check out our [sample implementations]({{site.baseurl}}/saml_refs) for examples.
-
-## Configuration Parameters
-
-In order to integrate with login.gov, you'll need to provide key pieces of information which we will use to instruct the login.gov platform on how to interact with your application. Here is a sample configuration entry in our system for a given site:
-
-```
-superb.legit.domain.gov:
-  valid_hosts:
-    'urn:govheroku:serviceprovider':
-      acs_url: 'https://vets.gov/users/auth/saml/callback'
-      assertion_consumer_logout_service_url: 'https://vets.gov/api/saml/logout'
-      cert: 'saml_test_sp'
-      agency: 'test_agency'
-      attribute_bundle: ['email', 'mobile']
-```
-
-**acs_url:** ACS stands for "assertion consumer service." This is the callback URL on your site where login.gov will pass the SAML attribute bundle once a user has successfully logged in to their account.
-
-**assertion_consumer_logout_service_url:** This is the webhook URL on your site where login.gov will notify of a user logout through login.gov.
-
-**cert:** The certificate is an X.509 public key, with a minimum key length of 2048 bits.
-
-**attribute_bundle:** The attribute bundle is an array of fields which login.gov will pass back to your application via the acs_url callback once a user successfully logs in to their account.
-
-## Generating a certificate
+# Generating self-signed certificates
 
 First, you will need to create an `openssl.conf` file. Here is an example:
 

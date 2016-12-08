@@ -2,7 +2,7 @@
 title: Service Provider Reference Implementations
 ---
 
-# Service Provider Reference Implementations
+# Service provider reference implementations
 
 The Login.gov team has created a few service provider implementations for reference. All are open source in the public domain and are available for agencies to inspect and experiment with.
 

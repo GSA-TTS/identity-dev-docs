@@ -2,7 +2,7 @@
 title: Testing your Integration
 ---
 
-# Testing your Integration
+# Testing your integration
 
 Since currently the login.gov team manages service provider application configurations manually, we’ll first deploy your configuration to a test environment first.
 
