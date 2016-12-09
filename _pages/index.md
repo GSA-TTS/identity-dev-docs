@@ -51,7 +51,7 @@ All authentication and logout requests must be signed. We require RSA SHA-256 si
 ```xml
 <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.dev.login.gov/api/saml/logout" />
 ```
-**Logout service URL and Binding** - The single logout service URL is used by to contact the Single logout profile. (aka Single Logout Service)
+**Logout service URL and Binding** - The single logout service URL is used to contact the Single logout profile. (aka Single Logout Service)
 <br>
 
 **x509 Public Certificate** - The public certificate is used to validate the authenticity of SAML requests received from login.gov. Minimum 2048 bits.
