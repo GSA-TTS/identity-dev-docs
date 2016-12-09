@@ -2,7 +2,7 @@
 
 [View it live ❯](https://pages.18f.gov/identity-dev-docs/)
 
-Serve locally with `jekyll serve`
+Serve locally with `./serve.sh`
 
 ## Updating the U.S. Web Design Standards in this template
 
