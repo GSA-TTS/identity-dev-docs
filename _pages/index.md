@@ -16,48 +16,104 @@ Login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO
 
 ## Getting started checklist
 
-- Determine the LOA you need to support for the target application. Login.gov provides support for LOA 1 and LOA 3.
-- Determine the attributes your application needs. See all [available attributes]({{site.baseurl}}/attributes) provided.
-- Review the minimum requirements for integration (API endpoints, certificates, SLO).
-- For new applications, [find a SAML library]({{site.baseurl}}/saml_libs) in the language and stack you're using.
-- Configure your [SAML client parameters]({{site.baseurl}}/params).
-- Test against our sandbox environment ([idp.dev.login.gov](https://idp.dev.login.gov)).
+- ☑️ Determine the LOA you need to support for the target application. Login.gov provides support for LOA 1 and LOA 3
+- ☑️ Determine the attributes your application needs. See all [available attributes]({{site.baseurl}}/attributes) provided
+- ☑️ Review the minimum requirements for integration (API endpoints, certificates, SLO)
+- ☑️ For new applications, [find a SAML library]({{site.baseurl}}/saml_libs) in the language and stack you're using
+- ☑️ Configure your [SAML Service Provider application](#configuring-your-service-provider)
+- ☑️ Provide your [SAML client configuration](#configuring-logingov-to-accept-your-service-provider) to the login.gov team
+- ☑️ Test against our sandbox environment ([idp.dev.login.gov](https://idp.dev.login.gov))
 
-## Configuration
+## Integration
 
-Our sandbox environment is available for testing your service provider application. View our [metadata endpoint](https://idp.dev.login.gov/api/saml/metadata) for all the pertinent information.
+Integration is a two-step process; the Service Provider and Identity Provider (login.gov) must both be configured to integrate with one another. 
 
-All authentication and logout requests must be signed. We require RSA SHA-256 signatures embedded with the authentication and logout requests. Here's some of the key information you'll need:
+### 1. Configuring your Service Provider
+
+Our sandbox environment is available for testing integration with your service provider application. View our [metadata endpoint](https://idp.dev.login.gov/api/saml/metadata) for all of the pertinent information.
+
+To view an example of how a Service Provider would be configured, check out our [Demo SP Application's configuration](https://github.com/18F/identity-sp-rails/blob/master/config/initializers/omniauth.rb).
+
+All authentication and logout requests must be signed. We require RSA SHA-256 signatures embedded with the authentication and logout requests. Here's some of the key information you'll need to configure on your side:
 
 ```xml
-<!-- NameID Format: v4 UUID https://tools.ietf.org/html/rfc4122 -->
 <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
-
-<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.dev.login.gov/api/saml/auth" />
-
-<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.dev.login.gov/api/saml/logout" />
-
-<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
-  <ds:X509Data>
-    <ds:X509Certificate>
-      <!-- Get the latest certificate from the Metadata endpoint -->
-    </ds:X509Certificate>
-  </ds:X509Data>
-</KeyInfo>
 ```
+**NameID Format** - The NameID is the unique identifier used to identify a user across multiple sessions. The format is the standard v4 random UUID (Universally Unique IDentifier) in compliance with [RFC 4122](https://tools.ietf.org/html/rfc4122).
+<br>
 
-In order to successfully authenticate, we will need to whitelist your application. We'll collect the following details about your service provider application:
+```xml
+<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.dev.login.gov/api/saml/auth" />
+```
+**Login service URL and Binding** - This is the endpoint where authentication requests are sent to login.gov. (aka Single Sign-on Service)
+<br>
 
-- `acs_url`
-- `assertion_consumer_logout_service_url`, if supported
-- `sp_initiated_login_url`
-- `block_encryption`
-- `cert`
-- `agency`
-- `friendly name`, optionally
-- `logo (optional)`
-- Return to service provider application URL callback
-- `default attributes`, optionally
+```xml
+<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.dev.login.gov/api/saml/logout" />
+```
+**Logout service URL and Binding** - The single logout service URL is used by to contact the Single logout profile. (aka Single Logout Service)
+<br>
+
+**x509 Public Certificate** - The public certificate is used to validate the authenticity of SAML requests received from login.gov. Minimum 2048 bits.
+<br>
+
+### 2. Configuring login.gov to accept your Service Provider
+
+In order to successfully integrate, your Service Provider application details must be whitelisted within login.gov. We require the following details about your service provider application:
+
+`issuer` The Service Provider entity ID
+This is a unique string used to identify your Service Provider with login.gov.
+
+
+`acs_url` Assertion consumer sign-on URL
+This is your application endpoint which receives authentication assertions.
+
+`assertion_consumer_logout_service_url` Assertion consumer logout service URL
+This is the endpoint which receives logout requests and responses.
+
+`sp_initiated_login_url`* 
+This endpoint initializes authentication with login.gov; it is used to trigger a new authentication request and response at the Service Provider for better usability.
+
+`block_encryption` (optional)
+This defines what type of encryption your Service Provider supports. Currently, only `aes256-cbc` is supported.
+
+`cert` Public certificate
+The public certificate allows login.gov to verify the authenticity of authentication and logout requests.
+
+`agency`*
+This is used to group your Service Provider to an agency, as well as inform the user about what agency the Service Provider belongs.
+
+`friendly name`* (optional)
+This is the user-friendly name for your Service Provider application. 
+
+`logo`* (optional)
+This is your agency or Service Provider's logo. This is used in the header of login.gov when the user is authenticating to your Service Provider. (We will also need the file itself)
+
+`return_to_sp_url`* Return-to Service Provider URL
+This is the URL of the Service Provider which login.gov provides to users when they wish to go directly to the Service Provider site or cancel out of authentication. 
+
+`attribute_bundle`* (optional) The preset bundle of attributes your Service Provider requires
+We allow you to pre-define what attributes your Service Provider requires, or you may request the attributes at run-time.
+
+`*` - Denotes an attribute not found in the SAML WebSSO profile.
+
+#### Sample configuration required by login.gov:
+
+```yaml
+issuer: 'urn:gov:gsa:SAML:2.0.profiles:sp:sso:gov-agency-20'
+acs_url: 'https://serviceprovider.gov/auth/saml/callback'
+assertion_consumer_logout_service_url: 'https://serviceprovider.gov/auth/saml/logout'
+sp_initiated_login_url: 'https://serviceprovider.gov/login'
+block_encryption: 'aes256-cbc'
+cert: 'gov_agency_20'
+agency: 'USTCBA'
+friendly_name: 'United States Taking Care of Business Agency'
+logo: 'ustcba.svg'
+return_to_sp_url: 'https://serviceprovider.gov'
+attribute_bundle:
+  - email
+  - phone
+```
 
 ## Resources
 
