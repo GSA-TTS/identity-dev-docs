@@ -87,7 +87,7 @@ This is used to group your Service Provider to an agency, as well as inform the 
 This is the user-friendly name for your Service Provider application. 
 
 `logo`* (optional)
-This is your agency or Service Provider's logo. This is used in the header of login.gov when the user is authenticating to your Service Provider. (We will also need the file itself)
+This is your agency or Service Provider's logo. This is used in the header of login.gov when the user is authenticating to your Service Provider. We recommend a semi-transparent PNG or SVG with a 3:2 width to height ratio at least 150px wide.
 
 `return_to_sp_url`* Return-to Service Provider URL
 This is the URL of the Service Provider which login.gov provides to users when they wish to go directly to the Service Provider site or cancel out of authentication. 
