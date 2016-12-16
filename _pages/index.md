@@ -30,7 +30,7 @@ Integration is a two-step process; the Service Provider and Identity Provider (l
 
 ### 1. Configuring your Service Provider
 
-Our sandbox environment is available for testing integration with your service provider application. View our [metadata endpoint](https://idp.dev.login.gov/api/saml/metadata) for all of the pertinent information.
+Our sandbox environment is available for testing integration with your service provider application. View our [SAML metadata](https://github.com/18F/identity-idp/wiki/SAML-Metadata) for all of the pertinent information.
 
 To view an example of how a Service Provider would be configured, check out our [Demo SP Application's configuration](https://github.com/18F/identity-sp-rails/blob/master/config/initializers/omniauth.rb).
 
