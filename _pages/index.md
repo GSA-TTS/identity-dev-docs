@@ -16,13 +16,13 @@ Login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO
 
 ## Getting started checklist
 
-- ☑️ Determine the LOA you need to support for the target application. Login.gov provides support for LOA 1 and LOA 3
-- ☑️ Determine the attributes your application needs. See all [available attributes]({{site.baseurl}}/attributes) provided
-- ☑️ Review the minimum requirements for integration (API endpoints, certificates, SLO)
-- ☑️ For new applications, [find a SAML library]({{site.baseurl}}/saml_libs) in the language and stack you're using
-- ☑️ Configure your [SAML Service Provider application](#1-configuring-your-service-provider)
-- ☑️ Provide your [SAML client configuration](#2-configuring-logingov-to-accept-your-service-provider) to the login.gov team
-- ☑️ Test against our sandbox environment ([idp.dev.login.gov](https://idp.dev.login.gov))
+- Determine the LOA you need to support for the target application. Login.gov provides support for LOA 1 and LOA 3.
+- Determine the attributes your application needs. See all [available attributes]({{site.baseurl}}/attributes) provided.
+- Review the minimum requirements for integration (API endpoints, certificates, SLO).
+- For new applications, [find a SAML library]({{site.baseurl}}/saml_libs) in the language and stack you're using.
+- Configure your [SAML Service Provider application](#1-configuring-your-service-provider)
+- Provide your [SAML client configuration](#2-configuring-logingov-to-accept-your-service-provider) to the Login.gov team.
+- Test against our sandbox environment ([idp.dev.login.gov](https://idp.dev.login.gov)).
 
 ## Integration
 
