@@ -26,44 +26,40 @@ Login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO
 
 ## Integration
 
-Integration is a two-step process; the Service Provider and Identity Provider (login.gov) must both be configured to integrate with one another. 
+Integration is a two-step process; the Service Provider and Identity Provider (Login.gov) must both be configured to integrate with one another. 
 
 ### 1. Configuring your Service Provider
 
-Our sandbox environment is available for testing integration with your service provider application. View our [SAML metadata](https://github.com/18F/identity-idp/wiki/SAML-Metadata) for all of the pertinent information.
-
-To view an example of how a Service Provider would be configured, check out our [Demo SP Application's configuration](https://github.com/18F/identity-sp-rails/blob/master/config/initializers/omniauth.rb).
+Our sandbox environment is available for testing integration with your service provider application. View our [SAML metadata](https://github.com/18F/identity-idp/wiki/SAML-Metadata) for all of the pertinent information. To view an example of how a Service Provider would be configured, check out our [Demo SP Application's configuration](https://github.com/18F/identity-sp-rails/blob/master/config/initializers/omniauth.rb).
 
 All authentication and logout requests must be signed. We require RSA SHA-256 signatures embedded with the authentication and logout requests. Here's some of the key information you'll need to configure on your side:
+
+**NameID Format** — The NameID is the unique identifier used to identify a user across multiple sessions. The format is the standard v4 random UUID (Universally Unique IDentifier) in compliance with [RFC 4122](https://tools.ietf.org/html/rfc4122). Example:
 
 ```xml
 <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
 ```
-**NameID Format** - The NameID is the unique identifier used to identify a user across multiple sessions. The format is the standard v4 random UUID (Universally Unique IDentifier) in compliance with [RFC 4122](https://tools.ietf.org/html/rfc4122).
-<br>
+
+**Login service URL and Binding** — This is the endpoint where authentication requests are sent to Login.gov (aka Single Sign-on Service). Example:
 
 ```xml
 <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.dev.login.gov/api/saml/auth" />
 ```
-**Login service URL and Binding** - This is the endpoint where authentication requests are sent to login.gov. (aka Single Sign-on Service)
-<br>
+
+**Logout service URL and Binding** — The single logout service URL is used to contact the Single logout profile (aka Single Logout Service). Example:
 
 ```xml
 <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.dev.login.gov/api/saml/logout" />
 ```
-**Logout service URL and Binding** - The single logout service URL is used to contact the Single logout profile. (aka Single Logout Service)
-<br>
 
-**x509 Public Certificate** - The public certificate is used to validate the authenticity of SAML requests received from login.gov. Minimum 2048 bits.
-<br>
+**x509 Public Certificate** — The public certificate is used to validate the authenticity of SAML requests received from login.gov. Minimum 2048 bits.
 
-### 2. Configuring login.gov to accept your Service Provider
+### 2. Configuring Login.gov to accept your Service Provider
 
-In order to successfully integrate, your Service Provider application details must be whitelisted within login.gov. We require the following details about your service provider application:
+In order to successfully integrate, your Service Provider application details must be whitelisted within Login.gov. We require the following details about your service provider application:
 
 `issuer` The Service Provider entity ID
-This is a unique string used to identify your Service Provider with login.gov.
-
+This is a unique string used to identify your Service Provider with Login.gov.
 
 `acs_url` Assertion consumer sign-on URL
 This is your application endpoint which receives authentication assertions.
@@ -72,13 +68,13 @@ This is your application endpoint which receives authentication assertions.
 This is the endpoint which receives logout requests and responses.
 
 `sp_initiated_login_url`* 
-This endpoint initializes authentication with login.gov; it is used to trigger a new authentication request and response at the Service Provider for better usability.
+This endpoint initializes authentication with Login.gov; it is used to trigger a new authentication request and response at the Service Provider for better usability.
 
 `block_encryption` (optional)
 This defines what type of encryption your Service Provider supports. Currently, only `aes256-cbc` is supported.
 
 `cert` Public certificate
-The public certificate allows login.gov to verify the authenticity of authentication and logout requests.
+The public certificate allows Login.gov to verify the authenticity of authentication and logout requests.
 
 `agency`*
 This is used to group your Service Provider to an agency, as well as inform the user about what agency the Service Provider belongs.
@@ -87,17 +83,17 @@ This is used to group your Service Provider to an agency, as well as inform the 
 This is the user-friendly name for your Service Provider application. 
 
 `logo`* (optional)
-This is your agency or Service Provider's logo. This is used in the header of login.gov when the user is authenticating to your Service Provider. We recommend a semi-transparent PNG or SVG with a 3:2 width to height ratio at least 150px wide.
+This is your agency or Service Provider's logo. This is used in the header of Login.gov when the user is authenticating to your Service Provider. We recommend a semi-transparent PNG or SVG with a 3:2 width to height ratio at least 150px wide.
 
 `return_to_sp_url`* Return-to Service Provider URL
-This is the URL of the Service Provider which login.gov provides to users when they wish to go directly to the Service Provider site or cancel out of authentication. 
+This is the URL of the Service Provider which Login.gov provides to users when they wish to go directly to the Service Provider site or cancel out of authentication. 
 
 `attribute_bundle`* (optional) The preset bundle of attributes your Service Provider requires
 We allow you to pre-define what attributes your Service Provider requires, or you may request the attributes at run-time.
 
 `*` - Denotes an attribute not found in the SAML WebSSO profile.
 
-#### Sample configuration required by login.gov:
+#### Sample configuration required by Login.gov:
 
 ```yaml
 issuer: 'urn:gov:gsa:SAML:2.0.profiles:sp:sso:gov-agency-20'
