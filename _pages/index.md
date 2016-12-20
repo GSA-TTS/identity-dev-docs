@@ -58,40 +58,21 @@ All authentication and logout requests must be signed. We require RSA SHA-256 si
 
 In order to successfully integrate, your Service Provider application details must be whitelisted within Login.gov. We require the following details about your service provider application:
 
-`issuer` The Service Provider entity ID
-This is a unique string used to identify your Service Provider with Login.gov.
+`*` — Denotes an attribute not found in the SAML WebSSO profile.
 
-`acs_url` Assertion consumer sign-on URL
-This is your application endpoint which receives authentication assertions.
-
-`assertion_consumer_logout_service_url` Assertion consumer logout service URL
-This is the endpoint which receives logout requests and responses.
-
-`sp_initiated_login_url`* 
-This endpoint initializes authentication with Login.gov; it is used to trigger a new authentication request and response at the Service Provider for better usability.
-
-`block_encryption` (optional)
-This defines what type of encryption your Service Provider supports. Currently, only `aes256-cbc` is supported.
-
-`cert` Public certificate
-The public certificate allows Login.gov to verify the authenticity of authentication and logout requests.
-
-`agency`*
-This is used to group your Service Provider to an agency, as well as inform the user about what agency the Service Provider belongs.
-
-`friendly name`* (optional)
-This is the user-friendly name for your Service Provider application. 
-
-`logo`* (optional)
-This is your agency or Service Provider's logo. This is used in the header of Login.gov when the user is authenticating to your Service Provider. We recommend a semi-transparent PNG or SVG with a 3:2 width to height ratio at least 150px wide.
-
-`return_to_sp_url`* Return-to Service Provider URL
-This is the URL of the Service Provider which Login.gov provides to users when they wish to go directly to the Service Provider site or cancel out of authentication. 
-
-`attribute_bundle`* (optional) The preset bundle of attributes your Service Provider requires
-We allow you to pre-define what attributes your Service Provider requires, or you may request the attributes at run-time.
-
-`*` - Denotes an attribute not found in the SAML WebSSO profile.
+| Attribute | Description |
+|-----------|-------------|
+| `issuer` | The Service Provider entity ID — This is a unique string used to identify your Service Provider with Login.gov. |
+| `acs_url` | Assertion consumer sign-on URL — This is your application endpoint which receives authentication assertions. |
+| `assertion_consumer_logout_service_url` | Assertion consumer logout service URL — This is the endpoint which receives logout requests and responses. |
+| `sp_initiated_login_url` * | This endpoint initializes authentication with Login.gov; it is used to trigger a new authentication request and response at the Service Provider for better usability. |
+| `block_encryption` (optional) | This defines what type of encryption your Service Provider supports. Currently, only `aes256-cbc` is supported. |
+| `cert` | Public certificate — The public certificate allows Login.gov to verify the authenticity of authentication and logout requests. |
+| `agency` * | This is used to group your Service Provider to an agency, as well as inform the user about what agency the Service Provider belongs. |
+| `friendly name` * (optional) | This is the user-friendly name for your Service Provider application. |
+| `logo` * (optional) | This is your agency or Service Provider's logo. This is used in the header of Login.gov when the user is authenticating to your Service Provider. We recommend a semi-transparent PNG or SVG with a 3:2 width to height ratio at least 150px wide. |
+| `return_to_sp_url` * | Return-to Service Provider URL — This is the URL of the Service Provider which Login.gov provides to users when they wish to go directly to the Service Provider site or cancel out of authentication. |
+| `attribute_bundle` * (optional) | The preset bundle of attributes your Service Provider requires — We allow you to pre-define what attributes your Service Provider requires, or you may request the attributes at run-time. |
 
 #### Sample configuration required by Login.gov:
 

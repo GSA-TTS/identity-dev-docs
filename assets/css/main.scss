@@ -13,6 +13,15 @@
   }
 }
 
+table {
+  display: block;
+  overflow: auto;
+  
+  tbody td {
+    min-width: 250px;
+  }
+}
+
 code {
   word-wrap: break-word;
 }
