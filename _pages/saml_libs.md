@@ -9,8 +9,7 @@ Here's a list of open-source libraries to help speed up your SAML development.
 ## Java
 
 - [OneLogin's SAML Java Toolkit](https://github.com/onelogin/java-saml)
-- [OpenSAML](http://svn.shibboleth.net/view/java-opensaml/)
-- [OpenSAML 2](http://svn.shibboleth.net/view/java-opensaml2/)
+- [OpenSAML](https://wiki.shibboleth.net/confluence/display/OS30/Home)
 - [OpenAM](https://forgerock.org/openam/)
 - [Spring Security SAML](http://projects.spring.io/spring-security-saml/)
 
