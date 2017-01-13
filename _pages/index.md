@@ -19,9 +19,9 @@ This documentation uses standard SAML terminology, where the Identity Provider (
 ## Getting started checklist
 
 - Determine the LOA you need to support for the target application. Login.gov provides support for LOA 1 and LOA 3.
-- Determine the attributes your application needs. See all [available attributes]({{site.baseurl}}/attributes) provided.
+- Determine the attributes your application needs. See all [available attributes]({{site.baseurl}}/attributes/) provided.
 - Review the minimum requirements for integration (API endpoints, certificates, SLO).
-- For new applications, [find a SAML library]({{site.baseurl}}/saml_libs) in the language and stack you're using.
+- For new applications, [find a SAML library]({{site.baseurl}}/saml_libs/) in the language and stack you're using.
 - [Configure your SP](#1-configuring-your-sp).
 - Provide your [SAML client configuration](#2-configuring-logingov-to-accept-your-sp) to the Login.gov team.
 - Test against our sandbox environment ([idp.dev.login.gov](https://idp.dev.login.gov)).
@@ -96,6 +96,6 @@ attribute_bundle:
 
 ## Resources
 
-- [SAML libraries]({{site.baseurl}}/saml_libs)
-- [SP reference implementations]({{site.baseurl}}/sp_refs)
-- [Generating self-signed certificates]({{site.baseurl}}/certs)
+- [SAML libraries]({{site.baseurl}}/saml_libs/)
+- [SP reference implementations]({{site.baseurl}}/sp_refs/)
+- [Generating self-signed certificates]({{site.baseurl}}/certs/)
