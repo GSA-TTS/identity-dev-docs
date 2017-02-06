@@ -215,7 +215,7 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
 
  * **birthdate** *requires the `profile` scope and an LOA 3 account*
 
-   Birthdate, formatted as ISO8601‑2004 `YYYY-MM-DD`.
+   Birthdate, formatted as ISO 8601:2004 `YYYY-MM-DD`.
 
  * **email** *requires the `email` scope*
 
