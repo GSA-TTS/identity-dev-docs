@@ -13,6 +13,7 @@
   }
 }
 
+
 table {
   display: block;
   overflow: auto;
@@ -31,6 +32,10 @@ code {
     font-size: 2rem;
     color: #e31c3d;
   }
+}
+
+.ul-checklist {
+  list-style-image: url('{{ site.baseurl}}/assets/img/check.svg');
 }
 
 @media screen and (max-width: 951px) {
