@@ -4,7 +4,7 @@ title: Generating self-signed certificates
 
 # Generating self-signed certificates
 
-First, you will need to create an `openssl.conf` file. Here is an example:
+First, you'll need to create an `openssl.conf` file, for example:
 
 ```
 [ req ]
@@ -24,8 +24,11 @@ emailAddress           = 18f@gsa.gov
 
 You'll need to replace `req_distinguished_name` with your agency's details.
 
-Next, execute the following [OpenSSL](https://www.openssl.org) command:
-`openssl req -x509 -sha256 -days 365 -newkey rsa:2048 -keyout keys/saml.key.enc.example -out certs/saml.crt.example -config openssl.conf`
+Next, run the following [OpenSSL](https://www.openssl.org) command:
+
+```
+openssl req -x509 -sha256 -days 365 -newkey rsa:2048 -keyout keys/saml.key.enc.example -out certs/saml.crt.example -config openssl.conf
+```
 
 Once complete, you'll want to send us your `saml.crt` file. It will look something like this:
 
