@@ -1,5 +1,6 @@
 ---
 title: OpenID Connect
+permalink: /openid-connect
 ---
 
 <div class="usa-alert usa-alert-warning">
