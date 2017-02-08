@@ -18,7 +18,7 @@ login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO
 - Determine prerequisites for your application, for example, the Levels of Assurance (LoA) your application needs to support (login.gov supports LoA 1 and 3) and the [user attributes]({{site.baseurl}}/attributes/) your application requires.
 - Complete your SAML implementation. Review the minimum requirements for integration (API endpoints, certificates, SLO). Consider choosing a [SAML library]({{site.baseurl}}/saml_libs/) in the language and stack you're using.
 - [Configure your Service Provider]({{site.baseurl}}/configuring-your-sp/).
-- [Register your Service Provider]({{site.baseurl}}/registering-your-sp) with login.gov.
+- [Register your Service Provider]({{site.baseurl}}/registering-your-sp/) with login.gov.
 - Test in our integration environment.
 
 </div>
