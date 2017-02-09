@@ -12,15 +12,18 @@ permalink: /openid-connect/
 
 # OpenID Connect 1.0 Developer Guide
 
-login.gov supports OpenID Connect 1.0, an extension of Oauth 2.0, conforming to the [iGov Profile][igov-profile].
+login.gov supports [OpenID Connect 1.0][openid-connect], an extension of Oauth 2.0, conforming to the [iGov Profile][igov-profile].
 
+[openid-connect]: http://openid.net/specs/openid-connect-core-1_0.html
 [igov-profile]: http://openid.net/wg/igov/
 
 In this guide:
 
 <!-- MarkdownTOC depth="4" autolink="true" bracket="round" -->
 
-- [Developer Portal](#developer-portal)
+- [Getting Started](#getting-started)
+  - [Pick an Authentication Method](#pick-an-authentication-method)
+  - [Developer Portal](#developer-portal)
 - [Auto-Discovery](#auto-discovery)
 - [Authorization](#authorization)
   - [Authorization Request](#authorization-request)
@@ -34,9 +37,23 @@ In this guide:
 
 <!-- /MarkdownTOC -->
 
-## Developer Portal
+## Getting Started
 
-Visit $DASHBOARD_URL to register as a login.gov developer and to create `client_id` and register a `redirect_uri` for your application.
+### Pick an Authentication Method
+
+login.gov supports two ways to authenticate clients:
+
+- PKCE
+
+  In this method, clients send a public identifier, as well as a hashed random value generated on the client. This is the preferred authentication method for native mobile clients.
+
+- `private_key_jwt`
+
+  Clients send a [JWT][jwt] signed with a private key when requesting access tokens. The corresponding public key is registered ahead of time in the developer portal, similar to SAML. This is the preferred authentication method for web apps.
+
+### Developer Portal
+
+Visit $DASHBOARD_URL to register a Service Provider. The issuer will be the `client_id`, and make sure to register a `redirect_uri` for your application and a client cert if using `private_key_jwt`.
 
 ## Auto-Discovery
 
@@ -52,18 +69,34 @@ Users need to authorize OpenID Connect 1.0 clients individually. To present the 
 
 ### Authorization Request
 
-```
+View example as <button data-example="pkce">PKCE</button><button data-example="private_key_jwt">private_key_jwt</button>
+
+<div markdown="1" data-example="pkce">
+```bash
 https://login.gov/openid_connect/authorize?
   acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Floa%2F1&
-  client_id=$CLIENT_ID&
-  code_challenge=$CODE_CHALLENGE&
+  client_id=${CLIENT_ID}&
+  code_challenge=${CODE_CHALLENGE}&
   code_challenge_method=S256&
   prompt=select_account&
-  redirect_uri=$REDIRECT_URI&
+  redirect_uri=${REDIRECT_URI}&
   response_type=code&
   scope=openid+email&
-  state=$STATE
+  state=${STATE}
 ```
+</div>
+<div markdown="1" data-example="private_key_jwt" hidden="true">
+```bash
+https://login.gov/openid_connect/authorize?
+  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Floa%2F1&
+  client_id=${CLIENT_ID}&
+  prompt=select_account&
+  redirect_uri=${REDIRECT_URI}&
+  response_type=code&
+  scope=openid+email&
+  state=${STATE}
+```
+</div>
 
 * **acr_values** *required*
 
@@ -76,10 +109,10 @@ https://login.gov/openid_connect/authorize?
 * **client_id** *required*
   Unique identifier from the client. It must be registered in advance in the [developer portal](#developer-portal).
 
-* **code_challenge** *required*
+* **code_challenge** *required for PKCE*
   The URL-safe, base64 encoding of the SHA-256 of a random value generated on the client. The original value is referred to as the `code_verifier`.
 
-* **code_challenge_method** *required*
+* **code_challenge_method** *required for PKCE*
   Must be `S256`, the only PKCE code challenge method we support.
 
 * **prompt** *required*
@@ -130,18 +163,63 @@ Clients use the token endpoint to exchange the authorization `code` for an `id_t
 
 ### Token Request
 
-```
+View example as <button data-example="pkce">PKCE</button><button data-example="private_key_jwt">private_key_jwt</button>
+
+<div markdown="1" data-example="pkce">
+```bash
 POST https://login.gov/openid_connect/token
 
-code=$CODE&
-code_verifier=$CODE_VERIFIER&
+code=${CODE}&
+code_verifier=${CODE_VERIFIER}&
 grant_type=authorization_code
 ```
+</div>
+<div markdown="1" data-example="private_key_jwt" hidden="true">
+```bash
+POST https://login.gov/openid_connect/token
+
+client_assertion=${CLIENT_ASSERTION}&
+client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&
+code=${CODE}&
+grant_type=authorization_code
+```
+</div>
+
+* **client_assertion** *required for `private_key_jwt`*
+  A signed [JWT][jwt].
+
+  <div class="usa-accordion">
+  <button class="usa-accordion-button" aria-controls="client-assertion">
+  View JWT details
+  </button>
+  <div id="client-assertion" class="usa-accordion-content" markdown="1">
+  The JWT should have the following claims, and must be signed with the client's private key.
+
+    * **iss**
+      Issuer, the client's `client_id`.
+
+    * **sub**
+      Subject, the client's `client_id`.
+
+    * **aud**
+      Audience, the URL of the token endpoint. Should be `https://login.gov/openid_connect/token`.
+
+    * **jti**
+      An unguessable, random string generated by the client.
+
+    * **exp**
+      An integer timestamp of the expiration of this token (number of seconds since the Unix Epoch), should be a short period of time in the future (such as 5 minutes from now).
+
+  </div>
+  </div>
+
+* **client_assertion_type** *required for `private_key_jwt`*
+  When using `private_key_jwt`, must be `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
 
 * **code** *required*
   The URL parameter value from the `redirect_uri` in the Authorization step.
 
-* **code_verifier** *required*
+* **code_verifier** *required for PKCE*
   The original value (before the SHA256) generated for the Authorization request for PKCE.
 
 * **grant_type** *required*
@@ -168,7 +246,9 @@ grant_type=authorization_code
     The number of seconds that the access token will expire in.
 
  * **id_token**
-    A signed [JWT][jwt] that contains some basic attributes about the user, including the user ID for this client (encoded as the `sub` claim). Here is the above example `id_token`, decoded:
+    A signed [JWT][jwt] that contains basic attributes about the user such as user ID for this client (encoded as the `sub` claim) as well as the claims requested as part of the `scope` in the authorization request. See the [User Info Response](#user-info-response) section for details on the claims.
+
+    Here is the above example `id_token`, decoded:
 
     ```json
     {
@@ -228,18 +308,7 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
 ```
 
  * **address** *requires the `address` scope and an LOA 3 account*
-
    A JSON object, per the OpenID Connect 1.0 spec [Address Claim][address-claim]
-
-   ```json
-   {
-     "formatted": "123 Main St. Apt 123\nWashington, DC 20001",
-     "street_address": "123 Main St. Apt 123",
-     "locality": "Washington",
-     "region": "DC",
-     "postal_code": "20001"
-   }
-   ```
 
  * **birthdate** *requires the `profile` scope and an LOA 3 account*
    Birthdate, formatted as ISO 8601:2004 `YYYY-MM-DD`.
@@ -271,3 +340,32 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
 
  * **sub**
    Unique ID for this user. This ID is unique per client.
+
+<script type="text/javascript">
+  function showExamples(type) {
+    Array.prototype.slice.call(document.querySelectorAll('button[data-example]')).forEach(function(button) {
+      var show = button.getAttribute('data-example') == type;
+
+      button.className = show ? 'usa-button-active' : '';
+    });
+
+
+    Array.prototype.slice.call(document.querySelectorAll('div[data-example]')).forEach(function(example) {
+      var show = example.getAttribute('data-example') == type;
+
+      if (show) {
+        example.removeAttribute('hidden');
+      } else {
+        example.setAttribute('hidden', 'true');
+      }
+    });
+  }
+
+  Array.prototype.slice.call(document.querySelectorAll('button[data-example]')).forEach(function(button) {
+    button.onclick = function() {
+      showExamples(this.getAttribute('data-example'));
+    };
+  });
+
+  showExamples('pkce');
+</script>
