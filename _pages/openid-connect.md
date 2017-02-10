@@ -43,13 +43,15 @@ In this guide:
 
 login.gov supports two ways to authenticate clients:
 
-- PKCE
+1. PKCE
 
-  In this method, clients send a public identifier, as well as a hashed random value generated on the client. This is the preferred authentication method for native mobile clients.
+    [Proof Key for Code Exchange by OAuth Public Clients][pkce], or PKCE for short (pronounced "pixy"). In this method, clients send a public identifier, as well as a hashed random value generated on the client. This is the preferred authentication method for native mobile clients.
 
-- `private_key_jwt`
+2. `private_key_jwt`
 
-  Clients send a [JWT][jwt] signed with a private key when requesting access tokens. The corresponding public key is registered ahead of time in the developer portal, similar to SAML. This is the preferred authentication method for web apps.
+    Clients send a [JWT][jwt] signed with a private key when requesting access tokens. The corresponding public key is registered ahead of time in the developer portal, similar to SAML. This is the preferred authentication method for web apps.
+
+[pkce]: https://tools.ietf.org/html/rfc7636
 
 ### Developer Portal
 
@@ -57,7 +59,7 @@ Visit $DASHBOARD_URL to register a Service Provider. The issuer will be the `cli
 
 ## Auto-Discovery
 
-Per the spec, login.gov serves a JSON provides an auto-discovery endpoint for OpenID Connect at:
+Per the spec, login.gov provides a JSON endpoint with data for OpenID Connect auto-discovery at:
 
 ```
 https://login.gov/.well-known/openid-configuration
@@ -110,7 +112,7 @@ https://login.gov/openid_connect/authorize?
   Unique identifier from the client. It must be registered in advance in the [developer portal](#developer-portal).
 
 * **code_challenge** *required for PKCE*
-  The URL-safe, base64 encoding of the SHA-256 of a random value generated on the client. The original value is referred to as the `code_verifier`.
+  The URL-safe base64 encoding of the SHA-256 digest of a random value generated on the client. The original value is referred to as the `code_verifier`.
 
 * **code_challenge_method** *required for PKCE*
   Must be `S256`, the only PKCE code challenge method we support.
