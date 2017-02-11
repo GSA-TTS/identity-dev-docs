@@ -12,7 +12,7 @@ Once you have a SAML implementation, you'll need to configure your SP to work wi
   <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
   ```
 
-- **Login service URL and Binding** — This is the endpoint where authentication requests are sent to Login.gov (aka Single Sign-on Service). For example:
+- **Login service URL and Binding** — This is the endpoint where authentication requests are sent to login.gov (aka Single Sign-on Service). For example:
 
   ```xml
   <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.int.login.gov/api/saml/auth" />

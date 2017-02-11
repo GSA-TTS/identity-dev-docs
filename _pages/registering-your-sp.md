@@ -34,7 +34,7 @@ Once you have a working SAML implementation and have configured your SP, the nex
   https://app.agency.gov/users/auth/saml/login
   ```
 
-- **Return to SP URL** * — The URL of the SP which Login.gov provides to users when they wish to go directly to the SP site or cancel out of authentication.
+- **Return to SP URL** * — The URL of the SP which login.gov provides to users when they wish to go directly to the SP site or cancel out of authentication.
 
   ```
   https://app.agency.gov
