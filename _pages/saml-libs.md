@@ -1,5 +1,5 @@
 ---
-title: SAML Libraries
+title: SAML libraries
 ---
 
 # SAML libraries
