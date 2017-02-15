@@ -4,7 +4,7 @@ title: Configuring your Service Provider
 
 # Configuring your Service Provider
 
-Once you have a SAML implementation, you'll need to configure your SP to work with login.gov. View our [SAML metadata](https://github.com/18F/identity-idp/wiki/SAML-Metadata) for all of the pertinent information. For an example, see our [demo SP application's configuration](https://github.com/18F/identity-sp-rails/blob/master/config/initializers/omniauth.rb). All logout requests must be signed — we require RSA SHA-256 signatures embedded with logout requests. Here's some of the key information you'll need to configure on your side:
+Once you have a SAML implementation, you'll need to configure your SP to work with login.gov. View our [SAML metadata](https://github.com/18F/identity-idp/wiki/SAML-Metadata) for all of the pertinent information. Check out our [SP reference implementations]({{site.baseurl}}/sp-refs/) to see examples of working integrations. All logout requests must be signed — we require RSA SHA-256 signatures embedded with logout requests. Here's some of the key information you'll need to configure on your side:
 
 - **NameID Format** — The NameID is the unique identifier used to identify a user across multiple sessions. The format is the standard v4 random UUID (Universally Unique IDentifier) in compliance with [RFC 4122](https://tools.ietf.org/html/rfc4122). For example:
 
