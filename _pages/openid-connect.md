@@ -302,7 +302,6 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
   "family_name": "Smith",
   "given_name": "John",
   "iss": "https://login.gov",
-  "middle_name": "Jones",
   "phone": "+1 (555) 555-5555",
   "phone_verified": true,
   "sub": "0afe6649-073d-4dbb-a44b-dabb412676e6"
@@ -329,9 +328,6 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
 
  * **iss**
    Issuer, will be `https://login.gov`
-
- * **middle_name** *requires the `profile` scope and an LOA 3 account*
-   User's middle name.
 
  * **phone** *requires the `phone` scope and an LOA 3 account*
    User's phone number, formatted as E.164.
