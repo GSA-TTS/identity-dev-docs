@@ -276,6 +276,8 @@ The userinfo endpoint renders attributes about the user.
 
 ### User Info Request
 
+Clients use the `access_token` from the [token response](#token-response) as a bearer token in the HTTP Authorization header.
+
 ```
 GET https://login.gov/openid_connect/userinfo
 Authorization: Bearer hhJES3wcgjI55jzjBvZpNQ
@@ -283,7 +285,7 @@ Authorization: Bearer hhJES3wcgjI55jzjBvZpNQ
 
 ### User Info Response
 
-login.gov supports some of the [standard claims from OpenID Connect 1.0][standard-claims]:
+login.gov supports some of the [standard claims from OpenID Connect 1.0][standard-claims].
 
 [standard-claims]: http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims
 [address-claim]: http://openid.net/specs/openid-connect-core-1_0.html#AddressClaim
