@@ -129,13 +129,15 @@ https://login.gov/openid_connect/authorize?
 * **scope** *required*
   Example: `openid email`
 
-  Space-separated string of scopes to request permission for.
+  Space-separated string of scopes to request permission for. The authorization page will display a list of the attributes being requested. Applications should request the minumum attributes and scopes needed.
+
   Possible values:
    - `openid`
    - `address`
    - `email`
    - `phone`
    - `profile`
+   - `social_security_number`
 
 
 * **state** *required*
@@ -304,6 +306,7 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
   "iss": "https://login.gov",
   "phone": "+1 (555) 555-5555",
   "phone_verified": true,
+  "social_security_number": "111223333",
   "sub": "0afe6649-073d-4dbb-a44b-dabb412676e6"
 }
 ```
@@ -335,6 +338,9 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
 
  * **phone_verified** *requires the `phone` scope and an LOA 3 account*
    Boolean, whether or not the `phone` has been verified. Currently login.gov only supports verified phones.
+
+ * **social\_security\_number** *requres the `social_security_number` scope and an LOA 3 account*
+   User's social security number.
 
  * **sub**
    Unique ID for this user. This ID is unique per client.
