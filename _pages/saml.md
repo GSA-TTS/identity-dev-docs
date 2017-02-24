@@ -1,6 +1,5 @@
 ---
 title: SAML
-permalink: /saml/
 ---
 
 # SAML Developer Guide
