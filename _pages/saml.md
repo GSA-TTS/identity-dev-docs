@@ -9,7 +9,7 @@ login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO
 
 In this guide:
 
-<!-- MarkdownTOC depth="4" autolink="true" bracket="round" -->
+<!-- MarkdownTOC depth="1" autolink="true" bracket="round" -->
 
 - [Getting Started](#getting-started)
 - [Metadata](#metadata)
@@ -21,6 +21,37 @@ In this guide:
 ## Getting Started
 
 SAML is an established standard, but can a bit complex. We recommend seeing if there is a [SAML library for your language]({{site.baseurl}}/saml-libs) and using that before trying to build a new integration from scratch.
+
+### Configuration
+
+Here are values needed to configure your service provider (SP) to work with login.gov:
+
+- **NameID Format**
+  The NameID is the unique identifier used to identify a user across multiple sessions. The format is the standard v4 random UUID (Universally Unique IDentifier) in compliance with [RFC 4122](https://tools.ietf.org/html/rfc4122). For example:
+
+  ```xml
+  <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
+  ```
+
+- **Login service URL and Binding**
+  This is the endpoint where authentication requests are sent to login.gov (aka Single Sign-on Service). For example:
+
+  ```xml
+  <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.int.login.gov/api/saml/auth" />
+  ```
+
+- **Logout service URL and Binding**
+  The single logout service URL is used to contact the Single logout profile (aka Single Logout Service). For example:
+
+  ```xml
+  <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.int.login.gov/api/saml/logout" />
+  ```
+
+- **x509 Public Certificate**
+  The public certificate is used to validate the authenticity of SAML requests received from login.gov, a minimum of 2048 bits.
+
+  We publish this public certificate from in our [Metadata endpoint](#metadata)
+
 
 ## Metadata
 
