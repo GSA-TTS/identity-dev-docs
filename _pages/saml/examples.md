@@ -1,8 +1,10 @@
 ---
-title: Service provider reference implementations
+title: SAML examples
+redirect_from:
+  - /sp-refs/
 ---
 
-# Service provider reference implementations
+# SAML service provider reference implementations
 
 The login.gov team has created a few service provider implementations for reference. All are open source in the public domain and are available for agencies to inspect and experiment with.
 
