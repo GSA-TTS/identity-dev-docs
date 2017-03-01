@@ -1,8 +1,11 @@
 ---
-title: Registering your Service Provider
+title: Register your service provider
+permalink: /register/
+redirect_from:
+  - /registering-your-sp/
 ---
 
-# Registering your Service Provider
+# Register your service provider
 
 Once you have a working SP implementation, the next step is to provide us with the following details about your application.
 

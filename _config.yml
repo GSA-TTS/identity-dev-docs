@@ -4,6 +4,12 @@ description: Welcome to the Login.gov developer documentation!
 baseurl: '/identity-dev-docs'
 uswds: "/assets/uswds"
 
+gems:
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
+
 # Pages
 collections:
   pages:

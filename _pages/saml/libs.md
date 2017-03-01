@@ -1,5 +1,7 @@
 ---
 title: SAML libraries
+redirect_from:
+  - /saml-libs/
 ---
 
 # SAML libraries

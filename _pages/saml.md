@@ -1,26 +1,34 @@
 ---
 title: SAML
 permalink: /saml/
+redirect_from:
+  - /configuring-your-sp/
 ---
 
-# SAML Developer Guide
+# SAML developer guide
 
 login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile) with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/).
 
 In this guide:
 
-<!-- MarkdownTOC depth="1" autolink="true" bracket="round" -->
+<!-- MarkdownTOC depth="2" autolink="true" bracket="round" -->
 
-- [Getting Started](#getting-started)
+- [Getting started](#getting-started)
+  - [Configuration](#configuration)
+  - [Developer portal](#developer-portal)
 - [Metadata](#metadata)
 - [Auth](#auth)
+  - [Auth request](#auth-request)
+  - [Auth response](#auth-response)
 - [Logout](#logout)
+  - [Logout request](#logout-request)
+  - [Logout response](#logout-response)
 
 <!-- /MarkdownTOC -->
 
-## Getting Started
+## Getting started
 
-SAML is an established standard, but can a bit complex. We recommend seeing if there is a [SAML library for your language]({{site.baseurl}}/saml-libs) and using that before trying to build a new integration from scratch.
+SAML is an established standard, but can a bit complex. We recommend seeing if there is a [SAML library for your language]({{site.baseurl}}/saml/libs/) and using that before trying to build a new integration from scratch.
 
 ### Configuration
 
@@ -52,6 +60,9 @@ Here are values needed to configure your service provider (SP) to work with logi
 
   We publish this public certificate from in our [Metadata endpoint](#metadata)
 
+### Developer portal
+
+Follow instructions to [register your application]({{site.baseurl}}/register/).
 
 ## Metadata
 
@@ -64,6 +75,8 @@ https://idp.int.login.gov/api/saml/metadata
 [saml-metadata-spec]: https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf
 
 ## Auth
+
+### Auth request
 
 ```bash
 https://idp.int.login.gov/api/saml/auth?SAMLRequest=${SAML_REQUEST}
@@ -125,6 +138,8 @@ An example authentication request, with indendation added for readability.
 </div>
 </div>
 
+### Auth response
+
 After the user authenticates, login.gov will redirect and POST a form back to your Assertion Consumer Service URL:
 
 ```bash
@@ -141,7 +156,7 @@ View example authentication response
 <div id="authn-response" class="usa-accordion-content" markdown="1">
 An example authentication response, after it has been base64 decoded, with indentation added for readability.
 
-```
+```xml
 <samlp:Response ID="_b28d50c0-dc35-0134-96f3-06d8bac14e9d"
                 Version="2.0"
                 IssueInstant="2017-02-23T20:36:37Z"
@@ -185,6 +200,8 @@ An example authentication response, after it has been base64 decoded, with inden
 </div>
 
 ## Logout
+
+### Logout request
 
 ```bash
 https://idp.int.login.gov/api/saml/logout?SAMLRequest=${SAML_REQUEST}
@@ -238,6 +255,8 @@ An example logout request payload, with indentation added for readability.
 
 </div>
 </div>
+
+### Logout response
 
 After, login.gov will redirect and POST a form back to your Assertion Consumer Service Logout URL:
 

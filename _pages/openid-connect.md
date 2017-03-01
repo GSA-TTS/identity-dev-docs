@@ -10,36 +10,37 @@ permalink: /openid-connect/
   </div>
 </div>
 
-# OpenID Connect 1.0 Developer Guide
+# OpenID Connect 1.0 developer guide
 
 login.gov supports [OpenID Connect 1.0][openid-connect], an extension of Oauth 2.0, conforming to the [iGov Profile][igov-profile].
 
-[openid-connect]: http://openid.net/specs/openid-connect-core-1_0.html
-[igov-profile]: http://openid.net/wg/igov/
+[openid-connect]: https://openid.net/specs/openid-connect-core-1_0.html
+[igov-profile]: https://openid.net/wg/igov/
 
 In this guide:
 
 <!-- MarkdownTOC depth="4" autolink="true" bracket="round" -->
 
-- [Getting Started](#getting-started)
-  - [Pick an Authentication Method](#pick-an-authentication-method)
-  - [Developer Portal](#developer-portal)
-- [Auto-Discovery](#auto-discovery)
-- [Authorization](#authorization)
-  - [Authorization Request](#authorization-request)
-  - [Authorization Response](#authorization-response)
-- [Getting a Token](#getting-a-token)
-  - [Token Request](#token-request)
-  - [Token Response](#token-response)
-- [User Information](#user-information)
-  - [User Info Request](#user-info-request)
-  - [User Info Response](#user-info-response)
+- [Getting started](#getting-started)
+  - [Pick an authentication method](#pick-an-authentication-method)
+  - [Developer portal](#developer-portal)
+- [Auto-discovery](#auto-discovery)
+- [Authorize](#authorize)
+  - [Authorization request](#authorization-request)
+  - [Authorization response](#authorization-response)
+- [Token](#token)
+  - [Token request](#token-request)
+  - [Token response](#token-response)
+- [User info](#user-info)
+  - [User info request](#user-info-request)
+  - [User info response](#user-info-response)
+- [Certs](#certs)
 
 <!-- /MarkdownTOC -->
 
-## Getting Started
+## Getting started
 
-### Pick an Authentication Method
+### Pick an authentication method
 
 login.gov supports two ways to authenticate clients:
 
@@ -53,11 +54,11 @@ login.gov supports two ways to authenticate clients:
 
 [pkce]: https://tools.ietf.org/html/rfc7636
 
-### Developer Portal
+### Developer portal
 
-Visit $DASHBOARD_URL to register a Service Provider. The issuer will be the `client_id`, and make sure to register a `redirect_uri` for your application and a client cert if using `private_key_jwt`.
+[Register your application]({{site.baseurl}}/register/) The issuer will be the `client_id`, and make sure to register a `redirect_uri` for your application and a client cert if using `private_key_jwt`.
 
-## Auto-Discovery
+## Auto-discovery
 
 Per the spec, login.gov provides a JSON endpoint with data for OpenID Connect auto-discovery at:
 
@@ -65,11 +66,11 @@ Per the spec, login.gov provides a JSON endpoint with data for OpenID Connect au
 https://idp.int.login.gov/.well-known/openid-configuration
 ```
 
-## Authorization
+## Authorize
 
 Users need to authorize OpenID Connect 1.0 clients individually. To present the authorize page for your application to a user, direct them to this URL in a browser with the correctly-configured URL parameters.
 
-### Authorization Request
+### Authorization request
 
 View example as <button data-example="pkce">PKCE</button><button data-example="private_key_jwt">private_key_jwt</button>
 
@@ -146,7 +147,7 @@ https://idp.int.login.gov/openid_connect/authorize?
 * **nonce** *optional*
   Unique value that will be embedded into the `id_token` if present.
 
-### Authorization Response
+### Authorization response
 
 After the user authorizes the app, login.gov will redirect to the provided `redirect_uri` and add two URL parameters:
 
@@ -161,11 +162,11 @@ For example, if the client registered a `redirect_uri` of `https://example.com/r
 https://example.com/response?code=12345&state=abcdef
 ```
 
-## Getting a Token
+## Token
 
 Clients use the token endpoint to exchange the authorization `code` for an `id_token` as well as an `access_token`.
 
-### Token Request
+### Token request
 
 View example as <button data-example="pkce">PKCE</button><button data-example="private_key_jwt">private_key_jwt</button>
 
@@ -229,7 +230,7 @@ grant_type=authorization_code
 * **grant_type** *required*
   Must be `authorization_code`
 
-### Token Response
+### Token response
 
 ```json
 {
@@ -250,7 +251,7 @@ grant_type=authorization_code
     The number of seconds that the access token will expire in.
 
  * **id_token**
-    A signed [JWT][jwt] that contains basic attributes about the user such as user ID for this client (encoded as the `sub` claim) as well as the claims requested as part of the `scope` in the authorization request. See the [User Info Response](#user-info-response) section for details on the claims.
+    A signed [JWT][jwt] that contains basic attributes about the user such as user ID for this client (encoded as the `sub` claim) as well as the claims requested as part of the `scope` in the authorization request. See the [User Info Response](#user-info-response) section for details on the claims. The public key to verify this JWT is available from the [certs](#certs) endpoint.
 
     Here is the above example `id_token`, decoded:
 
@@ -270,11 +271,11 @@ grant_type=authorization_code
 
 [jwt]: https://jwt.io/
 
-## User Information
+## User info
 
 The userinfo endpoint renders attributes about the user.
 
-### User Info Request
+### User info request
 
 Clients use the `access_token` from the [token response](#token-response) as a bearer token in the HTTP Authorization header.
 
@@ -283,12 +284,12 @@ GET https://idp.int.login.gov/api/openid_connect/userinfo
 Authorization: Bearer hhJES3wcgjI55jzjBvZpNQ
 ```
 
-### User Info Response
+### User info response
 
 login.gov supports some of the [standard claims from OpenID Connect 1.0][standard-claims].
 
-[standard-claims]: http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims
-[address-claim]: http://openid.net/specs/openid-connect-core-1_0.html#AddressClaim
+[standard-claims]: https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims
+[address-claim]: https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim
 
 **Example**
 ```json
@@ -346,6 +347,16 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
 
  * **sub**
    Unique ID for this user. This ID is unique per client.
+
+## Certs
+
+The public key to verify signed JWTs from login.gov (such as the `id_token`) is available in [JWK][jwk] format at the certs endpoint:
+
+```
+https://idp.int.login.gov/api/openid_connect/certs
+```
+
+[jwk]: https://tools.ietf.org/html/rfc7517
 
 <script type="text/javascript">
   function showExamples(type) {
