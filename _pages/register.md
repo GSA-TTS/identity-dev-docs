@@ -78,7 +78,8 @@ These attributes are only needed for SAML implementations.
   https://app.agency.gov
   ```
 
-- **Attribute bundle** * — The preset bundle of attributes your SP requires. login.gov allows you to either pre-define what attributes your SP receives or request them at run time. [See the list of available attributes.]({{site.baseurl}}/attributes/)
+- **Attribute bundle**\*
+  The preset bundle of attributes your SP requires. login.gov allows you to either pre-define what attributes your SP receives or request them at run time. [See the list of available attributes.]({{site.baseurl}}/attributes/)
 
 ### OpenID Connect
 
