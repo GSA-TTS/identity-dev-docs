@@ -48,7 +48,7 @@ login.gov supports two ways to authenticate clients:
 
     [Proof Key for Code Exchange by OAuth Public Clients][pkce], or PKCE for short (pronounced "pixy"). In this method, clients send a public identifier, as well as a hashed random value generated on the client. This is the preferred authentication method for native mobile clients.
 
-2. `private_key_jwt`
+2. private_key_jwt
 
     Clients send a [JWT][jwt] signed with a private key when requesting access tokens. The corresponding public key is registered ahead of time in the developer portal, similar to SAML. This is the preferred authentication method for web apps.
 
@@ -56,7 +56,7 @@ login.gov supports two ways to authenticate clients:
 
 ### Developer portal
 
-[Register your application]({{site.baseurl}}/register/) The issuer will be the `client_id`, and make sure to register a `redirect_uri` for your application and a client cert if using `private_key_jwt`.
+[Register your application]({{site.baseurl}}/register/) The issuer will be the `client_id`, and make sure to register a `redirect_uri` for your application and a client cert if using private_key_jwt.
 
 ## Auto-discovery
 
@@ -190,7 +190,7 @@ grant_type=authorization_code
 ```
 </div>
 
-* **client_assertion** *required for `private_key_jwt`*
+* **client_assertion** *required for private_key_jwt*
   A signed [JWT][jwt].
 
   <div class="usa-accordion">
@@ -218,8 +218,8 @@ grant_type=authorization_code
   </div>
   </div>
 
-* **client_assertion_type** *required for `private_key_jwt`*
-  When using `private_key_jwt`, must be `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
+* **client_assertion_type** *required for private_key_jwt*
+  When using private_key_jwt, must be `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
 
 * **code** *required*
   The URL parameter value from the `redirect_uri` in the Authorization step.
