@@ -137,6 +137,8 @@ https://idp.int.login.gov/openid_connect/authorize?
    - `address`
    - `email`
    - `phone`
+   - `profile:birthdate`
+   - `profile:name`
    - `profile`
    - `social_security_number`
 
@@ -317,7 +319,7 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
  * **address** *requires the `address` scope and an LOA 3 account*
    A JSON object, per the OpenID Connect 1.0 spec [Address Claim][address-claim]
 
- * **birthdate** *requires the `profile` scope and an LOA 3 account*
+ * **birthdate** *requires `profile` or `profile:birthdate` scopes and an LOA 3 account*
    Birthdate, formatted as ISO 8601:2004 `YYYY-MM-DD`.
 
  * **email** *requires the `email` scope*
@@ -326,10 +328,10 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
  * **email_verified** *requires the `email` scope*
    Boolean, whether or not the `email` has been verified. Currently login.gov only supports verified emails.
 
- * **family_name** *requires the `profile` scope and an LOA 3 account*
+ * **family_name** *requires `profile` or `profile:name` scopes and an LOA 3 account*
    User's last (family) name.
 
- * **given_name** *requires the `profile` scope and an LOA 3 account*
+ * **given_name** *requires `profile` or `profile:name` scopes and an LOA 3 account*
    User's first (given) name.
 
  * **iss**
@@ -346,7 +348,7 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
    User's social security number.
 
  * **sub**
-   Unique ID for this user. This ID is unique per client.
+   Subject, unique ID for this user. This ID is unique per client.
 
 ## Certs
 
