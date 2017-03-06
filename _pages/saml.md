@@ -78,6 +78,8 @@ https://idp.int.login.gov/api/saml/metadata
 
 ### Auth request
 
+To authenticate a user with login.gov, direct them to our authentication URL with a SAML authentication request as a GET param.
+
 ```bash
 https://idp.int.login.gov/api/saml/auth?SAMLRequest=${SAML_REQUEST}
 ```
@@ -140,7 +142,7 @@ An example authentication request, with indendation added for readability.
 
 ### Auth response
 
-After the user authenticates, login.gov will redirect and POST a form back to your Assertion Consumer Service URL:
+After the user authenticates, login.gov will redirect and POST a form back to your registered Assertion Consumer Service URL:
 
 ```bash
 POST ${ASSERTION_CONSUMER_SERVICE_URL}
@@ -203,6 +205,8 @@ An example authentication response, after it has been base64 decoded, with inden
 
 ### Logout request
 
+To log a user out, direct them to the logout URL with a SAMLRequest:
+
 ```bash
 https://idp.int.login.gov/api/saml/logout?SAMLRequest=${SAML_REQUEST}
 ```
@@ -258,7 +262,7 @@ An example logout request payload, with indentation added for readability.
 
 ### Logout response
 
-After, login.gov will redirect and POST a form back to your Assertion Consumer Service Logout URL:
+After, login.gov will redirect and POST a form back to your registered Assertion Consumer Service Logout URL:
 
 ```bash
 POST ${ASSERTION_CONSUMER_SERVICE_LOGOUT_URL}
