@@ -81,6 +81,7 @@ https://idp.int.login.gov/openid_connect/authorize?
   client_id=${CLIENT_ID}&
   code_challenge=${CODE_CHALLENGE}&
   code_challenge_method=S256&
+  nonce=${NONCE}&
   prompt=select_account&
   redirect_uri=${REDIRECT_URI}&
   response_type=code&
@@ -93,6 +94,7 @@ https://idp.int.login.gov/openid_connect/authorize?
 https://idp.int.login.gov/openid_connect/authorize?
   acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Floa%2F1&
   client_id=${CLIENT_ID}&
+  nonce=${NONCE}&
   prompt=select_account&
   redirect_uri=${REDIRECT_URI}&
   response_type=code&
@@ -144,10 +146,10 @@ https://idp.int.login.gov/openid_connect/authorize?
 
 
 * **state** *required*
-  Unique value, will be returned in a successful authorization.
+  Unique value, will be returned in a successful authorization. It must be at least **32** characters long.
 
-* **nonce** *optional*
-  Unique value that will be embedded into the `id_token` if present.
+* **nonce** *required*
+  Unique value that will be embedded into the `id_token`. It must be at least **32** characters long.
 
 ### Authorization response
 
@@ -239,7 +241,7 @@ grant_type=authorization_code
   "access_token": "hhJES3wcgjI55jzjBvZpNQ",
   "token_type": "Bearer",
   "expires_in": 3600,
-  "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL2xvZ2luLmdvdiIsImF1ZCI6InVybjpnb3Y6Z3NhOm9wZW5pZGNvbm5lY3Q6ZGV2ZWxvcG1lbnQiLCJzdWIiOiI5ZTQ5NTUzZC04OTRiLTRlNTMtOTE3YS0yOTc4MjRmZGY5NmYiLCJhY3IiOiJodHRwOi8vaWRtYW5hZ2VtZW50Lmdvdi9ucy9hc3N1cmFuY2UvbG9hLzMiLCJub25jZSI6bnVsbCwianRpIjoiYzBiOGQ5Mzg2NDgzMzI3MzQyNzI3ZTdkNzUwYmM2YTEiLCJleHAiOjE0ODY0Nzg1NTYsImlhdCI6MTQ4NjQ3ODU1OCwibmJmIjoxNDg2NDc4NTU4fQ.UK0plb_sf14ql2ibl7wm7JH8IhfTH9V6wJIjMLIqkZPvtAaAsOugLm73moGl3WnJIQ35_zQeSpu-MiVR0pq0fYjMo7GHTYTd2FeVCdxzCZQHOqFIQ0ydX69ekts73Toe1qNFbFXu_tt2JGJEF5miKd5r5WteGT5ERZI8R23XQT2Y-nzqZgO8HOAbvyR3EeCtD3WY7GqGmWL00xwKh-YwYkr_j5BF44yhbpVVwaSgjH8YIxyUEtf_oc7P5XpEICRLzT3A2WDkXF0yAKGmq9PDS9_7wEqfarKgnZTs4nMNWkE19Oj9Xku55jrBYun4u85PKGCr-16gigmEvethfB2p0Q"
+  "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJiMmQyZDExNS0xZDdlLTQ1NzktYjlkNi1mOGU4NGY0ZjU2Y2EiLCJpc3MiOiJodHRwczovL2lkcC5pbnQubG9naW4uZ292IiwiYWNyIjoiaHR0cDovL2lkbWFuYWdlbWVudC5nb3YvbnMvYXNzdXJhbmNlL2xvYS8xIiwibm9uY2UiOiJhYWQwYWE5NjljMTU2YjJkZmE2ODVmODg1ZmFjNzA4MyIsImF1ZCI6InVybjpnb3Y6Z3NhOm9wZW5pZGNvbm5lY3Q6ZGV2ZWxvcG1lbnQiLCJqdGkiOiJqQzdOblU4ZE5OVjVsaXNRQm0xanRBIiwiYXRfaGFzaCI6InRsTmJpcXIxTHIyWWNOUkdqendsSWciLCJjX2hhc2giOiJoWGpxN2tPcnRRS196YV82dE9OeGN3IiwiZXhwIjoxNDg5Njk0MTk2LCJpYXQiOjE0ODk2OTQxOTgsIm5iZiI6MTQ4OTY5NDE5OH0.pVbPF-2LJSG1fE9thn27PwmDlNdlc3mEm7fFxb8ZADdRvYmDMnDPuZ3TGHl0ttK78H8NH7rBpH85LZzRNtCcWjS7QcycXHMn00Cuq_Bpbn7NRdf3ktxkBrpqyzIArLezVJJVXn2EeykXMvzlO-fJ7CaDUaJMqkDhKOK6caRYePBLbZJFl0Ri25bqXugguAYTyX9HACaxMNFtQOwmUCVVr6WYL1AMV5WmaswZtdE8POxYdhzwj777rkgSg555GoBDZy3MetapbT0csSWqVJ13skWTXBRrOiQQ70wzHAu_3ktBDXNoLx4kG1fr1BiMEbHjKsHs14X8LCBcIMdt49hIZg"
 }
 ```
 
@@ -259,17 +261,62 @@ grant_type=authorization_code
 
     ```json
     {
+      "sub": "b2d2d115-1d7e-4579-b9d6-f8e84f4f56ca",
       "iss": "https://idp.int.login.gov",
+      "acr": "http://idmanagement.gov/ns/assurance/loa/1",
+      "nonce": "aad0aa969c156b2dfa685f885fac7083",
       "aud": "urn:gov:gsa:openidconnect:development",
-      "sub": "9e49553d-894b-4e53-917a-297824fdf96f",
-      "acr": "http://idmanagement.gov/ns/assurance/loa/3",
-      "nonce": null,
-      "jti": "c0b8d9386483327342727e7d750bc6a1",
-      "exp": 1486478556,
-      "iat": 1486478558,
-      "nbf": 1486478558
+      "jti": "jC7NnU8dNNV5lisQBm1jtA",
+      "at_hash": "tlNbiqr1Lr2YcNRGjzwlIg",
+      "c_hash": "hXjq7kOrtQK_za_6tONxcw",
+      "exp": 1489694196,
+      "iat": 1489694198,
+      "nbf": 1489694198
     }
     ```
+
+    <div class="usa-accordion">
+    <button class="usa-accordion-button" aria-controls="id-token-details">
+    View JWT claim details
+    </button>
+    <div id="id-token-details" class="usa-accordion-content" markdown="1">
+    The decoded `id_token` contains a few claims:
+
+    * **acr**
+      Authentication Context Class Reference value or LOA (level of authentication) of the returned claims, from the original [authorization request](#authorization-request).
+
+    * **at_hash**
+      Access token hash, a url-safe base-64 encoding of the left 128 bits of the SHA256 of the `access_token` value. Provided so the client can verify the `access_token` value.
+
+    * **aud**
+      Audience, the client ID.
+
+    * **c_hash**
+      Code hash, a url-safe base-64 encoding of the left 128 bits of the SHA256 of the authorization `code` value. Provided so the client verify the `code` value.
+
+    * **exp**
+      Expiration, an integer timestamp of the expiration of this token (number of seconds since the Unix Epoch).
+
+    * **iat**
+      Issued at, an integer timestamp of when the token was created (number of seconds since the Unix Epoch).
+
+    * **iss**
+      Issuer, will be `https://idp.int.login.gov`.
+
+    * **jti**
+      An random string generated to ensure uniqueness.
+
+    * **nbf**
+      "Not before", an integer timestamp of when the token will start to be valid (number of seconds since the Unix Epoch).
+
+    * **nonce**
+      The nonce provided by the client in the [authorization request](#authorization-request)
+
+    * **sub**
+      Subject, unique ID for this user. This ID is unique per client.
+    </div>
+    </div>
+
 
 [jwt]: https://jwt.io/
 
@@ -312,7 +359,7 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
   "phone": "+1 (555) 555-5555",
   "phone_verified": true,
   "social_security_number": "111223333",
-  "sub": "0afe6649-073d-4dbb-a44b-dabb412676e6"
+  "sub": "b2d2d115-1d7e-4579-b9d6-f8e84f4f56ca"
 }
 ```
 
@@ -335,7 +382,7 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
    User's first (given) name.
 
  * **iss**
-   Issuer, will be `https://idp.int.login.gov`
+   Issuer, will be `https://idp.int.login.gov`.
 
  * **phone** *requires the `phone` scope and an LOA 3 account*
    User's phone number, formatted as E.164.
