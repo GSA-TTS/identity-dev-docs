@@ -3,13 +3,6 @@ title: OpenID Connect
 permalink: /openid-connect/
 ---
 
-<div class="usa-alert usa-alert-warning">
-  <div class="usa-alert-body">
-    <h3 class="usa-alert-heading">Warning!</h3>
-    <p class="usa-alert-text">This site is a work in progress and things might be wrong.</p>
-  </div>
-</div>
-
 # OpenID Connect 1.0 developer guide
 
 login.gov supports [OpenID Connect 1.0][openid-connect], an extension of Oauth 2.0, conforming to the [iGov Profile][igov-profile].
