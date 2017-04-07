@@ -5,7 +5,7 @@ permalink: /attributes/
 
 # User attributes
 
-login.gov accounts can be at one of two levels of verification, corresponding to [NIST 800-63-3](https://pages.nist.gov/800-63-3/) levels of assurance (LOA).
+login.gov accounts can be at one of two levels of verification, corresponding to [NIST 800-63-2](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-2.pdf) levels of assurance (LOA).
 
 Along with the user's UUID, here are the attributes that can be requested via either SAML or OpenID Connect.
 
