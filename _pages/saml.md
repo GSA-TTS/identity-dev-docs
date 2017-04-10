@@ -205,6 +205,10 @@ An example authentication response, after it has been base64 decoded, with inden
 
 ### Logout request
 
+A log out link on your site should also log out the user from the login.gov site.
+The Single Logout Service mechanism at login.gov will initiate the log out process for the user
+from all active Service Providers.
+
 To log a user out, direct them to the logout URL with a SAMLRequest:
 
 ```bash
