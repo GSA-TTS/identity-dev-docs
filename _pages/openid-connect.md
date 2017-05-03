@@ -146,18 +146,38 @@ https://idp.int.login.gov/openid_connect/authorize?
 
 ### Authorization response
 
-After the user authorizes the app, login.gov will redirect to the provided `redirect_uri` and add two URL parameters:
+After an authorization, login.gov will redirect to the provided `redirect_uri` with additional URL query parameters added
+
+For a successful authorization, the URI will contain 2 parameters, `code` and `state`. For an unsuccessful response, the URI will contain an `error` and `state` and optionally `error_description`.
+
+```bash
+https://example.com/response?
+  code=12345&
+  state=abcdef
+```
+
+```bash
+https://example.com/response?
+  error=access_denied&
+  state=abcdef
+```
+
 
 - **code**
-  Unique authorization code that the client can pass to the [token endpoint](#getting-a-token)
+  Present after a succesful authorization. Unique authorization code that the client can pass to the [token endpoint](#getting-a-token).
+
 - **state**
-  The `state` value originally provided by the client
+  The `state` value originally provided by the client.
 
-For example, if the client registered a `redirect_uri` of `https://example.com/response`, login.gov would redirect to a URL similar to:
+- **error**
+  Present for unsuccesful authorizations. The error codes currently supported are:
 
-```
-https://example.com/response?code=12345&state=abcdef
-```
+  - `access_denied` - the user has either cancelled or declined to authorize the client
+  - `invalid_request` - the authorization request was invalid, see `error_description` for additional details
+
+- **error_description**
+  Present for error responses such as `invalid_request`
+
 
 ## Token
 
