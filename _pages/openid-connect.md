@@ -164,7 +164,7 @@ https://example.com/response?
 
 
 - **code**
-  Present after a succesful authorization. Unique authorization code that the client can pass to the [token endpoint](#getting-a-token).
+  Present after a succesful authorization. Unique authorization code that the client can pass to the [token endpoint](#token).
 
 - **state**
   The `state` value originally provided by the client.
@@ -259,7 +259,7 @@ grant_type=authorization_code
 ```
 
  * **access_token** (string)
-    An opaque token used to authenticate to the [User Information](#user-information) endpoint
+    An opaque token used to authenticate to the [User Info](#user-info) endpoint
 
  * **token_type** (string)
     Describes the kind of access token. Will always be `Bearer`.

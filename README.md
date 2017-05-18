@@ -1,8 +1,18 @@
 # Login.gov Dev Docs
 
-[View it live ❯](https://pages.18f.gov/identity-dev-docs/)
+[View it live ❯](https://developers.login.gov/)
 
-Serve locally with `./serve.sh`
+Run the server locally:
+
+```
+make run
+```
+
+Run the tests
+
+```
+make test
+```
 
 ## Updating the template
 
