@@ -28,6 +28,9 @@ In this guide:
   - [User info request](#user-info-request)
   - [User info response](#user-info-response)
 - [Certs](#certs)
+- [Logout](#logout)
+  - [Logout Request](#logout-request)
+  - [Logout Response](#logout-response)
 
 <!-- /MarkdownTOC -->
 
@@ -79,7 +82,7 @@ https://idp.int.login.gov/openid_connect/authorize?
   redirect_uri=${REDIRECT_URI}&
   response_type=code&
   scope=openid+email&
-  state=${STATE}
+  state=abcdefghijklmnopabcdefghijklmnop
 ```
 </div>
 <div markdown="1" data-example="private_key_jwt" hidden="true">
@@ -92,7 +95,7 @@ https://idp.int.login.gov/openid_connect/authorize?
   redirect_uri=${REDIRECT_URI}&
   response_type=code&
   scope=openid+email&
-  state=${STATE}
+  state=abcdefghijklmnopabcdefghijklmnop
 ```
 </div>
 
@@ -120,7 +123,7 @@ https://idp.int.login.gov/openid_connect/authorize?
   Must be `code`.
 
 * **redirect_uri** *required*
-  URI that login.gov will redirect to and pass a result as parameters. It must be registered in advance in the [developer portal](#developer-portal).
+  URI that login.gov will redirect to, pass results as query parameters. It must be registered in advance in the [developer portal](#developer-portal).
 
 * **scope** *required*
   Example: `openid email`
@@ -137,7 +140,6 @@ https://idp.int.login.gov/openid_connect/authorize?
    - `profile`
    - `social_security_number`
 
-
 * **state** *required*
   Unique value, will be returned in a successful authorization. It must be at least **32** characters long.
 
@@ -153,15 +155,14 @@ For a successful authorization, the URI will contain 2 parameters, `code` and `s
 ```bash
 https://example.com/response?
   code=12345&
-  state=abcdef
+  state=abcdefghijklmnopabcdefghijklmnop
 ```
 
 ```bash
 https://example.com/response?
   error=access_denied&
-  state=abcdef
+  state=abcdefghijklmnopabcdefghijklmnop
 ```
-
 
 - **code**
   Present after a succesful authorization. Unique authorization code that the client can pass to the [token endpoint](#token).
@@ -330,7 +331,6 @@ grant_type=authorization_code
     </div>
     </div>
 
-
 [jwt]: https://jwt.io/
 
 ## User info
@@ -419,6 +419,44 @@ https://idp.int.login.gov/api/openid_connect/certs
 ```
 
 [jwk]: https://tools.ietf.org/html/rfc7517
+
+## Logout
+
+For session management, login.gov supports [RP-Initiated Logout][rp-initiated-logout]. Clients can direct users to a URL in the browser to log them out of login.gov, and redirect back in to the app afterwards.
+
+[rp-initiated-logout]: https://openid.net/specs/openid-connect-session-1_0.html#RPLogout
+
+### Logout Request
+
+```bash
+https://idp.int.login.gov/openid_connect/logout?
+  id_token_hint=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJiMmQyZDExNS0xZDdlLTQ1NzktYjlkNi1mOGU4NGY0ZjU2Y2EiLCJpc3MiOiJodHRwczovL2lkcC5pbnQubG9naW4uZ292IiwiYWNyIjoiaHR0cDovL2lkbWFuYWdlbWVudC5nb3YvbnMvYXNzdXJhbmNlL2xvYS8xIiwibm9uY2UiOiJhYWQwYWE5NjljMTU2YjJkZmE2ODVmODg1ZmFjNzA4MyIsImF1ZCI6InVybjpnb3Y6Z3NhOm9wZW5pZGNvbm5lY3Q6ZGV2ZWxvcG1lbnQiLCJqdGkiOiJqQzdOblU4ZE5OVjVsaXNRQm0xanRBIiwiYXRfaGFzaCI6InRsTmJpcXIxTHIyWWNOUkdqendsSWciLCJjX2hhc2giOiJoWGpxN2tPcnRRS196YV82dE9OeGN3IiwiZXhwIjoxNDg5Njk0MTk2LCJpYXQiOjE0ODk2OTQxOTgsIm5iZiI6MTQ4OTY5NDE5OH0.pVbPF-2LJSG1fE9thn27PwmDlNdlc3mEm7fFxb8ZADdRvYmDMnDPuZ3TGHl0ttK78H8NH7rBpH85LZzRNtCcWjS7QcycXHMn00Cuq_Bpbn7NRdf3ktxkBrpqyzIArLezVJJVXn2EeykXMvzlO-fJ7CaDUaJMqkDhKOK6caRYePBLbZJFl0Ri25bqXugguAYTyX9HACaxMNFtQOwmUCVVr6WYL1AMV5WmaswZtdE8POxYdhzwj777rkgSg555GoBDZy3MetapbT0csSWqVJ13skWTXBRrOiQQ70wzHAu_3ktBDXNoLx4kG1fr1BiMEbHjKsHs14X8LCBcIMdt49hIZg&
+  post_logout_redirect_uri=${REDIRECT_URI}&
+  state=abcdefghijklmnopabcdefghijklmnop
+```
+
+- **id_token_hint** *required*
+  An `id_token` value from the [token endpoint response](#token-response).
+
+- **post_logout_redirect_uri** *required*
+  URI that login.gov will redirect to, pass results as query parameters. It must be registered in advance in the [developer portal](#developer-portal) as a `redirect_uri`.
+
+- **state** *required*
+  Unique value, will be returned in a successful logout. It must be at least **32** characters long.
+
+### Logout Response
+
+After an authorization, login.gov will redirect to the provided `redirect_uri` with additional URL query parameters added
+
+For a successful logout, the URI will contain the `state` parameter:
+
+```bash
+https://example.com/response?
+  state=abcdefghijklmnopabcdefghijklmnop
+```
+
+- **state**
+  The `state` value originally provided by the client.
 
 <script type="text/javascript">
   function showExamples(type) {
