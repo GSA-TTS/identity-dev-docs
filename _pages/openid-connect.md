@@ -99,33 +99,32 @@ https://idp.int.login.gov/openid_connect/authorize?
 ```
 </div>
 
-* **acr_values** *required*
-
+* <span id="authorize-acr-values" data-anchor>**acr_values** *required*</span>
   Space-separated Authentication Context Class Reference values, used to specify the LOA (level of authentication) of an account. Two LOA levels supported, 1 and 3. This and the `scope` determine what values will be available in the [User Info Response](#user-info-response).
 
   Possible values:
     - `http://idmanagement.gov/ns/assurance/loa/1`
     - `http://idmanagement.gov/ns/assurance/loa/3`
 
-* **client_id** *required*
+* <span id="authorize-client-id" data-anchor>**client_id** *required*</span>
   Unique identifier from the client. It must be registered in advance in the [developer portal](#developer-portal).
 
-* **code_challenge** *required for PKCE*
+* <span id="authorize-code-challenge" data-anchor>**code_challenge** *required for PKCE*</span>
   The URL-safe base64 encoding of the SHA-256 digest of a random value generated on the client. The original value is referred to as the `code_verifier`.
 
-* **code_challenge_method** *required for PKCE*
+* <span id="authorize-code-challenge-method" data-anchor>**code_challenge_method** *required for PKCE*</span>
   Must be `S256`, the only PKCE code challenge method we support.
 
-* **prompt** *required*
+* <span id="authorize-prompt" data-anchor>**prompt** *required*</span>
   Must be `select_account`.
 
-* **response_type** *required*
+* <span id="authorize-response-type" data-anchor>**response_type** *required*</span>
   Must be `code`.
 
-* **redirect_uri** *required*
+* <span id="authorize-redirect-uri" data-anchor>**redirect_uri** *required*</span>
   URI that login.gov will redirect to, pass results as query parameters. It must be registered in advance in the [developer portal](#developer-portal).
 
-* **scope** *required*
+* <span id="authorize-scope" data-anchor>**scope** *required*</span>
   Example: `openid email`
 
   Space-separated string of scopes to request permission for. The authorization page will display a list of the attributes being requested. Applications should request the minumum attributes and scopes needed.
@@ -140,10 +139,10 @@ https://idp.int.login.gov/openid_connect/authorize?
    - `profile`
    - `social_security_number`
 
-* **state** *required*
+* <span id="authorize-state" data-anchor>**state** *required*</span>
   Unique value, will be returned in a successful authorization. It must be at least **32** characters long.
 
-* **nonce** *required*
+* <span id="authorize-nonce" data-anchor>**nonce** *required*</span>
   Unique value that will be embedded into the `id_token`. It must be at least **32** characters long.
 
 ### Authorization response
@@ -164,19 +163,19 @@ https://example.com/response?
   state=abcdefghijklmnopabcdefghijklmnop
 ```
 
-- **code**
+- <span id="authorize-code" data-anchor>**code**</span>
   Present after a succesful authorization. Unique authorization code that the client can pass to the [token endpoint](#token).
 
-- **state**
+- <span id="authorize-response-state" data-anchor>**state**</span>
   The `state` value originally provided by the client.
 
-- **error**
+- <span id="authorize-error" data-anchor>**error**</span>
   Present for unsuccesful authorizations. The error codes currently supported are:
 
   - `access_denied` - the user has either cancelled or declined to authorize the client
   - `invalid_request` - the authorization request was invalid, see `error_description` for additional details
 
-- **error_description**
+- <span id="authorize-error-description" data-anchor>**error_description**</span>
   Present for error responses such as `invalid_request`
 
 
@@ -208,7 +207,7 @@ grant_type=authorization_code
 ```
 </div>
 
-* **client_assertion** *required for private_key_jwt*
+* <span id="token-client-assertion" data-anchor>**client_assertion** *required for private_key_jwt*</span>
   A signed [JWT][jwt].
 
   <div class="usa-accordion">
@@ -236,16 +235,16 @@ grant_type=authorization_code
   </div>
   </div>
 
-* **client_assertion_type** *required for private_key_jwt*
+* <span id="token-client-assertion-type" data-anchor>**client_assertion_type** *required for private_key_jwt*</span>
   When using private_key_jwt, must be `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
 
-* **code** *required*
+* <span id="token-code" data-anchor>**code** *required*</span>
   The URL parameter value from the `redirect_uri` in the Authorization step.
 
-* **code_verifier** *required for PKCE*
+* <span id="token-code-verifier" data-anchor>**code_verifier** *required for PKCE*</span>
   The original value (before the SHA256) generated for the Authorization request for PKCE.
 
-* **grant_type** *required*
+* <span id="token-grant-type" data-anchor>**grant_type** *required*</span>
   Must be `authorization_code`
 
 ### Token response
@@ -259,16 +258,16 @@ grant_type=authorization_code
 }
 ```
 
- * **access_token** (string)
+ * <span id="token-access-token" data-anchor>**access_token** (string)</span>
     An opaque token used to authenticate to the [User Info](#user-info) endpoint
 
- * **token_type** (string)
+ * <span id="token-token-type" data-anchor>**token_type** (string)</span>
     Describes the kind of access token. Will always be `Bearer`.
 
- * **expires_in** (number)
+ * <span id="token-expires-in" data-anchor>**expires_in** (number)</span>
     The number of seconds that the access token will expire in.
 
- * **id_token** (string)
+ * <span id="token-id-token" data-anchor>**id_token** (string)</span>
     A signed [JWT][jwt] that contains basic attributes about the user such as user ID for this client (encoded as the `sub` claim) as well as the claims requested as part of the `scope` in the authorization request. See the [User Info Response](#user-info-response) section for details on the claims. The public key to verify this JWT is available from the [certs](#certs) endpoint.
 
     Here is the above example `id_token`, decoded:
@@ -376,39 +375,48 @@ login.gov supports some of the [standard claims from OpenID Connect 1.0][standar
 }
 ```
 
- * **address** (object) *requires the `address` scope and an LOA 3 account*
-   A JSON object, per the OpenID Connect 1.0 spec [Address Claim][address-claim]
+* <span id="user-info-address" data-anchor>**address** (object)</span>
+  *requires the `address` scope and an LOA 3 account*
+  A JSON object, per the OpenID Connect 1.0 spec [Address Claim][address-claim]
 
- * **birthdate** (string) *requires `profile` or `profile:birthdate` scopes and an LOA 3 account*
-   Birthdate, formatted as ISO 8601:2004 `YYYY-MM-DD`.
+* <span id="user-info-birthdate" data-anchor>**birthdate** (string)</span>
+  *requires `profile` or `profile:birthdate` scopes and an LOA 3 account*
+  Birthdate, formatted as ISO 8601:2004 `YYYY-MM-DD`.
 
- * **email** (string) *requires the `email` scope*
-   User's email.
+* <span id="user-info-email" data-anchor>**email** (string)</span>
+  *requires the `email` scope*
+  User's email.
 
- * **email_verified** (boolean) *requires the `email` scope*
-   Whether or not the `email` has been verified. Currently login.gov only supports verified emails.
+* <span id="user-info-email-verified" data-anchor>**email_verified** (boolean)</span>
+  *requires the `email` scope*
+  Whether or not the `email` has been verified. Currently login.gov only supports verified emails.
 
- * **family_name** (string) *requires `profile` or `profile:name` scopes and an LOA 3 account*
-   User's last (family) name.
+* <span id="user-info-family-name" data-anchor>**family_name** (string)</span>
+  *requires `profile` or `profile:name` scopes and an LOA 3 account*
+  User's last (family) name.
 
- * **given_name** (string) *requires `profile` or `profile:name` scopes and an LOA 3 account*
-   User's first (given) name.
+* <span id="user-info-given-name" data-anchor>**given_name** (string)</span>
+  *requires `profile` or `profile:name` scopes and an LOA 3 account*
+  User's first (given) name.
 
- * **iss** (string)
+* <span id="user-info-iss" data-anchor>**iss** (string)</span>
    Issuer, will be `https://idp.int.login.gov`.
 
- * **phone** (string) *requires the `phone` scope and an LOA 3 account*
-   User's phone number, formatted as E.164.
-   Example: `+1 (555) 555-5555`
+* <span id="user-info-phone" data-anchor>**phone** (string)</span>
+  *requires the `phone` scope and an LOA 3 account*
+  User's phone number, formatted as E.164.
+  Example: `+1 (555) 555-5555`
 
- * **phone_verified** (boolean) *requires the `phone` scope and an LOA 3 account*
-   Whether or not the `phone` has been verified. Currently login.gov only supports verified phones.
+* <span id="user-info-phone-verified" data-anchor>**phone_verified** (boolean)</span>
+  *requires the `phone` scope and an LOA 3 account*
+  Whether or not the `phone` has been verified. Currently login.gov only supports verified phones.
 
- * **social\_security\_number** (string) *requres the `social_security_number` scope and an LOA 3 account*
-   User's social security number.
+* <span id="user-info-social-security-number" data-anchor>**social\_security\_number** (string)</span>
+  *requires the `social_security_number` scope and an LOA 3 account*
+  User's social security number.
 
- * **sub** (string)
-   Subject, unique ID for this user. This ID is unique per client.
+* <span id="user-info-sub" data-anchor>**sub** (string)</span>
+  Subject, unique ID for this user. This ID is unique per client.
 
 ## Certs
 
@@ -435,13 +443,13 @@ https://idp.int.login.gov/openid_connect/logout?
   state=abcdefghijklmnopabcdefghijklmnop
 ```
 
-- **id_token_hint** *required*
+- <span id="logout-id-token-hint" data-anchor>**id_token_hint** *required*</span>
   An `id_token` value from the [token endpoint response](#token-response).
 
-- **post_logout_redirect_uri** *required*
+- <span id="logout-post-logout-redirect-uri" data-anchor>**post_logout_redirect_uri** *required*</span>
   URI that login.gov will redirect to, pass results as query parameters. It must be registered in advance in the [developer portal](#developer-portal) as a `redirect_uri`.
 
-- **state** *required*
+- <span id="logout-state" data-anchor>**state** *required*</span>
   Unique value, will be returned in a successful logout. It must be at least **32** characters long.
 
 ### Logout Response
@@ -455,7 +463,7 @@ https://example.com/response?
   state=abcdefghijklmnopabcdefghijklmnop
 ```
 
-- **state**
+- <span id="logout-response-state" data-anchor>**state**</span>
   The `state` value originally provided by the client.
 
 <script type="text/javascript">
