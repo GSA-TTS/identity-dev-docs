@@ -140,6 +140,30 @@ An example authentication request, with indendation added for readability.
 </div>
 </div>
 
+#### Specifying Attributes and LOA
+
+The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the LOA level and attributes requested.
+
+The supported LOA levels area, place one of these values inside a `<saml:AuthnContextClassRef>` tag:
+
+  - `http://idmanagement.gov/ns/assurance/loa/1`
+  - `http://idmanagement.gov/ns/assurance/loa/3`
+
+To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes]({{ '/attributes' | relative_url }}) for the list of attributes that can be requested.
+
+An LOA3 request for email, phone, first name, last name, and SSN might look like:
+
+```xml
+<samlp:AuthnRequest ...>
+  <!-- ... -->
+  <samlp:RequestedAuthnContext Comparison='exact'>
+    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/loa/3</saml:AuthnContextClassRef>
+    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/requested_attributes?ReqAttr=email,phone,first_name,last_name,ssn</saml:AuthnContextClassRef>
+  </samlp:RequestedAuthnContext>
+</samlp:AuthnRequest>
+
+```
+
 ### Auth response
 
 After the user authenticates, login.gov will redirect and POST a form back to your registered Assertion Consumer Service URL:
