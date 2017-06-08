@@ -1,5 +1,5 @@
 ---
-title: login.gov Dev Docs
+title: Developer Documentation
 permalink: /
 ---
 
