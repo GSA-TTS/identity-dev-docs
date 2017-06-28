@@ -110,7 +110,16 @@ https://idp.int.login.gov/openid_connect/authorize?
   Unique identifier from the client. It must be registered in advance in the [developer portal](#developer-portal).
 
 * <span id="authorize-code-challenge" data-anchor>**code_challenge** *required for PKCE*</span>
-  The URL-safe base64 encoding of the SHA-256 digest of a random value generated on the client. The original value is referred to as the `code_verifier`.
+  The URL-safe base64 encoding of the SHA256 digest of a random value generated on the client. The original random value is referred to as the [`code_verifier`](#token-code-verifier) is used later in the token endpoint.
+
+  Generating these values in Ruby could look like:
+
+  ```ruby
+  code_verifier = SecureRandom.hex
+  => "7a5e819dd39f17242fdeeba0c1c80be6"
+  code_challenge = Digest::SHA256.base64digest(code_verifier)
+  => "TdzfmaWefbtaI0Wdo6lrZCXpLu1WpamnSoSHfDUiL7Y="
+  ```
 
 * <span id="authorize-code-challenge-method" data-anchor>**code_challenge_method** *required for PKCE*</span>
   Must be `S256`, the only PKCE code challenge method we support.
@@ -242,7 +251,7 @@ grant_type=authorization_code
   The URL parameter value from the `redirect_uri` in the Authorization step.
 
 * <span id="token-code-verifier" data-anchor>**code_verifier** *required for PKCE*</span>
-  The original value (before the SHA256) generated for the Authorization request for PKCE.
+  The original value (before the SHA256) generated for the Authorization request for PKCE that corresponds to the [`code_challenge`](#authorize-code-challenge).
 
 * <span id="token-grant-type" data-anchor>**grant_type** *required*</span>
   Must be `authorization_code`
