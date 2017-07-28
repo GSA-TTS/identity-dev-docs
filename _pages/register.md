@@ -7,7 +7,7 @@ redirect_from:
 
 # Register your service provider
 
-Once you have a working SP implementation, the next step is to provide us with the following details about your application.
+Once you have a working SP implementation, contact us at [partners@login.gov](mailto:partners@login.gov) to register your application. These are some of the attributes you'll need to be prepared to provide:
 
 <!-- MarkdownTOC depth="4" autolink="true" bracket="round" -->
 
