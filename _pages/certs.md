@@ -9,11 +9,11 @@ First, you'll need to create an `openssl.conf` file, for example:
 ```
 [ req ]
 default_bits           = 2048
-distinguished_name     = req_distinguished_name
+distinguished_name     = REQ_DISTINGUISHED_NAME
 prompt                 = no
 
-[ req_distinguished_name ]
-commonName             = idp-sandbox.login.gov
+[ REQ_DISTINGUISHED_NAME ]
+commonName             = YOUR_DOMAIN
 organizationName       = GSA
 organizationalUnitName = 18f
 localityName           = Washington
@@ -22,7 +22,10 @@ countryName            = US
 emailAddress           = 18f@gsa.gov
 ```
 
-You'll need to replace `req_distinguished_name` with your agency's details.
+You'll need to replace a few parts:
+
+- `REQ_DISTINGUISHED_NAME` with your agency's details
+- `YOUR_DOMAIN` with your domain, like `example.gov`.
 
 Next, run the following [OpenSSL](https://www.openssl.org) command:
 
