@@ -13,7 +13,7 @@ distinguished_name     = req_distinguished_name
 prompt                 = no
 
 [ req_distinguished_name ]
-commonName             = idp-sandbox.login.gov
+commonName             = YOUR_DOMAIN
 organizationName       = GSA
 organizationalUnitName = 18f
 localityName           = Washington
@@ -22,7 +22,9 @@ countryName            = US
 emailAddress           = 18f@gsa.gov
 ```
 
-You'll need to replace `req_distinguished_name` with your agency's details.
+You'll need to update the information listed under the `[ req_distinguished_name ]` section in the `.conf` to match your details.
+
+The `commonName` will need to reflect the domain that your SP will be initiating the SAML request from.
 
 Next, run the following [OpenSSL](https://www.openssl.org) command:
 
