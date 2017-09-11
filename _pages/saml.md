@@ -28,7 +28,7 @@ In this guide:
 
 ## Getting started
 
-SAML is an established standard, but can a bit complex. We recommend seeing if there is a [SAML library for your language]({{site.baseurl}}/saml/libs/) and using that before trying to build a new integration from scratch.
+SAML is an established standard, but can be a bit complex. We recommend seeing if there is a [SAML library for your language]({{site.baseurl}}/saml/libs/) and using that before trying to build a new integration from scratch.
 
 ### Configuration
 
