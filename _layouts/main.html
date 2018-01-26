@@ -1,68 +1,163 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
 
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google" value="notranslate">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ site.title }} | {{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{{ site.description }}">
-
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-
     <!-- Compiled CSS  -->
-    <link rel="stylesheet" href="{{ site.baseurl }}{{ site.uswds }}/css/uswds.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/uswds/css/uswds.min.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
-
     <!-- Fonts -->
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700|Merriweather:700"> -->
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400' rel='stylesheet' type='text/css'>
-
-    <!-- Favicons -->
-    <!-- 128x128 -->
-    <link rel="shortcut icon" type="image/ico" href="{{ site.baseurl }}{{ site.uswds }}/img/favicons/favicon.ico" />
-    <link rel="icon" type="image/png" href="{{ site.baseurl }}{{ site.uswds }}/img/favicons/favicon.png" />
-
-    <!-- 192x192, as recommended for Android
-    http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
-    -->
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ site.baseurl }}{{ site.uswds }}/img/favicons/favicon-192.png" />
-
-    <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-    <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}{{ site.uswds }}/img/favicons/favicon-57.png">
-    <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.baseurl }}{{ site.uswds }}/img/favicons/favicon-72.png">
-    <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.baseurl }}{{ site.uswds }}/img/favicons/favicon-114.png">
-    <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}{{ site.uswds }}/img/favicons/favicon-144.png">
   </head>
 
-  <body>
-
-    {% include header.html %}
-
-    <div class="usa-grid">
-      <aside class="usa-width-one-fourth">
-
-        {% include sidenav.html %}
-
-      </aside>
-
-      <div id="main-content" class="usa-width-three-fourths">
-        {{ content }}
+  <body class="layout-demo">
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+  <header class="usa-header usa-header-basic" role="banner">
+    <!-- Gov banner BEGIN -->
+    <div class="usa-banner">
+      <div class="usa-accordion">
+        <header class="usa-banner-header">
+          <div class="usa-grid usa-banner-inner">
+          <img src="{{ site.baseurl }}/assets/uswds/img/favicons/favicon-57.png" alt="U.S. flag">
+          <p>An official website of the United States government</p>
+          <button class="usa-accordion-button usa-banner-button"
+            aria-expanded="false" aria-controls="gov-banner">
+            <span class="usa-banner-button-text">Here's how you know</span>
+          </button>
+          </div>
+        </header>
+        <div class="usa-banner-content usa-grid usa-accordion-content" id="gov-banner">
+          <div class="usa-banner-guidance-gov usa-width-one-half">
+            <img class="usa-banner-icon usa-media_block-img" src="{{ site.baseurl }}/assets/uswds/img/icon-dot-gov.svg" alt="Dot gov">
+            <div class="usa-media_block-body">
+              <p>
+                <strong>The .gov means it’s official.</strong>
+                <br>
+                Federal government websites always use a .gov or .mil domain. Before sharing sensitive information online, make sure you’re on a .gov or .mil site by inspecting your browser’s address (or “location”) bar.
+              </p>
+            </div>
+          </div>
+          <div class="usa-banner-guidance-ssl usa-width-one-half">
+            <img class="usa-banner-icon usa-media_block-img" src="{{ site.baseurl }}/assets/uswds/img/icon-https.svg" alt="SSL">
+            <div class="usa-media_block-body">
+              <p>This site is also protected by an SSL (Secure Sockets Layer) certificate that’s been signed by the U.S. government. The <strong>https://</strong> means all transmitted data is encrypted  — in other words, any information or browsing history that you provide is transmitted securely.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- Gov banner END -->
+    <div class="usa-nav-container">
+      <div class="usa-navbar">
+        <button class="usa-menu-btn">Menu</button>
+        <div class="usa-logo" id="logo">
+          <em class="usa-logo-text">
+            <a href="{{ site.baseurl }}/" accesskey="1" title="Home" aria-label="login.gov developer guide">
+              <img src="{{ site.baseurl }}/assets/img/logo.svg" alt="Login.gov logo"><span>Developers</span>
+            </a>
+          </em>
+        </div>
+      </div>
+      <nav role="navigation" class="usa-nav">
+        <button class="usa-nav-close">
+          <img src="{{ site.baseurl }}/assets/uswds/img/close.svg" alt="close">
+        </button>
+        <ul class="usa-nav-primary usa-accordion">
+          <li>
+            <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="side-nav-1">
+              <span>OpenID Connect</span>
+            </button>
+            <ul id="side-nav-1" class="usa-nav-submenu">
+              <li><a href="{{ site.baseurl }}/oidc">Getting started</a></li>
+              <li><a href="{{ site.baseurl }}/oidc/#authorization">Authorization</a></li>
+              <li><a href="{{ site.baseurl }}/oidc/#token">Token</a></li>
+              <li><a href="{{ site.baseurl }}/oidc/#user-info">User info</a></li>
+              <li><a href="{{ site.baseurl }}/oidc/#certificates">Certificates</a></li>
+              <li><a href="{{ site.baseurl }}/oidc/#logout">Logout</a></li>
+              <li><a href="{{ site.baseurl }}/oidc/#example-apps">Example apps</a></li>
+            </ul>
+          </li>
+          <li>
+            <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="sidenav-2">
+              <span>SAML</span>
+            </button>
+            <ul id="sidenav-2" class="usa-nav-submenu">
+              <li><a href="{{ site.baseurl }}/saml">Getting started</a></li>
+              <li><a href="{{ site.baseurl }}/saml/#auth">Auth</a></li>
+              <li><a href="{{ site.baseurl }}/saml/#logout">Logout</a></li>
+              <li><a href="{{ site.baseurl }}/saml/#saml-libraries">SAML libraries</a></li>
+              <li><a href="{{ site.baseurl }}/saml/#example-apps">Example apps</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="usa-nav-link" href="{{ site.baseurl }}/attributes">
+              <span>Attributes</span>
+            </a>
+          </li>
+          <li>
+            <a class="usa-nav-link" href="{{ site.baseurl }}/testing">
+              <span>Testing</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="usa-overlay"></div>
 
-    {% include footer.html %}
+  <main class="usa-grid usa-section usa-content usa-layout-docs" id="main-content">
+    {% if page.toc %}
+    <aside class="usa-width-one-fourth usa-layout-docs-sidenav">
+      <ul class="usa-sidenav-list">
+        <li>
+          <a href="javascript:void(0);">Page title</a>
+        </li>
+        <li>
+          <a class="usa-current" href="javascript:void(0);">Page heading (h1)</a>
+          <ul class="usa-sidenav-sub_list">
+            <li>
+              <a href="#section-heading-h2">Section heading (h2)</a>
+            </li>
+            <li>
+              <a href="#section-heading-h3">Subsection heading (h3)</a>
+            </li>
+            <li>
+              <a href="#section-heading-h4">Subsection heading (h4)</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:void(0);">Page title</a>
+        </li>
+      </ul>
+    </aside>
+    {% endif %}
+    <div class="{% if page.toc %}usa-width-three-fourths{% endif %} usa-layout-docs-main_content {{ page.css }}">
+      {{ content }}
+    </div>
+  </main>
 
-    <script src="{{ site.baseurl }}{{ site.uswds }}/js/uswds.min.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/anchor.js"></script>
-    <script>
-      anchors.add('#main-content h1, #main-content h2, #main-content h3, #main-content [data-anchor]');
-    </script>
+  <footer class="usa-footer usa-footer-medium" role="contentinfo">
+    <div class="usa-grid usa-footer-return-to-top">
+      <a href="#">Return to top</a>
+    </div>
+    <div class="usa-footer-secondary_section">
+      <div class="usa-grid">
+        <div class="usa-footer-logo">
+          <a href="https://18f.gsa.gov"><img class="usa-footer-slim-logo-img" style="margin-right:20px" src="{{ site.baseurl }}/assets/img/18f-logo.svg" alt="18F logo image"></a>
+          <a href="https://www.gsa.gov"><img class="usa-footer-slim-logo-img" src="{{ site.baseurl }}/assets/img/gsa-logo.svg" alt="GSA logo image"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ site.baseurl }}/assets/uswds/js/uswds.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/anchor.js"></script>
+  <script>
+    anchors.add('#main-content h1, #main-content h2, #main-content h3, #main-content [data-anchor]');
+  </script>
+
   </body>
-
 </html>
