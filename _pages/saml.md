@@ -1,6 +1,5 @@
 ---
 title: SAML
-permalink: /saml/
 redirect_from:
   - /configuring-your-sp/
 ---
@@ -9,26 +8,32 @@ redirect_from:
 
 login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile) with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/).
 
-In this guide:
+<div class="usa-alert usa-alert-warning" >
+  <div class="usa-alert-body">We strongly recommend choosing <a href="{{ site.baseurl }}/oidc">OpenID Connect</a> over SAML due to its modern, API-centric design and support for native mobile applications.
+  </div>
+</div>
 
-<!-- MarkdownTOC depth="2" autolink="true" bracket="round" -->
+{% include basic-auth-warn.html %}
 
+### Contents
+
+<div markdown="1" class="compact-list">
 - [Getting started](#getting-started)
   - [Configuration](#configuration)
-  - [Developer portal](#developer-portal)
-- [Metadata](#metadata)
+  - [Metadata](#metadata)
 - [Auth](#auth)
   - [Auth request](#auth-request)
   - [Auth response](#auth-response)
 - [Logout](#logout)
   - [Logout request](#logout-request)
   - [Logout response](#logout-response)
-
-<!-- /MarkdownTOC -->
+- [SAML libraries](#saml-libraries)
+- [Example apps](#example-apps)
+</div>
 
 ## Getting started
 
-SAML is an established standard, but can be a bit complex. We recommend seeing if there is a [SAML library for your language]({{site.baseurl}}/saml/libs/) and using that before trying to build a new integration from scratch.
+SAML is an established standard, but can be a bit complex. We recommend looking for and using a [SAML library for your language](#saml-libraries) before developing your own.
 
 ### Configuration
 
@@ -56,23 +61,11 @@ Here are values needed to configure your service provider (SP) to work with logi
   ```
 
 - **x509 Public Certificate**
-  The public certificate is used to validate the authenticity of SAML requests received from login.gov, a minimum of 2048 bits.
+  The public certificate is used to validate the authenticity of SAML requests received from login.gov, a minimum of 2048 bits. We publish this public certificate from in our [Metadata endpoint](#metadata).
 
-  We publish this public certificate from in our [Metadata endpoint](#metadata)
+### Metadata
 
-### Developer portal
-
-Follow instructions to [register your application]({{site.baseurl}}/register/).
-
-## Metadata
-
-SAML metadata, formatted per the [SAML metadata spec][saml-metadata-spec], is available at this endpoint:
-
-```
-https://idp.int.login.gov/api/saml/metadata
-```
-
-[saml-metadata-spec]: https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf
+Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata is available at: [**https://idp.int.login.gov/api/saml/metadata**](https://idp.int.login.gov/api/saml/metadata)
 
 ## Auth
 
@@ -90,12 +83,12 @@ The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload 
 SAML_REQUEST = base64(deflate(payload))
 ```
 
-<div class="usa-accordion">
-<button class="usa-accordion-button" aria-controls="authn-request">
+<div class="usa-accordion-bordered">
+<button class="usa-accordion-button" aria-controls="authn-request-example">
 View example authentication request
 </button>
-<div id="authn-request" class="usa-accordion-content" markdown="1">
-An example authentication request, with indendation added for readability.
+<div id="authn-request-example" class="usa-accordion-content" markdown="1">
+An example authentication request, with indentation added for readability.
 
 ```xml
 <samlp:AuthnRequest AssertionConsumerServiceURL='https://sp.int.login.gov/auth/saml/callback?utf8=%E2%9C%93&amp;loa=1'
@@ -140,16 +133,15 @@ An example authentication request, with indendation added for readability.
 </div>
 </div>
 
-#### Specifying Attributes and LOA
+#### Specifying attributes and LOA
 
 The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the LOA level and attributes requested.
 
 The supported LOA levels area, place one of these values inside a `<saml:AuthnContextClassRef>` tag:
-
   - `http://idmanagement.gov/ns/assurance/loa/1`
   - `http://idmanagement.gov/ns/assurance/loa/3`
 
-To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes]({{ '/attributes' | relative_url }}) for the list of attributes that can be requested.
+To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes]({{ site.baseurl }}/attributes) for the list of attributes that can be requested.
 
 An LOA3 request for email, phone, first name, last name, and SSN might look like:
 
@@ -175,11 +167,11 @@ SAMLResponse=${SAML_RESPONSE}
 
 The SAMLResponse is a base64-encoded XML payload that contains encrypted data.
 
-<div class="usa-accordion">
-<button class="usa-accordion-button" aria-controls="authn-response">
+<div class="usa-accordion-bordered">
+<button class="usa-accordion-button" aria-controls="authn-response-example">
 View example authentication response
 </button>
-<div id="authn-response" class="usa-accordion-content" markdown="1">
+<div id="authn-response-example" class="usa-accordion-content" markdown="1">
 An example authentication response, after it has been base64 decoded, with indentation added for readability.
 
 ```xml
@@ -229,8 +221,7 @@ An example authentication response, after it has been base64 decoded, with inden
 
 ### Logout request
 
-A log out link on your site should also log out the user from the login.gov site.
-The Single Logout Service mechanism at login.gov will initiate the log out process for the user
+A log out link on your site should also log out the user from the login.gov site. The Single Logout Service mechanism at login.gov will initiate the log out process for the user
 from all active Service Providers.
 
 To log a user out, direct them to the logout URL with a SAMLRequest:
@@ -241,15 +232,14 @@ https://idp.int.login.gov/api/saml/logout?SAMLRequest=${SAML_REQUEST}
 
 The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload of a `<samlp:LogoutRequest>`.
 
-All logout requests must be signed -- we require RSA SHA-256 signatures embedded with logout requests.
+All logout requests must be signed — we require RSA SHA-256 signatures embedded with logout requests.
 
-<div class="usa-accordion">
-<button class="usa-accordion-button" aria-controls="logout-request">
+<div class="usa-accordion-bordered">
+<button class="usa-accordion-button" aria-controls="logout-request-example">
 View example logout request
 </button>
-<div id="logout-request" class="usa-accordion-content" markdown="1">
+<div id="logout-request-example" class="usa-accordion-content" markdown="1">
 An example logout request payload, with indentation added for readability.
-
 
 ```xml
 <samlp:LogoutRequest Destination='https://idp.int.login.gov/api/saml/logout'
@@ -299,12 +289,11 @@ SAMLResponse=${SAML_RESPONSE}
 
 The SAMLResponse is a base64-encoded XML payload that contains encrypted data.
 
-
-<div class="usa-accordion">
-<button class="usa-accordion-button" aria-controls="logout-response">
+<div class="usa-accordion-bordered">
+<button class="usa-accordion-button" aria-controls="logout-response-example">
 View example logout response
 </button>
-<div id="logout-response" class="usa-accordion-content" markdown="1">
+<div id="logout-response-example" class="usa-accordion-content" markdown="1">
 An example decoded logout response, with indentation added for readability.
 
 ```xml
@@ -343,3 +332,48 @@ An example decoded logout response, with indentation added for readability.
 
 </div>
 </div>
+
+## SAML libraries
+
+Here's a list of open-source libraries to help speed up your SAML development.
+
+Java
+  - [OneLogin's SAML Java Toolkit](https://github.com/onelogin/java-saml)
+  - [OpenSAML](https://wiki.shibboleth.net/confluence/display/OS30/Home)
+  - [OpenAM](https://forgerock.org/openam/)
+  - [Spring Security SAML](http://projects.spring.io/spring-security-saml/)
+
+PHP
+  - [OneLogin's SAML PHP Toolkit](https://github.com/onelogin/php-saml)
+
+Drupal
+  - [OneLogin SAML plugin for Drupal](https://github.com/onelogin/drupal-saml)
+
+Joomla
+  - [Joomla SAML Authentication plugin](https://github.com/onelogin/joomla-saml), based on OneLogin PHP SAML Toolkit
+
+Python
+  - [OneLogin's SAML Python Toolkit](https://github.com/onelogin/python-saml)
+  - [OneLogin's SAML Python Toolkit](https://github.com/onelogin/python3-saml) (compatible with Python3)
+  - [pysaml2 integration for Django](https://pypi.python.org/pypi/djangosaml2)
+
+Ruby
+  - [Ruby SAML](https://github.com/onelogin/ruby-saml)
+  - [OmniAuth SAML](https://github.com/omniauth/omniauth-saml)
+  - [libsaml](https://github.com/digidentity/libsaml)
+
+Node.js
+  - [SAML 2.0 authentication with Passport](https://github.com/bergie/passport-saml)
+  - [SAML 2.0 Node.js helpers](https://www.npmjs.com/package/saml2-js)
+
+C/C++
+  - [OpenSAML-C++](https://shibboleth.net/products/opensaml-cpp.html)
+
+## Example apps
+
+The login.gov team has created example clients to speed up your development, all open source in the public domain.
+
+- [Java / Spring](https://github.com/18F/identity-sp-java)
+- [Ruby / Sinatra](https://github.com/18F/identity-sp-sinatra)
+- [Ruby / Rails](https://github.com/18F/identity-sp-rails)
+- [Python / Flask](https://github.com/18F/identity-sp-python)

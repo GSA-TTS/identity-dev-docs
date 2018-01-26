@@ -28,6 +28,7 @@ RSpec::Matchers.define :link_to_valid_headers do
       target = a[:href]
 
       next if a[:id] == 'js-mobile-nav-toggle'
+      next if a.to_s.include?('Return to top')
 
       if target == '#'
         missing_headers << a.to_s
@@ -55,7 +56,7 @@ RSpec::Matchers.define :link_to_valid_internal_pages do
       page = a[:href]
 
       begin
-        file_at(page.gsub(/#.*$/, ''))
+        unless File.exists? "_site#{page.gsub(/#.*$/, '')}" then fail "Could not find file \`#{path}\`" end
       rescue
         missing_pages << page
       end
@@ -66,22 +67,6 @@ RSpec::Matchers.define :link_to_valid_internal_pages do
 
   failure_message do |actual|
     "expected that #{actual.url} would link to valid pages:\n#{missing_pages.join("\n")}"
-  end
-end
-
-RSpec::Matchers.define :properly_escape_html do
-  escaped_html_tags = nil
-
-  match do |actual|
-    doc = actual
-
-    escaped_html_tags = doc.to_s.scan(/(&lt;(.+)&gt;)/).map(&:first)
-
-    expect(escaped_html_tags).to be_empty
-  end
-
-  failure_message do |actual|
-    "expected that #{actual.url} would not have escaped html tags, but found:\n#{escaped_html_tags.join("\n")}"
   end
 end
 
