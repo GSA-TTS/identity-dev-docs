@@ -4,7 +4,7 @@ title: User attributes
 
 # User attributes
 
-login.gov user accounts are either proofed (LOA3) or not (LAO1), corresponding to [NIST 800-63-2](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-2.pdf) levels of assurance (LOA). Here are the possible attributes that can be requested at a given LOA. This table contains the available user attributes, the LOA they are associated with, and how they can be accessed in OpenID Connect and SAML.
+login.gov user accounts are either proofed (LOA3) or not (LOA1), corresponding to [NIST 800-63-2](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-2.pdf) levels of assurance (LOA). Here are the possible attributes that can be requested at a given LOA. This table contains the available user attributes, the LOA they are associated with, and how they can be accessed in OpenID Connect and SAML.
 
 <style>table { line-height: 2.6rem }</style>
 
