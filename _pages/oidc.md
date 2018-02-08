@@ -100,8 +100,8 @@ Use the private key when generating your JWT.
 
 ### Auto-discovery
 
-Consistent with the specification, login.gov provides a JSON endpoint for OpenID Connect auto-discovery at:
-`/.well-known/openid-configuration`
+Consistent with the OpenID Connect specification, login.gov provides a JSON endpoint for auto-discovery at:
+`/.well-known/openid-configuration`. Issue a request to this endpoint to receive a configuration response.
 
 ### Configuration response
 
