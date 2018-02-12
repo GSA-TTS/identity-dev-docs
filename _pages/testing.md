@@ -15,7 +15,7 @@ Once you've created your app and implemented an identity protocol, such as OpenI
 
 The login.gov dashboard is the place you'll manage your team and test applications.
 1. First, go to the dashboard at [dashboard.int.login.gov](https://dashboard.int.login.gov)
-2. Then, in the upper-right corner, click **Log in** to create an account in the login.gov IdP in the agency integration environment (at [idp.int.login.gov](https://idp.int.login.gov)).
+2. In the upper-right corner, click **Log in** to create an account in the login.gov IdP in the agency integration environment (at [idp.int.login.gov](https://idp.int.login.gov)).
 3. After successfully logging in, you'll see some new links in the dashboard navigation. Click **My service providers**, then **Create a new service provider** and fill out the following information in the form:
   - **User group**<br>The agency group you would like this client to be assigned to.
   - **Friendly name**<br>The name of your app that will get displayed to users when logging in.
@@ -33,11 +33,11 @@ The login.gov dashboard is the place you'll manage your team and test applicatio
   -----END CERTIFICATE-----
   ```
   - **Identity Protocol**<br>The protocol you will be using for this app, either OpenID Connect or SAML.
-  - **Redirect URIs** — *OpenID Connect only*<br>One or more URI login.gov will redirect to after authentication. These can be web URLs (public, internal, or localhost) or a custom scheme to support native applications, for example: `x-example-app:/result`
   - **Assertion Consumer Service URL** — *SAML only*<br>Your application endpoint which receives authentication assertions, for example: `https://app.agency.gov/auth/saml/sso`
   - **Assertion Consumer Logout Service URL** — *SAML only*<br>The endpoint which receives logout requests and responses, for example: `https://app.agency.gov/auth/saml/logout`
   - **SP Initiated Login URL** — *SAML only*<br>The endpoint which initializes authentication with login.gov. This is used to trigger a new authentication request and response at the SP for better usability. For example: `https://app.agency.gov/users/auth/saml/login`
-  - **Return to SP URL** — *SAML only*<br>The URL of the SP which login.gov provides to users when they wish to go directly to the SP site or cancel out of authentication. For example `https://app.agency.gov`
+  - **Return to SP URL**<br>The URL of the SP which login.gov provides to users when they wish to go directly to the SP site or cancel out of authentication. For example `https://app.agency.gov`
+  - **Redirect URIs** — *OpenID Connect only*<br>One or more URI login.gov will redirect to after authentication. These can be web URLs (public, internal, or localhost) or a custom scheme to support native applications, for example: `x-example-app:/result`
   - **Attribute bundle**<br>The possible [user attributes]({{ site.baseurl }}/attributes) to be requested by your app. Note for LOA1, only the UUID and `email` can be requested.
   - **Active**<br>Used to activate or deactivate the client.
 4. One all application details have been filled out, click the **Create** button to register the client with the login.gov IdP in the agency integration environment.

@@ -40,10 +40,7 @@ login.gov supports two ways of authenticating clients: **private_key_jwt** and *
 
 ### Auto-discovery
 
-Consistent with the specification, login.gov provides a JSON endpoint for OpenID Connect auto-discovery at:
-`/.well-known/openid-configuration`
-
-In our agency integration environment, this is available at [https://idp.int.login.gov/.well-known/openid-configuration](https://idp.int.login.gov/.well-known/openid-configuration)
+Consistent with the specification, login.gov provides a JSON endpoint for OpenID Connect auto-discovery at `/.well-known/openid-configuration`. In our agency integration environment, this is available at [https://idp.int.login.gov/.well-known/openid-configuration](https://idp.int.login.gov/.well-known/openid-configuration)
 
 ## Authorization
 
@@ -307,7 +304,7 @@ Here's an example response:
 
 ## Certificates
 
-login.gov's public key, used to verify signed JWTs (such as the `id_token`), is available in [JWK](https://tools.ietf.org/html/rfc7517) format at the `/api/openid_connect/certs` endpoint. For example, the URL in the agency integration environment is: [https://idp.int.login.gov/api/openid_connect/certs](https://idp.int.login.gov/api/openid_connect/certs)
+login.gov's public key, used to verify signed JWTs (such as the `id_token`), is available in [JWK](https://tools.ietf.org/html/rfc7517) format at the `/api/openid_connect/certs` endpoint. For example, the URL in the agency integration environment is at [https://idp.int.login.gov/api/openid_connect/certs](https://idp.int.login.gov/api/openid_connect/certs)
 
 ## Logout
 

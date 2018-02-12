@@ -65,7 +65,7 @@ Here are values needed to configure your service provider (SP) to work with logi
 
 ### Metadata
 
-Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata is available at: [**https://idp.int.login.gov/api/saml/metadata**](https://idp.int.login.gov/api/saml/metadata)
+Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata is available at [https://idp.int.login.gov/api/saml/metadata](https://idp.int.login.gov/api/saml/metadata)
 
 ## Auth
 
