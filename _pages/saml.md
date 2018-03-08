@@ -366,9 +366,6 @@ Node.js
   - [SAML 2.0 authentication with Passport](https://github.com/bergie/passport-saml)
   - [SAML 2.0 Node.js helpers](https://www.npmjs.com/package/saml2-js)
 
-C/C++
-  - [OpenSAML-C++](https://shibboleth.net/products/opensaml-cpp.html)
-
 ## Example apps
 
 The login.gov team has created example clients to speed up your development, all open source in the public domain.
