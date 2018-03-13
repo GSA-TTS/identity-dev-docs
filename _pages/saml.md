@@ -13,8 +13,6 @@ login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO
   </div>
 </div>
 
-{% include basic-auth-warn.html %}
-
 ### Contents
 
 <div markdown="1" class="compact-list">
@@ -50,14 +48,14 @@ Here are values needed to configure your service provider (SP) to work with logi
   This is the endpoint where authentication requests are sent to login.gov (aka Single Sign-on Service). For example:
 
   ```xml
-  <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.int.login.gov/api/saml/auth" />
+  <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.int.identitysandbox.gov/api/saml/auth" />
   ```
 
 - **Logout service URL and Binding**
   The single logout service URL is used to contact the Single logout profile (aka Single Logout Service). For example:
 
   ```xml
-  <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.int.login.gov/api/saml/logout" />
+  <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.int.identitysandbox.gov/api/saml/logout" />
   ```
 
 - **x509 Public Certificate**
@@ -65,7 +63,7 @@ Here are values needed to configure your service provider (SP) to work with logi
 
 ### Metadata
 
-Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata is available at [https://idp.int.login.gov/api/saml/metadata](https://idp.int.login.gov/api/saml/metadata)
+Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata is available at [https://idp.int.identitysandbox.gov/api/saml/metadata](https://idp.int.identitysandbox.gov/api/saml/metadata)
 
 ## Auth
 
@@ -74,7 +72,7 @@ Consistent with the [SAML metadata specification](https://docs.oasis-open.org/se
 To authenticate a user with login.gov, direct them to our authentication URL with a SAML authentication request as a GET param.
 
 ```bash
-https://idp.int.login.gov/api/saml/auth?SAMLRequest=${SAML_REQUEST}
+https://idp.int.identitysandbox.gov/api/saml/auth?SAMLRequest=${SAML_REQUEST}
 ```
 
 The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload of a `<samlp:AuthnRequest>`:
@@ -91,8 +89,8 @@ View example authentication request
 An example authentication request, with indentation added for readability.
 
 ```xml
-<samlp:AuthnRequest AssertionConsumerServiceURL='https://sp.int.login.gov/auth/saml/callback?utf8=%E2%9C%93&amp;loa=1'
-                    Destination='https://idp.int.login.gov/api/saml/auth'
+<samlp:AuthnRequest AssertionConsumerServiceURL='https://sp.int.identitysandbox.gov/auth/saml/callback?utf8=%E2%9C%93&amp;loa=1'
+                    Destination='https://idp.int.identitysandbox.gov/api/saml/auth'
                     ID='_6fca7b78-9ab7-49f5-bd62-18c48eac3c68'
                     IssueInstant='2017-02-23T20:36:17Z'
                     Version='2.0'
@@ -178,11 +176,11 @@ An example authentication response, after it has been base64 decoded, with inden
 <samlp:Response ID="_b28d50c0-dc35-0134-96f3-06d8bac14e9d"
                 Version="2.0"
                 IssueInstant="2017-02-23T20:36:37Z"
-                Destination="https://sp.int.login.gov/auth/saml/callback"
+                Destination="https://sp.int.identitysandbox.gov/auth/saml/callback"
                 Consent="urn:oasis:names:tc:SAML:2.0:consent:unspecified"
                 InResponseTo="_6fca7b78-9ab7-49f5-bd62-18c48eac3c68"
                 xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
-  <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://idp.int.login.gov/api/saml</Issuer>
+  <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://idp.int.identitysandbox.gov/api/saml</Issuer>
   <samlp:Status>
     <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/>
   </samlp:Status>
@@ -227,7 +225,7 @@ from all active Service Providers.
 To log a user out, direct them to the logout URL with a SAMLRequest:
 
 ```bash
-https://idp.int.login.gov/api/saml/logout?SAMLRequest=${SAML_REQUEST}
+https://idp.int.identitysandbox.gov/api/saml/logout?SAMLRequest=${SAML_REQUEST}
 ```
 
 The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload of a `<samlp:LogoutRequest>`.
@@ -242,7 +240,7 @@ View example logout request
 An example logout request payload, with indentation added for readability.
 
 ```xml
-<samlp:LogoutRequest Destination='https://idp.int.login.gov/api/saml/logout'
+<samlp:LogoutRequest Destination='https://idp.int.identitysandbox.gov/api/saml/logout'
                      ID='_7b95749b-362f-4048-900b-b8e5b839c72b'
                      IssueInstant='2017-02-23T20:36:48Z'
                      Version='2.0'
@@ -300,10 +298,10 @@ An example decoded logout response, with indentation added for readability.
 <LogoutResponse ID="_92312250-dc35-0134-8e60-02727c87f245"
                 Version="2.0"
                 IssueInstant="2017-02-23T20:35:43Z"
-                Destination="https://sp.int.login.gov/auth/saml/logout"
+                Destination="https://sp.int.identitysandbox.gov/auth/saml/logout"
                 InResponseTo="_7b95749b-362f-4048-900b-b8e5b839c72b"
                 xmlns="urn:oasis:names:tc:SAML:2.0:protocol">
-  <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://idp.int.login.gov/api/saml</Issuer>
+  <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://idp.int.identitysandbox.gov/api/saml</Issuer>
   <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
     <ds:SignedInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
       <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></ds:CanonicalizationMethod>
