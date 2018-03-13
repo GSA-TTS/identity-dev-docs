@@ -1,13 +1,11 @@
 # Ruby CircleCI 2.0 configuration file
-#
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
       # Specify the Ruby version you desire here
-      - image: circleci/ruby:2.3.4
+      - image: circleci/ruby:2.5.0
 
     working_directory: ~/identity-dev-docs
     steps:
