@@ -367,7 +367,7 @@ Node.js
 
 The login.gov team has created example clients to speed up your development, all open source in the public domain.
 
-- [Java / Spring](https://github.com/18F/identity-sp-java)
-- [Ruby / Sinatra](https://github.com/18F/identity-sp-sinatra)
-- [Ruby / Rails](https://github.com/18F/identity-sp-rails)
-- [Python / Flask](https://github.com/18F/identity-sp-python)
+- [Java / Spring](https://github.com/18F/identity-saml-java)
+- [Ruby / Sinatra](https://github.com/18F/identity-saml-sinatra)
+- [Ruby / Rails](https://github.com/18F/identity-saml-rails)
+- [Python / Flask](https://github.com/18F/identity-saml-python)
