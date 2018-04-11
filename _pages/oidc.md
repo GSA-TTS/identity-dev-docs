@@ -341,16 +341,18 @@ https://agency.gov/response?
 
 The login.gov team has created example clients to speed up your development, all open source in the public domain.
 
-- [C# / ASP.NET](https://github.com/18F/identity-openidconnect-aspnet)
+- [C# / ASP.NET](https://github.com/18F/identity-oidc-aspnet)
 - [Java / Spring Security](https://github.com/18F/identity-oidc-java-spring-security)
 - [Java / Spring Boot](https://github.com/18F/identity-oidc-java-spring-boot)
 - [Java / Spring Boot XML](https://github.com/18F/identity-oidc-java-spring-boot-xml)
-- [iOS (Swift) / AppAuth](https://github.com/18F/identity-openidconnect-ios-client)
-- [Ruby / Sinatra](https://github.com/18F/identity-openidconnect-sinatra)
+- [iOS (Swift) / AppAuth](https://github.com/18F/identity-oidc-ios)
+- [Ruby / Sinatra](https://github.com/18F/identity-oidc-sinatra)
 - [Node.js / Express.js](https://github.com/18F/identity-oidc-expressjs)
   <!-- Also: https://github.com/18F/identity-oidc-nodejs-express -->
 - [Groovy](https://github.com/18F/identity-oidc-groovy)
 - [Python / Django](https://github.com/18F/identity-oidc-python-django)
+- [Go / Gin](https://github.com/18F/identity-oidc-gin)
+- [Elixir / Phoenix](https://github.com/18F/identity-oidc-phoenix)
 
 
 [jwt]: https://jwt.io/
