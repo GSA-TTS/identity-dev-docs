@@ -10,7 +10,7 @@ login.gov user accounts are either proofed (LOA3) or not (LOA1), corresponding t
 
 | Attribute | LOA1 | LOA3 | OpenID Connect | SAML |
 | --------- | ---- | ---- | -------------- | ---- |
-| **UUID**<br>The user's [universally unique identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier), which is unique per application. | <img src="{{ site.baseurl }}/assets/img/check.svg" alt="checkmark"> | <img src="{{ site.baseurl }}/assets/img/check.svg" alt="checkmark"> | `sub` (string) | `uuid` |
+| **UUID**<br>The user's [universally unique identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier). | <img src="{{ site.baseurl }}/assets/img/check.svg" alt="checkmark"> | <img src="{{ site.baseurl }}/assets/img/check.svg" alt="checkmark"> | `sub` (string) | `uuid` |
 | **Email**<br>The user's email address. | <img src="{{ site.baseurl }}/assets/img/check.svg" alt="checkmark"> | <img src="{{ site.baseurl }}/assets/img/check.svg" alt="checkmark"> | `email` (string)<br><br>Requires the `email` scope. | `email` |
 | **First name**<br>The user's first (given) name. | | <img src="{{ site.baseurl }}/assets/img/check.svg" alt="checkmark"> | `given_name` (string)<br><br>Requires `profile` or `profile:name` scopes. | `first_name` |
 | **Last name**<br>The user's last (family) name. | | <img src="{{ site.baseurl }}/assets/img/check.svg" alt="checkmark"> | `family_name` (string)<br><br>Requires `profile` or `profile:name` scopes. | `last_name` |
