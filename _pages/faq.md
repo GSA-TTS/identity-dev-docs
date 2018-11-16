@@ -116,3 +116,12 @@ Can I embed login.gov on my site?
 No.  Login.gov only works via redirects to and from an agency site.
 </div>
 </div>
+
+<div class="usa-accordion-bordered">
+<button class="usa-accordion-button" aria-controls="authorization">
+Does login.gov handle authorization?
+</button>
+<div id="authorization" class="usa-accordion-content" markdown="1">
+No.  login.gov only handles authentication. Granting users specific access and permissions is handled on the agency side.  For example, some agencies use active directory to store what applications a user can access.
+</div>
+</div>
