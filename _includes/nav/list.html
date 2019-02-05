@@ -1,0 +1,9 @@
+{% for link in include.links -%}
+  <li class="{{ include.li_class }}">
+    {% include nav/item.html
+      link = link
+      li_class = include.li_class
+      ul_class = include.ul_class
+    %}
+  </li>
+{% endfor %}
