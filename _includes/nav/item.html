@@ -3,7 +3,13 @@
 {% else -%}
   {% assign is_current_page = false -%}
 {% endif -%}
-<a href="{{ include.link.href }}" class="{% if is_current_page %}usa-current{% endif %}">
+{% assign first_character = include.link.href | slice: 0 -%}
+{% if first_character == '#' -%}
+  {% assign href = include.link.href -%}
+{% else -%}
+  {% assign href = include.link.href | relative_url -%}
+{% endif -%}
+<a href="{{ href }}" class="{% if is_current_page %}usa-current{% endif %}">
   <span>
     {{ include.link.text | smartify }}
   </span>
