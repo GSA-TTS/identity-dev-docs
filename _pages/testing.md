@@ -5,7 +5,6 @@ lead: >
 redirect_from:
   - /registering-your-sp/
   - /register/
-layout: documentation
 ---
 
 # Using the dashboard

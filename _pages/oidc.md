@@ -4,7 +4,6 @@ lead: >
   <a href="http://openid.net">OpenID Connect</a> is a simple identity layer built on top of the OAuth 2.0 protocol. login.gov supports <a href="http://openid.net/specs/openid-connect-core-1_0.html">version 1.0</a> of the specification and conforms to the <a href="https://openid.net/wg/igov">iGov Profile</a>.
 redirect_from:
   - /openid-connect/
-layout: documentation
 sidenav:
   - text: Getting started
     href: "#getting-started"

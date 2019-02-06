@@ -27,4 +27,4 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: main
+      layout: documentation
