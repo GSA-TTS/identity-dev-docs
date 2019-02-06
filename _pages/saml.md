@@ -1,39 +1,47 @@
 ---
-title: SAML
+title: SAML developer guide
+lead: >
+  login.gov is a standard SAML identity provider, adhering to the <a href="https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile">Web Browser SSO Profile</a> with enhancements for <a href="https://pages.nist.gov/800-63-3/">NIST 800-63-3</a>.
 redirect_from:
   - /configuring-your-sp/
+sidenav:
+  - text: Getting started
+    href: "#getting-started"
+    links:
+      - text: Configuration
+        href: "#configuration"
+      - text: Metadata
+        href: "#metadata"
+  - text: Auth
+    href: "#auth"
+    links:
+      - text: Auth request
+        href: "#auth-request"
+      - text: Auth response
+        href: "#auth-response"
+  - text: Logout
+    href: "#logout"
+    links:
+      - text: Logout request
+        href: "#logout-request"
+      - text: Logout response
+        href: "#logout-response"
+  - text: SAML libraries
+    href: "#saml-libraries"
+  - text: Example apps
+    href: "#example-apps"
 ---
 
-# SAML developer guide
-
-login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile) with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/).
-
-<div class="usa-alert usa-alert-warning" >
+<div class="usa-alert usa-alert-warning">
   <div class="usa-alert-body">We strongly recommend choosing <a href="{{ site.baseurl }}/oidc">OpenID Connect</a> over SAML due to its modern, API-centric design and support for native mobile applications.
   </div>
 </div>
 
-### Contents
-
-<div markdown="1" class="compact-list">
-- [Getting started](#getting-started)
-  - [Configuration](#configuration)
-  - [Metadata](#metadata)
-- [Auth](#auth)
-  - [Auth request](#auth-request)
-  - [Auth response](#auth-response)
-- [Logout](#logout)
-  - [Logout request](#logout-request)
-  - [Logout response](#logout-response)
-- [SAML libraries](#saml-libraries)
-- [Example apps](#example-apps)
-</div>
-
-## Getting started
+# Getting started
 
 SAML is an established standard, but can be a bit complex. We recommend looking for and using a [SAML library for your language](#saml-libraries) before developing your own.
 
-### Configuration
+## Configuration
 
 Here are values needed to configure your service provider (SP) to work with login.gov:
 
@@ -61,13 +69,13 @@ Here are values needed to configure your service provider (SP) to work with logi
 - **x509 Public Certificate**
   The public certificate is used to validate the authenticity of SAML requests received from login.gov, a minimum of 2048 bits. We publish this public certificate from in our [Metadata endpoint](#metadata).
 
-### Metadata
+## Metadata
 
 Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata is available at [https://idp.int.identitysandbox.gov/api/saml/metadata2018](https://idp.int.identitysandbox.gov/api/saml/metadata2018)
 
-## Auth
+# Auth
 
-### Auth request
+## Auth request
 
 To authenticate a user with login.gov, direct them to our authentication URL with a SAML authentication request as a GET param.
 
@@ -131,7 +139,7 @@ An example authentication request, with indentation added for readability.
 </div>
 </div>
 
-#### Specifying attributes and LOA
+### Specifying attributes and LOA
 
 The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the LOA level and attributes requested.
 
@@ -154,7 +162,7 @@ An LOA3 request for email, phone, first name, last name, and SSN might look like
 
 ```
 
-### Auth response
+## Auth response
 
 After the user authenticates, login.gov will redirect and POST a form back to your registered Assertion Consumer Service URL:
 
@@ -215,9 +223,9 @@ An example authentication response, after it has been base64 decoded, with inden
 </div>
 </div>
 
-## Logout
+# Logout
 
-### Logout request
+## Logout request
 
 A log out link on your site should also log out the user from the login.gov site. The Single Logout Service mechanism at login.gov will initiate the log out process for the user from all active Service Providers.
 
@@ -275,7 +283,7 @@ An example logout request payload, with indentation added for readability.
 </div>
 </div>
 
-### Logout response
+## Logout response
 
 After, login.gov will redirect and POST a form back to your registered Assertion Consumer Service Logout URL:
 
@@ -330,7 +338,7 @@ An example decoded logout response, with indentation added for readability.
 </div>
 </div>
 
-## SAML libraries
+# SAML libraries
 
 Here's a list of open-source libraries to help speed up your SAML development.
 
@@ -363,7 +371,7 @@ Node.js
   - [SAML 2.0 authentication with Passport](https://github.com/bergie/passport-saml)
   - [SAML 2.0 Node.js helpers](https://www.npmjs.com/package/saml2-js)
 
-## Example apps
+# Example apps
 
 The login.gov team has created example clients to speed up your development, all open source in the public domain.
 

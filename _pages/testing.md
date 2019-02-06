@@ -1,15 +1,13 @@
 ---
 title: Testing your app
+lead: >
+  Once you’ve created your app and implemented an identity protocol, you can now register it in our dashboard and start testing.
 redirect_from:
   - /registering-your-sp/
   - /register/
 ---
 
-# Testing your app
-
-Once you've created your app and implemented an identity protocol, you can now register it in our dashboard and start testing.
-
-## Using the dashboard
+# Using the dashboard
 
 The login.gov dashboard is the place you'll manage your team's test applications.
 

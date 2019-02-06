@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% capture title -%}
+      {% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif -%}
+    {% endcapture -%}
+
+    <title>{{ title }}</title>
+    <meta property="og:title" content="{{ title }}">
+
+    {% if page.lead -%}
+      <meta name="description" content="{{ page.lead | strip_html }}">
+      <meta property="og:description" content="{{ page.lead | strip_html }}">
+    {% endif -%}
+
+    <meta name="twitter:card" value="summary">
+    <meta property="og:type" content="article">
+
+    <link rel="shortcut icon" type="image/ico" href="{{ site.baseurl }}/assets/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+  </head>
+
+  <body>
+    <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+    <div class="usa-banner">
+      <div class="usa-accordion">
+        <header class="usa-banner-header">
+          <div class="usa-banner-inner">
+            <div class="grid-col-auto">
+              <img class="usa-banner-header-flag" src="{{ site.baseurl }}/assets/img/favicons/favicon-57.png" alt="U.S. flag">
+            </div>
+            <div class="grid-col-fill tablet:grid-col-auto">
+              <p class="usa-banner-header-text">An official website of the United States government</p>
+              <p class="usa-banner-header-action" aria-hidden="true">Here’s how you know</p>
+            </div>
+            <button class="usa-accordion-button usa-banner-button"
+              aria-expanded="false" aria-controls="gov-banner">
+              <span class="usa-banner-button-text">Here's how you know</span>
+            </button>
+          </div>
+        </header>
+        <div class="usa-banner-content usa-accordion-content" id="gov-banner">
+          <div class="grid-row grid-gap-lg">
+            <div class="usa-banner-guidance-gov tablet:grid-col-6">
+              <img class="usa-banner-icon usa-media_block-img" src="{{ site.baseurl }}/assets/img/icon-dot-gov.svg" alt="Dot gov">
+              <div class="usa-media_block-body">
+                <p>
+                  <strong>The .gov means it’s official.</strong>
+                  <br>
+                  Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site.
+                </p>
+              </div>
+            </div>
+            <div class="usa-banner-guidance-ssl tablet:grid-col-6">
+              <img class="usa-banner-icon usa-media_block-img" src="{{ site.baseurl }}/assets/img/icon-https.svg" alt="Https">
+              <div class="usa-media_block-body">
+                <p>
+                  <strong>The site is secure.</strong>
+                  <br>
+                  The <strong>https://</strong> ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="usa-overlay"></div>
+
+    <header class="usa-header usa-header-basic" role="banner">
+      <div class="usa-nav-container">
+        <div class="usa-navbar">
+          <div class="usa-logo" id="basic-logo">
+            <a href="{{ site.baseurl }}/" title="Home" aria-label="Home">
+              <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg" class="usa-logo-img" alt="login.gov">
+              <em class="usa-logo-text">Developers</em>
+            </a>
+          </div>
+          <button class="usa-menu-btn">Menu</button>
+        </div>
+        <nav role="navigation" class="usa-nav">
+          <button class="usa-nav-close"><img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close"></button>
+          <ul class="usa-nav-primary usa-accordion">
+            {% include nav/list.html
+              links = site.data.nav.primary
+              li_class = 'usa-nav-primary-item'
+            %}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    {{ content }}
+
+    <footer class="usa-footer usa-footer-slim" role="contentinfo">
+      <div class="grid-container usa-footer-return-to-top">
+        <div class="grid-row flex-align-center">
+          <div class="grid-col flex-1">
+            <a href="#">Return to top</a>
+          </div>
+          <div class="grid-col flex-auto">
+            <a href="{{ site.github_repo_url }}/edit/master/{{ page.path }}" class="usa-button usa-button-outline">Edit this page</a>
+          </div>
+        </div>
+      </div>
+      <div class="usa-footer-secondary-section">
+        <div class="grid-container">
+          <div class="usa-footer-logo grid-row grid-gap-2">
+            <a href="https://www.gsa.gov" class="usa-footer-logo grid-row grid-gap-2" target="_blank">
+              <div class="grid-col-auto">
+                <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg" alt="U.S. General Services Administration logo" class="usa-footer-logo-img">
+              </div>
+              <div class="grid-col-auto">
+                U.S. General Services Administration
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/anchor.js"></script>
+    <script>
+      anchors.add('#main-content h1:not(.usa-accordion-heading), #main-content h2, #main-content h3, #main-content [data-anchor]');
+    </script>
+  </body>
+</html>

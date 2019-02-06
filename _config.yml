@@ -9,6 +9,9 @@ plugins:
 whitelist:
   - jekyll-redirect-from
 
+copy_to_destination:
+  - node_modules/identity-style-guide/dist/assets
+
 # Pages
 collections:
   pages:
@@ -24,4 +27,4 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: main
+      layout: documentation
