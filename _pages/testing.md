@@ -19,7 +19,7 @@ The login.gov dashboard is the place you'll manage your team's test applications
 
 # Testing IAL2
 
-IAL2 testing requires a driver's license.  To override this behavior for testing purposes you can upload a text file in place of front and back images with the following format:
+IAL2 testing requires a driver's license.  To override this behavior for testing purposes you can upload a text file with a .txt extension in place of front and back images with the following format:
 
 ```
 document:
