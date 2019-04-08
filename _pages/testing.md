@@ -21,6 +21,7 @@ The login.gov dashboard is the place you'll manage your team's test applications
 
 IAL2 testing requires a driver's license.  To override this behavior for testing purposes you can upload a text file in the following format:
 
+```
 document:
   type: license
   first_name: Susan
@@ -33,3 +34,4 @@ document:
   zipcode: '11364'
   dob: 10/06/1938
   phone: +1 314-555-1212
+```
