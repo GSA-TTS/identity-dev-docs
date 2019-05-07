@@ -313,6 +313,8 @@ Here's an example response:
 
 login.gov's public key, used to verify signed JWTs (such as the `id_token`), is available in [JWK](https://tools.ietf.org/html/rfc7517) format at the `/api/openid_connect/certs` endpoint. For example, the URL in the agency integration environment is at [https://idp.int.identitysandbox.gov/api/openid_connect/certs](https://idp.int.identitysandbox.gov/api/openid_connect/certs)
 
+This public key is rotated periodically (on at least an annual basis), so be sure to use the JWK endpoint dynamically through [auto-discovery](#auto-discovery) rather than hardcoding the public key. This ensures that your application will not require manual intervention when the login.gov public key is rotated.
+
 # Logout
 
 login.gov supports [RP-Initiated Logout](https://openid.net/specs/openid-connect-session-1_0.html#RPLogout), allowing clients to log users out of their current login.gov session and redirect them back. To log out a user, send them to the `/openid_connect/logout` endpoint with the following parameters:
