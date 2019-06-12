@@ -2,8 +2,6 @@
 title: Push Notifications
 lead: >
   login.gov supports push notifications of user account related events using the Web Push protocol.  Initially it will be limited to account delete events.  Here we document how a service provider can receive push notifications from login.gov.
-redirect_from:
-  - /push-notifications/
 sidenav:
   - text: Setup Url
     href: "#setup-url"
