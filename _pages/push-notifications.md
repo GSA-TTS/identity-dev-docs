@@ -83,7 +83,7 @@ The third string, the signature, is the result of taking the first two strings (
 
 login.gov's public key, used to verify signed JWTs, is available in [JWK](https://tools.ietf.org/html/rfc7517) format at the `/api/openid_connect/certs` endpoint. For example, the URL in the agency integration environment is at [https://idp.int.identitysandbox.gov/api/openid_connect/certs](https://idp.int.identitysandbox.gov/api/openid_connect/certs)
 
-This public key is rotated periodically (on at least an annual basis), so be sure to use the JWK endpoint dynamically through [auto-discovery](#auto-discovery) rather than hardcoding the public key. This ensures that your application will not require manual intervention when the login.gov public key is rotated.
+This public key is rotated periodically (on at least an annual basis), so be sure to use the JWK endpoint dynamically rather than hardcoding the public key. This ensures that your application will not require manual intervention when the login.gov public key is rotated.
 
 # Verify Signature
 
