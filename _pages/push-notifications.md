@@ -3,15 +3,15 @@ title: Push Notifications
 lead: >
   login.gov uses Web Push Protocol to support push notifications of events related to user accounts. This feature is initially limited to account delete events. This page documents how a service provider can set up and receive push notifications from login.gov.
 sidenav:
-  - text: Setup Url
+  - text: Setup URL
     href: "#setup-url"
-  - text: Receive Request
+  - text: Receive request
     href: "#receive-request"
-  - text: Decode Headers
+  - text: Decode headers
     href: "#decode-headers"
-  - text: Fetch Public Key
+  - text: Fetch public key
     href: "#fetch-public-key"
-  - text: Verify Signature
+  - text: Verify signature
     href: "#verify-signature"
 ---
 
