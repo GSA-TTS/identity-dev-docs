@@ -98,12 +98,12 @@ We do not remotely invalidate or expire a user's session.
 
 <h1 class="usa-accordion-heading">
 <button class="usa-accordion-button" aria-controls="ip-address">
-What are the login.gov IP's?
+What are the login.gov IP addresses?
 </button>
 </h1>
 <div id="ip-address" class="usa-accordion-container">
 <div class="usa-accordion-content" markdown="1">
-Login.gov makes no guarantees on IP's or IP ranges.  Please use the DNS when querying login.gov for the latest IPs.
+Login.gov makes no guarantees on IP addresses or ranges.  Please use the DNS when querying login.gov for the latest IPs.
 </div>
 <button class="usa-accordion-close-button">Close</button>
 </div>
