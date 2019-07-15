@@ -22,12 +22,6 @@ Set up your push_notification_url for your app in the partner dashboard. For pro
 
 # Usage
 
-## Fetch public key
-
-login.gov’s public key, which is used to verify signed JWTs, is available in [JWK](https://tools.ietf.org/html/rfc7517) format at the `/api/openid_connect/certs` endpoint. For example, the URL in the agency integration environment is at [https://idp.int.identitysandbox.gov/api/openid_connect/certs](https://idp.int.identitysandbox.gov/api/openid_connect/certs)
-
-This public key is rotated periodically (on at least an annual basis), so be sure to use the JWK endpoint dynamically rather than hardcoding the public key. This ensures that your application will not require manual intervention when the login.gov public key is rotated.
-
 ## Decode the headers
 
 
@@ -80,6 +74,11 @@ The second subfield contains the relevant information base64 encoded. Base64 dec
 
 The third string, the signature, is the result of taking the first two strings (the JWT Info and JWT Data), joining them with a dot character (which we’ll call the “unsigned token”), and signing it.
 
+## Fetch public key
+
+login.gov’s public key, which is used to verify signed JWTs, is available in [JWK](https://tools.ietf.org/html/rfc7517) format at the `/api/openid_connect/certs` endpoint. For example, the URL in the agency integration environment is at [https://idp.int.identitysandbox.gov/api/openid_connect/certs](https://idp.int.identitysandbox.gov/api/openid_connect/certs)
+
+This public key is rotated periodically (on at least an annual basis), so be sure to use the JWK endpoint dynamically rather than hardcoding the public key. This ensures that your application will not require manual intervention when the login.gov public key is rotated.
 
 ## Verify signature
 
