@@ -3,26 +3,24 @@ title: Push Notifications
 lead: >
   login.gov uses Web Push Protocol to support push notifications of events related to user accounts. This feature is currently limited to account delete events. This page documents how a service provider can set up and receive push notifications from login.gov.
 sidenav:
-  - text: Setup URL
-    href: "#setup-url"
-  - text: Receive request
-    href: "#receive-request"
-  - text: Decode headers
-    href: "#decode-headers"
-  - text: Fetch public key
-    href: "#fetch-public-key"
-  - text: Verify signature
-    href: "#verify-signature"
+  - text: How it works
+    href: "#how-it-works"
+  - text: Configuration
+    href: "#configuration"
+  - text: Usage
+    href: "#usage"
 ---
 
 # How it works
 
-When a user associated with your application deletes their account, login.gov will make a post request to the endpoint URL that you specified in the previous step. The body of the request will be an empty JSON document. The headers of the request will contain the relevant information.
+When a user associated with your application deletes their account, login.gov will make a post request to the endpoint URL that you specified. The body of the request will be an empty JSON document. The headers of the request will contain the relevant information.
 
 # Configuration
 
 ## Set up the url
 Set up your push_notification_url for your app in the partner dashboard. For production, this will be a configuration you supply to login.gov.
+
+# Usage
 
 ## Fetch public key
 
@@ -30,11 +28,7 @@ login.gov’s public key, which is used to verify signed JWTs, is available in [
 
 This public key is rotated periodically (on at least an annual basis), so be sure to use the JWK endpoint dynamically rather than hardcoding the public key. This ensures that your application will not require manual intervention when the login.gov public key is rotated.
 
-# Usage
-
-Decode the headers to extract the relevant information.
-
-## Decoding the headers
+## Decode the headers
 
 
 `Topic: account_delete`
