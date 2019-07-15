@@ -13,7 +13,7 @@ sidenav:
 
 # How it works
 
-When a user associated with your application deletes their account, login.gov will make a post request to the endpoint URL that you specified. The body of the request will be an empty JSON document. The headers of the request will contain the relevant information.
+When a user associated with your application deletes their account, login.gov will make a post request to the endpoint URL that you specified in setup. The body of the request will be an empty JSON document. The headers of the request will contain the relevant information.
 
 # Configuration
 
