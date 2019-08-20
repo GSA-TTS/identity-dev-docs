@@ -1,7 +1,7 @@
 ---
 title: Push Notifications
 lead: >
-  login.gov uses Web Push Protocol to support push notifications of events related to user accounts. This feature is currently limited to account delete events. This page documents how a service provider can set up and receive push notifications from login.gov.
+  login.gov uses Web Push Protocol to support push notifications of events related to user accounts. Push notifications are formatted as OpenID RISC Event Types. This feature is currently limited to account delete events. This page documents how a service provider can set up and receive push notifications from login.gov.
 sidenav:
   - text: How it works
     href: "#how-it-works"
@@ -56,19 +56,26 @@ When a third party receives a message, they need to get the sender’s public ke
 
 **JWT data**
 
-The second subfield contains the relevant information base64 encoded. Base64 decode the string. It contains the push notification url, the expiration time that the packet is valid for in seconds, the payload for the event (which in this case will simply be the user’s UUID), and login.gov contact information.
+The second subfield contains the relevant information base64 encoded. The data is formatted per the [OpenID RISC Event Types](https://openid.net/specs/openid-risc-event-types-1_0-ID1.html). Base64 decode the string. It contains the push notification url, the expiration time that the packet is valid for in seconds, the payload for the event (which in this case will simply be the user’s UUID), and login.gov contact information.
 
+```
 {
-
-    "aud": push_notification_url,
-
+    "iss": login.gov_root_url,
+    "iat": <issued at time in seconds since epoch>,
     "exp": <expiration time in seconds>,
-
-    "payload": { "uuid": <uuid of the user that was deleted> },
-
-    "sub": "mailto:partners@login.gov"
-
+    "jti": <JWT identifier>,
+    "aud": push_notification_url,
+    "events": {
+        "https://schemas.openid.net/secevent/risc/event-type/account-purged": {
+            "subject": {
+              "subject-type": "iss-sub",
+              "iss": <your issuer>,
+              "sub": <uuid of the user that was deleted>
+            }
+        }
+    }
 }
+```
 
 **Signature**
 
