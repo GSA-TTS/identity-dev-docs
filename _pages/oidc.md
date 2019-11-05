@@ -58,7 +58,7 @@ The authorization endpoint handles authentication and authorization of a user. T
     - `http://idmanagement.gov/ns/assurance/ial/1`
     - `http://idmanagement.gov/ns/assurance/ial/2`
     
- 
+
 #### Level of Assurance (LOA)
 
 <div class="usa-alert usa-alert-warning">
@@ -66,10 +66,10 @@ The authorization endpoint handles authentication and authorization of a user. T
   </div>
 </div>
 
-The authentication request can specify LOA levels 1 and 3 with one of these values inside the `<saml:AuthnContextClassRef>` tag:
-  - `http://idmanagement.gov/ns/assurance/loa/1`
-  - `http://idmanagement.gov/ns/assurance/loa/3`
-
+  The authentication request can specify LOA levels 1 and 3 with one of these values as the `acr_value`:
+  >  - `http://idmanagement.gov/ns/assurance/loa/1`
+  >  - `http://idmanagement.gov/ns/assurance/loa/3`
+<br>
 
 * **client_id**
   The unique identifier for the client. This will be registered with the login.gov IdP in advance.
