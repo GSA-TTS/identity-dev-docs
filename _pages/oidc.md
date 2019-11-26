@@ -54,22 +54,9 @@ Consistent with the specification, login.gov provides a JSON endpoint for OpenID
 The authorization endpoint handles authentication and authorization of a user. To present the login.gov authorization page to a user, direct them to the `/openid_connect/authorize` endpoint with the following parameters:
 
 * **acr_values**
-  The Authentication Context Class Reference values used to specify the IAL (Identity Assurance Level) of an account, either IAL1 or IAL2. This and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes) will be available in the [user info response](#user-info-response). The possible parameter values are:
-    - `http://idmanagement.gov/ns/assurance/ial/1`
-    - `http://idmanagement.gov/ns/assurance/ial/2`
-    
-
-#### Level of Assurance (LOA)
-
-<div class="usa-alert usa-alert-warning">
-  <div class="usa-alert-body">We strongly recommend using IAL for the identity proofing process. The concept of Level of Assurance (LOA) is retired by the NIST 800-63-3 digital identity guidelines, and support by login.gov for LOA requests is deprecated.
-  </div>
-</div>
-
-  The authentication request can specify LOA levels 1 and 3 with one of these values as the `acr_value`:
-  >  - `http://idmanagement.gov/ns/assurance/loa/1`
-  >  - `http://idmanagement.gov/ns/assurance/loa/3`
-<br>
+  The Authentication Context Class Reference values used to specify the LOA (level of assurance) of an account, either LOA1 or LOA3. This and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes) will be available in the [user info response](#user-info-response). The possible parameter values are:
+    - `http://idmanagement.gov/ns/assurance/loa/1`
+    - `http://idmanagement.gov/ns/assurance/loa/3`
 
 * **client_id**
   The unique identifier for the client. This will be registered with the login.gov IdP in advance.
@@ -109,7 +96,7 @@ The authorization endpoint handles authentication and authorization of a user. T
 <div markdown="1" data-example="private_key_jwt">
 ```bash
 https://idp.int.identitysandbox.gov/openid_connect/authorize?
-  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
+  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Floa%2F1&
   client_id=${CLIENT_ID}&
   nonce=${NONCE}&
   prompt=select_account&
@@ -122,7 +109,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 <div markdown="1" data-example="pkce" hidden="true">
 ```bash
 https://idp.int.identitysandbox.gov/openid_connect/authorize?
-  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
+  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Floa%2F1&
   client_id=${CLIENT_ID}&
   code_challenge=${CODE_CHALLENGE}&
   code_challenge_method=S256&
@@ -261,7 +248,7 @@ Here's an example decoded **id_token**:
 {
   "sub": "b2d2d115-1d7e-4579-b9d6-f8e84f4f56ca",
   "iss": "https://idp.int.identitysandbox.gov",
-  "acr": "http://idmanagement.gov/ns/assurance/ial/1",
+  "acr": "http://idmanagement.gov/ns/assurance/loa/1",
   "nonce": "aad0aa969c156b2dfa685f885fac7083",
   "aud": "urn:gov:gsa:openidconnect:development",
   "jti": "jC7NnU8dNNV5lisQBm1jtA",
@@ -296,7 +283,7 @@ The user info response will be a JSON object containing [user attributes]({{ sit
 
 * **phone_verified** (boolean)
   Whether the phone number has been verified. Currently, login.gov only supports verified phones.
-  Requires the `phone` scope and an IAL2 account.
+  Requires the `phone` scope and an LOA 3 account.
 
 Here's an example response:
 
