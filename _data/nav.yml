@@ -1,6 +1,8 @@
 primary:
   - text: Getting Started
     href: /
+  - text: Integration flow
+    href: /overview/
   - text: OpenID Connect
     href: /oidc/
   - text: SAML
