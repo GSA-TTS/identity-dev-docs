@@ -1,6 +1,6 @@
 primary:
-  - text: FAQ
-    href: /faq/
+  - text: Getting Started
+    href: /
   - text: OpenID Connect
     href: /oidc/
   - text: SAML
@@ -11,3 +11,5 @@ primary:
     href: /testing/
   - text: Push Notifications
     href: /push-notifications/
+  - text: FAQ
+    href: /faq/
