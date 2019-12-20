@@ -31,23 +31,13 @@ From the [U.S. Web Design System](https://designsystem.digital.gov/components/bu
 
 <button class="usa-button usa-button--big">Sign in</button> <button class="usa-button ">Sign in</button> <button class="usa-button usa-button--secondary">Sign in</button>
 
-<h1 class="usa-accordion-heading">
-<button class="usa-accordion-button" aria-controls="email">
-Component Code
-</button>
-</h1>
-<div class="usa-accordion-container">
-<div class="usa-accordion-content" markdown="1">
 
-        ```
-        <button class="usa-button usa-button--big">Sign in</button>
-        <button class="usa-button ">Sign in</button>
-        <button class="usa-button usa-button--secondary">Sign in</button>
-        ```
+```
+<button class="usa-button usa-button--big">Sign in</button>
+<button class="usa-button ">Sign in</button>
+<button class="usa-button usa-button--secondary">Sign in</button>
+```
 
-</div>
-<button class="usa-accordion-close-button">Close</button>
-</div>
 
 
 ## Copy guidelines
@@ -60,21 +50,15 @@ login.gov is a service that offers secure and private online access to governmen
 login.gov uses two-factor authentication, and stronger passwords, that meet new National Institute of Standards of Technology requirements for secure validation and verification. By using login.gov, you’ll get an extra layer of security to help protect your account against password compromises.
 
 ## Agency logo guidelines
+We will publish a logo on login.gov to help users understand that partnership between the services. Please follow these guidelines when submitting a logo:
 
-<div class="grid-container">
-<div class="grid-row">
-<div class="tablet:grid-col-2">
-<img src="{{ site.baseurl }}/assets/img/logo-guidelines.png" alt="Agency logo guidelines to be displayed on login.gov- 171px x 40px">
-</div>
-<div class="tablet:grid-col-2">We will publish a logo on login.gov to help users understand that partnership between the services. Please follow these guidelines when submitting a logo:</div>
-</div>
-</div>
+<img src="{{ site.baseurl }}/assets/img/logo-guidelines.png" alt="Agency logo guidelines to be displayed on login.gov- 171px x 40px" class="display-block grid-col flex-auto flex-align-center">
 
 
 ### Contrast and background
 **Logos should be high contrast on a transparent background**
 
-<img src="{{ site.baseurl }}/assets/img/agency-logo-contrast.png" alt="Agency logo guidelines to be displayed on login.gov- 171px x 40px" class="display-block grid-col flex-auto flex-align-center">
+<img src="{{ site.baseurl }}/assets/img/agency-logo-contrast.png" alt="Agency logo guidelines should have high contrast" class="display-block grid-col flex-auto flex-align-center">
 
 
 ### File formats accepted
