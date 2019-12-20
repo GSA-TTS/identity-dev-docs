@@ -1,0 +1,19 @@
+.usa-button--big {
+    border-radius: radius("md");
+    font-size: font-size($theme-button-font-family, "lg");
+    padding: units(2) units(3);
+  }
+
+.usa-button--secondary {
+    background-color: color("secondary");
+
+    &:hover,
+    &.usa-button--hover {
+        background-color: color("secondary-dark");
+    }
+
+    &:active,
+    &.usa-button--active {
+        background-color: color("secondary-darker");
+    }
+}

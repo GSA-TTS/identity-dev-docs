@@ -34,7 +34,7 @@ From the [U.S. Web Design System](https://designsystem.digital.gov/components/bu
 
 ```
 <button class="usa-button usa-button--big">Sign in</button>
-<button class="usa-button ">Sign in</button>
+<button class="usa-button">Sign in</button>
 <button class="usa-button usa-button--secondary">Sign in</button>
 ```
 
