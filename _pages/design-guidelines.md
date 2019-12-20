@@ -39,7 +39,6 @@ From the [U.S. Web Design System](https://designsystem.digital.gov/components/bu
 ```
 
 
-
 ## Copy guidelines
 When you first integrate with login.gov you may want to indicate to your users that your application uses login.gov for authenication or proofing. If you decide to do so, please use the following language:
 
