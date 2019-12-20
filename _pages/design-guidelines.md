@@ -10,9 +10,9 @@ sidenav:
   - text: Copy guidelines
     href: "#copy-guidelines"
   - text: Agency logos
-    href: "#agency-logos"
+    href: "#agency-logos-guidelines"
   - text: Use of login.gov logo
-    href: "#Login-logo"
+    href: "#login-logo"
 
 ---
 
