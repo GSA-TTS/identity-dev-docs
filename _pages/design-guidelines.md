@@ -38,10 +38,13 @@ Component Code
 </h1>
 <div class="usa-accordion-container">
 <div class="usa-accordion-content" markdown="1">
-Working USWDS code:
+
+        ```
         <button class="usa-button usa-button--big">Sign in</button>
         <button class="usa-button ">Sign in</button>
         <button class="usa-button usa-button--secondary">Sign in</button>
+        ```
+
 </div>
 <button class="usa-accordion-close-button">Close</button>
 </div>
@@ -60,7 +63,8 @@ login.gov uses two-factor authentication, and stronger passwords, that meet new 
 
 <div class="grid-container">
 <div class="grid-row">
-<div class="tablet:grid-col-2"><img src="{{ site.baseurl }}/assets/img/logo-guidelines.png" alt="Agency logo guidelines to be displayed on login.gov- 171px x 40px" class=""></div>
+<div class="tablet:grid-col-2">
+<img src="{{ site.baseurl }}/assets/img/logo-guidelines.png" alt="Agency logo guidelines to be displayed on login.gov- 171px x 40px">
 </div>
 <div class="tablet:grid-col-2">We will publish a logo on login.gov to help users understand that partnership between the services. Please follow these guidelines when submitting a logo:</div>
 </div>
