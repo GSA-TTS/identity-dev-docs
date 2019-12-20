@@ -29,7 +29,7 @@ From the [U.S. Web Design System](https://designsystem.digital.gov/components/bu
 
 ### Sample buttons
 
-
+<button class="usa-button usa-button--big">Sign in</button> <button class="usa-button ">Sign in</button> <button class="usa-button usa-button--secondary">Sign in</button>
 
 <h1 class="usa-accordion-heading">
 <button class="usa-accordion-button" aria-controls="email">
@@ -37,17 +37,11 @@ Component Code
 </button>
 </h1>
     <div class="usa-accordion-container">
-    <div class="usa-accordion-content" markdown="1">
-        ```
-        <button class="usa-button usa-button--big">Sign in</button>
-
-        <button class="usa-button ">Sign in</button>
-
-        <button class="usa-button usa-button--secondary">Sign in</button>
-        ```
+        <div class="usa-accordion-content" markdown="1">
+            ```<button class="usa-button usa-button--big">Sign in</button><button class="usa-button ">Sign in</button> <button class="usa-button usa-button--secondary">Sign in</button>```
+        </div>
+        <button class="usa-accordion-close-button">Close</button>
     </div>
-    <button class="usa-accordion-close-button">Close</button>
-</div>
 
 
 ## Copy guidelines
@@ -117,6 +111,6 @@ set **Styling** using **Presentations Attributes**
 <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg" class="usa-logo-img" alt="login.gov logo">
 We have a number of additional guidelines pertaining to the use of the login.gov brand and logo. Please use our guidelines so that we can provide a consistent visual experience across all government platforms.
 
-[Login.gov brand guidelines](https://design.login.gov/brand/)
+[View the login.gov brand guidelines](https://design.login.gov/brand/)
 
 
