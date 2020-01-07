@@ -49,7 +49,7 @@ login.gov is a service that offers secure and private online access to governmen
 login.gov uses two-factor authentication, and stronger passwords, that meet new National Institute of Standards of Technology requirements for secure validation and verification. By using login.gov, you’ll get an extra layer of security to help protect your account against password compromises.
 
 ## Agency logo guidelines
-We will publish a logo on login.gov to help users understand that partnership between the services. Please follow these guidelines when submitting a logo:
+We will publish your agency logo on login.gov to help users understand that partnership between the services. Please follow these guidelines when submitting a logo:
 
 <img src="{{ site.baseurl }}/assets/img/logo-guidelines.png" alt="Agency logo guidelines to be displayed on login.gov- 171px x 40px" class="display-block grid-col flex-auto flex-align-center">
 
