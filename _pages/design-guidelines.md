@@ -20,7 +20,7 @@ sidenav:
 In order to create a user-friendly login.gov integration experience, we have some suggested integration user-experience (UX) patterns that you may use on your site. These patterns follow the [U.S. Web Design System](https://designsystem.digital.gov/).
 
 ## Buttons
-The Sign-in button in should use your primary or important button color. This will help your users know that this is the next step in the process. 
+The Sign-in button should use your primary or important button color. This will help your users know that this is the next step in the process. 
 
 From the [U.S. Web Design System](https://designsystem.digital.gov/components/button/) button usability guidance:
 **Give an important action a distinctive style.** Style the button most users should click in a way that distinguishes it from other buttons on the page. Try using the `usa-button--big` variant or the most visually distinct color variant.
@@ -49,7 +49,7 @@ login.gov is a service that offers secure and private online access to governmen
 login.gov uses two-factor authentication, and stronger passwords, that meet new National Institute of Standards of Technology requirements for secure validation and verification. By using login.gov, you’ll get an extra layer of security to help protect your account against password compromises.
 
 ## Agency logo guidelines
-We will publish a logo on login.gov to help users understand that partnership between the services. Please follow these guidelines when submitting a logo:
+We will publish your agency logo on login.gov to help users understand that partnership between the services. Please follow these guidelines when submitting a logo:
 
 <img src="{{ site.baseurl }}/assets/img/logo-guidelines.png" alt="Agency logo guidelines to be displayed on login.gov- 171px x 40px" class="display-block grid-col flex-auto flex-align-center">
 
