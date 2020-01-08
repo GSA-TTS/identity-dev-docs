@@ -10,7 +10,7 @@ How does login.gov work with my site?
 </button>
 </h1>
 <div id="flow" class="usa-accordion-container">
-<div class="usa-accordion-content" markdown="1">
+<div class="usa-accordion-content" markdown="1"  aria-expanded="true">
 We encourage you to create an account directly on [login.gov](https://secure.login.gov/) or an agency partner like
 [USAJobs](https://www.usajobs.gov/) to see login.gov in action.
 Generally a site will place a login button on their site.  When the user clicks this button they redirect to login.gov
@@ -18,25 +18,6 @@ where they can sign in or create an account.  The login.gov site will be branded
 include help text for migrating existing users.
 After authenticating with login.gov they are redirected back to the agency with a unique UUID or email address that
 identifies the user.
-</div>
-<button class="usa-accordion-close-button">Close</button>
-</div>
-
-
-<h1 class="usa-accordion-heading">
-<button class="usa-accordion-button" aria-controls="programming">
-How do I integrate with login.gov?
-</button>
-</h1>
-<div id="programming" class="usa-accordion-container">
-<div class="usa-accordion-content" markdown="1">
-1. Choose a protocol: OpenID Connect or SAML.  We recommend OpenID Connect since it is a more modern and flexible
-protocol and generally leads to a quicker integration.
-2. Download a sample application in your preferred language.
-3. Get added to the sandbox where you can begin testing your applications.
-4. Customize the sample code to your needs.
-5. Once the applications are working correctly you can request to be promoted to production.
-We will add your production configuration to the next production release which occurs on two week release cycles.
 </div>
 <button class="usa-accordion-close-button">Close</button>
 </div>
