@@ -9,6 +9,8 @@ primary:
     href: /saml/
   - text: Attributes
     href: /attributes/
+  - text: Design guidelines
+    href: /design-guidelines/
   - text: Testing
     href: /testing/
   - text: Push Notifications
