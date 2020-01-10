@@ -73,8 +73,8 @@ The authorization endpoint handles authentication and authorization of a user. T
 * **code_challenge_method** — *required for PKCE*
   This must be `S256`, the only PKCE code challenge method supported.
 
-* **prompt** — *optional*
-  This can either be `select_account` (default behavior) or `login` (force a re-authorization even if a current IdP session is active).
+* **prompt** — *optional, requires administrator approval*
+  You can request permission for your application to set `prompt = login` and force a re-authorization even if a current IdP session is active. When `prompt` is not specified and users have a previously active IdP session, they are given the choice to continue authenticating or login with another account. 
 
 * **response_type**
   This must be `code`.
