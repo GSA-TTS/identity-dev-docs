@@ -74,8 +74,14 @@ The authorization endpoint handles authentication and authorization of a user. T
   This must be `S256`, the only PKCE code challenge method supported.
 
 * **prompt** — *optional, requires administrator approval*
-  You can request permission for your application to set `prompt = login` and force a re-authorization even if a current IdP session is active. When `prompt` is not specified and users have a previously active IdP session, they are given the choice to continue authenticating or login with another account. 
+  To force a re-authorization event when a current IdP session is active, you will need to set the `prompt` attribute to `login`, like this: `prompt = login`.   
 
+  Request permission for your application to do this by emailing an administrator at partners@login.gov.
+  
+  **User experience**
+  
+  If prompt is not specified and the user has an active IdP session, they are given the choice to continue authenticating or login with another account.
+  
 * **response_type**
   This must be `code`.
 
