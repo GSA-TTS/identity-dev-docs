@@ -19,7 +19,7 @@ layout: home
 
 - [Understand our flow]({{ site.baseurl }}/overview).
 - Determine your application needs, like the level of proofing and [user attributes]({{ site.baseurl }}/attributes) that will be requested.
-- Select between OpenID Connect (OIDC)]({{ site.baseurl }}/oidc) or [SAML protocol]({{ site.baseurl }}/saml) implementation protocols. Please note that we recommend OIDC.
+- Select between [OpenID Connect (OIDC)]({{ site.baseurl }}/oidc) or [SAML protocol]({{ site.baseurl }}/saml) implementation protocols. Please note that we recommend OIDC.
 - Configure your app. We have [implementation guides]({{ site.baseurl }}/oidc) and example apps to get you up and running quickly.
 - [Get added to our test sandbox encvironment](https://share.hsforms.com/16DIoo--rTU2xbNW1MShkBg3ak9e)
 - [Register your app in the sandbox dashboard and start testing]({{ site.baseurl }}/testing).
