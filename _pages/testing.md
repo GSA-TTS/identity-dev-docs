@@ -9,7 +9,7 @@ redirect_from:
 
 # Using the dashboard
 
-Login.gov provides an open sandbox enviroment to create and test integrations between login.gov and you applications. In the sandbox environment, we provide a dashboard where you can manage your test applications. While the dashboard is open to use, you must request access.
+Login.gov provides an open sandbox environment to create and test integrations between login.gov and you applications. In the sandbox environment, we provide a dashboard where you can manage your test applications. While the dashboard is open to use, you must request access.
 
 1. Request that accounts your emails get added to the dashboard application in the test sandbox environment. You can request [access here](https://share.hsforms.com/16DIoo--rTU2xbNW1MShkBg3ak9e). The login.gov team will create accounts for you and your team members. Once you have an account, head over to the dashboard at [dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov).
 2. In the upper-right corner, click **Log in**. You'll be prompted to sign in or create an account with the test login.gov IdP in the agency integration environment (hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov)). **Please note that if you already have a login.gov account that this is a test environment that is not linked to your production account.**
