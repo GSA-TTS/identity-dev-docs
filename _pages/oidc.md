@@ -29,8 +29,6 @@ sidenav:
     links:
       - text: Logout response
         href: "#logout-response"
-  - text: Example apps
-    href: "#example-apps"
 ---
 
 # Getting started
@@ -353,24 +351,6 @@ Here's an example logout response:
 https://agency.gov/response?
   state=abcdefghijklmnopabcdefghijklmnop
 ```
-
-# Example apps
-
-The login.gov team has created example clients to speed up your development, all open source in the public domain.
-
-- [C# / ASP.NET](https://github.com/18F/identity-oidc-aspnet)
-- [Java / Spring Security](https://github.com/18F/identity-oidc-java-spring-security)
-- [Java / Spring Boot](https://github.com/18F/identity-oidc-java-spring-boot)
-- [Java / Spring Boot XML](https://github.com/18F/identity-oidc-java-spring-boot-xml)
-- [iOS (Swift) / AppAuth](https://github.com/18F/identity-oidc-ios)
-- [Ruby / Sinatra](https://github.com/18F/identity-oidc-sinatra)
-- [Node.js / Express.js](https://github.com/18F/identity-oidc-expressjs)
-  <!-- Also: https://github.com/18F/identity-oidc-nodejs-express -->
-- [Groovy](https://github.com/18F/identity-oidc-groovy)
-- [Python / Django](https://github.com/18F/identity-oidc-python-django)
-- [Go / Gin](https://github.com/18F/identity-oidc-gin)
-- [Elixir / Phoenix](https://github.com/18F/identity-oidc-phoenix)
-
 
 [jwt]: https://jwt.io/
 
