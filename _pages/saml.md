@@ -32,8 +32,9 @@ sidenav:
     href: "#example-apps"
 ---
 
-<div class="usa-alert usa-alert-warning">
-  <div class="usa-alert-body">We strongly recommend choosing <a href="{{ site.baseurl }}/oidc">OpenID Connect</a> over SAML due to its modern, API-centric design and support for native mobile applications.
+<div class="usa-alert usa-alert--warning">
+  <div class="usa-alert__body">
+    <p class="usa-alert__text">We strongly recommend choosing <a href="{{ site.baseurl }}/oidc">OpenID Connect</a> over SAML due to its modern, API-centric design and support for native mobile applications.</p>
   </div>
 </div>
 
