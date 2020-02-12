@@ -6,19 +6,19 @@ layout: base
   <div class="grid-container">
     {% if page.sidenav %}
       <div class="grid-row grid-gap">
-        <aside class="usa-layout-docs-sidenav desktop:grid-col-3">
+        <aside class="usa-layout-docs__sidenav desktop:grid-col-3">
           <nav>
             <ul class="usa-sidenav">
               {% include nav/list.html
                 links = page.sidenav
-                li_class = 'usa-sidenav-item'
-                ul_class = 'usa-sidenav-sublist'
+                li_class = 'usa-sidenav__item'
+                ul_class = 'usa-sidenav__sublist'
               %}
             </ul>
           </nav>
         </aside>
 
-        <div class="usa-layout-docs-main_content desktop:grid-col-9 usa-prose">
+        <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
           <div class="usa-display">{{ page.title }}</div>
 
           {% if page.lead %}
@@ -29,7 +29,7 @@ layout: base
         </div>
       </div>
     {% else %}
-      <div class="usa-layout-docs-main_content usa-prose">
+      <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
         <div class="usa-display">{{ page.title }}</div>
 
         {% if page.lead %}
