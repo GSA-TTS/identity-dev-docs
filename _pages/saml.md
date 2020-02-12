@@ -37,11 +37,11 @@ sidenav:
   </div>
 </div>
 
-# Getting started
+## Getting started
 
 SAML is an established standard, but can be a bit complex. We recommend looking for and using a [SAML library for your language](#saml-libraries) before developing your own.
 
-## Configuration
+### Configuration
 
 Here are values needed to configure your service provider (SP) to work with login.gov:
 
@@ -69,11 +69,11 @@ Here are values needed to configure your service provider (SP) to work with logi
 - **x509 Public Certificate**
   The public certificate is used to validate the authenticity of SAML requests received from login.gov, a minimum of 2048 bits. We publish this public certificate from in our [Metadata endpoint](#metadata).
 
-## Metadata
+### Metadata
 
 Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata is available at [https://idp.int.identitysandbox.gov/api/saml/metadata2019](https://idp.int.identitysandbox.gov/api/saml/metadata2019)
 
-## Annual Certificate Rotation
+### Annual Certificate Rotation
 
 The Login.gov SAML certificate is valid for just over one year. Every spring, Login.gov adds new SAML endpoints with the current year that use a new signing certificate. (So `/api/saml/metadata2019` becomes `/api/saml/metadata2020`.)
 
@@ -81,9 +81,9 @@ The certificates are issued to create an overlap period of about a month, during
 
 The 2019 certificates for idp.int.identitysandbox.gov and secure.login.gov each expire on April 1, 2020. So the transition from 2019 to 2020 endpoints should take place in February or March 2020.
 
-# Auth
+## Auth
 
-## Auth request
+### Auth request
 
 To authenticate a user with login.gov, direct them to our authentication URL with a SAML authentication request as a GET param.
 
@@ -147,7 +147,7 @@ An example authentication request, with indentation added for readability.
 </div>
 </div>
 
-### Specifying attributes and LOA
+#### Specifying attributes and LOA
 
 The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the LOA level and attributes requested.
 
@@ -170,7 +170,7 @@ An LOA3 request for email, phone, first name, last name, and SSN might look like
 
 ```
 
-## Auth response
+### Auth response
 
 After the user authenticates, login.gov will redirect and POST a form back to your registered Assertion Consumer Service URL:
 
@@ -231,9 +231,9 @@ An example authentication response, after it has been base64 decoded, with inden
 </div>
 </div>
 
-# Logout
+## Logout
 
-## Logout request
+### Logout request
 
 A log out link on your site should also log out the user from the login.gov site. The Single Logout Service mechanism at login.gov will initiate the log out process for the user from all active Service Providers.
 
@@ -291,7 +291,7 @@ An example logout request payload, with indentation added for readability.
 </div>
 </div>
 
-## Logout response
+### Logout response
 
 After, login.gov will redirect and POST a form back to your registered Assertion Consumer Service Logout URL:
 
@@ -346,7 +346,7 @@ An example decoded logout response, with indentation added for readability.
 </div>
 </div>
 
-# SAML libraries
+## SAML libraries
 
 Here's a list of open-source libraries to help speed up your SAML development.
 
@@ -379,7 +379,7 @@ Node.js
   - [SAML 2.0 authentication with Passport](https://github.com/bergie/passport-saml)
   - [SAML 2.0 Node.js helpers](https://www.npmjs.com/package/saml2-js)
 
-# Example apps
+## Example apps
 
 The login.gov team has created example clients to speed up your development, all open source in the public domain.
 
