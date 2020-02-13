@@ -60,6 +60,12 @@ RSpec::Matchers.define :link_to_valid_internal_pages do
       rescue
         missing_pages << page
       end
+
+      uri = URI.parse(page)
+
+      if !uri.path.end_with?('/')
+        fail "Link needs to end in a trailing slash but doesn't #{page}"
+      end
     end
 
     expect(missing_pages).to be_empty
