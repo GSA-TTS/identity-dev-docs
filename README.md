@@ -14,13 +14,9 @@ docker-compose up
 open http://localhost:4000
 ```
 
+Some changes, like `_config.yml` don't get picked up automatically in Docker. You can pick up these changes by stopping/starting the cluster.
+
 Run tests
-
-```sh
-docker-compose run web bundle exec rspec spec
-```
-
-Some changes, like `_config.yml` don't get picked up automatically in Docker. You can force a re-build of the site without re-building the whole container:
 
 ```sh
 docker-compose run web make test
