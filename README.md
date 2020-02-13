@@ -28,6 +28,8 @@ You can drop into a bash shell in the container with
 docker-compose run web bash
 ```
 
+If you update the `identity-style-guide` version in `package.json` you'll need to re-install node packages with `docker-compose run web npm install`.
+
 ### Locally
 
 Run the server locally: 
