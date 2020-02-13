@@ -1,9 +1,6 @@
 {
   "name": "identity-dev-docs",
   "version": "1.0.0",
-  "scripts": {
-    "build-uswds": "mkdir -p assets/uswds; cp -R node_modules/uswds/dist assets/uswds/"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/18F/identity-dev-docs.git"

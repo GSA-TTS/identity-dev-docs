@@ -23,7 +23,7 @@ docker-compose run web bundle exec rspec spec
 Some changes, like `_config.yml` don't get picked up automatically in Docker. You can force a re-build of the site without re-building the whole container:
 
 ```sh
-docker-compose run web bundle exec jekyll build
+docker-compose run web make test
 ```
 
 You can drop into a bash shell in the container with 
@@ -46,9 +46,9 @@ Run the tests:
 make test
 ```
 
-This site uses the [U.S. Web Design Standards](https://standards.usa.gov). Use `npm` to update them:
+This site uses the [U.S. Web Design Standards](https://standards.usa.gov). To update them:
 
-```sh
-npm install
-npm run build-uswds
-```
+1. Download the [latest release](https://standards.usa.gov/download)
+2. Copy contents to `assets/`
+3. Rename directory to `uswds`
+4. Download latest [anchor.js](https://github.com/bryanbraun/anchorjs) and put in `assets/js/`
