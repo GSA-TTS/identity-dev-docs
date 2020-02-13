@@ -46,9 +46,9 @@ Run the tests:
 make test
 ```
 
-tThis site uses the [U.S. Web Design Standards](https://standards.usa.gov). To update them:
+This site uses the [U.S. Web Design Standards](https://standards.usa.gov). Use `npm` to update them:
 
-1. Download the [latest release](https://standards.usa.gov/download)
-2. Copy contents to `assets/`
-3. Rename directory to `uswds`
-4. Download latest [anchor.js](https://github.com/bryanbraun/anchorjs) and put in `assets/js/`
+```sh
+npm install
+npm run build-uswds
+```
