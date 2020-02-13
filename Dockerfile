@@ -19,11 +19,4 @@ RUN mkdir $app
 WORKDIR $app
 ADD . $app
 
-# Build the Jekyll site
-RUN bundle exec jekyll build
-
-# Build USWDS
-RUN npm run build-uswds
-RUN npm ci
-
-CMD bundle exec jekyll serve --host 0.0.0.0 --incremental
+CMD make run
