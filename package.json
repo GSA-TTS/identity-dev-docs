@@ -15,7 +15,6 @@
   "homepage": "https://github.com/18F/identity-dev-docs#readme",
   "dependencies": {
     "identity-style-guide": "^1.1.0",
-    "a11y": "^0.5.1",
     "uswds": "^2.0.2",
     "anchorjs": "^0.2.4"
   }
