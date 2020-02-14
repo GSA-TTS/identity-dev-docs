@@ -29,7 +29,7 @@ From the [U.S. Web Design System](https://designsystem.digital.gov/components/bu
 
 ### Sample buttons
 
-<button class="usa-button usa-button--big">Sign in</button> <button class="usa-button ">Sign in</button> <button class="usa-button usa-button--outline">Sign in</button>
+<button class="usa-button usa-button--big">Sign in</button> <button class="usa-button margin-y-2">Sign in</button> <button class="usa-button usa-button--outline">Sign in</button>
 
 
 ```
