@@ -7,7 +7,7 @@ redirect_from:
   - /register/
 ---
 
-# Using the dashboard
+## Using the dashboard
 
 Login.gov provides an open sandbox environment to create and test integrations between login.gov and you applications. In the sandbox environment, we provide a dashboard where you can manage your test applications. While the dashboard is open to use, you must request access.
 
@@ -18,7 +18,7 @@ Login.gov provides an open sandbox environment to create and test integrations b
 5. Start testing! If you need to trouble shoot, please send us an email and we can onboard you to our partner support slack channel and the login.gov team will help you along the way.
 6. When you're ready to go to production, please contact our team at partners@login.gov and notify us. We'll manage your application's promotion to production.
 
-# Testing IAL2
+## Testing IAL2
 
 IAL2 testing requires a driver's license.  To override this behavior for testing purposes you can upload a text file with a .txt extension in place of front and back images with the following format:
 

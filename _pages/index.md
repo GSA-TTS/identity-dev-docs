@@ -6,14 +6,14 @@ permalink: /
 layout: home
 ---
 
-<section class="usa-section usa-section-dark">
+<section class="usa-section usa-section--dark">
   <div class="grid-container">
     <div class="usa-display text-accent-cool">{{ page.title }}</div>
-    <div class="usa-font-lead">{{ page.lead }}</div>
+    <div class="usa-intro">{{ page.lead }}</div>
   </div>
 </section>
 
-<section class="grid-container usa-prose" markdown="1">
+<section class="usa-section grid-container usa-prose" markdown="1">
 
 # Get started...
 

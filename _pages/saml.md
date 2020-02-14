@@ -30,16 +30,17 @@ sidenav:
     href: "#example-application"
 ---
 
-<div class="usa-alert usa-alert-warning">
-  <div class="usa-alert-body">We strongly recommend choosing <a href="{{ site.baseurl }}/oidc/">OpenID Connect</a> over SAML due to its modern, API-centric design and support for native mobile applications.
+<div class="usa-alert usa-alert--warning">
+  <div class="usa-alert__body">
+    <p class="usa-alert__text">We strongly recommend choosing <a href="{{ site.baseurl }}/oidc/">OpenID Connect</a> over SAML due to its modern, API-centric design and support for native mobile applications.</p>
   </div>
 </div>
 
-# Getting started
+## Getting started
 
 SAML is an established standard, but can be a bit complex. We recommend looking for and using a SAML library for your language before developing your own.
 
-## Configuration
+### Configuration
 
 Here are values needed to configure your service provider (SP) to work with login.gov:
 
@@ -67,11 +68,11 @@ Here are values needed to configure your service provider (SP) to work with logi
 - **x509 Public Certificate**
   The public certificate is used to validate the authenticity of SAML requests received from login.gov, a minimum of 2048 bits. We publish this public certificate from in our [Metadata endpoint](#metadata).
 
-## Metadata
+### Metadata
 
 Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata is available at [https://idp.int.identitysandbox.gov/api/saml/metadata2019](https://idp.int.identitysandbox.gov/api/saml/metadata2019)
 
-## Annual Certificate Rotation
+### Annual Certificate Rotation
 
 The Login.gov SAML certificate is valid for just over one year. Every spring, Login.gov adds new SAML endpoints with the current year that use a new signing certificate. (So `/api/saml/metadata2019` becomes `/api/saml/metadata2020`.)
 
@@ -79,9 +80,9 @@ The certificates are issued to create an overlap period of about a month, during
 
 The 2019 certificates for idp.int.identitysandbox.gov and secure.login.gov each expire on April 1, 2020. So the transition from 2019 to 2020 endpoints should take place in February or March 2020.
 
-# Auth
+## Auth
 
-## Auth request
+### Auth request
 
 To authenticate a user with login.gov, direct them to our authentication URL with a SAML authentication request as a GET param.
 
@@ -95,11 +96,11 @@ The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload 
 SAML_REQUEST = base64(deflate(payload))
 ```
 
-<div class="usa-accordion-bordered">
-<button class="usa-accordion-button" aria-controls="authn-request-example">
+<div class="usa-accordion--bordered">
+<button class="usa-accordion__button" aria-controls="authn-request-example">
 View example authentication request
 </button>
-<div id="authn-request-example" class="usa-accordion-content" markdown="1">
+<div id="authn-request-example" class="usa-accordion__content" markdown="1">
 An example authentication request, with indentation added for readability.
 
 ```xml
@@ -145,7 +146,7 @@ An example authentication request, with indentation added for readability.
 </div>
 </div>
 
-### Specifying attributes and LOA
+#### Specifying attributes and LOA
 
 The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the LOA level and attributes requested.
 
@@ -168,7 +169,7 @@ An LOA3 request for email, phone, first name, last name, and SSN might look like
 
 ```
 
-## Auth response
+### Auth response
 
 After the user authenticates, login.gov will redirect and POST a form back to your registered Assertion Consumer Service URL:
 
@@ -179,11 +180,11 @@ SAMLResponse=${SAML_RESPONSE}
 
 The SAMLResponse is a base64-encoded XML payload that contains encrypted data.
 
-<div class="usa-accordion-bordered">
-<button class="usa-accordion-button" aria-controls="authn-response-example">
+<div class="usa-accordion--bordered">
+<button class="usa-accordion__button" aria-controls="authn-response-example">
 View example authentication response
 </button>
-<div id="authn-response-example" class="usa-accordion-content" markdown="1">
+<div id="authn-response-example" class="usa-accordion__content" markdown="1">
 An example authentication response, after it has been base64 decoded, with indentation added for readability.
 
 ```xml
@@ -229,9 +230,9 @@ An example authentication response, after it has been base64 decoded, with inden
 </div>
 </div>
 
-# Logout
+## Logout
 
-## Logout request
+### Logout request
 
 A log out link on your site should also log out the user from the login.gov site. The Single Logout Service mechanism at login.gov will initiate the log out process for the user from all active Service Providers.
 
@@ -245,11 +246,11 @@ The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload 
 
 All logout requests must be signed — we require RSA SHA-256 signatures embedded with logout requests.
 
-<div class="usa-accordion-bordered">
-<button class="usa-accordion-button" aria-controls="logout-request-example">
+<div class="usa-accordion--bordered">
+<button class="usa-accordion__button" aria-controls="logout-request-example">
 View example logout request
 </button>
-<div id="logout-request-example" class="usa-accordion-content" markdown="1">
+<div id="logout-request-example" class="usa-accordion__content" markdown="1">
 An example logout request payload, with indentation added for readability.
 
 ```xml
@@ -289,7 +290,7 @@ An example logout request payload, with indentation added for readability.
 </div>
 </div>
 
-## Logout response
+### Logout response
 
 After, login.gov will redirect and POST a form back to your registered Assertion Consumer Service Logout URL:
 
@@ -300,11 +301,11 @@ SAMLResponse=${SAML_RESPONSE}
 
 The SAMLResponse is a base64-encoded XML payload that contains encrypted data.
 
-<div class="usa-accordion-bordered">
-<button class="usa-accordion-button" aria-controls="logout-response-example">
+<div class="usa-accordion--bordered">
+<button class="usa-accordion__button" aria-controls="logout-response-example">
 View example logout response
 </button>
-<div id="logout-response-example" class="usa-accordion-content" markdown="1">
+<div id="logout-response-example" class="usa-accordion__content" markdown="1">
 An example decoded logout response, with indentation added for readability.
 
 ```xml
@@ -344,7 +345,7 @@ An example decoded logout response, with indentation added for readability.
 </div>
 </div>
 
-# Example application
+## Example application
 
 The login.gov team has created an example client to speed up your development,
 all open source in the public domain: [identity-saml-sinatra](https://github.com/18F/identity-saml-sinatra)

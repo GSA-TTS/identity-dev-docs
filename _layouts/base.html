@@ -34,26 +34,26 @@
 
     <div class="usa-banner">
       <div class="usa-accordion">
-        <header class="usa-banner-header">
-          <div class="usa-banner-inner">
+        <header class="usa-banner__header">
+          <div class="usa-banner__inner">
             <div class="grid-col-auto">
-              <img class="usa-banner-header-flag" src="{{ site.baseurl }}/assets/img/favicons/favicon-57.png" alt="U.S. flag">
+              <img class="usa-banner__header-flag" src="{{ site.baseurl }}/assets/img/us_flag_small.png" alt="U.S. flag">
             </div>
             <div class="grid-col-fill tablet:grid-col-auto">
-              <p class="usa-banner-header-text">An official website of the United States government</p>
-              <p class="usa-banner-header-action" aria-hidden="true">Here’s how you know</p>
+              <p class="usa-banner__header-text">An official website of the United States government</p>
+              <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
             </div>
-            <button class="usa-accordion-button usa-banner-button"
+            <button class="usa-accordion__button usa-banner__button"
               aria-expanded="false" aria-controls="gov-banner">
-              <span class="usa-banner-button-text">Here's how you know</span>
+              <span class="usa-banner__button-text">Here’s how you know</span>
             </button>
           </div>
         </header>
-        <div class="usa-banner-content usa-accordion-content" id="gov-banner">
+        <div class="usa-banner__content usa-accordion__content" id="gov-banner">
           <div class="grid-row grid-gap-lg">
-            <div class="usa-banner-guidance-gov tablet:grid-col-6">
-              <img class="usa-banner-icon usa-media_block-img" src="{{ site.baseurl }}/assets/img/icon-dot-gov.svg" alt="Dot gov">
-              <div class="usa-media_block-body">
+            <div class="usa-banner__guidance tablet:grid-col-6">
+              <img class="usa-banner__icon usa-media-block__img" src="{{ site.baseurl }}/assets/img/icon-dot-gov.svg" alt="Dot gov">
+              <div class="usa-media-block__body">
                 <p>
                   <strong>The .gov means it’s official.</strong>
                   <br>
@@ -61,9 +61,9 @@
                 </p>
               </div>
             </div>
-            <div class="usa-banner-guidance-ssl tablet:grid-col-6">
-              <img class="usa-banner-icon usa-media_block-img" src="{{ site.baseurl }}/assets/img/icon-https.svg" alt="Https">
-              <div class="usa-media_block-body">
+            <div class="usa-banner__guidance tablet:grid-col-6">
+              <img class="usa-banner__icon usa-media-block__img" src="{{ site.baseurl }}/assets/img/icon-https.svg" alt="Https">
+              <div class="usa-media-block__body">
                 <p>
                   <strong>The site is secure.</strong>
                   <br>
@@ -78,23 +78,23 @@
 
     <div class="usa-overlay"></div>
 
-    <header class="usa-header usa-header-basic" role="banner">
+    <header class="usa-header usa-header--basic" role="banner">
       <div class="usa-nav-container">
         <div class="usa-navbar">
           <div class="usa-logo" id="basic-logo">
             <a href="{{ site.baseurl }}/" title="Home" aria-label="Home">
-              <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg" class="usa-logo-img" alt="login.gov">
-              <em class="usa-logo-text">Developers</em>
+              <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg" class="usa-logo__img" alt="login.gov">
+              <em class="usa-logo__text">Developers</em>
             </a>
           </div>
           <button class="usa-menu-btn">Menu</button>
         </div>
         <nav role="navigation" class="usa-nav">
-          <button class="usa-nav-close"><img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close"></button>
-          <ul class="usa-nav-primary usa-accordion">
+          <button class="usa-nav__close"><img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close"></button>
+          <ul class="usa-nav__primary usa-accordion">
             {% include nav/list.html
               links = site.data.nav.primary
-              li_class = 'usa-nav-primary-item'
+              li_class = 'usa-nav__primary-item'
             %}
           </ul>
         </nav>
@@ -103,28 +103,26 @@
 
     {{ content }}
 
-    <footer class="usa-footer usa-footer-slim" role="contentinfo">
-      <div class="grid-container usa-footer-return-to-top">
+    <footer class="usa-footer usa-footer--slim" role="contentinfo">
+      <div class="grid-container usa-footer__return-to-top">
         <div class="grid-row flex-align-center">
           <div class="grid-col flex-1">
             <a href="#">Return to top</a>
           </div>
           <div class="grid-col flex-auto">
-            <a href="{{ site.github_repo_url }}/edit/master/{{ page.path }}" class="usa-button usa-button-outline">Edit this page</a>
+            <a href="{{ site.github_repo_url }}/edit/master/{{ page.path }}" class="usa-button usa-button--outline">Edit this page</a>
           </div>
         </div>
       </div>
-      <div class="usa-footer-secondary-section">
+      <div class="usa-footer__secondary-section">
         <div class="grid-container">
-          <div class="usa-footer-logo grid-row grid-gap-2">
-            <a href="https://www.gsa.gov" class="usa-footer-logo grid-row grid-gap-2" target="_blank">
-              <div class="grid-col-auto">
-                <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg" alt="U.S. General Services Administration logo" class="usa-footer-logo-img">
-              </div>
-              <div class="grid-col-auto">
-                U.S. General Services Administration
-              </div>
-            </a>
+          <div class="usa-footer__logo grid-row grid-gap-2">
+            <div class="grid-col-auto">
+              <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg" alt="U.S. General Services Administration logo" class="usa-footer__logo-img usa-footer__slim usa-footer__medium">
+            </div>
+            <div class="grid-col-auto">
+              <h3 class="usa-footer__logo-heading">U.S. General Services Administration</h3>
+            </div>
           </div>
         </div>
       </div>
@@ -133,7 +131,7 @@
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
     <script src="{{ site.baseurl }}/assets/js/anchor.js"></script>
     <script>
-      anchors.add('#main-content h1:not(.usa-accordion-heading), #main-content h2, #main-content h3, #main-content [data-anchor]');
+      anchors.add('#main-content h1:not(.usa-accordion__heading), #main-content h2, #main-content h3, #main-content [data-anchor]');
     </script>
     
     <!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
