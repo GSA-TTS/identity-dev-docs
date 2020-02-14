@@ -26,6 +26,8 @@ sidenav:
         href: "#logout-request"
       - text: Logout response
         href: "#logout-response"
+  - text: Example application
+    href: "#example-application"
 ---
 
 <div class="usa-alert usa-alert-warning">
@@ -341,3 +343,8 @@ An example decoded logout response, with indentation added for readability.
 
 </div>
 </div>
+
+# Example application
+
+The login.gov team has created an example client to speed up your development,
+all open source in the public domain: https://github.com/18F/identity-saml-sinatra

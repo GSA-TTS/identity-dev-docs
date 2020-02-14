@@ -29,6 +29,9 @@ sidenav:
     links:
       - text: Logout response
         href: "#logout-response"
+  - text: Example application
+    href: "#example-application"
+
 ---
 
 # Getting started
@@ -75,11 +78,11 @@ The authorization endpoint handles authentication and authorization of a user. T
   To force a re-authorization event when a current IdP session is active, you will need to set the `prompt` attribute to `login`, like this: `prompt = login`.   
 
   Request permission for your application to do this by emailing an administrator at partners@login.gov.
-  
+
   **User experience**
-  
+
   If prompt is not specified and the user has an active IdP session, they are given the choice to continue authenticating or login with another account.
-  
+
 * **response_type**
   This must be `code`.
 
@@ -351,6 +354,12 @@ Here's an example logout response:
 https://agency.gov/response?
   state=abcdefghijklmnopabcdefghijklmnop
 ```
+
+# Example application
+
+The login.gov team has created an example client to speed up your development,
+all open source in the public domain: https://github.com/18F/identity-oidc-sinatra
+
 
 [jwt]: https://jwt.io/
 
