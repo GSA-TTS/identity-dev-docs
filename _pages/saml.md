@@ -29,7 +29,7 @@ sidenav:
 ---
 
 <div class="usa-alert usa-alert-warning">
-  <div class="usa-alert-body">We strongly recommend choosing <a href="{{ site.baseurl }}/oidc">OpenID Connect</a> over SAML due to its modern, API-centric design and support for native mobile applications.
+  <div class="usa-alert-body">We strongly recommend choosing <a href="{{ site.baseurl }}/oidc/">OpenID Connect</a> over SAML due to its modern, API-centric design and support for native mobile applications.
   </div>
 </div>
 
@@ -151,7 +151,7 @@ The supported LOA levels area, place one of these values inside a `<saml:AuthnCo
   - `http://idmanagement.gov/ns/assurance/loa/1`
   - `http://idmanagement.gov/ns/assurance/loa/3`
 
-To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes]({{ site.baseurl }}/attributes) for the list of attributes that can be requested.
+To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes]({{ site.baseurl }}/attributes/) for the list of attributes that can be requested.
 
 An LOA3 request for email, phone, first name, last name, and SSN might look like:
 

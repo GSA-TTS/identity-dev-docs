@@ -52,7 +52,7 @@ Consistent with the specification, login.gov provides a JSON endpoint for OpenID
 The authorization endpoint handles authentication and authorization of a user. To present the login.gov authorization page to a user, direct them to the `/openid_connect/authorize` endpoint with the following parameters:
 
 * **acr_values**
-  The Authentication Context Class Reference values used to specify the LOA (level of assurance) of an account, either LOA1 or LOA3. This and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes) will be available in the [user info response](#user-info-response). The possible parameter values are:
+  The Authentication Context Class Reference values used to specify the LOA (level of assurance) of an account, either LOA1 or LOA3. This and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response). The possible parameter values are:
     - `http://idmanagement.gov/ns/assurance/loa/1`
     - `http://idmanagement.gov/ns/assurance/loa/3`
 
@@ -87,7 +87,7 @@ The authorization endpoint handles authentication and authorization of a user. T
   The URI login.gov will redirect to after a successful authorization.
 
 * **scope**
-  A space-separated string of the scopes being requested. The authorization page will display the list of attributes being requested from the user. Applications should aim to request the fewest [user attributes]({{ site.baseurl }}/attributes) and smallest scope needed. Possible values are: `openid`, `address`, `email`, `phone`, `profile:birthdate`, `profile:name`, `profile`, and `social_security_number`
+  A space-separated string of the scopes being requested. The authorization page will display the list of attributes being requested from the user. Applications should aim to request the fewest [user attributes]({{ site.baseurl }}/attributes/) and smallest scope needed. Possible values are: `openid`, `address`, `email`, `phone`, `profile:birthdate`, `profile:name`, `profile`, and `social_security_number`
 
 * **state**
   A unique value at least 32 characters in length used for maintaining state between the request and the callback. This value will be returned to the client on a successful authorization.
@@ -235,7 +235,7 @@ Here's an example token response:
 The **id_token** contains the following claims:
 
 * **iss** (string) — The issuer of the response, which will be the URL of the login.gov IdP, for example: `https://idp.int.identitysandbox.gov`
-* **sub** (string) — The subject identifier, the UUID of the login.gov user (see [user attributes]({{ site.baseurl }}/attributes)).
+* **sub** (string) — The subject identifier, the UUID of the login.gov user (see [user attributes]({{ site.baseurl }}/attributes/)).
 * **aud** (string) — The audience, which will be the `client_id`.
 * **acr** (string) — The Authentication Context Class Reference value of the returned claims, from the original [authorization request](#authorization).
 * **at_hash** (string) — The access token hash, a URL-safe base-64 encoding of the left 128 bits of the SHA256 of the `access_token` value. Provided so the client can verify the `access_token` value.
@@ -266,7 +266,7 @@ Here's an example decoded **id_token**:
 
 # User info
 
-The user info endpoint is used to retrieve [user attributes]({{ site.baseurl }}/attributes). Clients use the `access_token` from the [token response](#token-response) as a bearer token in the [HTTP Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization). To request attributes, send an HTTP GET request to the `/api/openid_connect/userinfo` endpoint, for example:
+The user info endpoint is used to retrieve [user attributes]({{ site.baseurl }}/attributes/). Clients use the `access_token` from the [token response](#token-response) as a bearer token in the [HTTP Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization). To request attributes, send an HTTP GET request to the `/api/openid_connect/userinfo` endpoint, for example:
 
 ```
 GET https://idp.int.identitysandbox.gov/api/openid_connect/userinfo
@@ -275,7 +275,7 @@ Authorization: Bearer hhJES3wcgjI55jzjBvZpNQ
 
 ## User info response
 
-The user info response will be a JSON object containing [user attributes]({{ site.baseurl }}/attributes). login.gov supports some of the [standard claims](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims) from OpenID Connect 1.0. In addition to the user attributes, the following information will also be present:
+The user info response will be a JSON object containing [user attributes]({{ site.baseurl }}/attributes/). login.gov supports some of the [standard claims](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims) from OpenID Connect 1.0. In addition to the user attributes, the following information will also be present:
 
 * **iss** (string)
   The issuer of the response, which will be the URL of the login.gov IdP, for example: `https://idp.int.identitysandbox.gov`
