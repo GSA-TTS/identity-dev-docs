@@ -29,8 +29,9 @@ sidenav:
     links:
       - text: Logout response
         href: "#logout-response"
-  - text: Example apps
-    href: "#example-apps"
+  - text: Example application
+    href: "#example-application"
+
 ---
 
 ## Getting started
@@ -77,11 +78,11 @@ The authorization endpoint handles authentication and authorization of a user. T
   To force a re-authorization event when a current IdP session is active, you will need to set the `prompt` attribute to `login`, like this: `prompt = login`.   
 
   Request permission for your application to do this by emailing an administrator at partners@login.gov.
-  
+
   **User experience**
-  
+
   If prompt is not specified and the user has an active IdP session, they are given the choice to continue authenticating or login with another account.
-  
+
 * **response_type**
   This must be `code`.
 
@@ -354,22 +355,10 @@ https://agency.gov/response?
   state=abcdefghijklmnopabcdefghijklmnop
 ```
 
-## Example apps
+## Example application
 
-The login.gov team has created example clients to speed up your development, all open source in the public domain.
-
-- [C# / ASP.NET](https://github.com/18F/identity-oidc-aspnet)
-- [Java / Spring Security](https://github.com/18F/identity-oidc-java-spring-security)
-- [Java / Spring Boot](https://github.com/18F/identity-oidc-java-spring-boot)
-- [Java / Spring Boot XML](https://github.com/18F/identity-oidc-java-spring-boot-xml)
-- [iOS (Swift) / AppAuth](https://github.com/18F/identity-oidc-ios)
-- [Ruby / Sinatra](https://github.com/18F/identity-oidc-sinatra)
-- [Node.js / Express.js](https://github.com/18F/identity-oidc-expressjs)
-  <!-- Also: https://github.com/18F/identity-oidc-nodejs-express -->
-- [Groovy](https://github.com/18F/identity-oidc-groovy)
-- [Python / Django](https://github.com/18F/identity-oidc-python-django)
-- [Go / Gin](https://github.com/18F/identity-oidc-gin)
-- [Elixir / Phoenix](https://github.com/18F/identity-oidc-phoenix)
+The login.gov team has created an example client to speed up your development,
+all open source in the public domain: [identity-oidc-sinatra](https://github.com/18F/identity-oidc-sinatra)
 
 
 [jwt]: https://jwt.io/
