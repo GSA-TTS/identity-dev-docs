@@ -98,11 +98,11 @@ The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload 
 SAML_REQUEST = base64(deflate(payload))
 ```
 
-<div class="usa-accordion-bordered">
-<button class="usa-accordion-button" aria-controls="authn-request-example">
+<div class="usa-accordion--bordered">
+<button class="usa-accordion__button" aria-controls="authn-request-example">
 View example authentication request
 </button>
-<div id="authn-request-example" class="usa-accordion-content" markdown="1">
+<div id="authn-request-example" class="usa-accordion__content" markdown="1">
 An example authentication request, with indentation added for readability.
 
 ```xml
@@ -182,11 +182,11 @@ SAMLResponse=${SAML_RESPONSE}
 
 The SAMLResponse is a base64-encoded XML payload that contains encrypted data.
 
-<div class="usa-accordion-bordered">
-<button class="usa-accordion-button" aria-controls="authn-response-example">
+<div class="usa-accordion--bordered">
+<button class="usa-accordion__button" aria-controls="authn-response-example">
 View example authentication response
 </button>
-<div id="authn-response-example" class="usa-accordion-content" markdown="1">
+<div id="authn-response-example" class="usa-accordion__content" markdown="1">
 An example authentication response, after it has been base64 decoded, with indentation added for readability.
 
 ```xml
@@ -248,11 +248,11 @@ The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload 
 
 All logout requests must be signed — we require RSA SHA-256 signatures embedded with logout requests.
 
-<div class="usa-accordion-bordered">
-<button class="usa-accordion-button" aria-controls="logout-request-example">
+<div class="usa-accordion--bordered">
+<button class="usa-accordion__button" aria-controls="logout-request-example">
 View example logout request
 </button>
-<div id="logout-request-example" class="usa-accordion-content" markdown="1">
+<div id="logout-request-example" class="usa-accordion__content" markdown="1">
 An example logout request payload, with indentation added for readability.
 
 ```xml
@@ -303,11 +303,11 @@ SAMLResponse=${SAML_RESPONSE}
 
 The SAMLResponse is a base64-encoded XML payload that contains encrypted data.
 
-<div class="usa-accordion-bordered">
-<button class="usa-accordion-button" aria-controls="logout-response-example">
+<div class="usa-accordion--bordered">
+<button class="usa-accordion__button" aria-controls="logout-response-example">
 View example logout response
 </button>
-<div id="logout-response-example" class="usa-accordion-content" markdown="1">
+<div id="logout-response-example" class="usa-accordion__content" markdown="1">
 An example decoded logout response, with indentation added for readability.
 
 ```xml
