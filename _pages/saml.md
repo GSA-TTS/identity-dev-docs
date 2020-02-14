@@ -347,4 +347,4 @@ An example decoded logout response, with indentation added for readability.
 # Example application
 
 The login.gov team has created an example client to speed up your development,
-all open source in the public domain: https://github.com/18F/identity-saml-sinatra
+all open source in the public domain: [identity-saml-sinatra](https://github.com/18F/identity-saml-sinatra)

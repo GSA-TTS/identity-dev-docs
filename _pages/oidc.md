@@ -358,7 +358,7 @@ https://agency.gov/response?
 # Example application
 
 The login.gov team has created an example client to speed up your development,
-all open source in the public domain: https://github.com/18F/identity-oidc-sinatra
+all open source in the public domain: [identity-oidc-sinatra](https://github.com/18F/identity-oidc-sinatra)
 
 
 [jwt]: https://jwt.io/
