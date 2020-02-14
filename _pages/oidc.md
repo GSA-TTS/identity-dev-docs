@@ -54,22 +54,9 @@ Consistent with the specification, login.gov provides a JSON endpoint for OpenID
 The authorization endpoint handles authentication and authorization of a user. To present the login.gov authorization page to a user, direct them to the `/openid_connect/authorize` endpoint with the following parameters:
 
 * **acr_values**
-  The Authentication Context Class Reference values used to specify the IAL (Identity Assurance Level) of an account, either IAL1 or IAL2. This and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes) will be available in the [user info response](#user-info-response). The possible parameter values are:
-    - `http://idmanagement.gov/ns/assurance/ial/1`
-    - `http://idmanagement.gov/ns/assurance/ial/2`
-    
-
-#### Level of Assurance (LOA)
-
-<div class="usa-alert usa-alert-warning">
-  <div class="usa-alert-body">We strongly recommend using IAL for the identity proofing process. The concept of Level of Assurance (LOA) is retired by the NIST 800-63-3 digital identity guidelines, and support by login.gov for LOA requests is deprecated.
-  </div>
-</div>
-
-  The authentication request can specify LOA levels 1 and 3 with one of these values as the `acr_value`:
-  >  - `http://idmanagement.gov/ns/assurance/loa/1`
-  >  - `http://idmanagement.gov/ns/assurance/loa/3`
-<br>
+  The Authentication Context Class Reference values used to specify the LOA (level of assurance) of an account, either LOA1 or LOA3. This and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response). The possible parameter values are:
+    - `http://idmanagement.gov/ns/assurance/loa/1`
+    - `http://idmanagement.gov/ns/assurance/loa/3`
 
 * **client_id**
   The unique identifier for the client. This will be registered with the login.gov IdP in advance.
@@ -86,9 +73,15 @@ The authorization endpoint handles authentication and authorization of a user. T
 * **code_challenge_method** — *required for PKCE*
   This must be `S256`, the only PKCE code challenge method supported.
 
-* **prompt** — *optional*
-  This can either be `select_account` (default behavior) or `login` (force a re-authorization even if a current IdP session is active).
+* **prompt** — *optional, requires administrator approval*
+  To force a re-authorization event when a current IdP session is active, you will need to set the `prompt` attribute to `login`, like this: `prompt = login`.   
 
+  Request permission for your application to do this by emailing an administrator at partners@login.gov.
+  
+  **User experience**
+  
+  If prompt is not specified and the user has an active IdP session, they are given the choice to continue authenticating or login with another account.
+  
 * **response_type**
   This must be `code`.
 
@@ -96,7 +89,7 @@ The authorization endpoint handles authentication and authorization of a user. T
   The URI login.gov will redirect to after a successful authorization.
 
 * **scope**
-  A space-separated string of the scopes being requested. The authorization page will display the list of attributes being requested from the user. Applications should aim to request the fewest [user attributes]({{ site.baseurl }}/attributes) and smallest scope needed. Possible values are: `openid`, `address`, `email`, `phone`, `profile:birthdate`, `profile:name`, `profile`, and `social_security_number`
+  A space-separated string of the scopes being requested. The authorization page will display the list of attributes being requested from the user. Applications should aim to request the fewest [user attributes]({{ site.baseurl }}/attributes/) and smallest scope needed. Possible values are: `openid`, `address`, `email`, `phone`, `profile:birthdate`, `profile:name`, `profile`, and `social_security_number`
 
 * **state**
   A unique value at least 32 characters in length used for maintaining state between the request and the callback. This value will be returned to the client on a successful authorization.
@@ -109,7 +102,7 @@ The authorization endpoint handles authentication and authorization of a user. T
 <div markdown="1" data-example="private_key_jwt">
 ```bash
 https://idp.int.identitysandbox.gov/openid_connect/authorize?
-  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
+  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Floa%2F1&
   client_id=${CLIENT_ID}&
   nonce=${NONCE}&
   prompt=select_account&
@@ -122,7 +115,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 <div markdown="1" data-example="pkce" hidden="true">
 ```bash
 https://idp.int.identitysandbox.gov/openid_connect/authorize?
-  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
+  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Floa%2F1&
   client_id=${CLIENT_ID}&
   code_challenge=${CODE_CHALLENGE}&
   code_challenge_method=S256&
@@ -244,7 +237,7 @@ Here's an example token response:
 The **id_token** contains the following claims:
 
 * **iss** (string) — The issuer of the response, which will be the URL of the login.gov IdP, for example: `https://idp.int.identitysandbox.gov`
-* **sub** (string) — The subject identifier, the UUID of the login.gov user (see [user attributes]({{ site.baseurl }}/attributes)).
+* **sub** (string) — The subject identifier, the UUID of the login.gov user (see [user attributes]({{ site.baseurl }}/attributes/)).
 * **aud** (string) — The audience, which will be the `client_id`.
 * **acr** (string) — The Authentication Context Class Reference value of the returned claims, from the original [authorization request](#authorization).
 * **at_hash** (string) — The access token hash, a URL-safe base-64 encoding of the left 128 bits of the SHA256 of the `access_token` value. Provided so the client can verify the `access_token` value.
@@ -261,7 +254,7 @@ Here's an example decoded **id_token**:
 {
   "sub": "b2d2d115-1d7e-4579-b9d6-f8e84f4f56ca",
   "iss": "https://idp.int.identitysandbox.gov",
-  "acr": "http://idmanagement.gov/ns/assurance/ial/1",
+  "acr": "http://idmanagement.gov/ns/assurance/loa/1",
   "nonce": "aad0aa969c156b2dfa685f885fac7083",
   "aud": "urn:gov:gsa:openidconnect:development",
   "jti": "jC7NnU8dNNV5lisQBm1jtA",
@@ -275,7 +268,7 @@ Here's an example decoded **id_token**:
 
 # User info
 
-The user info endpoint is used to retrieve [user attributes]({{ site.baseurl }}/attributes). Clients use the `access_token` from the [token response](#token-response) as a bearer token in the [HTTP Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization). To request attributes, send an HTTP GET request to the `/api/openid_connect/userinfo` endpoint, for example:
+The user info endpoint is used to retrieve [user attributes]({{ site.baseurl }}/attributes/). Clients use the `access_token` from the [token response](#token-response) as a bearer token in the [HTTP Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization). To request attributes, send an HTTP GET request to the `/api/openid_connect/userinfo` endpoint, for example:
 
 ```
 GET https://idp.int.identitysandbox.gov/api/openid_connect/userinfo
@@ -284,7 +277,7 @@ Authorization: Bearer hhJES3wcgjI55jzjBvZpNQ
 
 ## User info response
 
-The user info response will be a JSON object containing [user attributes]({{ site.baseurl }}/attributes). login.gov supports some of the [standard claims](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims) from OpenID Connect 1.0. In addition to the user attributes, the following information will also be present:
+The user info response will be a JSON object containing [user attributes]({{ site.baseurl }}/attributes/). login.gov supports some of the [standard claims](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims) from OpenID Connect 1.0. In addition to the user attributes, the following information will also be present:
 
 * **iss** (string)
   The issuer of the response, which will be the URL of the login.gov IdP, for example: `https://idp.int.identitysandbox.gov`
@@ -296,7 +289,7 @@ The user info response will be a JSON object containing [user attributes]({{ sit
 
 * **phone_verified** (boolean)
   Whether the phone number has been verified. Currently, login.gov only supports verified phones.
-  Requires the `phone` scope and an IAL2 account.
+  Requires the `phone` scope and an LOA 3 account.
 
 Here's an example response:
 

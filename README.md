@@ -2,19 +2,45 @@
 
 [View it live ❯](https://developers.login.gov/)
 
-Run the server locally:
+## Development
 
+### Docker
+
+Build and run the site
+
+```sh
+docker-compose build
+docker-compose up
+open http://localhost:4000
 ```
+
+Some changes, like `_config.yml` don't get picked up automatically in Docker. You can pick up these changes by stopping/starting the cluster.
+
+Run tests
+
+```sh
+docker-compose run web make test
+```
+
+You can drop into a bash shell in the container with 
+
+```sh
+docker-compose run web bash
+```
+
+### Locally
+
+Run the server locally: 
+
+```sh
 make run
 ```
 
-Run the tests
+Run the tests:
 
-```
+```sh
 make test
 ```
-
-## Updating the template
 
 This site uses the [U.S. Web Design Standards](https://standards.usa.gov). To update them:
 

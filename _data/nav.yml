@@ -1,13 +1,19 @@
 primary:
-  - text: FAQ
-    href: /faq/
+  - text: Getting Started
+    href: /
+  - text: Integration flow
+    href: /overview/
   - text: OpenID Connect
     href: /oidc/
   - text: SAML
     href: /saml/
   - text: Attributes
     href: /attributes/
+  - text: Design guidelines
+    href: /design-guidelines/
   - text: Testing
     href: /testing/
   - text: Push Notifications
     href: /push-notifications/
+  - text: FAQ
+    href: /faq/
