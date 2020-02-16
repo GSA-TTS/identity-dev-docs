@@ -137,7 +137,7 @@ An example authentication request, with indentation added for readability.
   <samlp:NameIDPolicy AllowCreate='true'
                       Format='urn:oasis:names:tc:SAML:1.1:nameid-format:persistent'/>
   <samlp:RequestedAuthnContext Comparison='exact'>
-    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/loa/1</saml:AuthnContextClassRef>
+    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/ial/1</saml:AuthnContextClassRef>
     <saml:AuthnContextClassRef>http://idmanagement.gov/ns/requested_attributes?ReqAttr=email,phone,first_name,last_name,ssn</saml:AuthnContextClassRef>
   </samlp:RequestedAuthnContext>
 </samlp:AuthnRequest>
@@ -146,33 +146,45 @@ An example authentication request, with indentation added for readability.
 </div>
 </div>
 
-#### Specifying attributes and LOA
+### Specifying attributes and Identity Assurance Level (IAL)
 
-The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the LOA level and attributes requested.
+The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the IAL level and attributes requested.
 
-The supported LOA levels area, place one of these values inside a `<saml:AuthnContextClassRef>` tag:
-  - `http://idmanagement.gov/ns/assurance/loa/1`
-  - `http://idmanagement.gov/ns/assurance/loa/3`
+To specify one of the supported IAL levels, place one of these values inside a `<saml:AuthnContextClassRef>` tag:
+  - `http://idmanagement.gov/ns/assurance/ial/1`
+  - `http://idmanagement.gov/ns/assurance/ial/2`
   - `http://idmanagement.gov/ns/assurance/ial/0` (also known as IALMAX)
 
 To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes]({{ site.baseurl }}/attributes/) for the list of attributes that can be requested.
 
 An IALMAX request will return IAL1 data if a user is not verified or IAL2 data if a user is verified.
 
-An LOA3 request for email, phone, first name, last name, and SSN might look like:
+An IAL2 request for email, phone, first name, last name, and SSN might look like:
 
 ```xml
 <samlp:AuthnRequest ...>
   <!-- ... -->
   <samlp:RequestedAuthnContext Comparison='exact'>
-    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/loa/3</saml:AuthnContextClassRef>
+    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/ial/2</saml:AuthnContextClassRef>
     <saml:AuthnContextClassRef>http://idmanagement.gov/ns/requested_attributes?ReqAttr=email,phone,first_name,last_name,ssn</saml:AuthnContextClassRef>
   </samlp:RequestedAuthnContext>
 </samlp:AuthnRequest>
 
 ```
 
-### Auth response
+#### Level of Assurance (LOA)
+
+<div class="usa-alert usa-alert-warning">
+  <div class="usa-alert-body">We strongly recommend using IAL for the identity proofing process. The concept of Level of Assurance (LOA) is retired by the NIST 800-63-3 digital identity guidelines, and support by login.gov for LOA requests is deprecated.
+  </div>
+</div>
+
+The authentication request can specify LOA levels 1 and 3 with one of these values inside the `<saml:AuthnContextClassRef>` tag:
+  - `http://idmanagement.gov/ns/assurance/loa/1`
+  - `http://idmanagement.gov/ns/assurance/loa/3`
+
+
+## Auth response
 
 After the user authenticates, login.gov will redirect and POST a form back to your registered Assertion Consumer Service URL:
 
