@@ -55,7 +55,7 @@ Consistent with the specification, login.gov provides a JSON endpoint for OpenID
 The authorization endpoint handles authentication and authorization of a user. To present the login.gov authorization page to a user, direct them to the `/openid_connect/authorize` endpoint with the following parameters:
 
 * **acr_values**
-  The Authentication Context Class Reference values used to specify the IAL (Identity Assurance Level) of an account, either IAL1, IAL2, or IAL0, also known as IALMAX. An IALMAX request will return IAL1 data if a user is not verified or IAL2 data if a user is verified. This and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes) will be available in the [user info response](#user-info-response). The possible parameter values are:
+  The Authentication Context Class Reference values used to specify the IAL (Identity Assurance Level) of an account, either IAL1, IAL2, or IAL0, also known as IALMAX. An IALMAX request will return IAL1 data if a user is not verified or IAL2 data if a user is verified. This and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response). The possible parameter values are:
     - `http://idmanagement.gov/ns/assurance/ial/1`
     - `http://idmanagement.gov/ns/assurance/ial/2`
     - `http://idmanagement.gov/ns/assurance/ial/0` (also known as IALMAX)
