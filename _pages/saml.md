@@ -153,11 +153,8 @@ The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp
 To specify one of the supported IAL levels, place one of these values inside a `<saml:AuthnContextClassRef>` tag:
   - `http://idmanagement.gov/ns/assurance/ial/1`
   - `http://idmanagement.gov/ns/assurance/ial/2`
-  - `http://idmanagement.gov/ns/assurance/ial/0` (also known as IALMAX)
 
 To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes]({{ site.baseurl }}/attributes/) for the list of attributes that can be requested.
-
-An IALMAX request will return IAL1 data if a user is not verified or IAL2 data if a user is verified.
 
 An IAL2 request for email, phone, first name, last name, and SSN might look like:
 
