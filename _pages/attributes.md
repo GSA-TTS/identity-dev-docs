@@ -157,6 +157,26 @@ Requires the `social_security_number` scope.
 `ssn`
 </td>
     </tr>
+    <tr>
+<td markdown="1">
+**Verification timestamp** <br />
+When the user's identity was last verified.
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+`verified_at` (number, seconds since the Unix Epoch)
+
+Requires the `profile` or `profile:verified_at` scope.
+</td>
+<td markdown="1">
+`verified_at` (string, ISO8601 format)
+</td>
+    </tr>
   </tbody>
 </table>
 
