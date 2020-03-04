@@ -160,7 +160,7 @@ Requires the `social_security_number` scope.
     <tr>
 <td markdown="1">
 **Verification timestamp** <br />
-When the user's identity was last verified.
+When the user's identity was last verified (or empty if it has never been verified)
 </td>
 <td markdown="1">
 ![checkmark][checkmark]
@@ -169,7 +169,9 @@ When the user's identity was last verified.
 ![checkmark][checkmark]
 </td>
 <td markdown="1">
-`verified_at` (number, seconds since the Unix Epoch)
+`verified_at` (number, null)
+
+Seconds since the Unix Epoc
 
 Requires the `profile` or `profile:verified_at` scope.
 </td>
