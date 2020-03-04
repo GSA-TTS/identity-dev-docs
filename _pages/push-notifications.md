@@ -20,27 +20,35 @@ When a user associated with your application deletes their account, login.gov wi
 ## Configuration
 
 ### Set up the url
-Set up your push_notification_url for your app in the partner dashboard. For production, this will be a configuration you supply to login.gov.
+Set up your `push_notification_url` for your app in the partner dashboard. For production, this will be a configuration you supply to login.gov.
 
 ## Usage
 
 ### Decode the headers
 
-`Topic: account_delete`
+```yaml
+Topic: account_delete
+```
 
 This is the type of push notification.  Initially it will only be for 'account_delete'.
 
-`Content-Type: application/json`
+```yaml
+Content-Type: application/json
+```
 
 This is the type of the packet. The payload is supplied in the headers, so the body is generally a blank json document.
 
-`Authorization: WebPush <JWT Info>.<JWT Data>.<Signature>`
+```yaml
+Authorization: WebPush <JWT Info>.<JWT Data>.<Signature>
+```
 
 This is the format specified by the [Web Push Protocol](https://developers.google.com/web/fundamentals/push-notifications/web-push-protocol).
 
 An example would be the following:
 
-`Authorization: WebPush eyJ0iJ9.eyJhdWnVrIn0.8M3h-USjDhTqQ`
+```yaml
+Authorization: WebPush eyJ0iJ9.eyJhdWnVrIn0.8M3h-USjDhTqQ
+```
 
 The subfields are as follows:
 
@@ -48,7 +56,9 @@ The subfields are as follows:
 
 The first subfield is the following JSON data base64 encoded:
 
-`{ "typ": "JWT", "alg": "RS256"}`
+```json
+{ "typ": "JWT", "alg": "RS256"}
+```
 
 A [JSON web token](https://jwt.io/) is a way of sending a message to a third party so that the receiver can validate who sent it.
 
@@ -65,16 +75,16 @@ The second subfield contains the relevant information base64 encoded. The data i
 * **events**: the event(s) delivered in this JWT. See [Supported Event Types](#supported-event-types) for details.
 
 Sample data format:
-```
+```json
 {
-    "iss": login.gov_root_url,
-    "iat": <issued at time in seconds since epoch>,
-    "exp": <expiration time in seconds>,
-    "jti": <JWT identifier>,
-    "aud": push_notification_url,
+    "iss": "<login.gov root_url>",
+    "iat": "<issued at time in seconds since epoch>",
+    "exp": "<expiration time in seconds>",
+    "jti": "<JWT identifier>",
+    "aud": "<push_notification_url>",
     "events": {
-        <event type url>: {
-          <event data>
+        "<event type url>": {
+          "<event data key>": "<event data value>"
         }
     }
 }
@@ -106,19 +116,19 @@ There are a host of libraries on [https://jwt.io/](https://jwt.io/) that can per
 
 When a user account is deleted on login.gov, the following event notification is sent out with the user's uuid in the `sub` field:
 
-```
+```json
 {
-    "iss": login.gov_root_url,
-    "iat": <issued at time in seconds since epoch>,
-    "exp": <expiration time in seconds>,
-    "jti": <JWT identifier>,
-    "aud": push_notification_url,
+    "iss": "<login.gov root_url>",
+    "iat": "<issued at time in seconds since epoch>",
+    "exp": "<expiration time in seconds>",
+    "jti": "<JWT identifier>",
+    "aud": "<push_notification_url>",
     "events": {
         "https://schemas.openid.net/secevent/risc/event-type/account-purged": {
             "subject": {
               "subject-type": "iss-sub",
-              "iss": <your issuer>,
-              "sub": <uuid of the user that was deleted>
+              "iss": "<your issuer>",
+              "sub": "<uuid of the user that was deleted>"
             }
         }
     }
