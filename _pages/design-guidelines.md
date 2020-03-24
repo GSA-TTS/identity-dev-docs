@@ -63,9 +63,9 @@ We will publish your agency logo on login.gov to help users understand that part
 ### File formats accepted
 You will be able to use a `.png` or `.svg` logo.
 #### png
-Provide both a 1x and 2x resolution png
+Provide a file that meets these requirements
 <table class="usa-table">
-  <caption>File formats</caption>
+  <caption>PNG file requirements</caption>
   <thead>
     <tr>
       <th scope="col">Resolution</th>
@@ -77,18 +77,11 @@ Provide both a 1x and 2x resolution png
   </thead>
   <tbody>
     <tr>
-      <th scope="row"><strong>1x</strong></th>
+      <th scope="row"><strong>2x</strong></th>
       <td>171px</td>
       <td>40px</td>
-      <td>@72dpi</td>
-      <td>my-agency-logo-@1x.png</td>
-    </tr>
-    <tr>
-      <th scope="row"><strong>2x</strong></th>
-      <td>342px</td>
-      <td>80px</td>
-      <td>@72dpi</td>
-      <td>my-agency-logo-@2x.png</td>
+      <td>@144dpi</td>
+      <td>my-agency-logo.png</td>
     </tr>
   </tbody>
 </table>
