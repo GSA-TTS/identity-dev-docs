@@ -58,7 +58,7 @@ The authorization endpoint handles authentication and authorization of a user. T
   The Authentication Context Class Reference values used to specify the IAL (Identity Assurance Level) of an account, either IAL1, or IAL2. This and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response). The possible parameter values are:
     - `http://idmanagement.gov/ns/assurance/ial/1`
     - `http://idmanagement.gov/ns/assurance/ial/2`
-    
+
 
 #### Level of Assurance (LOA)
 
@@ -88,7 +88,7 @@ The authorization endpoint handles authentication and authorization of a user. T
   This must be `S256`, the only PKCE code challenge method supported.
 
 * **prompt** — *optional, requires administrator approval*
-  To force a re-authorization event when a current IdP session is active, you will need to set the `prompt` attribute to `login`, like this: `prompt=login`.   
+  To force a re-authorization event when a current IdP session is active, you will need to set the `prompt` attribute to `login`, like this: `prompt=login`.  
 
   Request permission for your application to do this by emailing an administrator at partners@login.gov.
 
@@ -106,6 +106,7 @@ The authorization endpoint handles authentication and authorization of a user. T
   A space-separated string of the scopes being requested. The authorization page will display the list of attributes being requested from the user. Applications should aim to request the fewest [user attributes]({{ site.baseurl }}/attributes/) and smallest scope needed. Possible values are:
    - `openid`
    - `address`
+   - `bank_account`
    - `email`
    - `phone`
    - `profile:birthdate`
@@ -113,12 +114,20 @@ The authorization endpoint handles authentication and authorization of a user. T
    - `profile:verified_at`
    - `profile`
    - `social_security_number`
+   - `verification_document`
+   - `verification_attributes`
 
 * **state**
   A unique value at least 32 characters in length used for maintaining state between the request and the callback. This value will be returned to the client on a successful authorization.
 
 * **nonce**
   A unique value at least 32 characters in length used to verify the integrity of the `id_token` and mitigate [replay attacks](https://en.wikipedia.org/wiki/Replay_attack). This value should include per-session state and be unguessable by attackers. This value will be present in the `id_token` of the [token endpoint response](#token-response), where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. Read more about [nonce implementation](http://openid.net/specs/openid-connect-core-1_0.html#NonceNotes) in the spec.
+
+* **proofing_flow**
+  For IAL2 users, this specifies the process that login.gov uses to "proof"/verify users. Check with your login.gov partner contact to see if you are eligible to use anything other than the default flow.
+  Possible values are:
+    - `default_flow`
+    - `project_x_flow`
 
 <span class="margin-right-2">View an example for…</span><button data-example="private_key_jwt">private_key_jwt</button><button data-example="pkce">PKCE</button>
 
@@ -318,6 +327,22 @@ The user info response will be a JSON object containing [user attributes]({{ sit
   When the user's identity was last verified, as an integer timestamp representing the number of seconds since the Unix Epoch, or `null` if the account has never been verified.
   - Requires the `profile` or `profile:verified_at` scope.
 
+* **address_verified** (boolean)
+  Whether or not the user's address was verified.
+  - Requires the `verification_attributes` scope.
+
+* **bank_account** (object)
+  The user's bank account, and whether or not ownership was verified.
+  - Requires the `bank_account` scope.
+
+* **verification_document** (string, null)
+  The type of document used to verify the user's information, or `null` if the information could not
+  be verified with a document.
+  - Requires the `verification_document` scope.
+  Possible values:
+  - `"drivers_license"`
+  - `null`
+
 Here's an example response:
 
 ```json
@@ -329,6 +354,12 @@ Here's an example response:
     "region": "DC",
     "postal_code": "20001"
   },
+  "address_verified": true,
+  "bank_account": {
+    "routing_number": "12345689",
+    "account_number": "12345678912",
+    "account_holder_verified": true
+  },
   "birthdate": "1970-01-01",
   "email": "test@example.com",
   "email_verified": true,
@@ -339,7 +370,8 @@ Here's an example response:
   "phone_verified": true,
   "social_security_number": "111223333",
   "sub": "b2d2d115-1d7e-4579-b9d6-f8e84f4f56ca",
-  "verified_at": 1577854800
+  "verified_at": 1577854800,
+  "verification_document": "drivers_license"
 }
 ```
 

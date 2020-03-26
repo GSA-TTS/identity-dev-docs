@@ -179,6 +179,44 @@ Requires the `profile` or `profile:verified_at` scope.
 `verified_at` (string, ISO8601 format)
 </td>
     </tr>
+    <tr>
+<td markdown="1">
+**Bank Account** <br />
+User's bank account information
+</td>
+<td></td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+`bank_account` (object)
+
+Bank account claim, containing `account_number` (string), `routing_number` (string), and `account_holder_verified` (boolean).
+
+Requires the `bank_account` scope.
+</td>
+<td>N/A</td>
+    </tr>
+    <tr>
+<td markdown="1">
+**Verification document** <br />
+The document used to verify the user's identity
+</td>
+<td></td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+`verification_document` (string, null)
+
+The document used to verify the user's identity. Possible values:
+- `"drivers_license"`
+- `null` (the identity was not verified by a document)
+
+Requires the `verification_document` scope.
+</td>
+<td>N/A</td>
+    </tr>
   </tbody>
 </table>
 
