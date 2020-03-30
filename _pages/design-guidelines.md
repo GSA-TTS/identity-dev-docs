@@ -6,7 +6,7 @@ sidenav:
   - text: User Experience
     href: "#overview"
   - text: Sign-in guidelines
-    href: "#signin-guidelines"
+    href: "#sign-in-guidelines"
   - text: Buttons
     href: "#buttons"
   - text: Copy guidelines
