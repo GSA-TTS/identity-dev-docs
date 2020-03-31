@@ -115,10 +115,10 @@ The authorization endpoint handles authentication and authorization of a user. T
    - `social_security_number`
 
 * **state**
-  A unique value at least 32 characters in length used for maintaining state between the request and the callback. This value will be returned to the client on a successful authorization.
+  A unique value at least 22 characters in length used for maintaining state between the request and the callback. This value will be returned to the client on a successful authorization.
 
 * **nonce**
-  A unique value at least 32 characters in length used to verify the integrity of the `id_token` and mitigate [replay attacks](https://en.wikipedia.org/wiki/Replay_attack). This value should include per-session state and be unguessable by attackers. This value will be present in the `id_token` of the [token endpoint response](#token-response), where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. Read more about [nonce implementation](http://openid.net/specs/openid-connect-core-1_0.html#NonceNotes) in the spec.
+  A unique value at least 22 characters in length used to verify the integrity of the `id_token` and mitigate [replay attacks](https://en.wikipedia.org/wiki/Replay_attack). This value should include per-session state and be unguessable by attackers. This value will be present in the `id_token` of the [token endpoint response](#token-response), where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. Read more about [nonce implementation](http://openid.net/specs/openid-connect-core-1_0.html#NonceNotes) in the spec.
 
 <span class="margin-right-2">View an example for…</span><button data-example="private_key_jwt">private_key_jwt</button><button data-example="pkce">PKCE</button>
 
@@ -360,7 +360,7 @@ login.gov supports [RP-Initiated Logout](https://openid.net/specs/openid-connect
   The URI login.gov will redirect to after logout.
 
 - **state**
-  A unique value at least 32 characters in length used for maintaining state between the request and the callback. This value will be returned to the client on a successful logout.
+  A unique value at least 22 characters in length used for maintaining state between the request and the callback. This value will be returned to the client on a successful logout.
 
 Here's an example logout request:
 
