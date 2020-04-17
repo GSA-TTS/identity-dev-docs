@@ -395,7 +395,7 @@ all open source in the public domain: [identity-oidc-sinatra](https://github.com
   function showExamples(type) {
     Array.prototype.slice.call(document.querySelectorAll('button[data-example]')).forEach(function(button) {
       var show = button.getAttribute('data-example') == type;
-      button.className = show ? 'usa-button' : 'usa-button usa-button-secondary';
+      button.className = show ? 'usa-button' : 'usa-button usa-button--outline';
     });
 
     Array.prototype.slice.call(document.querySelectorAll('div[data-example]')).forEach(function(example) {
