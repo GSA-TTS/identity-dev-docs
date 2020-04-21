@@ -306,6 +306,8 @@ An example logout request payload, with indentation added for readability.
 
 After, login.gov will redirect and POST a form back to your registered Assertion Consumer Service Logout URL:
 
+Login.gov does not support Single Logout (SLO). The logout action will terminate the user's session at login.gov but will not end any other potentially active sessions within service provider applications. For example, if a user signs in to applications A and B through login.gov, a logout request from A will end their login.gov session, but will not affect the session in application B.
+
 ```bash
 POST ${ASSERTION_CONSUMER_SERVICE_LOGOUT_URL}
 SAMLResponse=${SAML_RESPONSE}
