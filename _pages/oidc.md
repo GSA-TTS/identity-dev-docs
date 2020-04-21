@@ -353,7 +353,7 @@ This public key is rotated periodically (on at least an annual basis), so be sur
 
 login.gov supports [RP-Initiated Logout](https://openid.net/specs/openid-connect-session-1_0.html#RPLogout), allowing clients to log users out of their current login.gov session and redirect them back to the Relying Party.
 
-login.gov does not support Single Logout for OpenID connect, so this will not end any sessions on any other applications that user may have already started with their same login.gov account. For example, if a user signs in to applications A and B through login.gov, a logout request from A will end their login.gov session, but will not affect the session in application B.
+login.gov does not support Single Logout for OpenID connect. Taking this action will not end any sessions on any other applications that a user may have already started with their same login.gov account. For example, if a user signs in to applications A and B through login.gov, a logout request from A will end their login.gov session, but will not affect the session in application B.
 
 To log out a user, send them to the `/openid_connect/logout` endpoint with the following parameters:
 
