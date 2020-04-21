@@ -246,7 +246,9 @@ An example authentication response, after it has been base64 decoded, with inden
 
 ### Logout request
 
-A log out link on your site should also log out the user from the login.gov site. The Single Logout Service mechanism at login.gov will initiate the log out process for the user from all active Service Providers.
+A log out link on your site should also log out the user from the login.gov site.
+
+Login.gov does not support Single Logout (SLO). The logout action will terminate the user's session at login.gov but will not end any other potentially active sessions within service provider applications. For example, if a user signs in to applications A and B through login.gov, a logout request from A will end their login.gov session, but will not affect the session in application B.
 
 To log a user out, direct them to the logout URL with a `SAMLRequest`:
 
@@ -305,8 +307,6 @@ An example logout request payload, with indentation added for readability.
 ### Logout response
 
 After, login.gov will redirect and POST a form back to your registered Assertion Consumer Service Logout URL:
-
-Login.gov does not support Single Logout (SLO). The logout action will terminate the user's session at login.gov but will not end any other potentially active sessions within service provider applications. For example, if a user signs in to applications A and B through login.gov, a logout request from A will end their login.gov session, but will not affect the session in application B.
 
 ```bash
 POST ${ASSERTION_CONSUMER_SERVICE_LOGOUT_URL}
