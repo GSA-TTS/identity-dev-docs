@@ -38,7 +38,7 @@ sidenav:
 
 ### Choosing an authentication method
 
-login.gov supports two ways of authenticating clients: **private_key_jwt** and **PKCE**.
+Login.gov supports two ways of authenticating clients: **private_key_jwt** and **PKCE**.
 
 - **private_key_jwt** (preferred for **web apps**)
   The client sends a [JSON Web Token][jwt], or JWT, signed with a private key when requesting access tokens. The corresponding public key is registered with the IdP ahead of time, similar to SAML.
@@ -345,15 +345,15 @@ Here's an example response:
 
 ## Certificates
 
-login.gov's public key, used to verify signed JWTs (such as the `id_token`), is available in [JWK](https://tools.ietf.org/html/rfc7517) format at the `/api/openid_connect/certs` endpoint. For example, the URL in the agency integration environment is at [https://idp.int.identitysandbox.gov/api/openid_connect/certs](https://idp.int.identitysandbox.gov/api/openid_connect/certs)
+Login.gov's public key, used to verify signed JWTs (such as the `id_token`), is available in [JWK](https://tools.ietf.org/html/rfc7517) format at the `/api/openid_connect/certs` endpoint. For example, the URL in the agency integration environment is at [https://idp.int.identitysandbox.gov/api/openid_connect/certs](https://idp.int.identitysandbox.gov/api/openid_connect/certs)
 
 This public key is rotated periodically (on at least an annual basis), so be sure to use the JWK endpoint dynamically through [auto-discovery](#auto-discovery) rather than hardcoding the public key. This ensures that your application will not require manual intervention when the login.gov public key is rotated.
 
 ## Logout
 
-login.gov supports [RP-Initiated Logout](https://openid.net/specs/openid-connect-session-1_0.html#RPLogout), allowing clients to log users out of their current login.gov session and redirect them back to the Relying Party.
+Login.gov supports [RP-Initiated Logout](https://openid.net/specs/openid-connect-session-1_0.html#RPLogout), allowing clients to log users out of their current login.gov session and redirect them back to the Relying Party.
 
-login.gov does not support Single Logout for OpenID Connect. Logging out will not end any other sessions that a user may have open on another application. For example, if a user signs in to applications A and B through login.gov, a logout request from A will end their login.gov session, but will not affect the session in application B.
+Login.gov does not support Single Logout for OpenID Connect. Logging out will not end any other sessions that a user may have open on another application. For example, if a user signs in to applications A and B through login.gov, a logout request from A will end their login.gov session, but will not affect the session in application B.
 
 To log out a user, send them to the `/openid_connect/logout` endpoint with the following parameters:
 
