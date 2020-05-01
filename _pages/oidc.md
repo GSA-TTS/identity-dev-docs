@@ -58,7 +58,7 @@ The authorization endpoint handles authentication and authorization of a user. T
   The Authentication Context Class Reference values used to specify the IAL (Identity Assurance Level) of an account, either IAL1, or IAL2. This and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response). The possible parameter values are:
     - `http://idmanagement.gov/ns/assurance/ial/1`
     - `http://idmanagement.gov/ns/assurance/ial/2`
-    
+
 
 #### Level of Assurance (LOA)
 
@@ -84,13 +84,13 @@ The authorization endpoint handles authentication and authorization of a user. T
   => "TdzfmaWefbtaI0Wdo6lrZCXpLu1WpamnSoSHfDUiL7Y="
   ```
 
-* **code_challenge_method** — *required for PKCE*
+* **code_challenge_method** -- *required for PKCE*
   This must be `S256`, the only PKCE code challenge method supported.
 
-* **prompt** — *optional, requires administrator approval*
-  To force a re-authorization event when a current IdP session is active, you will need to set the `prompt` attribute to `login`, like this: `prompt=login`.   
+* **prompt** -- *optional, requires administrator approval*
+  To force a re-authorization event when a current IdP session is active, you will need to set the `prompt` attribute to `login`, like this: `prompt=login`.  
 
-  Request permission for your application to do this by emailing an administrator at partners@login.gov.
+  Request permission for your application to do this by emailing an administrator at <partners@login.gov>.
 
   **User experience**
 
@@ -119,6 +119,22 @@ The authorization endpoint handles authentication and authorization of a user. T
 
 * **nonce**
   A unique value at least 22 characters in length used to verify the integrity of the `id_token` and mitigate [replay attacks](https://en.wikipedia.org/wiki/Replay_attack). This value should include per-session state and be unguessable by attackers. This value will be present in the `id_token` of the [token endpoint response](#token-response), where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. Read more about [nonce implementation](http://openid.net/specs/openid-connect-core-1_0.html#NonceNotes) in the spec.
+
+* **verified_within** -- *optional, only applies to IAL2*
+  Specifies how recently the user's IAL2 information must be verified. For example, if your application requires that the user's data must have been verified within the last year, you can set the value to `verified_within=1y`, and customers whose data is older than that will go through the identity proofing process again before continuing back to your application.
+
+  The shortest value allowed for this parameter is 30 days (`30d`) because of the cost of proofing, as well as the time it takes for backend proofing sources to be updated.
+
+  The format for this value is **`xD`**, where **`x`** is an integer number and **`D`** specifies the duration. **`D`** can be:
+    * `d` for number of days
+      * Example: `45d`
+    * `w` for a number of weeks
+      * Example: `8w` (equivalent to `56d`)
+    * `m` for a number of months (assumed to be 30-day months)
+      * Example: `18m` (equivalent to `540d`)
+    * `y` for a number of years (assumed to be 365-day years)
+      * Example: `2y` (equivalent to `730d`)
+
 
 <span class="margin-right-2">View an example for…</span><button data-example="private_key_jwt">private_key_jwt</button><button data-example="pkce">PKCE</button>
 
