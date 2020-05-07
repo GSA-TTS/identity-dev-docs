@@ -205,7 +205,7 @@ https://agency.gov/response?
 Clients use the token endpoint to exchange the authorization `code` for an `id_token` and `access_token`. To request a token, send a HTTP POST request to the `/api/openid_connect/token` endpoint with the following parameters in the request body:
 
 * **client_assertion** — *required for private_key_jwt*
-  A [JWT][jwt] signed with the client's private key and containing the following claims:
+  A [JWT][jwt] signed with the client's private key using the **RS256** algorithm and containing the following claims:
     * **iss** (string) — The issuer, which must be the `client_id`.
     * **sub** (string) — The subject, which must also be the `client_id`.
     * **aud** (string) — The audience, which should be (or, in the case of multiple audience values, include) the URL of the token endpoint, for example: `https://idp.int.identitysandbox.gov/api/openid_connect/token`
