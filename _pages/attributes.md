@@ -179,6 +179,64 @@ Requires the `profile` or `profile:verified_at` scope.
 `verified_at` (string, ISO8601 format)
 </td>
     </tr>
+    -----------------------------
+    <tr>
+<td markdown="1">
+**x509** <br />
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+`x509` (string) 
+
+Requires the `x509` scope
+</td>
+<td markdown="1">
+`x509`
+</td>
+    </tr>
+    <tr>
+<td markdown="1">
+**x509 Subject** <br />
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+`x509_subject` (string)
+
+Requires the `x509:subject` scope
+</td>
+<td markdown="1">
+`x509_subject`
+</td>
+    </tr>
+    <tr>
+<td markdown="1">
+**x509 Presented** <br />
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+`x509_presented` (string)
+
+Requires the `x509_presented` scope.
+</td>
+<td markdown="1">
+`x509_presented`
+</td>
+    </tr>
   </tbody>
 </table>
 
