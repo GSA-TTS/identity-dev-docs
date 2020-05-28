@@ -1,0 +1,17 @@
+.usa-button--big {
+  border-radius: .25rem;
+  font-size: 1.33rem;
+  padding: 1rem 1.5rem;
+}
+
+.usa-button--secondary {
+  background-color: #d83933;
+  &:hover,
+  &.usa-button--hover {
+    background-color: #b50909;
+  }
+  &:active,
+  &.usa-button--active {
+    background-color: #8b0a03;
+  }
+}
