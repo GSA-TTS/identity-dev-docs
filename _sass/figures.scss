@@ -1,0 +1,17 @@
+.usa-prose {
+  figure {
+    max-width: 64ex;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+
+    img {
+      width: 100%;
+      margin-bottom: 0.5em;
+    }
+
+    figcaption {
+      font-size: .8em;
+    }
+  }
+}
