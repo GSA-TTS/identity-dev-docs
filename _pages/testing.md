@@ -22,6 +22,10 @@ Anybody with an email address ending in .gov or .mil can create an account in th
 5. Start testing! If you need to troubleshoot, please [send us an email](mailto:partners@login.gov) and we can onboard you to our partner support Slack channel and the login.gov team will help you along the way.
 6. When you're ready to go to production, please contact our team at [partners@login.gov](mailto:partners@login.gov) and notify us. We'll manage your application's promotion to production.
 
+## Automated/Load Testing
+
+Our sandbox environment is smaller than our production environment and it is shared by many of our partners. For this reason, we ask you to reach out to us at partners@login.gov before performing automated tests that will exceed 1000 requests/minute. We are happy to discuss options to meet your needs.
+
 ## Testing IAL2
 
 IAL2 testing requires a driver's license.  To override this behavior for testing purposes you can upload a text file with a .txt extension in place of front and back images with the following format:
