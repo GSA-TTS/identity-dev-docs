@@ -195,6 +195,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
   - `invalid_request` — The authorization request was invalid. See the `error_description` parameter for more details.
 - **error_description** — A description of the error.
 - **state** — The `state` value originally provided by the client.
+- **id_token** - (See id_token in [token response](#token-response) for more detail)
 
 For example:
 
@@ -264,7 +265,7 @@ The token response will be a JSON object containing the following:
   The number of seconds the access token will expire.
 
 * **id_token** (string)
-  A signed [JWT][jwt] that contains basic attributes about the user. The public key used to verify this JWT is available from the [certificates](#certificates) endpoint.
+  A signed [JWT][jwt] that contains basic attributes about the user and it is signed using RS256. The public key used to verify this JWT is available from the [certificates](#certificates) endpoint.
 
 Here's an example token response:
 
