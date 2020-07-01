@@ -195,7 +195,6 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
   - `invalid_request` — The authorization request was invalid. See the `error_description` parameter for more details.
 - **error_description** — A description of the error.
 - **state** — The `state` value originally provided by the client.
-- **id_token** - (See id_token in [token response](#token-response) for more detail)
 
 For example:
 
