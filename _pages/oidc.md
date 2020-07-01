@@ -264,7 +264,7 @@ The token response will be a JSON object containing the following:
   The number of seconds the access token will expire.
 
 * **id_token** (string)
-  A signed [JWT][jwt] that contains basic attributes about the user and it is signed using RS256. The public key used to verify this JWT is available from the [certificates](#certificates) endpoint.
+  A signed [JWT][jwt] that contains basic attributes about the user and it is signed using the **RS256** algorithm. The public key used to verify this JWT is available from the [certificates](#certificates) endpoint.
 
 Here's an example token response:
 
