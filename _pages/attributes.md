@@ -195,7 +195,9 @@ Requires the `profile` or `profile:verified_at` scope.
 
 Requires the `x509` scope
 </td>
-<td></td>
+<td markdown="1">
+(unavailable)
+</td>
     </tr>
     <tr>
 <td markdown="1">
@@ -212,7 +214,9 @@ Requires the `x509` scope
 
 Requires the `x509:subject` scope
 </td>
-<td></td>
+<td markdown="1">
+(unavailable)
+</td>
     </tr>
     <tr>
 <td markdown="1">
@@ -229,7 +233,9 @@ Requires the `x509:subject` scope
 
 Requires the `x509_presented` scope.
 </td>
-<td></td>
+<td markdown="1">
+(unavailable)
+</td>
     </tr>
   </tbody>
 </table>
