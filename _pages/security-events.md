@@ -43,7 +43,7 @@ https://schemas.openid.net/secevent/risc/event-type/account-credential-change-re
 
 ## Submitting a Security Event Token (SET)
 
-login.gov supports [Push-Based SET Token Delivery Using HTTP][push-http]. The SETs are signed [JWTs (JSON Web Tokens)](https://jwt.io/), similar to those used in the [OpenID Connect Authorization]({{site.baseurl}}/oidc) flow.
+login.gov supports [Push-Based SET Token Delivery Using HTTP][push-http]. The SETs are signed [JWTs (JSON Web Tokens)](https://jwt.io/), similar to those used in the [OpenID Connect Authorization]({{site.baseurl}}/oidc/) flow.
 
 The [OpenID RISC Profile][openid-risc-events-profile] defines some very specific properties of these JWTs, and login.gov will validate against them, providing clear error messages where possible.
 
