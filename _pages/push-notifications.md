@@ -70,7 +70,7 @@ The second subfield contains the relevant information base64 encoded. The data i
 * **iss**: the base URL of the login.gov system issuing the event
 * **iat**: the time (seconds since epoch) when the event was issued
 * **exp**: the time (seconds since epoch) when the event expires
-* **jit**: the JWT identifier
+* **jti**: the JWT identifier
 * **aud**: the push notification url
 * **events**: the event(s) delivered in this JWT. See [Supported Event Types](#supported-event-types) for details.
 
