@@ -49,7 +49,7 @@ The [OpenID RISC Profile][openid-risc-events-profile] defines some very specific
 
 ### Request
 
-To submit an SET, send a HTTP POST request to the `/api/security_events` endpoint. The body of the request is a signed JWT.
+To submit an SET, send a HTTP POST request to the `/api/risc/security_events` endpoint. The body of the request is a signed JWT.
 
 JWTs must be signed by the client application's private key using **RS256**, the same one used for the `private_key_jwt` flow for OpenID Connect.
 
@@ -69,7 +69,7 @@ JWTs must be signed by the client application's private key using **RS256**, the
 #### JWT Claims
 
 * **aud** (required)
-  The audience for this JWT, which is the full URL for the `/api/security_events` endpoint. In the agency integration environment, this is `https://idp.int.identitysandbox.gov/api/security_events`
+  The audience for this JWT, which is the full URL for the `/api/risc/security_events` endpoint. In the agency integration environment, this is `https://idp.int.identitysandbox.gov/api/risc/security_events`
 
 * **iat**
   Time at which the JWT was issued, an integer timestamp representing the number of seconds since the Unix Epoch.
@@ -144,7 +144,7 @@ With the JWT headers of:
 After being encoded as a JWT and signed with a private key, the entire request would look like:
 
 ```
-POST /api/security_events
+POST /api/risc/security_events
 Content-Type: application/secevent+jwt
 Accept: application/json
 eyJ0eXAiOiJzZWNldmVudCtqd3QiLCJhbGciOiJSUzI1NiJ9
