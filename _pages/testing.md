@@ -28,7 +28,7 @@ Our sandbox environment is smaller than our production environment and it is sha
 
 ## Testing IAL2
 
-The login.gov sandbox test environment is configured to pass most information that is entered during the IAL2 flow. This allows the proofing flow to be tested without the need to enter Personally identifiable information (PII). There are special values that can be entered to simulate error states while testing in the login.gov sandbox environment.
+The login.gov sandbox test environment is configured to pass most information that is entered during the IAL2 flow. This allows the proofing flow to be tested without the need to enter personally identifiable information (PII). There are special values that can be entered to simulate error states while testing in the login.gov sandbox environment.
 
 ### Document upload
 
