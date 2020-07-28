@@ -49,7 +49,7 @@ The [OpenID RISC Profile][openid-risc-events-profile] defines some very specific
 
 ### Request
 
-To submit an SET, send a HTTP POST request to the `/api/risc/security_events` endpoint. The body of the request is a signed JWT.
+To submit a SET, send an HTTP POST request to the `/api/risc/security_events` endpoint. The body of the request is a signed JWT.
 
 JWTs must be signed by the client application's private key using **RS256**, the same one used for the `private_key_jwt` flow for OpenID Connect.
 
@@ -158,7 +158,7 @@ uN5dzVUnJvjFoFuh3F9yYwNDKie2kWkUOMpG7BEyVsObmsCPec1OFfshzBnnbdeUAyGMfhNyid11UsGr
 
 #### Successful response
 
-A successful SET submission will receive an empty response body with an 202 "Accepted" status.
+A successful SET submission will receive an empty response body with a 202 "Accepted" status.
 
 ```
 HTTP/1.1 202 Accepted
