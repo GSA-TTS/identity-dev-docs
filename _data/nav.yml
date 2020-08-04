@@ -15,5 +15,7 @@ primary:
     href: /testing/
   - text: Push Notifications
     href: /push-notifications/
+  - text: Security
+    href: /security-events/
   - text: FAQ
     href: /faq/
