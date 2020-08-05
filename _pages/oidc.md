@@ -63,15 +63,7 @@ The authorization endpoint handles authentication and authorization of a user. T
 * **acr_values**
   The Authentication Context Class Reference requests can be used to specify the IAL (Identity Assurance Level) or the AAL (Authentication Assurance Level) for the user. These and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response).
 
-  Multiple values can be joined with a space, before being URI-escaped. To specify strict IAL2 with AAL3:
-
-  ```
-  http://idmanagement.gov/ns/assurance/ial/2?strict=true http://idmanagement.gov/ns/assurance/aal/3
-  ```
-  becomes this when URI-escaped:
-  ```
-  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F2%3Fstrict%3Dtrue+http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Faal%2F2
-  ```
+  Multiple values can be joined with a space (before being URI-escaped in the final URL)
 
   #### IAL Values
   An IAL value must be specified.
