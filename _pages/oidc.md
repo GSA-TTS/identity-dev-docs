@@ -56,7 +56,40 @@ Consistent with the specification, login.gov provides a JSON endpoint for OpenID
 
 ## Authorization
 
-The authorization endpoint handles authentication and authorization of a user. To present the login.gov authorization page to a user, direct them to the `/openid_connect/authorize` endpoint with the following parameters:
+The authorization endpoint handles authentication and authorization of a user. To present the login.gov authorization page to a user, direct them to the `/openid_connect/authorize`.
+
+<span class="margin-right-2">View an example for…</span><button data-example="private_key_jwt">private_key_jwt</button><button data-example="pkce">PKCE</button>
+
+<div markdown="1" data-example="private_key_jwt">
+```bash
+https://idp.int.identitysandbox.gov/openid_connect/authorize?
+  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
+  client_id=${CLIENT_ID}&
+  nonce=${NONCE}&
+  prompt=select_account&
+  redirect_uri=${REDIRECT_URI}&
+  response_type=code&
+  scope=openid+email&
+  state=abcdefghijklmnopabcdefghijklmnop
+```
+</div>
+<div markdown="1" data-example="pkce" hidden="true">
+```bash
+https://idp.int.identitysandbox.gov/openid_connect/authorize?
+  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
+  client_id=${CLIENT_ID}&
+  code_challenge=${CODE_CHALLENGE}&
+  code_challenge_method=S256&
+  nonce=${NONCE}&
+  prompt=select_account&
+  redirect_uri=${REDIRECT_URI}&
+  response_type=code&
+  scope=openid+email&
+  state=abcdefghijklmnopabcdefghijklmnop
+```
+</div>
+
+### Request Parameters
 
 * **acr_values**
   The Authentication Context Class Reference values used to specify the IAL (Identity Assurance Level) of an account, either IAL1, or IAL2. This and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response). The possible parameter values are:
@@ -127,6 +160,9 @@ The authorization endpoint handles authentication and authorization of a user. T
 * **verified_within** -- *optional, only applies to IAL2*
   Specifies how recently the user's IAL2 information must be verified. For example, if your application requires that the user's data must have been verified within the last year, you can set the value to `verified_within=1y`, and customers whose data is older than that will go through the identity proofing process again before continuing back to your application.
 
+  <details markdown="1">
+    <summary>Possible values</summary>
+
   The shortest value allowed for this parameter is 30 days (`30d`) because of the cost of proofing, as well as the time it takes for backend proofing sources to be updated.
 
   The format for this value is **`xD`**, where **`x`** is an integer number and **`D`** specifies the duration. **`D`** can be:
@@ -138,38 +174,8 @@ The authorization endpoint handles authentication and authorization of a user. T
       * Example: `18m` (equivalent to `540d`)
     * `y` for a number of years (assumed to be 365-day years)
       * Example: `2y` (equivalent to `730d`)
+  </details>
 
-
-<span class="margin-right-2">View an example for…</span><button data-example="private_key_jwt">private_key_jwt</button><button data-example="pkce">PKCE</button>
-
-<div markdown="1" data-example="private_key_jwt">
-```bash
-https://idp.int.identitysandbox.gov/openid_connect/authorize?
-  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
-  client_id=${CLIENT_ID}&
-  nonce=${NONCE}&
-  prompt=select_account&
-  redirect_uri=${REDIRECT_URI}&
-  response_type=code&
-  scope=openid+email&
-  state=abcdefghijklmnopabcdefghijklmnop
-```
-</div>
-<div markdown="1" data-example="pkce" hidden="true">
-```bash
-https://idp.int.identitysandbox.gov/openid_connect/authorize?
-  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
-  client_id=${CLIENT_ID}&
-  code_challenge=${CODE_CHALLENGE}&
-  code_challenge_method=S256&
-  nonce=${NONCE}&
-  prompt=select_account&
-  redirect_uri=${REDIRECT_URI}&
-  response_type=code&
-  scope=openid+email&
-  state=abcdefghijklmnopabcdefghijklmnop
-```
-</div>
 
 ### Authorization response
 
@@ -206,27 +212,7 @@ https://agency.gov/response?
 
 ## Token
 
-Clients use the token endpoint to exchange the authorization `code` for an `id_token` and `access_token`. To request a token, send a HTTP POST request to the `/api/openid_connect/token` endpoint with the following parameters in the request body:
-
-* **client_assertion** — *required for private_key_jwt*
-  A [JWT][jwt] signed with the client's private key using the **RS256** algorithm and containing the following claims:
-    * **iss** (string) — The issuer, which must be the `client_id`.
-    * **sub** (string) — The subject, which must also be the `client_id`.
-    * **aud** (string) — The audience, which should be (or, in the case of multiple audience values, include) the URL of the token endpoint, for example: `https://idp.int.identitysandbox.gov/api/openid_connect/token`
-    * **jti** (string) — The JWT ID, a unique identifier for the token which can be used to prevent reuse of the token. Should be an un-guessable, random string generated by the client.
-    * **exp** (number) — The expiration time for this token. Should be an integer timestamp (number of seconds since the [Unix Epoch](https://en.wikipedia.org/wiki/Unix_time)) and be a short period of time in the future (such as 5 minutes from now).
-
-* **client_assertion_type** — *required for private_key_jwt*
-  When using private_key_jwt, must be `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
-
-* **code**
-  The authorization code returned by the [authorization response](#authorization-response).
-
-* **code_verifier** — *required for PKCE*
-  The original value (before the SHA256) generated for the authorization request for PKCE that corresponds to the `code_challenge`.
-
-* **grant_type**
-  Must be `authorization_code`
+Clients use the token endpoint to exchange the authorization `code` for an `id_token` and `access_token`. To request a token, send a HTTP POST request to the `/api/openid_connect/token` endpoint.
 
 <span class="margin-right-2">View example an for…</span><button data-example="private_key_jwt">private_key_jwt</button><button data-example="pkce">PKCE</button>
 
@@ -249,6 +235,28 @@ code_verifier=${CODE_VERIFIER}&
 grant_type=authorization_code
 ```
 </div>
+
+### Request Parameters
+
+* **client_assertion** — *required for private_key_jwt*
+  A [JWT][jwt] signed with the client's private key using the **RS256** algorithm and containing the following claims:
+    * **iss** (string) — The issuer, which must be the `client_id`.
+    * **sub** (string) — The subject, which must also be the `client_id`.
+    * **aud** (string) — The audience, which should be (or, in the case of multiple audience values, include) the URL of the token endpoint, for example: `https://idp.int.identitysandbox.gov/api/openid_connect/token`
+    * **jti** (string) — The JWT ID, a unique identifier for the token which can be used to prevent reuse of the token. Should be an un-guessable, random string generated by the client.
+    * **exp** (number) — The expiration time for this token. Should be an integer timestamp (number of seconds since the [Unix Epoch](https://en.wikipedia.org/wiki/Unix_time)) and be a short period of time in the future (such as 5 minutes from now).
+
+* **client_assertion_type** — *required for private_key_jwt*
+  When using private_key_jwt, must be `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
+
+* **code**
+  The authorization code returned by the [authorization response](#authorization-response).
+
+* **code_verifier** — *required for PKCE*
+  The original value (before the SHA256) generated for the authorization request for PKCE that corresponds to the `code_challenge`.
+
+* **grant_type**
+  Must be `authorization_code`
 
 ### Token response
 
