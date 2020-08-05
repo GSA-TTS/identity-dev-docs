@@ -146,23 +146,45 @@ An example authentication request, with indentation added for readability.
 </div>
 </div>
 
-### Specifying attributes and Identity Assurance Level (IAL)
+### Specifying attributes and assurance levels
 
-The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the IAL level and attributes requested.
+The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the IAL (Identity Assurance Level), AAL (Authentication Assurance Level) and attributes requested.
+
+#### Identity Assurance Level (IAL)
 
 To specify one of the supported IAL levels, place one of these values inside a `<saml:AuthnContextClassRef>` tag:
-  - `http://idmanagement.gov/ns/assurance/ial/1`
-  - `http://idmanagement.gov/ns/assurance/ial/2`
+  - **`http://idmanagement.gov/ns/assurance/ial/1`**
+      Basic identity assurance, does not require identity verification (this is the most common value).
+  - **`http://idmanagement.gov/ns/assurance/ial/2`**
+      Requires that the user has gone through identity verification
+  - **`http://idmanagement.gov/ns/assurance/ial/2?strict=true`**
+      Requires that the user has gone through identity verification, including a "liveness" check
+
+#### Authentication Assurance Level (AAL)
+
+To specify an AAL level, add an additional `<saml:AuthnContextClassRef>` with one of these values:
+
+  - **`http://idmanagement.gov/ns/assurance/aal/2`**
+      This is the default value, requires that a user has been authenticated with two factors
+  - **`http://idmanagement.gov/ns/assurance/aal/3`**
+      This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC.
+  - **`http://idmanagement.gov/ns/assurance/aal/3?hspd12=true`**
+      This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC)
+
+#### Attributes
 
 To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes]({{ site.baseurl }}/attributes/) for the list of attributes that can be requested.
 
-An IAL2 request for email, phone, first name, last name, and SSN might look like:
+#### Example specifying IAL, AAL, and attributes
+
+An IAL2 request at AAL2 for email, phone, first name, last name, and SSN might look like:
 
 ```xml
 <samlp:AuthnRequest ...>
   <!-- ... -->
   <samlp:RequestedAuthnContext Comparison='exact'>
     <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/ial/2</saml:AuthnContextClassRef>
+    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/aal/2</saml:AuthnContextClassRef>
     <saml:AuthnContextClassRef>http://idmanagement.gov/ns/requested_attributes?ReqAttr=email,phone,first_name,last_name,ssn</saml:AuthnContextClassRef>
   </samlp:RequestedAuthnContext>
 </samlp:AuthnRequest>
@@ -171,14 +193,14 @@ An IAL2 request for email, phone, first name, last name, and SSN might look like
 
 #### Level of Assurance (LOA)
 
-<div class="usa-alert usa-alert-warning">
-  <div class="usa-alert-body">We strongly recommend using IAL for the identity proofing process. The concept of Level of Assurance (LOA) is retired by the NIST 800-63-3 digital identity guidelines, and support by login.gov for LOA requests is deprecated.
-  </div>
-</div>
+These not recommended, they are for legacy compatibility only.
 
 The authentication request can specify LOA levels 1 and 3 with one of these values inside the `<saml:AuthnContextClassRef>` tag:
-  - `http://idmanagement.gov/ns/assurance/loa/1`
-  - `http://idmanagement.gov/ns/assurance/loa/3`
+
+  - **`http://idmanagement.gov/ns/assurance/loa/1`**
+    Equivalent to IAL1
+  - **`http://idmanagement.gov/ns/assurance/loa/3`**
+    Equivalent to IAL2
 
 
 ## Auth response
