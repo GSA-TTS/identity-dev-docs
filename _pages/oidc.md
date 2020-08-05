@@ -109,8 +109,8 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
         Requires that the user has gone through identity verification, including a "liveness" check
 
   #### AAL Values
-    - **`http://idmanagement.gov/ns/assurance/aal/2`**
-        This is the default value, requires that a user has been authenticated with two factors
+  We default to requiring a user to be authenticated with a second factor. Stricter behavior can be specified by adding one of:
+
     - **`http://idmanagement.gov/ns/assurance/aal/3`**
         This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC.
     - **`http://idmanagement.gov/ns/assurance/aal/3?hspd12=true`**

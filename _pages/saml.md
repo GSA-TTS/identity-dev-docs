@@ -162,10 +162,8 @@ To specify one of the supported IAL levels, place one of these values inside a `
 
 #### Authentication Assurance Level (AAL)
 
-To specify an AAL level, add an additional `<saml:AuthnContextClassRef>` with one of these values:
+We default to requiring a user to be authenticated with a second factor. To specify a stricter AAL level, add an additional `<saml:AuthnContextClassRef>` with one of these values:
 
-  - **`http://idmanagement.gov/ns/assurance/aal/2`**
-      This is the default value, requires that a user has been authenticated with two factors
   - **`http://idmanagement.gov/ns/assurance/aal/3`**
       This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC.
   - **`http://idmanagement.gov/ns/assurance/aal/3?hspd12=true`**
@@ -177,14 +175,14 @@ To request specific attributes, list them (comma-separated) as the query paramet
 
 #### Example specifying IAL, AAL, and attributes
 
-An IAL2 request at AAL2 for email, phone, first name, last name, and SSN might look like:
+An IAL2 request at AAL3 for email, phone, first name, last name, and SSN might look like:
 
 ```xml
 <samlp:AuthnRequest ...>
   <!-- ... -->
   <samlp:RequestedAuthnContext Comparison='exact'>
     <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/ial/2</saml:AuthnContextClassRef>
-    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/aal/2</saml:AuthnContextClassRef>
+    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/aal/3</saml:AuthnContextClassRef>
     <saml:AuthnContextClassRef>http://idmanagement.gov/ns/requested_attributes?ReqAttr=email,phone,first_name,last_name,ssn</saml:AuthnContextClassRef>
   </samlp:RequestedAuthnContext>
 </samlp:AuthnRequest>
