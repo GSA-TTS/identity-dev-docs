@@ -127,6 +127,9 @@ The authorization endpoint handles authentication and authorization of a user. T
 * **verified_within** -- *optional, only applies to IAL2*
   Specifies how recently the user's IAL2 information must be verified. For example, if your application requires that the user's data must have been verified within the last year, you can set the value to `verified_within=1y`, and customers whose data is older than that will go through the identity proofing process again before continuing back to your application.
 
+  <details markdown="1">
+    <summary>Possible values</summary>
+
   The shortest value allowed for this parameter is 30 days (`30d`) because of the cost of proofing, as well as the time it takes for backend proofing sources to be updated.
 
   The format for this value is **`xD`**, where **`x`** is an integer number and **`D`** specifies the duration. **`D`** can be:
@@ -138,6 +141,7 @@ The authorization endpoint handles authentication and authorization of a user. T
       * Example: `18m` (equivalent to `540d`)
     * `y` for a number of years (assumed to be 365-day years)
       * Example: `2y` (equivalent to `730d`)
+  </details>
 
 
 <span class="margin-right-2">View an example for…</span><button data-example="private_key_jwt">private_key_jwt</button><button data-example="pkce">PKCE</button>
