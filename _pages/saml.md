@@ -158,7 +158,7 @@ To specify one of the supported IAL levels, place one of these values inside a `
   - **`http://idmanagement.gov/ns/assurance/ial/2`**
       Requires that the user has gone through identity verification
   - **`http://idmanagement.gov/ns/assurance/ial/2?strict=true`**
-      Requires that the user has gone through identity verification, including a "liveness" check
+      Requires that the user has gone through identity verification, including a "liveness" check (this is not available in production, only in int and staging environments)
 
 #### Authentication Assurance Level (AAL)
 

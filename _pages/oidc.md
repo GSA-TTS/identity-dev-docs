@@ -106,7 +106,8 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
     - **`http://idmanagement.gov/ns/assurance/ial/2`**
         Requires that the user has gone through identity verification
     - **`http://idmanagement.gov/ns/assurance/ial/2?strict=true`**
-        Requires that the user has gone through identity verification, including a "liveness" check
+        Requires that the user has gone through identity verification, including a "liveness" check  (this is not available in production, only in int and staging environments)
+
 
   #### AAL Values
   We default to requiring a user to be authenticated with a second factor. Stricter behavior can be specified by adding one of:
