@@ -134,7 +134,7 @@
       anchors.add('#main-content h1:not(.usa-accordion__heading), #main-content h2, #main-content h3, #main-content [data-anchor]');
     </script>
     
-    <!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
-<script async type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA&subagency=18F" id="_fed_an_ua_tag"></script>
+    {% include dap.html %}
+    {% include google_analytics.html %}
   </body>
 </html>
