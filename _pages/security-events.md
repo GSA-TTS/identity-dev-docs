@@ -9,6 +9,11 @@ sidenav:
     href: "#getting-started"
   - text: Supported events
     href: "#supported-events"
+    links:
+      - text: Authorization Fraud Detected
+        href: "#authorization-fraud-detected"
+      - text: Identity Fraud Detected
+        href: "#identity-fraud-detected"
   - text: Submitting a Security Event Token (SET)
     href: "#submitting-a-security-event-token-set"
     links:
@@ -20,7 +25,7 @@ sidenav:
 
 ## Getting started
 
-login.gov allows partners to notify us of various security-related events through our API.
+login.gov allows partners and Relying Parties (RPs) to notify us of various security-related events through our API.
 
 ### Auto-discovery
 
@@ -28,17 +33,27 @@ login.gov provides a JSON endpoint for OpenID Connect auto-discovery at `/.well-
 
 ## Supported Events
 
-login.gov supports a subset of the [OpenID RISC Event Types][openid-risc-events]:
+login.gov custom events, based on the [OpenID RISC Event Types][openid-risc-events], but not specific ones from that list at this time.
 
+### Authorization Fraud Detected
 
-### Account Credential Change Required
-
-Submit this event to login.gov if the user should change their credential (usually, reset their password).
+RPs should submit this event when they believe a user's credentials have been compromised, that somebody who is not the user
+was able to sign in to a user's account. login.gov may force the reset of user's password when we receive this event.
 
 The **event_type** for this is:
 
 ```
-https://schemas.openid.net/secevent/risc/event-type/account-credential-change-required
+https://schemas.openid.net/secevent/risc/event-type/login-gov/authorization-fraud-detected
+```
+
+### Identity Fraud Detected
+
+RPs should submit this event when they believe a verified identity may be fraudulent. login.gov may reset the user's profile and verified attributes data when we receive this event.
+
+The **event_type** for this is:
+
+```
+https://schemas.openid.net/secevent/risc/event-type/login-gov/identity-fraud-detected
 ```
 
 ## Submitting a Security Event Token (SET)
@@ -119,9 +134,9 @@ For a Security Event like this:
   "iss": "urn:gov:gsa:openidconnect:test:risc:sets",
   "jti": "abcdefghijklmnopqrstuvwxyz",
   "iat": 1595532178,
-  "aud": "a",
+  "aud": "https://idp.int.identitysandbox.gov/api/risc/security_events",
   "events": {
-    "https://schemas.openid.net/secevent/risc/event-type/account-credential-change-required": {
+    "https://schemas.openid.net/secevent/risc/event-type/login-gov/authorization-fraud-detected": {
       "subject": {
         "subject_type": "iss_sub",
         "iss": "https://idp.int.identitysandbox.gov",
