@@ -97,16 +97,25 @@ JWTs must be signed by the client application's private key using **RS256**, the
 
 * **events**
 
-  An object containing an event, keyed by event type. See [Supported Events](#supported-events) for possible keys. An event should contain a **subject** object, with the following keys:
+  An object containing an event, keyed by event type. See [Supported Events](#supported-events) for possible keys.
 
-  * **subject_type**
-    Must be **iss_sub**, this indicates the **sub** is the subject provided by the original issuer (login.gov)
+  The event (the value) contains:
 
-  * **iss**
-    This is login.gov's issuer, the root URL for login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
+  * **subject** (required)
+      An event should contain a **subject** object, with the following keys:
 
-  * **sub**
-    The UUID identifying the user. This is provided as the `sub` inside the `id_token` JWT in the [OpenID Token endpoint]({{site.baseurl}}/#token-response).
+      * **subject_type**
+        Must be **iss_sub**, this indicates the **sub** is the subject provided by the original issuer (login.gov)
+
+      * **iss**
+        This is login.gov's issuer, the root URL for login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
+
+      * **sub**
+        The UUID identifying the user. This is provided as the `sub` inside the `id_token` JWT in the [OpenID Token endpoint]({{site.baseurl}}/#token-response).
+
+  * **event_at**
+    Time at which the security event occurred, an integer timestamp representing the number of seconds since the Unix Epoch. This optional field can be used to back-date reports of events, if they are not detected immediately.
+
 
   Example:
 
@@ -119,7 +128,8 @@ JWTs must be signed by the client application's private key using **RS256**, the
             "subject_type": "iss_sub",
             "iss": "https://idp.int.identitysandbox.gov",
             "sub": "<$SUB>"
-          }
+          },
+          "event_at": 1590000000
        }
     }
   }
@@ -141,7 +151,8 @@ For a Security Event like this:
         "subject_type": "iss_sub",
         "iss": "https://idp.int.identitysandbox.gov",
         "sub": "123d4f56-jkl7-891011-t12vw-y13a1415d1617ghi18"
-      }
+      },
+      "event_at": 1590000000
     }
   }
 }
