@@ -114,7 +114,7 @@ JWTs must be signed by the client application's private key using **RS256**, the
       * **sub**
         The UUID identifying the user. This is provided as the `sub` inside the `id_token` JWT in the [OpenID Token endpoint]({{site.baseurl}}/#token-response).
 
-  * **event_at**
+  * **occurred_at**
     Time at which the security event occurred, an integer timestamp representing the number of seconds since the Unix Epoch. This optional field can be used to back-date reports of events, if they are not detected immediately.
 
 
@@ -130,7 +130,7 @@ JWTs must be signed by the client application's private key using **RS256**, the
             "iss": "https://idp.int.identitysandbox.gov",
             "sub": "<$SUB>"
           },
-          "event_at": 1590000000
+          "occurred_at": 1590000000
        }
     }
   }
@@ -153,7 +153,7 @@ For a Security Event like this:
         "iss": "https://idp.int.identitysandbox.gov",
         "sub": "123d4f56-jkl7-891011-t12vw-y13a1415d1617ghi18"
       },
-      "event_at": 1590000000
+      "occurred_at": 1590000000
     }
   }
 }
