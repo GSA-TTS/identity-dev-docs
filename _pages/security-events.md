@@ -43,7 +43,7 @@ was able to sign in to a user's account. login.gov may force the reset of user's
 The **event_type** for this is:
 
 ```
-https://schemas.openid.net/secevent/risc/event-type/login-gov/authorization-fraud-detected
+https://schemas.login.gov/secevent/risc/event-type/authorization-fraud-detected
 ```
 
 ### Identity Fraud Detected
@@ -53,8 +53,9 @@ RPs should submit this event when they believe a verified identity may be fraudu
 The **event_type** for this is:
 
 ```
-https://schemas.openid.net/secevent/risc/event-type/login-gov/identity-fraud-detected
+https://schemas.login.gov/secevent/risc/event-type/identity-fraud-detected
 ```
+
 
 ## Submitting a Security Event Token (SET)
 
@@ -146,7 +147,7 @@ For a Security Event like this:
   "iat": 1595532178,
   "aud": "https://idp.int.identitysandbox.gov/api/risc/security_events",
   "events": {
-    "https://schemas.openid.net/secevent/risc/event-type/login-gov/authorization-fraud-detected": {
+    "https://schemas.login.gov/secevent/risc/event-type/authorization-fraud-detected": {
       "subject": {
         "subject_type": "iss_sub",
         "iss": "https://idp.int.identitysandbox.gov",
