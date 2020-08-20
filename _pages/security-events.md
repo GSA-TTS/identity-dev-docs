@@ -48,7 +48,7 @@ https://schemas.login.gov/secevent/risc/event-type/authorization-fraud-detected
 
 ### Identity Fraud Detected
 
-RPs should submit this event when they believe a verified identity may be fraudulent. login.gov may reset the user's profile and verified attributes data when we receive this event.
+RPs should submit this event when they suspect an account has been used to commit identity theft or related fraudulent activity. Login.gov may reset the user's profile and verified attributes data when we receive this event.
 
 The **event_type** for this is:
 
