@@ -1,7 +1,7 @@
 ---
 title: Security Events
 lead: >
-  login.gov supports parts of the OpenID
+  Login.gov supports parts of the OpenID
   <abbr title="Risk and Incident Sharing and Coordination">RISC</abbr>
   Profile using Security Event Token (SET) to receive security-related event notifications in real-time.
 sidenav:
@@ -25,20 +25,20 @@ sidenav:
 
 ## Getting started
 
-login.gov allows partners and Relying Parties (RPs) to notify us of various security-related events through our API.
+Login.gov allows partners and Relying Parties (RPs) to notify us of various security-related events through our API.
 
 ### Auto-discovery
 
-login.gov provides a JSON endpoint for OpenID Connect auto-discovery at `/.well-known/risc-configuration`. In our agency integration environment, this is available at <https://idp.int.identitysandbox.gov/.well-known/risc-configuration>
+Login.gov provides a JSON endpoint for OpenID Connect auto-discovery at `/.well-known/risc-configuration`. In our agency integration environment, this is available at <https://idp.int.identitysandbox.gov/.well-known/risc-configuration>
 
 ## Supported Events
 
-login.gov custom events, based on the [OpenID RISC Event Types][openid-risc-events], but not specific ones from that list at this time.
+Login.gov custom events, based on the [OpenID RISC Event Types][openid-risc-events], but not specific ones from that list at this time.
 
 ### Authorization Fraud Detected
 
 RPs should submit this event when they believe a user's credentials have been compromised, that somebody who is not the user
-was able to sign in to a user's account. login.gov may force the reset of user's password when we receive this event.
+was able to sign in to a user's account. Login.gov may force the reset of user's password when we receive this event.
 
 The **event_type** for this is:
 
