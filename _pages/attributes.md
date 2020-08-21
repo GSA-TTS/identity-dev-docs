@@ -191,12 +191,13 @@ Requires the `profile` or `profile:verified_at` scope.
 ![checkmark][checkmark]
 </td>
 <td markdown="1">
-`x509` (string) 
+`x509_subject` (string)
+`x509_presented` (string)
 
 Requires the `x509` scope
 </td>
 <td markdown="1">
-(unavailable)
+n/a
 </td>
     </tr>
     <tr>
@@ -215,7 +216,7 @@ Requires the `x509` scope
 Requires the `x509:subject` scope
 </td>
 <td markdown="1">
-(unavailable)
+`x509_subject`
 </td>
     </tr>
     <tr>
@@ -234,7 +235,7 @@ Requires the `x509:subject` scope
 Requires the `x509_presented` scope.
 </td>
 <td markdown="1">
-(unavailable)
+`x509_presented`
 </td>
     </tr>
   </tbody>
