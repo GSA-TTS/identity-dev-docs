@@ -332,7 +332,8 @@ With a JWT payload:
 
 
 ```
-POST /api/risc/security_events
+POST /events
+Host: agency.example.gov
 Content-Type: application/secevent+jwt
 Accept: application/json
 eyJ0eXAiOiJzZWNldmVudCtqd3QiLCJhbGciOiJSUzI1NiJ9
