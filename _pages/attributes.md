@@ -173,7 +173,7 @@ When the user's identity was last verified (or empty if it has never been verifi
 
 Seconds since the Unix Epoc
 
-Requires the `profile` or `profile:verified_at` scope.
+Requires the `profile` or `profile:verified_at` scope. To get the attribute with IAL1, the `profile:verified_at` scope must be requested.
 </td>
 <td markdown="1">
 `verified_at` (string, ISO8601 format)
