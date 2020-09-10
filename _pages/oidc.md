@@ -359,7 +359,7 @@ The user info response will be a JSON object containing [user attributes]({{ sit
 
 * **verified_at** (number, null)
   When the user's identity was last verified, as an integer timestamp representing the number of seconds since the Unix Epoch, or `null` if the account has never been verified.
-  - Requires the `profile` or `profile:verified_at` scope.
+  - Requires the `profile:verified_at` scope.
 
 Here's an example response:
 
