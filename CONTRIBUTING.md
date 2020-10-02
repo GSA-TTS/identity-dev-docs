@@ -8,7 +8,7 @@ We encourage you to read this project's CONTRIBUTING policy (you are here), its 
 
 If you have any questions or want to read more, check out the [18F Open Source Policy GitHub repository]( https://github.com/18f/open-source-policy), or just [shoot us an email](mailto:18f@gsa.gov).
 
-## Public domain
+## Public domain sector
 
 This project is in the public domain within the United States, and
 copyright and related rights in the work worldwide are waived through
