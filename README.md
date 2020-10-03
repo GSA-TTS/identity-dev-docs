@@ -14,7 +14,7 @@ docker-compose up
 open http://localhost:4000
 ```
 
-Some changes, like `_config.yml` don't get picked up automatically in Docker. You can pick up these changes by stopping/starting the cluster.
+Some changes, like `_config.yml` don't get picked up automatically in Docker. So you can pick up these changes by stopping/starting the cluster.
 
 Run tests
 
@@ -22,7 +22,7 @@ Run tests
 docker-compose run web make test
 ```
 
-You can drop into a bash shell in the container with 
+You can drop into a bash shell in the container with :-
 
 ```sh
 docker-compose run web bash
