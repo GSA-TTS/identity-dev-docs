@@ -15,7 +15,7 @@ Login.gov provides an open sandbox environment to create and test integrations b
 
 Anybody with an email address ending in .gov or .mil can create an account in the sandbox environment. If you are a government contractor, ask your agency partner to help you gain access.
 
-1. Visit the dashboard at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov). In the upper-right corner, click **Log in**. You'll be prompted to sign in or create an account with the test login.gov IdP in the agency integration environment (hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov)). **Please note that if you already have a login.gov account that this is a test environment that is not linked to your production account.**
+1. Visit the dashboard at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov). In the upper-right corner, click **Sign in**. You'll be prompted to sign in or create an account with the test login.gov IdP in the agency integration environment (hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov)). **Please note that this is a sandbox environment that is not linked to your production login.gov account.**
 2. Once you are logged into your sandbox account, you'll be asked to create a team and add users to that team.
 3. After creating your team, go to the Apps tab. This page is where you will find all of the test applications you and your team will create.
 4. Click **Create a new test app** and fill out the form to register a new application with the login.gov IdP in the test sandbox environment.
