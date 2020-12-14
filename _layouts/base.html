@@ -32,7 +32,7 @@
   <body>
     <a class="usa-skipnav" href="#main-content">Skip to main content</a>
 
-    <div class="usa-banner">
+    <section class="usa-banner" aria-label="Official government website">
       <div class="usa-accordion">
         <header class="usa-banner__header">
           <div class="usa-banner__inner">
@@ -52,29 +52,40 @@
         <div class="usa-banner__content usa-accordion__content" id="gov-banner">
           <div class="grid-row grid-gap-lg">
             <div class="usa-banner__guidance tablet:grid-col-6">
-              <img class="usa-banner__icon usa-media-block__img" src="{{ site.baseurl }}/assets/img/icon-dot-gov.svg" alt="Dot gov">
+              <img src="{{ site.baseurl }}/assets/img/icon-dot-gov.svg"
+                class="usa-banner__icon usa-media-block__img"
+                alt="Dot gov"
+                role="img">
               <div class="usa-media-block__body">
                 <p>
-                  <strong>The .gov means it’s official.</strong>
+                  <strong>Official websites use .gov</strong>
                   <br>
-                  Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site.
+                  A <strong>.gov</strong> website belongs to an official government organization in the United States.
                 </p>
               </div>
             </div>
             <div class="usa-banner__guidance tablet:grid-col-6">
-              <img class="usa-banner__icon usa-media-block__img" src="{{ site.baseurl }}/assets/img/icon-https.svg" alt="Https">
+              <img src="{{ site.baseurl }}/assets/img/icon-https.svg"
+                class="usa-banner__icon usa-media-block__img"
+                alt="Https"
+                role="img">
               <div class="usa-media-block__body">
                 <p>
-                  <strong>The site is secure.</strong>
+                  <strong>Secure .gov websites use HTTPS</strong>
                   <br>
-                  The <strong>https://</strong> ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely.
+                  A <strong>lock (
+                    <img src="{{ site.baseurl }}/assets/img/lock.svg"
+                      class="usa-banner__lock-image"
+                      alt="Https"
+                      role="img">
+                  )</strong> or <strong>https://</strong> means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <div class="usa-overlay"></div>
 
@@ -83,14 +94,19 @@
         <div class="usa-navbar">
           <div class="usa-logo" id="basic-logo">
             <a href="{{ site.baseurl }}/" title="Home" aria-label="Home">
-              <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg" class="usa-logo__img" alt="login.gov">
+              <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg"
+                class="usa-logo__img"
+                alt="login.gov"
+                role="img">
               <em class="usa-logo__text">Developers</em>
             </a>
           </div>
           <button class="usa-menu-btn">Menu</button>
         </div>
         <nav role="navigation" class="usa-nav border-top-none">
-          <button class="usa-nav__close"><img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close"></button>
+          <button class="usa-nav__close">
+            <img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close" role="img">
+          </button>
           <ul class="usa-nav__primary usa-accordion">
             {% include nav/list.html
               links = site.data.nav.primary
@@ -103,7 +119,7 @@
 
     {{ content }}
 
-    <footer class="usa-footer usa-footer--slim" role="contentinfo">
+    <footer class="usa-footer usa-footer--slim" role="contentinfo" aria-label="GSA footer">
       <div class="grid-container usa-footer__return-to-top">
         <div class="grid-row flex-align-center">
           <div class="grid-col flex-1">
@@ -118,7 +134,10 @@
         <div class="grid-container">
           <div class="usa-footer__logo grid-row grid-gap-2">
             <div class="grid-col-auto">
-              <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg" alt="U.S. General Services Administration logo" class="usa-footer__logo-img usa-footer__slim usa-footer__medium">
+              <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg"
+                alt="U.S. General Services Administration logo"
+                class="usa-footer__logo-img usa-footer__slim usa-footer__medium"
+                role="img">
             </div>
             <div class="grid-col-auto">
               <h3 class="usa-footer__logo-heading">U.S. General Services Administration</h3>
@@ -133,7 +152,7 @@
     <script>
       anchors.add('#main-content h1:not(.usa-accordion__heading), #main-content h2, #main-content h3, #main-content h4, #main-content [data-anchor]');
     </script>
-    
+
     {% include dap.html %}
     {% include google_analytics.html %}
   </body>
