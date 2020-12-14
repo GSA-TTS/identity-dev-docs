@@ -139,7 +139,7 @@ Provide a file that meets these requirements
 set **Styling** using **Presentations Attributes**
 
 ## Login logo
-<img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg" class="usa-logo-img" alt="login.gov logo">
+<img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg" class="usa-logo-img" alt="login.gov logo" role="img">
 We have a number of additional guidelines pertaining to the use of the login.gov brand and logo. Please use our guidelines so that we can provide a consistent visual experience across all government platforms.
 
 [View the login.gov brand guidelines](https://design.login.gov/brand/)

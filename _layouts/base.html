@@ -52,7 +52,10 @@
         <div class="usa-banner__content usa-accordion__content" id="gov-banner">
           <div class="grid-row grid-gap-lg">
             <div class="usa-banner__guidance tablet:grid-col-6">
-              <img class="usa-banner__icon usa-media-block__img" src="{{ site.baseurl }}/assets/img/icon-dot-gov.svg" alt="Dot gov">
+              <img src="{{ site.baseurl }}/assets/img/icon-dot-gov.svg"
+                class="usa-banner__icon usa-media-block__img"
+                alt="Dot gov"
+                role="img">
               <div class="usa-media-block__body">
                 <p>
                   <strong>The .gov means it’s official.</strong>
@@ -62,7 +65,10 @@
               </div>
             </div>
             <div class="usa-banner__guidance tablet:grid-col-6">
-              <img class="usa-banner__icon usa-media-block__img" src="{{ site.baseurl }}/assets/img/icon-https.svg" alt="Https">
+              <img src="{{ site.baseurl }}/assets/img/icon-https.svg"
+                class="usa-banner__icon usa-media-block__img"
+                alt="Https"
+                role="img">
               <div class="usa-media-block__body">
                 <p>
                   <strong>The site is secure.</strong>
@@ -83,14 +89,19 @@
         <div class="usa-navbar">
           <div class="usa-logo" id="basic-logo">
             <a href="{{ site.baseurl }}/" title="Home" aria-label="Home">
-              <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg" class="usa-logo__img" alt="login.gov">
+              <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg"
+                class="usa-logo__img"
+                alt="login.gov"
+                role="img">
               <em class="usa-logo__text">Developers</em>
             </a>
           </div>
           <button class="usa-menu-btn">Menu</button>
         </div>
         <nav role="navigation" class="usa-nav border-top-none">
-          <button class="usa-nav__close"><img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close"></button>
+          <button class="usa-nav__close">
+            <img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close" role="img">
+          </button>
           <ul class="usa-nav__primary usa-accordion">
             {% include nav/list.html
               links = site.data.nav.primary
@@ -118,7 +129,10 @@
         <div class="grid-container">
           <div class="usa-footer__logo grid-row grid-gap-2">
             <div class="grid-col-auto">
-              <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg" alt="U.S. General Services Administration logo" class="usa-footer__logo-img usa-footer__slim usa-footer__medium">
+              <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg"
+                alt="U.S. General Services Administration logo"
+                class="usa-footer__logo-img usa-footer__slim usa-footer__medium"
+                role="img">
             </div>
             <div class="grid-col-auto">
               <h3 class="usa-footer__logo-heading">U.S. General Services Administration</h3>
@@ -133,7 +147,7 @@
     <script>
       anchors.add('#main-content h1:not(.usa-accordion__heading), #main-content h2, #main-content h3, #main-content h4, #main-content [data-anchor]');
     </script>
-    
+
     {% include dap.html %}
     {% include google_analytics.html %}
   </body>
