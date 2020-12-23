@@ -13,8 +13,8 @@ How does login.gov work with my site?
 <div class="usa-accordion__content" markdown="1"  aria-expanded="true">
 We encourage you to create an account directly on [login.gov](https://secure.login.gov/) or an agency partner like
 [USAJobs](https://www.usajobs.gov/) to see login.gov in action.
-Generally a site will place a login button on their site.  When the user clicks this button they redirect to login.gov
-where they can sign in or create an account.  The login.gov site will be branded with the agency logo and can
+Generally a site will place a login button on their site. When the user clicks this button they redirect to login.gov
+where they can sign in or create an account. The login.gov site will be branded with the agency logo and can
 include help text for migrating existing users.
 After authenticating with login.gov they are redirected back to the agency with a unique UUID or email address that
 identifies the user.
@@ -30,7 +30,7 @@ What unique key can we use to track users?
 </h1>
 <div id="user-key" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-We offer email address and UUID.  Since a user can change their email address we recommend tracking users by UUID.
+We offer email address and UUID. Since a user can change their email address we recommend tracking users by UUID.
 </div>
 <button class="usa-accordion__close-button">Close</button>
 </div>
@@ -43,7 +43,7 @@ Can a user change their email address?
 </h1>
 <div id="email" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-Yes.  This is why we recommend using UUID as the primary key.
+Yes. This is why we recommend using UUID as the primary key.
 </div>
 <button class="usa-accordion__close-button">Close</button>
 </div>
@@ -56,7 +56,7 @@ Does every user have a unique UUID?
 </h1>
 <div id="uuid" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-Every user has a unique UUID per agency for privacy reasons.  This means that the same user can return a different UUID depending on which agency they are signing in to.  These UUIDs are also globally unique.  We do offer sharing of UUIDs between agencies with user consent on a case by case basis.
+Every user has a unique UUID per agency for privacy reasons. This means that the same user can return a different UUID depending on which agency they are signing in to. These UUIDs are also globally unique. We do offer sharing of UUIDs between agencies with user consent on a case by case basis.
 </div>
 <button class="usa-accordion__close-button">Close</button>
 </div>
@@ -84,7 +84,7 @@ What are the login.gov IP addresses?
 </h1>
 <div id="ip-address" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-Login.gov makes no guarantees on IP addresses or ranges.  Please use the DNS when querying login.gov for the latest IPs.
+Login.gov makes no guarantees on IP addresses or ranges. Please use the DNS when querying login.gov for the latest IPs.
 </div>
 <button class="usa-accordion__close-button">Close</button>
 </div>
@@ -97,7 +97,7 @@ Why is my OIDC or SAML request returning a 4xx error?
 </h1>
 <div id="4xx-error" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-Check the error that was returned.  Generally we return the specific errors in the HTML, JSON, or in the redirect url.
+Check the error that was returned. Generally we return the specific errors in the HTML, JSON, or in the redirect url.
 </div>
 <button class="usa-accordion__close-button">Close</button>
 </div>
@@ -110,7 +110,7 @@ I do not see an error being returned for my request. Why is my request failing?
 </h1>
 <div id="request-error" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-Feel free to contact the engineers at login.gov.  They can help diagnose your problem further.
+Feel free to contact the engineers at login.gov. They can help diagnose your problem further.
 </div>
 <button class="usa-accordion__close-button">Close</button>
 </div>
@@ -136,7 +136,7 @@ Can I embed login.gov on my site?
 </h1>
 <div id="embed" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-No.  Login.gov only works via redirects to and from an agency site.
+No. Login.gov only works via redirects to and from an agency site.
 </div>
 <button class="usa-accordion__close-button">Close</button>
 </div>
@@ -149,7 +149,21 @@ Does login.gov handle authorization?
 </h1>
 <div id="authorization" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-No.  login.gov only handles authentication. Granting users specific access and permissions is handled on the agency side.  For example, some agencies use active directory to store what applications a user can access.
+No. Login.gov only handles authentication. Granting users specific access and permissions is handled on the agency side. For example, some agencies use active directory to store what applications a user can access.
+</div>
+<button class="usa-accordion__close-button">Close</button>
+</div>
+
+
+<h1 class="usa-accordion__heading">
+<button class="usa-accordion__button" aria-controls="statuspage">
+Where can I check the status of login.gov?
+</button>
+</h1>
+<div id="statuspage" class="usa-accordion__container">
+<div class="usa-accordion__content" markdown="1">
+Login.gov has a public status page available at <a href="https://logingov.statuspage.io/">https://logingov.statuspage.io/</a>
+where you can subscribe to incident notifications via email, SMS, Slack, or RSS.
 </div>
 <button class="usa-accordion__close-button">Close</button>
 </div>
