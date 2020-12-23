@@ -36,7 +36,7 @@ Login.gov prompts users to upload the front and back of their documents during p
 
 #### Data testing
 
-A YAML file can be uploaded instead of an image to trigger different behaviors. The YAML file can be used to simulate the reading of certain attributes from the test document. Here is an example YAML file that does that:
+A YAML file can be uploaded instead of an image to trigger different behaviors. The YAML file can be used to simulate the reading of certain attributes from the test document. Please note: this YAML file should be saved with a `.txt` file extension. Here is an example YAML file that does that:
 
 ```yaml
 document:
