@@ -16,6 +16,6 @@ primary:
   - text: Security
     href: /security-events/
   - text: Production
-    href: /Production/
+    href: /production/
   - text: FAQ
     href: /faq/
