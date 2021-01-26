@@ -25,12 +25,12 @@ sidenav:
 ## Production endpoints
 
 Our integration documentation includes endpoint urls for our sandbox environment https://idp.int.identitysandbox.gov/. Our production environment is located at https://secure.login.gov/. The URL path to each endpoint remains the same. Only the domain will change. For example, the authorization endpoint will change as follows:
-* OpenID Connect - [https://secure.login.gov/openid_connect/authorize](https://secure.login.gov/openid_connect/authorize)
-* SAML - [https://secure.login.gov/api/saml/auth2020](https://secure.login.gov/api/saml/auth2020)
+* OpenID Connect: <https://secure.login.gov/openid_connect/authorize>
+* SAML: <https://secure.login.gov/api/saml/auth2020>
 
 Please be aware that the IDP certificate (X509Certificate) in the Production environment is different from the IDP certificate in the sandbox environment. The Production IDP certificates can be found here:
-* OpenID Connect - [https://secure.login.gov/api/openid_connect/certs](https://secure.login.gov/api/openid_connect/certs)
-* SAML - [https://secure.login.gov/api/saml/metadata2020](https://secure.login.gov/api/saml/metadata2020)
+* OpenID Connect: <https://secure.login.gov/api/openid_connect/certs>
+* SAML: <https://secure.login.gov/api/saml/metadata2020>
 
 ## Deployments
 
