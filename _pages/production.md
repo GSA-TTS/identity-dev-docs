@@ -38,7 +38,7 @@ All changes to integrations between login.gov and your application must be revie
 
 ## Confirm IAA
 
-You must have a signed IAA (Inter Agency Agreement) in order to deploy to production. You will need to provide the IAA Number this application will be billed under. The IAA number format will include GTC-Order-ModNumber (Example: LGABCFY210001-0001-0000).
+You must have a signed IAA (Inter Agency Agreement) in order to deploy to production. You will need to provide the IAA Number this application will be billed under. The IAA number format will include `GTC-Order-ModNumber` (Example: `LGABCFY210001-0001-0000`).
 
 Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to reach out to [partners@login.gov](mailto:partners@login.gov) to begin the IAA process which can take up to 6 weeks to complete.
 
