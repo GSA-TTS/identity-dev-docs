@@ -1,7 +1,7 @@
 primary:
   - text: Getting Started
     href: /
-  - text: Integration flow
+  - text: Integration
     href: /overview/
   - text: OpenID Connect
     href: /oidc/
@@ -15,5 +15,7 @@ primary:
     href: /testing/
   - text: Security
     href: /security-events/
+  - text: Production
+    href: /Production/
   - text: FAQ
     href: /faq/
