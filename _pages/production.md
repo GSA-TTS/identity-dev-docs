@@ -57,7 +57,7 @@ Before you can deploy your application to the production environment, you will n
 2. Enter a Friendly Name with "Production" in the title
 3. Enter the production urls and configuration into the app
 
-PLEASE NOTE: The following items are required to promote your app to production:
+**Please note**: The following items are required to promote your app to production:
 
 * All production urls should have .gov .mil or a dedicated .com address and point to an ATO'd environment.
 * If your app does not have a logo, then you will need to upload one. You can find the [logo guidelines here](https://developers.login.gov/design-guidelines/#agency-logo-guidelines).
