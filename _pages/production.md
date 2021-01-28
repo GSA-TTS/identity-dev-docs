@@ -74,6 +74,6 @@ Once you have:
 
 Please submit the [login.gov production integration request form](https://share.hsforms.com/1UTxHGOu2Q0SVyz9ulknZGw3ak9e){:target='_blank'}.
 
-## Deploying changes
+## Changes to production applications
 
 Please update your production configuration app in the dashboard and test the changes you wish to deploy. After you have confirmed the change, then send a message to [partners@login.gov](mailto:partners@login.gov) requesting a production deployment. Please include a brief description of the change and the url to your production configuration app in the dashboard.
