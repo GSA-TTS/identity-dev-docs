@@ -17,8 +17,8 @@ sidenav:
     href: "#production-configuration"
   - text: Request deployment
     href: "#request-deployment"
-  - text: Deploying changes
-    href: "#deploying-changes"
+  - text: Changes to production applications
+    href: "#production-changes"
 ---
 
 
@@ -76,4 +76,5 @@ Please submit the [login.gov production integration request form](https://share.
 
 ## Changes to production applications
 
-Please update your production configuration app in the dashboard and test the changes you wish to deploy. After you have confirmed the change, then send a message to [partners@login.gov](mailto:partners@login.gov) requesting a production deployment. Please include a brief description of the change and the url to your production configuration app in the dashboard.
+Please update your production configuration app in the dashboard and test the changes you wish to deploy. After you have confirmed the change, then please submit the [login.gov integration change request form](https://share.hsforms.com/1HF9Q6UNARaSUOg8pPHuauQ3ak9e){:target='_blank'}.
+
