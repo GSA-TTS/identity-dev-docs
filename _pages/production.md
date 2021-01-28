@@ -59,7 +59,7 @@ Before you can deploy your application to the production environment, you will n
 
 **Please note**: The following items are required to promote your app to production:
 
-* All production urls should have .gov .mil or a dedicated .com address and point to an ATO'd environment.
+* All production urls should have .gov .mil or a dedicated .com address and point to an ATO-ed environment.
 * If your app does not have a logo, then you will need to upload one. You can find the [logo guidelines here](https://developers.login.gov/design-guidelines/#agency-logo-guidelines).
 * If this is an SAML integration (Not OpenID Connect), then please ensure that:
   * Assertion Consumer Logout Service URL is defined.
