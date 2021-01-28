@@ -24,7 +24,7 @@ sidenav:
 
 ## Production endpoints
 
-Our integration documentation includes endpoint urls for our sandbox environment [https://idp.int.identitysandbox.gov/](https://idp.int.identitysandbox.gov/). Our production environment is located at [https://secure.login.gov/](https://secure.login.gov/). The URL path to each endpoint remains the same. Only the domain will change. For example, the authorization endpoint will change as follows:
+Our integration documentation includes endpoint urls for our sandbox environment <https://idp.int.identitysandbox.gov/>. Our production environment is located at <https://secure.login.gov/>. The URL path to each endpoint remains the same. Only the domain will change. For example, the authorization endpoint will change as follows:
 * OpenID Connect: <https://secure.login.gov/openid_connect/authorize>
 * SAML: <https://secure.login.gov/api/saml/auth2020>
 
