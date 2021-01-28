@@ -46,7 +46,7 @@ Please reach out to your agency IAA contact if you have any questions. If your a
 
 Many partners choose to create a separate staging app in our sandbox environment for testing their staging environment, because changes take effect immediately without waiting for review and deployment.
 
-If you are testing an IAL2 integration, then we also offer a Staging environment for limited testing. You must have a signed IAA in order to deploy to Staging. Our Staging environment is approved for PII which can be useful in certain test cases. However, any configuration changes in the Staging environment must be reviewed and deployed.
+If you are testing an IAL2 integration, then we also offer an ATO-ed staging environment for limited testing. You must have a signed IAA in order to deploy to Staging. Our staging environment is approved for PII, which can be useful in certain test cases. However, any configuration changes in the staging environment must be reviewed and deployed.
 
 If you wish to deploy an application to our Staging environment, then create a “Staging” configuration app like the “Production” configuration app described in the next section.
 
