@@ -61,7 +61,7 @@ Before you can deploy your application to the production environment, you will n
 
 * All production urls should have .gov .mil or a dedicated .com address and point to an ATO-ed environment.
 * You must include a logo for your application. You can find the [logo guidelines here](https://developers.login.gov/design-guidelines/#agency-logo-guidelines).
-* If this is an SAML integration (Not OpenID Connect), then please ensure that:
+* If this is a SAML integration (Not OpenID Connect), then please ensure that:
   * Assertion Consumer Logout Service URL is defined.
   * SAML Assertion Encryption is enabled.
     * If you are using a service which does not support SAML encryption, then please send a message to [partners@login.gov](mailto:partners@login.gov) for further guidance.
