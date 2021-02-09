@@ -22,6 +22,18 @@ Anybody with an email address ending in .gov or .mil can create an account in th
 5. Start testing! If you need to troubleshoot, please [send us an email](mailto:partners@login.gov) and we can onboard you to our partner support Slack channel and the login.gov team will help you along the way.
 6. When you're ready to go to production, please contact our team at [partners@login.gov](mailto:partners@login.gov) and notify us. We'll manage your application's promotion to production.
 
+### Creating a public certificate
+
+You can use the following OpenSSL command to generate a 2048-bit PEM-encoded
+public certificate for your application (with a 1-year validity period):
+
+```
+openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out public.crt
+```
+
+Make sure you're using the corresponding private key in your application to sign
+and/or validate requests and responses to/from login.gov.
+
 ## Automated/Load Testing
 
 Our sandbox environment is smaller than our production environment and it is shared by many of our partners. For this reason, we ask you to reach out to us at partners@login.gov before performing automated tests that will exceed 1000 requests/minute. We are happy to discuss options to meet your needs.
