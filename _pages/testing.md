@@ -24,15 +24,13 @@ Anybody with an email address ending in .gov or .mil can create an account in th
 
 ### Creating a public certificate
 
-You can use the following OpenSSL command to generate a 2048-bit PEM-encoded
-public certificate for your application (with a 1-year validity period):
+You can use the following OpenSSL command to generate a 2048-bit PEM-encoded public certificate for your application (with a 1-year validity period):
 
 ```
 openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out public.crt
 ```
 
-Make sure you're using the corresponding private key in your application to sign
-and/or validate requests and responses to/from login.gov.
+Make sure you're using the corresponding private key in your application to sign and/or validate requests and responses to/from login.gov.
 
 ## Automated/Load Testing
 
