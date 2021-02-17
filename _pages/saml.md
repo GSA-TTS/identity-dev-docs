@@ -66,15 +66,80 @@ Here are values needed to configure your service provider (SP) to work with logi
   ```
 
 - **x509 Public Certificate**
-  The public certificate is used to validate the authenticity of SAML requests received from login.gov, a minimum of 2048 bits. We publish this public certificate from in our [Metadata endpoint](#metadata).
+  The public certificate is used to validate the authenticity of SAML requests received from login.gov, a minimum of 2048 bits. We publish this public certificate from in our [metadata endpoint](#metadata) and below for verification.
 
 ### Metadata
 
-Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata is available at [https://idp.int.identitysandbox.gov/api/saml/metadata2020](https://idp.int.identitysandbox.gov/api/saml/metadata2020)
+Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata for our **sandbox** environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata2020](https://idp.int.identitysandbox.gov/api/saml/metadata2020).
 
-### Annual Certificate Rotation
+### Signing Certificates
+Below you can find the X509 certificates used by the login.gov IdP to sign SAML requests. **Do not enter these certificates in the Dashboard when configuring an application for testing** - you can follow the instructions in our [testing article]({% link _pages/testing.md %}#creating-a-public-certificate) to generate a client certificate.
 
-The Login.gov SAML certificate is valid for just over one year. Every spring, Login.gov adds new SAML endpoints with the current year that use a new signing certificate. (So `/api/saml/metadata2020` becomes `/api/saml/metadata2021`.)
+<div class="usa-accordion--bordered">
+<button class="usa-accordion__button" aria-controls="sandbox-cert-2020">
+View 2020 <strong>sandbox</strong> certificate
+</button>
+<div id="sandbox-cert-2020" class="usa-accordion__content" markdown="1">
+```
+-----BEGIN CERTIFICATE-----
+MIIDgDCCAmgCCQCBwmwOs+Ve3DANBgkqhkiG9w0BAQsFADCBgTELMAkGA1UEBhMC
+VVMxHTAbBgNVBAgMFERpc3RyaWN0IG9mIENvbHVtYmlhMQwwCgYDVQQKDANHU0Ex
+DDAKBgNVBAsMA1RUUzESMBAGA1UECwwJTG9naW4uZ292MSMwIQYDVQQDDBpzZWN1
+cmUuaWRlbnRpdHlzYW5kYm94LmdvdjAeFw0yMDAzMTAxOTE0MzhaFw0yMTA0MDEx
+OTE0MzhaMIGBMQswCQYDVQQGEwJVUzEdMBsGA1UECAwURGlzdHJpY3Qgb2YgQ29s
+dW1iaWExDDAKBgNVBAoMA0dTQTEMMAoGA1UECwwDVFRTMRIwEAYDVQQLDAlMb2dp
+bi5nb3YxIzAhBgNVBAMMGnNlY3VyZS5pZGVudGl0eXNhbmRib3guZ292MIIBIjAN
+BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnpLbLzqL+7Xxa8HrxhX6DNBmpWvp
+ldrT9Z8JKgFOjPuZZT1TPYpE6b2fL1M49SDCXudFssbgcX2BBGZsvZ96UGtKP0dz
+4Sy+RqWwSUBrptMwcayM5TGu0AW5kGDbb0ZC2M7jspHOZ1bdPdT3BGbyHIrCwBVw
+lyLSBeztACQTebmCaW5fioJnpigbMmGCpLm4zFYOLYmR1fEHgWNrw51rhxhb3OEO
+DX5Wjp6F86oEqgJFmV4pq8ggL3qEKbNwpvm3QMUvQ1QmZh8bIBvp9BYcgTjCBFDY
+wTdR5KQpZHtSqdHjaxfDq3TJPUqVB+LMb9STjU/qKcvg/IbmwzQ0tDdzgQIDAQAB
+MA0GCSqGSIb3DQEBCwUAA4IBAQBqcIhjTzbUOugSx7bkKwiS0qjpVgmZnvbb//eQ
+eTmKuMquvy/DW1Lon9X6QBIvkwJMKMfgZVfTwV9C3h4kkPXnhZNt4HH0TPBqZZwp
+rFoEOhqkjmx6jD5OdrVw/d505Q11lsb7yN7sOwJ0/Q26Ru3BA5sFCtAXM3TB9JGC
+Zs2s/5Geut2Q6MTUMVutjsCPRRwpJ0ls22e5hxQRIuXjJf6tAOCVdt4YYbkYgcXY
+Ne36N/zoZmnJOPZDtumCBcB9XsQw14G4kWHW38EaFpIY8yFt5p4k+8DbC6DTqgxO
+fYUWpmY9IGGS4A2Buwqh7rJcjv1g3f68Tz2vXphnfi5rmN4Y
+-----END CERTIFICATE-----
+```
+</div>
+</div>
+
+<div class="usa-accordion--bordered">
+<button class="usa-accordion__button" aria-controls="prod-staging-cert-2020">
+View 2020 <strong>production/staging</strong> certificate
+</button>
+<div id="prod-staging-cert-2020" class="usa-accordion__content" markdown="1">
+```
+-----BEGIN CERTIFICATE-----
+MIIDajCCAlICCQDyTRqCHw+2LTANBgkqhkiG9w0BAQsFADB3MQswCQYDVQQGEwJV
+UzEdMBsGA1UECAwURGlzdHJpY3Qgb2YgQ29sdW1iaWExDDAKBgNVBAoMA0dTQTEM
+MAoGA1UECwwDVFRTMRIwEAYDVQQLDAlMb2dpbi5nb3YxGTAXBgNVBAMMEHNlY3Vy
+ZS5sb2dpbi5nb3YwHhcNMjAwMzEwMTkxMzU1WhcNMjEwNDAxMTkxMzU1WjB3MQsw
+CQYDVQQGEwJVUzEdMBsGA1UECAwURGlzdHJpY3Qgb2YgQ29sdW1iaWExDDAKBgNV
+BAoMA0dTQTEMMAoGA1UECwwDVFRTMRIwEAYDVQQLDAlMb2dpbi5nb3YxGTAXBgNV
+BAMMEHNlY3VyZS5sb2dpbi5nb3YwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQCm0HDbvMCXF5pQUUP6rb+vMhkP/6tohNh7sXvM/D6mnYd7Q9blbOTx58sr
+Lr2hP/FGsqjmP2VwfjWyjxoTy2FjvjU4TxZgQALkpQ4IUcCRRd6jdOHWyCYQiEW7
+Gykw1tHVON1zhL2l6TxPsN1rizpvh9MLOTB3cqTzV+GFBamNcBOmN5Da/ESVhAKM
+C6jEXgRPUsXK6R9QdcVUxqQriyHfUHG/x8MN6EAymmwfNjIRhj9lskaC3EI/j4hs
+q4xg4hhcpEZperTTtUXk5bhCxixeDh4m3Ae/Sxrjdgry4q4/lImOsobtDr2l/HMD
+RpGxdJLt0F0MX/hRXdtlSXsuNCNjAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAKaQ
+r0ec9RgERVYMuAFiEj+yK5vIs70x1Qe3iCMFdKvFtIUnOzrEkmU0lgvrcOZWXoFz
+XdNZj1EcQtKFLhc6vXn6S5/GuYBfw18yGQL2ArREFD9ygBx+b/9504WLN72Gub0T
+eHlzkFWx/0A1F3ECCJJgadYQkvxOsg9jNQ5QCSqMPiDIqpU3qXxLZXRl+ZCB2cPr
+tAW9SHy9PHO0aNOmNbiw8W0eMNu1hmfXjoXQX5uiLbXiwi8Rt5DQ7LeNcfgU3y5U
+G5MYFZoHSykZJHtQ04aaZGsyH2c5M0AtdOx6KothbeXH41Bpyur30l2tUh/19+CX
+Sdm3Kruzll5fSkwyWCc=
+-----END CERTIFICATE-----
+```
+</div>
+</div>
+
+#### Annual Certificate Rotation
+
+The login.gov SAML certificate is valid for just over one year. Every spring, login.gov adds new SAML endpoints with the current year that use a new signing certificate. (So `/api/saml/metadata2020` becomes `/api/saml/metadata2021`.)
 
 The certificates are issued to create an overlap period of about a month, during which all partners using SAML should migrate at their convenience to the new endpoint URLs for the current year.
 
