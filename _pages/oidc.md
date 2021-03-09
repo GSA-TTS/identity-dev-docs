@@ -378,7 +378,7 @@ Here's an example response:
   "family_name": "Smith",
   "given_name": "John",
   "iss": "https://idp.int.identitysandbox.gov",
-  "phone": "+1 (555) 555-5555",
+  "phone": "+18881112222",
   "phone_verified": true,
   "social_security_number": "111223333",
   "sub": "b2d2d115-1d7e-4579-b9d6-f8e84f4f56ca",
