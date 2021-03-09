@@ -179,7 +179,6 @@ Requires the `profile:verified_at` scope.
 `verified_at` (string, ISO8601 format)
 </td>
     </tr>
-    -----------------------------
     <tr>
 <td markdown="1">
 **x509** <br />
