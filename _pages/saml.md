@@ -177,11 +177,11 @@ lzdI/A8lml7s8FEL3jF/rd6lUg==
 
 #### Annual Certificate Rotation
 
-The login.gov SAML certificate is valid for just over one year. Every spring, login.gov adds new SAML endpoints with the current year that use a new signing certificate. (So `/api/saml/metadata2020` becomes `/api/saml/metadata2021`.)
+The login.gov SAML certificate is valid for just over one year. Every spring, login.gov adds new SAML endpoints with the current year that use a new signing certificate. (So `/api/saml/metadata2021` becomes `/api/saml/metadata2022`.)
 
 The certificates are issued to create an overlap period of about a month, during which all partners using SAML should migrate at their convenience to the new endpoint URLs for the current year.
 
-The 2020 certificates for idp.int.identitysandbox.gov and secure.login.gov each expire on April 1, 2021. So the transition from 2020 to 2021 endpoints should take place in February or March 2021.
+The 2021 certificates for idp.int.identitysandbox.gov and secure.login.gov each expire on April 1, 2022. So the transition from 2021 to 2022 endpoints should take place in February or March 2022.
 
 ## Auth
 
@@ -190,7 +190,7 @@ The 2020 certificates for idp.int.identitysandbox.gov and secure.login.gov each 
 To authenticate a user with login.gov, direct them to our authentication URL with a SAML authentication request as a GET param.
 
 ```bash
-https://idp.int.identitysandbox.gov/api/saml/auth2020?SAMLRequest=${SAML_REQUEST}
+https://idp.int.identitysandbox.gov/api/saml/auth2021?SAMLRequest=${SAML_REQUEST}
 ```
 
 The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload of a `<samlp:AuthnRequest>`:
@@ -376,7 +376,7 @@ Login.gov does not support Single Logout (SLO). The logout action will terminate
 To log a user out, direct them to the logout URL with a `SAMLRequest`:
 
 ```bash
-https://idp.int.identitysandbox.gov/api/saml/logout2020?SAMLRequest=${SAML_REQUEST}
+https://idp.int.identitysandbox.gov/api/saml/logout2021?SAMLRequest=${SAML_REQUEST}
 ```
 
 The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload of a `<samlp:LogoutRequest>`.
