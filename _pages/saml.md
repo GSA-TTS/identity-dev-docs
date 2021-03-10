@@ -55,14 +55,14 @@ Here are values needed to configure your service provider (SP) to work with logi
   This is the endpoint where authentication requests are sent to login.gov (aka Single Sign-on Service). For example:
 
   ```xml
-  <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.int.identitysandbox.gov/api/saml/auth2020" />
+  <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.int.identitysandbox.gov/api/saml/auth2021" />
   ```
 
 - **Logout service URL and Binding**
   The single logout service URL is used to contact the Single logout profile (aka Single Logout Service). For example:
 
   ```xml
-  <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.int.identitysandbox.gov/api/saml/logout2020" />
+  <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.int.identitysandbox.gov/api/saml/logout2021" />
   ```
 
 - **x509 Public Certificate**
@@ -70,71 +70,109 @@ Here are values needed to configure your service provider (SP) to work with logi
 
 ### Metadata
 
-Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata for our **sandbox** environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata2020](https://idp.int.identitysandbox.gov/api/saml/metadata2020).
+Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata for our **sandbox** environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata2021](https://idp.int.identitysandbox.gov/api/saml/metadata2021).
 
 ### Signing Certificates
 Below you can find the X509 certificates used by the login.gov IdP to sign SAML requests. **Do not enter these certificates in the Dashboard when configuring an application for testing** - you can follow the instructions in our [testing article]({% link _pages/testing.md %}#creating-a-public-certificate) to generate a client certificate.
 
 <div class="usa-accordion--bordered">
-<button class="usa-accordion__button" aria-controls="sandbox-cert-2020">
-View 2020 <strong>sandbox</strong> certificate
-</button>
-<div id="sandbox-cert-2020" class="usa-accordion__content" markdown="1">
+  <button class="usa-accordion__button" aria-controls="sandbox-cert-2021">
+  View 2021 <strong>sandbox</strong> certificate
+  </button>
+  <div id="sandbox-cert-2021" class="usa-accordion__content" markdown="1">
 ```
 -----BEGIN CERTIFICATE-----
-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
+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
+iw==
 -----END CERTIFICATE-----
 ```
-</div>
+  </div>
 </div>
 
 <div class="usa-accordion--bordered">
-<button class="usa-accordion__button" aria-controls="prod-staging-cert-2020">
-View 2020 <strong>production/staging</strong> certificate
-</button>
-<div id="prod-staging-cert-2020" class="usa-accordion__content" markdown="1">
+  <button class="usa-accordion__button" aria-controls="staging-cert-2021">
+  View 2021 <strong>staging</strong> certificate
+  </button>
+  <div id="staging-cert-2021" class="usa-accordion__content" markdown="1">
 ```
 -----BEGIN CERTIFICATE-----
-MIIDajCCAlICCQDyTRqCHw+2LTANBgkqhkiG9w0BAQsFADB3MQswCQYDVQQGEwJV
-UzEdMBsGA1UECAwURGlzdHJpY3Qgb2YgQ29sdW1iaWExDDAKBgNVBAoMA0dTQTEM
-MAoGA1UECwwDVFRTMRIwEAYDVQQLDAlMb2dpbi5nb3YxGTAXBgNVBAMMEHNlY3Vy
-ZS5sb2dpbi5nb3YwHhcNMjAwMzEwMTkxMzU1WhcNMjEwNDAxMTkxMzU1WjB3MQsw
-CQYDVQQGEwJVUzEdMBsGA1UECAwURGlzdHJpY3Qgb2YgQ29sdW1iaWExDDAKBgNV
-BAoMA0dTQTEMMAoGA1UECwwDVFRTMRIwEAYDVQQLDAlMb2dpbi5nb3YxGTAXBgNV
-BAMMEHNlY3VyZS5sb2dpbi5nb3YwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
-AoIBAQCm0HDbvMCXF5pQUUP6rb+vMhkP/6tohNh7sXvM/D6mnYd7Q9blbOTx58sr
-Lr2hP/FGsqjmP2VwfjWyjxoTy2FjvjU4TxZgQALkpQ4IUcCRRd6jdOHWyCYQiEW7
-Gykw1tHVON1zhL2l6TxPsN1rizpvh9MLOTB3cqTzV+GFBamNcBOmN5Da/ESVhAKM
-C6jEXgRPUsXK6R9QdcVUxqQriyHfUHG/x8MN6EAymmwfNjIRhj9lskaC3EI/j4hs
-q4xg4hhcpEZperTTtUXk5bhCxixeDh4m3Ae/Sxrjdgry4q4/lImOsobtDr2l/HMD
-RpGxdJLt0F0MX/hRXdtlSXsuNCNjAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAKaQ
-r0ec9RgERVYMuAFiEj+yK5vIs70x1Qe3iCMFdKvFtIUnOzrEkmU0lgvrcOZWXoFz
-XdNZj1EcQtKFLhc6vXn6S5/GuYBfw18yGQL2ArREFD9ygBx+b/9504WLN72Gub0T
-eHlzkFWx/0A1F3ECCJJgadYQkvxOsg9jNQ5QCSqMPiDIqpU3qXxLZXRl+ZCB2cPr
-tAW9SHy9PHO0aNOmNbiw8W0eMNu1hmfXjoXQX5uiLbXiwi8Rt5DQ7LeNcfgU3y5U
-G5MYFZoHSykZJHtQ04aaZGsyH2c5M0AtdOx6KothbeXH41Bpyur30l2tUh/19+CX
-Sdm3Kruzll5fSkwyWCc=
+MIID3zCCAsegAwIBAgIUbQ9+wSUJ9e1AneiLtRD7V/1mRJEwDQYJKoZIhvcNAQEL
+BQAwfzELMAkGA1UEBhMCVVMxHTAbBgNVBAgMFERpc3RyaWN0IG9mIENvbHVtYmlh
+MRMwEQYDVQQHDApXYXNoaW5ndG9uMQwwCgYDVQQKDANHU0ExEjAQBgNVBAsMCUxv
+Z2luLmdvdjEaMBgGA1UEAwwRc3RhZ2luZy5sb2dpbi5nb3YwHhcNMjEwMzA1MTkw
+NzQ3WhcNMjIwNDAxMTkwNzQ3WjB/MQswCQYDVQQGEwJVUzEdMBsGA1UECAwURGlz
+dHJpY3Qgb2YgQ29sdW1iaWExEzARBgNVBAcMCldhc2hpbmd0b24xDDAKBgNVBAoM
+A0dTQTESMBAGA1UECwwJTG9naW4uZ292MRowGAYDVQQDDBFzdGFnaW5nLmxvZ2lu
+LmdvdjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANUNfCMWGoT9v4N/
+7I8q/bILj7uPERI0ECBooaY7mCAQijbwEJd0EvGnKDSYumqX0TNlcOaMk7cw0t1P
+gBTRgpIcRkUxHrUqDrEz2HIfDT6FMQuLoaq48HwEzeYLN51V9y1F2zqDCuQ5tP4z
+Vu1IrMeUDVhIzqwhDXpPit847lqcJjGulq3sIqOCLzncl28J8FST8jhNEUZZq7Kz
+LXjbofAtTOuCTnHKFeOD2Z54ltti3kzknodO3EMzSybTW6ZVrqkTwylwuMTcLIFA
++7MmrEtLZZA0+TMgeGzK2eHjDGyNVsLVsqNP4nWEzH+cYui2PkhPbF+H8FwzfNeT
+rfTttEcCAwEAAaNTMFEwHQYDVR0OBBYEFERlUaCo4VsdtmbGqkBBRxfOeFZkMB8G
+A1UdIwQYMBaAFERlUaCo4VsdtmbGqkBBRxfOeFZkMA8GA1UdEwEB/wQFMAMBAf8w
+DQYJKoZIhvcNAQELBQADggEBAJa2Pdn+gyMWiDOSp6D1IQPrHkIfkMxQNZ1VB/oe
+HXOWWiuxu1OFnG7Jn5MN+aQVWkUasBIfG8pMEsh0ymF7XvwvjMaflxSEb0ubgivg
+4+AUPwLKeTapr+aVozqxuRSjj7rJBKh6/u9Adip87rH92K/L/kBfky2gCJ6DAJYr
+nBO2k9yV7Wpil1OBK5DQ71Cvg1ZxQon1zvd7Iy0qUwbdXV48RPDk296+jGFYkxte
+kiLkLeRXCut/8L3YuI/zUeVVnb0Qn6OIC3ouVPingl6g9f15KHYoXwi2MpC6ZsbG
+zj6mqTIhwdCVxnZ8sm4HKtFKfCtyI3db3DVg/68hW+NZr9w=
 -----END CERTIFICATE-----
 ```
+  </div>
 </div>
+
+<div class="usa-accordion--bordered">
+  <button class="usa-accordion__button" aria-controls="prod-cert-2021">
+  View 2021 <strong>production</strong> certificate
+  </button>
+  <div id="prod-cert-2021" class="usa-accordion__content" markdown="1">
+```
+-----BEGIN CERTIFICATE-----
+MIIDzzCCAregAwIBAgIUZD8catEsxhppdBq7wJDo6qmr54kwDQYJKoZIhvcNAQEL
+BQAwdzELMAkGA1UEBhMCVVMxHTAbBgNVBAgMFERpc3RyaWN0IG9mIENvbHVtYmlh
+MRMwEQYDVQQHDApXYXNoaW5ndG9uMQwwCgYDVQQKDANHU0ExEjAQBgNVBAsMCUxv
+Z2luLmdvdjESMBAGA1UEAwwJbG9naW4uZ292MB4XDTIxMDMwNTE5MDc1OFoXDTIy
+MDQwMTE5MDc1OFowdzELMAkGA1UEBhMCVVMxHTAbBgNVBAgMFERpc3RyaWN0IG9m
+IENvbHVtYmlhMRMwEQYDVQQHDApXYXNoaW5ndG9uMQwwCgYDVQQKDANHU0ExEjAQ
+BgNVBAsMCUxvZ2luLmdvdjESMBAGA1UEAwwJbG9naW4uZ292MIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxOOpDwiXOunf2brWjkaTpAV+pg60T6c6Fsyt
+EebNrrUMFPxXIP6eDbhSCiiM83koLSJek4bStma4me6RM7RM0+qLq526e08DE0lu
+DM0u45YsROWDqiAHFxJxqYovqYQ9JnaxuXmVuCfgBJyLQA0RcbN1G+NhT7VpgMzw
+ouyXhZs5O98fIGMBm7HVckxsude75yOLYOOhiTL2RQnYw8fjsz/B/kDZB+jcDFuR
+/y7ysVpVJ3/wt5lzuI10S1rLlr4XM09l1K/TgMXPJr4jbjm4SbmozhE4vC9UE0yu
+Wv6ZrXW+5gidhCOuy0BvMDZGXsqPJ0TIsQz1E/tSDz9gyke2nwIDAQABo1MwUTAd
+BgNVHQ4EFgQUIoi+9o/vRGxzAvObLqhB66KPY4kwHwYDVR0jBBgwFoAUIoi+9o/v
+RGxzAvObLqhB66KPY4kwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOC
+AQEACy3VqftGA5bVYMwcvBQFGCMwRqTyL8jGKnvt8RZJ8ePX2thgXIsaC5zPJQAx
+s4z7DFubSBZEpoBwxEIZVI8hsFkPKrUYgsBRTUBVA2Q3E48VTVxyVLEul8BESqaZ
+vIeYwOGwc6q14kLHmq/ZBzbeZPEH2wPORwXouWOonxAWAHvrUUjt0uEY3y0VXRD5
+LnmMjyTlRLqBQyxJWEnJYeeWhIk0ARJMcerkaLcMASUlL6Sua7aI8E2qXOImJofC
+I+mn1PzJcSXvJE/Xi3UVt0GMVgIK7ZsKnAnDR6JulJOq1lkLh3QvERfXQJ4Zz88V
+lzdI/A8lml7s8FEL3jF/rd6lUg==
+-----END CERTIFICATE-----
+```
+  </div>
 </div>
 
 #### Annual Certificate Rotation
