@@ -108,7 +108,7 @@ The [address claim](https://openid.net/specs/openid-connect-core-1_0.html#Addres
     </tr>
     <tr>
 <td markdown="1">
-**Phone**<br>The user's phone number formatted as [E.164](https://en.wikipedia.org/wiki/E.164), for example: `+1 (555) 555-5555`
+**Phone**<br>The user's phone number formatted as [E.164](https://en.wikipedia.org/wiki/E.164), for example: `+18881112222`
 </td>
 <td></td>
 <td markdown="1">
@@ -179,7 +179,6 @@ Requires the `profile:verified_at` scope.
 `verified_at` (string, ISO8601 format)
 </td>
     </tr>
-    -----------------------------
     <tr>
 <td markdown="1">
 **x509** <br />
