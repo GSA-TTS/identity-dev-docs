@@ -148,7 +148,7 @@ Requires `profile` or `profile:birthdate` scopes.
     <tr>
 <td markdown="1">
 **Social security number**<br>
-Example: 111-11-1111
+Example:<br>`111-11-1111`
 </td>
 <td></td>
 <td markdown="1">
