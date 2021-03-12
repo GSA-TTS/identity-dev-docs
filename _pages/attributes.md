@@ -115,7 +115,7 @@ The [address claim](https://openid.net/specs/openid-connect-core-1_0.html#Addres
 ![checkmark][checkmark]
 </td>
 <td markdown="1">
-`phone` (string)
+`phone` (string, null)
 
 Requires the `phone` scope.
 </td>
