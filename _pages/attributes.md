@@ -6,6 +6,11 @@ lead: >
 
 Here are the possible attributes that can be requested at a given IAL. This table contains the available user attributes, the IAL they are associated with, and how they can be accessed in OpenID Connect and SAML.
 
+It is important to expect any number of characters in the `(string)` datatype unless directly followed by a number such as `(string36)`.
+
+The following fields are stored together in a text datatype with a maximum length of 65,535 bytes:<br>
+First name, Last name, Address, Phone, Date of birth, Social security number
+
 <table>
   <thead>
     <th>Attribute</th>
@@ -26,7 +31,7 @@ Here are the possible attributes that can be requested at a given IAL. This tabl
 ![checkmark][checkmark]
 </td>
 <td markdown="1">
-`sub` (string)
+`sub` (string36)
 </td>
 <td markdown="1">
 `uuid`
@@ -96,7 +101,7 @@ Requires `profile` or `profile:name` scopes.
 <td markdown="1">
 `address` (object)
 
-The [address claim](https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim), containing `street_address`, `locality` (city), `region` (state), and `postal_code` (zip code). Requires the `address` scope.
+The [address claim](https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim), containing `street_address`(string), `locality`(city, string), `region`(state, string), and `postal_code`(zip code, string5). Requires the `address` scope.
 </td>
 <td markdown="1">
 `address1` <br />
@@ -132,7 +137,7 @@ Requires the `phone` scope.
 ![checkmark][checkmark]
 </td>
 <td markdown="1">
-`birthdate` (string)
+`birthdate` (string10)
 
 Requires `profile` or `profile:birthdate` scopes.
 </td>
@@ -142,14 +147,15 @@ Requires `profile` or `profile:birthdate` scopes.
     </tr>
     <tr>
 <td markdown="1">
-**Social security number**
+**Social security number**<br>
+Example: 111-11-1111
 </td>
 <td></td>
 <td markdown="1">
 ![checkmark][checkmark]
 </td>
 <td markdown="1">
-`social_security_number` (string)
+`social_security_number`(string11)
 
 Requires the `social_security_number` scope.
 </td>
