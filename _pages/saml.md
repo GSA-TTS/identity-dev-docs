@@ -265,7 +265,12 @@ To specify one of the supported IAL levels, place one of these values inside a `
 
 #### Authentication Assurance Level (AAL)
 
-We default to requiring a user to be authenticated with a second factor. To specify a stricter AAL level, add an additional `<saml:AuthnContextClassRef>` with one of these values:
+We default to requiring a user to be authenticated with a second factor.
+
+- **`urn:gov:gsa:ac:classes:sp:PasswordProtectedTransport:duo`**
+    This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow AAL 1, because it implies that a user did not authenticate with a second factor.
+
+To specify a stricter AAL level, add an additional `<saml:AuthnContextClassRef>` with one of these values:
 
   - **`http://idmanagement.gov/ns/assurance/aal/3`**
       This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC.
