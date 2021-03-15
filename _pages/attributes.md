@@ -95,14 +95,14 @@ Requires `profile` or `profile:name` scopes.
 <td markdown="1">
 ![checkmark][checkmark]
 </td>
-<td markdown="1">
+<td markdown="1" class="text-no-wrap">
 `address` (object)
 
 The [address claim](https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim), containing: <br />
-`street_address`(string) <br />
-`locality`(city, string) <br />
-`region`(state, string) <br />
-`postal_code`(zip code, string5)
+`street_address` (string) <br />
+`locality` (city, string) <br />
+`region` (state, string) <br />
+`postal_code` (zip code, string5)
 <br /><br />
 Requires the `address` scope.
 </td>
