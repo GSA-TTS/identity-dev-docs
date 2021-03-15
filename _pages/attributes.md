@@ -98,7 +98,7 @@ Requires `profile` or `profile:name` scopes.
 <td markdown="1">
 `address` (object)
 
-The [address claim](https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim), containing `street_address`(string), `locality`(city, string), `region`(state, string), and `postal_code`(zip code, string5). Requires the `address` scope.
+The [address claim](https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim), containing: `street_address`(string) <br>`locality`(city, string) <br> `region`(state, string) <br> `postal_code`(zip code, string5) <br><br> Requires the `address` scope.
 </td>
 <td markdown="1">
 `address1` <br />
