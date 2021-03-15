@@ -6,6 +6,8 @@ lead: >
 
 Here are the possible attributes that can be requested at a given IAL. This table contains the available user attributes, the IAL they are associated with, and how they can be accessed in OpenID Connect and SAML.
 
+It is important to expect any number of characters in the `(string)` datatype unless directly followed by a number such as `(string36)`. Strings are encrypted and stored in a text datatype with a maximum length of 65,535 bytes.
+
 <table>
   <thead>
     <th>Attribute</th>
@@ -26,15 +28,15 @@ Here are the possible attributes that can be requested at a given IAL. This tabl
 ![checkmark][checkmark]
 </td>
 <td markdown="1">
-`sub` (string)
+`sub` (string36)
 </td>
 <td markdown="1">
-`uuid`
+`uuid` (string36)
 </td>
     </tr>
     <tr>
 <td markdown="1">
-**Email**<br>The user's email address.
+**Email**<br />The user's email address.
 </td>
 <td markdown="1">
 ![checkmark][checkmark]
@@ -48,12 +50,12 @@ Here are the possible attributes that can be requested at a given IAL. This tabl
 Requires the `email` scope.
 </td>
 <td markdown="1">
-`email`
+`email` (string)
 </td>
     </tr>
     <tr>
 <td markdown="1">
-**First name**<br>The user's first (given) name.
+**First name**<br />The user's first (given) name.
 </td>
 <td></td>
 <td markdown="1">
@@ -65,12 +67,12 @@ Requires the `email` scope.
 Requires `profile` or `profile:name` scopes.
 </td>
 <td markdown="1">
-`first_name`
+`first_name` (string)
 </td>
     </tr>
     <tr>
 <td markdown="1">
-**Last name**<br>The user's last (family) name.
+**Last name**<br />The user's last (family) name.
 </td>
 <td></td>
 <td markdown="1">
@@ -82,33 +84,39 @@ Requires `profile` or `profile:name` scopes.
 Requires `profile` or `profile:name` scopes.
 </td>
 <td markdown="1">
-`last_name`
+`last_name` (string)
 </td>
     </tr>
     <tr>
 <td markdown="1">
-**Address**<br>The user's address, including street, city, state, and zip code.
+**Address**<br />The user's address, including street, city, state, and zip code.
 </td>
 <td></td>
 <td markdown="1">
 ![checkmark][checkmark]
 </td>
-<td markdown="1">
+<td markdown="1" class="text-no-wrap">
 `address` (object)
 
-The [address claim](https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim), containing `street_address`, `locality` (city), `region` (state), and `postal_code` (zip code). Requires the `address` scope.
+The [address claim](https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim), containing: <br />
+`street_address` (string) <br />
+`locality` (city, string) <br />
+`region` (state, string) <br />
+`postal_code` (zip code, string5)
+<br /><br />
+Requires the `address` scope.
 </td>
 <td markdown="1">
-`address1` <br />
-`address2` <br />
-`city` <br />
-`state` <br />
-`zipcode`
+`address1` (string) <br />
+`address2` (string) <br />
+`city` (string) <br />
+`state` (string) <br />
+`zipcode` (string5)
 </td>
     </tr>
     <tr>
 <td markdown="1">
-**Phone**<br>The user's phone number formatted as [E.164](https://en.wikipedia.org/wiki/E.164), for example: `+18881112222`
+**Phone**<br />The user's phone number formatted as [E.164](https://en.wikipedia.org/wiki/E.164), for example: `+18881112222`
 </td>
 <td></td>
 <td markdown="1">
@@ -120,41 +128,42 @@ The [address claim](https://openid.net/specs/openid-connect-core-1_0.html#Addres
 Requires the `phone` scope.
 </td>
 <td markdown="1">
-`phone`
+`phone` (string, null)
 </td>
     </tr>
     <tr>
 <td markdown="1">
-**Date of birth**<br>Formatted as [ISO 8601:2004](https://en.wikipedia.org/wiki/ISO_8601), for example: `YYYY-MM-DD`
+**Date of birth**<br />Formatted as [ISO 8601:2004](https://en.wikipedia.org/wiki/ISO_8601), for example: `YYYY-MM-DD`
 </td>
 <td></td>
 <td markdown="1">
 ![checkmark][checkmark]
 </td>
 <td markdown="1">
-`birthdate` (string)
+`birthdate` (string10)
 
 Requires `profile` or `profile:birthdate` scopes.
 </td>
 <td markdown="1">
-`dob`
+`dob` (string10)
 </td>
     </tr>
     <tr>
 <td markdown="1">
-**Social security number**
+**Social security number**<br />
+Example:<br />`111-11-1111`
 </td>
 <td></td>
 <td markdown="1">
 ![checkmark][checkmark]
 </td>
 <td markdown="1">
-`social_security_number` (string)
+`social_security_number` (string11)
 
 Requires the `social_security_number` scope.
 </td>
 <td markdown="1">
-`ssn`
+`ssn` (string11)
 </td>
     </tr>
     <tr>
