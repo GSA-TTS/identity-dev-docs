@@ -265,7 +265,12 @@ To specify one of the supported IAL levels, place one of these values inside a `
 
 #### Authentication Assurance Level (AAL)
 
-We default to requiring a user to be authenticated with a second factor. To specify a stricter AAL level, add an additional `<saml:AuthnContextClassRef>` with one of these values:
+We default to requiring a user to be authenticated with a second factor:
+
+- **`urn:gov:gsa:ac:classes:sp:PasswordProtectedTransport:duo`**
+    This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow AAL 1, because it implies that a user did not authenticate with a second factor.
+
+To specify a stricter AAL level, add an additional `<saml:AuthnContextClassRef>` with one of these values:
 
   - **`http://idmanagement.gov/ns/assurance/aal/3`**
       This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC.
@@ -303,6 +308,14 @@ The authentication request can specify LOA levels 1 and 3 with one of these valu
   - **`http://idmanagement.gov/ns/assurance/loa/3`**
     Equivalent to IAL2
 
+### RelayState
+
+If you need to pass any information about the request back to your application after the authentication process is complete (e.g. the path to direct the user to), you can include a RelayState query parameter with up to 80 bytes of information. This will be included in the response back to your application as per section 3.4.3 of the [SAML 2.0 bindings spec](http://docs.oasis-open.org/security/saml/v2.0/saml-bindings-2.0-os.pdf).
+
+
+```bash
+https://idp.int.identitysandbox.gov/api/saml/auth2021?SAMLRequest=${SAML_REQUEST}&RelayState=${RELAY_STATE}
+```
 
 ## Auth response
 
