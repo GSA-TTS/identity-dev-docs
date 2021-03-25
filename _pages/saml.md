@@ -177,7 +177,11 @@ lzdI/A8lml7s8FEL3jF/rd6lUg==
 
 #### Annual Certificate Rotation
 
-The login.gov SAML certificate is valid for just over one year. Every spring, login.gov adds new SAML endpoints with the current year that use a new signing certificate. (So `/api/saml/metadata2021` becomes `/api/saml/metadata2022`.)
+The login.gov SAML certificate is valid for just over one year. Every spring, login.gov adds new SAML endpoints with the current year that use a new signing certificate. 
+
+  - `/api/saml/metadata2021` becomes `/api/saml/metadata2022`
+  - `/api/saml/auth2021` becomes `/api/saml/auth2022`
+  - `/api/saml/logout2021` becomes `/api/saml/logout2022`
 
 The certificates are issued to create an overlap period of about a month, during which all partners using SAML should migrate at their convenience to the new endpoint URLs for the current year.
 
