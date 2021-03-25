@@ -110,7 +110,12 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 
 
   #### AAL Values
-  We default to requiring a user to be authenticated with a second factor. Stricter behavior can be specified by adding one of:
+  We default to requiring a user to be authenticated with a second factor:
+
+  - **`urn:gov:gsa:ac:classes:sp:PasswordProtectedTransport:duo`**
+      This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow AAL 1, because it implies that a user did not authenticate with a second factor.
+
+  Stricter behavior can be specified by adding one of:
 
     - **`http://idmanagement.gov/ns/assurance/aal/3`**
         This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC.
