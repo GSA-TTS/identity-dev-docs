@@ -110,7 +110,12 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 
 
   #### AAL Values
-  We default to requiring a user to be authenticated with a second factor. Stricter behavior can be specified by adding one of:
+  We default to requiring a user to be authenticated with a second factor:
+
+  - **`urn:gov:gsa:ac:classes:sp:PasswordProtectedTransport:duo`**
+      This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow AAL 1, because it implies that a user did not authenticate with a second factor.
+
+  Stricter behavior can be specified by adding one of:
 
     - **`http://idmanagement.gov/ns/assurance/aal/3`**
         This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC.
@@ -390,7 +395,7 @@ Here's an example response:
 
 Login.gov's public key, used to verify signed JWTs (such as the `id_token`), is available in [JWK](https://tools.ietf.org/html/rfc7517) format at the `/api/openid_connect/certs` endpoint. For example, the URL in the agency integration environment is at [https://idp.int.identitysandbox.gov/api/openid_connect/certs](https://idp.int.identitysandbox.gov/api/openid_connect/certs)
 
-This public key is rotated periodically (on at least an annual basis), so be sure to use the JWK endpoint dynamically through [auto-discovery](#auto-discovery) rather than hardcoding the public key. This ensures that your application will not require manual intervention when the login.gov public key is rotated.
+This public key is rotated periodically (on at least an annual basis). It is important to assume the `/api/openid_connect/certs` endpoint could contain multiple JWKs when rotating application signing keys. Be sure to use the JWK endpoint dynamically through [auto-discovery](#auto-discovery) rather than hardcoding the public key. This ensures that your application will not require manual intervention when the login.gov public key is rotated.
 
 ## Logout
 

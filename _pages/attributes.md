@@ -55,6 +55,48 @@ Requires the `email` scope.
     </tr>
     <tr>
 <td markdown="1">
+**IAL**<br />Identity Assurance Level [NIST 800-63-3](https://pages.nist.gov/800-63-3/).
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+`ial` (url, urn)
+
+See [OpenID Connect IAL values](https://developers.login.gov/oidc/#ial-values)
+</td>
+<td markdown="1">
+`ial` (url, urn)
+
+See [SAML IAL values](https://developers.login.gov/saml/#identity-assurance-level-ial)
+</td>
+    </tr>
+    <tr>
+<td markdown="1">
+**AAL**<br />Authenticator Assurance Level [NIST 800-63-3](https://pages.nist.gov/800-63-3/).
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+`aal` (url, urn)
+
+See [OpenID Connect AAL values](https://developers.login.gov/oidc/#aal-values)
+</td>
+<td markdown="1">
+`aal` (url, urn)
+
+See [SAML AAL values](https://developers.login.gov/saml/#authentication-assurance-level-aal)
+</td>
+    </tr>
+    <tr>
+<td markdown="1">
 **First name**<br />The user's first (given) name.
 </td>
 <td></td>
