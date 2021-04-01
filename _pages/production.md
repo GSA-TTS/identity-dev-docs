@@ -38,7 +38,7 @@ All changes to integrations between login.gov and your application must be revie
 
 ## Confirm IAA
 
-You must have a signed IAA (Inter Agency Agreement) in order to deploy to production. You will need to provide the IAA Number this application will be billed under. The IAA number format will include `GTC-Order-Mod` (e.g. `LGABCFY210001-0001-0000`), where GTC stands for General Terms & Conditions. You may also hear these referred to as forms 7600A and 7600B.
+You must have a signed IAA (Inter Agency Agreement) with login.gov **with your integration explicitly listed in it** in order to deploy to production. You will need to provide the IAA number this application will be billed under. The IAA number format will include `GTC-Order-Mod` (e.g. `LGABCFY210001-0001-0000`), where GTC stands for General Terms & Conditions. You may also hear these referred to as forms 7600A and 7600B.
 
 Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to reach out to [partners@login.gov](mailto:partners@login.gov) to begin the IAA process, which can take up to 6 weeks to complete.
 
@@ -69,7 +69,7 @@ Before you can deploy your application to the production environment, you will n
 ## Request deployment
 
 Once you have:
-1. [Received a signed IAA number](#confirm-iaa)
+1. [Confirmed that this integration is listed in a signed IAA](#confirm-iaa)
 2. [Created a production configuration](#production-configuration)
 
 Please submit the [login.gov production integration request form](https://share.hsforms.com/1UTxHGOu2Q0SVyz9ulknZGw3ak9e){:target='_blank'}.
