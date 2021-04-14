@@ -259,7 +259,7 @@ Example:
 
 ### Request
 
-login.gov will make a POST request to your app's `push_notification_url`, see [Configuration](#configuration) for more details on setting that up. The JWT will be signed with login.gov's private key. See the OpenID Connect guide for information on how to get login.gov's public key from the [Certificates Endpoint](/oidc/#certificates).
+Login.gov will make a POST request to your app's `push_notification_url`, see [Configuration](#configuration) for more details on setting that up. The JWT will be signed with login.gov's private key. See the OpenID Connect guide for information on how to get login.gov's public key from the [Certificates Endpoint](/oidc/#certificates).
 
 If your app had the client ID of `urn:gov:gsa:openidconnect:test:risc:sets` and was configured to receive events at `https://agency.example.gov/events`, and a user freed up `email@example.com` login.gov would make a like this.
 
