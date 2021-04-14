@@ -1,0 +1,70 @@
+- friendly_name: Authorization Fraud Detected
+  direction: incoming
+  event_type: https://schemas.login.gov/secevent/risc/event-type/authorization-fraud-detected
+  description: >
+    RPs should submit this event when they believe a user's credentials have been compromised,
+    that somebody who is not the user was able to sign in to a user's account. Login.gov may force
+    the reset of user's password when we receive this event.
+- friendly_name: Identity Fraud Detected
+  direction: incoming
+  event_type: https://schemas.login.gov/secevent/risc/event-type/identity-fraud-detected
+  description: >
+    RPs should submit this event when they suspect an account has been used to commit identity theft or related fraudulent activity. Login.gov may reset the user's profile and verified attributes data when we receive this event.
+
+- friendly_name: Account Purged
+  direction: outgoing
+  event_type: https://schemas.openid.net/secevent/risc/event-type/account-purged
+  description: >
+    Login.gov pushes this event when a user deletes their account.
+  payload_schema:
+    - key: subject
+      description: An event should will a **subject** object, with the following keys
+      properties:
+        - key: subject_type
+          type: string
+          description: >
+            Will be **iss-sub**, this indicates the **sub** is the subject provided by the original issuer (login.gov)
+        - key: iss
+          type: string
+          description: >
+            This is login.gov's issuer, the root URL for login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
+        - key: sub
+          type: string
+          description: >
+            The UUID identifying the user. This is the same as the  `sub` inside the `id_token` JWT in the  [OpenID Token endpoint]({{site.baseurl}}/#token-response).
+  example_payload: {
+    "https://schemas.openid.net/secevent/risc/event-type/account-purged": {
+      "subject": {
+        "subject_type": "iss-sub",
+        "iss": "https://idp.int.identitysandbox.gov",
+        "sub": "<$SUB>"
+      }
+    }
+  }
+
+- friendly_name: Identifier Recycled
+  direction: outgoing
+  event_type: https://schemas.openid.net/secevent/risc/event-type/identifier-recycled
+  description: >
+    Login.gov pushes this event when a user removes an email address from their account, freeing up the email address as an identifier.
+  payload_schema:
+    - key: subject
+      description: An event should will a **subject** object, with the following keys
+      properties:
+        - key: subject_type
+          type: string
+          description: >
+            Will be **email**
+        - key: email
+          type: string
+          description: >
+            This is the email address that no longer belongs to any user.
+  example_payload: {
+    "https://schemas.openid.net/secevent/risc/event-type/identifier-recycled": {
+      "subject": {
+        "subject_type": "email",
+        "email": "<$EMAIL>"
+      }
+    }
+  }
+

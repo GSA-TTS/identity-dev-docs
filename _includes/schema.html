@@ -1,0 +1,25 @@
+{% comment %}
+Includes:
+- schema, array of:
+    - key
+    - description
+    - type (optional)
+    - properties (optional)
+{% endcomment %}
+<ul>
+  {% for item in include.schema %}
+    <li>
+<div markdown="1">
+**{{ item.key }}**
+{%- if item.type -%}
+  ({{ item.type }})
+{%- endif -%}
+<br />
+{{ item.description }}
+</div>
+      {% if item.properties %}
+        {% include schema.html schema=item.properties %}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

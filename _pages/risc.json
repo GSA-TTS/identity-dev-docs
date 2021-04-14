@@ -1,0 +1,20 @@
+---
+permalink: /data/risc.json
+layout: none
+---
+{%- capture json -%}
+{
+  "supported_events": [
+    {% for event in site.data.risc %}
+      {
+        "friendly_name": {{ event.friendly_name | jsonify }},
+        "event_type": {{ event.event_type | jsonify}},
+        "direction": {{ event.direction | jsonify }},
+        "description": {{ event.description | strip | jsonify }}
+      }
+      {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+{%- endcapture -%}
+{{ json | pretty_jsonify }}
