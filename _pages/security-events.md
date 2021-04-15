@@ -49,30 +49,23 @@ Login.gov provides a JSON endpoint for OpenID Connect auto-discovery at `/.well-
 
 Login.gov accepts custom events, based on the [OpenID RISC Event Types][openid-risc-events], but not specific ones from that list at this time.
 
-- [Authorization Fraud Detected](#authorization-fraud-detected)
-- [Identity Fraud Detected](#identity-fraud-detected)
+{%- for event in site.data.risc_incoming %}
+- [{{ event.friendly_name }}](#{{ event.friendly_name | slugify }})
+{%- endfor %}
 
-#### Authorization Fraud Detected
+{% for event in site.data.risc_incoming %}
 
-RPs should submit this event when they believe a user's credentials have been compromised, that somebody who is not the user
-was able to sign in to a user's account. Login.gov may force the reset of user's password when we receive this event.
+#### {{ event.friendly_name }}
 
-The **event_type** for this is:
-
-```
-https://schemas.login.gov/secevent/risc/event-type/authorization-fraud-detected
-```
-
-#### Identity Fraud Detected
-
-RPs should submit this event when they suspect an account has been used to commit identity theft or related fraudulent activity. Login.gov may reset the user's profile and verified attributes data when we receive this event.
+{{ event.description | markdownify }}
 
 The **event_type** for this is:
 
 ```
-https://schemas.login.gov/secevent/risc/event-type/identity-fraud-detected
+{{ event.event_type }}
 ```
 
+{% endfor %}
 
 ### Request
 
@@ -232,82 +225,37 @@ To configure your application to receive notifications from login.gov, supply lo
 
 Login.gov notifies for these events from the [OpenID RISC Event Types][openid-risc-events]:
 
-- [Account Purged](#account-purged)
-- [Identifier Recycled](#identifier-recycled)
+{%- for event in site.data.risc_outgoing %}
+- [{{ event.friendly_name }}](#{{ event.friendly_name | slugify }})
+{%- endfor %}
 
-#### Account Purged
+{% for event in site.data.risc_outgoing %}
 
-Login.gov pushes this event when a user deletes their account.
+#### {{ event.friendly_name }}
+
+{{ event.description | markdownify }}
 
 The **event_type** for this is:
+
 ```
-https://schemas.openid.net/secevent/risc/event-type/account-purged
+{{ event.event_type }}
 ```
 
-The event payload has
+The event payload has:
 
-* **subject**
-    An event should will a **subject** object, with the following keys:
-
-    * **subject_type** (string)
-      Will be **iss-sub**, this indicates the **sub** is the subject provided by the original issuer (login.gov)
-
-    * **iss** (string)
-      This is login.gov's issuer, the root URL for login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
-
-    * **sub** (string)
-      The UUID identifying the user. This is the same as the  `sub` inside the `id_token` JWT in the [OpenID Token endpoint]({{site.baseurl}}/#token-response).
+{% include schema.html schema=event.payload_schema %}
 
 Example:
 
 ```json
-{
-  "https://schemas.openid.net/secevent/risc/event-type/account-purged": {
-    "subject": {
-      "subject_type": "iss-sub",
-      "iss": "https://idp.int.identitysandbox.gov",
-      "sub": "<$SUB>"
-    }
-  }
-}
+{{ event.example_payload | jsonify | pretty_jsonify }}
 ```
 
-#### Identifier Recycled
-
-Login.gov pushes this event when a user removes an email address from their account, freeing up the email address as an identifier.
-
-The **event_type** for this is:
-```
-https://schemas.openid.net/secevent/risc/event-type/identifier-recycled
-```
-
-The event payload has
-
-* **subject**
-    An event should will a **subject** object, with the following keys:
-
-    * **subject_type** (string)
-      This will be **email**
-
-    * **email** (string)
-      This is the email address that no longer belongs to any user.
-
-Example:
-
-```json
-{
-  "https://schemas.openid.net/secevent/risc/event-type/identifier-recycled": {
-    "subject": {
-      "subject_type": "email",
-      "email": "<$EMAIL>"
-    }
-  }
-}
-```
+{% endfor %}
 
 ### Request
 
-login.gov will make a POST request to your app's `push_notification_url`, see [Configuration](#configuration) for more details on setting that up. The JWT will be signed with login.gov's private key. See the OpenID Connect guide for information on how to get login.gov's public key from the [Certificates Endpoint](/oidc/#certificates).
+Login.gov will make a POST request to your app's `push_notification_url`, see [Configuration](#configuration) for more details on setting that up. The JWT will be signed with login.gov's private key. See the OpenID Connect guide for information on how to get login.gov's public key from the [Certificates Endpoint](/oidc/#certificates).
 
 If your app had the client ID of `urn:gov:gsa:openidconnect:test:risc:sets` and was configured to receive events at `https://agency.example.gov/events`, and a user freed up `email@example.com` login.gov would make a like this.
 

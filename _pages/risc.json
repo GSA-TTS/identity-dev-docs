@@ -1,0 +1,19 @@
+---
+permalink: /data/risc.json
+layout: none
+---
+{%- capture json -%}
+{
+  "supported_events": [
+    {% for event in site.data.risc_incoming %}
+      {% include risc_event.json event=event direction="incoming" %}
+      ,
+    {% endfor %}
+    {% for event in site.data.risc_outgoing %}
+      {% include risc_event.json event=event direction="outgoing" %}
+      {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+{%- endcapture -%}
+{{ json | pretty_jsonify }}
