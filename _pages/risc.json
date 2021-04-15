@@ -5,13 +5,12 @@ layout: none
 {%- capture json -%}
 {
   "supported_events": [
-    {% for event in site.data.risc %}
-      {
-        "friendly_name": {{ event.friendly_name | jsonify }},
-        "event_type": {{ event.event_type | jsonify}},
-        "direction": {{ event.direction | jsonify }},
-        "description": {{ event.description | strip | jsonify }}
-      }
+    {% for event in site.data.risc_incoming %}
+      {% include risc_event.json event=event direction="incoming" %}
+      ,
+    {% endfor %}
+    {% for event in site.data.risc_outgoing %}
+      {% include risc_event.json event=event direction="outgoing" %}
       {% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]

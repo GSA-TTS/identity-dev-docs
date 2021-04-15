@@ -49,13 +49,11 @@ Login.gov provides a JSON endpoint for OpenID Connect auto-discovery at `/.well-
 
 Login.gov accepts custom events, based on the [OpenID RISC Event Types][openid-risc-events], but not specific ones from that list at this time.
 
-{% assign incoming_events = site.data.risc | where: 'direction', 'incoming' %}
-
-{%- for event in incoming_events %}
+{%- for event in site.data.risc_incoming %}
 - [{{ event.friendly_name }}](#{{ event.friendly_name | slugify }})
 {%- endfor %}
 
-{% for event in incoming_events %}
+{% for event in site.data.risc_incoming %}
 
 #### {{ event.friendly_name }}
 
@@ -227,13 +225,11 @@ To configure your application to receive notifications from login.gov, supply lo
 
 Login.gov notifies for these events from the [OpenID RISC Event Types][openid-risc-events]:
 
-{% assign outgoing_events = site.data.risc | where: 'direction', 'outgoing' %}
-
-{%- for event in outgoing_events %}
+{%- for event in site.data.risc_outgoing %}
 - [{{ event.friendly_name }}](#{{ event.friendly_name | slugify }})
 {%- endfor %}
 
-{% for event in outgoing_events %}
+{% for event in site.data.risc_outgoing %}
 
 #### {{ event.friendly_name }}
 

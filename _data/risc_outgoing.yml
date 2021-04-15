@@ -1,21 +1,4 @@
 #
-# Incoming Events
-#
-- friendly_name: Authorization Fraud Detected
-  direction: incoming
-  event_type: https://schemas.login.gov/secevent/risc/event-type/authorization-fraud-detected
-  description: >
-    RPs should submit this event when they believe a user's credentials have been compromised,
-    that somebody who is not the user was able to sign in to a user's account. Login.gov may force
-    the reset of user's password when we receive this event.
-
-- friendly_name: Identity Fraud Detected
-  direction: incoming
-  event_type: https://schemas.login.gov/secevent/risc/event-type/identity-fraud-detected
-  description: >
-    RPs should submit this event when they suspect an account has been used to commit identity theft or related fraudulent activity. Login.gov may reset the user's profile and verified attributes data when we receive this event.
-
-#
 # Outgoing Events
 #
 - friendly_name: Account Purged

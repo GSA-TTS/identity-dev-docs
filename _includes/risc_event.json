@@ -1,0 +1,11 @@
+{% comment %}
+Include:
+- event
+- direction (incoming/outgoing)
+{% endcomment %}
+{
+  "friendly_name": {{ include.event.friendly_name | jsonify }},
+  "event_type": {{ include.event.event_type | jsonify}},
+  "direction": {{ include.direction | jsonify }},
+  "description": {{ include.event.description | strip | jsonify }}
+}
