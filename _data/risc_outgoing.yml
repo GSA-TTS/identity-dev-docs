@@ -4,9 +4,10 @@
 - friendly_name: Account Purged
   direction: outgoing
   event_type: https://schemas.openid.net/secevent/risc/event-type/account-purged
+  spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#rfc.section.2.2"
   description: >
     Login.gov pushes this event when a user deletes their account.
-  payload_schema:
+  payload_schema: &iss_sub_schema
     - key: subject
       description: An event should will a **subject** object, with the following keys
       properties:
@@ -21,7 +22,7 @@
         - key: sub
           type: string
           description: >
-            The UUID identifying the user. This is the same as the  `sub` inside the `id_token` JWT in the  [OpenID Token endpoint]({{site.baseurl}}/#token-response).
+            The UUID identifying the user. This is the same as the  `sub` inside the `id_token` JWT in the OpenID Token endpoint.
   example_payload: {
     "https://schemas.openid.net/secevent/risc/event-type/account-purged": {
       "subject": {
@@ -35,9 +36,10 @@
 - friendly_name: Identifier Recycled
   direction: outgoing
   event_type: https://schemas.openid.net/secevent/risc/event-type/identifier-recycled
+  spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#rfc.section.2.6"
   description: >
     Login.gov pushes this event when a user removes an email address from their account, freeing up the email address as an identifier.
-  payload_schema:
+  payload_schema: &email_schema
     - key: subject
       description: An event should will a **subject** object, with the following keys
       properties:
@@ -58,3 +60,55 @@
     }
   }
 
+- friendly_name: Identifier Changed
+  direction: outgoing
+  event_type: https://schemas.openid.net/secevent/risc/event-type/identifier-changed
+  spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#rfc.section.2.5"
+  description: >
+    Login.gov pushes this event when a user changes the email address on their account.
+  payload_schema:
+    *email_schema
+  example_payload: {
+    "https://schemas.openid.net/secevent/risc/event-type/identifier-changed": {
+      "subject": {
+        "subject_type": "email",
+        "email": "<$EMAIL>"
+      }
+    }
+  }
+
+- friendly_name: Recovery Activated
+  event_type: https://schemas.openid.net/secevent/risc/event-type/recovery-activated
+  spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#rfc.section.2.8"
+  description: >
+    Login.gov pushes this event when a user starts the "Forgot Password" flow for an account.
+  payload_schema:
+    *iss_sub_schema
+  example_payload: {
+    "https://schemas.openid.net/secevent/risc/event-type/recovery-activated": {
+      "subject": {
+        "subject_type": "iss-sub",
+        "iss": "https://idp.int.identitysandbox.gov",
+        "sub": "<$SUB>"
+      }
+    }
+  }
+
+- friendly_name: Recovery Information Changed
+  event_type: https://schemas.openid.net/secevent/risc/event-type/recovery-information-changed
+  spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#rfc.section.2.9"
+  description: >
+    Login.gov pushes this event when a user changes any of their second factor, for example,
+    adding or removing an email, phone address, TOTP authentication app, backup codes,
+    or PIV/CAC.
+    payload_schema:
+    *iss_sub_schema
+  example_payload: {
+    "https://schemas.openid.net/secevent/risc/event-type/recovery-information-changed": {
+      "subject": {
+        "subject_type": "iss-sub",
+        "iss": "https://idp.int.identitysandbox.gov",
+        "sub": "<$SUB>"
+      }
+    }
+  }
