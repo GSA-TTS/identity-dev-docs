@@ -6,6 +6,7 @@ Includes:
     - requirement (optional)
     - type (optional)
     - properties (optional)
+    - compressed (optional, defaults to false)
 {% endcomment %}
 <ul>
   {% for item in include.schema %}
@@ -17,9 +18,9 @@ Includes:
 <!-- -->{%- if item.requirement %}
 <!-- -->  --- *{{ item.requirement }}*
 <!-- -->{%- endif -%}
-<!-- --><br />{{ item.description }}
+<!-- -->{% if include.compressed %} --- {% else %}<br />{% endif %}{{ item.description }}
 <!-- -->{%- if item.properties -%}
-<!-- -->  {% include schema.html schema=item.properties %}
+<!-- -->  {% include schema.html schema=item.properties compressed=true %}
 <!-- -->{%- endif -%}
     </li>
   {% endfor %}

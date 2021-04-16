@@ -405,7 +405,7 @@ Here's an example token response:
 
 The **id_token** contains the following claims:
 
-{% include schema.html schema=page.id_token_schema %}
+{% include schema.html schema=page.id_token_schema compressed=true %}
 
 Here's an example decoded **id_token**:
 
