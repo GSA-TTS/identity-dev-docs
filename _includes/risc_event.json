@@ -7,5 +7,8 @@ Include:
   "friendly_name": {{ include.event.friendly_name | jsonify }},
   "event_type": {{ include.event.event_type | jsonify}},
   "direction": {{ include.direction | jsonify }},
+  {% if include.event.spec_url %}
+    "spec_url": {{ include.event.spec_url | jsonify }},
+  {% endif %}
   "description": {{ include.event.description | strip | jsonify }}
 }
