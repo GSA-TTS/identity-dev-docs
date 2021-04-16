@@ -225,15 +225,21 @@ To configure your application to receive notifications from login.gov, supply lo
 
 Login.gov notifies for these events from the [OpenID RISC Event Types][openid-risc-events]:
 
-{%- for event in site.data.risc_outgoing %}
+{% assign outgoing_events = site.data.risc_outgoing | sort: "friendly_name" %}
+
+{%- for event in outgoing_events %}
 - [{{ event.friendly_name }}](#{{ event.friendly_name | slugify }})
 {%- endfor %}
 
-{% for event in site.data.risc_outgoing %}
+{% for event in outgoing_events %}
 
 #### {{ event.friendly_name }}
 
 {{ event.description | markdownify }}
+
+{% if event.spec_url %}
+For more information, see the [specification for {{ event.friendly_name }}]({{ event.spec_url }}).
+{% endif %}
 
 The **event_type** for this is:
 
