@@ -110,3 +110,5 @@ Here's an example decoded **id_token**:
   "nbf": 1489694198
 }
 ```
+
+[jwt]: https://jwt.io/
