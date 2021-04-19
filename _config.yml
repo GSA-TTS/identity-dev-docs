@@ -17,6 +17,9 @@ collections:
   pages:
     output: true
     permalink: /:path/
+  oidc_endpoints:
+    output: true
+    permalink: /oidc/:path/
 
 # Build settings
 kramdown:

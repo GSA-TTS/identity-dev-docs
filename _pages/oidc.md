@@ -4,35 +4,50 @@ lead: >
   <a href="http://openid.net">OpenID Connect</a> is a simple identity layer built on top of the OAuth 2.0 protocol. login.gov supports <a href="http://openid.net/specs/openid-connect-core-1_0.html">version 1.0</a> of the specification and conforms to the <a href="https://openid.net/wg/igov">iGov Profile</a>.
 redirect_from:
   - /openid-connect/
-sidenav:
-  - text: Getting started
-    href: "#getting-started"
-  - text: Authorization
-    href: "#authorization"
-    links:
-      - text: Authorization response
-        href: "#authorization-response"
-  - text: Token
-    href: "#token"
-    links:
-      - text: Token response
-        href: "#token-response"
-  - text: User info
-    href: "#user-info"
-    links:
-      - text: User info response
-        href: "#user-info-response"
-  - text: Certificates
-    href: "#certificates"
-  - text: Logout
-    href: "#logout"
-    links:
-      - text: Logout response
-        href: "#logout-response"
-  - text: Example application
-    href: "#example-application"
-
+# sidenav:
+#   - text: Getting started
+#     href: "#getting-started"
+#   - text: Authorization
+#     href: "#authorization"
+#     links:
+#       - text: Authorization response
+#         href: "#authorization-response"
+#   - text: Token
+#     href: "#token"
+#     links:
+#       - text: Token response
+#         href: "#token-response"
+#   - text: User info
+#     href: "#user-info"
+#     links:
+#       - text: User info response
+#         href: "#user-info-response"
+#   - text: Certificates
+#     href: "#certificates"
+#   - text: Logout
+#     href: "#logout"
+#     links:
+#       - text: Logout response
+#         href: "#logout-response"
+#   - text: Example application
+#     href: "#example-application"
+#
 ---
+
+## Endpoints
+
+{% assign sub_pages = site.oidc_endpoints | sort: "order" %}
+{% for page in sub_pages %}
+
+### [{{ page.title }}]({{ page.url }})
+{: .skip-anchor}
+
+{% if page.verb %}**{{ page.verb }}**{% endif %} `{{ page.endpoint }}`
+
+{{ page.summary }}
+
+{% endfor %}
+
 
 ## Getting started
 
@@ -51,8 +66,6 @@ Other implementations of OpenID Connect use the "implicit flow" or the **client_
 [oauth-implicit-deprecated]: https://oauth.net/2/grant-types/implicit/
 
 ### Auto-discovery
-
-Consistent with the specification, login.gov provides a JSON endpoint for OpenID Connect auto-discovery at `/.well-known/openid-configuration`. In our agency integration environment, this is available at [https://idp.int.identitysandbox.gov/.well-known/openid-configuration](https://idp.int.identitysandbox.gov/.well-known/openid-configuration)
 
 ## Authorization
 
