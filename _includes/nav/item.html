@@ -14,12 +14,25 @@
     {{ include.link.text | smartify }}
   </span>
 </a>
-{% if include.link.links -%}
+
+{% assign should_expand = true %}
+
+{% if include.link.hide_by_default %}
+  {% assign should_expand = is_current_page %}
+{% endif %}
+
+{% if include.link.restrict_to_nav_location and include.link.restrict_to_nav_location != include.nav_location %}
+  {% assign should_expand = false %}
+{% endif %}
+
+
+{% if include.link.links and should_expand -%}
   <ul class="{{ include.ul_class }}">
     {% include nav/list.html
       links = include.link.links
       li_class = include.li_class
       ul_class = include.ul_class
+      nav_location = include.nav_location
     %}
   </ul>
 {% endif -%}

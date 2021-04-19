@@ -6,7 +6,7 @@ order: 4
 summary: Returns user attributes
 ---
 
-## User info
+## Request
 
 The user info endpoint is used to retrieve [user attributes]({{ site.baseurl }}/attributes/). Clients use the `access_token` from the [token response](#token-response) as a bearer token in the [HTTP Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization). To request attributes, send an HTTP GET request to the `/api/openid_connect/userinfo` endpoint, for example:
 
@@ -15,7 +15,7 @@ GET https://idp.int.identitysandbox.gov/api/openid_connect/userinfo
 Authorization: Bearer hhJES3wcgjI55jzjBvZpNQ
 ```
 
-### User info response
+### Response
 
 The user info response will be a JSON object containing [user attributes]({{ site.baseurl }}/attributes/). login.gov supports some of the [standard claims](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims) from OpenID Connect 1.0. In addition to the user attributes, the following information will also be present:
 

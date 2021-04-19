@@ -6,8 +6,6 @@ order: 3
 summary: Create a token that can be used to access user info
 ---
 
-## Token
-
 Clients use the token endpoint to exchange the authorization `code` for an `id_token` and `access_token`. To request a token, send a HTTP POST request to the `/api/openid_connect/token` endpoint.
 
 <span class="margin-right-2">View example an for…</span><button data-example="private_key_jwt">private_key_jwt</button><button data-example="pkce">PKCE</button>
@@ -32,7 +30,7 @@ grant_type=authorization_code
 ```
 </div>
 
-### Request Parameters
+### Request
 
 * **client_assertion** — *required for private_key_jwt*
   A [JWT][jwt] signed with the client's private key (minimum length of 2048 bits) using the **RS256** algorithm and containing the following claims:
@@ -54,7 +52,7 @@ grant_type=authorization_code
 * **grant_type**
   Must be `authorization_code`
 
-### Token response
+### Response
 
 The token response will be a JSON object containing the following:
 

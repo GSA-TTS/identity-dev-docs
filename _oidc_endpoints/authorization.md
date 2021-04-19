@@ -5,10 +5,7 @@ order: 2
 summary: Starts the authorization flow
 ---
 
-## Authorization
-
 The authorization endpoint handles authentication and authorization of a user. To present the login.gov authorization page to a user, direct them to the `/openid_connect/authorize`.
-
 
 {% capture private_key_jwt %}
 ```bash
@@ -45,7 +42,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
                              example_two=pkce
                              example_two_title="PKCE" %}
 
-### Request Parameters
+### Request
 
 * **[acr_values](#acr_values)**
 * **[client_id](#client_id)**
@@ -175,7 +172,7 @@ The format for this value is **`xD`**, where **`x`** is an integer number and **
 </details>
 
 
-### Authorization response
+### Response
 
 After an authorization, login.gov will redirect to the provided `redirect_uri`.
 

@@ -10,16 +10,54 @@ primary:
         href: "/oidc/"
       - text: Auto-Discovery
         href: "/oidc/auto-discovery/"
+        hide_by_default: true
+        restrict_to_nav_location: 'sidenav'
+        links:
+          - text: Response
+            href: "#response"
       - text: Authorization
         href: "/oidc/authorization/"
+        hide_by_default: true
+        restrict_to_nav_location: 'sidenav'
+        links:
+          - text: Request
+            href: "#request"
+          - text: Response
+            href: "#response"
       - text: Token
         href: "/oidc/token/"
+        hide_by_default: true
+        restrict_to_nav_location: 'sidenav'
+        links:
+          - text: Request
+            href: "#request"
+          - text: Response
+            href: "#response"
       - text: User info
         href: "/oidc/user-info/"
+        hide_by_default: true
+        restrict_to_nav_location: 'sidenav'
+        links:
+          - text: Request
+            href: "#request"
+          - text: Response
+            href: "#response"
       - text: Certificates
         href: "/oidc/certificates/"
+        hide_by_default: true
+        restrict_to_nav_location: 'sidenav'
+        links:
+          - text: Response
+            href: "#response"
       - text: Logout
         href: "/oidc/logout/"
+        hide_by_default: true
+        restrict_to_nav_location: 'sidenav'
+        links:
+          - text: Request
+            href: "#request"
+          - text: Response
+            href: "#response"
   - text: SAML
     href: /saml/
   - text: Attributes

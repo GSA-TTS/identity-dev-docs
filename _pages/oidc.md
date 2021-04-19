@@ -14,7 +14,6 @@ sidenav:
       href: "#example-application"
     - text: Endpoints
       href: "#endpoints"
-      links:
   - text: Auto-Discovery
     href: "/oidc/auto-discovery/"
   - text: Authorization
@@ -27,7 +26,6 @@ sidenav:
     href: "/oidc/certificates/"
   - text: Logout
     href: "/oidc/logout/"
-
 ---
 
 ## Getting started
