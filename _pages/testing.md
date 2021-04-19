@@ -78,4 +78,8 @@ Login.gov collects and verifies personal information during the IAL2 proofing pr
 
 ### Phone number verification
 
-Login.gov collects a phone number during the IAL2 proofing process. In a live production environment, login.gov checks that this phone number is associated with the applicant. You can use any phone number for testing purposes in the sandbox environment. However, the phone number ‘7035555555’ can be entered to simulate an error associating an applicant to a phone number.
+Login.gov collects a phone number during the IAL2 proofing process. In a live production environment, login.gov checks that this phone number is associated with the applicant. You can use any phone number for testing purposes in the sandbox environment other than the following:
+
+* `703-555-5555` - simulates a phone number that couldn't be verified as belonging to the user
+* `703-555-5888` - simulates a timeout during verification
+* `703-555-5999` - simulates a phone number that couldn't be contacted
