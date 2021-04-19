@@ -101,7 +101,7 @@
     Login.gov pushes this event when a user changes any of their second factor, for example,
     adding or removing an email, phone address, TOTP authentication app, backup codes,
     or PIV/CAC.
-    payload_schema:
+  payload_schema:
     *iss_sub_schema
   example_payload: {
     "https://schemas.openid.net/secevent/risc/event-type/recovery-information-changed": {
