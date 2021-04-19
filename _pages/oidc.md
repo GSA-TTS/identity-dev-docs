@@ -89,7 +89,7 @@ Here are the endpoints login.gov supports for OpenID Connect
 {% assign sub_pages = site.oidc_endpoints | sort: "order" %}
 {% for page in sub_pages %}
 
-### [{{ page.title }}]({{ page.url }})
+### [{{ page.title }}]({{ page.url | prepend: site.baseurl }})
 {: .skip-anchor}
 
 {% if page.verb %}**{{ page.verb }}**{% endif %} `{{ page.endpoint }}`
