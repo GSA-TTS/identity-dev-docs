@@ -1,12 +1,9 @@
 ---
-permalink: /oidc/authorization
-
 endpoint: /openid_connect/authorize
 order: 2
 
 summary: Starts the authorization flow
 ---
-
 
 ## Authorization
 

@@ -1,6 +1,4 @@
 ---
-permalink: /oidc/auto-discovery
-
 verb: GET
 endpoint: /.well-known/openid-configuration
 order: 1
