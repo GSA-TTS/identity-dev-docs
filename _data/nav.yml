@@ -5,6 +5,21 @@ primary:
     href: /overview/
   - text: OpenID Connect
     href: /oidc/
+    links:
+      - text: Overview
+        href: "/oidc/"
+      - text: Auto-Discovery
+        href: "/oidc/auto-discovery/"
+      - text: Authorization
+        href: "/oidc/authorization/"
+      - text: Token
+        href: "/oidc/token/"
+      - text: User info
+        href: "/oidc/user-info/"
+      - text: Certificates
+        href: "/oidc/certificates/"
+      - text: Logout
+        href: "/oidc/logout/"
   - text: SAML
     href: /saml/
   - text: Attributes

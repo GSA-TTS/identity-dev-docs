@@ -4,13 +4,23 @@ layout: base
 
 <main class="usa-layout-docs usa-section" id="main-content">
   <div class="grid-container">
-    {% if page.sidenav %}
+    {% assign sidenav = page.sidenav %}
+    {% if page.sidenav_source_href %}
+      {% for primary_item in site.data.nav.primary %}
+        {% if primary_item.href == page.sidenav_source_href %}
+          {% assign sidenav = primary_item.links %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% if sidenav %}
       <div class="grid-row grid-gap">
         <aside class="usa-layout-docs__sidenav desktop:grid-col-3">
           <nav>
             <ul class="usa-sidenav">
               {% include nav/list.html
-                links = page.sidenav
+                links = sidenav
                 li_class = 'usa-sidenav__item'
                 ul_class = 'usa-sidenav__sublist'
               %}

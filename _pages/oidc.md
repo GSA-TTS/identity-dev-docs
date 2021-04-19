@@ -12,21 +12,21 @@ sidenav:
       href: "#getting-started"
     - text: Example application
       href: "#example-application"
-  - text: Endpoints
-    href: "#endpoints"
-    links:
-     - text: Auto-Discovery
-       href: "/oidc/auto-discovery/"
-     - text: Authorization
-       href: "/oidc/authorization/"
-     - text: Token
-       href: "/oidc/token/"
-     - text: User info
-       href: "/oidc/user-info/"
-     - text: Certificates
-       href: "/oidc/certificates/"
-     - text: Logout
-       href: "/oidc/logout/"
+    - text: Endpoints
+      href: "#endpoints"
+      links:
+  - text: Auto-Discovery
+    href: "/oidc/auto-discovery/"
+  - text: Authorization
+    href: "/oidc/authorization/"
+  - text: Token
+    href: "/oidc/token/"
+  - text: User info
+    href: "/oidc/user-info/"
+  - text: Certificates
+    href: "/oidc/certificates/"
+  - text: Logout
+    href: "/oidc/logout/"
 
 ---
 
