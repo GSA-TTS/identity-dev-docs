@@ -77,6 +77,23 @@
     }
   }
 
+- friendly_name: MFA Limit Reached Account Locked
+  event_type: https://schemas.login.gov/secevent/risc/event-type/mfa-limit-account-locked
+  spec_url:
+  description: >
+    Login.gov pushes this event when a user hits the limit for failed MFA and gets locked out.
+  payload_schema:
+    *iss_sub_schema
+  example_payload: {
+    "https://schemas.login.gov/secevent/risc/event-type/mfa-limit-account-locked": {
+      "subject": {
+        "subject_type": "iss-sub",
+        "iss": "https://idp.int.identitysandbox.gov",
+        "sub": "<$SUB>"
+      }
+    }
+  }
+
 - friendly_name: Recovery Activated
   event_type: https://schemas.openid.net/secevent/risc/event-type/recovery-activated
   spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#rfc.section.2.8"
@@ -105,6 +122,23 @@
     *iss_sub_schema
   example_payload: {
     "https://schemas.openid.net/secevent/risc/event-type/recovery-information-changed": {
+      "subject": {
+        "subject_type": "iss-sub",
+        "iss": "https://idp.int.identitysandbox.gov",
+        "sub": "<$SUB>"
+      }
+    }
+  }
+
+- friendly_name: Reproofing Completed
+  event_type: https://schemas.login.gov/secevent/risc/event-type/reproof-completed
+  spec_url:
+  description: >
+    Login.gov pushes this event when a user reproofs after having an active verified profile.
+  payload_schema:
+    *iss_sub_schema
+  example_payload: {
+    "https://schemas.login.gov/secevent/risc/event-type/mfa-limit-account-locked": {
       "subject": {
         "subject_type": "iss-sub",
         "iss": "https://idp.int.identitysandbox.gov",
