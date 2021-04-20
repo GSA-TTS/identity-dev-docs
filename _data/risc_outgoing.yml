@@ -77,11 +77,13 @@
     }
   }
 
-- friendly_name: MFA Limit Reached Account Locked
+- friendly_name: Account Locked Due to MFA (Multi-Factor Authentication) Limit Reached
   event_type: https://schemas.login.gov/secevent/risc/event-type/mfa-limit-account-locked
   spec_url:
   description: >
-    Login.gov pushes this event when a user hits the limit for failed MFA and gets locked out.
+    Login.gov pushes this event when a user fails MFA (Multi-Factor Authentication) with their
+    second factor enough times to hit the rate limit, and is subsequently locked out of their
+    account for a period of time.
   payload_schema:
     *iss_sub_schema
   example_payload: {
@@ -134,7 +136,9 @@
   event_type: https://schemas.login.gov/secevent/risc/event-type/reproof-completed
   spec_url:
   description: >
-    Login.gov pushes this event when a user reproofs after having an active verified profile.
+    Login.gov pushes this event when a user re-verifies their identity (goes through the identity
+    proofing process). This event is only sent if they previously had an active verified profile,
+    not for the first-time identity verification.
   payload_schema:
     *iss_sub_schema
   example_payload: {
