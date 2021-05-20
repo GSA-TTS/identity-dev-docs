@@ -63,7 +63,21 @@ document:
   phone: +1 314-555-1212
 ```
 
-A YAML file can also be used to simulate an error reading or validating the document. Here is an example YAML file that does that:
+A YAML file can also be used to simulate an error reading or validating the document. Here are a couple of simple example YAML files:
+
+```yaml
+image_metrics:
+  back:
+    HorizontalResolution: 100
+```
+
+```yaml
+failed_alerts:
+  - name: Document Classification
+    result: Attention
+```
+
+Here is an example YAML file that contains the full structure with annotations for expected values:
 
 ```yaml
 doc_auth_result: Passed # values: Passed, Failed, Attention, Caution
@@ -116,7 +130,7 @@ The list of currently handled alert names for `failed_alerts` and `passed_alerts
       - name: Visible Photo Characteristics
 ```
 
-**NOTE:** Even if you put all passing information into the test yaml file it will still produce an error. There are configurations of the above yaml file that can't happen in real vendor responsee. It is possible there will be unexpected outcomes in those cases.
+**NOTE:** Even if you put all passing information into the test yaml file it will still produce an error. There are configurations of the above yaml file that can't happen in real vendor responses. It is possible there will be unexpected outcomes in those cases.
 
 ### Personal information verification
 
