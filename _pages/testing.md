@@ -66,27 +66,27 @@ document:
 A YAML file can also be used to simulate an error reading or validating the document. Here is an example YAML file that does that:
 
 ```yaml
-doc_auth_result: Passed #values: Passed, Failed, Attention, Caution
+doc_auth_result: Passed # values: Passed, Failed, Attention, Caution
 image_metrics:
   back:
-    HorizontalResolution: 300 #values: 0-600
-    VerticalResolution: 450 #values: 0-600
-    GlareMetric: 77 #values: 0-100
-    SharpnessMetric: 88 #values: 0-100
+    HorizontalResolution: 300 # values: 0-600
+    VerticalResolution: 450 # values: 0-600
+    GlareMetric: 77 # values: 0-100
+    SharpnessMetric: 88 # values: 0-100
   front:
     HorizontalResolution: 450
     VerticalResolution: 450
     GlareMetric: 100
     SharpnessMetric: 99
 failed_alerts:
-  - name: 1D Control Number Valid #See list of valid names below
-    result: Failed #values: Passed, Failed, Attention, Caution
+  - name: 1D Control Number Valid # See list of valid names below
+    result: Failed # values: Passed, Failed, Attention, Caution
   - name: 2D Barcode Content
     result: Attention
 passed_alerts:
   - name: Visible Pattern
     result: Passed
-liveness_result: Fail #values: Pass, Fail
+liveness_result: Fail # values: Pass, Fail
 ```
 There are not any required values from the above example file, you only need to include the values you are changing. The only exception is that alerts must be passed with both a `name` and a `result` as seen above. Anything not included will be given reasonable defaults for testing purposes.
 
