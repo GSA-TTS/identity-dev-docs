@@ -63,14 +63,74 @@ document:
   phone: +1 314-555-1212
 ```
 
-A YAML file can also be used to simulate an error reading or validating the document. Here is an example YAML file that does that:
+A YAML file can also be used to simulate an error reading or validating the document. Here are a couple of simple example YAML files:
 
 ```yaml
-friendly_error: |
-  We couldn't read the barcode on the back of your ID. Try taking a new picture.
-  Make sure the entire barcode is visible, clean, and doesn't have glares.
-  (Error code: 200)
+image_metrics:
+  back:
+    HorizontalResolution: 100
 ```
+
+```yaml
+failed_alerts:
+  - name: Document Classification
+    result: Attention
+```
+
+Here is an example YAML file that contains the full structure with annotations for expected values:
+
+```yaml
+doc_auth_result: Passed # values: Passed, Failed, Attention, Caution
+image_metrics:
+  back:
+    HorizontalResolution: 300 # values: 0-600
+    VerticalResolution: 450 # values: 0-600
+    GlareMetric: 77 # values: 0-100
+    SharpnessMetric: 88 # values: 0-100
+  front:
+    HorizontalResolution: 450
+    VerticalResolution: 450
+    GlareMetric: 100
+    SharpnessMetric: 99
+failed_alerts:
+  - name: 1D Control Number Valid # See list of valid names below
+    result: Failed # values: Passed, Failed, Attention, Caution
+  - name: 2D Barcode Content
+    result: Attention
+passed_alerts:
+  - name: Visible Pattern
+    result: Passed
+liveness_result: Fail # values: Pass, Fail
+```
+There are not any required values from the above example file, you only need to include the values you are changing. The only exception is that alerts must be passed with both a `name` and a `result` as seen above. Anything not included will be given reasonable defaults for testing purposes.
+
+The list of currently handled alert names for `failed_alerts` and `passed_alerts` are:
+```yaml
+      - name: 1D Control Number Valid
+      - name: 2D Barcode Content
+      - name: 2D Barcode Read
+      - name: Birth Date Crosscheck
+      - name: Birth Date Valid 
+      - name: Control Number Crosscheck
+      - name: Document Classification
+      - name: Document Crosscheck Aggregation
+      - name: Document Expired
+      - name: Document Number Crosscheck
+      - name: Expiration Date Crosscheck
+      - name: Expiration Date Valid
+      - name: Full Name Crosscheck
+      - name: Issue Date Crosscheck
+      - name: Issue Date Valid
+      - name: Layout Valid
+      - name: Near-Infrared Response
+      - name: Physical Document Presence
+      - name: Sex Crosscheck
+      - name: Visible Color Response
+      - name: Visible Pattern
+      - name: Visible Photo Characteristics
+```
+
+**NOTE:** Even if you put all passing information into the test yaml file it will still produce an error. There are configurations of the above yaml file that can't happen in real vendor responses. It is possible there will be unexpected outcomes in those cases.
 
 ### Personal information verification
 
