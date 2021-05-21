@@ -80,7 +80,7 @@ failed_alerts:
 Here is an example YAML file that contains the full structure with annotations for expected values:
 
 ```yaml
-doc_auth_result: Passed # values: Passed, Failed, Attention, Caution
+doc_auth_result: Passed # values: Passed, Failed, Attention, Unknown
 image_metrics:
   back:
     HorizontalResolution: 300 # values: 0-600
