@@ -72,8 +72,11 @@ Once you have:
 1. [Confirmed that this integration is listed in a signed IAA](#confirm-iaa)
 2. [Created a production configuration](#production-configuration)
 
-Please submit the [login.gov production integration request form](https://share.hsforms.com/1UTxHGOu2Q0SVyz9ulknZGw3ak9e){:target='_blank'}.
+Please submit the [login.gov production integration request form][new_integration_form]{:target='_blank'}.
 
 ## Changes to production applications
 
-Please update your production configuration app in the dashboard and test the changes you wish to deploy. After you have confirmed the change, then please submit the [login.gov integration change request form](https://share.hsforms.com/1HF9Q6UNARaSUOg8pPHuauQ3ak9e){:target='_blank'}.
+Please update your production configuration app in the dashboard and test the changes you wish to deploy. After you have confirmed the change, then please submit the [login.gov integration change request form][integration_change_form]{:target='_blank'}.
+
+[new_integration_form]: https://app.smartsheetgov.com/b/form/68d06187790f4e18a5dd13e932703f7c
+[integration_change_form]: https://app.smartsheetgov.com/b/form/c4522426b2654999868663ddf218ab18
