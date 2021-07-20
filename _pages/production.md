@@ -65,6 +65,7 @@ Before you can deploy your application to the production environment, you will n
   * Assertion Consumer Logout Service URL is defined.
   * SAML Assertion Encryption is enabled.
     * If you are using a service which does not support SAML encryption, then please send a message to [partners@login.gov](mailto:partners@login.gov) for further guidance.
+* If this is an IAL2 integration, you **must** include a Failure to Proof URL. This is the URL users will be sent to if they fail to complete the identity verification process so you can communicate alternative methods of accessing your application.
 
 ## Request deployment
 
