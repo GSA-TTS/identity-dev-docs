@@ -327,7 +327,7 @@ s41MmdQzalGuKMX3Hr7Rn5xtnmJiQ5HQ7pcdCh5ZidWvw7VcblStN-rTLEBCUUO14pCfdAzVCs09Wb1W
   An object containing an event, keyed by event type. The keys and values depend on the event types, see [Supported Outgoing Events](#supported-outgoing-events) for event types and their payloads.
 
 ### Response
- Login.gov will interpret any response other than a 200-level status as a failure, and will ignore any response body. Failure requests may be retried.
+Login.gov will interpret any response other than a 200-level status as a failure, and will ignore any response body. Failure requests may be retried.
 
 [openid-risc-events]: https://openid.net/specs/openid-risc-event-types-1_0-ID1.html
 
