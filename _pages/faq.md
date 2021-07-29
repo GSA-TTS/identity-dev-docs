@@ -6,17 +6,16 @@ title: Frequently asked questions
 
 <h1 class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="flow">
-How does login.gov work with my site?
+How does Login.gov work with my site?
 </button>
 </h1>
 <div id="flow" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1"  aria-expanded="true">
-We encourage you to create an account directly on [login.gov](https://secure.login.gov/) or an agency partner like
-[USAJobs](https://www.usajobs.gov/) to see login.gov in action.
-Generally a site will place a login button on their site. When the user clicks this button they redirect to login.gov
-where they can sign in or create an account. The login.gov site will be branded with the agency logo and can
+We encourage you to create an account directly on [Login.gov](https://secure.login.gov/) or an agency partner like
+[USAJobs](https://www.usajobs.gov/) to see Login.gov in action.
+Generally a site will place a login button on their site. When the user clicks this button they redirect to Login.gov where they can sign in or create an account. The Login.gov site will be branded with the agency logo and can
 include help text for migrating existing users.
-After authenticating with login.gov they are redirected back to the agency with a unique UUID or email address that
+After authenticating with Login.gov they are redirected back to the agency with a unique UUID or email address that
 identifies the user.
 </div>
 <button class="usa-accordion__close-button">Close</button>
@@ -64,12 +63,12 @@ Every user has a unique UUID per agency for privacy reasons. This means that the
 
 <h1 class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="sessions">
-How does login.gov manage sessions?
+How does Login.gov manage sessions?
 </button>
 </h1>
 <div id="sessions" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-Once a user is authenticated on login.gov and passed back to the agency it is up to the agency to manage the user's session.
+Once a user is authenticated on Login.gov and passed back to the agency it is up to the agency to manage the user's session.
 We do not remotely invalidate or expire a user's session.
 </div>
 <button class="usa-accordion__close-button">Close</button>
@@ -79,12 +78,12 @@ We do not remotely invalidate or expire a user's session.
 
 <h1 class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="ip-address">
-What are the login.gov IP addresses?
+What are the Login.gov IP addresses?
 </button>
 </h1>
 <div id="ip-address" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-Login.gov makes no guarantees on IP addresses or ranges. Please use the DNS when querying login.gov for the latest IPs.
+Login.gov makes no guarantees on IP addresses or ranges. Please use the DNS when querying Login.gov for the latest IPs.
 </div>
 <button class="usa-accordion__close-button">Close</button>
 </div>
@@ -110,7 +109,7 @@ I do not see an error being returned for my request. Why is my request failing?
 </h1>
 <div id="request-error" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-Feel free to contact the engineers at login.gov. They can help diagnose your problem further.
+Feel free to contact the engineers at Login.gov. They can help diagnose your problem further.
 </div>
 <button class="usa-accordion__close-button">Close</button>
 </div>
@@ -131,7 +130,7 @@ No.
 
 <h1 class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="embed">
-Can I embed login.gov on my site?
+Can I embed Login.gov on my site?
 </button>
 </h1>
 <div id="embed" class="usa-accordion__container">
@@ -144,7 +143,7 @@ No. Login.gov only works via redirects to and from an agency site.
 
 <h1 class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="authorization">
-Does login.gov handle authorization?
+Does Login.gov handle authorization?
 </button>
 </h1>
 <div id="authorization" class="usa-accordion__container">
@@ -157,7 +156,7 @@ No. Login.gov only handles authentication. Granting users specific access and pe
 
 <h1 class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="statuspage">
-Where can I check the status of login.gov?
+Where can I check the status of Login.gov?
 </button>
 </h1>
 <div id="statuspage" class="usa-accordion__container">

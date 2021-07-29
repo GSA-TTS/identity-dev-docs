@@ -14,11 +14,11 @@
         - key: subject_type
           type: string
           description: >
-            Will be **iss-sub**, this indicates the **sub** is the subject provided by the original issuer (login.gov)
+            Will be **iss-sub**, this indicates the **sub** is the subject provided by the original issuer (Login.gov)
         - key: iss
           type: string
           description: >
-            This is login.gov's issuer, the root URL for login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
+            This is Login.gov's issuer, the root URL for Login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
         - key: sub
           type: string
           description: >

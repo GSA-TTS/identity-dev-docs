@@ -9,17 +9,17 @@ redirect_from:
 
 ## Using the dashboard
 
-Login.gov provides an open sandbox environment to create and test integrations between login.gov and your applications. In the sandbox environment, we provide a dashboard where you can manage your test applications.
+Login.gov provides an open sandbox environment to create and test integrations between Login.gov and your applications. In the sandbox environment, we provide a dashboard where you can manage your test applications.
 
 ## How to get started
 
 Anybody with an email address ending in .gov or .mil can create an account in the sandbox environment. If you are a government contractor, ask your agency partner to help you gain access.
 
-1. Visit the dashboard at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov). In the upper-right corner, click **Sign in**. You'll be prompted to sign in or create an account with the test login.gov IdP in the agency integration environment (hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov)). **Please note that this is a sandbox environment that is not linked to your production login.gov account.**
+1. Visit the dashboard at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov). In the upper-right corner, click **Sign in**. You'll be prompted to sign in or create an account with the test Login.gov IdP in the agency integration environment (hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov)). **Please note that this is a sandbox environment that is not linked to your production Login.gov account.**
 2. Once you are logged into your sandbox account, you'll be asked to create a team and add users to that team.
 3. After creating your team, go to the Apps tab. This page is where you will find all of the test applications you and your team will create.
-4. Click **Create a new test app** and fill out the form to register a new application with the login.gov IdP in the test sandbox environment.
-5. Start testing! If you need to troubleshoot, please [send us an email](mailto:partners@login.gov) and we can onboard you to our partner support Slack channel and the login.gov team will help you along the way.
+4. Click **Create a new test app** and fill out the form to register a new application with the Login.gov IdP in the test sandbox environment.
+5. Start testing! If you need to troubleshoot, please [send us an email](mailto:partners@login.gov) and we can onboard you to our partner support Slack channel and the Login.gov team will help you along the way.
 6. When you're ready to go to production, please contact our team at [partners@login.gov](mailto:partners@login.gov) and notify us. We'll manage your application's promotion to production.
 
 ### Creating a public certificate
@@ -30,7 +30,7 @@ You can use the following OpenSSL command to generate a 2048-bit PEM-encoded pub
 openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out public.crt
 ```
 
-Make sure you're using the corresponding private key in your application to sign and/or validate requests and responses to/from login.gov.
+Make sure you're using the corresponding private key in your application to sign and/or validate requests and responses to/from Login.gov.
 
 ## Automated/Load Testing
 
@@ -38,7 +38,7 @@ Our sandbox environment is smaller than our production environment and it is sha
 
 ## Testing IAL2
 
-The login.gov sandbox test environment is configured to pass most information that is entered during the IAL2 flow. This allows the proofing flow to be tested without the need to enter personally identifiable information (PII). There are special values that can be entered to simulate error states while testing in the login.gov sandbox environment.
+The Login.gov sandbox test environment is configured to pass most information that is entered during the IAL2 flow. This allows the proofing flow to be tested without the need to enter personally identifiable information (PII). There are special values that can be entered to simulate error states while testing in the Login.gov sandbox environment.
 
 ### Document upload
 
@@ -110,7 +110,7 @@ The list of currently handled alert names for `failed_alerts` and `passed_alerts
       - name: 2D Barcode Content
       - name: 2D Barcode Read
       - name: Birth Date Crosscheck
-      - name: Birth Date Valid 
+      - name: Birth Date Valid
       - name: Control Number Crosscheck
       - name: Document Classification
       - name: Document Crosscheck Aggregation
@@ -138,7 +138,7 @@ Login.gov collects and verifies personal information during the IAL2 proofing pr
 
 ### Phone number verification
 
-Login.gov collects a phone number during the IAL2 proofing process. In a live production environment, login.gov checks that this phone number is associated with the applicant. You can use any phone number for testing purposes in the sandbox environment other than the following:
+Login.gov collects a phone number during the IAL2 proofing process. In a live production environment, Login.gov checks that this phone number is associated with the applicant. You can use any phone number for testing purposes in the sandbox environment other than the following:
 
 * `703-555-5555` - simulates a phone number that couldn't be verified as belonging to the user
 * `703-555-5888` - simulates a timeout during verification

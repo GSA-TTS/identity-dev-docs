@@ -1,7 +1,7 @@
 ---
 title: SAML developer guide
 lead: >
-  login.gov is a standard SAML identity provider, adhering to the <a href="https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile">Web Browser SSO Profile</a> with enhancements for <a href="https://pages.nist.gov/800-63-3/">NIST 800-63-3</a>.
+  Login.gov is a standard SAML identity provider, adhering to the <a href="https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile">Web Browser SSO Profile</a> with enhancements for <a href="https://pages.nist.gov/800-63-3/">NIST 800-63-3</a>.
 redirect_from:
   - /configuring-your-sp/
 sidenav:
@@ -42,7 +42,7 @@ SAML is an established standard, but can be a bit complex. We recommend looking 
 
 ### Configuration
 
-Here are values needed to configure your service provider (SP) to work with login.gov:
+Here are values needed to configure your service provider (SP) to work with Login.gov:
 
 - **NameID Format**
   The NameID is the unique identifier used to identify a user across multiple sessions. The format is the standard v4 random UUID (Universally Unique IDentifier) in compliance with [RFC 4122](https://tools.ietf.org/html/rfc4122). For example:
@@ -52,7 +52,7 @@ Here are values needed to configure your service provider (SP) to work with logi
   ```
 
 - **Login service URL and Binding**
-  This is the endpoint where authentication requests are sent to login.gov (aka Single Sign-on Service). For example:
+  This is the endpoint where authentication requests are sent to Login.gov (aka Single Sign-on Service). For example:
 
   ```xml
   <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.int.identitysandbox.gov/api/saml/auth2021" />
@@ -66,14 +66,14 @@ Here are values needed to configure your service provider (SP) to work with logi
   ```
 
 - **x509 Public Certificate**
-  The public certificate is used to validate the authenticity of SAML requests received from login.gov, a minimum of 2048 bits. We publish this public certificate from in our [metadata endpoint](#metadata) and below for verification.
+  The public certificate is used to validate the authenticity of SAML requests received from Login.gov, a minimum of 2048 bits. We publish this public certificate from in our [metadata endpoint](#metadata) and below for verification.
 
 ### Metadata
 
-Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), login.gov's metadata for our **sandbox** environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata2021](https://idp.int.identitysandbox.gov/api/saml/metadata2021).
+Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), Login.gov's metadata for our **sandbox** environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata2021](https://idp.int.identitysandbox.gov/api/saml/metadata2021).
 
 ### Signing Certificates
-Below you can find the X509 certificates used by the login.gov IdP to sign SAML requests. **Do not enter these certificates in the Dashboard when configuring an application for testing** - you can follow the instructions in our [testing article]({% link _pages/testing.md %}#creating-a-public-certificate) to generate a client certificate.
+Below you can find the X509 certificates used by the Login.gov IdP to sign SAML requests. **Do not enter these certificates in the Dashboard when configuring an application for testing** - you can follow the instructions in our [testing article]({% link _pages/testing.md %}#creating-a-public-certificate) to generate a client certificate.
 
 <div class="usa-accordion--bordered">
   <button class="usa-accordion__button" aria-controls="sandbox-cert-2021">
@@ -177,7 +177,7 @@ lzdI/A8lml7s8FEL3jF/rd6lUg==
 
 #### Annual Certificate Rotation
 
-The login.gov SAML certificate is valid for just over one year. Every spring, login.gov adds new SAML endpoints with the current year that use a new signing certificate. 
+The Login.gov SAML certificate is valid for just over one year. Every spring, Login.gov adds new SAML endpoints with the current year that use a new signing certificate.
 
   - `/api/saml/metadata2021` becomes `/api/saml/metadata2022`
   - `/api/saml/auth2021` becomes `/api/saml/auth2022`
@@ -191,7 +191,7 @@ The 2021 certificates for idp.int.identitysandbox.gov and secure.login.gov each 
 
 ### Auth request
 
-To authenticate a user with login.gov, direct them to our authentication URL with a SAML authentication request as a GET param.
+To authenticate a user with Login.gov, direct them to our authentication URL with a SAML authentication request as a GET param.
 
 ```bash
 https://idp.int.identitysandbox.gov/api/saml/auth2021?SAMLRequest=${SAML_REQUEST}
@@ -323,7 +323,7 @@ https://idp.int.identitysandbox.gov/api/saml/auth2021?SAMLRequest=${SAML_REQUEST
 
 ## Auth response
 
-After the user authenticates, login.gov will redirect and POST a form back to your registered Assertion Consumer Service URL:
+After the user authenticates, Login.gov will redirect and POST a form back to your registered Assertion Consumer Service URL:
 
 ```bash
 POST ${ASSERTION_CONSUMER_SERVICE_URL}
@@ -386,9 +386,9 @@ An example authentication response, after it has been base64 decoded, with inden
 
 ### Logout request
 
-A log out link on your site should also log out the user from the login.gov site.
+A log out link on your site should also log out the user from the Login.gov site.
 
-Login.gov does not support Single Logout (SLO). The logout action will terminate the user's session at login.gov but will not end any other potentially active sessions within service provider applications. For example, if a user signs in to applications A and B through login.gov, a logout request from A will end their login.gov session, but will not affect the session in application B.
+Login.gov does not support Single Logout (SLO). The logout action will terminate the user's session at Login.gov but will not end any other potentially active sessions within service provider applications. For example, if a user signs in to applications A and B through Login.gov, a logout request from A will end their Login.gov session, but will not affect the session in application B.
 
 To log a user out, direct them to the logout URL with a `SAMLRequest`:
 
@@ -446,7 +446,7 @@ An example logout request payload, with indentation added for readability.
 
 ### Logout response
 
-After, login.gov will redirect and POST a form back to your registered Assertion Consumer Service Logout URL:
+After, Login.gov will redirect and POST a form back to your registered Assertion Consumer Service Logout URL:
 
 ```bash
 POST ${ASSERTION_CONSUMER_SERVICE_LOGOUT_URL}
@@ -501,5 +501,5 @@ An example decoded logout response, with indentation added for readability.
 
 ## Example application
 
-The login.gov team has created an example client to speed up your development,
+The Login.gov team has created an example client to speed up your development,
 all open source in the public domain: [identity-saml-sinatra](https://github.com/18F/identity-saml-sinatra)

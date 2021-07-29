@@ -34,11 +34,11 @@ Please be aware that the IDP certificate (X509 Certificate) in the production en
 
 ## Deployments
 
-All changes to integrations between login.gov and your application must be reviewed and deployed. We ask for at least 2 weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require 3 weeks notice in order to allow the domain for outbound communication. Regular deployments occur every Thursday by the close of the business day. If the regular deployment occurs on a holiday, then it will be completed the following Monday.
+All changes to integrations between Login.gov and your application must be reviewed and deployed. We ask for at least 2 weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require 3 weeks notice in order to allow the domain for outbound communication. Regular deployments occur every Thursday by the close of the business day. If the regular deployment occurs on a holiday, then it will be completed the following Monday.
 
 ## Confirm IAA
 
-You must have a signed IAA (Inter-Agency Agreement) with login.gov **with your integration explicitly listed in it** in order to deploy to production. You will need to provide the IAA number this application will be billed under. The IAA number format will include `GTC-Order-Mod` (e.g. `LGABCFY210001-0001-0000`), where GTC stands for General Terms & Conditions. You may also hear these referred to as forms 7600A and 7600B.
+You must have a signed IAA (Inter-Agency Agreement) with Login.gov **with your integration explicitly listed in it** in order to deploy to production. You will need to provide the IAA number this application will be billed under. The IAA number format will include `GTC-Order-Mod` (e.g. `LGABCFY210001-0001-0000`), where GTC stands for General Terms & Conditions. You may also hear these referred to as forms 7600A and 7600B.
 
 Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to reach out to [partners@login.gov](mailto:partners@login.gov) to begin the IAA process, which can take up to 6 weeks to complete.
 
@@ -73,11 +73,11 @@ Once you have:
 1. [Confirmed that this integration is listed in a signed IAA](#confirm-iaa)
 2. [Created a production configuration](#production-configuration)
 
-Please submit the [login.gov production integration request form][new_integration_form]{:target='_blank'}.
+Please submit the [Login.gov production integration request form][new_integration_form]{:target='_blank'}.
 
 ## Changes to production applications
 
-Please update your production configuration app in the dashboard and test the changes you wish to deploy. After you have confirmed the change, then please submit the [login.gov integration change request form][integration_change_form]{:target='_blank'}.
+Please update your production configuration app in the dashboard and test the changes you wish to deploy. After you have confirmed the change, then please submit the [Login.gov integration change request form][integration_change_form]{:target='_blank'}.
 
 [new_integration_form]: https://app.smartsheetgov.com/b/form/68d06187790f4e18a5dd13e932703f7c
 [integration_change_form]: https://app.smartsheetgov.com/b/form/c4522426b2654999868663ddf218ab18

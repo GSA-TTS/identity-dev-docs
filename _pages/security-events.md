@@ -36,10 +36,9 @@ sidenav:
 Login.gov allows partners and Relying Parties (RPs) to notify us of various security-related events through our API.
 
 ## Submitting a Security Event Token (SET)
+ Login.gov supports [Push-Based SET Token Delivery Using HTTP][push-http]. The SETs are signed [JWTs (JSON Web Tokens)](https://jwt.io/), similar to those used in the [OpenID Connect Authorization]({{site.baseurl}}/oidc/) flow.
 
-login.gov supports [Push-Based SET Token Delivery Using HTTP][push-http]. The SETs are signed [JWTs (JSON Web Tokens)](https://jwt.io/), similar to those used in the [OpenID Connect Authorization]({{site.baseurl}}/oidc/) flow.
-
-The [OpenID RISC Profile][openid-risc-events-profile] defines some very specific properties of these JWTs, and login.gov will validate against them, providing clear error messages where possible.
+The [OpenID RISC Profile][openid-risc-events-profile] defines some very specific properties of these JWTs, and Login.gov will validate against them, providing clear error messages where possible.
 
 ### Auto-discovery
 
@@ -98,7 +97,7 @@ JWTs must be signed by the client application's private key using **RS256**, the
   The issuer of this SET, which should be your client application's client ID. For example: `urn:gov:gsa:openidconnect:test:risc:sets`
 
 * **jti** (required)
-  JWT Identifier. This should be a unique identifier for this event, login.gov will attempt to de-duplicate events by this key.
+  JWT Identifier. This should be a unique identifier for this event, Login.gov will attempt to de-duplicate events by this key.
 
 * **events**
 
@@ -110,10 +109,10 @@ JWTs must be signed by the client application's private key using **RS256**, the
       An event should contain a **subject** object, with the following keys:
 
       * **subject_type**
-        Must be **iss-sub**, this indicates the **sub** is the subject provided by the original issuer (login.gov)
+        Must be **iss-sub**, this indicates the **sub** is the subject provided by the original issuer (Login.gov)
 
       * **iss**
-        This is login.gov's issuer, the root URL for login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
+        This is Login.gov's issuer, the root URL for Login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
 
       * **sub**
         The UUID identifying the user. This is provided as the `sub` inside the `id_token` JWT in the [OpenID Token endpoint]({{site.baseurl}}/#token-response).
@@ -216,7 +215,7 @@ Content-Type: application/json
 
 ### Configuration
 
-To configure your application to receive notifications from login.gov, supply login.gov with a URL to POST to. The URL must be publicly accessible.
+To configure your application to receive notifications from Login.gov, supply Login.gov with a URL to POST to. The URL must be publicly accessible.
 
 - In the agency integration environment, use the dashboard to supply a `push_notification_url` for your application
 - In production `push_notification_url` can be supplied as part of the application promotion process
@@ -261,9 +260,9 @@ Example:
 
 ### Request
 
-Login.gov will make a POST request to your app's `push_notification_url`, see [Configuration](#configuration) for more details on setting that up. The JWT will be signed with login.gov's private key. See the OpenID Connect guide for information on how to get login.gov's public key from the [Certificates Endpoint](/oidc/#certificates).
+Login.gov will make a POST request to your app's `push_notification_url`, see [Configuration](#configuration) for more details on setting that up. The JWT will be signed with Login.gov's private key. See the OpenID Connect guide for information on how to get Login.gov's public key from the [Certificates Endpoint](/oidc/#certificates).
 
-If your app had the client ID of `urn:gov:gsa:openidconnect:test:risc:sets` and was configured to receive events at `https://agency.example.gov/events`, and a user freed up `email@example.com` login.gov would make a like this.
+If your app had the client ID of `urn:gov:gsa:openidconnect:test:risc:sets` and was configured to receive events at `https://agency.example.gov/events`, and a user freed up `email@example.com` Login.gov would make a like this.
 
 With a JWT payload:
 
@@ -319,7 +318,7 @@ s41MmdQzalGuKMX3Hr7Rn5xtnmJiQ5HQ7pcdCh5ZidWvw7VcblStN-rTLEBCUUO14pCfdAzVCs09Wb1W
   Time at which the JWT was issued, an integer timestamp representing the number of seconds since the Unix Epoch.
 
 * **iss** (string)
-  The issuer of this SET, which will be login.gov's issuer, the root URL for login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
+  The issuer of this SET, which will be Login.gov's issuer, the root URL for Login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
 
 * **jti** (required)
   JWT Identifier. This will be a random, unique identifier for this event, you should be able to de-duplicate based on this.
@@ -328,8 +327,7 @@ s41MmdQzalGuKMX3Hr7Rn5xtnmJiQ5HQ7pcdCh5ZidWvw7VcblStN-rTLEBCUUO14pCfdAzVCs09Wb1W
   An object containing an event, keyed by event type. The keys and values depend on the event types, see [Supported Outgoing Events](#supported-outgoing-events) for event types and their payloads.
 
 ### Response
-
-login.gov will interpret any response other than a 200-level status as a failure, and will ignore any response body. Failure requests may be retried.
+Login.gov will interpret any response other than a 200-level status as a failure, and will ignore any response body. Failure requests may be retried.
 
 [openid-risc-events]: https://openid.net/specs/openid-risc-event-types-1_0-ID1.html
 
