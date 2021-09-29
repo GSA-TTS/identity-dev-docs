@@ -22,6 +22,10 @@ collections:
 kramdown:
   hard_wrap: true
 
+exclude:
+  - Dockerfile
+  - docker-compose.yml
+
 # Defaults
 defaults:
   - scope:
