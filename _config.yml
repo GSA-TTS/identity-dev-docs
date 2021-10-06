@@ -22,6 +22,26 @@ collections:
 kramdown:
   hard_wrap: true
 
+exclude:
+  - Dockerfile
+  - docker-compose.yml
+  - README.md
+  - CONTRIBUTING.md
+  - Makefile
+  - package.json
+  - package-lock.json
+  # default excludes from https://github.com/jekyll/jekyll/blob/493b800edbf6f6e97c34d1812698260907255665/lib/site_template/_config.yml#L45
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
 # Defaults
 defaults:
   - scope:
