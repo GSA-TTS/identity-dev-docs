@@ -43,7 +43,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
-    nokogiri (1.12.5-x86_64-darwin)
+    nokogiri (1.12.5)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
