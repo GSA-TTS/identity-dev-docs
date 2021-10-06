@@ -12,7 +12,7 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: identity-dev-docs-{{ checksum "package-lock.json" }}-{{ checksum "Gemfile.lock" }}
+          key: v2-identity-dev-docs-{{ checksum "package-lock.json" }}-{{ checksum "Gemfile.lock" }}
 
       - run:
           name: Install dependencies
@@ -23,7 +23,7 @@ jobs:
 
       # Store bundle cache
       - save_cache:
-          key: identity-dev-docs-{{ checksum "package-lock.json" }}-{{ checksum "Gemfile.lock" }}
+          key: v2-identity-dev-docs-{{ checksum "package-lock.json" }}-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
             - ~/.npm
