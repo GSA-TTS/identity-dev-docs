@@ -5,13 +5,13 @@ jobs:
   build:
     docker:
       # Specify the Ruby version you desire here
-      - image: circleci/ruby:2.5.3-node
+      - image: cimg/ruby:2.7-node
 
     working_directory: ~/identity-dev-docs
     steps:
       - checkout
 
-      - restore-cache:
+      - restore_cache:
           key: identity-dev-docs-{{ checksum "package-lock.json" }}-{{ checksum "Gemfile.lock" }}
 
       - run:
@@ -22,7 +22,7 @@ jobs:
             npm ci
 
       # Store bundle cache
-      - save-cache:
+      - save_cache:
           key: identity-dev-docs-{{ checksum "package-lock.json" }}-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
