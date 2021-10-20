@@ -64,7 +64,7 @@ Requires the `email` scope.
 ![checkmark][checkmark]
 </td>
 <td markdown="1">
-`all_emails` (string)
+`all_emails` (array)
 </td>
 <td markdown="1">
 Not implemented
