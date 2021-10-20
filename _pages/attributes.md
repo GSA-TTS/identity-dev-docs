@@ -55,6 +55,23 @@ Requires the `email` scope.
     </tr>
     <tr>
 <td markdown="1">
+**All emails**<br />All of the email addresses on the user's account
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+`all_emails` (string)
+</td>
+<td markdown="1">
+Not implemented
+</td>
+    </tr>
+    <tr>
+<td markdown="1">
 **IAL**<br />Identity Assurance Level [NIST 800-63-3](https://pages.nist.gov/800-63-3/).
 </td>
 <td markdown="1">

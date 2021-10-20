@@ -168,6 +168,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
    - `openid`
    - `address`
    - `email`
+   - `all_emails`
    - `phone`
    - `profile:birthdate`
    - `profile:name`
