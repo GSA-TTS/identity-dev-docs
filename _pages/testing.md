@@ -134,7 +134,7 @@ The list of currently handled alert names for `failed_alerts` and `passed_alerts
 
 ### Personal information verification
 
-Login.gov collects and verifies personal information during the IAL2 proofing process. Login.gov only accepts social security numbers starting with “900” as being valid in the sandbox environment to prevent users from accidentally entering real personal information. This prefixed is used because it is not valid according to the [Social Security Administration](https://secure.ssa.gov/poms.nsf/lnx/0110201035).
+Login.gov collects and verifies personal information during the IAL2 proofing process. Login.gov only accepts social security numbers starting with “900” as being valid in the sandbox environment to prevent users from accidentally entering real personal information. This prefix is used because it is not valid according to the [Social Security Administration](https://secure.ssa.gov/poms.nsf/lnx/0110201035).
 
 To simulate a failure, enter a social security number that does not start with “900”, such as “123-45-6789”.
 
