@@ -168,6 +168,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
    - `openid`
    - `address`
    - `email`
+   - `all_emails`
    - `phone`
    - `profile:birthdate`
    - `profile:name`
@@ -384,6 +385,7 @@ Here's an example response:
   "birthdate": "1970-01-01",
   "email": "test@example.com",
   "email_verified": true,
+  "all_emails": ["test@example.com", "test2@example.com"],
   "family_name": "Smith",
   "given_name": "John",
   "iss": "https://idp.int.identitysandbox.gov",
