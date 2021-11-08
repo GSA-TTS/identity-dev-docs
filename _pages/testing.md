@@ -136,6 +136,8 @@ The list of currently handled alert names for `failed_alerts` and `passed_alerts
 
 Login.gov collects and verifies personal information during the IAL2 proofing process. It is configured to consider almost all personal information valid in the sandbox. There is one social security number that can be entered to simulate a failure to validate personal information: “666-66-6666”.
 
+Beginning November 22nd, 2021, Login.gov will only accept social security numbers starting with “900” as being valid in the sandbox environment to prevent users from accidentally entering real personal information. This prefix is used because it is not valid according to the [Social Security Administration](https://secure.ssa.gov/poms.nsf/lnx/0110201035). To simulate a failure, enter a social security number that does not start with “900”, such as “123-45-6789”.
+
 ### Phone number verification
 
 Login.gov collects a phone number during the IAL2 proofing process. In a live production environment, Login.gov checks that this phone number is associated with the applicant. You can use any phone number for testing purposes in the sandbox environment other than the following:
