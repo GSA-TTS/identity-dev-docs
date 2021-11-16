@@ -40,7 +40,7 @@ All changes to integrations between Login.gov and your application must be revie
 
 You must have a signed IAA (Inter-Agency Agreement) with Login.gov **with your integration explicitly listed in it** in order to deploy to production. You will need to provide the IAA number this application will be billed under. The IAA number format will include `GTC-Order-Mod` (e.g. `LGABCFY210001-0001-0000`), where GTC stands for General Terms & Conditions. You may also hear these referred to as forms 7600A and 7600B.
 
-Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to reach out to [partners@login.gov](mailto:partners@login.gov) to begin the IAA process, which can take up to 6 weeks to complete.
+Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit our partner interest form](https://share.hsforms.com/16DIoo--rTU2xbNW1MShkBg3ak9e) to begin the IAA process, which can take up to 6 weeks to complete.
 
 ## Staging environment
 
@@ -64,7 +64,7 @@ Before you can deploy your application to the production environment, you will n
 * If this is a SAML integration (Not OpenID Connect), then please ensure that:
   * Assertion Consumer Logout Service URL is defined.
   * SAML Assertion Encryption is enabled.
-    * If you are using a service which does not support SAML encryption, then please send a message to [partners@login.gov](mailto:partners@login.gov) for further guidance.
+    * If you are using a service which does not support SAML encryption, then please [submit a support request](https://app.smartsheetgov.com/b/form/da8ead4f8e604d38b968f49cdfcf57e3) for further guidance.
 * If this is an IAL2 integration, you **must** include a Failure to Proof URL. This is the URL users will be sent to if they fail to complete the identity verification process so you can communicate alternative methods of accessing your application.
 
 ## Request deployment
