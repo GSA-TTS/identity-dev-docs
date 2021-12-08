@@ -54,8 +54,9 @@ If you wish to deploy an application to our staging environment, then create a â
 
 Before you can deploy your application to the production environment, you will need to create a separate app on our dashboard that contains your production certificate, urls and logo. Here are the steps to complete your production configuration app:
 1. Create a new app on the dashboard <https://dashboard.int.identitysandbox.gov/>
-2. Enter a Friendly Name with "Production" in the title
-3. Enter the production urls and configuration into the app
+2. Enter the name of the application **as it appears in your IAA** in the "App Name" field
+3. Enter the name of the application **as you want it to appear to users** in the "Friendly Name" field
+4. Enter the production URLs and configuration into the app
 
 **Please note**: The following items are required to promote your app to production:
 
