@@ -138,6 +138,8 @@ Login.gov collects and verifies personal information during the IAL2 proofing pr
 
 To simulate a failure, enter a social security number that does not start with “900”, such as “123-45-6789”.
 
+**Beginning December 20th, 2021, Login.gov plans to start also accepting social security numbers starting with “666” as being valid in the sandbox environment. To simulate a failure following December 20th, enter a social security number that does not start with “900” or “666”, such as “123-45-6789”.**
+
 ### Phone number verification
 
 Login.gov collects a phone number during the IAL2 proofing process. In a live production environment, Login.gov checks that this phone number is associated with the applicant. You can use any phone number for testing purposes in the sandbox environment other than the following:
