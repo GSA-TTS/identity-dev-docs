@@ -161,7 +161,7 @@ Where can I check the status of Login.gov?
 </h1>
 <div id="statuspage" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-Login.gov has a public status page available at <a href="https://logingov.statuspage.io/">https://logingov.statuspage.io/</a>
+Login.gov has a public status page available at <a href="https://status.login.gov/">https://status.login.gov/</a>
 where you can subscribe to incident notifications via email, SMS, Slack, or RSS.
 </div>
 <button class="usa-accordion__close-button">Close</button>
