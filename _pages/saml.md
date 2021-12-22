@@ -562,7 +562,7 @@ An example remote logout request payload, with indentation added for readability
 </div>
 </div>
 
-Following a successful remote logout request Login.gov will POST a [response](#logout-response) to the Assertion Consumer Logout URL configured for your application, similar to a front channel logout request.
+In response to a remote logout request Login.gov will render a [logout response](#logout-response).
 
 ## Example application
 
