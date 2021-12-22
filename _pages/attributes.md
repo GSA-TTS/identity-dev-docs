@@ -67,7 +67,7 @@ Requires the `email` scope.
 `all_emails` (array of strings)
 </td>
 <td markdown="1">
-Not implemented
+`all_emails` (array of strings)
 </td>
     </tr>
     <tr>
