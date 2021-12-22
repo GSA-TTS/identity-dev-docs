@@ -19,8 +19,8 @@ Anybody with an email address ending in .gov or .mil can create an account in th
 2. Once you are logged into your sandbox account, you'll be asked to create a team and add users to that team.
 3. After creating your team, go to the Apps tab. This page is where you will find all of the test applications you and your team will create.
 4. Click **Create a new test app** and fill out the form to register a new application with the Login.gov IdP in the test sandbox environment.
-5. Start testing! If you need to troubleshoot, please [send us an email](mailto:partners@login.gov) and we can onboard you to our partner support Slack channel and the Login.gov team will help you along the way.
-6. When you're ready to go to production, please contact our team at [partners@login.gov](mailto:partners@login.gov) and notify us. We'll manage your application's promotion to production.
+5. Start testing! If you need to troubleshoot, please [submit a support request](https://app.smartsheetgov.com/b/form/da8ead4f8e604d38b968f49cdfcf57e3) and we can onboard you to our partner support Slack channel and the Login.gov team will help you along the way.
+6. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your application's promotion to production.
 
 ### Creating a public certificate
 
@@ -34,7 +34,7 @@ Make sure you're using the corresponding private key in your application to sign
 
 ## Automated/Load Testing
 
-Our sandbox environment is smaller than our production environment and it is shared by many of our partners. For this reason, we ask you to reach out to us at partners@login.gov before performing automated tests that will exceed 1000 requests/minute. We are happy to discuss options to meet your needs.
+Our sandbox environment is smaller than our production environment and it is shared by many of our partners. For this reason, we ask you to [submit a support request](https://app.smartsheetgov.com/b/form/da8ead4f8e604d38b968f49cdfcf57e3) before performing automated tests that will exceed 1000 requests/minute. We are happy to discuss options to meet your needs.
 
 ## Testing IAL2
 
@@ -134,9 +134,11 @@ The list of currently handled alert names for `failed_alerts` and `passed_alerts
 
 ### Personal information verification
 
-Login.gov collects and verifies personal information during the IAL2 proofing process. It is configured to consider almost all personal information valid in the sandbox. There is one social security number that can be entered to simulate a failure to validate personal information: “666-66-6666”.
+Login.gov collects and verifies personal information during the IAL2 proofing process. Login.gov only accepts social security numbers starting with “900” as being valid in the sandbox environment to prevent users from accidentally entering real personal information. This prefix is used because it is not valid according to the [Social Security Administration](https://secure.ssa.gov/poms.nsf/lnx/0110201035).
 
-Beginning November 22nd, 2021, Login.gov will only accept social security numbers starting with “900” as being valid in the sandbox environment to prevent users from accidentally entering real personal information. This prefix is used because it is not valid according to the [Social Security Administration](https://secure.ssa.gov/poms.nsf/lnx/0110201035). To simulate a failure, enter a social security number that does not start with “900”, such as “123-45-6789”.
+To simulate a failure, enter a social security number that does not start with “900”, such as “123-45-6789”.
+
+**Beginning December 20th, 2021, Login.gov plans to start also accepting social security numbers starting with “666” as being valid in the sandbox environment. To simulate a failure following December 20th, enter a social security number that does not start with “900” or “666”, such as “123-45-6789”.**
 
 ### Phone number verification
 
