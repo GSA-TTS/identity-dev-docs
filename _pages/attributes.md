@@ -119,7 +119,7 @@ See [SAML AAL values](https://developers.login.gov/saml/#authentication-assuranc
 <td></td>
 <td markdown="1">
 ![checkmark][checkmark]
-</td>
+</td>I to 
 <td markdown="1">
 `given_name` (string)
 
