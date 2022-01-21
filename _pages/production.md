@@ -72,7 +72,7 @@ Before you can deploy your application to the production environment, you will n
 ## Request deployment
 
 Once you have:
-1. [Confirmed that this integration is listed in a signed IAA](#confirm-iaa)
+1. [Confirmed that this integration is listed in a signed IAA](#confirm-iaa). **Do not submit the form below if you are not certain that your application is listed in a _signed_ IAA.**
 2. [Created a production configuration](#production-configuration)
 
 Please submit the [Login.gov production integration request form][new_integration_form]{:target='_blank'}.
