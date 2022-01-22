@@ -72,14 +72,13 @@ Before you can deploy your application to the production environment, you will n
 ## Request deployment
 
 Once you have:
-1. [Confirmed that this integration is listed in a signed IAA](#confirm-iaa). **Do not submit the form below if you are not certain that your application is listed in a _signed_ IAA.**
+1. [Confirmed that this integration is listed in a signed IAA](#confirm-iaa). **Do not request deployment if you are not certain that your application is listed in a _signed_ IAA.**
 2. [Created a production configuration](#production-configuration)
 
-Please submit the [Login.gov production integration request form][new_integration_form]{:target='_blank'}.
+Please contact your account manager to get access to our production integration launch request form. If you are not sure who your account manager is, please email us at [partners@login.gov](mailto:partners@login.gov).
 
 ## Changes to production applications
 
 Please update your production configuration app in the dashboard and test the changes you wish to deploy. After you have confirmed the change, then please submit the [Login.gov integration change request form][integration_change_form]{:target='_blank'}.
 
-[new_integration_form]: https://app.smartsheetgov.com/b/form/68d06187790f4e18a5dd13e932703f7c
 [integration_change_form]: https://app.smartsheetgov.com/b/form/c4522426b2654999868663ddf218ab18
