@@ -1,5 +1,5 @@
 ---
-title: blah
+title: Support
 redirect_from:
   - /support/
 sidenav:
@@ -17,6 +17,8 @@ sidenav:
       - text: Other Tips & Tools
         href: "#other-tips--tools"
 ---
+
+<br/>
 
 # Frequenty Asked Questions
 
@@ -186,6 +188,8 @@ where you can subscribe to incident notifications via email, SMS, Slack, or RSS.
 </div>
 
 </div>
+
+<br/>
 
 # Troubleshooting
 
