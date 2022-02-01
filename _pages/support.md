@@ -2,7 +2,7 @@
 title: Support
 sidenav:
   - text: FAQ
-    href: "#frequenty-asked-questions"
+    href: "#frequently-asked-questions"
   - text: Troubleshooting
     href: "#troubleshooting"
     links:
