@@ -1,7 +1,5 @@
 ---
 title: Support
-redirect_from:
-  - /support/
 sidenav:
   - text: FAQ
     href: "#frequenty-asked-questions"
