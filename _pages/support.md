@@ -18,7 +18,7 @@ sidenav:
 
 <br/>
 
-# Frequenty Asked Questions
+# Frequently Asked Questions
 
 <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="true">
 
