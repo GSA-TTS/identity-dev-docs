@@ -8,8 +8,8 @@ sidenav:
     links:
       - text: Login.gov Errors
         href: "#logingov-errors"
-      - text: Console Errors
-        href: "#console-errors"
+      - text: Browser Console Errors
+        href: "#browser-console-errors"
       - text: Other Application Issues
         href: "#other-application-issues"
       - text: Other Tips & Tools
@@ -212,7 +212,7 @@ This error occurs when Login.gov receives a request from a Service Provider that
 
 <b>Solution:</b>
 
-Double check the SAML/OIDC request to Login.gov and confirm that the Issuer/ClientID field matches exactly what is defined in the Login.gov Dashboard. See [link to Decoding SAML Requests] for help with decoding SAML Requests. 
+Double check the SAML/OIDC request to Login.gov and confirm that the Issuer/ClientID field matches exactly what is defined in the Login.gov Dashboard. See [Other Tips & Tools]({{ site.baseurl }}/support/#other-tips--tools) for help with decoding SAML Requests.
 
 Note that certain Service Providers will not allow partners to set or change the Issuer value after the application is configured (e.g. MS Power Apps Portal). In this case, the best option would be to create the Login.gov Dashboard configuration after the Service Provider application has defined the Issuer and use that Issuer in the Dashboard. 
 
@@ -318,14 +318,14 @@ This error occurs when Login.gov receives a SAML request with a NameIDPolicy who
 
 Refer to the <a target="_blank" href="https://developers.login.gov/saml/#configuration">Login.gov Developers Guide</a> for the acceptable values for the NameIdFormat SAML field. Update the Login.gov Identity Provider configuration within your Service Provider to specify the correct NameIDFormat field.
 
-For SAML Service Providers, see [Decoding SAML Requests]({{ site.baseurl }}/support/#decodingsamlrequests) for help with decoding SAML Requests.
+For SAML Service Providers, see [Other Tips & Tools]({{ site.baseurl }}/support/#other-tips--tools) for help with decoding SAML Requests.
 </div>
 <button class="usa-accordion__close-button">Close</button>
 </div>
 
 </div>
 
-## Console Errors
+## Browser Console Errors
 
 <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="true">
 
