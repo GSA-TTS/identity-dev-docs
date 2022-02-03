@@ -1,7 +1,7 @@
 ---
 title: User attributes
 lead: >
-  Login.gov user accounts are either proofed (IAL2) or self-asserted (IAL1), corresponding to <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-3.pdf">NIST 800-63-3</a> Identity Assurance Level (IAL).
+  Login.gov user accounts are either proofed (IAL2*) or self-asserted (IAL1), corresponding to <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-3.pdf">NIST 800-63-3</a> Identity Assurance Level (IAL).
 ---
 
 Here are the possible attributes that can be requested at a given IAL. This table contains the available user attributes, the IAL they are associated with, and how they can be accessed in OpenID Connect and SAML.
@@ -12,7 +12,7 @@ It is important to expect any number of characters in the `(string)` datatype un
   <thead>
     <th>Attribute</th>
     <th>IAL1</th>
-    <th>IAL2</th>
+    <th>IAL2*</th>
     <th>OpenID Connect</th>
     <th>SAML</th>
   </thead>
