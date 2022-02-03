@@ -292,9 +292,9 @@ An example authentication request, with indentation added for readability.
 
 ### Specifying attributes and assurance levels
 
-The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the IAL (Identity Assurance Level), AAL (Authentication Assurance Level) and attributes requested.
+The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the IAL (Identity Assurance Level)[^1], AAL (Authentication Assurance Level) and attributes requested.
 
-#### Identity Assurance Level (IAL)
+#### Identity Assurance Level (IAL)[^1]
 
 To specify one of the supported IAL levels, place one of these values inside a `<saml:AuthnContextClassRef>` tag:
   - **`http://idmanagement.gov/ns/assurance/ial/1`**
@@ -601,5 +601,8 @@ In response to a remote logout request Login.gov will render a [logout response]
 
 ## Example application
 
-The Login.gov team has created an example client to speed up your development,
-all open source in the public domain: [identity-saml-sinatra](https://github.com/18F/identity-saml-sinatra)
+The Login.gov team has created an example client to speed up your development, all open source in the public domain: [identity-saml-sinatra](https://github.com/18F/identity-saml-sinatra)
+
+## Footnotes
+
+[^1]: Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization.
