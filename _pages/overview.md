@@ -32,3 +32,7 @@ Login.gov is a FedRAMP moderate approved multifactor authentication and identity
 
 ## Service provider configuration
 This is the configuration for your application within Login.gov's identity provider (main application). For the sandbox environment you will be able to configure this yourself. In our production environment, we will manage this configuration.
+
+# Footnotes:
+
+* Login.gov's IAL2 implementation substantially conforms to NIST SP 800-63A while a fully conformant and certified flow is still under development.

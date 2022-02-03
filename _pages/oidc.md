@@ -474,3 +474,7 @@ all open source in the public domain: [identity-oidc-sinatra](https://github.com
 
   showExamples('private_key_jwt');
 </script>
+
+# Footnotes:
+
+* Login.gov's IAL2 implementation substantially conforms to NIST SP 800-63A while a fully conformant and certified flow is still under development.

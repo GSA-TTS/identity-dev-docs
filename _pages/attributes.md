@@ -309,3 +309,7 @@ Requires the `x509_presented` scope.
 </table>
 
 [checkmark]: {{ site.baseurl }}/assets/img/check.svg
+
+# Footnotes:
+
+* Login.gov's IAL2 implementation substantially conforms to NIST SP 800-63A while a fully conformant and certified flow is still under development.

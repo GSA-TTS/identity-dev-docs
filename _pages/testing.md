@@ -147,3 +147,7 @@ Login.gov collects a phone number during the IAL2* proofing process. In a live p
 * `703-555-5555` - simulates a phone number that couldn't be verified as belonging to the user
 * `703-555-5888` - simulates a timeout during verification
 * `703-555-5999` - simulates a phone number that couldn't be contacted
+
+# Footnotes:
+
+* Login.gov's IAL2 implementation substantially conforms to NIST SP 800-63A while a fully conformant and certified flow is still under development.

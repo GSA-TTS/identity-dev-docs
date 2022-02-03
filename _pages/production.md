@@ -54,7 +54,7 @@ If you wish to deploy an application to our staging environment, then create a â
 
 Before you can deploy your application to the production environment, you will need to create a separate app on our dashboard that contains your production certificate, urls and logo. Here are the steps to complete your production configuration app:
 1. Create a new app on the dashboard <https://dashboard.int.identitysandbox.gov/>
-2. Indicate that the app configuration is for a Production application 
+2. Indicate that the app configuration is for a Production application
 3. Enter the name of the application **as it appears in your IAA** in the "App Name" field - Do **NOT** use environment names such as "Prod" or "Production"
 4. Enter the name of the application **as you want it to appear to users** in the "Friendly Name" field
 5. Enter the production URLs and configuration into the app
@@ -82,3 +82,7 @@ Please contact your account manager to get access to our production integration 
 Please update your production configuration app in the dashboard and test the changes you wish to deploy. After you have confirmed the change, then please submit the [Login.gov integration change request form][integration_change_form]{:target='_blank'}.
 
 [integration_change_form]: https://app.smartsheetgov.com/b/form/c4522426b2654999868663ddf218ab18
+
+# Footnotes:
+
+* Login.gov's IAL2 implementation substantially conforms to NIST SP 800-63A while a fully conformant and certified flow is still under development.

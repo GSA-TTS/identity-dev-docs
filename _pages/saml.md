@@ -603,3 +603,7 @@ In response to a remote logout request Login.gov will render a [logout response]
 
 The Login.gov team has created an example client to speed up your development,
 all open source in the public domain: [identity-saml-sinatra](https://github.com/18F/identity-saml-sinatra)
+
+# Footnotes:
+
+* Login.gov's IAL2 implementation substantially conforms to NIST SP 800-63A while a fully conformant and certified flow is still under development.
