@@ -324,7 +324,7 @@ To request specific attributes, list them (comma-separated) as the query paramet
 
 #### Example specifying IAL, AAL, and attributes
 
-An IAL2 request at AAL3 for email, phone, first name, last name, and SSN might look like:
+A proofed identity request at AAL3 for email, phone, first name, last name, and SSN might look like:
 
 ```xml
 <samlp:AuthnRequest ...>

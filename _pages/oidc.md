@@ -127,7 +127,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
     - **`http://idmanagement.gov/ns/assurance/loa/1`**
       Equivalent to IAL1
     - **`http://idmanagement.gov/ns/assurance/loa/3`**
-      Equivalent to IAL2
+      Equivalent to identity proofed account
 
 * **client_id**
   The unique identifier for the client. This will be registered with the Login.gov IdP in advance.
