@@ -182,8 +182,8 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 * **nonce**
   A unique value at least 22 characters in length used to verify the integrity of the `id_token` and mitigate [replay attacks](https://en.wikipedia.org/wiki/Replay_attack). This value should include per-session state and be unguessable by attackers. This value will be present in the `id_token` of the [token endpoint response](#token-response), where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. Read more about [nonce implementation](http://openid.net/specs/openid-connect-core-1_0.html#NonceNotes) in the spec.
 
-* **verified_within** -- *optional, only applies to IAL2*
-  Specifies how recently the user's IAL2 information must be verified. For example, if your application requires that the user's data must have been verified within the last year, you can set the value to `verified_within=1y`, and customers whose data is older than that will go through the identity proofing process again before continuing back to your application.
+* **verified_within** -- *optional, for identity proofed requests only*
+  Specifies how recently the user's information must be verified. For example, if your application requires that the user's data must have been verified within the last year, you can set the value to `verified_within=1y`, and customers whose data is older than that will go through the identity proofing process again before continuing back to your application.
 
   <details markdown="1">
     <summary>Possible values</summary>
@@ -365,7 +365,7 @@ The user info response will be a JSON object containing [user attributes]({{ sit
 
 * **phone_verified** (boolean)
   Whether the phone number has been verified. Currently, Login.gov only supports verified phones.
-  - Requires the `phone` scope and an IAL2 account.
+  - Requires the `phone` scope and an identity proofed account.
 
 * **verified_at** (number, null)
   When the user's identity was last verified, as an integer timestamp representing the number of seconds since the Unix Epoch, or `null` if the account has never been verified.
