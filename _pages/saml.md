@@ -347,7 +347,7 @@ The authentication request can specify LOA levels 1 and 3 with one of these valu
   - **`http://idmanagement.gov/ns/assurance/loa/1`**
     Equivalent to IAL1
   - **`http://idmanagement.gov/ns/assurance/loa/3`**
-    Equivalent to IAL2
+    Equivalent to identity proofed
 
 ### RelayState
 
