@@ -9,7 +9,7 @@ Login.gov is a FedRAMP moderate approved multifactor authentication and identity
 ## Integration flow
 
 * Once a [service provider configuration](#service-provider-configuration) is provided in one of Login.gov's environments, users start at your application and are redirected back to Login.gov via [OIDC]({{ site.baseurl }}/oidc/) or [SAML]({{ site.baseurl }}/saml/) protocols.
-* Your application request will determine if the request will be processed as just an authentication request at NIST Identity Assurance Level 1 (IAL1) or as an identity proofed event at NIST Identity Assurance Level 2 (IAL2).
+* Your application request will determine if the request will be processed as just an authentication request at Identity Assurance Level 1 (IAL1) or as an identity proofed account. Login.gov continues to work toward achieving certification of compliance with NIST's IAL2 standard from a third-party assessment organization.
 * New users will either create an account corresponding to the identity assurance level requested (IAL1/IAL2) and returning users will present their existing Login.gov credentials to reauthenticate into Login.gov. If a user is new to your application they will consent to their information being shared with your application.
 
 <figure>
