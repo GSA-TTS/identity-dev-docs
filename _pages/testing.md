@@ -36,9 +36,9 @@ Make sure you're using the corresponding private key in your application to sign
 
 Our sandbox environment is smaller than our production environment and it is shared by many of our partners. For this reason, we ask you to [submit a support request](https://app.smartsheetgov.com/b/form/da8ead4f8e604d38b968f49cdfcf57e3) before performing automated tests that will exceed 1000 requests/minute. We are happy to discuss options to meet your needs.
 
-## Testing IAL2
+## Testing identity proofing
 
-The Login.gov sandbox test environment is configured to pass most information that is entered during the IAL2 flow. This allows the proofing flow to be tested without the need to enter personally identifiable information (PII). There are special values that can be entered to simulate error states while testing in the Login.gov sandbox environment.
+The Login.gov sandbox test environment is configured to pass most information that is entered during the proofing flow. This allows the proofing flow to be tested without the need to enter personally identifiable information (PII). There are special values that can be entered to simulate error states while testing in the Login.gov sandbox environment.
 
 ### Document upload
 
@@ -134,7 +134,7 @@ The list of currently handled alert names for `failed_alerts` and `passed_alerts
 
 ### Personal information verification
 
-Login.gov collects and verifies personal information during the IAL2 proofing process. Login.gov only accepts social security numbers starting with “900” as being valid in the sandbox environment to prevent users from accidentally entering real personal information. This prefix is used because it is not valid according to the [Social Security Administration](https://secure.ssa.gov/poms.nsf/lnx/0110201035).
+Login.gov collects and verifies personal information during the proofing process. Login.gov only accepts social security numbers starting with “900” as being valid in the sandbox environment to prevent users from accidentally entering real personal information. This prefix is used because it is not valid according to the [Social Security Administration](https://secure.ssa.gov/poms.nsf/lnx/0110201035).
 
 To simulate a failure, enter a social security number that does not start with “900”, such as “123-45-6789”.
 
@@ -142,7 +142,7 @@ To simulate a failure, enter a social security number that does not start with �
 
 ### Phone number verification
 
-Login.gov collects a phone number during the IAL2 proofing process. In a live production environment, Login.gov checks that this phone number is associated with the applicant. You can use any phone number for testing purposes in the sandbox environment other than the following:
+Login.gov collects a phone number during the proofing process. In a live production environment, Login.gov checks that this phone number is associated with the applicant. You can use any phone number for testing purposes in the sandbox environment other than the following:
 
 * `703-555-5555` - simulates a phone number that couldn't be verified as belonging to the user
 * `703-555-5888` - simulates a timeout during verification
