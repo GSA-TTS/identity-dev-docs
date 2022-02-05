@@ -12,7 +12,7 @@ It is important to expect any number of characters in the `(string)` datatype un
   <thead>
     <th>Attribute</th>
     <th>IAL1</th>
-    <th>IAL2</th>
+    <th>ID Proofed</th>
     <th>OpenID Connect</th>
     <th>SAML</th>
   </thead>
