@@ -94,11 +94,11 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 
 
 * **acr_values**
-  The Authentication Context Class Reference requests can be used to specify the IAL (Identity Assurance Level) or the AAL (Authentication Assurance Level) for the user. These and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response).
+  The Authentication Context Class Reference requests can be used to specify the IAL (Identity Assurance Level)[^1] or the AAL (Authentication Assurance Level) for the user. These and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response).
 
   Multiple values can be joined with a space (before being URI-escaped in the final URL)
 
-  #### IAL Values
+  #### IAL Values[^1]
   An IAL value must be specified.
 
     - **`http://idmanagement.gov/ns/assurance/ial/1`**
@@ -474,3 +474,7 @@ all open source in the public domain: [identity-oidc-sinatra](https://github.com
 
   showExamples('private_key_jwt');
 </script>
+
+## Footnotes
+
+[^1]: Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization.

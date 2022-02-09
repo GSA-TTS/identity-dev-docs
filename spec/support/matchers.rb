@@ -32,6 +32,9 @@ RSpec::Matchers.define :link_to_valid_headers do
 
       if target == '#'
         missing_headers << a.to_s
+      elsif target.match?(/:/)
+        anchor = doc.css("[@id='#{target.gsub('#', '')}']")
+        missing_headers << target if anchor.nil?
       else
         anchor = doc.at(target)
         missing_headers << target if anchor.nil?
