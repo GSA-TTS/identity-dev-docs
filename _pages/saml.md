@@ -292,31 +292,31 @@ An example authentication request, with indentation added for readability.
 
 ### Specifying attributes and assurance levels
 
-The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the IAL (Identity Assurance Level)[^1], AAL (Authentication Assurance Level) and attributes requested.
+The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the type of identity verification[^1], AAL (Authentication Assurance Level) and attributes requested.
 
-#### Identity Assurance Level (IAL)[^1]
+#### Type of Identity Verification[^1] {#identity-assurance-level-ial}
 
 To specify one of the supported IAL levels, place one of these values inside a `<saml:AuthnContextClassRef>` tag:
   - **`http://idmanagement.gov/ns/assurance/ial/1`**
       Basic identity assurance, does not require identity verification (this is the most common value).
   - **`http://idmanagement.gov/ns/assurance/ial/2`**
-      Requires that the user has gone through identity verification
-  - **`http://idmanagement.gov/ns/assurance/ial/2?strict=true`**
-      Requires that the user has gone through identity verification, including a "liveness" check (this is not available in production, only in int and staging environments)
+      Requires that the user has gone through identity verification[^1]
 
 #### Authentication Assurance Level (AAL)
 
 We default to requiring a user to be authenticated with a second factor:
 
 - **`urn:gov:gsa:ac:classes:sp:PasswordProtectedTransport:duo`**
-    This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow AAL 1, because it implies that a user did not authenticate with a second factor.
+    This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow strict AAL 1, because it implies that a user did not authenticate with a second factor. This setting requires users to reauthenticate with a separate second factor (i.e. not a session secret) once every 30 days at a minimum.
 
-To specify a stricter AAL level, add an additional `<saml:AuthnContextClassRef>` with one of these values:
+To specify more restrictive behavior, add an additional `<saml:AuthnContextClassRef>` with one of these values:
 
+  - **`http://idmanagement.gov/ns/assurance/aal/2`**
+      This is the same as the default behavior except users must reauthenticate with a separate second factor (i.e. not a session secret) once every 12 hours.
   - **`http://idmanagement.gov/ns/assurance/aal/3`**
-      This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC.
+      This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC. Users must _always_ authenticate with a second factor.
   - **`http://idmanagement.gov/ns/assurance/aal/3?hspd12=true`**
-      This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC)
+      This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC). Users must _always_ authenticate with a second factor.
 
 #### Attributes
 

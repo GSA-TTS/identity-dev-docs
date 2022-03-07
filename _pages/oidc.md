@@ -94,29 +94,29 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 
 
 * **acr_values**
-  The Authentication Context Class Reference requests can be used to specify the IAL (Identity Assurance Level)[^1] or the AAL (Authentication Assurance Level) for the user. These and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response).
+  The Authentication Context Class Reference requests can be used to specify the type of identity verification[^1] or the AAL (Authentication Assurance Level) for the user. These and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response).
 
   Multiple values can be joined with a space (before being URI-escaped in the final URL)
 
-  #### IAL Values[^1]
-  An IAL value must be specified.
+  #### Type of Identity Verification[^1] {#ial-values}
+
+  A type of identity verification must be specified.
 
     - **`http://idmanagement.gov/ns/assurance/ial/1`**
         Basic identity assurance, does not require identity verification (this is the most common value).
     - **`http://idmanagement.gov/ns/assurance/ial/2`**
-        Requires that the user has gone through identity verification
-    - **`http://idmanagement.gov/ns/assurance/ial/2?strict=true`**
-        Requires that the user has gone through identity verification, including a "liveness" check  (this is not available in production, only in int and staging environments)
-
+        Requires that the user has gone through identity verification[^1]
 
   #### AAL Values
   We default to requiring a user to be authenticated with a second factor:
 
   - **`urn:gov:gsa:ac:classes:sp:PasswordProtectedTransport:duo`**
-      This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow AAL 1, because it implies that a user did not authenticate with a second factor.
+      This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow strict AAL 1, because it implies that a user did not authenticate with a second factor. This setting requires users to reauthenticate with a separate second factor (i.e. not a session secret) once every 30 days at a minimum.
 
   Stricter behavior can be specified by adding one of:
 
+    - **`http://idmanagement.gov/ns/assurance/aal/2`**
+        This is the same as the default behavior except users must reauthenticate with a separate second factor (i.e. not a session secret) once every 12 hours.
     - **`http://idmanagement.gov/ns/assurance/aal/3`**
         This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC.
     - **`http://idmanagement.gov/ns/assurance/aal/3?hspd12=true`**
