@@ -25,6 +25,8 @@ layout: base
             <p class="usa-intro">{{ page.lead }}</p>
           {% endif %}
 
+          {% include zendesk-alert.html %}
+
           {{ content }}
         </div>
       </div>
@@ -35,6 +37,8 @@ layout: base
         {% if page.lead %}
           <p class="usa-intro">{{ page.lead }}</p>
         {% endif %}
+
+        {% include zendesk-alert.html %}
 
         {{ content }}
       </div>

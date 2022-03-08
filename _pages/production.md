@@ -21,7 +21,6 @@ sidenav:
     href: "#changes-to-production-applications"
 ---
 
-
 ## Production endpoints
 
 Our integration documentation includes endpoint urls for our sandbox environment <https://idp.int.identitysandbox.gov/>. Our production environment is located at <https://secure.login.gov/>. The URL path to each endpoint remains the same. Only the domain will change. For example, the authorization endpoint will change as follows:
@@ -66,7 +65,7 @@ Before you can deploy your application to the production environment, you will n
 * If this is a SAML integration (Not OpenID Connect), then please ensure that:
   * Assertion Consumer Logout Service URL is defined.
   * SAML Assertion Encryption is enabled.
-    * If you are using a service which does not support SAML encryption, then please [submit a support request](https://app.smartsheetgov.com/b/form/da8ead4f8e604d38b968f49cdfcf57e3) for further guidance.
+    * If you are using a service which does not support SAML encryption, then please [submit a support request](https://logingov.zendesk.com/) for further guidance.
 * If this is an integration requesting identity proofed attributes, you **must** include a Failure to Proof URL. This is the URL users will be sent to if they fail to complete the identity verification process so you can communicate alternative methods of accessing your application.
 
 ## Request deployment
@@ -75,10 +74,8 @@ Once you have:
 1. [Confirmed that this integration is listed in a signed IAA](#confirm-iaa). **Do not request deployment if you are not certain that your application is listed in a _signed_ IAA.**
 2. [Created a production configuration](#production-configuration)
 
-Please contact your account manager to get access to our production integration launch request form. If you are not sure who your account manager is, please email us at [partners@login.gov](mailto:partners@login.gov).
+Please submit a launch request at our [support portal](https://logingov.zendesk.com){:target='_blank'}.
 
 ## Changes to production applications
 
-Please update your production configuration app in the dashboard and test the changes you wish to deploy. After you have confirmed the change, then please submit the [Login.gov integration change request form][integration_change_form]{:target='_blank'}.
-
-[integration_change_form]: https://app.smartsheetgov.com/b/form/c4522426b2654999868663ddf218ab18
+Please update your production configuration app in the dashboard and test the changes you wish to deploy. After you have confirmed the change, then please submit a change request at our [support portal](https://logingov.zendesk.com){:target='_blank'}.
