@@ -1,0 +1,12 @@
+{% comment %}
+include
+- content
+- alert_class (optional)
+{% endcomment %}
+<div class="usa-alert {{ include.alert_class | default: 'usa-alert--info' }}">
+  <div class="usa-alert__body">
+    <p class="usa-alert__text" markdown="1">
+      {{ include.content }}
+    </p>
+  </div>
+</div>

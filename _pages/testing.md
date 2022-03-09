@@ -19,7 +19,7 @@ Anybody with an email address ending in .gov or .mil can create an account in th
 2. Once you are logged into your sandbox account, you'll be asked to create a team and add users to that team.
 3. After creating your team, go to the Apps tab. This page is where you will find all of the test applications you and your team will create.
 4. Click **Create a new test app** and fill out the form to register a new application with the Login.gov IdP in the test sandbox environment.
-5. Start testing! If you need to troubleshoot, please [submit a support request](https://app.smartsheetgov.com/b/form/da8ead4f8e604d38b968f49cdfcf57e3) and we can onboard you to our partner support Slack channel and the Login.gov team will help you along the way.
+5. Start testing! If you need to troubleshoot, please [submit a support request](https://logingov.zendesk.com) and we can onboard you to our partner support Slack channel and the Login.gov team will help you along the way.
 6. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your application's promotion to production.
 
 ### Creating a public certificate
@@ -34,7 +34,7 @@ Make sure you're using the corresponding private key in your application to sign
 
 ## Automated/Load Testing
 
-Our sandbox environment is smaller than our production environment and it is shared by many of our partners. For this reason, we ask you to [submit a support request](https://app.smartsheetgov.com/b/form/da8ead4f8e604d38b968f49cdfcf57e3) before performing automated tests that will exceed 1000 requests/minute. We are happy to discuss options to meet your needs.
+Our sandbox environment is smaller than our production environment and it is shared by many of our partners. For this reason, we ask you to [submit a support request](https://logingov.zendesk.com) before performing automated tests that will exceed 1000 requests/minute. We are happy to discuss options to meet your needs.
 
 ## Testing identity proofing
 
