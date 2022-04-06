@@ -151,7 +151,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 * **prompt** -- *optional, requires administrator approval*
   To force a re-authorization event when a current IdP session is active, you will need to set the `prompt` attribute to `login`, like this: `prompt=login`.  
 
-  Request permission for your application to do this by [submitting a support request](https://app.smartsheetgov.com/b/form/da8ead4f8e604d38b968f49cdfcf57e3).
+  Request permission for your application to do this by [submitting a support request](https://logingov.zendesk.com/).
 
   **User experience**
 
