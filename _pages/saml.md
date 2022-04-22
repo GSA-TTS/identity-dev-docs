@@ -490,7 +490,7 @@ POST ${ASSERTION_CONSUMER_SERVICE_LOGOUT_URL}
 SAMLResponse=${SAML_RESPONSE}
 ```
 
-The SAMLResponse is a base64-encoded XML payload that contains encrypted data.
+Note: the SAMLResponse does not contain a signiture since it's simply acknowledging the logout request.
 
 <div class="usa-accordion--bordered">
 <button class="usa-accordion__button" aria-controls="logout-response-example">
@@ -507,26 +507,6 @@ An example decoded logout response, with indentation added for readability.
                 InResponseTo="_7b95749b-362f-4048-900b-b8e5b839c72b"
                 xmlns="urn:oasis:names:tc:SAML:2.0:protocol">
   <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://idp.int.identitysandbox.gov/api/saml</Issuer>
-  <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-    <ds:SignedInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-      <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></ds:CanonicalizationMethod>
-      <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></ds:SignatureMethod>
-      <ds:Reference URI="#_92312df0-dc35-0134-8e60-02727c87f245">
-        <ds:Transforms>
-          <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></ds:Transform>
-          <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></ds:Transform>
-        </ds:Transforms>
-        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></ds:DigestMethod>
-        <ds:DigestValue>d41d4a431d6f2f889a8451bcd660264a11d43516616ffe2eef2e9cab87095369</ds:DigestValue>
-      </ds:Reference>
-    </ds:SignedInfo>
-    <ds:SignatureValue>uE0iTMAfI2BZGgliuyPXu6Ddup/IwTfW3NqlsLJXjjpjxey0U1CYqzQa0O/MaDkn32XXSCmZkLkYTdhDlfmUZ4taZohWIO7y6wwLRAlRBPZPxOPXSZ8wC37A9LPQvW/EtpnPySv8BzuphsROKC1+PnnxbbSJI6EuifxohAGHe9QTECCAM2nBPJAs5D0zTlFLIHluCwsBTkrY6Kfc1VJBZWClKPkLGVXMy6+tqZqp/9h1ii40e43Y0bB/x+9mJvJ5RfIO+b+gj6Aw2Fm2KNX3kdRTZ6tKaLXqlneCUy4C7syrW/CxoCeWkNwuTnaS9szJ3z9Qg68pDAUhCC5BP2RKXA==</ds:SignatureValue>
-    <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
-      <ds:X509Data>
-        <ds:X509Certificate>MIIDjDCCAnQCCQDnXYBYvsXpXzANBgkqhkiG9w0BAQsFADCBhzEeMBwGA1UEAwwVaWRwLXNhbmRib3gubG9naW4uZ292MQwwCgYDVQQKDANHU0ExDDAKBgNVBAsMAzE4ZjETMBEGA1UEBwwKV2FzaGluZ3RvbjELMAkGA1UECAwCREMxCzAJBgNVBAYTAlVTMRowGAYJKoZIhvcNAQkBFgsxOGZAZ3NhLmdvdjAeFw0xNjA2MDYwMTU5MDVaFw0xNzA2MDYwMTU5MDVaMIGHMR4wHAYDVQQDDBVpZHAtc2FuZGJveC5sb2dpbi5nb3YxDDAKBgNVBAoMA0dTQTEMMAoGA1UECwwDMThmMRMwEQYDVQQHDApXYXNoaW5ndG9uMQswCQYDVQQIDAJEQzELMAkGA1UEBhMCVVMxGjAYBgkqhkiG9w0BCQEWCzE4ZkBnc2EuZ292MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5gG/kitp7qarrggpjq5psf3/6NE7/F5nSpeyJMcQBZmaxOfKaGW87+ynEcuz9XhbnByYX/zHExPGW77g92O5eY8f2Hl1N1vVomaaa359mR3Lljs7PXj0Og+nYnP8TVU31CEaqq0nSx6fuKpVzOeUEE7f0IPGzDHNc3V+UFjcJcn1Hwqf4Rw6KT3yIYwEBWWFrtQgCJTv2WjhUBw5vJ38mG2GidiNleI7azHEI6bcYa8B1WitJbiLxSiO56bFcNpwdzNmWOc6KO3HoZKVpVv9em6EDry7gVMy2/iBoa92nQr0cb/1F5tx7LJXoFOwyRNAaeeXhiC848HsOejHMxmMXwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCWDURUw+ujzp59Cbm+sTCwfZldRp49nM3rS/zfNJUo+HNkr3EEtI3EYRfiedTcvl+kN6lli1xqQIYy8K2T/5iCGVWHSwLPgACXJaH2/w0a+HLP+caI7XZk/NpngyoZfnKJ8AlzSPyYCvCGPkFawnp1Gr110oP+s2JEvONEMrLHVDF8V5d/oU8x8Tf7e/aSDvjkjJJzuDwCzR5ehifPuuS+7idgHDOzQXqcWItiXzDGKDZ+lwFdKfnzxYQOTU1kFFb5eolUjU6yL6VTZSypwKuNQoA63AC0m/h75svOH1rAqHMQLXif1+QVl1B/E9HtcUy8ql1apkiaq2O91EpNr9JY</ds:X509Certificate>
-      </ds:X509Data>
-    </KeyInfo>
-  </ds:Signature>
   <Status xmlns="urn:oasis:names:tc:SAML:2.0:protocol">
     <StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/>
   </Status>
