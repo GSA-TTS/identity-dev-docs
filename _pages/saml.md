@@ -490,7 +490,7 @@ POST ${ASSERTION_CONSUMER_SERVICE_LOGOUT_URL}
 SAMLResponse=${SAML_RESPONSE}
 ```
 
-Note: the SAMLResponse does not contain a signiture since it's simply acknowledging the logout request.
+Note: the SAMLResponse does not contain a signature since it's simply acknowledging the logout request.
 
 <div class="usa-accordion--bordered">
 <button class="usa-accordion__button" aria-controls="logout-response-example">
