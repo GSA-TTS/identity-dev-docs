@@ -171,6 +171,21 @@ No. Login.gov only handles authentication. Granting users specific access and pe
 
 
 <h3 class="usa-accordion__heading">
+<button class="usa-accordion__button" aria-controls="nist-800-63">
+Does Login.gov meet the NIST 800-63 standards for Identity Assurance Levels (IAL) and Authenticator Assurance Levels (AAL)?
+</button>
+</h3>
+<div id="nist-800-63" class="usa-accordion__container">
+<div class="usa-accordion__content" markdown="1">
+For our Login.gov basic authentication accounts (IAL1), we rely on the user having access to an email address, password, and a secure multi-factor authentication method (AAL2 or higher) such as a phone, authentication app or PIV/CAC where they can receive a secure code to use to sign in to their account. 
+
+For identity proofing, in addition to meeting the above requirements for IAL1/AAL2, we ask users to upload a photograph of their state-issued ID and share their address, phone number and other personal information which is then verified against authoritative sources. Login.gov identity proofing services do not meet NIST IAL2 standards at this time. We continue to work toward achieving certification of compliance with the IAL2 standard from a third-party assessment organization.
+</div>
+<button class="usa-accordion__close-button">Close</button>
+</div>
+
+
+<h3 class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="statuspage">
 Where can I check the status of Login.gov?
 </button>
