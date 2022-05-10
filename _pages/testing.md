@@ -48,7 +48,7 @@ Login.gov prompts users to upload the front and back of their documents during p
 
 A YAML file can be uploaded instead of a State ID image to trigger different behaviors. You will upload this text file for the front and back for the State ID. The YAML file can be used to simulate the reading of certain attributes from the State ID. Here is an example YAML file that does that:
 
-```yaml
+{%- capture sample_data -%}
 document:
   type: license
   first_name: Susan
@@ -61,25 +61,31 @@ document:
   zipcode: '11364'
   dob: 10/06/1938
   phone: +1 314-555-1212
-```
+{%- endcapture -%}
+
+{% include yaml_download.md data=sample_data filename="proofing.yml" %}
 
 A YAML file can also be used to simulate an error reading or validating the document. Here are a couple of simple example YAML files:
 
-```yaml
+{%- capture sample_image_resolution_error -%}
 image_metrics:
   back:
     HorizontalResolution: 100
-```
+{%- endcapture -%}
 
-```yaml
+{% include yaml_download.md data=sample_image_resolution_error filename="image_resolution_error.yml" %}
+
+{%- capture sample_document_classification_error -%}
 failed_alerts:
   - name: Document Classification
     result: Attention
-```
+{%- endcapture -%}
+
+{% include yaml_download.md data=sample_document_classification_error filename="document_classification_error.yml" %}
 
 Here is an example YAML file that contains the full structure with annotations for expected values:
 
-```yaml
+{%- capture sample_full_documentation -%}
 doc_auth_result: Passed # values: Passed, Failed, Attention, Unknown
 image_metrics:
   back:
@@ -101,7 +107,10 @@ passed_alerts:
   - name: Visible Pattern
     result: Passed
 liveness_result: Fail # values: Pass, Fail
-```
+{%- endcapture -%}
+
+{% include yaml_download.md data=sample_full_documentation filename="sample_full_error.yml" %}
+
 There are not any required values from the above example file, you only need to include the values you are changing. The only exception is that alerts must be passed with both a `name` and a `result` as seen above. Anything not included will be given reasonable defaults for testing purposes.
 
 The list of currently handled alert names for `failed_alerts` and `passed_alerts` are:
