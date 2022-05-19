@@ -522,7 +522,7 @@ Login.gov also offers a remote / back channel logout endpoint if your applicatio
 
 For remote logout, you must include a `SessionIndex` element in the SAML request that contains the user's Login.gov UUID. This will allow Login.gov to identify the user that needs to be logged out and terminate their session.
 
-To log a user out using a back channel request, send a request from your application to the remote logout URL with a `SAMLRequest` parameter:
+To log a user out using a back channel request, send a **POST** request from your application to the remote logout URL with a `SAMLRequest` parameter:
 
 ```bash
 https://idp.int.identitysandbox.gov/api/saml/remotelogout2021?SAMLRequest=${SAML_REQUEST}
