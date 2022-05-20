@@ -14,9 +14,6 @@ layout: home
 </section>
 
 <section class="usa-section grid-container usa-prose" markdown="1">
-
-{% include zendesk-alert.html %}
-
 # Get started...
 
 - [Understand our flow]({{ site.baseurl }}/overview/).
