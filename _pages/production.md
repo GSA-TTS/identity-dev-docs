@@ -19,17 +19,19 @@ sidenav:
     href: "#request-deployment"
   - text: Changes to production applications
     href: "#changes-to-production-applications"
+saml_year: 2022
 ---
 
 ## Production endpoints
 
 Our integration documentation includes endpoint urls for our sandbox environment <https://idp.int.identitysandbox.gov/>. Our production environment is located at <https://secure.login.gov/>. The URL path to each endpoint remains the same. Only the domain will change. For example, the authorization endpoint will change as follows:
 * OpenID Connect: <https://secure.login.gov/openid_connect/authorize>
-* SAML: <https://secure.login.gov/api/saml/auth2021>
+* SAML: <https://secure.login.gov/api/saml/auth{{ page.saml_year }}>
 
 Please be aware that the IDP certificate (X509 Certificate) in the production environment is different from the IDP certificate in the sandbox environment. The production IDP certificates can be found here:
 * OpenID Connect: <https://secure.login.gov/api/openid_connect/certs>
-* SAML: <https://secure.login.gov/api/saml/metadata2021>
+* SAML: <https://secure.login.gov/api/saml/auth{{ page.saml_year }}>
+>>>>>>> c258e36 (Use liquid for saml endpoint dates)
 
 ## Deployments
 
