@@ -31,7 +31,6 @@ Our integration documentation includes endpoint urls for our sandbox environment
 Please be aware that the IDP certificate (X509 Certificate) in the production environment is different from the IDP certificate in the sandbox environment. The production IDP certificates can be found here:
 * OpenID Connect: <https://secure.login.gov/api/openid_connect/certs>
 * SAML: <https://secure.login.gov/api/saml/auth{{ page.saml_year }}>
->>>>>>> c258e36 (Use liquid for saml endpoint dates)
 
 ## Deployments
 
