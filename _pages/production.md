@@ -31,8 +31,6 @@ Our integration documentation includes endpoint urls for our sandbox environment
 Please be aware that the IDP certificate (X509 Certificate) in the production environment is different from the IDP certificate in the sandbox environment. The production IDP certificates can be found here:
 * OpenID Connect: <https://secure.login.gov/api/openid_connect/certs>
 * SAML: <https://secure.login.gov/api/saml/auth{{ page.saml_year }}>
->>>>>>> c258e36 (Use liquid for saml endpoint dates)
-
 ## Deployments
 
 All changes to integrations between Login.gov and your application must be reviewed and deployed. We ask for at least 2 weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require 3 weeks notice in order to allow the domain for outbound communication. Regular deployments occur every Thursday by the close of the business day. If the regular deployment occurs on a holiday, then it will be completed the following Monday.
