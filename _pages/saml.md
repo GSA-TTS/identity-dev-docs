@@ -30,6 +30,8 @@ sidenav:
         href: "#remote-logout-request"
   - text: Example application
     href: "#example-application"
+saml_year: 2022
+saml_last_year: 2021
 ---
 
 <div class="usa-alert usa-alert--warning">
@@ -57,14 +59,14 @@ Here are values needed to configure your service provider (SP) to work with Logi
   This is the endpoint where authentication requests are sent to Login.gov (aka Single Sign-on Service). For example:
 
   ```xml
-  <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.int.identitysandbox.gov/api/saml/auth2021" />
+  <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.int.identitysandbox.gov/api/saml/auth{{ page.saml_year }}" />
   ```
 
 - **Logout service URL and Binding**
   The single logout service URL is used to contact the Single logout profile (aka Single Logout Service). For example:
 
   ```xml
-  <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.int.identitysandbox.gov/api/saml/logout2021" />
+  <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.int.identitysandbox.gov/api/saml/logout{{ page.saml_year }}" />
   ```
 
 - **x509 Public Certificate**
@@ -72,7 +74,7 @@ Here are values needed to configure your service provider (SP) to work with Logi
 
 ### Metadata
 
-Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), Login.gov's metadata for our **sandbox** environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata2021](https://idp.int.identitysandbox.gov/api/saml/metadata2021).
+Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf), Login.gov's metadata for our **sandbox** environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata{{ page.saml_year }}](https://idp.int.identitysandbox.gov/api/saml/metadata{{ page.saml_year }}).
 
 ### Signing Certificates
 Below you can find the X509 certificates used by the Login.gov IdP to sign SAML requests. **Do not enter these certificates in the Dashboard when configuring an application for testing** - you can follow the instructions in our [testing article]({% link _pages/testing.md %}#creating-a-public-certificate) to generate a client certificate.
@@ -216,13 +218,12 @@ dC5eWVKhhbUndZwaCR2w2Mb2fEVxpborjbAlIdpa1V1hRiNewmr/VUkOVsGepJZH
 
 The Login.gov SAML certificate is valid for just over one year. Every spring, Login.gov adds new SAML endpoints with the current year that use a new signing certificate.
 
-  - `/api/saml/metadata2021` becomes `/api/saml/metadata2022`
-  - `/api/saml/auth2021` becomes `/api/saml/auth2022`
-  - `/api/saml/logout2021` becomes `/api/saml/logout2022`
+  - `/api/saml/auth{{ page.saml_last_year }}` becomes `/api/saml/auth{{ page.saml_year }}`
+  - `/api/saml/logout{{ page.saml_last_year }}` becomes `/api/saml/logout{{ page.saml_year }}`
 
 The certificates are issued to create an overlap period of about a month, during which all partners using SAML should migrate at their convenience to the new endpoint URLs for the current year.
 
-The 2021 certificates for idp.int.identitysandbox.gov and secure.login.gov each expire on April 1, 2022. So the transition from 2021 to 2022 endpoints should take place in February or March 2022.
+The {{ page.saml_last_year }} certificates for idp.int.identitysandbox.gov and secure.login.gov each expire on April 1, {{ page.saml_year }}. So the transition from {{ page.saml_last_year }} to {{ page.saml_year }} endpoints should take place in February or March {{ page.saml_year }}.
 
 ## Auth
 
@@ -231,7 +232,7 @@ The 2021 certificates for idp.int.identitysandbox.gov and secure.login.gov each 
 To authenticate a user with Login.gov, direct them to our authentication URL with a SAML authentication request as a GET param.
 
 ```bash
-https://idp.int.identitysandbox.gov/api/saml/auth2021?SAMLRequest=${SAML_REQUEST}
+https://idp.int.identitysandbox.gov/api/saml/auth{{ page.saml_year }}?SAMLRequest=${SAML_REQUEST}
 ```
 
 The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload of a `<samlp:AuthnRequest>`:
@@ -355,7 +356,7 @@ If you need to pass any information about the request back to your application a
 
 
 ```bash
-https://idp.int.identitysandbox.gov/api/saml/auth2021?SAMLRequest=${SAML_REQUEST}&RelayState=${RELAY_STATE}
+https://idp.int.identitysandbox.gov/api/saml/auth{{ page.saml_year }}?SAMLRequest=${SAML_REQUEST}&RelayState=${RELAY_STATE}
 ```
 
 ## Auth response
@@ -430,7 +431,7 @@ Login.gov does not support Single Logout (SLO). The logout action will terminate
 To log a user out, direct them to the logout URL with a `SAMLRequest`:
 
 ```bash
-https://idp.int.identitysandbox.gov/api/saml/logout2021?SAMLRequest=${SAML_REQUEST}
+https://idp.int.identitysandbox.gov/api/saml/logout{{ page.saml_year }}?SAMLRequest=${SAML_REQUEST}
 ```
 
 The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload of a `<samlp:LogoutRequest>`.
@@ -525,7 +526,7 @@ For remote logout, you must include a `SessionIndex` element in the SAML request
 To log a user out using a back channel request, send a **POST** request from your application to the remote logout URL with a `SAMLRequest` parameter:
 
 ```bash
-https://idp.int.identitysandbox.gov/api/saml/remotelogout2021?SAMLRequest=${SAML_REQUEST}
+https://idp.int.identitysandbox.gov/api/saml/remotelogout{{ page.saml_year }}?SAMLRequest=${SAML_REQUEST}
 ```
 
 The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload of a `<samlp:LogoutRequest>`.
