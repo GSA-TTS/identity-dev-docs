@@ -151,7 +151,7 @@ To simulate a failure, enter a social security number that does not start with â
 
 ### Phone number verification
 
-Login.gov collects a phone number during the proofing process. In a live production environment, Login.gov checks that this phone number is associated with the applicant. You can use any phone number for testing purposes in the sandbox environment other than the following:
+Login.gov collects a phone number during the proofing process. In a live production environment, Login.gov checks that this phone number is associated with the applicant. You can use any real phone number for testing purposes in the sandbox environment other than the following:
 
 * `703-555-5555` - simulates a phone number that couldn't be verified as belonging to the user
 * `703-555-5888` - simulates a timeout during verification
