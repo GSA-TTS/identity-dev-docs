@@ -34,7 +34,7 @@ Please be aware that the IDP certificate (X509 Certificate) in the production en
 
 ## Deployments
 
-All changes to integrations between Login.gov and your application must be reviewed and deployed. We ask for at least 2 weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require 3 weeks notice in order to allow the domain for outbound communication. Regular deployments occur every Thursday by the close of the business day. If the regular deployment occurs on a holiday, then it will be completed the following Monday.
+All changes to integrations between Login.gov and your application must be reviewed and deployed. **We ask for at least 2 weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require 3 weeks notice in order to allow the domain for outbound communication.** Regular deployments occur every Thursday by the close of the business day. If the regular deployment occurs on a holiday, then it will be completed the following Monday.
 
 ## Confirm IAA
 
