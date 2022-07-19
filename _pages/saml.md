@@ -235,10 +235,10 @@ To authenticate a user with Login.gov, direct them to our authentication URL wit
 https://idp.int.identitysandbox.gov/api/saml/auth{{ page.saml_year }}?SAMLRequest=${SAML_REQUEST}
 ```
 
-The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload of a `<samlp:AuthnRequest>`:
+The `SAMLRequest` parameter is a url-encoded, base64-encoded, deflate-compressed XML payload of a `<samlp:AuthnRequest>`:
 
 ```
-SAML_REQUEST = base64(deflate(payload))
+SAML_REQUEST = urlEncode(base64(deflate(payload)))
 ```
 
 <div class="usa-accordion--bordered">
