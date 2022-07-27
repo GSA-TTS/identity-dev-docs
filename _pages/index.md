@@ -14,6 +14,11 @@ layout: home
 </section>
 
 <section class="usa-section grid-container usa-prose" markdown="1">
+
+  {% if site.temporary_alert %}
+    {% include alert.html content=site.temporary_alert %}
+  {% endif %}
+
 # Get started...
 
 - [Understand our flow]({{ site.baseurl }}/overview/).

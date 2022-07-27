@@ -19,6 +19,11 @@ layout: base
         </aside>
 
         <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
+
+          {% if site.temporary_alert %}
+            {% include alert.html content=site.temporary_alert %}
+          {% endif %}
+
           <div class="usa-display">{{ page.title }}</div>
 
           {% if page.lead %}
@@ -30,6 +35,11 @@ layout: base
       </div>
     {% else %}
       <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
+
+        {% if site.temporary_alert %}
+          {% include alert.html content=site.temporary_alert %}
+        {% endif %}
+
         <div class="usa-display">{{ page.title }}</div>
 
         {% if page.lead %}
