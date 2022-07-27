@@ -2,6 +2,10 @@
 
 [View it live ❯](https://developers.login.gov/)
 
+## Temporary Alert
+
+To add a temporary alert to the developer docs set the `temporary_alert` configuration value in `_config.yml` to a string with the desired alert contents, e.g. `The sandbox will be unavailable from <b>5:30-6:30p ET on Tuesday, August 9th</b>.`. To turn off the alert change the configuration value to `false`.
+
 ## Development
 
 ### Docker

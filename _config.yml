@@ -3,6 +3,9 @@ title: Login.gov
 description: Welcome to the Login.gov developer documentation!
 github_repo_url: https://github.com/18F/identity-dev-docs # enables "edit this page" button
 
+temporary_alert: "The Login.gov sandbox (<b>not production</b>) will be unavailable from <b>5:30-6:30p ET on Tuesday, August 9th</b> for maintenance."
+# temporary_alert: false
+
 plugins:
   - jekyll-redirect-from
 
