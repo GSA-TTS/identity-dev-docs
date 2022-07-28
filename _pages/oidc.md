@@ -123,7 +123,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
         This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC)
 
   #### LOA Values
-  These not recommended, they are for legacy compatibility only.
+  These are not recommended, and only for legacy compatibility.
     - **`http://idmanagement.gov/ns/assurance/loa/1`**
       Equivalent to IAL1
     - **`http://idmanagement.gov/ns/assurance/loa/3`**
@@ -177,10 +177,10 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
    - `social_security_number`
 
 * **state**
-  A unique value at least 22 characters in length used for maintaining state between the request and the callback. This value will be returned to the client on a successful authorization.
+  A unique value, at least 22 characters in length, used for maintaining state between the request and the callback. This value will be returned to the client on a successful authorization.
 
 * **nonce**
-  A unique value at least 22 characters in length used to verify the integrity of the `id_token` and mitigate [replay attacks](https://en.wikipedia.org/wiki/Replay_attack). This value should include per-session state and be unguessable by attackers. This value will be present in the `id_token` of the [token endpoint response](#token-response), where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. Read more about [nonce implementation](http://openid.net/specs/openid-connect-core-1_0.html#NonceNotes) in the spec.
+  A unique value, at least 22 characters in length, used to verify the integrity of the `id_token` and mitigate [replay attacks](https://en.wikipedia.org/wiki/Replay_attack). This value should include per-session state and be unguessable by attackers. This value will be present in the `id_token` of the [token endpoint response](#token-response), where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. Read more about [nonce implementation](http://openid.net/specs/openid-connect-core-1_0.html#NonceNotes) in the spec.
 
 * **verified_within** -- *optional, for identity proofed requests only*
   Specifies how recently the user's information must be verified. For example, if your application requires that the user's data must have been verified within the last year, you can set the value to `verified_within=1y`, and customers whose data is older than that will go through the identity proofing process again before continuing back to your application.
