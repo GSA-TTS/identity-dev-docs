@@ -127,7 +127,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
     - **`http://idmanagement.gov/ns/assurance/loa/1`**
       Equivalent to IAL1
     - **`http://idmanagement.gov/ns/assurance/loa/3`**
-      Equivalent to identity proofed account
+      Equivalent to identity verified account
 
 * **client_id**
   The unique identifier for the client. This will be registered with the Login.gov IdP in advance.
@@ -182,13 +182,13 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 * **nonce**
   A unique value, at least 22 characters in length, used to verify the integrity of the `id_token` and mitigate [replay attacks](https://en.wikipedia.org/wiki/Replay_attack). This value should include per-session state and be unguessable by attackers. This value will be present in the `id_token` of the [token endpoint response](#token-response), where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. Read more about [nonce implementation](http://openid.net/specs/openid-connect-core-1_0.html#NonceNotes) in the spec.
 
-* **verified_within** -- *optional, for identity proofed requests only*
-  Specifies how recently the user's information must be verified. For example, if your application requires that the user's data must have been verified within the last year, you can set the value to `verified_within=1y`, and customers whose data is older than that will go through the identity proofing process again before continuing back to your application.
+* **verified_within** -- *optional, for identity verified requests only*
+  Specifies how recently the user's information must be verified. For example, if your application requires that the user's data must have been verified within the last year, you can set the value to `verified_within=1y`, and customers whose data is older than that will go through the identity verification process again before continuing back to your application.
 
   <details markdown="1">
     <summary>Possible values</summary>
 
-  The shortest value allowed for this parameter is 30 days (`30d`) because of the cost of proofing, as well as the time it takes for backend proofing sources to be updated.
+  The shortest value allowed for this parameter is 30 days (`30d`) because of the cost of identity verification, as well as the time it takes for backend verification sources to be updated.
 
   The format for this value is **`xD`**, where **`x`** is an integer number and **`D`** specifies the duration. **`D`** can be:
     * `d` for number of days
@@ -365,7 +365,7 @@ The user info response will be a JSON object containing [user attributes]({{ sit
 
 * **phone_verified** (boolean)
   Whether the phone number has been verified. Currently, Login.gov only supports verified phones.
-  - Requires the `phone` scope and an identity proofed account.
+  - Requires the `phone` scope and an identity verified account.
 
 * **verified_at** (number, null)
   When the user's identity was last verified, as an integer timestamp representing the number of seconds since the Unix Epoch, or `null` if the account has never been verified.
