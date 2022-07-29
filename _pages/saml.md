@@ -529,7 +529,7 @@ To log a user out using a back channel request, send a **POST** request from you
 https://idp.int.identitysandbox.gov/api/saml/remotelogout{{ page.saml_year }}?SAMLRequest=${SAML_REQUEST}
 ```
 
-The `SAMLRequest` parameter is a base64-encoded, deflate-compressed XML payload of a `<samlp:LogoutRequest>`.
+The `SAMLRequest` parameter is a url-encoded, base64-encoded, deflate-compressed XML payload of a `<samlp:LogoutRequest>`.
 
 All remote logout requests must be signed — we require RSA SHA-256 signatures embedded with logout requests.
 
