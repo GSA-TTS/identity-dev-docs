@@ -113,6 +113,23 @@
     }
   }
 
+- friendly_name: Password Reset
+  event_type: https://schemas.login.gov/secevent/risc/event-type/password-reset
+  description: >
+    Login.gov pushes this event when a user completes a password reset, either as part of account recovery
+    or intentionally through the account page.
+  payload_schema:
+    *iss_sub_schema
+  example_payload: {
+    "https://schemas.login.gov/secevent/risc/event-type/password-reset": {
+      "subject": {
+        "subject_type": "iss-sub",
+        "iss": "https://idp.int.identitysandbox.gov",
+        "sub": "<$SUB>"
+      }
+    }
+  }
+
 - friendly_name: Recovery Information Changed
   event_type: https://schemas.openid.net/secevent/risc/event-type/recovery-information-changed
   spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#rfc.section.2.9"
