@@ -39,7 +39,7 @@
   spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#rfc.section.2.6"
   description: >
     Login.gov pushes this event when a user removes an email address from their account, freeing up the email address as an identifier.
-  payload_schema: &email_schema
+  payload_schema:
     - key: subject
       description: An event should will a **subject** object, with the following keys
       properties:
@@ -67,7 +67,17 @@
   description: >
     Login.gov pushes this event when a user changes the email address on their account.
   payload_schema:
-    *email_schema
+    - key: subject
+      description: An event should will a **subject** object, with the following keys
+      properties:
+        - key: subject_type
+          type: string
+          description: >
+            Will be **email**
+        - key: email
+          type: string
+          description: >
+            The new email address that was added, or the the email address that was removed.
   example_payload: {
     "https://schemas.openid.net/secevent/risc/event-type/identifier-changed": {
       "subject": {
