@@ -1,0 +1,21 @@
+doc_auth_result: Passed # values: Passed, Failed, Attention, Unknown
+image_metrics:
+  back:
+    HorizontalResolution: 300 # values: 0-600
+    VerticalResolution: 450 # values: 0-600
+    GlareMetric: 77 # values: 0-100
+    SharpnessMetric: 88 # values: 0-100
+  front:
+    HorizontalResolution: 450
+    VerticalResolution: 450
+    GlareMetric: 100
+    SharpnessMetric: 99
+failed_alerts:
+  - name: 1D Control Number Valid # See list of valid names below
+    result: Failed # values: Passed, Failed, Attention, Caution
+  - name: 2D Barcode Content
+    result: Attention
+passed_alerts:
+  - name: Visible Pattern
+    result: Passed
+liveness_result: Fail # values: Pass, Fail

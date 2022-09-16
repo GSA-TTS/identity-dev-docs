@@ -4,15 +4,16 @@ Include:
 - filename
 {% endcomment %}
 
+{% assign path = include.filename | prepend: 'yaml/' %}
+
+{%- capture data -%}
+{% include {{ path }} %}
+{%- endcapture %}
+
 ```yaml
-{{ include.data }}
+{{ data }}
 ```
 
-{% assign escaped_data = include.data | uri_escape | replace: '#', '%23' %}
-{% assign href = 'data:application/x-yaml,' | append: escaped_data %}
-
-<a href="{{ href }}"
-   download="{{ include.filename }}"
-   class="usa-button usa-button--outline">
+<a href="/assets/{{ path }}" class="usa-button usa-button--outline">
   Download .yml
 </a>
