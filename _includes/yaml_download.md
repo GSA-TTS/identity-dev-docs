@@ -14,6 +14,6 @@ Include:
 {{ data }}
 ```
 
-<a href="/assets/{{ path }}" class="usa-button usa-button--outline">
+<a href="{{ site.baseurl }}/assets/{{ path }}" class="usa-button usa-button--outline">
   Download .yml
 </a>
