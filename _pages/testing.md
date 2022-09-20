@@ -50,68 +50,17 @@ Login.gov prompts users to upload the front and back of their documents during p
 
 A YAML file can be uploaded instead of a State ID image to trigger different behaviors. You will upload this text file for the front and back for the State ID. The YAML file can be used to simulate the reading of certain attributes from the State ID. Here is an example YAML file that does that:
 
-{%- capture sample_data -%}
-document:
-  type: license
-  first_name: Susan
-  last_name: Smith
-  middle_name: Q
-  address1: 1 Microsoft Way
-  address2: Apt 3
-  city: Bayside
-  state: NY
-  zipcode: '11364'
-  dob: 10/06/1938
-  phone: +1 314-555-1212
-{%- endcapture -%}
-
-{% include yaml_download.md data=sample_data filename="proofing.yml" %}
+{% include yaml_download.md filename="proofing.yml" %}
 
 A YAML file can also be used to simulate an error reading or validating the document. Here are a couple of simple example YAML files:
 
-{%- capture sample_image_resolution_error -%}
-image_metrics:
-  back:
-    HorizontalResolution: 100
-{%- endcapture -%}
+{% include yaml_download.md filename="image_resolution_error.yml" %}
 
-{% include yaml_download.md data=sample_image_resolution_error filename="image_resolution_error.yml" %}
-
-{%- capture sample_document_classification_error -%}
-failed_alerts:
-  - name: Document Classification
-    result: Attention
-{%- endcapture -%}
-
-{% include yaml_download.md data=sample_document_classification_error filename="document_classification_error.yml" %}
+{% include yaml_download.md filename="document_classification_error.yml" %}
 
 Here is an example YAML file that contains the full structure with annotations for expected values:
 
-{%- capture sample_full_documentation -%}
-doc_auth_result: Passed # values: Passed, Failed, Attention, Unknown
-image_metrics:
-  back:
-    HorizontalResolution: 300 # values: 0-600
-    VerticalResolution: 450 # values: 0-600
-    GlareMetric: 77 # values: 0-100
-    SharpnessMetric: 88 # values: 0-100
-  front:
-    HorizontalResolution: 450
-    VerticalResolution: 450
-    GlareMetric: 100
-    SharpnessMetric: 99
-failed_alerts:
-  - name: 1D Control Number Valid # See list of valid names below
-    result: Failed # values: Passed, Failed, Attention, Caution
-  - name: 2D Barcode Content
-    result: Attention
-passed_alerts:
-  - name: Visible Pattern
-    result: Passed
-liveness_result: Fail # values: Pass, Fail
-{%- endcapture -%}
-
-{% include yaml_download.md data=sample_full_documentation filename="sample_full_error.yml" %}
+{% include yaml_download.md filename="sample_full_error.yml" %}
 
 There are not any required values from the above example file, you only need to include the values you are changing. The only exception is that alerts must be passed with both a `name` and a `result` as seen above. Anything not included will be given reasonable defaults for testing purposes.
 

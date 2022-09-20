@@ -1,0 +1,3 @@
+failed_alerts:
+  - name: Document Classification
+    result: Attention

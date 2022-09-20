@@ -66,7 +66,7 @@ RSpec::Matchers.define :link_to_valid_internal_pages do
 
       uri = URI.parse(page)
 
-      if !uri.path.end_with?('/')
+      if File.extname(uri.path).empty? && !uri.path.end_with?('/')
         fail "Link needs to end in a trailing slash but doesn't #{page}"
       end
     end
