@@ -1,6 +1,5 @@
 {% comment %}
 Include:
-- data (captured YAML data)
 - filename
 {% endcomment %}
 
