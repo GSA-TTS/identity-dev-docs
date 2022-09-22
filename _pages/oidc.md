@@ -34,6 +34,8 @@ sidenav:
 
 ---
 
+{% include alert.html content="Please see important information <a href='#logout'>below</a> about upcoming changes to the logout endpoint" alert_class="usa-alert--warning" %}
+
 ## Getting started
 
 ### Choosing an authentication method
@@ -405,17 +407,34 @@ This public key is rotated periodically (on at least an annual basis). It is imp
 
 ## Logout
 
+{% include alert.html content="The parameters accepted by the logout endpoint will be changing in the coming weeks. Please read the information below carefully." alert_class="usa-alert--warning" %}
+
 Login.gov supports [RP-Initiated Logout](https://openid.net/specs/openid-connect-session-1_0.html#RPLogout), allowing clients to log users out of their current Login.gov session and redirect them back to the Relying Party.
 
 Login.gov does not support Single Logout (SLO). The logout action will terminate the user's session at Login.gov but will not end any other potentially active sessions within service provider applications. For example, if a user signs in to applications A and B through Login.gov, a logout request from A will end their Login.gov session, but will not affect the session in application B.
 
+### IMPORTANT: Changes to Logout
+
+Login.gov will begin accepting the `client_id` parameter in logout requests to identify the integration sending the logout requests in addition to the `id_token_hint` parameter in the coming weeks. Following that, **Login.gov will stop supporting the `id_token_hint` parameter in logout requests** - requests that include that parameter will display an error page to the user.
+
+The rollout dates are as follows:
+
+* **Wednesday, September 21, 2022** - `client_id` accepted in logout requests in the **sandbox** environment
+* **Thursday, September 29, 2022** - `client_id` accepted in logout requests in the **production** environment
+* **Thursday, October 6, 2022** - `id_token_hint` rejected in logout requests in the **sandbox** environment
+* **Thursday, October 20, 2022** - `id_token_hint` rejected in logout requests in the **production** environment
+
+**If you currently implement OIDC Logout using `id_token_hint`, you MUST update your application to send the `client_id` parameter instead before Thursday, October 20.** If you have any questions, please submit a support request at our [support portal](https://logingov.zendesk.com/).
+
+### Logout request
+
 To log out a user, send them to the `/openid_connect/logout` endpoint with the following parameters:
 
-- **id_token_hint**
-  An `id_token` value from the [token endpoint response](#token-response).
+- **client_id**
+  The unique identifier for the client. This will be registered with the Login.gov IdP in advance.
 
 - **post_logout_redirect_uri**
-  The URI Login.gov will redirect to after logout.
+  The URI Login.gov will redirect to after logout. **This must also be registered with the Login.gov IdP in advance.**
 
 - **state**
   A unique value at least 22 characters in length used for maintaining state between the request and the callback. This value will be returned to the client on a successful logout.
@@ -424,14 +443,16 @@ Here's an example logout request:
 
 ```bash
 https://idp.int.identitysandbox.gov/openid_connect/logout?
-  id_token_hint=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJiMmQyZDExNS0xZDdlLTQ1NzktYjlkNi1mOGU4NGY0ZjU2Y2EiLCJpc3MiOiJodHRwczovL2lkcC5pbnQubG9naW4uZ292IiwiYWNyIjoiaHR0cDovL2lkbWFuYWdlbWVudC5nb3YvbnMvYXNzdXJhbmNlL2xvYS8xIiwibm9uY2UiOiJhYWQwYWE5NjljMTU2YjJkZmE2ODVmODg1ZmFjNzA4MyIsImF1ZCI6InVybjpnb3Y6Z3NhOm9wZW5pZGNvbm5lY3Q6ZGV2ZWxvcG1lbnQiLCJqdGkiOiJqQzdOblU4ZE5OVjVsaXNRQm0xanRBIiwiYXRfaGFzaCI6InRsTmJpcXIxTHIyWWNOUkdqendsSWciLCJjX2hhc2giOiJoWGpxN2tPcnRRS196YV82dE9OeGN3IiwiZXhwIjoxNDg5Njk0MTk2LCJpYXQiOjE0ODk2OTQxOTgsIm5iZiI6MTQ4OTY5NDE5OH0.pVbPF-2LJSG1fE9thn27PwmDlNdlc3mEm7fFxb8ZADdRvYmDMnDPuZ3TGHl0ttK78H8NH7rBpH85LZzRNtCcWjS7QcycXHMn00Cuq_Bpbn7NRdf3ktxkBrpqyzIArLezVJJVXn2EeykXMvzlO-fJ7CaDUaJMqkDhKOK6caRYePBLbZJFl0Ri25bqXugguAYTyX9HACaxMNFtQOwmUCVVr6WYL1AMV5WmaswZtdE8POxYdhzwj777rkgSg555GoBDZy3MetapbT0csSWqVJ13skWTXBRrOiQQ70wzHAu_3ktBDXNoLx4kG1fr1BiMEbHjKsHs14X8LCBcIMdt49hIZg&
+  client_id=${CLIENT_ID}&
   post_logout_redirect_uri=${REDIRECT_URI}&
   state=abcdefghijklmnopabcdefghijklmnop
 ```
 
+Note that, as per the spec, Login.gov will display a Logout confirmation screen to users on logout; users will need to click a button to complete the logout process. This protects against forged logout request attacks. If the user does not click the button, they will not be redirected back to your application.
+
 ### Logout response
 
-In a **successful logout**, Login.gov will redirect to the provided `post_logout_redirect_uri` with the `state` parameter added to the URL.
+In a **successful logout**, i.e. the request is valid and the user confirms that they want to log out, Login.gov will redirect the user to the provided `post_logout_redirect_uri` with the `state` parameter added to the URL. If the request is invalid, the user will be shown an error page. If the user declines to click the button on the confirmation page, they will not be redirected to the `post_logout_redirect_uri` and there will be no response to your application.
 
 Here's an example logout response:
 
@@ -442,8 +463,7 @@ https://agency.gov/response?
 
 ## Example application
 
-The Login.gov team has created an example client to speed up your development,
-all open source in the public domain: [identity-oidc-sinatra](https://github.com/18F/identity-oidc-sinatra)
+The Login.gov team has created an example client to speed up your development, all open source in the public domain: [identity-oidc-sinatra](https://github.com/18F/identity-oidc-sinatra).
 
 
 [jwt]: https://jwt.io/
