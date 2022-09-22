@@ -419,7 +419,7 @@ Login.gov will begin accepting the `client_id` parameter in logout requests to i
 
 The rollout dates are as follows:
 
-* **Wednesday, September 21, 2022** - `client_id` accepted in logout requests in the **sandbox** environment
+* **Thursday, September 22, 2022** - `client_id` accepted in logout requests in the **sandbox** environment
 * **Thursday, September 29, 2022** - `client_id` accepted in logout requests in the **production** environment
 * **Thursday, October 6, 2022** - `id_token_hint` rejected in logout requests in the **sandbox** environment
 * **Thursday, October 20, 2022** - `id_token_hint` rejected in logout requests in the **production** environment
