@@ -436,8 +436,8 @@ To log out a user, send them to the `/openid_connect/logout` endpoint with the f
 - **post_logout_redirect_uri**
   The URI Login.gov will redirect to after logout. **This must also be registered with the Login.gov IdP in advance.**
 
-- **state**
-  A unique value at least 22 characters in length used for maintaining state between the request and the callback. This value will be returned to the client on a successful logout.
+- **state** (optional)
+  A unique value at least 22 characters in length used for maintaining state between the request and the callback. This value will be returned to the client on a successful logout as a parameter of `state` added to the redirect back to the `post_logout_redirect_uri`.
 
 Here's an example logout request:
 
