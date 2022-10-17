@@ -40,7 +40,7 @@ All changes to integrations between Login.gov and your application must be revie
 
 You must have a signed IAA (Inter-Agency Agreement) with Login.gov **with your integration explicitly listed in it** in order to deploy to production. You will need to provide the IAA number this application will be billed under. The IAA number format will include `GTC-Order-Mod` (e.g. `LGABCFY210001-0001-0000`), where GTC stands for General Terms & Conditions. You may also hear these referred to as forms 7600A and 7600B.
 
-Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit our partner interest form](https://share.hsforms.com/16DIoo--rTU2xbNW1MShkBg3ak9e) to begin the IAA process, which can take up to 6 weeks to complete.
+Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit our partner interest form](https://login.gov/partners/contact/) to begin the IAA process, which can take up to 6 weeks to complete.
 
 ## Staging environment
 
