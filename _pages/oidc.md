@@ -177,6 +177,9 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
    - `profile:verified_at`
    - `profile`
    - `social_security_number`
+   - `x509`
+   - `x509:subject`
+   - `x509_presented`
 
 * **state**
   A unique value, at least 22 characters in length, used for maintaining state between the request and the callback. This value will be returned to the client on a successful authorization.
