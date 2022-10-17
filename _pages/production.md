@@ -24,7 +24,7 @@ sidenav:
     href: "#changes-to-production-applications"
 saml_year: 2022
 ---
-**Please note the deployment process will take 1 to 2 weeks to complete**
+**Please note: The deployment process will take 1 to 2 weeks to complete**
 
 Before deployment
 -----------------
@@ -41,7 +41,7 @@ Make sure you have the following items ready before you start the deployment pro
 
 -   A [Login.gov production account](https://secure.login.gov)
 
-Please note: The following items are required to launch your app to production:
+**Please note: The following items are required to launch your app to production:**
 
 -   All production urls should have .gov, .mil, or a dedicated .com address and point to an ATO-ed environment.
 
@@ -70,23 +70,23 @@ Before you can request deployment, you need to create a new and separate applica
 
 -   Approved logo for your app
 
-When you have the components required, follow these steps to create your production configuration app:
+**When you have the components required, follow these steps to create your production configuration app:**
 
 1.  [Create a new app on the Partner dashboard](https://dashboard.int.identitysandbox.gov/). Select "Apps" from the top right menu, then select the "Create a new test app" button.  
 
 2.  Select "YES" for production configuration - this configuration is for a production app.
 
-3.  Enter the name of the app as it appears in your IAA in the "App Name" field - Do NOT use environment names such as "Prod" or "Production".
+3.  Enter the name of the app **as it appears in your IAA** in the "App Name" field - Do **NOT** use environment names such as "Prod" or "Production".
 
-4.  Enter the name of the app as it should appear to users in the "Friendly Name" field. This is the app name a user will see when logging in. 
+4.  Enter the name of the app **as it should appear to users** in the "Friendly Name" field. This is the app name a user will see when logging in. 
 
 5.  Next, choose an agency team for the app from the drop down menu
 
 6.  Select the authentication protocol that will be used by the service provider. 
 
-7.  Choose the level of service and default Authentication Assurance Level (AAL) from the drop down menus and select the correct attribute bundle. 
+7.  Choose the level of service and default **Authentication Assurance Level (AAL)** from the drop down menus and select the correct attribute bundle. 
 
-8.  Enter the issuer, a unique string to identify the app in the Identity Provider (IdP). 
+8.  Enter the issuer, a unique string to identify the app in the **Identity Provider (IdP).** 
 
 9.  Upload your logo and public certificate file using the "Choose a file" buttons.
 
@@ -103,22 +103,22 @@ Production endpoints
 
 You will need to configure your application to point to the following endpoint: 
 
--   OpenID Connect: https://secure.login.gov/openid_connect/authorize
+-   OpenID Connect: [https://secure.login.gov/openid_connect/authorize](https://secure.login.gov/openid_connect/authorize)
 
--   SAML: https://secure.login.gov/api/saml/auth2022
+-   SAML: [https://secure.login.gov/api/saml/auth2022](https://secure.login.gov/api/saml/auth2022)
 
 Our integration documentation includes endpoint urls for our sandbox environment https://idp.int.identitysandbox.gov/. Our production environment is located at https://secure.login.gov/. The URL path to each endpoint remains the same. Only the domain will change.  
 
 Please be aware that the IdP certificate (X509 Certificate) in the production environment is different from the IdP certificate in the sandbox environment. The production IdP certificates can be found here:
 
--   OpenID Connect: https://secure.login.gov/api/openid_connect/certs
+-   OpenID Connect: [https://secure.login.gov/api/openid_connect/certs](https://secure.login.gov/api/openid_connect/certs)
 
--   SAML: https://secure.login.gov/api/saml/metadata2022
+-   SAML: [https://secure.login.gov/api/saml/metadata2022](https://secure.login.gov/api/saml/metadata2022)
 
 Confirm Interagency Agreement (IAA)
 -----------------------------------
 
-You must have a signed IAA with Login.gov with your integration explicitly listed in it in order to deploy to production. You will need to provide the IAA number this application will be billed under. The IAA number format will include GTC-Order-Mod (e.g. LGABCFY210001-0001-0000), where GTC stands for General Terms & Conditions. You may also hear these referred to as forms 7600A and 7600B.
+You must have a signed IAA with Login.gov **with your integration explicitly listed in it** in order to deploy to production. You will need to provide the IAA number this application will be billed under. The IAA number format will include GTC-Order-Mod (e.g. LGABCFY210001-0001-0000), where GTC stands for General Terms & Conditions. You may also hear these referred to as forms 7600A and 7600B.
 
 Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit a partner interest form](https://login.gov/partners/contact/) to begin the IAA process, which can take up to 6 weeks to complete. [Learn more about the IAA process.](https://login.gov/partners/get-started/#interagency-agreement-iaa-process) 
 
@@ -127,20 +127,20 @@ Request deployment
 
 Once you have:
 
-1.  [Confirmed that this integration is listed in a signed IAA](https://docs.google.com/document/d/1JrseKerp-FF_uiGElew9z-ltT_l68dgmSFU7so8tQjE/edit#heading=h.gxf7gmdb96uf). Do not request deployment if you are not certain that your application is listed in a signed IAA.
+1.  [Confirmed that this integration is listed in a signed IAA](https://docs.google.com/document/d/1JrseKerp-FF_uiGElew9z-ltT_l68dgmSFU7so8tQjE/edit#heading=h.gxf7gmdb96uf). **Do not request deployment if you are not certain that your application is listed in a signed IAA.**
 
 2.  [Created a production configuration](https://docs.google.com/document/d/1JrseKerp-FF_uiGElew9z-ltT_l68dgmSFU7so8tQjE/edit#heading=h.rl9bxiu1u854) app
 
 You are ready to [submit a launch request](https://zendesk.login.gov). 
 
-All changes to integrations between Login.gov and your application must be reviewed and deployed. We ask for at least 2 weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require 3 weeks notice in order to allow the domain for outbound communication. Regular deployments occur every Thursday by the close of the business day. If the regular deployment occurs on a holiday, then it will be completed the following Monday.
+All changes to integrations between Login.gov and your application must be reviewed and deployed. **We ask for at least 2 weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require 3 weeks notice in order to allow the domain for outbound communication.** Regular deployments occur every Thursday by the close of the business day. If the regular deployment occurs on a holiday, then it will be completed the following Monday.
 
 Staging environment
 -------------------
 
 We recommend using the sandbox environment to test your new app before requesting deployment. Many partners choose to create a separate staging app in our sandbox environment for testing because changes in the sandbox environment take effect immediately without waiting for review and deployment. You can determine and implement changes quickly and without submitting a support ticket.  
 
-If you are testing an integration with identity proofed accounts, then we also offer an ATO-ed staging environment for limited testing. You must have a signed [IAA](https://docs.google.com/document/d/1JrseKerp-FF_uiGElew9z-ltT_l68dgmSFU7so8tQjE/edit#heading=h.gxf7gmdb96uf) in order to deploy to staging. Our staging environment is approved for PII, which can be useful in certain test cases. However, any configuration changes in the staging environment must be reviewed and deployed.
+**If you are testing an integration with identity proofed accounts, then we also offer an ATO-ed staging environment for limited testing.** You must have a signed [IAA](https://docs.google.com/document/d/1JrseKerp-FF_uiGElew9z-ltT_l68dgmSFU7so8tQjE/edit#heading=h.gxf7gmdb96uf) in order to deploy to staging. Our staging environment is approved for PII, which can be useful in certain test cases. However, any configuration changes in the staging environment must be reviewed and deployed.
 
 If you wish to deploy an application to our staging environment, then create a "staging" configuration app like the "production" configuration app described in the [Production configuration process](https://docs.google.com/document/d/1JrseKerp-FF_uiGElew9z-ltT_l68dgmSFU7so8tQjE/edit#heading=h.rl9bxiu1u854) section.
 
