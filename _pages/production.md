@@ -76,9 +76,6 @@ Before you can request deployment, you need to create a new and separate applica
 
 
 2.  Select "YES" for production configuration - this configuration is for a production app.
-=======
-Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit our partner interest form](https://login.gov/partners/contact/) to begin the IAA process, which can take up to 6 weeks to complete.
-
 
 3.  Enter the name of the app **as it appears in your IAA** in the "App Name" field - Do **NOT** use environment names such as "Prod" or "Production".
 
