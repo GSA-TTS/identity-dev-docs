@@ -6,8 +6,6 @@ lead: >
 redirect_from:
   - /production-deployment/
 sidenav:
-  - text: Production endpoints
-    href: "#production-endpoints"
   - text: Before deployment
     href: "#before-deployment"
   - text: Production configuration process
@@ -31,11 +29,11 @@ Before deployment
 
 Make sure you have the following items ready before you start the deployment process:
 
--   [Signed Interagency Agreement (IAA) listing this integration ](https://docs.google.com/document/d/1JrseKerp-FF_uiGElew9z-ltT_l68dgmSFU7so8tQjE/edit#heading=h.gxf7gmdb96uf)
+-   [Signed Interagency Agreement (IAA) listing this integration ](https://developers.login.gov/production/#confirm-iaa)
 
 -   Authority To Operate (ATO) approved environment
 
--   [New app on the dashboard ](https://docs.google.com/document/d/1JrseKerp-FF_uiGElew9z-ltT_l68dgmSFU7so8tQjE/edit#heading=h.rl9bxiu1u854)
+-   [New app on the dashboard ](https://developers.login.gov/production/#production-configuration-process)
 
 -   Approved logo for your app
 
@@ -104,17 +102,17 @@ Production endpoints
 
 You will need to configure your application to point to the following endpoint: 
 
--   OpenID Connect: [https://secure.login.gov/openid_connect/authorize](https://secure.login.gov/openid_connect/authorize)
+-   OpenID Connect: `https://secure.login.gov/openid_connect/authorize`
 
--   SAML: [https://secure.login.gov/api/saml/auth2022](https://secure.login.gov/api/saml/auth2022)
+-   SAML: `https://secure.login.gov/api/saml/auth2022`
 
-Our integration documentation includes endpoint urls for our sandbox environment https://idp.int.identitysandbox.gov/. Our production environment is located at https://secure.login.gov/. The URL path to each endpoint remains the same. Only the domain will change.  
+Our integration documentation includes endpoint urls for our sandbox environment `https://idp.int.identitysandbox.gov/`. Our production environment is located at `https://secure.login.gov/`. The URL path to each endpoint remains the same. Only the domain will change.  
 
 Please be aware that the IdP certificate (X509 Certificate) in the production environment is different from the IdP certificate in the sandbox environment. The production IdP certificates can be found here:
 
--   OpenID Connect: [https://secure.login.gov/api/openid_connect/certs](https://secure.login.gov/api/openid_connect/certs)
+-   OpenID Connect: `https://secure.login.gov/api/openid_connect/certs`
 
--   SAML: [https://secure.login.gov/api/saml/metadata2022](https://secure.login.gov/api/saml/metadata2022)
+-   SAML: `https://secure.login.gov/api/saml/metadata2022`
 
 Confirm Interagency Agreement (IAA)
 -----------------------------------
@@ -128,9 +126,9 @@ Request deployment
 
 Once you have:
 
-1.  [Confirmed that this integration is listed in a signed IAA](https://docs.google.com/document/d/1JrseKerp-FF_uiGElew9z-ltT_l68dgmSFU7so8tQjE/edit#heading=h.gxf7gmdb96uf). **Do not request deployment if you are not certain that your application is listed in a signed IAA.**
+1.  [Confirmed that this integration is listed in a signed IAA](https://login.gov/partners/get-started/#interagency-agreement-iaa-process). **Do not request deployment if you are not certain that your application is listed in a signed IAA.**
 
-2.  [Created a production configuration](https://docs.google.com/document/d/1JrseKerp-FF_uiGElew9z-ltT_l68dgmSFU7so8tQjE/edit#heading=h.rl9bxiu1u854) app
+2.  [Created a production configuration](https://developers.login.gov/production/#production-configuration-process) app
 
 You are ready to [submit a launch request](https://zendesk.login.gov). 
 
@@ -141,9 +139,9 @@ Staging environment
 
 We recommend using the sandbox environment to test your new app before requesting deployment. Many partners choose to create a separate staging app in our sandbox environment for testing because changes in the sandbox environment take effect immediately without waiting for review and deployment. You can determine and implement changes quickly and without submitting a support ticket.  
 
-**If you are testing an integration with identity proofed accounts, then we also offer an ATO-ed staging environment for limited testing.** You must have a signed [IAA](https://docs.google.com/document/d/1JrseKerp-FF_uiGElew9z-ltT_l68dgmSFU7so8tQjE/edit#heading=h.gxf7gmdb96uf) in order to deploy to staging. Our staging environment is approved for PII, which can be useful in certain test cases. However, any configuration changes in the staging environment must be reviewed and deployed.
+**If you are testing an integration with identity proofed accounts, then we also offer an ATO-ed staging environment for limited testing.** You must have a signed [IAA](https://developers.login.gov/production/#confirm-interagency-agreement-iaa) in order to deploy to staging. Our staging environment is approved for PII, which can be useful in certain test cases. However, any configuration changes in the staging environment must be reviewed and deployed.
 
-If you wish to deploy an application to our staging environment, then create a "staging" configuration app like the "production" configuration app described in the [Production configuration process](https://docs.google.com/document/d/1JrseKerp-FF_uiGElew9z-ltT_l68dgmSFU7so8tQjE/edit#heading=h.rl9bxiu1u854) section.
+If you wish to deploy an application to our staging environment, then create a "staging" configuration app like the "production" configuration app described in the [Production configuration process](https://dashboard.int.identitysandbox.gov/) section.
 
 Changes to production applications
 ----------------------------------
