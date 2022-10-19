@@ -22,7 +22,7 @@ sidenav:
     href: "#changes-to-production-applications"
 saml_year: 2022
 ---
-**Please note: The deployment process will take 1 to 2 weeks to complete**
+**<mark >Please note: The deployment process will take 1 to 2 weeks to complete</mark>**
 
 Before deployment
 -----------------
