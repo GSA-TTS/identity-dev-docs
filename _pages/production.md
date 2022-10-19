@@ -22,7 +22,11 @@ sidenav:
     href: "#changes-to-production-applications"
 saml_year: 2022
 ---
-**<mark >Please note: The deployment process will take 1 to 2 weeks to complete</mark>**
+<div class="usa-alert usa-alert--warning">
+<div class="usa-alert__body">
+<p class="usa-alert__text"><b> Please note: The deployment process will take 1 to 2 weeks to complete </b></p>
+</div>
+</div>
 
 Before deployment
 -----------------
