@@ -314,9 +314,9 @@ To specify more restrictive behavior, add an additional `<saml:AuthnContextClass
 
   - **`http://idmanagement.gov/ns/assurance/aal/2`**
       This is the same as the default behavior except users must reauthenticate with a separate second factor (i.e. not a session secret) once every 12 hours.
-  - **`http://idmanagement.gov/ns/assurance/aal/3`**
+  - **`http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true`**
       This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC. Users must _always_ authenticate with a second factor.
-  - **`http://idmanagement.gov/ns/assurance/aal/3?hspd12=true`**
+  - **`http://idmanagement.gov/ns/assurance/aal/2?hspd12=true`**
       This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC). Users must _always_ authenticate with a second factor.
 
 #### Attributes
