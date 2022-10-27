@@ -57,7 +57,7 @@ If this is a SAML integration (Not OpenID Connect), then please ensure that:
 
         -   If you are using a service which does not support SAML encryption, then please [submit a technical support ticket ](https://zendesk.login.gov)for further guidance.
 
-  If this is an integration requesting identity proofed attributes, you must include a Failure to Proof URL. Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency and/or departments alternate methods of accessing your application.
+  - If this is an integration requesting identity proofed attributes, you must include a Failure to Proof URL. Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency and/or departments alternate methods of accessing your application.
 
 If you have questions after reviewing this page, [submit a technical support ticket](https://zendesk.login.gov/). You will need a [Login.gov production account](https://secure.login.gov) to submit technical support tickets. Your Login.gov production account and Login.gov dashboard accounts are separate.
 
