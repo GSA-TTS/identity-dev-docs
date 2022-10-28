@@ -151,7 +151,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
   This must be `S256`, the only PKCE code challenge method supported.
 
 * **prompt** -- *optional, requires administrator approval*
-  To force a re-authorization event when a current IdP session is active, you will need to set the `prompt` attribute to `login`, like this: `prompt=login`.  
+  To force a re-authorization event when a current IdP session is active, you will need to set the `prompt` attribute to `login`, like this: `prompt=login`.
 
   Request permission for your application to do this by [submitting a support request](https://logingov.zendesk.com/).
 
@@ -178,8 +178,9 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
    - `profile`
    - `social_security_number`
    - `x509`
+   - `x509:issuer`
+   - `x509:presented`
    - `x509:subject`
-   - `x509_presented`
 
 * **state**
   A unique value, at least 22 characters in length, used for maintaining state between the request and the callback. This value will be returned to the client on a successful authorization.
