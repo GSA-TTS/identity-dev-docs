@@ -258,13 +258,33 @@ Requires the `profile:verified_at` scope.
 ![checkmark][checkmark]
 </td>
 <td markdown="1">
-`x509_subject` (string)
+`x509_issuer` (string)
 `x509_presented` (string)
+`x509_subject` (string)
 
 Requires the `x509` scope
 </td>
 <td markdown="1">
 n/a
+</td>
+    </tr>
+    <tr>
+<td markdown="1">
+**x509 Issuer** <br />
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+![checkmark][checkmark]
+</td>
+<td markdown="1">
+`x509_issuer` (string)
+
+Requires the `x509:issuer` scope.
+</td>
+<td markdown="1">
+`x509_issuer`
 </td>
     </tr>
     <tr>
@@ -299,7 +319,7 @@ Requires the `x509:subject` scope
 <td markdown="1">
 `x509_presented` (string)
 
-Requires the `x509_presented` scope.
+Requires the `x509:presented` scope.
 </td>
 <td markdown="1">
 `x509_presented`
