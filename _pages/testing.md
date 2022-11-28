@@ -100,6 +100,12 @@ To simulate a failure, enter a social security number that does not start with �
 
 **Beginning December 20th, 2021, Login.gov plans to start also accepting social security numbers starting with “666” as being valid in the sandbox environment. To simulate a failure following December 20th, enter a social security number that does not start with “900” or “666”, such as “123-45-6789”.**
 
+### Issuing source verification for DL/ID documents
+
+Login.gov collects the document number of a drivers license or state ID card automatically during the proofing process. This document is checked against issuing source data, along with user information (such as address).
+
+To simulate a verification failure, submit `00000000` as the `state_id_number` for [any jurisdiction](https://github.com/18F/identity-idp/blob/2022-07-21T171117/config/application.yml.default#L21) where issuing source verification is enabled.
+
 ### Phone number verification
 
 Login.gov collects a phone number during the proofing process. In a live production environment, Login.gov checks that this phone number is associated with the applicant. You can use any phone number for testing purposes in the sandbox environment other than the following:
