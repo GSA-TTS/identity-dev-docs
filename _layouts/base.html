@@ -153,7 +153,13 @@
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
     <script src="{{ site.baseurl }}/assets/js/anchor.js"></script>
     <script>
-      anchors.add('#main-content h1:not(.usa-accordion__heading), #main-content h2, #main-content h3, #main-content h4, #main-content [data-anchor]');
+      anchors.add([
+        '#main-content h1:not(.usa-accordion__heading)',
+        '#main-content h2:not(.usa-accordion__heading)',
+        '#main-content h3:not(.usa-accordion__heading)',
+        '#main-content h4:not(.usa-accordion__heading)',
+        '#main-content [data-anchor]'
+      ].join(', '));
     </script>
 
     {% include dap.html %}
