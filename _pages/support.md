@@ -20,11 +20,11 @@ sidenav:
 
 <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="true">
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="flow">
 How does Login.gov work with my site?
 </button>
-</h3>
+</div>
 <div id="flow" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1"  aria-expanded="true">
 We encourage you to create an account directly on [Login.gov](https://secure.login.gov/) or an agency partner like
@@ -38,11 +38,11 @@ identifies the user.
 </div>
 
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="user-key">
 What unique key can we use to track users?
 </button>
-</h3>
+</div>
 <div id="user-key" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
 We offer email address and UUID. Since a user can change their email address we recommend tracking users by UUID.
@@ -51,11 +51,11 @@ We offer email address and UUID. Since a user can change their email address we 
 </div>
 
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="email">
 Can a user change their email address?
 </button>
-</h3>
+</div>
 <div id="email" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
 Yes. This is why we recommend using UUID as the primary key.
@@ -64,11 +64,11 @@ Yes. This is why we recommend using UUID as the primary key.
 </div>
 
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="uuid">
 Does every user have a unique UUID?
 </button>
-</h3>
+</div>
 <div id="uuid" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
 Every user has a unique UUID per agency for privacy reasons. This means that the same user can return a different UUID depending on which agency they are signing in to. These UUIDs are also globally unique. We do offer sharing of UUIDs between agencies with user consent on a case by case basis.
@@ -77,11 +77,11 @@ Every user has a unique UUID per agency for privacy reasons. This means that the
 </div>
 
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="sessions">
 How does Login.gov manage sessions?
 </button>
-</h3>
+</div>
 <div id="sessions" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
 Once a user is authenticated on Login.gov and passed back to the agency it is up to the agency to manage the user's session.
@@ -92,11 +92,11 @@ We do not remotely invalidate or expire a user's session.
 
 
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="ip-address">
 What are the Login.gov IP addresses?
 </button>
-</h3>
+</div>
 <div id="ip-address" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
 Login.gov makes no guarantees on IP addresses or ranges. Please use the DNS when querying Login.gov for the latest IPs.
@@ -105,11 +105,11 @@ Login.gov makes no guarantees on IP addresses or ranges. Please use the DNS when
 </div>
 
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="4xx-error">
 Why is my OIDC or SAML request returning a 4xx error?
 </button>
-</h3>
+</div>
 <div id="4xx-error" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
 Check the error that was returned. Generally we return the specific errors in the HTML, JSON, or in the redirect url.
@@ -118,11 +118,11 @@ Check the error that was returned. Generally we return the specific errors in th
 </div>
 
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="request-error">
 I do not see an error being returned for my request. Why is my request failing?
 </button>
-</h3>
+</div>
 <div id="request-error" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
 Feel free to contact the engineers at Login.gov. They can help diagnose your problem further.
@@ -131,11 +131,11 @@ Feel free to contact the engineers at Login.gov. They can help diagnose your pro
 </div>
 
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="2fa">
 Can we turn off two factor authentication?
 </button>
-</h3>
+</div>
 <div id="2fa" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
 No.
@@ -144,11 +144,11 @@ No.
 </div>
 
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="embed">
 Can I embed Login.gov on my site?
 </button>
-</h3>
+</div>
 <div id="embed" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
 No. Login.gov only works via redirects to and from an agency site.
@@ -157,11 +157,11 @@ No. Login.gov only works via redirects to and from an agency site.
 </div>
 
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="authorization">
 Does Login.gov handle authorization?
 </button>
-</h3>
+</div>
 <div id="authorization" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
 No. Login.gov only handles authentication. Granting users specific access and permissions is handled on the agency side. For example, some agencies use active directory to store what applications a user can access.
@@ -170,11 +170,11 @@ No. Login.gov only handles authentication. Granting users specific access and pe
 </div>
 
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="nist-800-63">
 Does Login.gov meet the NIST 800-63 standards for Identity Assurance Levels (IAL) and Authenticator Assurance Levels (AAL)?
 </button>
-</h3>
+</div>
 <div id="nist-800-63" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
 For our Login.gov basic authentication accounts (IAL1), we rely on the user having access to an email address, password, and a secure multi-factor authentication method (AAL2 or higher) such as a phone, authentication app or PIV/CAC where they can receive a secure code to use to sign in to their account. 
@@ -185,11 +185,11 @@ For identity proofing, in addition to meeting the above requirements for IAL1/AA
 </div>
 
 
-<h3 class="usa-accordion__heading">
+<div class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="statuspage">
 Where can I check the status of Login.gov?
 </button>
-</h3>
+</div>
 <div id="statuspage" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
 Login.gov has a public status page available at <a href="https://status.login.gov/">https://status.login.gov/</a>
