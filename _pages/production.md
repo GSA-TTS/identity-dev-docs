@@ -151,3 +151,38 @@ Changes to production applications
 ----------------------------------
 
 Please update your production configuration app in the dashboard and test the changes you wish to deploy. After you have confirmed the change, you may [submit a change request](https://zendesk.login.gov).
+
+Certificate Rotation Process
+----------------------------
+
+If you are rotating your application’s public/private keypair, or want to add an additional public certificate, please follow the instructions below to add the new certificate to your application’s Login.gov configuration. **Please note that from the time you notify Login.gov of your intent to rotate certificates, it can take up to 2 weeks for the new certificate to be available in production.**
+
+**Follow this process to initiate certificate rotation:**
+
+**For OIDC integrations or SAML integrations sending signed requests:**
+
+1.  Add the new certificate to the application dashboard configuration.
+    
+2.  Contact Login.gov technical support and request certificate addition.
+    
+3.  Once certificate deployment is confirmed, rotate the key pair at your convenience.
+    
+4.  Once the new key pair is in use, please submit a request to remove the old certificate.
+    
+
+**For SAML integrations not sending signed requests:**
+
+1.  The final certificate rotation must be coordinated with Login.gov technical support.
+    
+2.  Add the new certificate to the application dashboard configuration.
+    
+3.  Request coordination of the certificate rotation from Login.gov technical support.
+    
+
+  
+
+<div class="usa-alert usa-alert--warning">
+<div class="usa-alert__body">
+<p class="usa-alert__text"><b> Note: Login.gov takes no action based on the expiration date of the certificate, and integrations with expired certificates continue to function. </b></p>
+</div>
+</div>
