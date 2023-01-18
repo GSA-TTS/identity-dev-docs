@@ -51,9 +51,9 @@ Make sure you have the following items ready before you start the deployment pro
 
 -   If this is a SAML integration (Not OpenID Connect), then please ensure that:
 
-  -   Assertion Consumer Logout Service URL is defined.
+    -   Assertion Consumer Logout Service URL is defined.
 
-  -   SAML Assertion Encryption is enabled.
+    -   SAML Assertion Encryption is enabled.
 
         -   If you are using a service which does not support SAML encryption, then please [submit a technical support ticket ](https://zendesk.login.gov)for further guidance.
 
