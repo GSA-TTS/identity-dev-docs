@@ -106,7 +106,7 @@ Before you can request deployment, you need to create a new and separate applica
 
 8.  Enter the issuer, a unique string to identify the app in the **Identity Provider (IdP).** 
 
-9.  Upload your logo and public certificate file using the "Choose a file" buttons.Note: the public certificate file may not be required if you are using the OIDC PKCE flow.
+9.  Upload your logo and public certificate file using the "Choose a file" buttons. Note: the public certificate file may not be required if you are using the OIDC PKCE flow.
 
 10. Enter the push notification URL and redirect URIs, if applicable. You can enter additional redirect URIs by selecting the “Add another URI” button.
 
