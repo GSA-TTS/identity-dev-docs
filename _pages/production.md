@@ -89,7 +89,7 @@ Before you can request deployment, you need to create a new and separate applica
 
 **When you have the components required, follow these steps to create your production configuration app:**
 
-1.  [Create a new appon the](https://dashboard.int.identitysandbox.gov/) Login.gov Partner Dashboard. Select “Apps” from the top right menu, then select the “Create a new test app” button. 
+1.  [Create a new app on the](https://dashboard.int.identitysandbox.gov/) Login.gov Partner Dashboard. Select “Apps” from the top right menu, then select the “Create a new test app” button.
 
 
 2.  Select "YES" for production configuration - this configuration is for a production app.
