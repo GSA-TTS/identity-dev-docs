@@ -85,7 +85,7 @@ Before you can request deployment, you need to create a new and separate applica
 
 -   ATO approved environment
 
--   [Approved agency logo](https://developers.login.gov/design-guidelines/#agency-logo-guidelines) for your app
+-   [Approved agency logo]({{site.baseurl}}/design-guidelines/#agency-logo-guidelines) for your app
 
 **When you have the components required, follow these steps to create your production configuration app:**
 
