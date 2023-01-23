@@ -411,24 +411,9 @@ This public key is rotated periodically (on at least an annual basis). It is imp
 
 ## Logout
 
-{% include alert.html content="The parameters accepted by the logout endpoint will be changing in the coming weeks. Please read the information below carefully." alert_class="usa-alert--warning" %}
-
 Login.gov supports [RP-Initiated Logout](https://openid.net/specs/openid-connect-session-1_0.html#RPLogout), allowing clients to log users out of their current Login.gov session and redirect them back to the Relying Party.
 
 Login.gov does not support Single Logout (SLO). The logout action will terminate the user's session at Login.gov but will not end any other potentially active sessions within service provider applications. For example, if a user signs in to applications A and B through Login.gov, a logout request from A will end their Login.gov session, but will not affect the session in application B.
-
-### IMPORTANT: Changes to Logout
-
-Login.gov will begin accepting the `client_id` parameter in logout requests to identify the integration sending the logout requests in addition to the `id_token_hint` parameter in the coming weeks. Following that, **Login.gov will stop supporting the `id_token_hint` parameter in logout requests** - requests that include that parameter will display an error page to the user.
-
-The rollout dates are as follows:
-
-* **Thursday, September 22, 2022** - `client_id` accepted in logout requests in the **sandbox** environment
-* **Thursday, September 29, 2022** - `client_id` accepted in logout requests in the **production** environment
-* **Thursday, October 6, 2022** - `id_token_hint` rejected in logout requests in the **sandbox** environment
-* **Thursday, October 20, 2022** - `id_token_hint` rejected in logout requests in the **production** environment
-
-**If you currently implement OIDC Logout using `id_token_hint`, you MUST update your application to send the `client_id` parameter instead before Thursday, October 20.** If you have any questions, please submit a support request at our [support portal](https://logingov.zendesk.com/).
 
 ### Logout request
 
