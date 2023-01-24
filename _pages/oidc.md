@@ -34,8 +34,6 @@ sidenav:
 
 ---
 
-{% include alert.html content="Please see important information <a href='#logout'>below</a> about upcoming changes to the logout endpoint" alert_class="usa-alert--warning" %}
-
 ## Getting started
 
 ### Choosing an authentication method
