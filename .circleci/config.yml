@@ -34,6 +34,14 @@ jobs:
             make clean
             make test
 
+      - run:
+          name: Run htmlproofer (no external links)
+          command: make htmlproofer_internal
+
+      - run:
+          name: Run htmlproofer (external links only)
+          command: make htmlproofer_external
+
       # collect reports
       - store_test_results:
           path: /tmp/test-results

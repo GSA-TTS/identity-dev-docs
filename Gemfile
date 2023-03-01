@@ -8,4 +8,5 @@ gem 'webrick'
 group :test do
   gem 'rspec'
   gem 'nokogiri', '>= 1.10.5'
+  gem 'html-proofer'
 end

@@ -12,6 +12,14 @@ build: install-dependencies
 
 install-dependencies: bundle npm
 
+htmlproofer: htmlproofer_internal htmlproofer_external
+
+htmlproofer_internal: build
+	bundle exec scripts/htmlproofer --internal
+
+htmlproofer_external: build
+	bundle exec scripts/htmlproofer --external --retry-external 3 --retry-external-delay 8
+
 npm:
 	npm ci
 
