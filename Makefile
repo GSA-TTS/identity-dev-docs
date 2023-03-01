@@ -18,7 +18,10 @@ htmlproofer_internal: build
 	bundle exec scripts/htmlproofer --internal
 
 htmlproofer_external: build
-	bundle exec scripts/htmlproofer --external --retry-external 3 --retry-external-delay 8
+	bundle exec scripts/htmlproofer --external \
+		--retry-external 3 \
+		--retry-external-delay 8 \
+		--url-ignore zendesk.login.gov
 
 npm:
 	npm ci
