@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby RUBY_VERSION
 
-gem 'jekyll', '<= 4.2.2' # see https://github.com/cloud-gov/pages-build-container/issues/409
+gem 'jekyll', '~> 4.3.0' # see https://github.com/cloud-gov/pages-build-container/issues/409
 gem 'kramdown-parser-gfm', '~> 1.0'
 gem 'jekyll-redirect-from'
 gem 'webrick'
