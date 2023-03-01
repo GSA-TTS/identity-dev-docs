@@ -20,6 +20,7 @@ end.parse!
 site_config = Jekyll::Configuration.from(YAML.load_file('_config.yml'))
 
 proofer_options.merge!(
+  allow_hash_href: true,
   empty_alt_ignore: true,
   typhoeus: {
     ssl_verifypeer: false,

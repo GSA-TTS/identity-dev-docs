@@ -2,7 +2,7 @@
 title: Production deployment
 lead: >
   Once you’ve tested your integration in [our sandbox environment](https://dashboard.int.identitysandbox.gov/), you can request deployment to the Login.gov production environment.
-  
+
 redirect_from:
   - /production-deployment/
 sidenav:
@@ -35,9 +35,9 @@ Before deployment
 
 Make sure you have the following items ready before you start the deployment process:
 
--   [Signed Interagency Agreement (IAA) listing this integration ](https://developers.login.gov/production/#confirm-iaa)
+-   [Signed Interagency Agreement (IAA) listing this integration](#confirm-interagency-agreement-iaa)
 
--   A new dedicated [production app configuration within the Dashboard](https://docs.google.com/document/d/1Lf5FnUBbfal_ha_H310_pLUl14DT9mXcekx5_hDgss8/edit#heading=h.y8sjd6rqdqsi) 
+-   A new dedicated [production app configuration within the Dashboard](https://docs.google.com/document/d/1Lf5FnUBbfal_ha_H310_pLUl14DT9mXcekx5_hDgss8/edit#heading=h.y8sjd6rqdqsi)
     * All production urls should have .gov, .mil, or a dedicated .com address and point to an Authority to Operate (ATO) approved environment.
 
 -   A user account in the [Login.gov production environment](https://secure.login.gov)
@@ -74,7 +74,7 @@ You must have a signed IAA with Login.gov with your integration explicitly liste
 -   If this is an integration requesting identity proofed attributes, you must include a Failure to Proof URL. Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency and/or departments alternate methods of accessing your application.
 
 
-Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit a partner interest form](https://www.login.gov/partners/business-inquiries/) to begin the IAA process, which can take up to 6 weeks to complete. [Learn more about the IAA process.](https://login.gov/partners/get-started/#interagency-agreement-iaa-process) 
+Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit a partner interest form](https://www.login.gov/partners/business-inquiries/) to begin the IAA process, which can take up to 6 weeks to complete. [Learn more about the IAA process.](https://login.gov/partners/get-started/#interagency-agreement-iaa-process)
 
 Production configuration process
 --------------------------------
@@ -140,7 +140,7 @@ Once you have:
 
 1.  [Confirmed that this integration is listed in a signed IAA](https://login.gov/partners/get-started/#interagency-agreement-iaa-process). **Do not request deployment if you are not certain that your application is listed in a signed IAA.**
 
-2.  [Created a production configuration app](https://developers.login.gov/production/#production-configuration-process) 
+2.  [Created a production configuration app](#production-configuration-process)
 
 You are ready to submit a launch request through the [Partner Support Help Desk.](https://zendesk.login.gov). 
 
@@ -151,9 +151,9 @@ Staging environment
 
 We recommend using the sandbox environment to test your new app before requesting deployment. Many partners choose to create a separate staging app in our sandbox environment for testing because changes in the sandbox environment take effect immediately without waiting for review and deployment. You can determine and implement changes quickly and without submitting a support ticket.  
 
-**If you are testing an integration with identity proofed accounts, then we also offer an ATO-ed staging environment for limited testing.** You must have a signed [IAA](https://developers.login.gov/production/#confirm-interagency-agreement-iaa) in order to deploy to staging. Our staging environment is approved for PII, which can be useful in certain test cases. However, any configuration changes in the staging environment must be reviewed and deployed.
+**If you are testing an integration with identity proofed accounts, then we also offer an ATO-ed staging environment for limited testing.** You must have a signed [IAA](#confirm-interagency-agreement-iaa) in order to deploy to staging. Our staging environment is approved for PII, which can be useful in certain test cases. However, any configuration changes in the staging environment must be reviewed and deployed.
 
-If you wish to deploy an application to our staging environment, then create a "staging" configuration app like the "production" configuration app described in the [Production configuration process](https://developers.login.gov/production/#production-configuration-process) section.
+If you wish to deploy an application to our staging environment, then create a "staging" configuration app like the "production" configuration app described in the [Production configuration process](#production-configuration-process) section.
 
 Changes to production applications
 ----------------------------------
@@ -170,24 +170,24 @@ If you are rotating your application’s public/private keypair, or want to add 
   **For OIDC integrations or SAML integrations sending signed requests:**
 
   1.  Add the new certificate to the application dashboard configuration.
-    
+
   2.  Contact Login.gov technical support and request certificate addition.
-      
+
   3.  Once certificate deployment is confirmed, rotate the key pair at your convenience.
-      
+
   4.  Once the new key pair is in use, please submit a request to remove the old certificate.
-    
+
 
   **For SAML integrations not sending signed requests:**
 
   1.  The final certificate rotation must be coordinated with Login.gov technical support.
-      
-  2.  Add the new certificate to the application dashboard configuration.
-      
-  3.  Request coordination of the certificate rotation from Login.gov technical support.
-    
 
-  
+  2.  Add the new certificate to the application dashboard configuration.
+
+  3.  Request coordination of the certificate rotation from Login.gov technical support.
+
+
+
 
 <div class="usa-alert usa-alert--warning">
 <div class="usa-alert__body">
