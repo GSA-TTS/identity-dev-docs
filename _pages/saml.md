@@ -317,6 +317,14 @@ If you need to pass any information about the request back to your application a
 https://idp.int.identitysandbox.gov/api/saml/auth{{ page.saml_year }}?SAMLRequest=${SAML_REQUEST}&RelayState=${RELAY_STATE}
 ```
 
+### Language Selection
+
+If you know that a user would prefer one of our alternative language translations (currently Spanish or French), you can include the `locale` parameter to specify the language Login.gov should use (either `es` for Spanish or `fr` for French), e.g.:
+
+```bash
+https://idp.int.identitysandbox.gov/api/saml/auth{{ page.saml_year }}?SAMLRequest=${SAML_REQUEST}&locale=es
+```
+
 ## Auth response
 
 After the user authenticates, Login.gov will redirect and POST a form back to your registered Assertion Consumer Service URL:

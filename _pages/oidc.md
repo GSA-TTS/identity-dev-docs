@@ -205,6 +205,8 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
       * Example: `2y` (equivalent to `730d`)
   </details>
 
+* **locale** -- *optional*
+  If you know that a user would prefer one of our alternative language translations (currently Spanish or French), you can include the `locale` parameter to specify the language Login.gov should use (either `es` for Spanish or `fr` for French).
 
 ### Authorization response
 
