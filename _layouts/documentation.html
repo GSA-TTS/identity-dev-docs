@@ -26,7 +26,7 @@ layout: base
 
           <div class="usa-display">{{ page.title }}</div>
 
-          {% if page.lead %}
+          {% if page.lead | markdownify %}
             <p class="usa-intro">{{ page.lead }}</p>
           {% endif %}
 
