@@ -249,6 +249,8 @@ An example authentication request, with indentation added for readability.
 </div>
 </div>
 
+**Note:** We strongly encourage you to cryptographically sign authentication requests, unless there are technical limitations on your side that prevent this. In addition to providing increased security, this allows for seamless rotation of your application's public certificate in the future. All signatures must use RSA SHA-256.
+
 ### Specifying attributes and assurance levels
 
 The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the type of identity verification[^1], AAL (Authentication Assurance Level) and attributes requested.
