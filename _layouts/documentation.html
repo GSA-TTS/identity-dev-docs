@@ -26,8 +26,8 @@ layout: base
 
           <div class="usa-display">{{ page.title }}</div>
 
-          {% if page.lead | markdownify %}
-            <p class="usa-intro">{{ page.lead }}</p>
+          {% if page.lead %}
+            <p class="usa-intro">{{ page.lead | markdownify }}</p>
           {% endif %}
 
           {{ content }}
@@ -43,7 +43,7 @@ layout: base
         <div class="usa-display">{{ page.title }}</div>
 
         {% if page.lead %}
-          <p class="usa-intro">{{ page.lead }}</p>
+          <p class="usa-intro">{{ page.lead | markdownify }}</p>
         {% endif %}
 
         {{ content }}
