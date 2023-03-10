@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '~> 3.1.2'
+ruby RUBY_VERSION
 
 gem 'jekyll', '= 4.3.1' # see https://github.com/cloud-gov/pages-build-container/issues/409
 gem 'kramdown-parser-gfm', '~> 1.0'
