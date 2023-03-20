@@ -22,7 +22,7 @@ sidenav:
     href: "#changes-to-production-applications"
   - text: Certificate Rotation Process
     href: "#certificate-rotation-process"
-saml_year: 2022
+saml_year: 2023
 ---
 <div class="usa-alert usa-alert--warning">
 <div class="usa-alert__body">
@@ -123,7 +123,7 @@ You will need to configure your application to point to the following endpoint:�
 
 -   **OpenID Connect:** `https://secure.login.gov/openid_connect/authorize`
 
--   **SAML:** `https://secure.login.gov/api/saml/auth2022`
+-   **SAML:** `https://secure.login.gov/api/saml/auth2023`
 
 Our integration documentation includes endpoint urls for our sandbox environment `https://idp.int.identitysandbox.gov/`. Our production environment is located at `https://secure.login.gov/`. The URL path to each endpoint remains the same. Only the domain will change.  
 
@@ -131,7 +131,7 @@ Please be aware that the IdP certificate (X509 Certificate) in the production en
 
 -   **OpenID Connect:** `https://secure.login.gov/api/openid_connect/certs`
 
--   **SAML:** `https://secure.login.gov/api/saml/metadata2022` 
+-   **SAML:** `https://secure.login.gov/api/saml/metadata2023`
 
 Request deployment
 ------------------
