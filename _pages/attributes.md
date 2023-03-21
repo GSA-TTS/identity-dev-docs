@@ -175,7 +175,7 @@ Requires the `address` scope.
     </tr>
     <tr>
 <td markdown="1">
-**Phone**<br />The user's phone number formatted as [E.164](https://en.wikipedia.org/wiki/E.164), for example: `+18881112222`
+  **Phone<sup>1</sup>**<br />The user's phone number formatted as [E.164](https://en.wikipedia.org/wiki/E.164), for example: `+18881112222`
 </td>
 <td></td>
 <td markdown="1">
@@ -227,7 +227,7 @@ Requires the `social_security_number` scope.
     </tr>
     <tr>
 <td markdown="1">
-**Verification timestamp** <br />
+  **Verification timestamp<sup>1</sup>** <br />
 When the user's identity was last verified (or empty if it has never been verified)
 </td>
 <td markdown="1">
@@ -327,5 +327,6 @@ Requires the `x509:presented` scope.
     </tr>
   </tbody>
 </table>
+<sup>1</sup>Please note that only `phone` and `verified_at` idV user attributes may be returned as null.
 
 [checkmark]: {{ site.baseurl }}/assets/img/check.svg
