@@ -52,8 +52,7 @@ The Sign-in button link initiates authentication with Login.gov.  This starts th
 #### Color
 The [U.S. Web Design System](https://designsystem.digital.gov/components/button/) offers some default button styles that use a solid colored background for the button implemented with no border color and white colored text. This styling creates a strong, easy-to-read contrast to meet Section 508 guidelines for using colors that contrast well with white text and work with your site’s palette.
 
-We recommend you use the primary action color from your site’s design system or style guide for the Sign-in buttonn, an example of a standard primary button be found on Login.gov's [Design System](https://design.login.gov/components/buttons/).
-
+We recommend you use the primary action color from your site’s design system or style guide for the Sign-in button.
 
 #### Font
 Sans serif and neutral typefaces are recommended for your Sign in button. A heavier than normal font weight is recommended for enhanced visual hierarchy.
@@ -139,7 +138,5 @@ Provide a file that meets these requirements
 set **Styling** using **Presentations Attributes**
 
 ## Login logo
-<img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg" class="usa-logo-img" alt="Login.gov logo" role="img">
-We have a number of additional guidelines pertaining to the use of the Login.gov brand and logo. Please use our guidelines so that we can provide a consistent visual experience across all government platforms.
 
-[View the Login.gov brand guidelines](https://design.login.gov/brand/)
+<img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg" class="usa-logo-img" alt="Login.gov logo" role="img">
