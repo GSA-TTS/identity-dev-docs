@@ -34,7 +34,6 @@ include help text for migrating existing users.
 After authenticating with Login.gov they are redirected back to the agency with a unique UUID or email address that
 identifies the user.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 
@@ -47,7 +46,6 @@ What unique key can we use to track users?
 <div class="usa-accordion__content" markdown="1">
 We offer email address and UUID. Since a user can change their email address we recommend tracking users by UUID.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 
@@ -60,7 +58,6 @@ Can a user change their email address?
 <div class="usa-accordion__content" markdown="1">
 Yes. This is why we recommend using UUID as the primary key.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 
@@ -73,7 +70,6 @@ Does every user have a unique UUID?
 <div class="usa-accordion__content" markdown="1">
 Every user has a unique UUID per agency for privacy reasons. This means that the same user can return a different UUID depending on which agency they are signing in to. These UUIDs are also globally unique. We do offer sharing of UUIDs between agencies with user consent on a case by case basis.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 
@@ -87,7 +83,6 @@ How does Login.gov manage sessions?
 Once a user is authenticated on Login.gov and passed back to the agency it is up to the agency to manage the user's session.
 We do not remotely invalidate or expire a user's session.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 
@@ -101,7 +96,6 @@ What are the Login.gov IP addresses?
 <div class="usa-accordion__content" markdown="1">
 Login.gov makes no guarantees on IP addresses or ranges. Please use the DNS when querying Login.gov for the latest IPs.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 
@@ -114,7 +108,6 @@ Why is my OIDC or SAML request returning a 4xx error?
 <div class="usa-accordion__content" markdown="1">
 Check the error that was returned. Generally we return the specific errors in the HTML, JSON, or in the redirect url.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 
@@ -127,7 +120,6 @@ I do not see an error being returned for my request. Why is my request failing?
 <div class="usa-accordion__content" markdown="1">
 Feel free to contact the engineers at Login.gov. They can help diagnose your problem further.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 
@@ -140,7 +132,6 @@ Can we turn off two factor authentication?
 <div class="usa-accordion__content" markdown="1">
 No.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 
@@ -153,7 +144,6 @@ Can I embed Login.gov on my site?
 <div class="usa-accordion__content" markdown="1">
 No. Login.gov only works via redirects to and from an agency site.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 
@@ -166,7 +156,6 @@ Does Login.gov handle authorization?
 <div class="usa-accordion__content" markdown="1">
 No. Login.gov only handles authentication. Granting users specific access and permissions is handled on the agency side. For example, some agencies use active directory to store what applications a user can access.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 
@@ -177,11 +166,10 @@ Does Login.gov meet the NIST 800-63 standards for Identity Assurance Levels (IAL
 </h3>
 <div id="nist-800-63" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-For our Login.gov basic authentication accounts (IAL1), we rely on the user having access to an email address, password, and a secure multi-factor authentication method (AAL2 or higher) such as a phone, authentication app or PIV/CAC where they can receive a secure code to use to sign in to their account. 
+For our Login.gov basic authentication accounts (IAL1), we rely on the user having access to an email address, password, and a secure multi-factor authentication method (AAL2 or higher) such as a phone, authentication app or PIV/CAC where they can receive a secure code to use to sign in to their account.
 
 For identity proofing, in addition to meeting the above requirements for IAL1/AAL2, we ask users to upload a photograph of their state-issued ID and share their address, phone number and other personal information which is then verified against authoritative sources. Login.gov identity proofing services do not meet NIST IAL2 standards at this time. We continue to work toward achieving certification of compliance with the IAL2 standard from a third-party assessment organization.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 
@@ -195,7 +183,6 @@ Where can I check the status of Login.gov?
 Login.gov has a public status page available at <a href="https://status.login.gov/">https://status.login.gov/</a>
 where you can subscribe to incident notifications via email, SMS, Slack, or RSS.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 </div>
@@ -221,13 +208,13 @@ Login.gov recognizes incoming requests from Service Providers by validating the 
 
 <img src="{{ site.baseurl }}/assets/img/dashboard_issuer.png">
 
-This error occurs when Login.gov receives a request from a Service Provider that contains an Issuer/ClientID field that is not registered with Login.gov. The Issuer/ClientID defined in the request must match EXACTLY the Issuer defined in the Dashboard. 
+This error occurs when Login.gov receives a request from a Service Provider that contains an Issuer/ClientID field that is not registered with Login.gov. The Issuer/ClientID defined in the request must match EXACTLY the Issuer defined in the Dashboard.
 
 <b>Solution:</b>
 
 Double check the SAML/OIDC request to Login.gov and confirm that the Issuer/ClientID field matches exactly what is defined in the Login.gov Dashboard. See [Other Tips & Tools]({{ site.baseurl }}/support/#other-tips--tools) for help with decoding SAML Requests.
 
-Note that certain Service Providers will not allow partners to set or change the Issuer value after the application is configured (e.g. MS Power Apps Portal). In this case, the best option would be to create the Login.gov Dashboard configuration after the Service Provider application has defined the Issuer and use that Issuer in the Dashboard. 
+Note that certain Service Providers will not allow partners to set or change the Issuer value after the application is configured (e.g. MS Power Apps Portal). In this case, the best option would be to create the Login.gov Dashboard configuration after the Service Provider application has defined the Issuer and use that Issuer in the Dashboard.
 
 <b>SAML Request Example:</b>
 
@@ -259,7 +246,6 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
   state=abcdefghijklmnopabcdefghijklmnop
 ```
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 <h4 class="usa-accordion__heading">
@@ -301,11 +287,10 @@ Login.gov requires AAL2 at minimum by default and so cannot accept AAL1 values f
 </samlp:AuthnRequest>
 ```
 
-Service Providers that cannot accommodate either sending a specific Authentication Context Class Reference or sending the optional Comparison field cannot currently be integrated with Login.gov (e.g. MS Power Apps Portal). 
+Service Providers that cannot accommodate either sending a specific Authentication Context Class Reference or sending the optional Comparison field cannot currently be integrated with Login.gov (e.g. MS Power Apps Portal).
 
 See Section 3.3.2.2.1 of the <a target="_blank" href="http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf">SAML spec for more information.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 <h4 class="usa-accordion__heading">
@@ -319,7 +304,7 @@ NameID Format Unrecognized
 
 For SAML Identity Providers, NameID is the unique identifier used to identify users across multiple sessions. The NameID Format field specifies the format of the NameID field and is defined and/or restricted by the Identity Provider.
 
-This error occurs when Login.gov receives a SAML request with a NameIDPolicy who’se Format field does not match the NameIDFormat specified by Login.gov. 
+This error occurs when Login.gov receives a SAML request with a NameIDPolicy who’se Format field does not match the NameIDFormat specified by Login.gov.
 
 ```xml
 <samlp:NameIDPolicy AllowCreate='true'
@@ -333,7 +318,6 @@ Refer to the <a target="_blank" href="https://developers.login.gov/saml/#configu
 
 For SAML Service Providers, see [Other Tips & Tools]({{ site.baseurl }}/support/#other-tips--tools) for help with decoding SAML Requests.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 </div>
@@ -351,7 +335,7 @@ Content Security Policy (CSP) Directive Violations
 <div class="usa-accordion__content" markdown="1"  aria-expanded="true">
 <b>Background:</b>
 
-Content Security Policy (CSP) is a modern web browser defense for Cross-Site Scripting (XSS) attacks. For more information about CSP and XSS attacks, refer to the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">MDN documentation</a> on CSP. 
+Content Security Policy (CSP) is a modern web browser defense for Cross-Site Scripting (XSS) attacks. For more information about CSP and XSS attacks, refer to the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">MDN documentation</a> on CSP.
 
 The <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/form-action">CSP form-action</a> directive restricts which URLs can be used as the target of form submissions from a given context. Certain Chromium-based internet browsers (e.g. Google Chrome and Microsoft Edge) enforce the form-action directive through the entire redirect chain (if any). Other non-Chromium-based browsers only check the first redirect in the chain (e.g. Firefox). For Chromium-based browsers, upon form submission, any attempts to redirect to a url not explicitly listed as a form-action source will violate the CSP directive and cause a failure to load and a console error.
 
@@ -361,7 +345,6 @@ This error occurs when Service Providers attempt to redirect users to a url that
 
 Use the Network tab of your web browser to identify which redirect (302) is hanging or failing. Add that uri to the list of Redirect URIs in your Login.gov Dashboard configuration.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 </div>
@@ -385,7 +368,6 @@ Any web application that authenticates its users must manage user sessions in or
 
 When Service Providers receive a successful authentication response from Login.gov, they should create their own session tokens within their application in order to track their users’ sessions.
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 </div>
@@ -408,7 +390,6 @@ SAML requests from browser consoles are URI encoded, base-64-encoded, and deflat
 <li>Take the returned value from the URI decoder and use a base-64-decode and inflate tool (eg. <a target="_blank" href="https://www.samltool.com/decode.php">SAML Tool</a>).</li>
 </ol>
 </div>
-<button class="usa-accordion__close-button">Close</button>
 </div>
 
 </div>
