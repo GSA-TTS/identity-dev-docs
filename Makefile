@@ -4,7 +4,7 @@ run:
 serve:
 	bundle exec jekyll serve --host 0.0.0.0 --incremental
 
-watch-css: _site/assets/css
+watch-css:
 	npm run watch:css
 
 clean:
@@ -16,7 +16,7 @@ test: build
 build-site:
 	bundle exec jekyll build
 
-build-css: _site/assets/css
+build-css:
 	npm run build:css
 
 build: build-site build-css
@@ -30,6 +30,3 @@ bundle:
 	bundle check || bundle install
 
 setup: install-dependencies
-
-_site/assets/css:
-	mkdir -p _site/assets/css
