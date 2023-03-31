@@ -25,6 +25,10 @@ collections:
 kramdown:
   hard_wrap: true
 
+sass:
+  load_paths:
+    - node_modules
+
 exclude:
   - Dockerfile
   - docker-compose.yml
