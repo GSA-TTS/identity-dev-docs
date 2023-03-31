@@ -8,7 +8,7 @@ layout: home
 
 <section class="usa-section usa-section--dark">
   <div class="grid-container">
-    <div class="usa-display text-accent-cool">{{ page.title }}</div>
+    <div class="usa-display">{{ page.title }}</div>
     <div class="usa-intro">{{ page.lead }}</div>
   </div>
 </section>
