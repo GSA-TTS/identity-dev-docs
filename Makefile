@@ -1,4 +1,4 @@
-run: install-dependencies
+run:
 	bundle exec jekyll serve --host 0.0.0.0 --incremental
 
 clean:
@@ -7,7 +7,7 @@ clean:
 test: build
 	bundle exec rspec spec
 
-build: install-dependencies
+build:
 	bundle exec jekyll build
 
 install-dependencies: bundle npm
@@ -17,3 +17,5 @@ npm:
 
 bundle:
 	bundle check || bundle install
+
+setup: install-dependencies
