@@ -1,7 +1,7 @@
 ---
 title: Welcome to the Login.gov developer guide
 lead: >
-  This contains everything you’ll need as a federal government agency to integrate and deploy your application with [Login.gov](https://login.gov/).
+  This contains everything you’ll need as a federal government agency to integrate and deploy your application with Login.gov.
 permalink: /
 layout: home
 ---
