@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css",
-    "watch:css": "npm run build:css -- --watch"
+    "watch:css": "npm run build:css -- --watch",
+    "pages": "npm run build:css"
   },
   "repository": {
     "type": "git",
