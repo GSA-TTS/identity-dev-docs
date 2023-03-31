@@ -4,7 +4,7 @@ run:
 serve:
 	bundle exec jekyll serve --host 0.0.0.0 --incremental
 
-watch-css:
+watch-css: _site/assets/css
 	npm run watch:css
 
 clean:
