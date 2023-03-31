@@ -1,6 +1,10 @@
 {
   "name": "identity-dev-docs",
   "version": "1.0.0",
+  "scripts": {
+    "build:css": "build-sass assets/scss/*.scss --load-path=\"./_sass\" --out-dir=_site/assets/css",
+    "watch:css": "npm run build:css -- --watch"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/18F/identity-dev-docs.git"
@@ -11,6 +15,7 @@
   },
   "homepage": "https://github.com/18F/identity-dev-docs#readme",
   "dependencies": {
+    "@18f/identity-build-sass": "^1.0.0",
     "identity-style-guide": "^3.0.0"
   }
 }

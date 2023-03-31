@@ -36,6 +36,7 @@ exclude:
   # default excludes from https://github.com/jekyll/jekyll/blob/493b800edbf6f6e97c34d1812698260907255665/lib/site_template/_config.yml#L45
   - .sass-cache/
   - .jekyll-cache/
+  - assets/scss
   - gemfiles/
   - Gemfile
   - Gemfile.lock
@@ -44,6 +45,9 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+keep_files:
+  - assets/css
 
 # Defaults
 defaults:
