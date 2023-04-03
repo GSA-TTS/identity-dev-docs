@@ -1,3 +1,5 @@
+@import "identity-style-guide/dist/assets/scss/packages/required";
+
 .usa-prose {
   figure {
     max-width: 64ex;
@@ -18,4 +20,8 @@
 
 #nav-links {
   width: fit-content !important;
+}
+
+.reversefootnote {
+  @include u-font-family("mono");
 }

@@ -1,15 +1,15 @@
 ---
 title: Welcome to the Login.gov developer guide
 lead: >
-  This contains everything you’ll need as a federal government agency to integrate and deploy your application with <a href="https://login.gov">Login.gov</a>.
+  This contains everything you’ll need as a federal government agency to integrate and deploy your application with Login.gov.
 permalink: /
 layout: home
 ---
 
 <section class="usa-section usa-section--dark">
   <div class="grid-container">
-    <div class="usa-display text-accent-cool">{{ page.title }}</div>
-    <div class="usa-intro">{{ page.lead }}</div>
+    <div class="usa-display">{{ page.title }}</div>
+    <div class="usa-intro">{{ page.lead | markdownify }}</div>
   </div>
 </section>
 
