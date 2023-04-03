@@ -26,7 +26,7 @@ Run tests
 docker-compose run web make test
 ```
 
-You can drop into a bash shell in the container with 
+You can drop into a bash shell in the container with
 
 ```sh
 docker-compose run web bash
@@ -34,7 +34,13 @@ docker-compose run web bash
 
 ### Locally
 
-Run the server locally: 
+Run initial setup:
+
+```sh
+make setup
+```
+
+Run the server locally:
 
 ```sh
 make run

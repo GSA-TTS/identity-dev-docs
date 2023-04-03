@@ -1,6 +1,12 @@
 {
   "name": "identity-dev-docs",
   "version": "1.0.0",
+  "scripts": {
+    "prebuild:css": "mkdir -p _site/assets/css",
+    "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css",
+    "watch:css": "npm run build:css -- --watch",
+    "pages": "npm run build:css"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/18F/identity-dev-docs.git"
@@ -11,6 +17,7 @@
   },
   "homepage": "https://github.com/18F/identity-dev-docs#readme",
   "dependencies": {
+    "@18f/identity-build-sass": "^1.0.0",
     "identity-style-guide": "^3.0.0"
   }
 }
