@@ -9,19 +9,19 @@ redirect_from:
 
 ## About the Login.gov sandbox
 
-Login.gov provides an open sandbox environment to create and test integrations between Login.gov and your applications. **Note that the Login.gov Sandbox environment is a free service with an availability target of M-F, 8a-5p ET.** While the environment may be available outside of those windows, it is not guaranteed and may become unavailable with no advance notice. You may reach out to the [Partner Support Help Desk](https://login.zendesk.com) for additional information about these outages.
+Login.gov provides an open sandbox environment to create and test integrations between Login.gov and your applications. **Note that the Login.gov Sandbox environment is a free service with an availability target of M-F, 8a-5p ET.** While the environment may be available outside of those windows, it is not guaranteed and may become unavailable with no advance notice. You may reach out to the [Partner Support Help Desk](https://zendesk.login.gov) for additional information about these outages.
 
 In the sandbox environment, our [Dashboard](https://dashboard.int.identitysandbox.gov) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
 
 ## How to get started
 
-Anybody with an email address ending in .gov or .mil can create an account in the sandbox environment. If you are a government contractor, ask your agency partner to help you gain access. If you are with a government entity that is not a federal agency (a state or municipality) and do not have an email ending in .gov or .mil, please submit a support ticket through the [Partner Support Help Desk](https://login.zendesk.com) to get access to the Dashboard. 
+Anybody with an email address ending in .gov or .mil can create an account in the sandbox environment. If you are a government contractor, ask your agency partner to help you gain access. If you are with a government entity that is not a federal agency (a state or municipality) and do not have an email ending in .gov or .mil, please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) to get access to the Dashboard. 
 
 1. Visit the dashboard at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov). Select the “Sign in” button in the upper-right corner to sign in or create a new account with the test Login.gov IdP in the sandbox environment (hosted at [idp.int.identitysandbox.gov](idp.int.identitysandbox.gov)). Please note that this is separate from your Login.gov production account. 
 2. Once you are logged into your sandbox account, create a new team by selecting the “Continue” button under “Create your first team.” (If you have previously created a team you will select the “Create a new team” button.) Next you can add users to that team.
 3. After creating your team, select the Apps tab. This page is where you will find all of the test applications you and your team create.
 4. Select the “Create a new test app” button and fill out the form to register a new application with the Login.gov IdP in the test sandbox environment.
-5. Start testing! If you need to troubleshoot an issue that is not covered in the [developer documentation]({% link _pages/index.md %}), please submit a support ticket through the [Partner Support Help Desk](https://login.zendesk.com). We can also add you to our partner support Slack channel and the Login.gov team will help you along the way.
+5. Start testing! If you need to troubleshoot an issue that is not covered in the [developer documentation]({% link _pages/index.md %}), please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov). We can also add you to our partner support Slack channel and the Login.gov team will help you along the way.
 6. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your application's promotion to production.
 
 ### Creating a public certificate
@@ -36,7 +36,7 @@ Make sure you're using the corresponding private key in your application to sign
 
 ## Automated/Load Testing
 
-Our sandbox environment is smaller than our production environment and it is shared by many of our partners. For this reason, please submit a support ticket through the [Partner Support Help Desk](https://login.zendesk.com) before performing automated tests that will exceed 1000 requests/minute. Our Partner Support Help Desk is not able to assist with setting up automated tests, but are happy to discuss options to meet your needs.
+Our sandbox environment is smaller than our production environment and it is shared by many of our partners. For this reason, please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) before performing automated tests that will exceed 1000 requests/minute. Our Partner Support Help Desk is not able to assist with setting up automated tests, but are happy to discuss options to meet your needs.
 
 ## Testing identity proofing
 
