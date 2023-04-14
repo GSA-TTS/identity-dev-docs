@@ -21,7 +21,15 @@ layout: home
 
 # Getting started with Login.gov
 
-- [Understand our flow]({{ site.baseurl }}/overview/).
+![li_ steps-num](https://user-images.githubusercontent.com/90725258/232106089-3d9e6fcc-2b2e-44bb-968e-6ec4e68cb516.svg)
+ Your integration with Login.gov starts in the [sandbox dashboard](https://dashboard.int.identitysandbox.gov/) where you can register your app. 
+
+
+Understand how Login.gov works
+The [Integration]( page walks through the process the user will go through use Login.gov to access your application,  and what steps are involved in configuring your app.
+
+![rule](https://user-images.githubusercontent.com/90725258/232109818-e379b186-f486-43dc-a3fd-cd151d1ec804.svg)
+
 - Determine your application needs, like the level of proofing and [user attributes]({{ site.baseurl }}/attributes/) that will be requested.
 - Select between [OpenID Connect (OIDC)]({{ site.baseurl }}/oidc/) or [SAML protocol]({{ site.baseurl }}/saml/) implementation protocols. Please note that we recommend OIDC.
 - Configure your app. We have [implementation guides]({{ site.baseurl }}/oidc/) and example apps to get you up and running quickly.
