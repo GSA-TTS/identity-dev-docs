@@ -26,7 +26,7 @@ layout: home
 
 
 ## Understand how Login.gov works
-The [Integration]({%link _pages/overview.md%}) page walks through the process the user will go through when they authenticate with Login.gov to access your application, and what steps are involved in the service provider configuration.
+The [Integration]({{ site.baseurl }}/overview/) page walks through the process the user will go through when they authenticate with Login.gov to access your application, and what steps are involved in the service provider configuration.
 
 ![rule](https://user-images.githubusercontent.com/90725258/232109818-e379b186-f486-43dc-a3fd-cd151d1ec804.svg)
 
