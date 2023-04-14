@@ -1,7 +1,7 @@
 ---
 title: Welcome to the Login.gov developer guide
 lead: >
-  This contains everything you’ll need as a federal government agency to integrate and deploy your application with Login.gov.
+  This developer guide contains everything you’ll need to integrate and deploy your application with Login.gov.
 permalink: /
 layout: home
 ---
@@ -19,7 +19,7 @@ layout: home
     {% include alert.html content=site.temporary_alert %}
   {% endif %}
 
-# Get started...
+# Getting started with Login.gov
 
 - [Understand our flow]({{ site.baseurl }}/overview/).
 - Determine your application needs, like the level of proofing and [user attributes]({{ site.baseurl }}/attributes/) that will be requested.
