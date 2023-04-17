@@ -26,7 +26,7 @@ saml_year: 2023
 ---
 <div class="usa-alert usa-alert--warning">
 <div class="usa-alert__body">
-<p class="usa-alert__text"><b> Please note: The deployment process will take 1 to 2 weeks to complete </b></p>
+<p class="usa-alert__text"><b> Please note: The deployment process can take up to 2 weeks to complete </b></p>
 </div>
 </div>
 
