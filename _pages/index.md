@@ -1,3 +1,4 @@
+![IMG_0965](https://user-images.githubusercontent.com/127743006/232771911-1e9fb1bc-2a42-49fc-a1ee-8381fc8d0928.png)
 ---
 title: Welcome to the Login.gov developer guide
 lead: >
