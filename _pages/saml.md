@@ -27,7 +27,7 @@ sidenav:
       - text: Logout response
         href: "#logout-response"
       - text: Remote (back channel) logout (deprecated)
-        href: "#remote-logout-request"
+        href: "#remote-logout-request-deprecated"
   - text: Example application
     href: "#example-application"
 saml_year: 2023
