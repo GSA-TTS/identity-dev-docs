@@ -19,22 +19,48 @@ layout: home
     {% include alert.html content=site.temporary_alert %}
   {% endif %}
 
-# Getting started with Login.gov
+# *Option 1*
+# How to integrate with Login.gov
 
 ![li_ steps-num](https://user-images.githubusercontent.com/90725258/232106089-3d9e6fcc-2b2e-44bb-968e-6ec4e68cb516.svg)
  Your integration with Login.gov starts in the [sandbox dashboard](https://dashboard.int.identitysandbox.gov/) where you can register your app. 
 
+
+![li_ steps-num (1)](https://user-images.githubusercontent.com/90725258/233141022-f9c77712-ddfa-4806-920b-4c8f95af260d.svg)
+ Determine your application needs, like the level of proofing and [user attributes]({{site.baseurl }}/attributes/) that will be requested.
+ 
+ 
+![li_ steps-num (2)](https://user-images.githubusercontent.com/90725258/233142069-7855e0f2-4854-4c41-b80e-2b33a3dd2235.svg)
+Select between OpenID Connect (OIDC) or SAML protocol implementation protocols. Please note that we recommend OIDC.
+
+
+![li_ steps-num (3)](https://user-images.githubusercontent.com/90725258/233142689-c0a1bd2c-e27b-49af-b357-3992d4282eb4.svg)
+Configure your app in the sandbox and start testing! We have implementation guides and example apps to get you up and running quickly.
+
+
+![li_ steps-num (4)](https://user-images.githubusercontent.com/90725258/233143103-818d4ef2-6265-4d70-9521-e3d2671e502c.svg)
+When you are ready to go live our team will help you promote the application to production. 
+We will check against our production checklist to ensure your application is ready for production from an administrative and technical standpoint.
+
+![rule](https://user-images.githubusercontent.com/90725258/232109818-e379b186-f486-43dc-a3fd-cd151d1ec804.svg)
+
+## Integration support for developers
+If you are with a government agency partner, check our FAQ page for answers to the most common questions. If you need further technical assistance with an integration, submit a ticket to the Partner Support Help Desk. 
+
+For help signing in or verifying your identity with Login.gov, please visit the Login.gov Help Center or contact us.
+
+
+</section>
+<section class="usa-section grid-container usa-prose" markdown="1">
+
+
+# *Option 2*
 
 ## Understand how Login.gov works
 The [Integration]({{ site.baseurl }}/overview/) page walks through the process the user will go through when they authenticate with Login.gov to access your application, and what steps are involved in the service provider configuration.
 
 ![rule](https://user-images.githubusercontent.com/90725258/232109818-e379b186-f486-43dc-a3fd-cd151d1ec804.svg)
 
-- Determine your application needs, like the level of proofing and [user attributes]({{ site.baseurl }}/attributes/) that will be requested.
-- Select between [OpenID Connect (OIDC)]({{ site.baseurl }}/oidc/) or [SAML protocol]({{ site.baseurl }}/saml/) implementation protocols. Please note that we recommend OIDC.
-- Configure your app. We have [implementation guides]({{ site.baseurl }}/oidc/) and example apps to get you up and running quickly.
-- [Register your app in the sandbox dashboard and start testing]({{ site.baseurl }}/testing/).
-- Let us know when you are ready to go live and our team will help you [promote the application to production]({% link _pages/production.md %}). We will check you against our production checklist to ensure your application is good to go to production from an administrative and technical standpoint.
-- Be sure to read the [FAQ]({{ site.baseurl }}/support/#frequently-asked-questions) for answers to the most common questions.
+
 
 </section>
