@@ -26,7 +26,7 @@ sidenav:
         href: "#logout-request"
       - text: Logout response
         href: "#logout-response"
-      - text: Remote (back channel) logout
+      - text: Remote (back channel) logout (deprecated)
         href: "#remote-logout-request"
   - text: Example application
     href: "#example-application"
@@ -486,6 +486,8 @@ An example decoded logout response, with indentation added for readability.
 </div>
 
 ### Remote logout request
+
+#### This feature is currently deprecated and will be sunset in the future. All logout functionality should use the logout request described above.
 
 Login.gov also offers a remote / back channel logout endpoint if your application needs to log users out without redirecting them back to Login.gov. This is still **not** true Single Logout (SLO), it will only terminate a given user's session with Login.gov. You must still manage the session for your application separately.
 
