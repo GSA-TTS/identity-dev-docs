@@ -485,9 +485,15 @@ An example decoded logout response, with indentation added for readability.
 </div>
 </div>
 
-### Remote logout request
+### Remote logout request (deprecated)
 
-#### This feature is currently deprecated and will be sunset in the future. All logout functionality should use the logout request described above.
+<div class="usa-alert usa-alert--warning">
+  <div class="usa-alert__body">
+    <p class="usa-alert__text">
+      <b>This feature is currently deprecated and will be sunset in the future. All logout functionality should use the logout request described above.</b>
+    </p>
+  </div>
+</div>
 
 Login.gov also offers a remote / back channel logout endpoint if your application needs to log users out without redirecting them back to Login.gov. This is still **not** true Single Logout (SLO), it will only terminate a given user's session with Login.gov. You must still manage the session for your application separately.
 
