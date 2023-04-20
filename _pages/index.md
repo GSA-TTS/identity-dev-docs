@@ -46,14 +46,14 @@ layout: home
 
 <li class="usa-process-list__item padding-bottom-4">
     <p class="usa-process-list__heading font-sans-md margin-top-1 text-light">
-        Configure your app in the <a href=“{https://dashboard.int.identitysandbox.gov/}” class="usa-link">sandbox dashboard</a> and start <a href=“{ %link _pages/testing.md%}” class="usa-link">testing</a>! We also have <a href=“https://dashboard.int.identitysandbox.gov/” class="usa-link">example apps</a> to get you up and running quickly.
+        Configure your app in the <a href=“https://dashboard.int.identitysandbox.gov/” class="usa-link">sandbox dashboard</a> and start <a href=“{ %link _pages/testing.md%}” class="usa-link">testing</a>! We also have <a href=“https://dashboard.int.identitysandbox.gov/” class="usa-link">example apps</a> to get you up and running quickly.
       </p>
     </li>
 
 
 <li class="usa-process-list__item padding-bottom-4">
     <p class="usa-process-list__heading font-sans-md margin-top-1 text-light">
-        When you are ready to go live our team will help you <a href=“{%link _pages/production.md%}” class="usa-link">promote the application to production</a>. We will check against our production checklist to ensure your application is ready for production from an administrative and technical standpoint.
+        When you are ready to go live our team will help you <a href=“{% link _pages/production.md %}” class="usa-link">promote the application to production</a>. We will check against our production checklist to ensure your application is ready for production from an administrative and technical standpoint.
       </p>
     </li>
 
