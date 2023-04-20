@@ -31,7 +31,7 @@ layout: home
  
  
 ![li_ steps-num (2)](https://user-images.githubusercontent.com/90725258/233142069-7855e0f2-4854-4c41-b80e-2b33a3dd2235.svg)
-Select between [OpenID Connect (OIDC)]({{site.baseurl }}/OIDC/) or [SAML]({{site.baseurl }}/saml/) implementation protocols. Please note that we recommend OIDC.
+Select between [OpenID Connect (OIDC)]({{site.baseurl }}/oidc/) or [SAML]({{site.baseurl }}/saml/) implementation protocols. Please note that we recommend OIDC.
 
 
 ![li_ steps-num (3)](https://user-images.githubusercontent.com/90725258/233142689-c0a1bd2c-e27b-49af-b357-3992d4282eb4.svg)
