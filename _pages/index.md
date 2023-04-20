@@ -53,14 +53,16 @@ layout: home
 
 <li class="usa-process-list__item padding-bottom-4">
     <p class="usa-process-list__heading font-sans-md margin-top-1 text-light">
-        When you are ready to go live our team will help you <a href=“{% link _pages/production.md %}” class="usa-link">promote the application to production</a>. We will check against our production checklist to ensure your application is ready for production from an administrative and technical standpoint.
+        When you are ready to go live our team will help you <a href="{% link _pages/production.md %}" class="usa-link">promote the application to production</a>. We will check against our production checklist to ensure your application is ready for production from an administrative and technical standpoint.
       </p>
     </li>
 
 <hr> 
 <h2> Integration support for developers </h2>
-If you are with a government agency partner, check our <a href=“{%link _pages/support.md%}” class="usa-link">FAQ</a> page for answers to the most common questions. If you need further technical assistance with an integration, submit a ticket to the <a href=“https://zendesk.login.gov” class="usa-link">Partner Support Help Desk</a>. 
-
-
-For help signing in or verifying your identity with Login.gov, please visit the <a href=“https://login.gov/help/” class="usa-link">Login.gov Help Center</a> or <a href=“https://login.gov/contact/” class="usa-link">contact us</a>.
+<p>
+If you are with a government agency partner, check our <a href="{% link _pages/support.md %}" class="usa-link">FAQ</a> page for answers to the most common questions. If you need further technical assistance with an integration, submit a ticket to the <a href="https://zendesk.login.gov/" class="usa-link">Partner Support Help Desk</a> 
+</p>
+<p>
+For help signing in or verifying your identity with Login.gov, please visit the <a href="https://login.gov/help/" class="usa-link">Login.gov Help Center</a> or <a href="https://login.gov/contact/" class="usa-link">contact us</a>.
+</p>
 
