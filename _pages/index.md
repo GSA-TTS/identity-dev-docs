@@ -23,8 +23,8 @@ layout: home
 
 <ol class="usa-process-list">
   <li class="usa-process-list__item padding-bottom-4">
-    <p class="usa-process-list__heading font-sans-xl line-height-sans-1">
-      Learn about the process the user will go through to access your application and what steps are involved in configuring your app on the [Integration]( {{ site.baseurl }}/overview/) page. 
+    <p class="usa-process-list__heading font-sans-lg margin-top-1 text-light">
+      Learn about the process the user will go through to access your application and what steps are involved in configuring your app on the [Integration]({%link _pages/overview.md%}) page. 
     </p>
   </li>
 
