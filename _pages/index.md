@@ -21,27 +21,43 @@ layout: home
 
 # How to integrate with Login.gov
 
-![li_ steps-num](https://user-images.githubusercontent.com/90725258/232106089-3d9e6fcc-2b2e-44bb-968e-6ec4e68cb516.svg)
- Your integration with Login.gov starts in the [sandbox dashboard](https://dashboard.int.identitysandbox.gov/) where you can register your app. 
+<ol class="usa-process-list">
+  <li class="usa-process-list__item padding-bottom-4">
+    <p class="usa-process-list__heading font-sans-xl line-height-sans-1">
+      Your integration with Login.gov starts in the [sandbox dashboard](https://dashboard.int.identitysandbox.gov/) where you can register your app.
+    </p>
+  </li>
 
 
-![li_ steps-num (1)](https://user-images.githubusercontent.com/90725258/233141022-f9c77712-ddfa-4806-920b-4c8f95af260d.svg)
- Determine your application needs, like the level of proofing and [user attributes]({{site.baseurl }}/attributes/) that will be requested.
+ <li class="usa-process-list__item padding-bottom-4">
+    <p class="usa-process-list__heading font-sans-xl line-height-sans-1">
+      Determine your application needs, like the level of proofing and [user attributes]({{site.baseurl }}/attributes/) that will be requested.
+    </p>
+  </li>
+
  
- 
-![li_ steps-num (2)](https://user-images.githubusercontent.com/90725258/233142069-7855e0f2-4854-4c41-b80e-2b33a3dd2235.svg)
-Select between [OpenID Connect (OIDC)]({{site.baseurl }}/oidc/) or [SAML]({{site.baseurl }}/saml/) implementation protocols. Please note that we recommend OIDC.
+<li class="usa-process-list__item padding-bottom-4">
+    <p class="usa-process-list__heading font-sans-xl line-height-sans-1">
+      Select between [OpenID Connect (OIDC)]({{site.baseurl }}/oidc/) or [SAML]({{site.baseurl }}/saml/) implementation protocols. Please note that we recommend OIDC.
+      </p>
+    </li>
 
 
-![li_ steps-num (3)](https://user-images.githubusercontent.com/90725258/233142689-c0a1bd2c-e27b-49af-b357-3992d4282eb4.svg)
-Configure your app in the sandbox and start [testing]({{site.baseurl }}/testing/)! We have implementation guides and example apps to get you up and running quickly.
+<li class="usa-process-list__item padding-bottom-4">
+    <p class="usa-process-list__heading font-sans-xl line-height-sans-1">
+      Configure your app in the sandbox and start [testing]({{site.baseurl }}/testing/)! We have implementation guides and example apps to get you up and running quickly.
+      </p>
+    </li>
 
 
-![li_ steps-num (4)](https://user-images.githubusercontent.com/90725258/233143103-818d4ef2-6265-4d70-9521-e3d2671e502c.svg)
-When you are ready to go live our team will help you [promote the application to production]({{site.baseurl }}/production/). 
+<li class="usa-process-list__item padding-bottom-4">
+    <p class="usa-process-list__heading font-sans-xl line-height-sans-1">
+      When you are ready to go live our team will help you [promote the application to production]({{site.baseurl }}/production/). 
 We will check against our production checklist to ensure your application is ready for production from an administrative and technical standpoint.
+      </p>
+    </li>
 
-![rule](https://user-images.githubusercontent.com/90725258/232109818-e379b186-f486-43dc-a3fd-cd151d1ec804.svg)
+![rule]
 
 ## Integration support for developers
 If you are with a government agency partner, check our [FAQ]( {{site.baseurl }}/support/) page for answers to the most common questions. If you need further technical assistance with an integration, submit a ticket to the [Partner Support Help Desk](https://zendesk.login.gov). 
