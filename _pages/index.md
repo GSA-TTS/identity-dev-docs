@@ -19,9 +19,9 @@ layout: home
     {% include alert.html content=site.temporary_alert %}
   {% endif %}
 
-<h2>How to integrate with Login.gov</h2>
+<h2 class='margin-top-0'>How to integrate with Login.gov</h2>
 
-<ol class="usa-process-list">
+<ol class="usa-process-list usa-prose margin-bottom-4">
   <li class="usa-process-list__item">
     <p>
       Learn about the process the user will go through to access your application and what steps are involved in configuring your app on the <a href="{% link _pages/overview.md %}" class="usa-link">Integration</a> page.
@@ -54,11 +54,15 @@ layout: home
   </li>
 </ol>
 
-<hr class='border-primary-light'>
-<h2>Integration support for developers</h2>
-<p>
-  If you are with a government agency partner, check our <a href="{% link _pages/support.md %}" class="usa-link">FAQ</a> page for answers to the most common questions. If you need further technical assistance with an integration, submit a ticket to the <a href="https://zendesk.login.gov/" class="usa-link">Partner Support Help Desk</a> 
-</p>
-<p>
-  For help signing in or verifying your identity with Login.gov, please visit the <a href="https://login.gov/help/" class="usa-link">Login.gov Help Center</a> or <a href="https://login.gov/contact/" class="usa-link">contact us</a>.
-</p>
+<hr class="text-primary-light border-solid">
+
+<h2 class='margin-top-4'>Integration support for developers</h2>
+<section class="usa-prose">
+  <p>
+    If you are with a government agency partner, check our <a href="{% link _pages/support.md %}" class="usa-link">FAQ</a> page for answers to the most common questions. If you need further technical assistance with an integration, submit a ticket to the <a href="https://zendesk.login.gov/" class="usa-link">Partner Support Help Desk</a> 
+  </p>
+  <p>
+    For help signing in or verifying your identity with Login.gov, please visit the <a href="https://login.gov/help/" class="usa-link">Login.gov Help Center</a> or <a href="https://login.gov/contact/" class="usa-link">contact us</a>.
+  </p>
+</section>
+</section>
