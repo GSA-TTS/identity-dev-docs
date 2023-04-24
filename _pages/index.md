@@ -54,7 +54,7 @@ layout: home
   </li>
 </ol>
 
-<hr class="text-primary-light border-solid">
+<hr class="text-primary-light border-solid measure-5 margin-x-0">
 
 <h2 class='margin-top-4'>Integration support for developers</h2>
 <section class="usa-prose">
