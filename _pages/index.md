@@ -56,8 +56,8 @@ layout: home
 
 <hr class="text-primary-light border-solid measure-5 margin-x-0">
 
-<section class="usa-prose">
-  <h2 class='margin-top-10'>Integration support for developers</h2>
+<section class="usa-prose margin-top-1">
+  <h2 class='margin-top-4'>Integration support for developers</h2>
   <p class="measure-5 margin-x-0">
     If you are with a government agency partner, check our <a href="{% link _pages/support.md %}" class="usa-link">FAQ</a> page for answers to the most common questions. If you need further technical assistance with an integration, submit a ticket to the <a href="https://zendesk.login.gov/" class="usa-link">Partner Support Help Desk</a> 
   </p>
