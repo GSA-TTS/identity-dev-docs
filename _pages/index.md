@@ -42,7 +42,7 @@ layout: home
 
   <li class="usa-process-list__item">
     <p>
-      Configure your app in the <a href="https://dashboard.int.identitysandbox.gov/" class="usa-link">sandbox dashboard</a> and start <a href="{% link _pages/testing.md %}" class="usa-link">testing</a>! We also have <a href="https://dashboard.int.identitysandbox.gov/" class="usa-link">example apps</a> to get you up and running quickly.
+      Configure your app in the <a href="https://dashboard.int.identitysandbox.gov/" class="usa-link">sandbox dashboard</a> and start <a href="{% link _pages/testing.md %}" class="usa-link">testing</a>! We also have examples of <a href="{% link _pages/oidc/#example-application %}" class="usa-link">OIDC</a> and <a href="{% link _pages/saml.md/#example-application %}" class="usa-link">SAML</a> apps to get you up and running quickly.
     </p>
   </li>
 
@@ -56,8 +56,8 @@ layout: home
 
 <hr class="text-primary-light border-solid measure-5 margin-x-0">
 
-<h2 class='margin-top-4'>Integration support for developers</h2>
 <section class="usa-prose">
+  <h2 class='margin-top-4'>Integration support for developers</h2>
   <p>
     If you are with a government agency partner, check our <a href="{% link _pages/support.md %}" class="usa-link">FAQ</a> page for answers to the most common questions. If you need further technical assistance with an integration, submit a ticket to the <a href="https://zendesk.login.gov/" class="usa-link">Partner Support Help Desk</a> 
   </p>
