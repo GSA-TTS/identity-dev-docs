@@ -42,7 +42,7 @@ layout: home
 
   <li class="usa-process-list__item">
     <p>
-      Configure your app in the <a href="https://dashboard.int.identitysandbox.gov/" class="usa-link">sandbox dashboard</a> and start <a href="{% link _pages/testing.md %}" target="_blank" class="usa-link">testing</a>! We also have examples of <a href="https://github.com/18F/identity-oidc-sinatra" class="usa-link">OIDC</a> and <a href="https://github.com/18F/identity-saml-sinatra" target="_blank" class="usa-link">SAML</a> apps to get you up and running quickly.
+      Configure your app in the <a href="https://dashboard.int.identitysandbox.gov/" target="_blank" class="usa-link usa-link--external">sandbox dashboard</a> and start <a href="{% link _pages/testing.md %}" class="usa-link">testing</a>! We also have examples of <a href="https://github.com/18F/identity-oidc-sinatra" target="_blank" class="usa-link usa-link--external">OIDC</a> and <a href="https://github.com/18F/identity-saml-sinatra" target="_blank" class="usa-link usa-link--external">SAML</a> apps to get you up and running quickly.
     </p>
   </li>
 
