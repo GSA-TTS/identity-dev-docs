@@ -13,7 +13,7 @@ whitelist:
   - jekyll-redirect-from
 
 copy_to_destination:
-  - node_modules/identity-style-guide/dist/assets
+  - node_modules/@18f/identity-design-system/dist/assets
 
 # Pages
 collections:

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "prebuild:css": "mkdir -p _site/assets/css",
-    "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css",
+    "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css --load-path=node_modules/@18f/identity-design-system/packages",
     "watch:css": "npm run build:css -- --watch",
     "pages": "npm run build:css"
   },
@@ -18,6 +18,6 @@
   "homepage": "https://github.com/18F/identity-dev-docs#readme",
   "dependencies": {
     "@18f/identity-build-sass": "^1.1.0",
-    "identity-style-guide": "^6.7.0"
+    "@18f/identity-design-system": "^7.0.1-beta.1"
   }
 }

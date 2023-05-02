@@ -90,31 +90,31 @@
     <div class="usa-overlay"></div>
 
     <header class="usa-header usa-header--extended" role="banner">
-      <div class="usa-nav-container">
-        <div class="usa-navbar">
-          <div class="usa-logo" id="basic-logo">
-            <a href="{{ site.baseurl }}/" title="Home" aria-label="Home">
-              <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg"
-                class="usa-logo__img"
-                alt="Login.gov"
-                role="img">
-              <em class="usa-logo__text">Developers</em>
-            </a>
-          </div>
-          <button class="usa-menu-btn">Menu</button>
+      <div class="usa-navbar">
+        <div class="usa-logo" id="basic-logo">
+          <a href="{{ site.baseurl }}/" title="Home" aria-label="Home">
+            <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg"
+              class="usa-logo__img"
+              alt="Login.gov"
+              role="img">
+            <em class="usa-logo__text">Developers</em>
+          </a>
         </div>
-        <nav role="navigation" class="usa-nav border-top-none">
+        <button class="usa-menu-btn">Menu</button>
+      </div>
+      <nav role="navigation" class="usa-nav border-top-none">
+        <div class="usa-nav__inner">
           <button class="usa-nav__close">
             <img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close" role="img">
           </button>
-          <ul class="usa-nav__primary usa-accordion" id="nav-links">
+          <ul class="usa-nav__primary usa-accordion">
             {% include nav/list.html
               links = site.data.nav.primary
               li_class = 'usa-nav__primary-item'
             %}
           </ul>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
 
     {{ content }}
