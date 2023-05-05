@@ -1,4 +1,10 @@
-@import "identity-style-guide/dist/assets/scss/packages/required";
+@use "uswds-core" as * with (
+  $theme-utility-breakpoints: (
+    "tablet": true,
+    "desktop": true,
+  )
+);
+@forward "uswds";
 
 .usa-prose {
   figure {
@@ -16,10 +22,6 @@
       font-size: 0.8em;
     }
   }
-}
-
-#nav-links {
-  width: fit-content !important;
 }
 
 .reversefootnote {
