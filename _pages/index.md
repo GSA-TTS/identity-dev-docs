@@ -8,7 +8,7 @@ layout: home
 
 <section class="usa-section usa-section--dark">
   <div class="grid-container">
-    <div class="usa-display">{{ page.title }}</div>
+    <h1 class="usa-display">{{ page.title }}</h1>
     <div class="usa-intro">{{ page.lead | markdownify }}</div>
   </div>
 </section>
