@@ -253,15 +253,15 @@ An example authentication request, with indentation added for readability.
 
 ### Specifying attributes and assurance levels
 
-The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the type of identity verification[^1], AAL (Authentication Assurance Level) and attributes requested.
+The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the type of identity verification<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, AAL (Authentication Assurance Level) and attributes requested.
 
-#### Type of Identity Verification[^1] {#identity-assurance-level-ial}
+#### Type of Identity Verification<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> {#identity-assurance-level-ial}
 
 To specify one of the supported IAL levels, place one of these values inside a `<saml:AuthnContextClassRef>` tag:
   - **`http://idmanagement.gov/ns/assurance/ial/1`**
       Basic identity assurance, does not require identity verification (this is the most common value).
   - **`http://idmanagement.gov/ns/assurance/ial/2`**
-      Requires that the user has gone through identity verification[^1]
+      Requires that the user has gone through identity verification<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
 
 #### Authentication Assurance Level (AAL)
 
@@ -562,4 +562,10 @@ The Login.gov team has created an example client to speed up your development, a
 
 ## Footnotes
 
-[^1]: Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization.
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization. <a href="./#fnref:1" class="reversefootnote" aria-label="Back to content 1" role="doc-backlink">&#8617;<sup>1</sup></a> <a href="#fnref:1:1" class="reversefootnote" aria-label="Back to content 2" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:1:2" class="reversefootnote" aria-label="Back to content 3" role="doc-backlink">&#8617;<sup>3</sup></a>
+    </li>
+  </ol>
+</div>
