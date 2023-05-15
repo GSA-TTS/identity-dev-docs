@@ -1,5 +1,10 @@
 ---
 title: Integration overview and user flow
+sidenav:
+  - text: User flow
+    href: "#user-flow"
+  - text: Service provider configuration
+    href: "#service-provider-configuration"
 ---
 
 Login.gov is a FedRAMP moderate approved multifactor authentication and identity proofing platform that makes online interactions with the U.S. government simple, efficient and intuitive.
