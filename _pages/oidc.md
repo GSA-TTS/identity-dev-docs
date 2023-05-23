@@ -94,18 +94,18 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 
 
 * **acr_values**
-  The Authentication Context Class Reference requests can be used to specify the type of identity verification[^1] or the AAL (Authentication Assurance Level) for the user. These and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response).
+  The Authentication Context Class Reference requests can be used to specify the type of identity verification<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response).
 
   Multiple values can be joined with a space (before being URI-escaped in the final URL)
 
-  #### Type of Identity Verification[^1] {#ial-values}
+  #### Type of Identity Verification<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> {#ial-values}
 
   A type of identity verification must be specified.
 
     - **`http://idmanagement.gov/ns/assurance/ial/1`**
         Basic identity assurance, does not require identity verification (this is the most common value).
     - **`http://idmanagement.gov/ns/assurance/ial/2`**
-        Requires that the user has gone through identity verification[^1]
+        Requires that the user has gone through identity verification<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
 
   #### AAL Values
   We default to requiring a user to be authenticated with a second factor:
@@ -486,4 +486,10 @@ The Login.gov team has created an example client to speed up your development, a
 
 ## Footnotes
 
-[^1]: Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization.
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization. <a href="./#fnref:1" class="reversefootnote" aria-label="Back to content 1" role="doc-backlink">&#8617;<sup>1</sup></a> <a href="#fnref:1:1" class="reversefootnote" aria-label="Back to content 2" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:1:2" class="reversefootnote" aria-label="Back to content 3" role="doc-backlink">&#8617;<sup>3</sup></a>
+    </li>
+  </ol>
+</div>
