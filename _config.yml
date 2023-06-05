@@ -8,9 +8,11 @@ temporary_alert: false
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 whitelist:
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 copy_to_destination:
   - node_modules/@18f/identity-design-system/dist/assets
