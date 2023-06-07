@@ -37,7 +37,7 @@ Make sure you have the following items ready before you start the deployment pro
 
 -   [Signed Interagency Agreement (IAA) listing this integration ](https://developers.login.gov/production/#confirm-iaa)
 
--   A new dedicated [production app configuration within the Dashboard](https://docs.google.com/document/d/1Lf5FnUBbfal_ha_H310_pLUl14DT9mXcekx5_hDgss8/edit#heading=h.y8sjd6rqdqsi) 
+-   A new dedicated [production app configuration within the Dashboard](https://dashboard.int.identitysandbox.gov/) 
     * All production urls should have .gov, .mil, or a dedicated .com address and point to an Authority to Operate (ATO) approved environment.
 
 -   A user account in the [Login.gov production environment](https://secure.login.gov)
