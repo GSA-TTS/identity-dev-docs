@@ -46,7 +46,7 @@ Login.gov provides a JSON endpoint for OpenID Connect auto-discovery at `/.well-
 
 ### Supported Incoming Events
 
-Login.gov accepts custom events, based on the [OpenID RISC Event Types][openid-risc-events], but not specific ones from that list at this time.
+Login.gov accepts custom events, based on the [OpenID RISC Event Types][openid-risc-events], but not specific events from that list at this time.
 
 {%- for event in site.data.risc_incoming %}
 - [{{ event.friendly_name }}](#{{ event.friendly_name | slugify }})
@@ -262,7 +262,7 @@ Example:
 
 Login.gov will make a POST request to your app's `push_notification_url`, see [Configuration](#configuration) for more details on setting that up. The JWT will be signed with Login.gov's private key. See the OpenID Connect guide for information on how to get Login.gov's public key from the [Certificates Endpoint](/oidc/#certificates).
 
-If your app had the client ID of `urn:gov:gsa:openidconnect:test:risc:sets` and was configured to receive events at `https://agency.example.gov/events`, and a user freed up `email@example.com` Login.gov would make a like this.
+If your app had the client ID of `urn:gov:gsa:openidconnect:test:risc:sets` and was configured to receive events at `https://agency.example.gov/events`, and a user freed up `email@example.com` Login.gov would make a request like this.
 
 With a JWT payload:
 
