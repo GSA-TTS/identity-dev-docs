@@ -9,7 +9,7 @@
     Login.gov pushes this event when a user deletes their account.
   payload_schema: &iss_sub_schema
     - key: subject
-      description: An event should will a **subject** object, with the following keys
+      description: An event will include a **subject** object, with the following keys
       properties:
         - key: subject_type
           type: string
@@ -41,7 +41,7 @@
     Login.gov pushes this event when a user removes an email address from their account, freeing up the email address as an identifier.
   payload_schema: &email_schema
     - key: subject
-      description: An event should will a **subject** object, with the following keys
+      description: An event will include a **subject** object, with the following keys
       properties:
         - key: subject_type
           type: string
@@ -65,7 +65,7 @@
   event_type: https://schemas.openid.net/secevent/risc/event-type/identifier-changed
   spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#rfc.section.2.5"
   description: >
-    Login.gov pushes this event when a user changes the email address on their account.
+    Login.gov pushes this event when a user changes the email address associated with their account.
   payload_schema:
     *email_schema
   example_payload: {
@@ -81,7 +81,7 @@
   event_type: https://schemas.login.gov/secevent/risc/event-type/mfa-limit-account-locked
   spec_url:
   description: >
-    Login.gov pushes this event when a user fails MFA (Multi-Factor Authentication) with their
+    Login.gov pushes this event when a user fails MFA with their
     second factor enough times to hit the rate limit, and is subsequently locked out of their
     account for a period of time.
   payload_schema:
@@ -134,8 +134,8 @@
   event_type: https://schemas.openid.net/secevent/risc/event-type/recovery-information-changed
   spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#rfc.section.2.9"
   description: >
-    Login.gov pushes this event when a user changes any of their second factor, for example,
-    adding or removing an email, phone address, TOTP authentication app, backup codes,
+    Login.gov pushes this event when a user changes any of their second factor authentication methods, 
+    for example, adding or removing an email, phone address, TOTP authentication app, backup codes,
     or PIV/CAC.
   payload_schema:
     *iss_sub_schema
@@ -153,7 +153,7 @@
   event_type: https://schemas.login.gov/secevent/risc/event-type/reproof-completed
   spec_url:
   description: >
-    Login.gov pushes this event when a user re-verifies their identity (goes through the identity
+    Login.gov pushes this event when a user re-verifies their identity (with the identity
     proofing process). This event is only sent if they previously had an active verified profile,
     not for the first-time identity verification.
   payload_schema:
