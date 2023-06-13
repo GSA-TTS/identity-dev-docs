@@ -361,9 +361,7 @@ Supported browsers
 </h4>
 <div id="csp" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1"  aria-expanded="true">
-<p>  
 Login.gov uses the <a class="usa-link" href="https://designsystem.digital.gov/">a US Web Design System (USWDS) </a> components on our websites. The current version (USWDS 3.0.0) supports the newest versions of Chrome, Firefox, and Safari. Internet Explorer 11 (IE11) is no longer officially supported and therefore is not recommended for use with Login.gov. If you experience issues connecting with Login.gov, try using one of the recommended browsers before contacting technical support.  
-</p>
 </div>
 </div>
 
@@ -418,8 +416,7 @@ SAML Signature Troubleshooting
 </button>
 </h4>
 <div id="tipstools" class="usa-accordion__container">
-<div class="usa-accordion__content" markdown="1"  aria-expanded="true">
-<p>  
+<div class="usa-accordion__content" markdown="1"  aria-expanded="true"> 
 Login.gov uses the cryptographic signatures of authentication requests to determine which public certificate to use when encrypting data in the SAML response. If the signature is not present, or cannot be validated successfully, you will encounter problems when you rotate your application’s key pair.
 
 <b> Check signature is present </b>
@@ -453,7 +450,7 @@ If the signature is not part of the URL, it may be part of the SAML request. To 
 
 One common reason for failing signature validation is the use of an unsupported hashing algorithm, like SHA1. <b>Login.gov only supports SHA256.</b> Using the methods described above, check whether your request either contains a SigAlg parameter indicating the use of SHA256, or your SAML includes a tag indicating this, for example:
 
-<code> <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /> </code>
+ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /
 
 <b>Check validity of signature</b>
 
@@ -465,7 +462,6 @@ There may be other reasons Login.gov cannot successfully validate your applicati
 </ul>
 
 If you find your signature cannot be validated using this process, you will have to investigate what may be causing these problems and make changes on your side until validation succeeds.
-</p>
 
 </div>
 </div>
