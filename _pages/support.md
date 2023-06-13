@@ -411,4 +411,61 @@ SAML requests from browser consoles are URI encoded, base-64-encoded, and deflat
 </div>
 </div>
 
+<h4 class="usa-accordion__heading">
+<button class="usa-accordion__button" aria-controls="tipstools">
+SAML Signature Troubleshooting
+</button>
+</h4>
+<div id="tipstools" class="usa-accordion__container">
+<div class="usa-accordion__content" markdown="1"  aria-expanded="true">
+Login.gov uses the cryptographic signatures of authentication requests to determine which public certificate to use when encrypting data in the SAML response. If the signature is not present, or cannot be validated successfully, you will encounter problems when you rotate your application’s key pair.
+
+<b> Check signature is present </b>
+
+If you are not sure whether your application is currently signing authentication requests, the easiest way to check is through the network tab in your browser's developer tools. Look for the URL generated when your app sends the user to Login.gov's sign-in page.
+
+The signature could be sent in one of two ways:
+<div>
+<ol class="usa-list">
+      <li>As a parameter within the URL,</li>
+      <li>or as a field within the authentication request’s SAML data.</li>
+    </ol>
+  </div>
+
+If the <b>Signature</b> and <b>SigAlg</b> URL parameters (and associated values) are present, your authentication request is signed.
+If the signature is not part of the URL, it may be part of the SAML request. To check this, you will need to decode the data sent via the <b>SAMLRequest</b> parameter. The easiest way to do this is the "SAML Tracer" browser plugin. Our <a class="usa-link" href="http://dashboard.int.identitysandbox.gov/tools">a web-based tool</a> can also help with this. Once decoded, you should see a section that contains all the relevant signature-related information and should be enclosed in a tag like:
+
+<code><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#"></code>
+
+<div class="usa-alert usa-alert--warning">
+  <div class="usa-alert__body">
+    <h4 class="usa-alert__heading">Warning status</h4>
+    <p class="usa-alert__text">
+        If there is no indication of a signature within the request URL or the request SAML, the request is not signed.
+    </p>
+  </div>
+</div>
+
+
+<b>Check the signature algorithm</b>
+
+One common reason for failing signature validation is the use of an unsupported hashing algorithm, like SHA1. <b>Login.gov only supports SHA256.</b> Using the methods described above, check whether your request either contains a SigAlg parameter indicating the use of SHA256, or your SAML includes a tag indicating this, for example:
+
+<code><ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /></code>
+
+<b>Check validity of signature</b>
+
+There may be other reasons Login.gov cannot successfully validate your application’s signatures using the information you have provided in the Login.gov Partner Dashboard for the application. We have created a <a class="usa-link" href="http://dashboard.int.identitysandbox.gov/tools">a web-based tool</a> that lets you check this easily. The following items must be provided to check the signature:
+<ul class="usa-list">
+<li> <b>Auth URL</b>: Paste the entire auth URL here (it should include parameters like SAMLRequest, Signature, SigAlg etc). If there is no Signature parameter in the URL, you can also only paste the value of the <b>SAMLRequest</b> parameter here.</li>
+                  
+<li> <b>Public Certificate</b>: Optionally, you can paste the public certificate (in PEM format) you want to check the signature against. If not provided, we will attempt to use the certificates you have added to your application’s configuration.</li>
+</ul>
+
+If you find your signature cannot be validated using this process, you will have to investigate what may be causing these problems and make changes on your side until validation succeeds.
+
+
+</div>
+</div>
+
 </div>
