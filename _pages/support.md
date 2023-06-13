@@ -17,7 +17,7 @@ sidenav:
 ---
 ### Login.gov support desk
 
-If you have techinical questions that are not covered by these FAQ's, submit a ticket to the <a
+If you have technical questions that are not covered by these FAQ's, submit a ticket to the <a
     class="usa-link usa-link--external"
     rel="noreferrer"
     target="_blank"
