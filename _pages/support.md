@@ -15,6 +15,14 @@ sidenav:
       - text: Other Tips & Tools
         href: "#other-tips--tools"
 ---
+### Login.gov support desk
+
+If you have techinical questions that are not covered by these FAQ's, submit a ticket to the <a
+    class="usa-link usa-link--external"
+    rel="noreferrer"
+    target="_blank"
+    href="https://zendesk.login.gov"
+    >Partner Support Help Desk</a>.
 
 ## Frequently Asked Questions
 
