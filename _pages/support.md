@@ -355,6 +355,17 @@ Use the Network tab of your web browser to identify which redirect (302) is hang
 </div>
 </div>
 
+<h4 class="usa-accordion__heading">
+<button class="usa-accordion__button" aria-controls="csp">
+Supported browsers
+</button>
+</h4>
+<div id="csp" class="usa-accordion__container">
+<div class="usa-accordion__content" markdown="1"  aria-expanded="true">
+Login.gov uses the <a class="usa-link" href="https://designsystem.digital.gov/">a US Web Design System (USWDS) </a> components on our websites. The current version (USWDS 3.0.0) supports the newest versions of Chrome, Firefox, and Safari. Internet Explorer 11 (IE11) is no longer officially supported and therefore is not recommended for use with Login.gov. If you experience issues connecting with Login.gov, try using one of the recommended browsers before contacting technical support.  
+</div>
+</div>
+
 </div>
 
 ### Other Application Issues
