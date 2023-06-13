@@ -353,6 +353,7 @@ This error occurs when Service Providers attempt to redirect users to a url that
 
 Use the Network tab of your web browser to identify which redirect (302) is hanging or failing. Add that uri to the list of Redirect URIs in your Login.gov Dashboard configuration.
 </div>
+</div>
 
 <h4 class="usa-accordion__heading">
 <button class="usa-accordion__button" aria-controls="csp">
