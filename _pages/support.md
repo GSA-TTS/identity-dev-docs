@@ -441,7 +441,7 @@ If the signature is not part of the URL, it may be part of the SAML request. To 
 
 <div class="usa-alert usa-alert--warning">
   <div class="usa-alert__body">
-    <h4 class="usa-alert__heading">Warning status</h4>
+    <h4 class="usa-alert__heading"></h4>
     <p class="usa-alert__text">
         If there is no indication of a signature within the request URL or the request SAML, the request is not signed.
     </p>
@@ -459,7 +459,7 @@ One common reason for failing signature validation is the use of an unsupported 
 
 <h5>Check validity of signature</h5>
 
-There may be other reasons Login.gov cannot successfully validate your application’s signatures using the information you have provided in the Login.gov Partner Dashboard for the application. We have created a <a class="usa-link" href="http://dashboard.int.identitysandbox.gov/tools">a web-based tool</a> that lets you check this easily. The following items must be provided to check the signature:
+There may be other reasons Login.gov cannot successfully validate your application’s signatures using the information you have provided in the Login.gov Partner Dashboard for the application. We have created a <a class="usa-link" href="http://dashboard.int.identitysandbox.gov/tools"> web-based tool</a> that lets you check this easily. The following items must be provided to check the signature:
 <ul class="usa-list">
 <li> <b>Auth URL</b>: Paste the entire auth URL here (it should include parameters like SAMLRequest, Signature, SigAlg etc). If there is no Signature parameter in the URL, you can also only paste the value of the <b>SAMLRequest</b> parameter here.</li>
                   
