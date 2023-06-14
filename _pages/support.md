@@ -433,7 +433,7 @@ The signature could be sent in one of two ways:
 </div>
 
 If the <b>Signature</b> and <b>SigAlg</b> URL parameters (and associated values) are present, your authentication request is signed.
-If the signature is not part of the URL, it may be part of the SAML request. To check this, you will need to decode the data sent via the <b>SAMLRequest</b> parameter. The easiest way to do this is the "SAML Tracer" browser plugin. Our <a class="usa-link" href="http://dashboard.int.identitysandbox.gov/tools">a web-based tool</a> can also help with this. Once decoded, you should see a section that contains all the relevant signature-related information and should be enclosed in a tag like:
+If the signature is not part of the URL, it may be part of the SAML request. To check this, you will need to decode the data sent via the <b>SAMLRequest</b> parameter. The easiest way to do this is the "SAML Tracer" browser plugin. Our <a class="usa-link" href="http://dashboard.int.identitysandbox.gov/tools">web-based tool</a> can also help with this. Once decoded, you should see a section that contains all the relevant signature-related information and should be enclosed in a tag like:
 
 ```
 <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
