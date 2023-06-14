@@ -356,12 +356,12 @@ Use the Network tab of your web browser to identify which redirect (302) is hang
 </div>
 
 <h4 class="usa-accordion__heading">
-<button class="usa-accordion__button" aria-controls="csp">
+<button class="usa-accordion__button" aria-controls="supportedbrowsers">
 Supported browsers
 </button>
 </h4>
-<div id="csp" class="usa-accordion__container">
-<div class="usa-accordion__content" markdown="1"  aria-expanded="true">
+<div id="supportedbrowsers" class="usa-accordion__container">
+<div class="usa-accordion__content" markdown="1">
 Login.gov uses the <a class="usa-link" href="https://designsystem.digital.gov/">a US Web Design System (USWDS) </a> components on our websites. The current version (USWDS 3.0.0) supports the newest versions of Chrome, Firefox, and Safari. Internet Explorer 11 (IE11) is no longer officially supported and therefore is not recommended for use with Login.gov. If you experience issues connecting with Login.gov, try using one of the recommended browsers before contacting technical support.  
 </div>
 </div>
@@ -412,11 +412,11 @@ SAML requests from browser consoles are URI encoded, base-64-encoded, and deflat
 </div>
 
 <h4 class="usa-accordion__heading">
-<button class="usa-accordion__button" aria-controls="tipstools">
+<button class="usa-accordion__button" aria-controls="samlsignaturetroubleshooting">
 SAML Signature Troubleshooting
 </button>
 </h4>
-<div id="tipstools" class="usa-accordion__container">
+<div id="samlsignaturetroubleshooting" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1"  aria-expanded="true"> 
 Login.gov uses the cryptographic signatures of authentication requests to determine which public certificate to use when encrypting data in the SAML response. If the signature is not present, or cannot be validated successfully, you will encounter problems when you rotate your application’s key pair.
 
