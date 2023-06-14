@@ -435,7 +435,9 @@ The signature could be sent in one of two ways:
 If the <b>Signature</b> and <b>SigAlg</b> URL parameters (and associated values) are present, your authentication request is signed.
 If the signature is not part of the URL, it may be part of the SAML request. To check this, you will need to decode the data sent via the <b>SAMLRequest</b> parameter. The easiest way to do this is the "SAML Tracer" browser plugin. Our <a class="usa-link" href="http://dashboard.int.identitysandbox.gov/tools">a web-based tool</a> can also help with this. Once decoded, you should see a section that contains all the relevant signature-related information and should be enclosed in a tag like:
 
-<code> <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#"> </code>
+```
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+```
 
 <div class="usa-alert usa-alert--warning">
   <div class="usa-alert__body">
@@ -451,7 +453,9 @@ If the signature is not part of the URL, it may be part of the SAML request. To 
 
 One common reason for failing signature validation is the use of an unsupported hashing algorithm, like SHA1. <b>Login.gov only supports SHA256.</b> Using the methods described above, check whether your request either contains a SigAlg parameter indicating the use of SHA256, or your SAML includes a tag indicating this, for example:
 
-ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /
+```
+<ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+```
 
 <b>Check validity of signature</b>
 
