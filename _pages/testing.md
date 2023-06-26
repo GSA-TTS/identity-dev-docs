@@ -17,7 +17,7 @@ In the sandbox environment, our [Dashboard](https://dashboard.int.identitysandbo
 
 Anybody with an email address ending in .gov or .mil can create an account in the sandbox environment. If you are a government contractor, ask your agency partner to help you gain access. If you are with a government entity that is not a federal agency (a state or municipality) and do not have an email ending in .gov or .mil, please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) to get access to the Dashboard. 
 
-1. Visit the dashboard at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov). Select the “Sign in” button in the upper-right corner to sign in or create a new account with the test Login.gov IdP in the sandbox environment (hosted at [idp.int.identitysandbox.gov](idp.int.identitysandbox.gov)). Please note that this is separate from your Login.gov production account. 
+1. Visit the dashboard at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov). Select the “Sign in” button in the upper-right corner to sign in or create a new account with the test Login.gov IdP in the sandbox environment hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov). Please note that this is separate from your Login.gov production account. 
 2. Once you are logged into your sandbox account, create a new team by selecting the “Continue” button under “Create your first team.” (If you have previously created a team you will select the “Create a new team” button.) Next you can add users to that team.
 3. After creating your team, select the Apps tab. This page is where you will find all of the test applications you and your team create.
 4. Select the “Create a new test app” button and fill out the form to register a new application with the Login.gov IdP in the test sandbox environment.
@@ -40,7 +40,7 @@ Our sandbox environment is smaller than our production environment and it is sha
 
 ## Testing identity proofing
 
-The Login.gov [sandbox test environment](https://idp.int.identitysandbox.gov/) is configured to pass most information that is entered during the proofing flow. This allows the proofing flow to be tested without the need to enter personally identifiable information (PII). There are [special values](https://docs.google.com/document/d/12bHmNtj9ucOK4rxNnudRxzWEYlhVTlL-9oBXmCzLyXo/edit#heading=h.jeztwwbf7xs4) that can be entered to simulate error states while testing in the Login.gov sandbox environment. **Never enter PII in the sandbox environment.**
+The Login.gov [sandbox test environment](https://idp.int.identitysandbox.gov/) is configured to pass most information that is entered during the proofing flow. This allows the proofing flow to be tested without the need to enter personally identifiable information (PII). There are [special values](https://developers.login.gov/testing/#personal-information-verification) that can be entered to simulate error states while testing in the Login.gov sandbox environment. **Never enter PII in the sandbox environment.**
 
 ### Document upload
 
