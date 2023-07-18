@@ -26,7 +26,7 @@ saml_year: 2023
 ---
 <div class="usa-alert usa-alert--warning">
 <div class="usa-alert__body">
-<p class="usa-alert__text"><b> Please note: The deployment process can take up to 2 weeks to complete </b></p>
+<p class="usa-alert__text"><b> Please note: The deployment process can take up to two weeks to complete. You may wish to have a grace period between when we deploy and when you add the Login.gov button to your site. </b></p>
 </div>
 </div>
 
@@ -140,11 +140,11 @@ Once you have:
 
 1.  [Confirmed that this integration is listed in a signed IAA](https://login.gov/partners/get-started/#interagency-agreement-iaa-process). **Do not request deployment if you are not certain that your application is listed in a signed IAA.**
 
-2.  [Created a production configuration app](https://developers.login.gov/production/#production-configuration-process) 
+2.  [Created a production configuration app](https://developers.login.gov/production/#production-configuration-process). 
 
-You are ready to submit a launch request through the [Partner Support Help Desk.](https://zendesk.login.gov). 
+You are ready to submit a launch request through the [Partner Support Help Desk](https://zendesk.login.gov). 
 
-All changes to integrations between Login.gov and your application must be reviewed and deployed. **We ask for at least 2 weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require 3 weeks notice in order to allow the domain for outbound communication.** Regular deployments occur every Monday and Thursday by the close of the business day. If the regular deployment is scheduled for a holiday, then it will be completed on an alternate day.
+All changes to integrations between Login.gov and your application must be reviewed and deployed. **We ask for at least two weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require three weeks notice in order to allow the domain for outbound communication.** We recommend a grace period between deployment and implementation on your site. Regular deployments occur every Monday and Thursday by the close of the business day. If the regular deployment is scheduled for a holiday, then it will be completed on an alternate day.
 
 Staging environment
 -------------------
@@ -157,8 +157,9 @@ If you wish to deploy an application to our staging environment, then create a "
 
 Changes to production applications
 ----------------------------------
+**Changes to the production app are not automatic and may take up to two weeks**.
 
-If you need to make any changes to your deployed integration, please update your production configuration app in the sandbox and test the changes you wish to deploy. **Changes to the production app are not automatic**. After you have confirmed the change, you must submit a change request through the [Partner Support Help Desk](https://zendesk.login.gov) to ensure the change takes effect in production
+If you need to make any changes to your deployed integration, please update your production configuration app in the sandbox and test the changes you wish to deploy. After you have confirmed the change, **you must submit a change request** through the [Partner Support Help Desk](https://zendesk.login.gov) to ensure the change takes effect in production.
 
 Certificate Rotation Process
 ----------------------------
