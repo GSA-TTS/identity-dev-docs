@@ -18,11 +18,11 @@ In the sandbox environment, our [Dashboard](https://dashboard.int.identitysandbo
 Anybody with an email address ending in .gov or .mil can create an account in the sandbox environment. If you are a government contractor, ask your agency partner to help you gain access. If you are with a government entity that is not a federal agency (a state or municipality) and do not have an email ending in .gov or .mil, please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) to get access to the Dashboard. 
 
 1. Visit the dashboard at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov). Select the “Sign in” button in the upper-right corner to sign in or create a new account with the test Login.gov IdP in the sandbox environment hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov). Please note that this is separate from your Login.gov production account. 
-2. Once you are logged into your sandbox account, create a new team by selecting the “Continue” button under “Create your first team.” (If you have previously created a team you will select the “Create a new team” button.) Next you can add users to that team.
+2. Once you are logged into your sandbox account, create a new team by selecting the “Continue” button under “Create your first team". (If you have previously created a team you will select the “Create a new team” button.) Next you can add users to that team.
 3. After creating your team, select the Apps tab. This page is where you will find all of the test applications you and your team create.
 4. Select the “Create a new test app” button and fill out the form to register a new application with the Login.gov IdP in the test sandbox environment.
 5. Start testing! If you need to troubleshoot an issue that is not covered in the [developer documentation]({% link _pages/index.md %}), please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov). We can also add you to our partner support Slack channel and the Login.gov team will help you along the way.
-6. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your application's promotion to production.
+6. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your application's promotion to production. The move to production may take up to two weeks.
 
 ### Creating a public certificate
 
