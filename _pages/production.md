@@ -144,7 +144,7 @@ Once you have:
 
 You are ready to submit a launch request through the [Partner Support Help Desk](https://zendesk.login.gov). 
 
-All changes to integrations between Login.gov and your application must be reviewed and deployed. **We ask for at least two weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require three weeks notice in order to allow the domain for outbound communication.** We recommend a grace period between deployment and implementation on your site. Regular deployments occur every Monday and Thursday by the close of the business day. If the regular deployment is scheduled for a holiday, then it will be completed on an alternate day.
+All changes to integrations between Login.gov and your application must be reviewed and deployed. **We ask for at least two weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require three weeks notice in order to allow the domain for outbound communication.** We recommend a grace period between deployment and implementation on your site. Regular deployments occur every Tuesday and Thursday by the close of the business day. If the regular deployment is scheduled for a holiday, then it will be completed on an alternate day.
 
 Staging environment
 -------------------
