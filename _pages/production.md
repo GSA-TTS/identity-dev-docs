@@ -157,7 +157,7 @@ If you wish to deploy an application to our staging environment, then create a "
 
 Changes to production applications
 ----------------------------------
-**Changes to the production app are not automatic and may take up to two weeks**.
+**Changes to the production app are not automatic and may take up to two weeks.**
 
 If you need to make any changes to your deployed integration, please update your production configuration app in the sandbox and test the changes you wish to deploy. After you have confirmed the change, **you must submit a change request** through the [Partner Support Help Desk](https://zendesk.login.gov) to ensure the change takes effect in production.
 
