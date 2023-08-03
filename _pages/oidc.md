@@ -116,7 +116,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
   Stricter behavior can be specified by adding one of:
 
     - **`http://idmanagement.gov/ns/assurance/aal/2`**
-        This is the same as the default behavior except users must reauthenticate with a separate second factor (i.e. not a session secret) once every 12 hours.
+        This specifies that a user has been authenticated with a separate second factor. Users must _always_ authenticate with a second factor.
     - **`http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true`**
         This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC. Users must _always_ authenticate with a second factor.
     - **`http://idmanagement.gov/ns/assurance/aal/2?hspd12=true`**
@@ -147,15 +147,6 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 
 * **code_challenge_method** -- *required for PKCE*
   This must be `S256`, the only PKCE code challenge method supported.
-
-* **prompt** -- *optional, requires administrator approval*
-  To force a re-authorization event when a current IdP session is active, you will need to set the `prompt` attribute to `login`, like this: `prompt=login`.
-
-  Request permission for your application to do this by [submitting a support request](https://logingov.zendesk.com/).
-
-  **User experience**
-
-  If prompt is not specified and the user has an active IdP session, they are given the choice to continue authenticating or login with another account.
 
 * **response_type**
   This must be `code`.
