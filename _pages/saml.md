@@ -273,7 +273,7 @@ We default to requiring a user to be authenticated with a second factor:
 To specify more restrictive behavior, add an additional `<saml:AuthnContextClassRef>` with one of these values:
 
   - **`http://idmanagement.gov/ns/assurance/aal/2`**
-      This is the same as the default behavior except users must reauthenticate with a separate second factor (i.e. not a session secret) once every 12 hours.
+      This specifies that a user has been authenticated with a separate second factor. Users must _always_ authenticate with a second factor.
   - **`http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true`**
       This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC. Users must _always_ authenticate with a second factor.
   - **`http://idmanagement.gov/ns/assurance/aal/2?hspd12=true`**
