@@ -392,8 +392,6 @@ An example authentication response, after it has been base64 decoded, with inden
 
 ### Logout request
 
-A log out link on your site should also log out the user from the Login.gov site.
-
 Login.gov does not support Single Logout (SLO). The logout action will terminate the user's session at Login.gov but will not end any other potentially active sessions within service provider applications. For example, if a user signs in to applications A and B through Login.gov, a logout request from A will end their Login.gov session, but will not affect the session in application B.
 
 To log a user out, direct them to the logout URL with a `SAMLRequest`:
