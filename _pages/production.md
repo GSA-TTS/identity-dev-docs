@@ -151,10 +151,6 @@ Staging environment
 
 We recommend using the sandbox environment to test your new app before requesting deployment. Many partners choose to create a separate staging app in our sandbox environment for testing because changes in the sandbox environment take effect immediately without waiting for review and deployment. You can determine and implement changes quickly and without submitting a support ticket.  
 
-**If you are testing an integration with identity proofed accounts, then we also offer an ATO-ed staging environment for limited testing.** You must have a signed [IAA](https://developers.login.gov/production/#confirm-interagency-agreement-iaa) in order to deploy to staging. Our staging environment is approved for PII, which can be useful in certain test cases. However, any configuration changes in the staging environment must be reviewed and deployed.
-
-If you wish to deploy an application to our staging environment, then create a "staging" configuration app like the "production" configuration app described in the [Production configuration process](https://developers.login.gov/production/#production-configuration-process) section.
-
 Changes to production applications
 ----------------------------------
 **Changes to the production app are not automatic and may take up to two weeks.**
