@@ -16,6 +16,8 @@ sidenav:
     href: "#production-endpoints"
   - text: Request deployment
     href: "#request-deployment"
+  - text: Staging environment
+    href: "#staging-environment"
   - text: Changes to production applications
     href: "#changes-to-production-applications"
   - text: Certificate Rotation Process
@@ -143,6 +145,11 @@ Once you have:
 You are ready to submit a launch request through the [Partner Support Help Desk](https://zendesk.login.gov). 
 
 All changes to integrations between Login.gov and your application must be reviewed and deployed. **We ask for at least two weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require three weeks notice in order to allow the domain for outbound communication.** We recommend a grace period between deployment and implementation on your site. Regular deployments occur every Tuesday and Thursday by the close of the business day. If the regular deployment is scheduled for a holiday, then it will be completed on an alternate day.
+
+Staging environment
+-------------------
+
+We recommend using the sandbox environment to test your new app before requesting deployment. Many partners choose to create a separate staging app in our sandbox environment for testing because changes in the sandbox environment take effect immediately without waiting for review and deployment. You can determine and implement changes quickly and without submitting a support ticket.  
 
 Changes to production applications
 ----------------------------------
