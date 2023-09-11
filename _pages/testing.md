@@ -36,7 +36,7 @@ Make sure you're using the corresponding private key in your application to sign
 
 ## Automated/Load Testing
 
-Our sandbox environment is smaller than our production environment and it is shared by many of our partners. For this reason, please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) before performing automated tests that will exceed 1000 requests/minute. Our Partner Support Help Desk is not able to assist with setting up automated tests, but are happy to discuss options to meet your needs.
+Our sandbox environment is smaller than our production environment and it is shared by many of our partners. For this reason, please do not perform automated tests that exceed 1000 requests/minute. Our Partner Support Help Desk is not able to assist with setting up automated tests, but are happy to discuss options to meet your needs.
 
 ## Testing identity proofing
 
