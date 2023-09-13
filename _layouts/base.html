@@ -99,10 +99,6 @@
             <em class="usa-logo__text">Developers</em>
           </a>
         </div>
-        <div>
-          {% include search.html id="header-nav" %}
-        </div>
-
         <button class="usa-menu-btn">Menu</button>
       </div>
       <nav role="navigation" class="usa-nav border-top-none">
@@ -110,6 +106,12 @@
           <button class="usa-nav__close">
             <img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close" role="img">
           </button>
+          <div class="usa-nav__secondary">
+            <ul class="usa-nav__secondary-links"></ul>
+            <section aria-label="Search component">
+              {% include search.html id="header-nav" %}
+            </section>
+          </div>
           <ul class="usa-nav__primary usa-accordion">
             {% include nav/list.html
               links = site.data.nav.primary
