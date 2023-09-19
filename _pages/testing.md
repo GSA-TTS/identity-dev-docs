@@ -36,11 +36,11 @@ Make sure you're using the corresponding private key in your application to sign
 
 ## Load Testing
 
-Our sandbox environment is smaller than our production environment and it is shared by many of our partners. It has not been configured for load testing and is likely to crash. **For these reasons, our reccomendation is to mock out the Login.gov portion of your load tests.** We thoroughly load test our infrastructure and can provide data on our capabilities upon request.
+Our sandbox environment is smaller than our production environment and it is shared by many of our partners. It has not been configured for load testing and is likely to crash. **For these reasons, our recommendation is to mock out the Login.gov portion of your load tests.** We thoroughly load test our infrastructure and can provide data on our capabilities upon request.
 
 ## Automated Testing
 
-**Similar to load testing, we strongly reccomend stubbing out the portion of your tests that require signing a user into Login.gov or creating an account.** This is especially true for applications using identity verification, because we are frequently making updates to the code and the flow is likely to change and could unexpectedly break your tests. 
+**Similar to load testing, we strongly recommend stubbing out the portion of your tests that require signing a user into Login.gov or creating an account.** This is especially true for applications using identity verification, because we are frequently making updates to the code and the flow is likely to change and could unexpectedly break your tests. 
 
 If you are looking for reccomendations for automated testing, we do not have any specific advice. There are many different frameworks and automated testing suites available to choose from, and our partners usually pick based on their own unique needs. Regardless of which suite you choose, it should be noted that you cannot bypass the MFA portion of the flow. It is intentionally designed this way for security purposes and another reason why we reccomend stubbing out our flow. 
 
