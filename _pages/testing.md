@@ -44,7 +44,7 @@ Our sandbox environment is smaller than our production environment and it is sha
 
 If you are looking for reccomendations for automated testing, we do not have any specific advice. There are many different frameworks and automated testing suites available to choose from, and our partners usually pick based on their own unique needs. Regardless of which suite you choose, it should be noted that you cannot bypass the MFA portion of the flow. It is intentionally designed this way for security purposes and another reason why we reccomend stubbing out our flow. 
 
-While Login.gov partner support channels have provided some support for automated testing in the past, as of 09/20/2023,  will no longer be able to provide assistance in this area.
+While Login.gov partner support channels have provided some support for automated testing in the past, as of 09/20/2023, will no longer be able to provide assistance in this area.
 
 ## Testing identity proofing
 
