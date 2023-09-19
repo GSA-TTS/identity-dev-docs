@@ -40,9 +40,9 @@ Our sandbox environment is smaller than our production environment and it is sha
 
 ## Automated Testing
 
-**Similar to load testing, we strongly recommend stubbing out the portion of your tests that require signing a user into Login.gov or creating an account.** This is especially true for applications using identity verification, because we are frequently making updates to the code and the flow is likely to change and could unexpectedly break your tests. 
+**Login.gov cannot provide specific recommendations for automated testing.** This is especially true for applications using identity verification, because we are frequently making updates to the code and the flow is likely to change and could unexpectedly break your tests. 
 
-If you are looking for recommendations for automated testing, we do not have any specific advice. There are many different frameworks and automated testing suites available to choose from, and our partners usually pick based on their own unique needs. Regardless of which suite you choose, it should be noted that you cannot bypass the MFA portion of the flow. It is intentionally designed this way for security purposes and another reason why we recommend stubbing out our flow. 
+If you are looking for recommendations for automated testing, we do not have any specific advice. There are many different frameworks and automated testing suites available to choose from, and our partners usually pick based on their own unique needs. **Regardless of which suite you choose, it should be noted that you cannot bypass the MFA portion of the flow.** It is intentionally designed this way for security purposes and another reason why we recommend stubbing out our flow. 
 
 While Login.gov partner support channels have provided some support for automated testing in the past, as of 09/20/2023, will no longer be able to provide assistance in this area.
 
