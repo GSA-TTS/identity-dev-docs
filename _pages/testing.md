@@ -36,7 +36,7 @@ Make sure you're using the corresponding private key in your application to sign
 
 ## Load Testing
 
-Our sandbox environment is smaller than our production environment and it is shared by many of our partners. It has not been configured for load testing and is likely to crash. **For these reasons, our recommendation is to mock out the Login.gov portion of your load tests.** We thoroughly load test our infrastructure and can provide data on our capabilities upon request.
+Our sandbox environment is smaller than our production environment and it is shared by many of our partners. It has not been configured for load testing. **For these reasons, our recommendation is to mock out the Login.gov portion of your load tests.** We thoroughly load test our infrastructure and can provide data on our capabilities upon request.
 
 ## Automated Testing
 
