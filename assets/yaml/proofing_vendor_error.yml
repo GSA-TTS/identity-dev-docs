@@ -1,0 +1,15 @@
+document:
+  type: license
+  first_name: Parse
+  last_name: Smith
+  middle_name: Q
+  address1: 1 Microsoft Way
+  address2: Apt 3
+  city: Bayside
+  state: WA
+  zipcode: '99237'
+  dob: 10/06/2000
+  phone: +1 206-555-1212
+  state_id_number: '123456789'
+  state_id_type: drivers_license
+  state_id_jurisdiction: 'WA'
