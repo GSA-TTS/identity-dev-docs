@@ -107,6 +107,23 @@ Login.gov collects and verifies personal information during the proofing process
 
 To simulate a failure, enter a social security number that does not start with “900” or “666”, such as “123-45-6789”.
 
+You can simulate failure to contact a proofing vendor by entering a social security number of “000-00-0000”. See ["proofing vendor errors"](#proofing-vendor-errors) for more ways to simulate vendor errors.
+
+### Proofing vendor errors
+
+To simulate issues with proofing vendor responses, create a YAML file that includes a specific `first_name` field, as specified below. Save the example YAML file below and edit the `first_name` field to give the result you want.
+
+|first_name| Result|
+|--------|--------|
+| Bad | unverified user |
+| Fail | failed to contact vendor |
+| Parse | parse error in vendor response |
+| Time | vendor timeout |
+
+To simulate failure to verify a zipcode, enter “00000” for the user's zipcode.
+
+Sample YAML file:
+{% include yaml_download.md filename="proofing_vendor_error.yml" %}
 
 ### Issuing source verification for ID documents
 
