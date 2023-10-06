@@ -32,3 +32,14 @@
 .reversefootnote {
   @include u-font-family("mono");
 }
+
+.usa-in-page-nav {
+  position: sticky;
+  top: 2rem;
+}
+
+.usa-footer__return-to-top .return-to-top-button {
+  position: sticky;
+  height: 40px;
+  top: calc(100vh - 40px + 2rem);
+}
