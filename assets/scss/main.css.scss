@@ -33,13 +33,8 @@
   @include u-font-family("mono");
 }
 
-.usa-in-page-nav {
+.usa-layout-docs__sidenav {
   position: sticky;
   top: 2rem;
-}
-
-.usa-footer__return-to-top .return-to-top-button {
-  position: sticky;
-  height: 40px;
-  top: calc(100vh - 40px + 2rem);
+  height: 100vh;
 }
