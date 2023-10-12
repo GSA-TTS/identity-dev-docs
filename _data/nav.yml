@@ -5,33 +5,6 @@ primary:
     href: /overview/
   - text: OpenID Connect
     href: /oidc/
-    sidenav:
-      - text: Getting started
-        href: "#getting-started"
-      - text: Authorization
-        href: "#authorization"
-        links:
-          - text: Authorization response
-            href: "#authorization-response"
-      - text: Token
-        href: "#token"
-        links:
-          - text: Token response
-            href: "#token-response"
-      - text: User info
-        href: "#user-info"
-        links:
-          - text: User info response
-            href: "#user-info-response"
-      - text: Certificates
-        href: "#certificates"
-      - text: Logout
-        href: "#logout"
-        links:
-          - text: Logout response
-            href: "#logout-response"
-      - text: Example application
-        href: "#example-application"
   - text: SAML
     href: /saml/
   - text: Attributes
