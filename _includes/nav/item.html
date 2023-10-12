@@ -14,8 +14,10 @@
     {{ include.link.text | smartify }}
   </span>
 </a>
+
 {% if include.link.links -%}
   <ul class="{{ include.ul_class }}">
+
     {% include nav/list.html
       links = include.link.links
       li_class = include.li_class
@@ -23,3 +25,14 @@
     %}
   </ul>
 {% endif -%}
+
+{% if is_current_page %}
+
+  <ul class="{{ include.subnav_ul_class }}">
+      {% include nav/list.html
+        links = include.link.sidenav
+        li_class = include.li_class
+        ul_class = include.subnav_ul_class
+      %}      
+  </ul>
+{% endif %}
