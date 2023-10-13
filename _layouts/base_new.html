@@ -106,14 +106,18 @@
             <button class="usa-nav__close">
               <img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close" role="img">
             </button>
-            <ul class="usa-nav__primary usa-accordion">
+            <ul class="usa-nav__primary usa-accordion bg-white">
               {% include nav/list.html
                 links = site.data.nav.primary
                 li_class = 'usa-nav__primary-item'
+                subnav_ul_class = 'desktop:display-none usa-sidenav__sublist'
               %}
             </ul>
           </div>
         </nav>
+      </header>
+      {% if page.lead %}
+      <header>
         <section class="usa-section usa-dark-background usa-section--dark">
           <div class="grid-container">
             <h1 class="usa-display text-normal">{{ page.title }}</h1>
@@ -121,6 +125,7 @@
           </div>
         </section>
       </header>
+      {% endif %}
 
       {{ content }}
 
