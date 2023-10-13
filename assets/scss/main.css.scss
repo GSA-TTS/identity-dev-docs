@@ -33,6 +33,25 @@
   @include u-font-family("mono");
 }
 
+
+@media (min-width: 1024px) {
+
+  .layout-container {
+    min-width: 49rem;
+    max-width: 100rem;
+  }
+  
+
+  .usa-header--extended .usa-navbar {
+    max-width: 100%;
+    background-color: white;
+  }
+  .usa-header--extended .usa-nav__inner {
+    max-width: 100%;
+    margin-left: 0px;
+  }
+}
+
 .usa-layout-docs__sidenav {
   top: 2rem;
 }

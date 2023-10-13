@@ -60,4 +60,4 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: documentation
+      layout: docnew
