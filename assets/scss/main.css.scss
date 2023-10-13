@@ -32,3 +32,7 @@
 .reversefootnote {
   @include u-font-family("mono");
 }
+
+.usa-layout-docs__sidenav {
+  top: 2rem;
+}

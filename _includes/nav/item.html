@@ -23,3 +23,13 @@
     %}
   </ul>
 {% endif -%}
+
+{% if is_current_page %}
+  <ul class="{{ include.subnav_ul_class }}">
+      {% include nav/list.html
+        links = page.sidenav
+        li_class = include.li_class
+        ul_class = include.subnav_ul_class
+      %}      
+  </ul>
+{% endif %}
