@@ -224,7 +224,7 @@ To configure your application to receive notifications from Login.gov, supply Lo
 #### Production environment:
 
 - The `push_notification_url` will be deployed as part of the application promotion process. Please specify in the
-promotion request that you are including a SET configuration so tht we know to add your URL to the outbound proxy.
+promotion request that you are including a SET configuration so that we know to add your URL to our outbound proxy allowlist.
 
 ### Supported Outgoing Events
 
