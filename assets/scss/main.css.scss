@@ -47,7 +47,11 @@
     max-width: max-content;
   }
 
-  .grid-container.grid-container__full {
+  .grid-container.grid-container__full-width {
+    max-width: 100%;
+  }
+
+  .usa-navbar.usa-navbar__full-width {
     max-width: 100%;
   }
 
