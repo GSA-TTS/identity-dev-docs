@@ -3,12 +3,12 @@ layout: base
 ---
 
 <main class="usa-layout-docs usa-section" id="main-content">
-  <div class="grid-container">
+  <div class="grid-container grid-container__full">
     {% if page.sidenav %}
       <div class="grid-row grid-gap">
-        <aside class="usa-layout-docs__sidenav desktop:grid-col-3 position-sticky tablet-lg:height-viewport">
+        <aside class="usa-layout-docs__sidenav desktop:grid-col-2 position-sticky tablet-lg:height-viewport desktop:display-block mobile:display-none">
           <nav>
-            <ul class="usa-sidenav">
+            <ul class="usa-sidenav usa-sidenav__maxwidth-content">
               {% include nav/list.html
                 links = page.sidenav
                 li_class = 'usa-sidenav__item'
@@ -18,20 +18,19 @@ layout: base
           </nav>
         </aside>
 
-        <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
+        <div class="usa-layout-docs__main desktop:grid-col-7 usa-prose">
 
           {% if site.temporary_alert %}
             {% include alert.html content=site.temporary_alert %}
           {% endif %}
-
-          <h1 class="usa-display">{{ page.title }}</h1>
-
-          {% if page.lead %}
-            <div class="usa-intro">{{ page.lead | markdownify }}</div>
-          {% endif %}
+  
 
           {{ content }}
         </div>
+        <!-- <div class="usa-layout-docs__main desktop:grid-col-2 ">
+            CODE SNIPPETS WILL GO HERE
+            see example at _includes/snippets/oidc
+        </div> -->
       </div>
     {% else %}
       <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
@@ -43,8 +42,10 @@ layout: base
         <h1 class="usa-display">{{ page.title }}</h1>
 
         {% if page.lead %}
-          <div class="usa-intro">{{ page.lead | markdownify }}</div>
+        <div class="usa-intro">{{ page.lead | markdownify }}</div>
         {% endif %}
+
+
 
         {{ content }}
       </div>

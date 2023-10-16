@@ -87,74 +87,84 @@
     </section>
 
     <div class="usa-overlay"></div>
-
-    <header class="usa-header usa-header--extended" role="banner">
-      <div class="usa-navbar">
-        <div class="usa-logo" id="basic-logo">
-          <a href="{{ site.baseurl }}/" title="Home" aria-label="Home">
-            <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg"
-              class="usa-logo__img"
-              alt="Login.gov"
-              role="img">
-            <em class="usa-logo__text">Developers</em>
-          </a>
-        </div>
-        <button class="usa-menu-btn">Menu</button>
-      </div>
-      <nav role="navigation" class="usa-nav border-top-none">
-        <div class="usa-nav__inner">
-          <button class="usa-nav__close">
-            <img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close" role="img">
-          </button>
-          <div class="usa-nav__secondary">
-            <ul class="usa-nav__secondary-links"></ul>
-            <section aria-label="Search component">
-              {% include search.html id="header-nav" %}
-            </section>
-          </div>
-          <ul class="usa-nav__primary usa-accordion">
-            {% include nav/list.html
-              links = site.data.nav.primary
-              li_class = 'usa-nav__primary-item'
-              subnav_ul_class = 'desktop:display-none usa-sidenav__sublist'
-            %}
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    {{ content }}
-
-    <footer class="usa-footer usa-footer--slim" role="contentinfo" aria-label="GSA footer">
-      <div class="grid-container usa-footer__return-to-top">
-        <div class="grid-row flex-align-center">
-          <div class="grid-col flex-1">
-            <a href="#">Return to top</a>
-          </div>
-          <div class="grid-col flex-auto">
-            <a href="{{ site.github_repo_url }}/edit/main/{{ page.path }}" class="usa-button usa-button--outline">Edit this page</a>
-          </div>
-        </div>
-      </div>
-      <div class="usa-footer__secondary-section">
-        <div class="grid-container">
-          <div class="usa-footer__logo grid-row grid-gap-2">
-            <div class="grid-col-auto">
-              <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg"
-                alt="U.S. General Services Administration logo"
-                class="usa-footer__logo-img usa-footer__slim usa-footer__medium"
+      <header class="usa-header usa-header--extended" role="banner">
+        <div class="usa-navbar">
+          <div class="usa-logo" id="basic-logo">
+            <a href="{{ site.baseurl }}/" title="Home" aria-label="Home">
+              <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg"
+                class="usa-logo__img"
+                alt="Login.gov"
                 role="img">
+              <em class="usa-logo__text">Developers</em>
+            </a>
+          </div>
+          <button class="usa-menu-btn">Menu</button>
+        </div>
+        <nav role="navigation" class="usa-nav border-top-none">
+          <div class="usa-nav__inner usa-nav__inner__no-margin">
+            <button class="usa-nav__close">
+              <img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close" role="img">
+            </button>
+            <div class="usa-nav__secondary">
+              <ul class="usa-nav__secondary-links"></ul>
+              <section aria-label="Search component">
+                {% include search.html id="header-nav" %}
+              </section>
             </div>
-            <div class="grid-col-auto">
-              <h3 class="usa-footer__logo-heading">U.S. General Services Administration</h3>
+            <ul class="usa-nav__primary usa-accordion">
+              {% include nav/list.html
+                links = site.data.nav.primary
+                li_class = 'usa-nav__primary-item'
+                subnav_ul_class = 'desktop:display-none usa-sidenav__sublist'
+              %}
+            </ul>
+          </div>
+        </nav>
+      </header>
+      {% if page.sidenav %}
+      <header>
+        <section class="usa-section usa-dark-background usa-section--dark">
+          <div class="hero mobile:margin-105">
+            <h1 class="usa-display title">{{ page.title }}</h1>
+            <div class="usa-intro">{{ page.lead | markdownify }}</div>
+          </div>
+        </section>
+      </header>
+      {% endif %}
+
+      {{ content }}
+
+      <footer class="usa-footer usa-footer--slim" role="contentinfo" aria-label="GSA footer">
+        <div class="grid-container usa-footer__return-to-top">
+          <div class="grid-row flex-align-center">
+            <div class="grid-col flex-1">
+              <a href="#">Return to top</a>
             </div>
-            <div class="grid-col-fill text-right">
-              <a href="https://status.login.gov/">System Status</a>
+            <div class="grid-col flex-auto">
+              <a href="{{ site.github_repo_url }}/edit/main/{{ page.path }}" class="usa-button usa-button--outline">Edit this page</a>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+        <div class="usa-footer__secondary-section">
+          <div class="grid-container">
+            <div class="usa-footer__logo grid-row grid-gap-2">
+              <div class="grid-col-auto">
+                <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg"
+                  alt="U.S. General Services Administration logo"
+                  class="usa-footer__logo-img usa-footer__slim usa-footer__medium"
+                  role="img">
+              </div>
+              <div class="grid-col-auto">
+                <h3 class="usa-footer__logo-heading">U.S. General Services Administration</h3>
+              </div>
+              <div class="grid-col-fill text-right">
+                <a href="https://status.login.gov/">System Status</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
 
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
     <script src="{{ site.baseurl }}/assets/js/anchor.js"></script>

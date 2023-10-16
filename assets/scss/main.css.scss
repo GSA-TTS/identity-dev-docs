@@ -1,5 +1,6 @@
 @use "uswds-core" as * with (
   $theme-utility-breakpoints: (
+    "mobile": true,
     "tablet": true,
     "desktop": true,
   )
@@ -36,28 +37,26 @@
 
 @media (min-width: 1024px) {
 
-  .layout-container {
-    min-width: 49rem;
-    max-width: 100rem;
+  .hero {
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
 
-  .usa-header--extended .usa-navbar {
-    max-width: 100%;
-    background-color: white;
+  .usa-sidenav.usa-sidenav__maxwidth-content {
+    max-width: max-content;
   }
-  .usa-header--extended .usa-nav__inner {
+
+  .grid-container.grid-container__full {
     max-width: 100%;
+  }
+
+  .usa-header--extended .usa-nav__inner.usa-nav__inner__no-margin {
     margin-left: 0px;
+    max-width: 100%;
   }
 }
 
 .usa-layout-docs__sidenav {
   top: 2rem;
-}
-
-@media (min-width: 880px) {
-  .tablet-lg\:height-viewport {
-    height: 100vh;
-  }
 }
