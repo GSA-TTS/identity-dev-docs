@@ -42,3 +42,14 @@
     height: 100vh;
   }
 }
+
+@media (max-width: 1023px) {
+  .mobile\:display-none {
+    display: none;
+  }
+}
+
+.return-to-top-button > img {
+  // Change the chevron to #0071bb from #000000
+  filter: invert(21%) sepia(72%) saturate(4106%) hue-rotate(190deg) brightness(95%) contrast(101%);
+}
