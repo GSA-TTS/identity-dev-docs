@@ -6,17 +6,19 @@ layout: base
   <div class="grid-container grid-container__full-width">
     {% if page.sidenav %}
       <div class="grid-row grid-gap">
-        <aside class="usa-layout-docs__sidenav desktop:grid-col-2 position-sticky tablet-lg:height-viewport desktop:display-block mobile:display-none">
-          <nav>
-            <ul class="usa-sidenav usa-sidenav__maxwidth-content">
-              {% include nav/list.html
-                links = page.sidenav
-                li_class = 'usa-sidenav__item'
-                ul_class = 'usa-sidenav__sublist'
-              %}
-            </ul>
-          </nav>
-        </aside>
+        <div class="desktop:display-block mobile:display-none">
+          <aside class="position-sticky tablet-lg:height-viewport usa-layout-docs__sidenav">
+            <nav>
+              <ul class="usa-sidenav usa-sidenav__maxwidth-content">
+                {% include nav/list.html
+                  links = page.sidenav
+                  li_class = 'usa-sidenav__item'
+                  ul_class = 'usa-sidenav__sublist'
+                %}
+              </ul>
+            </nav>
+          </aside>
+        </div>
 
         <div class="usa-layout-docs__main desktop:grid-col-7 usa-prose">
 
