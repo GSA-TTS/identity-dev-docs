@@ -2,6 +2,7 @@
   $theme-utility-breakpoints: (
     "tablet": true,
     "desktop": true,
+    "mobile": true,
   )
 );
 @forward "uswds";
@@ -41,4 +42,9 @@
   .tablet-lg\:height-viewport {
     height: 100vh;
   }
+}
+
+.return-to-top-button > img {
+  // Change the chevron to #0071bb from #000000
+  filter: invert(21%) sepia(72%) saturate(4106%) hue-rotate(190deg) brightness(95%) contrast(101%);
 }
