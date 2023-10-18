@@ -6,10 +6,10 @@ layout: base
   <div class="grid-container">
     {% if page.sidenav %}
       <div class="grid-row grid-gap">
-        <div class="desktop:display-block mobile:display-none">
+        <div class="desktop:grid-col-2 desktop:display-block mobile:display-none">
           <aside class="position-sticky tablet-lg:height-viewport usa-layout-docs__sidenav">
             <nav>
-              <ul class="usa-sidenav usa-sidenav__maxwidth-content">
+              <ul class="usa-sidenav">
                 {% include nav/list.html
                   links = page.sidenav
                   li_class = 'usa-sidenav__item'
@@ -29,10 +29,10 @@ layout: base
 
           {{ content }}
         </div>
-        <!-- <div class="usa-layout-docs__main desktop:grid-col-2 ">
+        <div class="usa-layout-docs__main desktop:grid-col-3 ">
             CODE SNIPPETS WILL GO HERE
             see example at _includes/snippets/oidc
-        </div> -->
+        </div>
       </div>
     {% else %}
       <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
