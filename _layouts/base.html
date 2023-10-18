@@ -124,9 +124,13 @@
       {% if page.sidenav %}
       <header>
         <section class="usa-section usa-dark-background usa-section--dark">
-          <div class="hero mobile:margin-105">
-            <h1 class="usa-display title">{{ page.title }}</h1>
-            <div class="usa-intro">{{ page.lead | markdownify }}</div>
+          <div class="grid-container">
+            <div class="grid-row">
+              <div class="grid-col-auto">
+                <h1 class="usa-display title">{{ page.title }}</h1>
+                <div class="usa-intro">{{ page.lead | markdownify }}</div>
+              </div>
+            </div>
           </div>
         </section>
       </header>
