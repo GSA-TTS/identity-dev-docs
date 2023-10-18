@@ -220,11 +220,13 @@ To configure your application to receive notifications from Login.gov, supply Lo
 #### Agency integration environment:
 
 - Use the dashboard to supply a `push_notification_url` for your application
+- Your `push_notification_url` will be automatically added to the integration environment's outbound proxy allowlist by 5PM UTC.
 
 #### Production environment:
 
 - The `push_notification_url` will be deployed as part of the application promotion process. Please specify in the
 promotion request that you are including a SET configuration so that we know to add your URL to our outbound proxy allowlist.
+- It may require **three weeks** notice to allow the domain for outbound communication.
 
 ### Supported Outgoing Events
 
