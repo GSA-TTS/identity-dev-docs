@@ -4,7 +4,11 @@
     "tablet": true,
     "desktop": true
   ),
-  $theme-grid-container-max-width: 'widescreen'
+  $theme-grid-container-max-width: 'widescreen',
+  $theme-footer-max-width: 'widescreen',
+  $theme-header-max-width: 'widescreen',
+  $theme-banner-max-width: 'widescreen'
+  
 );
 @forward "uswds";
 
@@ -35,24 +39,6 @@
   @include u-font-family("mono");
 }
 
-
-@media (min-width: 1024px) {
-
-  .hero {
-    max-width: 60rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .usa-navbar.usa-navbar__full-width {
-    max-width: 100%;
-  }
-
-  .usa-header--extended .usa-nav__inner.usa-nav__inner__no-margin {
-    margin-left: 0px;
-    max-width: 100%;
-  }
-}
 
 .usa-layout-docs__sidenav {
   top: 2rem;
