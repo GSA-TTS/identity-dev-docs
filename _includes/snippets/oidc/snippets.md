@@ -1,8 +1,7 @@
 
 {% if page.path == "_pages/oidc.md" %}
 <button data-example="private_key_jwt">private_key_jwt</button><button data-example="pkce">PKCE</button>
-
-<div markdown="1" data-example="private_key_jwt">
+{% capture code %}
 ```bash
 https://idp.int.identitysandbox.gov/openid_connect/authorize?
   acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
@@ -14,6 +13,10 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
   scope=openid+email&
   state=abcdefghijklmnopabcdefghijklmnop
 ```
+{% endcapture %}
+
+<div markdown="1" data-example="private_key_jwt" class="markdown">
+{{ code | markdownify }}
 </div>
 <div markdown="1" data-example="pkce" hidden="true">
 ```bash

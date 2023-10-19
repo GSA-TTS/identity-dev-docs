@@ -46,6 +46,31 @@ main.usa-layout-docs {
 }
 
 
+@media (min-width: 1024px) {
+
+  .markdown > .highlighter-rouge > .highlight > pre {
+    overflow-wrap: break-word;
+    text-wrap: wrap;
+    word-break: inherit;
+    white-space-collapse: preserve-breaks;
+  }
+
+  .hero {
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .usa-navbar.usa-navbar__full-width {
+    max-width: 100%;
+  }
+
+  .usa-header--extended .usa-nav__inner.usa-nav__inner__no-margin {
+    margin-left: 0px;
+    max-width: 100%;
+  }
+}
+
 .usa-layout-docs__sidenav {
   top: 2rem;
 }
