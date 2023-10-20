@@ -44,6 +44,18 @@
   top: 2rem;
 }
 
+.return-to-top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  height: 100%;
+}
+
+.return-to-top-button {
+  max-width: 160px;
+  top: 90%;
+}
+
 .return-to-top-button > img {
   // Change the chevron to #0071bb from #000000
   filter: invert(21%) sepia(72%) saturate(4106%) hue-rotate(190deg) brightness(95%) contrast(101%);

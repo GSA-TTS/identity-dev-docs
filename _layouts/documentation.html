@@ -30,11 +30,13 @@ layout: base
           {{ content }}
 
           <a href="{{ site.github_repo_url }}/edit/main/{{ page.path }}" class="usa-button usa-button--outline margin-top-9">Edit this page</a>
-        </div>
-        <!-- <div class="usa-layout-docs__main desktop:grid-col-3 ">
-            CODE SNIPPETS WILL GO HERE
-            see example at _includes/snippets/oidc
-        </div> -->
+          </div>
+          <div class="usa-layout-docs__main desktop:grid-col-3">
+            <section class="return-to-top-section">
+              <a href="#" class="usa-button usa-button--outline return-to-top-button mobile:display-none desktop:display-block position-sticky">Return to top</a>
+            </section>
+          </div>
+          <a href="#" class="usa-button usa-button--outline return-to-top-button desktop:display-none position-fixed bottom-205 right-105 width-5 height-5 text-middle radius-pill z-500 shadow-2"><img class="display-inline maxw-3 width-3 height-3 position-absolute left-1 top-1" src="./assets/img/material-icons/expand_less.svg"></a>
       </div>
     {% else %}
       <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
