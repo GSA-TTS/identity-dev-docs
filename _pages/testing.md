@@ -13,16 +13,37 @@ Login.gov provides an open sandbox environment to create and test integrations b
 
 In the sandbox environment, our [Dashboard](https://dashboard.int.identitysandbox.gov) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
 
-## How to get started
+## Getting access to the Login.gov sandbox
 
-Anybody with an email address ending in .gov or .mil can create an account in the sandbox environment. If you are a government contractor, ask your agency partner to help you gain access. If you are with a government entity that is not a federal agency (a state or municipality) and do not have an email ending in .gov or .mil, please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) to get access to the Dashboard. 
+Login.gov does not manage user accounts in the sandbox.
 
-1. Visit the dashboard at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov). Select the “Sign in” button in the upper-right corner to sign in or create a new account with the test Login.gov IdP in the sandbox environment hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov). Please note that this is separate from your Login.gov production account. 
-2. Once you are logged into your sandbox account, create a new team by selecting the “Continue” button under “Create your first team." (If you have previously created a team you will select the “Create a new team” button.) Next you can add users to that team.
-3. After creating your team, select the Apps tab. This page is where you will find all of the test applications you and your team create.
-4. Select the “Create a new test app” button and fill out the form to register a new application with the Login.gov IdP in the test sandbox environment.
-5. Start testing! If you need to troubleshoot an issue that is not covered in the [developer documentation]({% link _pages/index.md %}), please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov). We can also add you to our partner support Slack channel and the Login.gov team will help you along the way.
-6. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your application's promotion to production. The move to production may take up to two weeks.
+**If you are an agency partner with a .gov or .mil account:**
+You can create an account in the sandbox environment on your own.
+
+**If you are a government contractor:**
+Ask your agency partner to help you gain access. Login.gov will not create an account or add you to a team; your partner must do this for you.
+
+**If you are with a government entity that is not a federal agency (a state or municipality) and do not have an email ending in .gov or .mil**
+Please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) to get access to the Dashboard.
+
+## Using the sandbox
+
+1. Visit the Partner Dashboard at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov).
+1. Select the “Sign in” button in the upper-right corner to sign in or create a new account with the test Login.gov IdP in the sandbox environment hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov). **Please note that this is separate from your Login.gov production account.**
+1. Once you are logged into your sandbox account, create a new team by selecting the “Continue” button under “Create your first team." (If you have previously created a team you will select the “Create a new team” button.)
+1. If necessary, add users to that team by clicking the "Add users" button. **This is the opportunity to add contractors or anyone without a .gov or a .mil**
+1. After creating your team, select the Apps tab. This page is where you will find all of the test applications you and your team create.
+1. Select the “Create a new test app” button and fill out the form to register a new application with the Login.gov IdP in the test sandbox environment.
+1. Start testing!
+1. If you need to troubleshoot an issue that is not covered in the [developer documentation]({% link _pages/index.md %}), please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov). We can also add you to our partner support Slack channel and the Login.gov team will help you along the way.
+1. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your application's promotion to production. **The move to production may take up to two weeks.**
+
+## If you lost access to a sandbox team
+
+Login.gov does not manage user accounts. If you have lost access to a team:
+* Request someone on your team who still has access to re-add you.
+* If there is no one left with access, contact the partner agency's Login.gov Point of Contact and request that they re-add you to the team.
+* If they are unable to re-add you, request that they open up a ticket through the [Partner Support Help Desk](https://zendesk.login.gov) explaining the situation and confirming that you need access. They must include either the issuer or the link to the application configuration.
 
 ### Creating a public certificate
 
@@ -40,9 +61,9 @@ Our sandbox environment is smaller than our production environment and it is sha
 
 ## Automated Testing
 
-**Login.gov cannot provide specific recommendations for automated testing.** This is especially true for applications using identity verification, because we are frequently making updates to the code and the flow is likely to change and could unexpectedly break your tests. 
+**Login.gov cannot provide specific recommendations for automated testing.** This is especially true for applications using identity verification, because we are frequently making updates to the code and the flow is likely to change and could unexpectedly break your tests.
 
-If you are looking for recommendations for automated testing, we do not have any specific advice. There are many different frameworks and automated testing suites available to choose from, and our partners usually pick based on their own unique needs. **Regardless of which suite you choose, it should be noted that you cannot bypass the MFA portion of the flow.** It is intentionally designed this way for security purposes and another reason why we recommend stubbing out our flow. 
+If you are looking for recommendations for automated testing, we do not have any specific advice. There are many different frameworks and automated testing suites available to choose from, and our partners usually pick based on their own unique needs. **Regardless of which suite you choose, it should be noted that you cannot bypass the MFA portion of the flow.** It is intentionally designed this way for security purposes and another reason why we recommend stubbing out our flow.
 
 While Login.gov partner support channels have provided some support for automated testing in the past, as of 09/20/2023, will no longer be able to provide assistance in this area.
 
@@ -133,10 +154,10 @@ To simulate a verification failure, submit `00000000` as the `state_id_number` f
 
 ### Phone number verification
 
-Login.gov collects a phone number during the proofing process. In the production environment, Login.gov checks that this phone number is associated with the applicant. The following phone numbers simulate specific events: 
+Login.gov collects a phone number during the proofing process. In the production environment, Login.gov checks that this phone number is associated with the applicant. The following phone numbers simulate specific events:
 
 * `703-555-5555` - simulates a phone number that couldn't be verified as belonging to the user
 * `703-555-5888` - simulates a timeout during verification
 * `703-555-5999` - simulates a phone number that couldn't be contacted
 
-Use any other phone number for typical testing purposes. 
+Use any other phone number for typical testing purposes.
