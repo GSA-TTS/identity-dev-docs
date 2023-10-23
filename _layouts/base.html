@@ -34,20 +34,18 @@
     <section class="usa-banner" aria-label="Official government website">
       <div class="usa-accordion">
         <header class="usa-banner__header">
-          <div class="grid-container">
-            <div class="usa-banner__inner usa-banner__inner__full-width">
-              <div class="grid-col-auto">
-                <img class="usa-banner__header-flag" src="{{ site.baseurl }}/assets/img/us_flag_small.png" alt="U.S. flag">
-              </div>
-              <div class="grid-col-fill tablet:grid-col-auto">
-                <p class="usa-banner__header-text">An official website of the United States government</p>
-                <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
-              </div>
-              <button class="usa-accordion__button usa-banner__button"
-                aria-expanded="false" aria-controls="gov-banner">
-                <span class="usa-banner__button-text">Here’s how you know</span>
-              </button>
+          <div class="usa-banner__inner usa-banner__inner__full-width">
+            <div class="grid-col-auto">
+              <img class="usa-banner__header-flag" src="{{ site.baseurl }}/assets/img/us_flag_small.png" alt="U.S. flag">
             </div>
+            <div class="grid-col-fill tablet:grid-col-auto">
+              <p class="usa-banner__header-text">An official website of the United States government</p>
+              <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+            </div>
+            <button class="usa-accordion__button usa-banner__button"
+              aria-expanded="false" aria-controls="gov-banner">
+              <span class="usa-banner__button-text">Here’s how you know</span>
+            </button>
           </div>
         </header>
         <div class="usa-banner__content usa-accordion__content" id="gov-banner">
@@ -92,7 +90,6 @@
 
     <div class="usa-overlay"></div>
       <header class="usa-header usa-header--extended" role="banner">
-        <div class="grid-container">
           <div class="usa-navbar usa-navbar__full-width">
             <div class="usa-logo" id="basic-logo">
               <a href="{{ site.baseurl }}/" title="Home" aria-label="Home">
@@ -103,7 +100,7 @@
                 <em class="usa-logo__text">Developers</em>
               </a>
             </div>
-            <button class="usa-menu-btn margin-right-neg-2">Menu</button>
+            <button class="usa-menu-btn">Menu</button>
           </div>
           <nav role="navigation" class="usa-nav border-top-none">
             <div class="usa-nav__inner usa-nav__inner__full-width">
@@ -125,13 +122,12 @@
               </ul>
             </div>
           </nav>
-        </div>
       </header>
       {% if page.sidenav %}
       <header class="usa-dark-background usa-section--dark">
         <section class="usa-section">
           <div class="grid-container">
-            <div class="grid-row padding-x-4">
+            <div class="grid-row">
               <div class="grid-col-12">
                     <h1 class="usa-display title">{{ page.title }}</h1>
                     <div class="usa-intro">{{ page.lead | markdownify }}</div>
@@ -148,7 +144,7 @@
       <footer class="usa-footer usa-footer--slim" role="contentinfo" aria-label="GSA footer">
         <div class="usa-footer__secondary-section">
           <div class="grid-container">
-            <div class="usa-footer__logo grid-row grid-gap-2 padding-x-4">
+            <div class="usa-footer__logo grid-row grid-gap-2">
               <div class="grid-col-auto">
                 <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg"
                   alt="U.S. General Services Administration logo"
