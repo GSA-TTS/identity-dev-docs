@@ -29,7 +29,7 @@ RSpec::Matchers.define :link_to_valid_headers do
 
       next if a[:id] == 'js-mobile-nav-toggle'
       next if a.to_s.include?('Return to top')
-      next if a.to_s.include?('./assets/img/material-icons/expand_less.svg')
+      next if a.to_s.include?('/assets/img/material-icons/expand_less.svg')
 
       if target == '#'
         missing_headers << a.to_s
