@@ -124,14 +124,13 @@
           </nav>
       </header>
       {% if page.sidenav %}
-      <header class="usa-dark-background usa-section--dark">
+      <header aria-label="hero" class="usa-dark-background usa-section--dark">
         <section class="usa-section">
           <div class="grid-container">
             <div class="grid-row">
               <div class="grid-col-12">
                     <h1 class="usa-display title">{{ page.title }}</h1>
                     <div class="usa-intro">{{ page.lead | markdownify }}</div>
-                </section>
               </div>
             </div>
           </div>
