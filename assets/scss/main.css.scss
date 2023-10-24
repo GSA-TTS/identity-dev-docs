@@ -1,9 +1,16 @@
 @use "uswds-core" as * with (
   $theme-utility-breakpoints: (
-    "tablet": true,
-    "desktop": true,
     "mobile": true,
-  )
+    "tablet": true,
+    "desktop": true
+  ),
+  $theme-grid-container-max-width: 'widescreen',
+  $theme-footer-max-width: 'widescreen',
+  $theme-header-max-width: 'widescreen',
+  $theme-banner-max-width: 'widescreen',
+  $theme-identifier-max-width: 'widescreen',
+  $theme-in-page-nav-main-content-max-width: 'widescreen'
+  
 );
 @forward "uswds";
 
@@ -38,14 +45,21 @@ main.usa-layout-docs {
   @include u-font-family("mono");
 }
 
+
 .usa-layout-docs__sidenav {
   top: 2rem;
 }
 
-@media (min-width: 880px) {
-  .tablet-lg\:height-viewport {
-    height: 100vh;
-  }
+.return-to-top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  height: 100%;
+}
+
+.return-to-top-button {
+  max-width: 160px;
+  top: 90%;
 }
 
 .return-to-top-button > img {

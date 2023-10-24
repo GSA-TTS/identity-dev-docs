@@ -6,32 +6,37 @@ layout: base
   <div class="grid-container">
     {% if page.sidenav %}
       <div class="grid-row grid-gap">
-        <aside class="usa-layout-docs__sidenav desktop:grid-col-3 position-sticky tablet-lg:height-viewport">
-          <nav>
-            <ul class="usa-sidenav">
-              {% include nav/list.html
-                links = page.sidenav
-                li_class = 'usa-sidenav__item'
-                ul_class = 'usa-sidenav__sublist'
-              %}
-            </ul>
-          </nav>
-        </aside>
+        <div class="desktop:grid-col-2 desktop:display-block mobile:display-none">
+          <aside class="position-sticky tablet-lg:height-viewport usa-layout-docs__sidenav">
+            <nav>
+              <ul class="usa-sidenav">
+                {% include nav/list.html
+                  links = page.sidenav
+                  li_class = 'usa-sidenav__item'
+                  ul_class = 'usa-sidenav__sublist'
+                %}
+              </ul>
+            </nav>
+          </aside>
+        </div>
 
-        <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
+        <div class="usa-layout-docs__main desktop:grid-col-7 usa-prose">
 
           {% if site.temporary_alert %}
             {% include alert.html content=site.temporary_alert %}
           {% endif %}
-
-          <h1 class="usa-display">{{ page.title }}</h1>
-
-          {% if page.lead %}
-            <div class="usa-intro">{{ page.lead | markdownify }}</div>
-          {% endif %}
+  
 
           {{ content }}
-        </div>
+
+          <a href="{{ site.github_repo_url }}/edit/main/{{ page.path }}" class="usa-button usa-button--outline margin-top-9">Edit this page</a>
+          </div>
+          <div class="usa-layout-docs__main desktop:grid-col-3">
+            <section class="return-to-top-section">
+              <a href="#" class="usa-button usa-button--outline return-to-top-button mobile:display-none desktop:display-block position-sticky">Return to top</a>
+            </section>
+          </div>
+          <a href="#" class="usa-button usa-button--outline return-to-top-button desktop:display-none position-fixed bottom-205 right-105 width-5 height-5 text-middle radius-pill z-500 shadow-2"><img alt="Return to top" class="display-inline maxw-3 width-3 height-3 position-absolute left-1 top-1" src="{{ site.baseurl }}/assets/img/material-icons/expand_less.svg"/></a>
       </div>
     {% else %}
       <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
@@ -43,10 +48,14 @@ layout: base
         <h1 class="usa-display">{{ page.title }}</h1>
 
         {% if page.lead %}
-          <div class="usa-intro">{{ page.lead | markdownify }}</div>
+        <div class="usa-intro">{{ page.lead | markdownify }}</div>
         {% endif %}
 
+
+
         {{ content }}
+
+        
       </div>
     {% endif %}
   </div>

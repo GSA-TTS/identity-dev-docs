@@ -49,36 +49,38 @@
           </div>
         </header>
         <div class="usa-banner__content usa-accordion__content" id="gov-banner">
-          <div class="grid-row grid-gap-lg">
-            <div class="usa-banner__guidance tablet:grid-col-6">
-              <img src="{{ site.baseurl }}/assets/img/icon-dot-gov.svg"
-                class="usa-banner__icon usa-media-block__img"
-                alt="Dot gov"
-                role="img">
-              <div class="usa-media-block__body">
-                <p>
-                  <strong>Official websites use .gov</strong>
-                  <br>
-                  A <strong>.gov</strong> website belongs to an official government organization in the United States.
-                </p>
+          <div class="grid-container">
+            <div class="grid-row grid-gap-lg">
+              <div class="usa-banner__guidance tablet:grid-col-6">
+                <img src="{{ site.baseurl }}/assets/img/icon-dot-gov.svg"
+                  class="usa-banner__icon usa-media-block__img"
+                  alt="Dot gov"
+                  role="img">
+                <div class="usa-media-block__body">
+                  <p>
+                    <strong>Official websites use .gov</strong>
+                    <br>
+                    A <strong>.gov</strong> website belongs to an official government organization in the United States.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="usa-banner__guidance tablet:grid-col-6">
-              <img src="{{ site.baseurl }}/assets/img/icon-https.svg"
-                class="usa-banner__icon usa-media-block__img"
-                alt="Https"
-                role="img">
-              <div class="usa-media-block__body">
-                <p>
-                  <strong>Secure .gov websites use HTTPS</strong>
-                  <br>
-                  A <strong>lock (
-                    <img src="{{ site.baseurl }}/assets/img/lock.svg"
-                      class="usa-banner__lock-image"
-                      alt="Https"
-                      role="img">
-                  )</strong> or <strong>https://</strong> means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
-                </p>
+              <div class="usa-banner__guidance tablet:grid-col-6">
+                <img src="{{ site.baseurl }}/assets/img/icon-https.svg"
+                  class="usa-banner__icon usa-media-block__img"
+                  alt="Https"
+                  role="img">
+                <div class="usa-media-block__body">
+                  <p>
+                    <strong>Secure .gov websites use HTTPS</strong>
+                    <br>
+                    A <strong>lock (
+                      <img src="{{ site.baseurl }}/assets/img/lock.svg"
+                        class="usa-banner__lock-image"
+                        alt="Https"
+                        role="img">
+                    )</strong> or <strong>https://</strong> means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -87,75 +89,76 @@
     </section>
 
     <div class="usa-overlay"></div>
-
-    <header class="usa-header usa-header--extended" role="banner">
-      <div class="usa-navbar">
-        <div class="usa-logo" id="basic-logo">
-          <a href="{{ site.baseurl }}/" title="Home" aria-label="Home">
-            <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg"
-              class="usa-logo__img"
-              alt="Login.gov"
-              role="img">
-            <em class="usa-logo__text">Developers</em>
-          </a>
-        </div>
-        <button class="usa-menu-btn">Menu</button>
-      </div>
-      <nav role="navigation" class="usa-nav border-top-none">
-        <div class="usa-nav__inner">
-          <button class="usa-nav__close">
-            <img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close" role="img">
-          </button>
-          <div class="usa-nav__secondary">
-            <ul class="usa-nav__secondary-links"></ul>
-            <section aria-label="Search component">
-              {% include search.html id="header-nav" %}
-            </section>
+      <header class="usa-header usa-header--extended" role="banner">
+          <div class="usa-navbar">
+            <div class="usa-logo" id="basic-logo">
+              <a href="{{ site.baseurl }}/" title="Home" aria-label="Home">
+                <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg"
+                  class="usa-logo__img"
+                  alt="Login.gov"
+                  role="img">
+                <em class="usa-logo__text">Developers</em>
+              </a>
+            </div>
+            <button class="usa-menu-btn">Menu</button>
           </div>
-          <ul class="usa-nav__primary usa-accordion">
-            {% include nav/list.html
-              links = site.data.nav.primary
-              li_class = 'usa-nav__primary-item'
-              subnav_ul_class = 'desktop:display-none usa-sidenav__sublist'
-            %}
-          </ul>
-        </div>
-      </nav>
-    </header>
+          <nav role="navigation" class="usa-nav border-top-none">
+            <div class="usa-nav__inner">
+              <button class="usa-nav__close">
+                <img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close" role="img">
+              </button>
+              <div class="usa-nav__secondary">
+                <ul class="usa-nav__secondary-links"></ul>
+                <section aria-label="Search component">
+                  {% include search.html id="header-nav" %}
+                </section>
+              </div>
+              <ul class="usa-nav__primary usa-accordion">
+                {% include nav/list.html
+                  links = site.data.nav.primary
+                  li_class = 'usa-nav__primary-item'
+                  subnav_ul_class = 'desktop:display-none usa-sidenav__sublist'
+                %}
+              </ul>
+            </div>
+          </nav>
+      </header>
+      {% if page.sidenav %}
+      <header aria-label="hero" class="usa-dark-background usa-section usa-section--dark">
+          <div class="grid-container">
+            <div class="grid-row">
+              <div class="grid-col-12">
+                    <h1 class="usa-display">{{ page.title }}</h1>
+                    <div class="usa-intro">{{ page.lead | markdownify }}</div>
+              </div>
+            </div>
+          </div>
+      </header>
+      {% endif %}
 
     {{ content }}
 
-    <footer class="usa-footer usa-footer--slim" role="contentinfo" aria-label="GSA footer">
-      <div class="grid-container usa-footer__return-to-top">
-        <div class="grid-row flex-align-center">
-          <div class="grid-col flex-1">
-            <a href="{{ site.github_repo_url }}/edit/main/{{ page.path }}" class="usa-button usa-button--outline">Edit this page</a>
-          </div>
-          <div class="grid-col flex-auto">
-            <a href="#" class="usa-button usa-button--outline return-to-top-button mobile:display-none desktop:display-block position-fixed bottom-205 right-105 z-500">Return to top</a>
-            <a href="#" class="usa-button usa-button--outline return-to-top-button desktop:display-none position-fixed bottom-205 right-105 width-5 height-5 text-middle radius-pill z-500 shadow-2"><img alt="Return to top" class="display-inline maxw-3 width-3 height-3 position-absolute left-1 top-1" src="{{ site.baseurl }}/assets/img/material-icons/expand_less.svg"/></a>
-          </div>
-        </div>
-      </div>
-      <div class="usa-footer__secondary-section">
-        <div class="grid-container">
-          <div class="usa-footer__logo grid-row grid-gap-2">
-            <div class="grid-col-auto">
-              <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg"
-                alt="U.S. General Services Administration logo"
-                class="usa-footer__logo-img usa-footer__slim usa-footer__medium"
-                role="img">
-            </div>
-            <div class="grid-col-auto">
-              <h3 class="usa-footer__logo-heading">U.S. General Services Administration</h3>
-            </div>
-            <div class="grid-col-fill text-right">
-              <a href="https://status.login.gov/">System Status</a>
+      <footer class="usa-footer usa-footer--slim" role="contentinfo" aria-label="GSA footer">
+        <div class="usa-footer__secondary-section">
+          <div class="grid-container">
+            <div class="usa-footer__logo grid-row grid-gap-2">
+              <div class="grid-col-auto">
+                <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg"
+                  alt="U.S. General Services Administration logo"
+                  class="usa-footer__logo-img usa-footer__slim usa-footer__medium"
+                  role="img">
+              </div>
+              <div class="grid-col-auto">
+                <h3 class="usa-footer__logo-heading">U.S. General Services Administration</h3>
+              </div>
+              <div class="grid-col-fill text-right">
+                <a href="https://status.login.gov/">System Status</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+  
 
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
     <script src="{{ site.baseurl }}/assets/js/anchor.js"></script>
