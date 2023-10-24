@@ -15,6 +15,8 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 {% endcapture %}
 
 
-<div markdown="1" data-example="pkce" class="markdown">
-  {{ pkce | markdownify }}
+{% if page.path == "_pages/oidc_authorization.md" %} 
+<div markdown="1" data-example="pkce" hidden="true">
+{{ pkce | markdownify }}
 </div>
+{% endif %}

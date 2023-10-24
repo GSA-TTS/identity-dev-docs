@@ -117,15 +117,16 @@ button.code-button:hover {
   top: 2rem;
 }
 
-.code-snippet-section {
-  position: sticky;
-  top: 2rem;
+.code-snippet-column {
+  background-color: #f0f0f0;
 }
 
-
-.parameters {
-  margin-top: 0px;
-  margin-bottom: 0px;
+.code-snippet-header {
+  color: #205493;
+  font-weight: bold;
+  border-bottom: 4px solid red;
+  padding-bottom: 0.5rem;
+  margin-left: 1rem;
 }
 
 .markdown > .highlighter-rouge > .highlight > pre {
@@ -134,13 +135,12 @@ button.code-button:hover {
   word-break: inherit;
   white-space-collapse: preserve-breaks;
   background-color: inherit;
-  padding-bottom: 4rem;
 }
 
 .return-to-top-section {
   position: absolute;
   height: 100%;
-  bottom: 0;
+  bottom: 4rem;
   right: 0;
 }
 
