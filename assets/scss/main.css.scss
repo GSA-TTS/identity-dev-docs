@@ -75,11 +75,31 @@ main.usa-layout-docs {
   top: 2rem;
 }
 
+.code-snippet-column {
+  background-color: #f0f0f0;
+}
+
+.code-snippet-header {
+  color: #205493;
+  font-weight: bold;
+  border-bottom: 4px solid red;
+  padding-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+
+.markdown > .highlighter-rouge > .highlight > pre {
+  overflow-wrap: break-word;
+  text-wrap: wrap;
+  word-break: inherit;
+  white-space-collapse: preserve-breaks;
+  background-color: inherit;
+}
+
 .return-to-top-section {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
+  position: absolute;
   height: 100%;
+  bottom: 4rem;
+  right: 0;
 }
 
 .return-to-top-button {

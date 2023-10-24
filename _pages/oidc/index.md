@@ -8,7 +8,7 @@ sidenav:
   - text: Getting started
     href: "#getting-started"
   - text: Authorization
-    href: "#authorization"
+    href: "/oidc/oidc_authorization"
     links:
       - text: Authorization response
         href: "#authorization-response"
