@@ -42,45 +42,25 @@ main.usa-layout-docs {
   }
 }
 
-.dev-doc-row {
-  border-bottom: 1px solid #CEDCED;
-  padding-bottom: 2rem;
-  padding-top: 2rem;
-}
-
 .doc-sub-nav {
   border-bottom: 1px solid #CEDCED;
   width: 100%;
   color: #205493;
-  margin-bottom: 0px;
 }
 
 .doc-sub-nav-item {
   display: inline-block;
-  cursor: pointer;
 }
 
 .usa-prose > ul > .doc-sub-nav-item {
   margin-bottom: 0px;
 }
 
-.code-button {
+.selected-item {
   color: #205493;
-  padding-bottom: 0.5rem;
-  border: none;
-  text-align: left;
-  padding-left: 0px;
-  background-color: transparent;
-}
-
-
-button.code-button:hover {
-  cursor: pointer;
-}
-
-.code-button__selected {
   font-weight: bold;
   border-bottom: 4px solid red;
+  padding-bottom: 0.5rem;
 }
 
 .reversefootnote {
@@ -119,14 +99,6 @@ button.code-button:hover {
 
 .code-snippet-column {
   background-color: #f0f0f0;
-}
-
-.code-snippet-header {
-  color: #205493;
-  font-weight: bold;
-  border-bottom: 4px solid red;
-  padding-bottom: 0.5rem;
-  margin-left: 1rem;
 }
 
 .markdown > .highlighter-rouge > .highlight > pre {

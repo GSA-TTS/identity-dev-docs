@@ -2,13 +2,14 @@
 title: OpenID Connect
 lead: >
   [OpenID Connect](http://openid.net) is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](http://openid.net/specs/openid-connect-core-1_0.html) of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov).
+permalink: /oidc/
 redirect_from:
   - /openid-connect/
 sidenav:
   - text: Getting started
     href: "#getting-started"
   - text: Authorization
-    href: "/oidc/oidc_authorization"
+    href: "/oidc/authorization"
     links:
       - text: Authorization response
         href: "#authorization-response"
