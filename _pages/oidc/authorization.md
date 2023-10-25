@@ -33,59 +33,87 @@ sidenav:
     href: "#example-application"
 
 ---
-
 ## Authorization
 
 The authorization endpoint handles authentication and authorization of a user. To present the Login.gov authorization page to a user, direct them to the `/openid_connect/authorize`.
 
-<span class="margin-right-2">View an example for…</span><button data-example="private_key_jwt">private_key_jwt</button><button data-example="pkce">PKCE</button>
-
-<div markdown="1" data-example="private_key_jwt">
-```bash
-https://idp.int.identitysandbox.gov/openid_connect/authorize?
-  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
-  client_id=${CLIENT_ID}&
-  nonce=${NONCE}&
-  prompt=select_account&
-  redirect_uri=${REDIRECT_URI}&
-  response_type=code&
-  scope=openid+email&
-  state=abcdefghijklmnopabcdefghijklmnop
-```
-</div>
-<div markdown="1" data-example="pkce" hidden="true">
-```bash
-https://idp.int.identitysandbox.gov/openid_connect/authorize?
-  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
-  client_id=${CLIENT_ID}&
-  code_challenge=${CODE_CHALLENGE}&
-  code_challenge_method=S256&
-  nonce=${NONCE}&
-  prompt=select_account&
-  redirect_uri=${REDIRECT_URI}&
-  response_type=code&
-  scope=openid+email&
-  state=abcdefghijklmnopabcdefghijklmnop
-```
-</div>
 
 ### Request Parameters
 
-
+<ul class="doc-sub-nav padding-top-4">
+  <li class="doc-sub-nav-item selected-item margin-left-neg-3">JWT</li>
+  <li class="doc-sub-nav-item margin-left-3">PKCE</li>
+</ul>
 
 * **acr_values**
   The Authentication Context Class Reference requests can be used to specify the type of identity verification<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response).
 
   Multiple values can be joined with a space (before being URI-escaped in the final URL)
 
-  #### Type of Identity Verification<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> {#ial-values}
 
-  A type of identity verification must be specified.
+<div class="usa-accordion usa-accordion--multiselectable" data-allow-multiple>
+  <h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="true"
+      aria-controls="m-a1"
+    >
+      Type of Identity Verification
+    </button>
+  </h4>
+  <div id="m-a1" class="usa-accordion__content usa-prose">
+    <p>A type of identity verification must be specified.</p>
 
-    - **`http://idmanagement.gov/ns/assurance/ial/1`**
-        Basic identity assurance, does not require identity verification (this is the most common value).
-    - **`http://idmanagement.gov/ns/assurance/ial/2`**
-        Requires that the user has gone through identity verification<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
+     <ul>
+        <li>
+          <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/ial/1</code></strong><br>
+          Basic identity assurance, does not require identity verification (this is the most common value).
+        </li>
+        <li>
+          <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/ial/2</code></strong><br>
+          Requires that the user has gone through identity verification<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
+        </li>
+    </ul>
+  </div>
+  <h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a2"
+    >
+      Second Amendment
+    </button>
+  </h4>
+  <div id="m-a2" class="usa-accordion__content usa-prose">
+    <p>
+      A well regulated Militia, being necessary to the security of a free State,
+      the right of the people to keep and bear Arms, shall not be infringed.
+    </p>
+    <ul>
+      <li>This is a list item</li>
+      <li>Another list item</li>
+    </ul>
+  </div>
+  <h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a3"
+    >
+      Third Amendment
+    </button>
+  </h4>
+  <div id="m-a3" class="usa-accordion__content usa-prose">
+    <p>
+      No Soldier shall, in time of peace be quartered in any house, without the
+      consent of the Owner, nor in time of war, but in a manner to be prescribed
+      by law.
+    </p>
+  </div>
+</div>
 
   #### AAL Values
   We default to requiring a user to be authenticated with a second factor:

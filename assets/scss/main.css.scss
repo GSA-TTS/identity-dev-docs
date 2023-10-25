@@ -41,6 +41,27 @@ main.usa-layout-docs {
   }
 }
 
+.doc-sub-nav {
+  border-bottom: 1px solid #CEDCED;
+  width: 100%;
+  color: #205493;
+}
+
+.doc-sub-nav-item {
+  display: inline-block;
+}
+
+.usa-prose > ul > .doc-sub-nav-item {
+  margin-bottom: 0px;
+}
+
+.selected-item {
+  color: #205493;
+  font-weight: bold;
+  border-bottom: 4px solid red;
+  padding-bottom: 0.5rem;
+}
+
 .reversefootnote {
   @include u-font-family("mono");
 }
@@ -77,14 +98,6 @@ main.usa-layout-docs {
 
 .code-snippet-column {
   background-color: #f0f0f0;
-}
-
-.code-snippet-header {
-  color: #205493;
-  font-weight: bold;
-  border-bottom: 4px solid red;
-  padding-bottom: 0.5rem;
-  margin-left: 1rem;
 }
 
 .markdown > .highlighter-rouge > .highlight > pre {

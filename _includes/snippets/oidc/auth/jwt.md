@@ -14,7 +14,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 
 
 {% if page.path == "_pages/oidc/authorization.md" %}
-<span class="code-snippet-header">JWT Request</span>
+<span class="selected-item">JWT Request</span>
 <div markdown="1" data-example="private_key_jwt" class="markdown">
 {{ code | markdownify }}
 </div>
