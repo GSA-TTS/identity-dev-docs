@@ -44,99 +44,98 @@ The authorization endpoint handles authentication and authorization of a user. T
   <li class="doc-sub-nav-item selected-item margin-left-neg-3">JWT</li>
   <li class="doc-sub-nav-item margin-left-3">PKCE</li>
 </ul>
-
-* **acr_values**
-  The Authentication Context Class Reference requests can be used to specify the type of identity verification<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response).
-
-  Multiple values can be joined with a space (before being URI-escaped in the final URL)
-
-
-<div class="usa-accordion usa-accordion--multiselectable" data-allow-multiple>
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="true"
-      aria-controls="m-a1"
-    >
-      Type of Identity Verification
-    </button>
-  </h4>
-  <div id="m-a1" class="usa-accordion__content usa-prose">
-    <p>A type of identity verification must be specified.</p>
-
-     <ul>
-        <li>
-          <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/ial/1</code></strong><br>
-          Basic identity assurance, does not require identity verification (this is the most common value).
-        </li>
-        <li>
-          <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/ial/2</code></strong><br>
-          Requires that the user has gone through identity verification<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
-        </li>
-    </ul>
+<div class="grid-row">
+  <div class="grid-col-5">
+    acr_values
   </div>
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a2"
-    >
-      Second Amendment
-    </button>
-  </h4>
-  <div id="m-a2" class="usa-accordion__content usa-prose">
-    <p>
-      A well regulated Militia, being necessary to the security of a free State,
-      the right of the people to keep and bear Arms, shall not be infringed.
-    </p>
+  <div class="grid-col-7">
+    The Authentication Context Class Reference requests can be used to specify the type of identity verification<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response).
+
+    Multiple values can be joined with a space (before being URI-escaped in the final URL)
+  </div>
+</div>
+<div class="grid-row">
+    <div class="usa-accordion usa-accordion--multiselectable" data-allow-multiple>
+      <h4 class="usa-accordion__heading">
+        <button
+          type="button"
+          class="usa-accordion__button"
+          aria-expanded="true"
+          aria-controls="m-a1"
+        >
+          Type of Identity Verification
+        </button>
+      </h4>
+      <div id="m-a1" class="usa-accordion__content usa-prose">
+        <p>A type of identity verification must be specified.</p>
+        <ul>
+            <li>
+              <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/ial/1</code></strong><br>
+              Basic identity assurance, does not require identity verification (this is the most common value).
+            </li>
+            <li>
+              <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/ial/2</code></strong><br>
+              Requires that the user has gone through identity verification<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
+            </li>
+        </ul>
+      </div>
+      <h4 class="usa-accordion__heading">
+        <button
+          type="button"
+          class="usa-accordion__button"
+          aria-expanded="false"
+          aria-controls="m-a2"
+        >
+          AAL Values
+        </button>
+      </h4>
+      <div id="m-a2" class="usa-accordion__content usa-prose">
+        <p>We default to requiring a user to be authenticated with a second factor:</p>
+        <ul>
+              <li><strong><code class="language-plaintext highlighter-rouge">urn:gov:gsa:ac:classes:sp:PasswordProtectedTransport:duo</code></strong><br>
+          This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow strict AAL 1, because it implies that a user did not authenticate with a second factor. This setting requires users to reauthenticate with a separate second factor (i.e. not a session secret) once every 30 days at a minimum.
+            </li>
+        </ul>
+        <p>Stricter behavior can be specified by adding one of:</p>
     <ul>
-      <li>This is a list item</li>
-      <li>Another list item</li>
-    </ul>
-  </div>
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a3"
-    >
-      Third Amendment
-    </button>
-  </h4>
-  <div id="m-a3" class="usa-accordion__content usa-prose">
-    <p>
-      No Soldier shall, in time of peace be quartered in any house, without the
-      consent of the Owner, nor in time of war, but in a manner to be prescribed
-      by law.
-    </p>
+        <li><strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/aal/2</code></strong><br>
+      This specifies that a user has been authenticated with a separate second factor. Users must <em>always</em> authenticate with a second factor.</li>
+          <li><strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true</code></strong><br>
+      This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC. Users must <em>always</em> authenticate with a second factor.</li>
+          <li><strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/aal/2?hspd12=true</code></strong><br>
+      This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC). Users must <em>always</em> authenticate with a second factor.</li>
+        </ul>
+      </div>
+      <h4 class="usa-accordion__heading">
+        <button
+          type="button"
+          class="usa-accordion__button"
+          aria-expanded="false"
+          aria-controls="m-a3"
+        >
+          LOA Values
+        </button>
+      </h4>
+      <div id="m-a3" class="usa-accordion__content usa-prose">
+        <p>
+          These are not recommended, and only for legacy compatibility.
+        </p>
+        <ul>
+          <li>
+            <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/loa/1</code></strong><br>
+            Equivalent to IAL1
+          </li>
+          <li>
+            <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/loa/3</code></strong><br>
+            Equivalent to identity verified account
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
-  #### AAL Values
-  We default to requiring a user to be authenticated with a second factor:
-
-  - **`urn:gov:gsa:ac:classes:sp:PasswordProtectedTransport:duo`**
-      This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow strict AAL 1, because it implies that a user did not authenticate with a second factor. This setting requires users to reauthenticate with a separate second factor (i.e. not a session secret) once every 30 days at a minimum.
-
-  Stricter behavior can be specified by adding one of:
-
-    - **`http://idmanagement.gov/ns/assurance/aal/2`**
-        This specifies that a user has been authenticated with a separate second factor. Users must _always_ authenticate with a second factor.
-    - **`http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true`**
-        This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC. Users must _always_ authenticate with a second factor.
-    - **`http://idmanagement.gov/ns/assurance/aal/2?hspd12=true`**
-        This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC). Users must _always_ authenticate with a second factor.
-
-  #### LOA Values
-  These are not recommended, and only for legacy compatibility.
-    - **`http://idmanagement.gov/ns/assurance/loa/1`**
-      Equivalent to IAL1
-    - **`http://idmanagement.gov/ns/assurance/loa/3`**
-      Equivalent to identity verified account
-
+  
 * **client_id**
   The unique identifier for the client. This will be registered with the Login.gov IdP in advance.
 
