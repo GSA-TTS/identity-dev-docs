@@ -33,6 +33,36 @@ sidenav:
     href: "#example-application"
 
 ---
+{% capture type_of_service %}
+  A type of identity verification must be specified.
+
+- **`http://idmanagement.gov/ns/assurance/ial/1`**
+    Basic identity assurance, does not require identity verification (this is the most common value).
+- **`http://idmanagement.gov/ns/assurance/ial/2`**
+    Requires that the user has gone through identity verification<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
+{% endcapture %}
+{% capture aal_values %}
+We default to requiring a user to be authenticated with a second factor:
+
+- **`urn:gov:gsa:ac:classes:sp:PasswordProtectedTransport:duo`**
+    This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow strict AAL 1, because it implies that a user did not authenticate with a second factor. This setting requires users to reauthenticate with a separate second factor (i.e. not a session secret) once every 30 days at a minimum.
+
+Stricter behavior can be specified by adding one of:
+
+  - **`http://idmanagement.gov/ns/assurance/aal/2`**
+      This specifies that a user has been authenticated with a separate second factor. Users must _always_ authenticate with a second factor.
+  - **`http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true`**
+      This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC. Users must _always_ authenticate with a second factor.
+  - **`http://idmanagement.gov/ns/assurance/aal/2?hspd12=true`**
+      This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC). Users must _always_ authenticate with a second factor.
+{% endcapture %}
+{% capture loa_values %}
+  These are not recommended, and only for legacy compatibility.
+    - **`http://idmanagement.gov/ns/assurance/loa/1`**
+      Equivalent to IAL1
+    - **`http://idmanagement.gov/ns/assurance/loa/3`**
+      Equivalent to identity verified account
+{% endcapture %}
 ## Authorization
 
 The authorization endpoint handles authentication and authorization of a user. To present the Login.gov authorization page to a user, direct them to the `/openid_connect/authorize`.
@@ -46,111 +76,63 @@ The authorization endpoint handles authentication and authorization of a user. T
 </ul>
 <div class="grid-row">
   <div class="grid-col-5">
-    acr_values
+    <span class="text-bold">acr_values</span>
   </div>
   <div class="grid-col-7">
-    The Authentication Context Class Reference requests can be used to specify the type of identity verification<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the `scope` determine which [user attributes]({{ site.baseurl }}/attributes/) will be available in the [user info response](#user-info-response).
-
-    Multiple values can be joined with a space (before being URI-escaped in the final URL)
+      The Authentication Context Class Reference requests can be used to specify the type of identity verification<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="/attributes/">user attributes</a> will be available in the <a class="usa-link" href="#user-info-response">user info response</a>.
+    <p>
+      Multiple values can be joined with a space (before being URI-escaped in the final URL)
+    </p>
   </div>
 </div>
-<div class="grid-row">
-    <div class="usa-accordion usa-accordion--multiselectable" data-allow-multiple>
-      <h4 class="usa-accordion__heading">
-        <button
-          type="button"
-          class="usa-accordion__button"
-          aria-expanded="true"
-          aria-controls="m-a1"
-        >
-          Type of Identity Verification
-        </button>
-      </h4>
-      <div id="m-a1" class="usa-accordion__content usa-prose">
-        <p>A type of identity verification must be specified.</p>
-        <ul>
-            <li>
-              <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/ial/1</code></strong><br>
-              Basic identity assurance, does not require identity verification (this is the most common value).
-            </li>
-            <li>
-              <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/ial/2</code></strong><br>
-              Requires that the user has gone through identity verification<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
-            </li>
-        </ul>
-      </div>
-      <h4 class="usa-accordion__heading">
-        <button
-          type="button"
-          class="usa-accordion__button"
-          aria-expanded="false"
-          aria-controls="m-a2"
-        >
-          AAL Values
-        </button>
-      </h4>
-      <div id="m-a2" class="usa-accordion__content usa-prose">
-        <p>We default to requiring a user to be authenticated with a second factor:</p>
-        <ul>
-              <li><strong><code class="language-plaintext highlighter-rouge">urn:gov:gsa:ac:classes:sp:PasswordProtectedTransport:duo</code></strong><br>
-          This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow strict AAL 1, because it implies that a user did not authenticate with a second factor. This setting requires users to reauthenticate with a separate second factor (i.e. not a session secret) once every 30 days at a minimum.
-            </li>
-        </ul>
-        <p>Stricter behavior can be specified by adding one of:</p>
-    <ul>
-        <li><strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/aal/2</code></strong><br>
-      This specifies that a user has been authenticated with a separate second factor. Users must <em>always</em> authenticate with a second factor.</li>
-          <li><strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true</code></strong><br>
-      This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC. Users must <em>always</em> authenticate with a second factor.</li>
-          <li><strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/aal/2?hspd12=true</code></strong><br>
-      This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC). Users must <em>always</em> authenticate with a second factor.</li>
-        </ul>
-      </div>
-      <h4 class="usa-accordion__heading">
-        <button
-          type="button"
-          class="usa-accordion__button"
-          aria-expanded="false"
-          aria-controls="m-a3"
-        >
-          LOA Values
-        </button>
-      </h4>
-      <div id="m-a3" class="usa-accordion__content usa-prose">
-        <p>
-          These are not recommended, and only for legacy compatibility.
-        </p>
-        <ul>
-          <li>
-            <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/loa/1</code></strong><br>
-            Equivalent to IAL1
-          </li>
-          <li>
-            <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/loa/3</code></strong><br>
-            Equivalent to identity verified account
-          </li>
-        </ul>
-      </div>
+<div class="grid-row dev-doc-row">
+    <div class="usa-accordion">
+      {% include accordion.html content=type_of_service title="Type of Service Level" id="service_level" %}
+      {% include accordion.html content=aal_values title="AAL Values" id="aal_values" %}
+      {% include accordion.html content=loa_values title="LOA VAlues" id="loa_values" %}
+    </div>
+    <p>
+      1. Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization. ↩1 ↩2 ↩3
+    </p>
+  </div>
+  <div class="grid-row dev-doc-row">
+    <div class="grid-col-5">
+      <span class="text-bold">client_id</span>
+    </div>
+    <div class="grid-col-7">
+      The unique identifier for the client. This will be registered with the Login.gov IdP in advance.
     </div>
   </div>
-</div>
+  <div class="dev-doc-row">
+    <div class="grid-row">
+      <div class="grid-col-5">
+        <span class="text-bold">code_challenge</span> - <span class="text-italic">required for PKCE</span>
+      </div>
+      <div class="grid-col-7 padding-bottom-2">
+          The <a class="usa-link" href="https://datatracker.ietf.org/doc/html/rfc4648">RFC 4648</a> URL-safe Base64 encoding of the SHA256 digest of a random value generated by the client. The original random value is referred to as the <code class="language-plaintext highlighter-rouge">code_verifier</code> and is later used with the token endpoint. Generating these values in Ruby might look like this, for example:
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="usa-accordion usa-accordion--multiselectable" data-allow-multiple>
+        <h4 class="usa-accordion__heading">
+          <button
+            type="button"
+            class="usa-accordion__button"
+            aria-expanded="false"
+            aria-controls="code_challenge"
+          >
+            Code Challenge Example
+          </button>
+        </h4>
+        <div id="code_challenge" class="usa-accordion__content usa-prose">
+          {% include snippets/oidc/auth/code_challenge.md %}  
+        </div>
+      </div>
+    </div>
+
+  </div>
 
   
-* **client_id**
-  The unique identifier for the client. This will be registered with the Login.gov IdP in advance.
-
-* **code_challenge** — *required for PKCE*
-  The [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648) URL-safe Base64 encoding of the SHA256 digest of a random value generated by the client. The original random value is referred to as the `code_verifier` and is later used with the token endpoint. Generating these values in Ruby might look like this, for example:
-  ```ruby
-  code_verifier = SecureRandom.hex
-  => "5787d673fb784c90f0e309883241803d"
-  code_challenge = Digest::SHA256.digest(code_verifier) # binary data
-  url_safe_code_challenge = Base64.urlsafe_encode64(code_challenge)
-  # RFC 4648 URL-safe Base64 encoding replaces "+" with "-" and "/" with "_" and trims trailing "="
-  => "1BUpxy37SoIPmKw96wbd6MDcvayOYm3ptT-zbe6L_zM"
-  Base64.encode64(code_challenge) # wrong and URL-unsafe encoding
-  => "1BUpxy37SoIPmKw96wbd6MDcvayOYm3ptT+zbe6L/zM=" # wrong and URL-unsafe encoding
-  ```
 
 * **code_challenge_method** -- *required for PKCE*
   This must be `S256`, the only PKCE code challenge method supported.
