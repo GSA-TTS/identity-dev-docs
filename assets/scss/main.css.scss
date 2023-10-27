@@ -62,11 +62,17 @@ main.usa-layout-docs {
   margin-bottom: 0px;
 }
 
-.selected-item {
+.code-button {
   color: #205493;
+  padding-bottom: 0.5rem;
+  border: none;
+  text-align: left;
+  padding-left: 0px;
+}
+
+.code-button__selected {
   font-weight: bold;
   border-bottom: 4px solid red;
-  padding-bottom: 0.5rem;
 }
 
 .reversefootnote {
@@ -123,7 +129,7 @@ main.usa-layout-docs {
 .return-to-top-section {
   position: absolute;
   height: 100%;
-  bottom: 4rem;
+  bottom: 0;
   right: 0;
 }
 

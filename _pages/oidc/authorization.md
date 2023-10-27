@@ -130,10 +130,9 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
     <h2 id="authorization">Authorization</h2>
       <p>The authorization endpoint handles authentication and authorization of a user. To present the Login.gov authorization page to a user, direct them to the <code class="language-plaintext highlighter-rouge">/openid_connect/authorize</code>.</p>
   <h3 id="request_parameters">Request Parameters</h3>
-
   <ul class="doc-sub-nav padding-top-4">
-    <li class="doc-sub-nav-item selected-item margin-left-neg-3">JWT</li>
-    <li class="doc-sub-nav-item margin-left-3">PKCE</li>
+    <li id="jwt-nav" class="doc-sub-nav-item code-button__selected margin-left-neg-3">JWT</li>
+    <li id="pkce-nav" class="doc-sub-nav-item margin-left-3">PKCE</li>
   </ul>
   <div class="grid-row">
     <div class="grid-col-5">
@@ -164,7 +163,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         The unique identifier for the client. This will be registered with the Login.gov IdP in advance.
       </div>
     </div>
-    <div class="dev-doc-row">
+    <div class="dev-doc-row pkce-only display-none">
       <div class="grid-row">
         <div class="grid-col-5">
           <h4 class="parameters clearfix">code_challenge</h4><span class="float-left text-italic">required for PKCE</span>
@@ -179,7 +178,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         </div>
       </div>
     </div>
-    <div class="grid-row dev-doc-row">
+    <div class="grid-row dev-doc-row pkce-only display-none">
       <div class="grid-col-5">
         <h4 class="parameters clearfix">code_challenge_method</h4><span class="float-left text-italic">required for PKCE</span>
       </div>
@@ -267,16 +266,23 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
     </div>
   </div>
   <div class="usa-layout-docs__main code-snippet-column margin-top-neg-8 padding-top-8 margin-bottom-neg-8 desktop:grid-col-3">
-    <section class="code-snippet-section">
-      {% include snippets/oidc/auth/jwt.md %}
-    </section>
+      <section id="pkce" class="code-snippet-section display-none">
+        <span class="code-button code-button__selected margin-left-2">PKCE Request</span>
+          {% include snippets/oidc/auth/pkce.md %}
+      </section>
+      <section id="jwt" class="code-snippet-section">
+        <span class="code-button code-button__selected margin-left-2">JWT Request</span>
+          {% include snippets/oidc/auth/jwt.md %}
+      </section>
   </div>
 </div>
 <div class="grid-row grid-gap">
   <div class="grid-col-9">
     {{ authorization_response | markdownify }}
   </div>
-  <div class="usa-layout-docs__main code-snippet-column margin-top-neg-8 padding-top-8 margin-bottom-neg-8 grid-col-3">
+  <div class="usa-layout-docs__main code-snippet-column margin-top-neg-8 padding-top-8 margin-bottom-neg-8 desktop:grid-col-3">
+    <button class="code-button code-button__selected margin-left-2">Response</button>
+    <button class="code-button margin-left-2">Error</button>
     <section class="code-snippet-section">
       {% include snippets/oidc/auth/success.md %}
     </section>
