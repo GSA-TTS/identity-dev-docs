@@ -14,6 +14,7 @@
 );
 @forward "uswds";
 
+
 main.usa-layout-docs {
   word-wrap: break-word;
 }
@@ -104,6 +105,11 @@ main.usa-layout-docs {
 
 .code-snippet-column {
   background-color: #f0f0f0;
+}
+
+.parameters {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .markdown > .highlighter-rouge > .highlight > pre {
