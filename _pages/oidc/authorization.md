@@ -34,12 +34,12 @@ sidenav:
 
 ---
 {% capture type_of_service %}
-  A type of identity verification must be specified.
+  A type of service level<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> must be specified.
 
 - **`http://idmanagement.gov/ns/assurance/ial/1`**
     Basic identity assurance, does not require identity verification (this is the most common value).
 - **`http://idmanagement.gov/ns/assurance/ial/2`**
-    Requires that the user has gone through identity verification<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
+    Requires that the user has gone through identity verification<sup id="fnref:1:3" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
 {% endcapture %}
 {% capture aal_values %}
 We default to requiring a user to be authenticated with a second factor:
@@ -50,7 +50,7 @@ We default to requiring a user to be authenticated with a second factor:
 Stricter behavior can be specified by adding one of:
 
   - **`http://idmanagement.gov/ns/assurance/aal/2`**
-      This specifies that a user has been authenticated with a separate second factor. Users must _always_ authenticate with a second factor.
+      This is the same as the default behavior except users must reauthenticate with a separate second factor (i.e. not a session secret) once every 12 hours.
   - **`http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true`**
       This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC. Users must _always_ authenticate with a second factor.
   - **`http://idmanagement.gov/ns/assurance/aal/2?hspd12=true`**
@@ -64,12 +64,29 @@ Stricter behavior can be specified by adding one of:
       Equivalent to identity verified account
 {% endcapture %}
 {% capture code_challenge %}
+Correct Example
+
 ```ruby
 code_verifier = SecureRandom.hex
 => "5787d673fb784c90f0e309883241803d"
 code_challenge = Digest::SHA256.digest(code_verifier) # binary data
 url_safe_code_challenge = Base64.urlsafe_encode64(code_challenge)
 # RFC 4648 URL-safe Base64 encoding replaces "+" with "-" and "/" with "_" and trims trailing "="
+=> "1BUpxy37SoIPmKw96wbd6MDcvayOYm3ptT-zbe6L_zM"
+Base64.encode64(code_challenge) # wrong and URL-unsafe encoding
+=> "1BUpxy37SoIPmKw96wbd6MDcvayOYm3ptT+zbe6L/zM=" # wrong and URL-unsafe encoding
+```
+
+Incorrect Example
+
+```ruby
+=> "1BUpxy37SoIPmKw96wbd6MDcvayOYm3ptT-zbe6L_zM"
+Base64.encode64(code_challenge) # wrong and URL-unsafe encoding
+=> "1BUpxy37SoIPmKw96wbd6MDcvayOYm3ptT+zbe6L/zM=" # wrong and URL-unsafe encoding
+```
+{% endcapture %}
+{% capture code_challenge_incorrect %}
+```ruby
 => "1BUpxy37SoIPmKw96wbd6MDcvayOYm3ptT-zbe6L_zM"
 Base64.encode64(code_challenge) # wrong and URL-unsafe encoding
 => "1BUpxy37SoIPmKw96wbd6MDcvayOYm3ptT+zbe6L/zM=" # wrong and URL-unsafe encoding
@@ -95,7 +112,7 @@ Possible values are:
 {% capture verified_possible_values %}
   The shortest value allowed for this parameter is 30 days (`30d`) because of the cost of identity verification, as well as the time it takes for backend verification sources to be updated.
 
-  The format for this value is **`xD`**, where **`x`** is an integer number and **`D`** specifies the duration. **`D`** can be:
+  The format for this value is **`nD`**, where **`n`** is an integer number and **`D`** specifies the duration. **`D`** can be:
     * `d` for number of days
       * Example: `45d`
     * `w` for a number of weeks
@@ -113,22 +130,24 @@ After an authorization, Login.gov will redirect to the provided `redirect_uri`.
 In a **successful authorization**, the URI will contain the two parameters `code` and `state`:
 
 - **code** — A unique authorization code the client can pass to the [token endpoint](#token).
-- **state** — The `state` value originally provided by the client.
+- **state** — The `state` value originally provided by the client. Validate that the value is the same.
 
 
 In an **unsuccessful authorization**, the URI will contain the parameters `error` and `state`, and optionally `error_description`:
 
 - **error** — The error type, either:
   - `access_denied` — The user has either cancelled or declined to authorize the client.
-  - `invalid_request` — The authorization request was invalid. See the `error_description` parameter for more details.
+  - `invalid_request` — The authorization request was invalid. The `error_description` parameter will provide a description.
 - **error_description** — A description of the error.
 - **state** — The `state` value originally provided by the client.
 {% endcapture %}
 
 <div class="grid-row grid-gap">
   <div class="grid-col-9">
-    <h2 id="authorization">Authorization</h2>
-      <p>The authorization endpoint handles authentication and authorization of a user. To present the Login.gov authorization page to a user, direct them to the <code class="language-plaintext highlighter-rouge">/openid_connect/authorize</code>.</p>
+    <h2 class="margin-top-neg-1">Authorization</h2>
+      <p>The authorization endpoint handles authentication and authorization of a user. 
+      To present the Login.gov authorization page to a user, direct them to the 
+      <code class="language-plaintext highlighter-rouge">/openid_connect/authorize</code>. View an example for <strong>private_key_jwt</strong> or <strong>PKCE</strong> in the side panel.</p>
   <h3 id="request_parameters">Request Parameters</h3>
   <ul class="doc-sub-nav padding-top-4">
     <li id="jwt-nav" class="doc-sub-nav-item code-button__selected margin-left-neg-3">JWT</li>
@@ -136,10 +155,10 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
   </ul>
   <div class="grid-row">
     <div class="grid-col-5">
-      <h4>acr_values</h4>
+      <h4 class="parameters">acr_values</h4>
     </div>
     <div class="grid-col-7">
-        The Authentication Context Class Reference requests can be used to specify the type of identity verification<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="/attributes/">user attributes</a> will be available in the <a class="usa-link" href="#user-info-response">user info response</a>.
+        The Authentication Context Class Reference requests can be used to specify the type of service level<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="/attributes/">user attributes</a> will be available in the <a class="usa-link" href="#user-info-response">user info response</a>.
       <p>
         Multiple values can be joined with a space (before being URI-escaped in the final URL)
       </p>
@@ -151,8 +170,9 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         {% include accordion.html content=aal_values title="Authentication Assurance (AAL) Values" id="aal_values" %}
         {% include accordion.html content=loa_values title="Level of Assurance (LOA) Values" id="loa_values" %}
       </div>
-      <p>
-        1. Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization. ↩1 ↩2 ↩3
+      <p id="fn:1">
+        1. Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization. 
+        <a href="#fnref:1">↩</a>1 <a href="#fnref:1:2">↩</a>2 <a href="#fnref:1:3">↩</a>3
       </p>
     </div>
     <div class="grid-row dev-doc-row">
@@ -163,7 +183,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         The unique identifier for the client. This will be registered with the Login.gov IdP in advance.
       </div>
     </div>
-    <div class="dev-doc-row pkce-only display-none">
+    <div class="dev-doc-row pkce-only" hidden>
       <div class="grid-row">
         <div class="grid-col-5">
           <h4 class="parameters clearfix">code_challenge</h4><span class="float-left text-italic">required for PKCE</span>
@@ -178,12 +198,14 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         </div>
       </div>
     </div>
-    <div class="grid-row dev-doc-row pkce-only display-none">
-      <div class="grid-col-5">
-        <h4 class="parameters clearfix">code_challenge_method</h4><span class="float-left text-italic">required for PKCE</span>
-      </div>
-      <div class="grid-col-7">
-          This must be <code class="language-plaintext highlighter-rouge">S256</code>, the only PKCE code challenge method supported.
+    <div class="dev-doc-row pkce-only" hidden>
+      <div class="grid-row">
+        <div class="grid-col-5">
+          <h4 class="parameters clearfix">code_challenge_method</h4><span class="float-left text-italic">required for PKCE</span>
+        </div>
+        <div class="grid-col-7">
+            This must be <code class="language-plaintext highlighter-rouge">S256</code>, the only PKCE code challenge method supported.
+        </div>
       </div>
     </div>
     <div class="grid-row dev-doc-row">
@@ -208,12 +230,12 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
           <h4 class="parameters clearfix">scope</h4>
         </div>
         <div class="grid-col-7">
-            A space-separated string of the scopes being requested. The authorization page will display the list of attributes being requested from the user. Applications should aim to request the fewest <a class="usa-link" href="/attributes/">user attributes</a> and smallest scope needed.
+            A space-separated string of the scopes being requested. (Keep in mind the blank space “ “ should be encoded with “+”.) The authorization page will display the list of attributes being requested from the user. Applications should aim to request the fewest <a class="usa-link" href="/attributes/">user attributes</a> and smallest scope needed.
         </div>
       </div>
       <div class="grid-row">
         <div class="usa-accordion padding-top-2">
-          {% include accordion.html content=possible_values id="scope_possible_values" title="Possible Values" %}
+          {% include accordion.html content=scope_possible_values id="scope_possible_values" title="Possible Values" %}
         </div>
       </div>
     </div>
@@ -233,7 +255,13 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
           <h4 class="parameters clearfix">nonce</h4>
         </div>
         <div class="grid-col-7">
-          A unique value, at least 22 characters in length, used to verify the integrity of the <code class="language-plaintext highlighter-rouge">id_token</code> and mitigate <a class="usa-link" href="https://en.wikipedia.org/wiki/Replay_attack">replay attacks</a>. This value should include per-session state and be unguessable by attackers. This value will be present in the <code class="language-plaintext highlighter-rouge">id_token</code> of the <a class="usa-link" href="#token-response">token endpoint response</a>, where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. Read more about <a class="usa-link" href="http://openid.net/specs/openid-connect-core-1_0.html#NonceNotes">nonce implementation</a> in the spec.
+          A unique value, at least 22 characters in length, used to verify the integrity 
+          of the <code class="language-plaintext highlighter-rouge">id_token</code> and mitigate 
+          <a class="usa-link usa-link usa-link--external" href="https://en.wikipedia.org/wiki/Replay_attack">replay attacks</a>. 
+          This value should include per-session state and be unguessable by attackers. This value will be present in the 
+          <code class="language-plaintext highlighter-rouge">id_token</code> of the <a class="usa-link" href="#token-response">token endpoint response</a>, 
+          where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. 
+          Read more about <a class="usa-link usa-link--external" href="http://openid.net/specs/openid-connect-core-1_0.html#NonceNotes">nonce implementation</a> in the spec.
         </div>
       </div>
     </div>
@@ -266,7 +294,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
     </div>
   </div>
   <div class="usa-layout-docs__main code-snippet-column margin-top-neg-8 padding-top-8 margin-bottom-neg-8 desktop:grid-col-3">
-      <section id="pkce" class="code-snippet-section display-none">
+      <section id="pkce" class="code-snippet-section" hidden>
         <span class="code-button code-button__selected margin-left-2">PKCE Request</span>
           {% include snippets/oidc/auth/pkce.md %}
       </section>
@@ -279,14 +307,15 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
 <div class="grid-row grid-gap">
   <div class="grid-col-9">
     {{ authorization_response | markdownify }}
+    <a href="{{ site.baseurl }}/oidc/token" class="usa-link">Next step: Token</a>
   </div>
   <div class="usa-layout-docs__main code-snippet-column margin-top-neg-8 padding-top-8 margin-bottom-neg-8 desktop:grid-col-3">
-    <button class="code-button code-button__selected margin-left-2">Response</button>
-    <button class="code-button margin-left-2">Error</button>
-    <section class="code-snippet-section">
+    <button id="oidc_auth_success_button" class="code-button code-button__selected margin-left-2">Success</button>
+    <button id="oidc_auth_error_button" class="code-button margin-left-2">Error</button>
+    <section id="oidc_auth_success" class="code-snippet-section">
       {% include snippets/oidc/auth/success.md %}
     </section>
-     <section class="code-snippet-section">
+     <section id="oidc_auth_error" class="code-snippet-section" hidden>
       {% include snippets/oidc/auth/failure.md %}
     </section>
   </div>
