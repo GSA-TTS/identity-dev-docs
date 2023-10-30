@@ -56,6 +56,7 @@ main.usa-layout-docs {
 
 .doc-sub-nav-item {
   display: inline-block;
+  cursor: pointer;
 }
 
 .usa-prose > ul > .doc-sub-nav-item {
@@ -68,6 +69,10 @@ main.usa-layout-docs {
   border: none;
   text-align: left;
   padding-left: 0px;
+}
+
+button.code-button:hover {
+  cursor: pointer;
 }
 
 .code-button__selected {
@@ -106,6 +111,11 @@ main.usa-layout-docs {
 }
 
 .usa-layout-docs__sidenav {
+  top: 2rem;
+}
+
+.code-snippet-section {
+  position: sticky;
   top: 2rem;
 }
 
