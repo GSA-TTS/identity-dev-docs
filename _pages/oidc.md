@@ -177,25 +177,6 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 * **nonce**
   A unique value, at least 22 characters in length, used to verify the integrity of the `id_token` and mitigate [replay attacks](https://en.wikipedia.org/wiki/Replay_attack). This value should include per-session state and be unguessable by attackers. This value will be present in the `id_token` of the [token endpoint response](#token-response), where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. Read more about [nonce implementation](http://openid.net/specs/openid-connect-core-1_0.html#NonceNotes) in the spec.
 
-* **verified_within** -- *optional, for identity verified requests only*
-  Specifies how recently the user's information must be verified. For example, if your application requires that the user's data must have been verified within the last year, you can set the value to `verified_within=1y`, and customers whose data is older than that will go through the identity verification process again before continuing back to your application.
-
-  <details markdown="1">
-    <summary>Possible values</summary>
-
-  The shortest value allowed for this parameter is 30 days (`30d`) because of the cost of identity verification, as well as the time it takes for backend verification sources to be updated.
-
-  The format for this value is **`xD`**, where **`x`** is an integer number and **`D`** specifies the duration. **`D`** can be:
-    * `d` for number of days
-      * Example: `45d`
-    * `w` for a number of weeks
-      * Example: `8w` (equivalent to `56d`)
-    * `m` for a number of months (assumed to be 30-day months)
-      * Example: `18m` (equivalent to `540d`)
-    * `y` for a number of years (assumed to be 365-day years)
-      * Example: `2y` (equivalent to `730d`)
-  </details>
-
 * **locale** -- *optional*
   If you know that a user would prefer one of our alternative language translations (currently Spanish or French), you can include the `locale` parameter to specify the language Login.gov should use (either `es` for Spanish or `fr` for French).
 
