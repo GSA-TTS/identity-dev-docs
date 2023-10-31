@@ -6,31 +6,31 @@ redirect_from:
   - /openid-connect/
 sidenav:
   - text: Getting started
-    href: "#getting-started"
+    href: "oidc/#getting-started"
   - text: Authorization
-    href: "/oidc/oidc_authorization"
+    href: "oidc/authorization/"
     links:
       - text: Authorization response
         href: "#authorization-response"
   - text: Token
-    href: "#token"
+    href: "oidc/#token"
     links:
       - text: Token response
-        href: "#token-response"
+        href: "oidc/#token-response"
   - text: User info
-    href: "#user-info"
+    href: "oidc/#user-info"
     links:
       - text: User info response
-        href: "#user-info-response"
+        href: "oidc/#user-info-response"
   - text: Certificates
-    href: "#certificates"
+    href: "oidc/#certificates"
   - text: Logout
-    href: "#logout"
+    href: "oidc/#logout"
     links:
       - text: Logout response
-        href: "#logout-response"
+        href: "oidc/#logout-response"
   - text: Example application
-    href: "#example-application"
+    href: "oidc/#example-application"
 
 ---
 {% capture type_of_service %}
@@ -129,7 +129,7 @@ After an authorization, Login.gov will redirect to the provided `redirect_uri`.
 
 In a **successful authorization**, the URI will contain the two parameters `code` and `state`:
 
-- **code** — A unique authorization code the client can pass to the [token endpoint](#token).
+- **code** — A unique authorization code the client can pass to the [token endpoint](oidc/#token).
 - **state** — The `state` value originally provided by the client. Validate that the value is the same.
 
 
@@ -158,7 +158,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <h4 class="parameters">acr_values</h4>
     </div>
     <div class="grid-col-7">
-        The Authentication Context Class Reference requests can be used to specify the type of service level<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="/attributes/">user attributes</a> will be available in the <a class="usa-link" href="#user-info-response">user info response</a>.
+        The Authentication Context Class Reference requests can be used to specify the type of service level<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="/attributes/">user attributes</a> will be available in the <a class="usa-link" href="oidc/#user-info-response">user info response</a>.
       <p>
         Multiple values can be joined with a space (before being URI-escaped in the final URL)
       </p>
@@ -259,7 +259,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
           of the <code class="language-plaintext highlighter-rouge">id_token</code> and mitigate 
           <a class="usa-link usa-link usa-link--external" href="https://en.wikipedia.org/wiki/Replay_attack">replay attacks</a>. 
           This value should include per-session state and be unguessable by attackers. This value will be present in the 
-          <code class="language-plaintext highlighter-rouge">id_token</code> of the <a class="usa-link" href="#token-response">token endpoint response</a>, 
+          <code class="language-plaintext highlighter-rouge">id_token</code> of the <a class="usa-link" href="oidc/#token-response">token endpoint response</a>, 
           where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. 
           Read more about <a class="usa-link usa-link--external" href="http://openid.net/specs/openid-connect-core-1_0.html#NonceNotes">nonce implementation</a> in the spec.
         </div>
@@ -307,7 +307,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-9 mobile:grid-col-full">
     {{ authorization_response | markdownify }}
-    <a href="{{ site.baseurl }}/oidc/token" class="usa-link">Next step: Token</a>
+    <a href="{{ site.baseurl }}/oidc/#token" class="usa-link">Next step: Token</a>
   </div>
   <div class="usa-layout-docs__main code-snippet-column margin-top-neg-8 padding-top-8 margin-bottom-neg-8 mobile:display-none desktop:display-block desktop:grid-col-3">
     <button id="oidc_auth_success_button" class="code-button code-button__selected margin-left-2">Success</button>
