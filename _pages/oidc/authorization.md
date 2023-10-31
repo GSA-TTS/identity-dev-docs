@@ -166,9 +166,9 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
   </div>
   <div class="grid-row dev-doc-row">
       <div class="usa-accordion">
-        {% include accordion.html content=type_of_service title="Type of Service Level" id="service_level" %}
-        {% include accordion.html content=aal_values title="Authentication Assurance (AAL) Values" id="aal_values" %}
-        {% include accordion.html content=loa_values title="Level of Assurance (LOA) Values" id="loa_values" %}
+        {% include accordion.html content=type_of_service accordion_id="service_level_accordion"  title="Type of Service Level" id="service_level" %}
+        {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
+        {% include accordion.html content=loa_values accordion_id="loa_accordion" title="Level of Assurance (LOA) Values" id="loa_values" %}
       </div>
       <p id="fn:1">
         1. Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization. 
@@ -194,7 +194,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       </div>
       <div class="grid-row">
         <div class="usa-accordion padding-top-2">
-            {% include accordion.html content=code_challenge title="Code Challenge Example" id="code_challenge" %}  
+            {% include accordion.html content=code_challenge accordion_id="code_challenge_accordion" title="Code Challenge Example" id="code_challenge" %}  
         </div>
       </div>
     </div>
@@ -235,7 +235,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       </div>
       <div class="grid-row">
         <div class="usa-accordion padding-top-2">
-          {% include accordion.html content=scope_possible_values id="scope_possible_values" title="Possible Values" %}
+          {% include accordion.html content=scope_possible_values accordion_id="scope_accordion" id="scope_possible_values" title="Possible Values" %}
         </div>
       </div>
     </div>
@@ -278,7 +278,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       </div>
       <div class="grid-row">
         <div class="usa-accordion padding-top-2">
-          {% include accordion.html content=verified_possible_values id="possible_values" title="Possible Values" %}
+          {% include accordion.html content=verified_possible_values accordion_id="verified_accordion" id="verified_possible_values" title="Possible Values" %}
         </div>
       </div>
     </div>
