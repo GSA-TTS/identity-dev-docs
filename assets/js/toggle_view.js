@@ -47,7 +47,7 @@ function hideSuccessCode(evt) {
 }
 
 
-// Unique toggle for OIDC Authorization page
+// Unique toggle for OIDC Authorization page between PKCE and JWT parameters
 function togglePKCEView(evt) {
     pkce_elements = document.getElementsByClassName("pkce-only")
     jwt_div = document.getElementById("jwt")
@@ -71,8 +71,4 @@ function togglePKCEView(evt) {
         jwt_div.hidden = false
         pkce_div.hidden = true
     }
-}
-
-function toggleCodeSnippet() {
-
 }

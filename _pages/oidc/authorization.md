@@ -143,7 +143,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
 {% endcapture %}
 
 <div class="grid-row grid-gap">
-  <div class="grid-col-9">
+  <div class="desktop:grid-col-9 mobile:grid-col-full">
     <h2 class="margin-top-neg-1">Authorization</h2>
       <p>The authorization endpoint handles authentication and authorization of a user. 
       To present the Login.gov authorization page to a user, direct them to the 
@@ -293,7 +293,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       </div>
     </div>
   </div>
-  <div class="usa-layout-docs__main code-snippet-column margin-top-neg-8 padding-top-8 margin-bottom-neg-8 desktop:grid-col-3">
+  <div class="usa-layout-docs__main code-snippet-column margin-top-neg-8 padding-top-8 margin-bottom-neg-8 mobile:display-none desktop:display-block desktop:grid-col-3">
       <section id="pkce" class="code-snippet-section" hidden>
         <span class="code-button code-button__selected margin-left-2">PKCE Request</span>
           {% include snippets/oidc/auth/pkce.md %}
@@ -305,11 +305,11 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
   </div>
 </div>
 <div class="grid-row grid-gap">
-  <div class="grid-col-9">
+  <div class="desktop:grid-col-9 mobile:grid-col-full">
     {{ authorization_response | markdownify }}
     <a href="{{ site.baseurl }}/oidc/token" class="usa-link">Next step: Token</a>
   </div>
-  <div class="usa-layout-docs__main code-snippet-column margin-top-neg-8 padding-top-8 margin-bottom-neg-8 desktop:grid-col-3">
+  <div class="usa-layout-docs__main code-snippet-column margin-top-neg-8 padding-top-8 margin-bottom-neg-8 mobile:display-none desktop:display-block desktop:grid-col-3">
     <button id="oidc_auth_success_button" class="code-button code-button__selected margin-left-2">Success</button>
     <button id="oidc_auth_error_button" class="code-button margin-left-2">Error</button>
     <section id="oidc_auth_success" class="code-snippet-section">
