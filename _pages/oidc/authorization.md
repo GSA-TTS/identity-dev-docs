@@ -160,7 +160,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
     <div class="grid-col-7">
         The Authentication Context Class Reference requests can be used to specify the type of service level<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="/attributes/">user attributes</a> will be available in the <a class="usa-link" href="oidc/#user-info-response">user info response</a>.
       <p>
-        Multiple values can be joined with a space (before being URI-escaped in the final URL)
+        Multiple values can be joined with a space (before being URI-escaped in the final URL).
       </p>
     </div>
   </div>
