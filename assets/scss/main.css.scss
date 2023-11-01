@@ -52,6 +52,7 @@ main.usa-layout-docs {
   border-bottom: 1px solid #CEDCED;
   width: 100%;
   color: #205493;
+  margin-bottom: 0px;
 }
 
 .doc-sub-nav-item {
@@ -119,9 +120,6 @@ button.code-button:hover {
   top: 2rem;
 }
 
-.code-snippet-column {
-  background-color: #f0f0f0;
-}
 
 .parameters {
   margin-top: 0px;
@@ -134,6 +132,7 @@ button.code-button:hover {
   word-break: inherit;
   white-space-collapse: preserve-breaks;
   background-color: inherit;
+  padding-bottom: 4rem;
 }
 
 .return-to-top-section {
