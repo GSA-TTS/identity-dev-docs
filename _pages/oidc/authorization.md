@@ -307,7 +307,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-9 mobile:grid-col-full">
     {{ authorization_response | markdownify }}
-    <a href="{{ site.baseurl }}/oidc/#token" class="usa-link margin-top-2 mobile:display-none desktop:display-block">Next step: Token</a>
+    <a href="{{ site.baseurl }}/oidc/#token" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Token</a>
   </div>
   <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-3">
     <div class="margin-top-2 position-relative z-index-1">
