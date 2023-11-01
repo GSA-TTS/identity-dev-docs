@@ -1,0 +1,4 @@
+_site
+node_modules
+vendor
+assets/js/anchor.js
