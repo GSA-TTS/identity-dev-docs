@@ -34,6 +34,10 @@ jobs:
             make clean
             make test
 
+      - run:
+          name: Lint JavaScript
+          command: make lint-js
+
       # collect reports
       - store_test_results:
           path: /tmp/test-results

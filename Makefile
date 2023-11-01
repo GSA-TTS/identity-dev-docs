@@ -23,6 +23,9 @@ build: build-site build-css
 
 install-dependencies: bundle npm
 
+lint-js:
+	npm run lint
+
 npm:
 	npm ci
 
