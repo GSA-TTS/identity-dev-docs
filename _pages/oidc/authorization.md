@@ -148,12 +148,12 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <p>The authorization endpoint handles authentication and authorization of a user. 
       To present the Login.gov authorization page to a user, direct them to the 
       <code class="language-plaintext highlighter-rouge">/openid_connect/authorize</code>. View an example for <strong>private_key_jwt</strong> or <strong>PKCE</strong> in the side panel.</p>
-  <h3>Request Parameters</h3>
+  <h3 class="margin-top-4">Request Parameters</h3>
   <ul class="doc-sub-nav">
     <li id="jwt-nav" class="doc-sub-nav-item code-button__selected margin-left-neg-3">JWT</li>
     <li id="pkce-nav" class="doc-sub-nav-item margin-left-3">PKCE</li>
   </ul>
-  <div class="grid-row dev-doc-row">
+  <div class="grid-row margin-top-4">
     <div class="grid-col-5">
       <h4 class="parameters">acr_values</h4>
     </div>
