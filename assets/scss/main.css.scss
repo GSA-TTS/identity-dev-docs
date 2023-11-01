@@ -52,6 +52,7 @@ main.usa-layout-docs {
   border-bottom: 1px solid #CEDCED;
   width: 100%;
   color: #205493;
+  margin-bottom: 0px;
 }
 
 .doc-sub-nav-item {
@@ -119,9 +120,6 @@ button.code-button:hover {
   top: 2rem;
 }
 
-.code-snippet-column {
-  background-color: #f0f0f0;
-}
 
 .parameters {
   margin-top: 0px;
@@ -134,6 +132,7 @@ button.code-button:hover {
   word-break: inherit;
   white-space-collapse: preserve-breaks;
   background-color: inherit;
+  padding-bottom: 4rem;
 }
 
 .return-to-top-section {
@@ -151,4 +150,32 @@ button.code-button:hover {
 .return-to-top-button > img {
   // Change the chevron to #0071bb from #000000
   filter: invert(21%) sepia(72%) saturate(4106%) hue-rotate(190deg) brightness(95%) contrast(101%);
+}
+
+.code-snippet-column {
+  background-color: #f0f0f0;
+  position: relative;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .code-snippet-column {
+    background-color: transparent;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  .code-snippet-column::before {
+    content: "";
+    right: -15px;
+    width: 100%;
+    display: block;
+    z-index: 0;
+    position: absolute;
+    background-color: #f0f0f0;
+    top: 0;
+    margin-top: -4rem;
+    bottom: -11rem;
+  }
 }

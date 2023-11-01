@@ -6,11 +6,6 @@ pkce_nav = document.getElementById("pkce-nav")
 oidc_auth_success_button = document.getElementById("oidc_auth_success_button")
 oidc_auth_error_button = document.getElementById("oidc_auth_error_button")
 
-// Selectors
-oidc_auth_success_button.selector = "oidc_auth"
-oidc_auth_error_button.selector = "oidc_auth"
-
-
 // Event Listeners
 oidc_auth_success_button.addEventListener("click", showSuccessCode)
 oidc_auth_error_button.addEventListener("click", showErrorCode)
@@ -20,29 +15,29 @@ pkce_nav.addEventListener("click", togglePKCEView)
 
 function showSuccessCode(evt) {
     evt.currentTarget.classList.add("code-button__selected")
-    code_snippet = document.getElementById(evt.currentTarget.selector + "_success")
+    code_snippet = document.getElementById(evt.currentTarget.dataset.selector + "_success")
     code_snippet.hidden = false
     hideErrorCode(evt)
 }
 
 function showErrorCode(evt) {
     evt.currentTarget.classList.add("code-button__selected")
-    code_snippet = document.getElementById(evt.currentTarget.selector + "_error")
+    code_snippet = document.getElementById(evt.currentTarget.dataset.selector + "_error")
     code_snippet.hidden = false
     hideSuccessCode(evt)
 }
 
 function hideErrorCode(evt) {
-    let error_button = document.getElementById(evt.currentTarget.selector + "_error_button")
+    let error_button = document.getElementById(evt.currentTarget.dataset.selector + "_error_button")
     error_button.classList.remove("code-button__selected")
-    code_snippet = document.getElementById(evt.currentTarget.selector + "_error")
+    code_snippet = document.getElementById(evt.currentTarget.dataset.selector + "_error")
     code_snippet.hidden = true;
 }
 
 function hideSuccessCode(evt) {
-    let success_button = document.getElementById(evt.currentTarget.selector + "_success_button")
+    let success_button = document.getElementById(evt.currentTarget.dataset.selector + "_success_button")
     success_button.classList.remove("code-button__selected")
-    code_snippet = document.getElementById(evt.currentTarget.selector + "_success")
+    code_snippet = document.getElementById(evt.currentTarget.dataset.selector + "_success")
     code_snippet.hidden = true;
 }
 

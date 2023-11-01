@@ -1,7 +1,7 @@
 ---
 title: OpenID Connect
 lead: >
-  [OpenID Connect](http://openid.net) is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](http://openid.net/specs/openid-connect-core-1_0.html) of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov).
+   <a class="usa-link usa-link usa-link--external" href="http://openid.net">OpenID Connect</a> is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports <a class="usa-link usa-link usa-link--external" href="http://openid.net/specs/openid-connect-core-1_0.html">version 1.0</a> of the specification and conforms to the <a class="usa-link usa-link usa-link--external" href="https://openid.net/wg/igov">iGov Profile</a>.
 redirect_from:
   - /openid-connect/
 sidenav:
@@ -148,12 +148,12 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <p>The authorization endpoint handles authentication and authorization of a user. 
       To present the Login.gov authorization page to a user, direct them to the 
       <code class="language-plaintext highlighter-rouge">/openid_connect/authorize</code>. View an example for <strong>private_key_jwt</strong> or <strong>PKCE</strong> in the side panel.</p>
-  <h3 id="request_parameters">Request Parameters</h3>
-  <ul class="doc-sub-nav padding-top-4">
+  <h3>Request Parameters</h3>
+  <ul class="doc-sub-nav">
     <li id="jwt-nav" class="doc-sub-nav-item code-button__selected margin-left-neg-3">JWT</li>
     <li id="pkce-nav" class="doc-sub-nav-item margin-left-3">PKCE</li>
   </ul>
-  <div class="grid-row">
+  <div class="grid-row dev-doc-row">
     <div class="grid-col-5">
       <h4 class="parameters">acr_values</h4>
     </div>
@@ -293,7 +293,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       </div>
     </div>
   </div>
-  <div class="usa-layout-docs__main code-snippet-column margin-top-neg-8 padding-top-8 margin-bottom-neg-8 mobile:display-none desktop:display-block desktop:grid-col-3">
+  <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-3">
       <section id="pkce" class="code-snippet-section" hidden>
         <span class="code-button code-button__selected margin-left-2">PKCE Request</span>
           {% include snippets/oidc/auth/pkce.md %}
@@ -307,16 +307,19 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-9 mobile:grid-col-full">
     {{ authorization_response | markdownify }}
-    <a href="{{ site.baseurl }}/oidc/#token" class="usa-link">Next step: Token</a>
+    <a href="{{ site.baseurl }}/oidc/#token" class="usa-link mobile:display-none desktop:display-block">Next step: Token</a>
   </div>
-  <div class="usa-layout-docs__main code-snippet-column margin-top-neg-8 padding-top-8 margin-bottom-neg-8 mobile:display-none desktop:display-block desktop:grid-col-3">
-    <button id="oidc_auth_success_button" class="code-button code-button__selected margin-left-2">Success</button>
-    <button id="oidc_auth_error_button" class="code-button margin-left-2">Error</button>
-    <section id="oidc_auth_success" class="code-snippet-section">
-      {% include snippets/oidc/auth/success.md %}
-    </section>
-     <section id="oidc_auth_error" class="code-snippet-section" hidden>
-      {% include snippets/oidc/auth/failure.md %}
-    </section>
+  <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-3">
+    <div class="margin-top-2 position-relative z-index-1">
+      <button id="oidc_auth_success_button" data-selector="oidc_auth" class="code-button code-button__selected margin-left-2">Success</button>
+      <button id="oidc_auth_error_button" data-selector="oidc_auth" class="code-button margin-left-2">Error</button>
+      <section id="oidc_auth_success" class="code-snippet-section">
+        {% include snippets/oidc/auth/success.md %}
+      </section>
+      <section id="oidc_auth_error" class="code-snippet-section" hidden>
+        {% include snippets/oidc/auth/failure.md %}
+      </section>
+    </div>
   </div>
+  <a href="{{ site.baseurl }}/oidc/#token" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Token</a>
 </div>
