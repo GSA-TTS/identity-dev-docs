@@ -3,8 +3,7 @@
     "extends": ["plugin:@18f/eslint-plugin-identity/recommended"],
     "plugins": ["@18f/eslint-plugin-identity"],
     "env": {
-      "browser": true,
-      "jest": true
+      "browser": true
     },
     "parserOptions": {
       "ecmaVersion": 2021,
