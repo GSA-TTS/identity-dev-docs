@@ -168,7 +168,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <div class="usa-accordion">
         {% include accordion.html content=type_of_service accordion_id="service_level_accordion"  title="Type of Service Level" id="service_level" %}
         {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
-        {% include accordion.html content=loa_values accordion_id="loa_accordion" title="Level of Assurance (LOA) Values" id="loa_values" %}
+        {% include accordion.html content=loa_values accordion_id="loa_accordion" title="Level of Assurance (LOA) Values (Deprecated)" id="loa_values" %}
       </div>
       <p id="fn:1">
         1. Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization. 
