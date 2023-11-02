@@ -5,7 +5,8 @@
     "prebuild:css": "mkdir -p _site/assets/css",
     "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css --load-path=node_modules/@18f/identity-design-system/packages",
     "watch:css": "npm run build:css -- --watch",
-    "pages": "npm run build:css"
+    "pages": "npm run build:css",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,12 @@
   "dependencies": {
     "@18f/identity-build-sass": "^1.1.0",
     "@18f/identity-design-system": "^7.0.1"
+  },
+  "devDependencies": {
+    "@18f/eslint-plugin-identity": "^2.0.0",
+    "eslint": "^8.52.0",
+    "eslint-plugin-import": "^2.29.0",
+    "prettier": "3.0.3",
+    "eslint-plugin-prettier": "^5.0.1"
   }
 }
