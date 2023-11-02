@@ -6,29 +6,22 @@ redirect_from:
   - /openid-connect/
 sidenav:
   - text: Getting started
-    href: "oidc/#getting-started"
+    href: "oidc/getting-started/"
   - text: Authorization
     href: "oidc/authorization/"
     links:
+      - text: Request parameters
+        href: "#request-parameters"
       - text: Authorization response
         href: "#authorization-response"
   - text: Token
     href: "oidc/#token"
-    links:
-      - text: Token response
-        href: "oidc/#token-response"
   - text: User info
     href: "oidc/#user-info"
-    links:
-      - text: User info response
-        href: "oidc/#user-info-response"
   - text: Certificates
     href: "oidc/#certificates"
   - text: Logout
     href: "oidc/#logout"
-    links:
-      - text: Logout response
-        href: "oidc/#logout-response"
   - text: Example application
     href: "oidc/#example-application"
 
