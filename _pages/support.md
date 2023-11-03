@@ -203,6 +203,8 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
 
 ## Troubleshooting
 
+{% include support/oidc.html %}
+
 ### Login.gov Errors
 
 <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="true">
@@ -404,7 +406,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 
 <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="true">
 
-  <h4 class="usa-accordion__heading id="decoding">
+  <h4 class="usa-accordion__heading" id="decoding">
     <button class="usa-accordion__button" aria-controls="tipstools">
       Decoding SAML Requests
     </button>
@@ -453,13 +455,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 ```
 </div>
-        <div class="usa-alert usa-alert--warning">
-          <div class="usa-alert__body">
-            <p class="usa-alert__text">
-                If there is no indication of a signature within the request URL or the request SAML, the request is not signed.
-            </p>
-          </div>
-        </div>
+      {% include alert.html alert_class="usa-alert--warning" content="If there is no indication of a signature within the request URL or the request SAML, the request is not signed." %}
       <h5>Check the signature algorithm</h5>
       <p>
         One common reason for failing signature validation is the use of an unsupported hashing algorithm, like SHA1. <span class="text-bold">Login.gov only supports SHA256.</span> Using the methods described above, check whether your request either contains a SigAlg parameter indicating the use of SHA256, or your SAML includes a tag indicating this, for example:

@@ -1,0 +1,52 @@
+<div>
+  <h3>OpenID Connect Errors</h3>
+  <h4>Authorization</h4>
+  <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="true">
+
+    <h5 class="usa-accordion__heading" id="bad-client-id">
+      <button class="usa-accordion__button" aria-controls="bad-client">
+        Bad client_id
+      </button>
+    </h5>
+    <div id="bad-client" class="usa-accordion__container">
+      <div class="usa-accordion__content">
+        <p>
+          The issuer (also known as the client id) provided does not match a service provider registerested in the IdP
+        </p>
+        <h6>What to do:</h6>
+        <ul>
+          <li>Ensure the authentication request has a client_id value</li>
+          <li>
+            Ensure that the client_id sent in the request matches the one registered in your application on the
+            <a href="https://dashboard.int.identitysandbox.gov/" target="_blank" class="usa-link usa-link--external">partner dashboard</a>
+          </li>
+          <li>
+            Make sure the application configuration's <code>active</code> value is set to true
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <h5 class="usa-accordion__heading" id="missing-iaa-level">
+      <button class="usa-accordion__button" aria-controls="missing-iaa">
+        Missing a valid IAL level
+      </button>
+    </h5>
+    <div id="missing-iaa" class="usa-accordion__container">
+      <div class="usa-accordion__content">
+        <p>
+          No IAL levels are present in the acr_values parameter of the authentication request
+        </p>
+        <h6>What to do:</h6>
+        <ul>
+          Check the acr_values parameter in your authentication request and ensure that you are passing either:
+          <li>http://idmanagement.gov/ns/assurance/ial/1 for authentication-only applications, OR</li>
+          <li>
+            http://idmanagement.gov/ns/assurance/ial/2 for identity-verification permitted applications
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
