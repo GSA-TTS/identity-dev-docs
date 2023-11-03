@@ -1,0 +1,20 @@
+{% comment %}
+include
+- content
+- accordion_id
+- title
+- id
+{% endcomment %}
+<h4 class="usa-accordion__heading" id="{{ include.id }}">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="{{ include.accordion_id }}"
+    >
+      {{ include.title }}
+    </button>
+</h4>
+<div id="{{ include.accordion_id }}" class="usa-accordion__content usa-prose">
+    {{ include.content | markdownify }}
+</div>

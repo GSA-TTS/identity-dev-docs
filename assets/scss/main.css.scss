@@ -14,6 +14,7 @@
 );
 @forward "uswds";
 
+
 main.usa-layout-docs {
   word-wrap: break-word;
 }
@@ -41,20 +42,106 @@ main.usa-layout-docs {
   }
 }
 
+.dev-doc-row {
+  border-bottom: 1px solid #CEDCED;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.doc-sub-nav {
+  border-bottom: 1px solid #CEDCED;
+  width: 100%;
+  color: #205493;
+  margin-bottom: 0px;
+}
+
+.doc-sub-nav-item {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.usa-prose > ul > .doc-sub-nav-item {
+  margin-bottom: 0px;
+}
+
+.code-button {
+  color: #205493;
+  padding-bottom: 0.5rem;
+  border: none;
+  text-align: left;
+  padding-left: 0px;
+  background-color: transparent;
+}
+
+
+button.code-button:hover {
+  cursor: pointer;
+}
+
+.code-button__selected {
+  font-weight: bold;
+  border-bottom: 4px solid red;
+}
+
 .reversefootnote {
   @include u-font-family("mono");
 }
 
 
+@media (min-width: 1024px) {
+
+  .markdown > .highlighter-rouge > .highlight > pre {
+    overflow-wrap: break-word;
+    text-wrap: wrap;
+    word-break: inherit;
+    white-space-collapse: preserve-breaks;
+  }
+
+  .hero {
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .usa-navbar.usa-navbar__full-width {
+    max-width: 100%;
+  }
+
+  .usa-header--extended .usa-nav__inner.usa-nav__inner__no-margin {
+    margin-left: 0px;
+    max-width: 100%;
+  }
+}
+
 .usa-layout-docs__sidenav {
   top: 2rem;
 }
 
+.code-snippet-section {
+  position: sticky;
+  top: 2rem;
+}
+
+
+.parameters {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.markdown > .highlighter-rouge > .highlight > pre {
+  overflow-wrap: break-word;
+  text-wrap: wrap;
+  word-break: inherit;
+  white-space-collapse: preserve-breaks;
+  background-color: inherit;
+  padding-bottom: 4rem;
+}
+
 .return-to-top-section {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
+  position: absolute;
   height: 100%;
+  bottom: 0;
+  right: 0;
 }
 
 .return-to-top-button {
@@ -65,4 +152,32 @@ main.usa-layout-docs {
 .return-to-top-button > img {
   // Change the chevron to #0071bb from #000000
   filter: invert(21%) sepia(72%) saturate(4106%) hue-rotate(190deg) brightness(95%) contrast(101%);
+}
+
+.code-snippet-column {
+  background-color: #f0f0f0;
+  position: relative;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .code-snippet-column {
+    background-color: transparent;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  .code-snippet-column::before {
+    content: "";
+    right: -15px;
+    width: 100%;
+    display: block;
+    z-index: 0;
+    position: absolute;
+    background-color: #f0f0f0;
+    top: 0;
+    margin-top: -4rem;
+    bottom: -11rem;
+  }
 }
