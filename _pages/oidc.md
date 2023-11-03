@@ -148,6 +148,9 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 * **code_challenge_method** -- *required for PKCE*
   This must be `S256`, the only PKCE code challenge method supported.
 
+* **prompt**
+  This must be `select_account`.
+
 * **response_type**
   This must be `code`.
 
