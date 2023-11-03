@@ -41,7 +41,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
     <h2>Token</h2>
     <p>Clients use the token endpoint to exchange the authorization code for an  <code class="language-plaintext highlighter-rouge">access_token</code>. This token is needed to access the user info endpoint. To request a token, send a HTTP POST request to the /api/openid_connect/token endpoint.</p> 
     <p>View an example for <strong>private_key_jwt</strong> or <strong>PKCE</strong> in the side panel.</p>
-    <h3 class="margin-top-4">Request Parameters</h3>
+    <h3 class="margin-top-4" id="request-parameters">Request Parameters</h3>
     <ul class="doc-sub-nav">
       <li id="jwt-nav" class="doc-sub-nav-item code-button__selected margin-left-neg-3">JWT</li>
       <li id="pkce-nav" class="doc-sub-nav-item margin-left-3">PKCE</li>
@@ -70,7 +70,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
           <h4 class="parameters clearfix">code</h4>
         </div>
         <div class="grid-col-7 padding-bottom-2">
-            The authorization code returned by the <a class="usa-link" href="https://developers.login.gov/oidc/#authorization-response" class="usa-link">authorization response</a>.
+            The authorization code returned by the <a class="usa-link" href="{{ site.baseurl }}/oidc/authorization/" class="usa-link">authorization response</a>.
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
 </div>
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-8 mobile:grid-col-full">
-    <h3>Token response</h3>
+    <h3 id="token-response">Token response</h3>
     <p>The token response will be a JSON object containing the following:</p>
     <div class="dev-doc-row">
       <div class="grid-row">
@@ -165,7 +165,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
           <h4 class="parameters">sub <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">
-          The subject identifier, the UUID of the Login.gov user (see <a href="{{ site.baseurl }}/oidc/attributes" class="usa-link">user attributes</a>).
+          The subject identifier, the UUID of the Login.gov user (see <a href="{{ site.baseurl }}/attributes/" class="usa-link">user attributes</a>).
         </div>
       </div>
     </div>
