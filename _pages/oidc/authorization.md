@@ -13,22 +13,13 @@ sidenav:
       - text: Authorization response
         href: "#authorization-response"
   - text: Token
-    href: "oidc/#token"
-    links:
-      - text: Token response
-        href: "oidc/#token-response"
+    href: "oidc/token/"
   - text: User info
     href: "oidc/#user-info"
-    links:
-      - text: User info response
-        href: "oidc/#user-info-response"
   - text: Certificates
     href: "oidc/#certificates"
   - text: Logout
     href: "oidc/#logout"
-    links:
-      - text: Logout response
-        href: "oidc/#logout-response"
   - text: Example application
     href: "oidc/#example-application"
 
@@ -306,19 +297,19 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-9 mobile:grid-col-full">
     {{ authorization_response | markdownify }}
-    <a href="{{ site.baseurl }}/oidc/#token" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Token</a>
+    <a href="{{ site.baseurl }}/oidc/token/" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Token</a>
   </div>
   <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-3">
     <div class="margin-top-2 position-relative z-index-1">
-      <button id="oidc_auth_success_button" data-selector="oidc_auth" class="code-button code-button__selected margin-left-2">Success</button>
-      <button id="oidc_auth_error_button" data-selector="oidc_auth" class="code-button margin-left-2">Error</button>
-      <section id="oidc_auth_success" class="code-snippet-section">
+      <button id="oidc_auth_tab1_button" data-selector="oidc_auth" class="code-button code-button__selected margin-left-2">Success</button>
+      <button id="oidc_auth_tab2_button" data-selector="oidc_auth" class="code-button margin-left-2">Error</button>
+      <section id="oidc_auth_tab1">
         {% include snippets/oidc/auth/success.md %}
       </section>
-      <section id="oidc_auth_error" class="code-snippet-section" hidden>
+      <section id="oidc_auth_tab2"hidden>
         {% include snippets/oidc/auth/failure.md %}
       </section>
     </div>
   </div>
-  <a href="{{ site.baseurl }}/oidc/#token" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Token</a>
+  <a href="{{ site.baseurl }}/oidc/token/" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Token</a>
 </div>

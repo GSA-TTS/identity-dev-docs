@@ -155,7 +155,11 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
   The URI Login.gov will redirect to after a successful authorization.
 
 * **scope**
-  A space-separated string of the scopes being requested. The authorization page will display the list of attributes being requested from the user. Applications should aim to request the fewest [user attributes]({{ site.baseurl }}/attributes/) and smallest scope needed. Possible values are:
+  A space-separated string of the scopes being requested. The authorization page will display the list of attributes being requested from the user. Applications should aim to request the fewest [user attributes]({{ site.baseurl }}/attributes/) and smallest scope needed.
+
+  **The [OIDC spec](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequestValidation) requires that the scope parameter contains `openid` as a value.**
+
+  Possible attributes are:
    - `openid`
    - `address`
    - `email`
