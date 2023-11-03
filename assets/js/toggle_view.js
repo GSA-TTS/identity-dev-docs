@@ -1,37 +1,39 @@
 // Elements for Listeners
 const jwtNav = document.getElementById('jwt-nav');
 const pkceNav = document.getElementById('pkce-nav');
-const oidcAuthSuccessButton = document.getElementById('oidc_auth_success_button');
-const oidcAuthErrorButton = document.getElementById('oidc_auth_error_button');
+const oidcAuthTab1Button = document.getElementById('oidc_auth_tab1_button');
+const oidcAuthTab2Button = document.getElementById('oidc_auth_tab2_button');
+const oidcTokenTab1Button = document.getElementById('oidc_token_tab1_button');
+const oidcTokenTab2Button = document.getElementById('oidc_token_tab2_button');
 
-function hideErrorCode(evt) {
-  const errorButton = document.getElementById(`${evt.currentTarget.dataset.selector}_error_button`);
+function hideTabTwoCode(evt) {
+  const errorButton = document.getElementById(`${evt.currentTarget.dataset.selector}_tab2_button`);
   errorButton.classList.remove('code-button__selected');
-  const codeSnippet = document.getElementById(`${evt.currentTarget.dataset.selector}_error`);
+  const codeSnippet = document.getElementById(`${evt.currentTarget.dataset.selector}_tab2`);
   codeSnippet.hidden = true;
 }
 
-function hideSuccessCode(evt) {
+function hideTabOneCode(evt) {
   const successButton = document.getElementById(
-    `${evt.currentTarget.dataset.selector}_success_button`,
+    `${evt.currentTarget.dataset.selector}_tab1_button`,
   );
   successButton.classList.remove('code-button__selected');
-  const codeSnippet = document.getElementById(`${evt.currentTarget.dataset.selector}_success`);
+  const codeSnippet = document.getElementById(`${evt.currentTarget.dataset.selector}_tab1`);
   codeSnippet.hidden = true;
 }
 
-function showSuccessCode(evt) {
+function showTabOneCode(evt) {
   evt.currentTarget.classList.add('code-button__selected');
-  const codeSnippet = document.getElementById(`${evt.currentTarget.dataset.selector}_success`);
+  const codeSnippet = document.getElementById(`${evt.currentTarget.dataset.selector}_tab1`);
   codeSnippet.hidden = false;
-  hideErrorCode(evt);
+  hideTabTwoCode(evt);
 }
 
-function showErrorCode(evt) {
+function showTabTwoCode(evt) {
   evt.currentTarget.classList.add('code-button__selected');
-  const codeSnippet = document.getElementById(`${evt.currentTarget.dataset.selector}_error`);
+  const codeSnippet = document.getElementById(`${evt.currentTarget.dataset.selector}_tab2`);
   codeSnippet.hidden = false;
-  hideSuccessCode(evt);
+  hideTabOneCode(evt);
 }
 
 // Unique toggle for OIDC Authorization/Token pages between PKCE and JWT parameters
@@ -60,7 +62,15 @@ function togglePKCEView(evt) {
 }
 
 // Event Listeners
-oidcAuthSuccessButton.addEventListener('click', showSuccessCode);
-oidcAuthErrorButton.addEventListener('click', showErrorCode);
-jwtNav.addEventListener('click', togglePKCEView);
-pkceNav.addEventListener('click', togglePKCEView);
+if(oidcAuthTab1Button) {
+  oidcAuthTab1Button.addEventListener('click', showTabOneCode);
+  oidcAuthTab2Button.addEventListener('click', showTabTwoCode);
+  jwtNav.addEventListener('click', togglePKCEView);
+  pkceNav.addEventListener('click', togglePKCEView);
+}
+if(oidcTokenTab1Button) {
+  oidcTokenTab1Button.addEventListener('click', showTabOneCode);
+  oidcTokenTab2Button.addEventListener('click', showTabTwoCode);
+  jwtNav.addEventListener('click', togglePKCEView);
+  pkceNav.addEventListener('click', togglePKCEView); 
+}
