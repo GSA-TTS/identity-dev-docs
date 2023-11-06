@@ -30,11 +30,10 @@ sidenav:
     href: "oidc/#example-application"
 
 ---
-<div class="usa-alert usa-alert--warning">
-<div class="usa-alert__body">
-<p class="usa-alert__text">We do not support the OpenID Connect “implicit flow” with client_secret because it is not recommended by the OAuth group for security reasons</p>
-</div>
-</div>
+{% capture implicit_flow_warning %}
+We do not support the OpenID Connect “implicit flow” with client_secret because it is not recommended by the OAuth group for security reasons
+{% endcapture %}
+{% include alert.html content=implicit_flow_warning alert_class="usa-alert--warning" %}
 
 
 ## Getting started
