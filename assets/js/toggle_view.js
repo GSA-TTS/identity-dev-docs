@@ -62,15 +62,15 @@ function togglePKCEView(evt) {
 }
 
 // Event Listeners
-if(oidcAuthTab1Button) {
+if (oidcAuthTab1Button) {
   oidcAuthTab1Button.addEventListener('click', showTabOneCode);
   oidcAuthTab2Button.addEventListener('click', showTabTwoCode);
   jwtNav.addEventListener('click', togglePKCEView);
   pkceNav.addEventListener('click', togglePKCEView);
 }
-if(oidcTokenTab1Button) {
+if (oidcTokenTab1Button) {
   oidcTokenTab1Button.addEventListener('click', showTabOneCode);
   oidcTokenTab2Button.addEventListener('click', showTabTwoCode);
   jwtNav.addEventListener('click', togglePKCEView);
-  pkceNav.addEventListener('click', togglePKCEView); 
+  pkceNav.addEventListener('click', togglePKCEView);
 }
