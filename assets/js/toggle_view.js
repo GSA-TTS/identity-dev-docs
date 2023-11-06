@@ -39,11 +39,16 @@ function showTabTwoCode(evt) {
 // Unique toggle for OIDC Authorization/Token pages between PKCE and JWT parameters
 function togglePKCEView(evt) {
   const pkceElements = document.getElementsByClassName('pkce-only');
+  const jwtElements = document.getElementsByClassName('jwt-only');
   const jwtDiv = document.getElementById('jwt');
   const pkceDiv = document.getElementById('pkce');
+  console.log(jwtElements)
   if (evt.currentTarget.id === 'pkce-nav') {
     for (let i = 0; i < pkceElements.length; i++) {
       pkceElements[i].hidden = false;
+    }
+    for (let i = 0; i < jwtElements.length; i++) {
+      jwtElements[i].hidden = true;
     }
     pkceNav.classList.add('code-button__selected');
     jwtNav.classList.remove('code-button__selected');
@@ -53,6 +58,9 @@ function togglePKCEView(evt) {
     // hide everything in parameters table pertaining to PKCE
     for (let i = 0; i < pkceElements.length; i++) {
       pkceElements[i].hidden = true;
+    }
+    for (let i = 0; i < jwtElements.length; i++) {
+      jwtElements[i].hidden = false;
     }
     pkceNav.classList.remove('code-button__selected');
     jwtNav.classList.add('code-button__selected');
