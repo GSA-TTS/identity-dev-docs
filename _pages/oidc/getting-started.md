@@ -82,4 +82,4 @@ Production URI:
 
 The Login.gov team has created an example client to speed up your development, all open source in the public domain: [identity-oidc-sinatra](https://github.com/18F/identity-oidc-sinatra){:class="usa-link--external"}.
 
-<a href="{{ site.baseurl }}/oidc/authorization/" class="usa-link margin-top-4">Next step: Authorization</a>
+[Next step: Authorization]({{ site.baseurl }}/oidc/authorization/){:class="margin-top-4"}
