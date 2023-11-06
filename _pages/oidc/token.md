@@ -46,22 +46,26 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
       <li id="jwt-nav" class="doc-sub-nav-item code-button__selected margin-left-neg-3">JWT</li>
       <li id="pkce-nav" class="doc-sub-nav-item margin-left-3">PKCE</li>
     </ul>
-    <div class="grid-row dev-doc-row">
-      <div class="grid-col-5">
-        <h4 class="parameters">client_assertion</h4>
-        <span class="float-left text-italic">required for private_key_jwt</span>
-      </div>
-      <div class="grid-col-7">
-          {{ client_assertion | markdownify }}
+    <div class="dev-doc-row jwt-only">
+      <div class="grid-row">
+        <div class="grid-col-5">
+          <h4 class="parameters">client_assertion</h4>
+          <span class="float-left text-italic">required for private_key_jwt</span>
+        </div>
+        <div class="grid-col-7">
+            {{ client_assertion | markdownify }}
+        </div>
       </div>
     </div>
-    <div class="grid-row dev-doc-row">
-      <div class="grid-col-5">
-        <h4 class="parameters">client_assertion_type</h4>
-        <span class="float-left text-italic">required for private_key_jwt</span>
-      </div>
-      <div class="grid-col-7">
-        When using private_key_jwt, must be <code class="language-plaintext highlighter-rouge">urn:ietf:params:oauth:client-assertion-type:jwt-bearer</code>
+    <div class="dev-doc-row jwt-only">
+      <div class="grid-row">
+        <div class="grid-col-5">
+          <h4 class="parameters">client_assertion_type</h4>
+          <span class="float-left text-italic">required for private_key_jwt</span>
+        </div>
+        <div class="grid-col-7">
+          When using private_key_jwt, must be <code class="language-plaintext highlighter-rouge">urn:ietf:params:oauth:client-assertion-type:jwt-bearer</code>
+        </div>
       </div>
     </div>
     <div class="dev-doc-row">
@@ -74,7 +78,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
         </div>
       </div>
     </div>
-    <div class="dev-doc-row">
+    <div class="dev-doc-row pkce-only" hidden>
       <div class="grid-row">
         <div class="grid-col-5">
           <h4 class="parameters clearfix">code_verifier</h4><span class="float-left text-italic">required for PKCE</span>
