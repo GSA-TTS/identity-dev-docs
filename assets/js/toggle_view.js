@@ -42,7 +42,6 @@ function togglePKCEView(evt) {
   const jwtElements = document.getElementsByClassName('jwt-only');
   const jwtDiv = document.getElementById('jwt');
   const pkceDiv = document.getElementById('pkce');
-  console.log(jwtElements)
   if (evt.currentTarget.id === 'pkce-nav') {
     for (let i = 0; i < pkceElements.length; i++) {
       pkceElements[i].hidden = false;
