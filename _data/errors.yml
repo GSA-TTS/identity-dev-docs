@@ -4,52 +4,52 @@ oidc:
       id: bad-client-id
       accordion-id: bad-client
       content: |
-        ###### Why it's happening
-        The issuer (also known as the client id) provided does not match a service provider registered in the IdP
-        ###### What to do:
+        ##### Why it's happening
+        The issuer (also known as the client id) provided does not match a service provider registered in the IdP.
+        ##### What to do:
         - Ensure the authentication request has a `client_id` value
-        - Ensure that the `client_id` sent in the authentication request matches the one registered in your application on the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/){:target="_blank"}
-        - Ensure that the application configuration's `active` value is set to `true`
+        - Ensure that the `client_id` sent in the authentication request matches the one registered in your application on the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
+        - Ensure that the application configuration's `active` value is set to `true`.
     - title: Missing a valid IAL level
       id: oidc-missing-ial
       accordion-id: oidc-missing-ial-level
       content: |
-        ###### Why it's happening
-        No IAL Service Levels are present in the `acr_values` parameter of the authentication request
-        ###### What to do:
+        ##### Why it's happening
+        No IAL Service Levels are present in the `acr_values` parameter of the authentication request.
+        ##### What to do:
         Check the `acr_values` parameter in your authentication request and ensure that you are passing either:
-        - `http://idmanagement.gov/ns/assurance/ial/1` for Authentication Only applications, OR
-        - `http://idmanagement.gov/ns/assurance/ial/2` for Identity-Verification Permitted applications
+        - `http://idmanagement.gov/ns/assurance/ial/1` for Authentication Only applications, OR;
+        - `http://idmanagement.gov/ns/assurance/ial/2` for Identity-Verification Permitted applications.
         Learn more about IAL values here: [https://developers.login.gov/oidc/#ial-values](https://developers.login.gov/oidc/#ial-values){:target="_blank"}
     - title: The acr_values are not authorized
       id: oidc-missing-acr-values
       accordion-id: missing-acr
       content: |
-        ###### Why it's happening
-        Your authentication request specified an Identity Verification (IdV) level of service, but your application is registered as "Authentication Only"
-        ###### What to do:
+        ##### Why it's happening
+        Your authentication request specified an Identity Verification (IdV) level of service, but your application is registered as "Authentication Only."
+        ##### What to do:
         If your application is Authentication Only, check the value of your `acr_values` parameter and ensure that it does **not** include `http://idmanagement.gov/ns/assurance/ial/2`.
         If you believe your application **SHOULD** be set to Identity Verification Permitted, please:
         - Reach out to your account manager to make sure your application is authorized for IdV. If it isn't, they can work with you to determine the right service level for your application.
-        - If your application **is** authorized for IdV, go to the dashboard and update the Level of Service value to "Identity Verification Permitted"
+        - If your application **is** authorized for IdV, go to the dashboard and update the Level of Service value to "Identity Verification Permitted."
         - If this is a production instance, submit a [Zendesk request](https://zendesk.login.gov){:target="_blank"} to deploy that change to production.
     - title: No acceptable acr_values found
       id: oidc-no-acr-values
       accordion-id: no-acr
       content: |
-        ###### Why it's happening
-        No AAL levels are present in the acr_values parameter of the authentication request
-        ###### What to do:
+        ##### Why it's happening
+        No AAL levels are present in the acr_values parameter of the authentication request.
+        ##### What to do:
         - Check the `acr_values` parameter in your authentication request.
-        = Ensure that you are passing in the appropriate IAL value as well as any AAL values you might want for your application.
+        - Ensure that you are passing in the appropriate IAL value as well as any AAL values you might want for your application.
         More information about the `acr_values` parameter can be found here: [https://developers.login.gov/oidc/#request-parameters](https://developers.login.gov/oidc/#request-parameters){:target="_blank"}
     - title: No valid scope values found
       id: oidc-no-scope
       accordion-id: no-scope
       content: |
-        ###### Why it's happening
+        ##### Why it's happening
         No valid attributes were passed in the `scope` parameter of the authentication request.
-        ###### What to do:
+        ##### What to do:
         - Check the `scope` parameter in your authentication request.
         - Ensure you are passing in `openid` as well as at least one other attribute.
         More information about the different types of attributes can be found here: [https://developers.login.gov/attributes/](https://developers.login.gov/attributes){:target="_blank"}
@@ -57,9 +57,9 @@ oidc:
       id: oidc-no-prompt
       accordion-id: no-prompt
       content: |
-        ###### Why it's happening
-        No prompt attribute was passed through the authentication request
-        ###### What to do:
+        ##### Why it's happening
+        No valid attribute was passed in the `prompt` parameter of the authentication request.
+        ##### What to do:
         - Check the `prompt` parameter in your authentication request.
         - Ensure you are passing `select_account` as the value.
         More information about the `prompt` request parameter can be found here: [https://developers.login.gov/oidc/](https://developers.login.gov/oidc/#request-parameters){:target="_blank"}
@@ -67,27 +67,27 @@ oidc:
       id: oidc-invalid-redirect
       accordion-id: invalid-redirect
       content: |
-        ###### Why it's happening
+        ##### Why it's happening
         You have registered a redirect URI that cannot be parsed.
-        ###### What to do:
+        ##### What to do:
         - Check your application's configuration on the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
         - Ensure that all registered redirect_uris are propertly formatted and use `https` protocol.
     - title: redirect_uri does not match registered redirect_uri
       id: oidc-redirect-match
       accordion-id: redirect-not-match
       content: |
-        ###### Why it's happening
+        ##### Why it's happening
         You have not registered the redirect_uri that you sent in your authentication request.
-        ###### What to do:
+        ##### What to do:
         - Check your application's configuration on the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/){:target="_blank"} and the `redirect_uri` passed through your authentication request.
         - Ensure the `redirect_uri` that you are sending as part of your authentication request is registered. You must register every redirect uri that your application redirects through.
     - title: Unauthorized scope
       id: oidc-unauthotized-scope
       accordion-id: oidc-unauth-scope
       content: |
-        ###### Why it's happening
+        ##### Why it's happening
         You have requested attributes that your Service Level does not allow.
-        ###### What to do:
+        ##### What to do:
         - Check the `scope` parameter in your authentication request.
         - If your application is an *Authentication Only* application, ensure you are only passing in IAL1 attributes.
         More information about the different types of attributes can be found here: [https://developers.login.gov/attributes/](https://developers.login.gov/attributes/){:target="_blank"}
