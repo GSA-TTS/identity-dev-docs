@@ -2,8 +2,6 @@
 title: OpenID Connect
 lead: >
     [OpenID Connect](http://openid.net){:class="usa-link--external"} is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](http://openid.net/specs/openid-connect-core-1_0.html){:class="usa-link--external"} of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov){:class="usa-link--external"}.
-redirect_from:
-  - /openid-connect/
 sidenav:
   - text: Getting started
     href: "oidc/#getting-started"
@@ -17,7 +15,7 @@ sidenav:
       - text: Token response
         href: "#token-response"
   - text: User info
-    href: "oidc/#user-info"
+    href: "oidc/user-info/"
   - text: Certificates
     href: "oidc/#certificates"
   - text: Logout
@@ -263,7 +261,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
         </div>
       </div>
     </div>
-    <a href="{{ site.baseurl }}/oidc/#user-info" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: User info</a>
+    <a href="{{ site.baseurl }}/oidc/user-info/" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: User info</a>
   </div>
   <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-4">
     <section class="code-snippet-section margin-top-2 position-relative z-index-1">
@@ -277,5 +275,5 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
       </section>
     </section>
   </div>
-  <a href="{{ site.baseurl }}/oidc/#user-info" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: User info</a>
+  <a href="{{ site.baseurl }}/oidc/user-info/" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: User info</a>
 </div>

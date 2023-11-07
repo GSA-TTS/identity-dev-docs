@@ -5,6 +5,8 @@ const oidcAuthTab1Button = document.getElementById('oidc_auth_tab1_button');
 const oidcAuthTab2Button = document.getElementById('oidc_auth_tab2_button');
 const oidcTokenTab1Button = document.getElementById('oidc_token_tab1_button');
 const oidcTokenTab2Button = document.getElementById('oidc_token_tab2_button');
+const oidcUserInfoTab1Button = document.getElementById('oidc_user-info_tab1_button');
+const oidcUserInfoTab2Button = document.getElementById('oidc_user-info_tab2_button');
 
 function hideTabTwoCode(evt) {
   const errorButton = document.getElementById(`${evt.currentTarget.dataset.selector}_tab2_button`);
@@ -80,4 +82,8 @@ if (oidcTokenTab1Button) {
   oidcTokenTab2Button.addEventListener('click', showTabTwoCode);
   jwtNav.addEventListener('click', togglePKCEView);
   pkceNav.addEventListener('click', togglePKCEView);
+}
+if (oidcUserInfoTab1Button) {
+  oidcUserInfoTab1Button.addEventListener('click', showTabOneCode);
+  oidcUserInfoTab2Button.addEventListener('click', showTabTwoCode);
 }

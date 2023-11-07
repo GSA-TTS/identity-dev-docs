@@ -2,8 +2,6 @@
 title: OpenID Connect
 lead: >
     [OpenID Connect](http://openid.net){:class="usa-link--external"} is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](http://openid.net/specs/openid-connect-core-1_0.html){:class="usa-link--external"} of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov){:class="usa-link--external"}.
-redirect_from:
-  - /openid-connect/
 sidenav:
   - text: Getting started
     href: "oidc/getting-started/"
@@ -17,7 +15,7 @@ sidenav:
   - text: Token
     href: "oidc/token/"
   - text: User info
-    href: "oidc/#user-info"
+    href: "oidc/user-info/"
   - text: Certificates
     href: "oidc/#certificates"
   - text: Logout
@@ -308,7 +306,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <section id="oidc_auth_tab1">
         {% include snippets/oidc/auth/success.md %}
       </section>
-      <section id="oidc_auth_tab2"hidden>
+      <section id="oidc_auth_tab2" hidden>
         {% include snippets/oidc/auth/failure.md %}
       </section>
     </div>
