@@ -1,0 +1,9 @@
+<div>
+  <h3>OpenID Connect Errors</h3>
+  <h4>Authorization</h4>
+  <div class="usa-accordion usa-accordion--bordered" aria-multiselectable="true">
+    {% for error in site.data.errors.oidc.auth %}
+      {% include accordion.html content=error.content accordion_id=error.accordion-id  title=error.title id=error.id %}
+    {% endfor %}
+  </div>
+</div>

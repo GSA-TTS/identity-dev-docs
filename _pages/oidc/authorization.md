@@ -4,10 +4,12 @@ lead: >
     [OpenID Connect](http://openid.net){:class="usa-link--external"} is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](http://openid.net/specs/openid-connect-core-1_0.html){:class="usa-link--external"} of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov){:class="usa-link--external"}.
 sidenav:
   - text: Getting started
-    href: "oidc/#getting-started"
+    href: "oidc/getting-started/"
   - text: Authorization
     href: "oidc/authorization/"
     links:
+      - text: Request parameters
+        href: "#request-parameters"
       - text: Authorization response
         href: "#authorization-response"
   - text: Token
@@ -136,7 +138,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <p>The authorization endpoint handles authentication and authorization of a user. 
       To present the Login.gov authorization page to a user, direct them to the 
       <code class="language-plaintext highlighter-rouge">/openid_connect/authorize</code>. View an example for <strong>private_key_jwt</strong> or <strong>PKCE</strong> in the side panel.</p>
-  <h3 class="margin-top-4">Request Parameters</h3>
+  <h3 class="margin-top-4" id="request-parameters">Request Parameters</h3>
   <ul class="doc-sub-nav">
     <li id="jwt-nav" class="doc-sub-nav-item code-button__selected margin-left-neg-3">JWT</li>
     <li id="pkce-nav" class="doc-sub-nav-item margin-left-3">PKCE</li>
