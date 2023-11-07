@@ -6,29 +6,22 @@ redirect_from:
   - /openid-connect/
 sidenav:
   - text: Getting started
-    href: "oidc/#getting-started"
+    href: "oidc/getting-started/"
   - text: Authorization
     href: "oidc/authorization/"
     links:
+      - text: Request parameters
+        href: "#request-parameters"
       - text: Authorization response
         href: "#authorization-response"
   - text: Token
     href: "oidc/#token"
-    links:
-      - text: Token response
-        href: "oidc/#token-response"
   - text: User info
     href: "oidc/#user-info"
-    links:
-      - text: User info response
-        href: "oidc/#user-info-response"
   - text: Certificates
     href: "oidc/#certificates"
   - text: Logout
     href: "oidc/#logout"
-    links:
-      - text: Logout response
-        href: "oidc/#logout-response"
   - text: Example application
     href: "oidc/#example-application"
 
@@ -148,7 +141,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <p>The authorization endpoint handles authentication and authorization of a user. 
       To present the Login.gov authorization page to a user, direct them to the 
       <code class="language-plaintext highlighter-rouge">/openid_connect/authorize</code>. View an example for <strong>private_key_jwt</strong> or <strong>PKCE</strong> in the side panel.</p>
-  <h3 class="margin-top-4">Request Parameters</h3>
+  <h3 class="margin-top-4" id="request-parameters">Request Parameters</h3>
   <ul class="doc-sub-nav">
     <li id="jwt-nav" class="doc-sub-nav-item code-button__selected margin-left-neg-3">JWT</li>
     <li id="pkce-nav" class="doc-sub-nav-item margin-left-3">PKCE</li>
