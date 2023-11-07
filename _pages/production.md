@@ -2,7 +2,7 @@
 title: Production deployment
 lead: >
   Once you’ve tested your integration in [our sandbox environment](https://dashboard.int.identitysandbox.gov/), you can request deployment to the Login.gov production environment.
-  
+
 redirect_from:
   - /production-deployment/
 sidenav:
@@ -37,7 +37,7 @@ Make sure you have the following items ready before you start the deployment pro
 
 -   [Signed Interagency Agreement (IAA) listing this integration ](https://developers.login.gov/production/#confirm-iaa)
 
--   A new dedicated [production app configuration within the Dashboard](https://dashboard.int.identitysandbox.gov/) 
+-   A new dedicated [production app configuration within the Dashboard](https://dashboard.int.identitysandbox.gov/)
     * All production urls should have .gov, .mil, or a dedicated .com address and point to an Authority to Operate (ATO) approved environment.
 
 -   A user account in the [Login.gov production environment](https://secure.login.gov)
@@ -74,7 +74,7 @@ You must have a signed IAA with Login.gov with your integration explicitly liste
 -   If this is an integration requesting identity proofed attributes, you must include a Failure to Proof URL. Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency and/or departments alternate methods of accessing your application.
 
 
-Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit a partner interest form](https://www.login.gov/partners/business-inquiries/) to begin the IAA process, which can take up to 6 weeks to complete. [Learn more about the IAA process.](https://login.gov/partners/get-started/#interagency-agreement-iaa-process) 
+Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit a partner interest form](https://www.login.gov/partners/business-inquiries/) to begin the IAA process, which can take up to 6 weeks to complete. [Learn more about the IAA process.](https://login.gov/partners/get-started/#interagency-agreement-iaa-process)
 
 Production configuration process
 --------------------------------
@@ -90,7 +90,6 @@ Before you can request deployment, you need to create a new and separate applica
 **When you have the components required, follow these steps to create your production configuration app:**
 
 1.  [Create a new app on the](https://dashboard.int.identitysandbox.gov/) Login.gov Partner Dashboard. Select “Apps” from the top right menu, then select the “Create a new test app” button.
-
 
 2.  Select "YES" for production configuration - this configuration is for a production app.
 
@@ -138,9 +137,11 @@ Request deployment
 
 Once you have:
 
-1.  [Confirmed that this integration is listed in a signed IAA](https://login.gov/partners/get-started/#interagency-agreement-iaa-process). **Do not request deployment if you are not certain that your application is listed in a signed IAA.**
+1. [Confirmed that this integration is listed in a signed IAA](https://login.gov/partners/get-started/#interagency-agreement-iaa-process). **Do not request deployment if you are not certain that your application is listed in a signed IAA.**
 
-2.  [Created a production configuration app](https://developers.login.gov/production/#production-configuration-process). 
+2. [Created a production configuration app](https://developers.login.gov/production/#production-configuration-process).
+
+3. Confirmed that you have a logo uploaded to your production configuration in the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/). **An uploaded logo is required for the deployment process.**
 
 You are ready to submit a launch request through the [Partner Support Help Desk](https://zendesk.login.gov). 
 
@@ -167,24 +168,24 @@ If you are rotating your application’s public/private keypair, or want to add 
   **For OIDC integrations or SAML integrations sending signed requests:**
 
   1.  Add the new certificate to the application dashboard configuration.
-    
+
   2.  Contact Login.gov technical support and request certificate addition.
-      
+
   3.  Once certificate deployment is confirmed, rotate the key pair at your convenience.
-      
+
   4.  Once the new key pair is in use, please submit a request to remove the old certificate.
-    
+
 
   **For SAML integrations not sending signed requests:**
 
   1.  The final certificate rotation must be coordinated with Login.gov technical support.
-      
-  2.  Add the new certificate to the application dashboard configuration.
-      
-  3.  Request coordination of the certificate rotation from Login.gov technical support.
-    
 
-  
+  2.  Add the new certificate to the application dashboard configuration.
+
+  3.  Request coordination of the certificate rotation from Login.gov technical support.
+
+
+
 
 <div class="usa-alert usa-alert--warning">
 <div class="usa-alert__body">
