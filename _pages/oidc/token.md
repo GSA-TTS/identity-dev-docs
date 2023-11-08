@@ -72,7 +72,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
           <h4 class="parameters clearfix">code</h4>
         </div>
         <div class="grid-col-7 padding-bottom-2">
-            The authorization code returned by the <a class="usa-link" href="{{ site.baseurl }}/oidc/authorization/" class="usa-link">authorization response</a>.
+            The authorization code returned by the <a class="usa-link" href="{{ site.baseurl }}/oidc/authorization/">authorization response</a>.
         </div>
       </div>
     </div>
@@ -108,7 +108,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
 </div>
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-8 mobile:grid-col-full">
-    <h3 id="token-response">Token response</h3>
+    <h3 id="token-response" class="margin-top-6">Token response</h3>
     <p>The token response will be a JSON object containing the following:</p>
     <div class="dev-doc-row">
       <div class="grid-row">
