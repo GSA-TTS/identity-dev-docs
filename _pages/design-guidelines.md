@@ -93,7 +93,7 @@ When you first integrate with Login.gov you may want to indicate to your users t
 Login.gov is a service that offers secure and private online access to government programs, such as federal benefits, services and applications. With a Login.gov account, you can sign into multiple government websites with the same email address and password.
 
 ### Why is `YOUR APPLICATION` using Login.gov?
-Login.gov uses two-factor authentication, and stronger passwords, that meet new National Institute of Standards of Technology requirements for secure validation and verification. By using Login.gov, you’ll get an extra layer of security to help protect your account against password compromises.
+Login.gov uses two-factor authentication, and stronger passwords, that meet new National Institute of Standards and Technology requirements for secure validation and verification. By using Login.gov, you’ll get an extra layer of security to help protect your account against password compromises.
 
 ## Agency logo guidelines
 We will publish your agency logo on Login.gov to help users understand that partnership between the services. Please follow these guidelines when submitting a logo:
