@@ -14,8 +14,8 @@ sidenav:
         href: "#other-application-issues"
       - text: Other Tips & Tools
         href: "#other-tips--tools"
-      - text: Contacting Partner Support
-        href: "#contacting-partner-support"
+  - text: Contacting Partner Support
+    href: "#contacting-partner-support"
 ---
 ### Login.gov support desk
 
