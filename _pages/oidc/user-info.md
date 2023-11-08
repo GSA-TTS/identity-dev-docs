@@ -42,7 +42,7 @@ The user info response will be a JSON object containing [user attributes]({{ sit
             <div class="grid-col-7">
                 The issuer of the response, which will be the URL of the Login.gov IdP, for example: <code class="language-plaintext highlighter-rouge">https://idp.int.identitysandbox.gov</code>
                 <ul>
-                    <li>Requires <code class="language-plaintext highlighter-rouge">profile</code> or <code class="language-plaintext highlighter-rouge">profile:name</code> scopes.</li>
+                    <li>Requires <code class="language-plaintext highlighter-rouge">profile</code> or <code class="language-plaintext highlighter-rouge">profile:name</code> scopes</li>
                 </ul> 
             </div>
         </div>
@@ -75,7 +75,7 @@ The user info response will be a JSON object containing [user attributes]({{ sit
             <div class="grid-col-7">
                 When the user's identity was last verified, as an integer timestamp representing the number of seconds since the Unix Epoch, or <code class="language-plaintext highlighter-rouge">null</code> if the account has never been verified.
                 <ul>
-                    <li>Requires the <code class="language-plaintext highlighter-rouge">profile:verified_at</code> scope.</li>
+                    <li>Requires the <code class="language-plaintext highlighter-rouge">profile:verified_at</code> scope</li>
                 </ul> 
             </div>
         </div>
