@@ -15,7 +15,7 @@ sidenav:
   - text: Token
     href: "oidc/token/"
   - text: User info
-    href: "oidc/#user-info"
+    href: "oidc/user-info/"
   - text: Certificates
     href: "oidc/#certificates"
   - text: Logout
