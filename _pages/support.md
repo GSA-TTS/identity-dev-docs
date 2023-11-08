@@ -491,18 +491,18 @@ If you prefer using Slack, we have a slack channel for partners, **#login-partne
     </button>
   </h3>
   <div id="zendesk-guidelines" class="usa-accordion__container">
-    <div class="usa-accordion__content">
-      Before submitting your Zendesk ticket, please review the developer documentation on our website. Often the answers we will provide can be found there. 
-        When submitting a Zendesk ticket, particularly in cases when you are encountering an error, you can minimize your time to resolve the issue by providing the following information:
+<div class="usa-accordion__content" markdown="1">
+Before submitting your Zendesk ticket, please review the developer documentation on our website. Often the answers we will provide can be found there. 
+When submitting a Zendesk ticket, particularly in cases when you are encountering an error, you can minimize your time to resolve the issue by providing the following information:
 
-         * Link to your dashboard configuration
-         * Screenshots of all error messages
-         * What browser you were using
-         * Time the error(s) occurred or if it is ongoing
-         * Any relevant information recorded in your server logs
+ * Link to your dashboard configuration
+ * Screenshots of all error messages
+ * What browser you were using
+ * Time the error(s) occurred or if it is ongoing
+ * Any relevant information recorded in your server logs
 
-        It is also **highly recommended** to include someone we can contact from your technical team when creating the Zendesk ticket in case we have further questions about how your application was configured. 
-  </div>
+It is also **highly recommended** to include someone we can contact from your technical team when creating the Zendesk ticket in case we have further questions about how your application was configured. 
+</div>
   </div>
 
 
@@ -512,22 +512,22 @@ If you prefer using Slack, we have a slack channel for partners, **#login-partne
     </button>
   </h3>
   <div id="issues-we-can-help-with" class="usa-accordion__container">
-    <div class="usa-accordion__content" markdown="1">
-      Here is a list of common issues partners encounter that our team can assist with. This isn’t a comprehensive list but questions that fall into these categories can usually be answered. 
+<div class="usa-accordion__content" markdown="1">
+Here is a list of common issues partners encounter that our team can assist with. This isn’t a comprehensive list but questions that fall into these categories can usually be answered. 
 
-       * Authentication failures while testing in sandbox environment
-       * Questions about OIDC/SAML protocols
-       * Problems with dashboard configuration (configuration not updating as expected)
-       * Problems updating or deploying a production configuration
-       * Clarification about something in our developer docs
-       * Any errors being returned by Login.gov during authentication
-       * Suspected fraudulent activity / RISC notifications 
-       * Troubles with redirecting back to your application / SP
-       * Trouble reading or receiving expected user attributes 
-       * Users being unable to sign into production SP (these are top priority to resolve, assuming it is related to Login.gov) 
-       * Feedback you want to share about your experience using the developer docs / dashboard (we are always looking to improve)
-       * Any bugs you encounter in the dashboard or developer docs (broken links, user management issues, etc)
-  </div> 
+* Authentication failures while testing in sandbox environment
+* Questions about OIDC/SAML protocols
+* Problems with dashboard configuration (configuration not updating as expected)
+* Problems updating or deploying a production configuration
+* Clarification about something in our developer docs
+* Any errors being returned by Login.gov during authentication
+* Suspected fraudulent activity / RISC notifications 
+* Troubles with redirecting back to your application / SP
+* Trouble reading or receiving expected user attributes 
+* Users being unable to sign into production SP (these are top priority to resolve, assuming it is related to Login.gov) 
+* Feedback you want to share about your experience using the developer docs / dashboard (we are always looking to improve)
+* Any bugs you encounter in the dashboard or developer docs (broken links, user management issues, etc)
+</div> 
   </div>
 
   <h3 class="usa-accordion__heading">
@@ -536,19 +536,19 @@ If you prefer using Slack, we have a slack channel for partners, **#login-partne
     </button>
   </h3>
   <div id="issues-we-cannot-help-with" class="usa-accordion__container">
-    <div class="usa-accordion__content" markdown="1">
-      There are some cases where our team is unable to help, typically either for security or capacity reasons. We cannot assist with the following issues:
+<div class="usa-accordion__content" markdown="1">
+There are some cases where our team is unable to help, typically either for security or capacity reasons. We cannot assist with the following issues:
 
-       * Setting up your integration for you (while we can provide additional tips and guidelines, we do not have the bandwidth nor access to your internal tools to provide this service)
-       * Deleting, creating, or managing a user account (only the user themselves can access their account) 
-       * Specific programming language help (given the numerous different languages our partners use it is not possible for us to provide peer programming assistance)
-       * Requests for network IP addresses (we use Cloudfront to manage our IP, so our IP addresses are not static)
-       * Debugging network connection issues (if the connection isn’t going through, we cannot see it on our end and thus have very limited ability to troubleshoot) 
-       * Any kind of PII request (we do not give out PII for any reason) 
-       * Debugging your internal server setup (we can try to direct you to documentation but our server knowledge is limited) 
-       * Providing access to the dashboard (for security purposes, the dashboard is self service and anyone with a .gov / .mil address can provide access - [View Product Deployment for further instructions](https://developers.login.gov/production/#before-deployment))
-       * You’ve found a vulnerability and want to report it (Instead, please submit through [Login.gov Security Vulnerability Disclosure](https://docs.google.com/forms/d/e/1FAIpQLScuo4xCzBlpLnoq7-bDAVAxtJci03by7S-Q-Z_JUBDloK01QA/viewform)) 
-  </div>
+* Setting up your integration for you (while we can provide additional tips and guidelines, we do not have the bandwidth nor access to your internal tools to provide this service)
+* Deleting, creating, or managing a user account (only the user themselves can access their account) 
+* Specific programming language help (given the numerous different languages our partners use it is not possible for us to provide peer programming assistance)
+* Requests for network IP addresses (we use Cloudfront to manage our IP, so our IP addresses are not static)
+* Debugging network connection issues (if the connection isn’t going through, we cannot see it on our end and thus have very limited ability to troubleshoot) 
+* Any kind of PII request (we do not give out PII for any reason) 
+* Debugging your internal server setup (we can try to direct you to documentation but our server knowledge is limited) 
+* Providing access to the dashboard (for security purposes, the dashboard is self service and anyone with a .gov / .mil address can provide access - [View Product Deployment for further instructions](https://developers.login.gov/production/#before-deployment))
+* You’ve found a vulnerability and want to report it (Instead, please submit through [Login.gov Security Vulnerability Disclosure](https://docs.google.com/forms/d/e/1FAIpQLScuo4xCzBlpLnoq7-bDAVAxtJci03by7S-Q-Z_JUBDloK01QA/viewform)) 
+</div>
   </div>
 
   <h3 class="usa-accordion__heading">
@@ -557,8 +557,8 @@ If you prefer using Slack, we have a slack channel for partners, **#login-partne
     </button>
   </h3>
   <div id="user-support" class="usa-accordion__container">
-    <div class="usa-accordion__content" markdown="1">
-      If you receive a complaint from a user having trouble logging in or managing their account, it is best to direct them to [submit a help ticket to user support](https://www.login.gov/contact/).
-    </div>
+<div class="usa-accordion__content" markdown="1">
+If you receive a complaint from a user having trouble logging in or managing their account, it is best to direct them to [submit a help ticket to user support](https://www.login.gov/contact/).
+</div>
   </div>
 </div>
