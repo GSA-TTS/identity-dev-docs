@@ -492,6 +492,7 @@ If you prefer using Slack, we have a slack channel for partners, **#login-partne
   </h3>
   <div id="zendesk-guidelines" class="usa-accordion__container">
     <div class="usa-accordion__content" markdown="1">
+ 
       Before submitting your Zendesk ticket, please review the developer documentation on our website. Often the answers we will provide can be found there. 
 
       When submitting a Zendesk ticket, particularly in cases when you are encountering an error, you can minimize your time to resolve the issue by providing the following information:
@@ -503,8 +504,9 @@ If you prefer using Slack, we have a slack channel for partners, **#login-partne
        * Any relevant information recorded in your server logs
 
       It is also **highly recommended** to include someone we can contact from your technical team when creating the Zendesk ticket in case we have further questions about how your application was configured. 
-    </div>
   </div>
+  </div>
+
 
   <h3 class="usa-accordion__heading">
     <button class="usa-accordion__button" aria-controls="issues-we-can-help-with">
@@ -527,7 +529,7 @@ If you prefer using Slack, we have a slack channel for partners, **#login-partne
        * Users being unable to sign into production SP (these are top priority to resolve, assuming it is related to Login.gov) 
        * Feedback you want to share about your experience using the developer docs / dashboard (we are always looking to improve)
        * Any bugs you encounter in the dashboard or developer docs (broken links, user management issues, etc)
-   </div> 
+  </div> 
   </div>
 
   <h3 class="usa-accordion__heading">
@@ -548,7 +550,7 @@ If you prefer using Slack, we have a slack channel for partners, **#login-partne
        * Debugging your internal server setup (we can try to direct you to documentation but our server knowledge is limited) 
        * Providing access to the dashboard (for security purposes, the dashboard is self service and anyone with a .gov / .mil address can provide access - [View Product Deployment for further instructions](https://developers.login.gov/production/#before-deployment))
        * You’ve found a vulnerability and want to report it (Instead, please submit through [Login.gov Security Vulnerability Disclosure](https://docs.google.com/forms/d/e/1FAIpQLScuo4xCzBlpLnoq7-bDAVAxtJci03by7S-Q-Z_JUBDloK01QA/viewform)) 
-    </div>
+  </div>
   </div>
 
   <h3 class="usa-accordion__heading">
