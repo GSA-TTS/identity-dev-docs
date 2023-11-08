@@ -108,7 +108,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
 </div>
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-8 mobile:grid-col-full">
-    <h3 id="token-response">Token response</h3>
+    <h3 id="token-response" class="margin-top-6">Token response</h3>
     <p>The token response will be a JSON object containing the following:</p>
     <div class="dev-doc-row">
       <div class="grid-row">
