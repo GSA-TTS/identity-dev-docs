@@ -174,11 +174,11 @@ button.code-button:hover {
     right: -15px;
     width: 100%;
     display: block;
-    z-index: 0;
+    z-index: -1;
     position: absolute;
     background-color: #f0f0f0;
     top: 0;
     margin-top: -4rem;
-    bottom: -11rem;
+    bottom: -15rem;
   }
 }
