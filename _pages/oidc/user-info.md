@@ -15,11 +15,9 @@ sidenav:
       - text: User info response
         href: "#user-info-response"
   - text: Certificates
-    href: "oidc/#certificates"
+    href: "oidc/certificates/"
   - text: Logout
-    href: "oidc/#logout"
-  - text: Example application
-    href: "oidc/#example-application"
+    href: "oidc/logout/"
 
 ---
 {% capture front_matter %}

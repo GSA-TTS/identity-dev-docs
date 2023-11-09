@@ -21,11 +21,9 @@ sidenav:
   - text: User info
     href: "oidc/user-info/"
   - text: Certificates
-    href: "oidc/#certificates"
+    href: "oidc/certificates/"
   - text: Logout
-    href: "oidc/#logout"
-  - text: Example application
-    href: "oidc/#example-application"
+    href: "oidc/logout/"
 
 ---
 {% capture implicit_flow_warning %}

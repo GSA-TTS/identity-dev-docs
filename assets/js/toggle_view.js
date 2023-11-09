@@ -7,6 +7,8 @@ const oidcTokenTab1Button = document.getElementById('oidc_token_tab1_button');
 const oidcTokenTab2Button = document.getElementById('oidc_token_tab2_button');
 const oidcUserInfoTab1Button = document.getElementById('oidc_user-info_tab1_button');
 const oidcUserInfoTab2Button = document.getElementById('oidc_user-info_tab2_button');
+const oidcLogoutTab1Button = document.getElementById('oidc_logout_tab1_button');
+const oidcLogoutTab2Button = document.getElementById('oidc_logout_tab2_button');
 
 function hideTabTwoCode(evt) {
   const errorButton = document.getElementById(`${evt.currentTarget.dataset.selector}_tab2_button`);
@@ -86,4 +88,8 @@ if (oidcTokenTab1Button) {
 if (oidcUserInfoTab1Button) {
   oidcUserInfoTab1Button.addEventListener('click', showTabOneCode);
   oidcUserInfoTab2Button.addEventListener('click', showTabTwoCode);
+}
+if (oidcLogoutTab1Button) {
+  oidcLogoutTab1Button.addEventListener('click', showTabOneCode);
+  oidcLogoutTab2Button.addEventListener('click', showTabTwoCode);
 }
