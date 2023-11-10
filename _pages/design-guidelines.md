@@ -1,4 +1,51 @@
----
+/ Language name (unique)
+  "name": ".NET",
+
+  // Unique identifier that will be used as a CSS class
+  // for this language (only valid CSS class names).
+  "uniqueClass": "net",
+
+  // The language icon, SVG format preferred, should be placed
+  // in /img directory.
+  "image": "/img/1.svg",
+
+  // The color of header that displays the name of the language
+  // and the icon. This is a valid CSS color definition.
+  "bgColor": "rgb(42, 168, 229)",
+
+  // An array of libraries for this language.
+  "libs": [
+    {
+      // In case the library suffered from a vulnerability, the
+      // minimum version in which the vuln was fixed must be
+      // listed here. Optional (can be null).
+      "minimumVersion": "1.0.1", // or null
+
+      // Supported features, true for supported,
+      // false for not supported.
+      "support": {
+        "sign": true,
+        "verify": true,
+        "iss": true,
+        "sub": true,
+        "aud": true,
+        "exp": true,
+        "nbf": true,
+        "iat": true,
+        "jti": true,
+        "hs256": true,
+        "hs384": true,
+        "hs512": true,
+        "rs256": true,
+        "rs384": true,
+        "rs512": true,
+        "es256": true,
+        "es384": true,
+        "es512": true,
+        "ps256": true,
+        "ps384": true,
+        "ps512": true,
+        "eddsa": true--
 title: User Experience
 lead: >
   Integrate with Login.gov in a user-friendly manner.
