@@ -14,9 +14,7 @@ sidenav:
   - text: Certificates
     href: "oidc/certificates/"
   - text: Logout
-    href: "oidc/#logout"
-  - text: Example application
-    href: "oidc/#example-application"
+    href: "oidc/logout/"
 
 ---
 
@@ -31,7 +29,7 @@ This public key is rotated periodically (on at least an annual basis). It is imp
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-8 mobile:grid-col-full">
     {{ content | markdownify }}
-     <a href="{{ site.baseurl }}/oidc/#logout" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Logout</a>
+     <a href="{{ site.baseurl }}/oidc/logout/" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Logout</a>
   </div>
     <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-4">
       <section id="pkce" class="code-snippet-section">
@@ -39,5 +37,5 @@ This public key is rotated periodically (on at least an annual basis). It is imp
           {% include snippets/oidc/certificates.md %}
       </section>
     </div>
-      <a href="{{ site.baseurl }}/oidc/#logout" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Logout</a>
+      <a href="{{ site.baseurl }}/oidc/logout/" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Logout</a>
 </div>
