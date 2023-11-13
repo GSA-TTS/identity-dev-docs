@@ -149,6 +149,7 @@ oidc:
         ##### What to do:
         If your integration is PKCE:
         - Ensure you are sending the `code_verifier` attribute as part of your token request. The value of this attribute is the original value of the `code_challenge` parameter sent in your original authentication request.
+
         If your integration is private_key_jwt:
         - Ensure you are sending `client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer` as part of your token request.
 
