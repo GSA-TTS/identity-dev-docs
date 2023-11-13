@@ -70,7 +70,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
           <h4 class="parameters clearfix">code</h4>
         </div>
         <div class="grid-col-7 padding-bottom-2">
-            The authorization code returned by the <a class="usa-link" href="{{ site.baseurl }}/oidc/authorization/">authorization response</a>.
+            The authorization code returned by the <a class="usa-link" href="{{ site.baseurl }}/oidc/authorization/#code">authorization response</a>.
         </div>
       </div>
     </div>
