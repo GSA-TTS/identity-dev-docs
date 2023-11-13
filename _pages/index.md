@@ -36,7 +36,7 @@ layout: home
 
   <li class="usa-process-list__item">
     <p>
-      Select between <a href="{% link _pages/oidc.md %}" class="usa-link">Open ID Connect</a> (OIDC) or <a href="{% link _pages/saml.md %}" class="usa-link">SAML</a> implementation protocols.
+      Select between <a href="{% link _pages/oidc/getting-started.md %}" class="usa-link">Open ID Connect</a> (OIDC) or <a href="{% link _pages/saml.md %}" class="usa-link">SAML</a> implementation protocols.
     </p>
   </li>
 
