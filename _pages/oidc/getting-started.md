@@ -2,6 +2,8 @@
 title: OpenID Connect
 lead: >
    [OpenID Connect](http://openid.net){:class="usa-link--external"} is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](http://openid.net/specs/openid-connect-core-1_0.html){:class="usa-link--external"} of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov){:class="usa-link--external"}.
+redirect_from:
+  - /openid-connect/
 sidenav:
   - text: Getting started
     href: "oidc/getting-started/"

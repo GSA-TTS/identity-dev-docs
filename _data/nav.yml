@@ -4,7 +4,7 @@ primary:
   - text: Integration
     href: /overview/
   - text: OpenID Connect
-    href: /oidc/
+    href: /oidc/getting-started/
   - text: SAML
     href: /saml/
   - text: Attributes
