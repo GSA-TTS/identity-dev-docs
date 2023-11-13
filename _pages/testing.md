@@ -5,6 +5,22 @@ lead: >
 redirect_from:
   - /registering-your-sp/
   - /register/
+sidenav:
+  - text: About the Login.gov sandbox
+    href: "#about-the-logingov-sandbox"
+  - text: Getting access to the Login.gov sandbox
+    href: "#getting-access-to-the-logingov-sandbox"
+  - text: Using the sandbox
+    href: "#using-the-sandbox"
+  - text: If you lost access to a sandbox team
+    href: "#if-you-lost-access-to-a-sandbox-team"
+  - text: Load Testing
+    href: "#load-testing"
+  - text: Automated Testing
+    href: "#automated-testing"
+  - text: Testing identity proofing
+    href: "#testing-identity-proofing"
+
 ---
 
 ## About the Login.gov sandbox
