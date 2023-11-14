@@ -484,7 +484,6 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 If you prefer using Slack, we have a slack channel for partners, **#login-partner-support**. You can request access to this channel by opening a Zendesk ticket. This channel includes other partners and Login.gov engineers that occasionally chime in. It should not be used as a substitute to Zendesk.
 
 <div class="usa-accordion usa-accordion--bordered">
-
   <h3 class="usa-accordion__heading">
     <button class="usa-accordion__button" aria-controls="zendesk-guidelines">
      Zendesk Guidelines
@@ -504,8 +503,6 @@ When submitting a Zendesk ticket, particularly in cases when you are encounterin
 It is also **highly recommended** to include someone we can contact from your technical team when creating the Zendesk ticket in case we have further questions about how your application was configured. 
 </div>
   </div>
-
-
   <h3 class="usa-accordion__heading">
     <button class="usa-accordion__button" aria-controls="issues-we-can-help-with">
       Issues We Can Help With
@@ -522,14 +519,13 @@ Here is a list of common issues partners encounter that our team can assist with
 * Clarification about something in our developer docs
 * Any errors being returned by Login.gov during authentication
 * Suspected fraudulent activity / RISC notifications 
-* Troubles with redirecting back to your application / SP
+* Troubles with redirecting back to your application / Service Provider
 * Trouble reading or receiving expected user attributes 
-* Users being unable to sign into production SP (these are top priority to resolve, assuming it is related to Login.gov) 
+* Users being unable to sign into production Service Provider (these are top priority to resolve, assuming it is related to Login.gov) 
 * Feedback you want to share about your experience using the developer docs / dashboard (we are always looking to improve)
 * Any bugs you encounter in the dashboard or developer docs (broken links, user management issues, etc)
 </div> 
   </div>
-
   <h3 class="usa-accordion__heading">
     <button class="usa-accordion__button" aria-controls="issues-we-cannot-help-with">
       Issues We Cannot Help With
@@ -550,15 +546,14 @@ There are some cases where our team is unable to help, typically either for secu
 * You’ve found a vulnerability and want to report it (Instead, please submit through [Login.gov Security Vulnerability Disclosure](https://docs.google.com/forms/d/e/1FAIpQLScuo4xCzBlpLnoq7-bDAVAxtJci03by7S-Q-Z_JUBDloK01QA/viewform)) 
 </div>
   </div>
-
   <h3 class="usa-accordion__heading">
     <button class="usa-accordion__button" aria-controls="user-support">
       Issues To Direct To User Support
     </button>
   </h3>
   <div id="user-support" class="usa-accordion__container">
-<div class="usa-accordion__content" markdown="1">
-If you receive a complaint from a user having trouble logging in or managing their account, it is best to direct them to [submit a help ticket to user support](https://www.login.gov/contact/).
-</div>
+    <div class="usa-accordion__content" markdown="1">
+      If you receive a complaint from a user having trouble logging in or managing their account, it is best to direct them to [submit a help ticket to user support](https://www.login.gov/contact/).
+    </div>
   </div>
 </div>
