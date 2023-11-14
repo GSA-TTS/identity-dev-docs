@@ -120,14 +120,14 @@ oidc:
         - Update your logout request to utilize the client_id attribute.
         More information about the logout request parameters can be found here: [https://developers.login.gov/oidc/logout/#logout-request](https://developers.login.gov/oidc/logout/#logout-request){:target="_blank"}.
   token:
-    - title: is expired
+    - title: Code is expired
       id: token-expired
       accordion-id: token_expired
       content: |
         ##### Why it's happening
-        In the authentication response, a `code` value is returned that is then used in the `token` endpoint request. The code is intended to be used immediately (within 15 minutes) after it has been generated. This error may mean that the user paused for too long during the authentication attempt.
+        In the authentication response, a `code` value is returned that is then used in the `token` endpoint request. "The code is intended to be used within 15 minutes immediately after it is generated. This error may mean that the user paused for too long during the authentication attempt.
         ##### What to do:
-        - Attempt another authentication attempt without pauses.
+        - Try another authentication attempt without pausing.
     - title: Invalid audience claim
       id: invalid-aud-claim
       accordion-id: invalid_aud_claim
@@ -183,6 +183,7 @@ oidc:
         The `iat` value in the `client_assertion` JWT is the time at which the JWT was issued. It takes the format of an integer timestamp representing the number of seconds since the Unix Epoch. This error means that it is:
         - Not an integer or floating point Unix timestamp, OR
         - It is not an integer/timestamp that is in the past.
+
         ##### What to do:
         - Ensure your application is correctly generating the `iat` value in the `client_assertion` JWT.
         - If you are correctly creating the value, your server may be experiencing server time drift. Time drift can happen slowly over time. You may need to update or reset your server's clock. We recommend syncing your system with a timeserver like [https://time.gov/](https://time.gov/){:target="_blank"}.
