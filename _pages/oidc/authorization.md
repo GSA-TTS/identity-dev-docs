@@ -141,7 +141,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
     <li id="jwt-nav" class="doc-sub-nav-item code-button__selected margin-left-neg-3">JWT</li>
     <li id="pkce-nav" class="doc-sub-nav-item margin-left-3">PKCE</li>
   </ul>
-  <div class="grid-row margin-top-4">
+  <div class="grid-row dev-doc-row">
     <div class="grid-col-5">
       <h4 class="parameters">acr_values</h4>
     </div>
