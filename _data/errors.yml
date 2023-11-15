@@ -136,8 +136,8 @@ oidc:
         The `aud` value in the `client_assertion` JWT is not correct.
         ##### What to do:
         - Check the `aud` key in the `client_assertion` JWT that is being sent in your `token` request.
-        Integration environment value: https://idp.int.identitysandbox.gov/api/openid_connect/token
-        Production environment value: https://secure.login.gov/api/openid_connect/token
+        Integration environment value: `https://idp.int.identitysandbox.gov/api/openid_connect/token`
+        Production environment value: `https://secure.login.gov/api/openid_connect/token`
 
         More information about the client assertion values can be found here: [https://developers.login.gov/oidc/token/#client_assertion](https://developers.login.gov/oidc/token/#client_assertion){:target="_blank"}.
     - title: Client must authenticate via PKCE or private_key_jwt, missing either code_challenge or client_assertion
@@ -180,7 +180,7 @@ oidc:
       accordion-id: invalid_iat
       content: |
         ##### Why it's happening
-        The `iat` value in the `client_assertion` JWT is the time at which the JWT was issued. It takes the format of an integer timestamp representing the number of seconds since the Unix Epoch. This error means that it is:
+        The [`iat`](https://developers.login.gov/oidc/token/#iat-number) value in the `client_assertion` JWT is the time at which the JWT was issued. It takes the format of an integer timestamp representing the number of seconds since the Unix Epoch. This error means that it is:
         - Not an integer or floating point Unix timestamp, OR
         - It is not an integer/timestamp that is in the past.
 
