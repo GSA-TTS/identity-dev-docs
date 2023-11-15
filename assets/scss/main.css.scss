@@ -137,6 +137,10 @@ button.code-button:hover {
   padding-bottom: 4rem;
 }
 
+.long.markdown > .highlighter-rouge > .highlight > pre {
+  max-height: 480px;
+}
+
 .return-to-top-section {
   position: absolute;
   height: 100%;
