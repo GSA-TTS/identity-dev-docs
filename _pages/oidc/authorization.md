@@ -196,6 +196,14 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         </div>
       </div>
     </div>
+     <div class="grid-row dev-doc-row">
+      <div class="grid-col-5">
+        <h4 class="parameters clearfix">prompt</h4>
+      </div>
+      <div class="grid-col-7">
+          This must be <code class="language-plaintext highlighter-rouge">select_account</code>
+      </div>
+    </div>
     <div class="grid-row dev-doc-row">
       <div class="grid-col-5">
         <h4 class="parameters clearfix">response_type</h4>
