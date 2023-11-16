@@ -1,27 +1,27 @@
 ---
 title: SAML developer guide
 lead: >
-  Login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile) with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/).
+  Login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile){:class="usa-link--external"} with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/){:class="usa-link--external"}.
 redirect_from:
   - /configuring-your-sp/
 sidenav:
   - text: Getting started
-    href: "#getting-started"
+    href: "/saml/getting-started/"
     links:
       - text: Configuration
-        href: "#configuration"
+        href: "/saml/#configuration"
       - text: Metadata
-        href: "#metadata"
+        href: "/saml/#metadata"
       - text: Signing Certificates
-        href: "#signing-certificates"
+        href: "/saml/#signing-certificates"
       - text: Annual Certificate Rotation
-        href: "#annual-certificate-rotation"
+        href: "/saml/#annual-certificate-rotation"
       - text: Example application
-        href: "#example-application"
-  - text: Auth
-    href: "#auth"
+        href: "/saml#example-application"
+  - text: Authentication
+    href: "/saml/authentication/"
   - text: Logout
-    href: "#logout"
+    href: "/saml/logout/"
 saml_year: 2023
 saml_last_year: 2022
 ---

@@ -13,6 +13,10 @@ const samlAuthTab1Button = document.getElementById('saml_auth_tab1_button');
 const samlAuthTab2Button = document.getElementById('saml_auth_tab2_button');
 const samlAuthResponseTab1Button = document.getElementById('saml_auth_response_tab1_button');
 const samlAuthResponseTab2Button = document.getElementById('saml_auth_response_tab2_button');
+const samlLogoutTab1Button = document.getElementById('saml_logout_tab1_button');
+const samlLogoutTab2Button = document.getElementById('saml_logout_tab2_button');
+const samlLogoutResponseTab1Button = document.getElementById('saml_logout_response_tab1_button');
+const samlLogoutResponseTab2Button = document.getElementById('saml_logout_response_tab2_button');
 
 function hideTabTwoCode(evt) {
   const errorButton = document.getElementById(`${evt.currentTarget.dataset.selector}_tab2_button`);
@@ -103,3 +107,10 @@ if (samlAuthTab1Button) {
   samlAuthResponseTab1Button.addEventListener('click', showTabOneCode);
   samlAuthResponseTab2Button.addEventListener('click', showTabTwoCode);
 }
+if (samlLogoutTab1Button) {
+  samlLogoutTab1Button.addEventListener('click', showTabOneCode);
+  samlLogoutTab2Button.addEventListener('click', showTabTwoCode);
+  samlLogoutResponseTab1Button.addEventListener('click', showTabOneCode);
+  samlLogoutResponseTab2Button.addEventListener('click', showTabTwoCode);
+}
+

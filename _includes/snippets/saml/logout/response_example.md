@@ -13,6 +13,6 @@
 </LogoutResponse>
 ```
 {% endcapture %}
-<div markdown="1" data-example="example" class="markdown maxh-mobile-lg">
-{{ example | markdownify }}
+<div markdown="1" class="markdown">
+    {{ example | markdownify }}
 </div>

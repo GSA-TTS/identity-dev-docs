@@ -1,25 +1,35 @@
 ---
 title: SAML developer guide
 lead: >
-  Login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile) with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/).
+  Login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile){:class="usa-link--external"} with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/){:class="usa-link--external"}.
 redirect_from:
   - /configuring-your-sp/
+  - /saml/
 sidenav:
   - text: Getting started
-    href: "#getting-started"
+    href: "/saml/getting-started/"
   - text: Authentication
-    href: "#authentication"
+    href: "/saml/authentication/"
     links:
         - text: Authentication request
-          href: "#authentication-request"
+          href: "/saml/#authentication-request"
         - text: Authentication response
-          href: "#authentication-response"
+          href: "/saml/#authentication-response"
   - text: Logout
-    href: "#logout"
+    href: "/saml/logout/"
 saml_year: 2023
 saml_last_year: 2022
 
 ---
+{% capture aal_values %}
+ {% include snippets/auth_content/aal_values.md %}
+{% endcapture %}
+{% capture service_levels %}
+ {% include snippets/auth_content/service_levels.md %}
+{% endcapture %}
+{% capture loa_values %}
+ {% include snippets/auth_content/loa_values.md %}
+{% endcapture %}
 {% capture saml_request_intro %}
 `<samlp:AuthnRequest>:SAML_REQUEST = urlEncode(base64(deflate(payload)))`
 {% endcapture %}
@@ -27,6 +37,12 @@ saml_last_year: 2022
 The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the type of identity verification<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, AAL (Authentication Assurance Level) and attributes requested.
 {% endcapture %}
 {% capture attributes %}
+To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes]({{ site.baseurl }}/attributes/) for the list of attributes that can be requested.
+
+#### Example specifying IAL, AAL, and attributes
+
+A proofed identity request at AAL3 for email, phone, first name, last name, and SSN might look like:
+
 ```xml
 <samlp:AuthnRequest ...>
   <!-- ... -->
@@ -55,87 +71,16 @@ The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp
                     {{ saml_tag | markdownify }}
                 </div>
             </div>
-            <div class="usa-accordion--bordered">
-                <button class="usa-accordion__button" aria-controls="id-verification" id="id-verification-accordion">
-                Type of Identity Verification <sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
-                </button>
-                <div id="id-verification" class="usa-accordion__content">
-                        <p>To specify one of the supported IAL levels, place one of these values inside a <code class="language-plaintext highlighter-rouge">&lt;saml:AuthnContextClassRef&gt;</code> tag:</p>
-                        <ul>
-                            <li>
-                                <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/ial/1</code></strong>Basic identity assurance, does not require identity verification (this is the most common value).
-                            </li>
-                            <li>
-                                <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/ial/2</code></strong>
-                                Requires that the user has gone through identity verification<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
-                            </li>
-                        </ul>
-                        </div>
-            </div>
-            <div class="usa-accordion--bordered margin-top-2">
-                <button class="usa-accordion__button" aria-controls="aal">
-                Authentication Assurance Level (AAL)
-                </button>
-                <div id="aal" class="usa-accordion__content">
-                    <p>We default to requiring a user to be authenticated with a second factor:</p>
-                    <ul>
-                        <li>
-                            <strong><code class="language-plaintext highlighter-rouge">urn:gov:gsa:ac:classes:sp:PasswordProtectedTransport:duo</code></strong>
-                            This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow strict AAL 1, because it implies that a user did not authenticate with a second factor. This setting requires users to reauthenticate with a separate second factor (i.e. not a session secret) once every 30 days at a minimum.
-                        </li>
-                    </ul>
-                    <p>To specify more restrictive behavior, add an additional <code class="language-plaintext highlighter-rouge">&lt;saml:AuthnContextClassRef&gt;</code> with one of these values:
-                    </p>
-                    <ul>
-                        <li>
-                            <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/aal/2</code></strong>
-                            This specifies that a user has been authenticated with a separate second factor. Users must <em>always</em> authenticate with a second factor.
-                        </li>
-                        <li>
-                            <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true</code></strong>
-                            This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC. Users must <em>always</em> authenticate with a second factor.
-                        </li>
-                        <li>
-                            <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/aal/2?hspd12=true</code></strong>
-                            This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC). Users must <em>always</em> authenticate with a second factor.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="usa-accordion--bordered margin-top-2">
-                <button class="usa-accordion__button" aria-controls="attributes">
-                Attributes
-                </button>
-                <div id="attributes" class="usa-accordion__content">
-                    <p>To request specific attributes, list them (comma-separated) as the query parameter for <code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/requested_attributes?ReqAttr=</code>. See the <a class="usa-link" href="/attributes/">user attributes</a> for the list of attributes that can be requested.</p>
-                    <h4 id="example-specifying-ial-aal-and-attributes">Example specifying IAL, AAL, and attributes</h4>
-                    <p>A proofed identity request at AAL3 for email, phone, first name, last name, and SSN might look like:</p>
-                    <p>{{ attributes | markdownify }}</p>
-                </div>
-            </div>
-            <div class="usa-accordion--bordered margin-top-2">
-                <button class="usa-accordion__button" aria-controls="loa" id="loa-accordion">
-                Level of Assurance (LOA) Values (deprecate)
-                </button>
-                <div id="loa" class="usa-accordion__content">
-                        <p>These not recommended, they are for legacy compatibility only.</p>
-                        <p>The authentication request can specify LOA levels 1 and 3 with one of these values inside the <code class="language-plaintext highlighter-rouge">&lt;saml:AuthnContextClassRef&gt;</code> tag:</p>
-                        <ul>
-                            <li>
-                                <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/loa/1</code></strong>
-                                Equivalent to IAL1
-                            </li>
-                            <li>
-                                <strong><code class="language-plaintext highlighter-rouge">http://idmanagement.gov/ns/assurance/loa/3</code></strong>
-                                Equivalent to identity proofed
-                            </li>
-                        </ul>
-                </div>
+            <div class="usa-accordion">
+                {% include accordion.html content=service_levels accordion_id="service_level_accordion"  title="Type of Service Level" id="service_level" %}
+                {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
+                {% include accordion.html content=attributes accordion_id="attributes_accordion" title="Attributes" id="attributes" %}
+                {% include accordion.html content=loa_values accordion_id="loa_accordion" title="Level of Assurance (LOA) Values (Deprecated)" id="loa_values" %}
             </div>
             <div class="footnotes" role="doc-endnotes">
                 <ol>
                     <li id="fn:1" role="doc-endnote">
-                    Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization. <a href="./#fnref:1" class="reversefootnote" aria-label="Back to content 1" role="doc-backlink">&#8617;<sup>1</sup></a> <a href="#fnref:1:1" class="reversefootnote" aria-label="Back to content 2" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:1:2" class="reversefootnote" aria-label="Back to content 3" role="doc-backlink">&#8617;<sup>3</sup></a>
+                    Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization. <a href="./#fnref:1" class="reversefootnote" aria-label="Back to content 1" role="doc-backlink">&#8617;<sup>1</sup></a> <a href="#fnref:1:2" class="reversefootnote" aria-label="Back to content 2" role="doc-backlink">&#8617;<sup>2</sup></a>
                     </li>
                 </ol>
             </div>
@@ -168,10 +113,10 @@ The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp
             <button id="saml_auth_tab1_button" data-selector="saml_auth" class="code-button code-button__selected margin-left-2">Request</button>
             <button id="saml_auth_tab2_button" data-selector="saml_auth" class="code-button margin-left-2">Example</button>
             <section id="saml_auth_tab1">
-                {% include snippets/saml/request.md %}
+                {% include snippets/saml/auth/request.md %}
             </section>
             <section id="saml_auth_tab2" hidden>
-                {% include snippets/saml/example.md %}
+                {% include snippets/saml/auth/request_example.md %}
             </section>
         </section>
     </div>
@@ -181,19 +126,21 @@ The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp
         <h2>Authentication response</h2>
         <p>After the user authenticates, Login.gov will redirect and POST a form back to your registered Assertion Consumer Service URL:</p>
         <p>The SAMLResponse is a base64-encoded XML payload that contains encrypted data.</p>
+          <a href="{{ site.baseurl }}/saml/logout/" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Logout</a>
     </div>
     <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-5">
         <section class="margin-top-2 position-relative z-index-1">
             <button id="saml_auth_response_tab1_button" data-selector="saml_auth_response" class="code-button code-button__selected margin-left-2">Response</button>
             <button id="saml_auth_response_tab2_button" data-selector="saml_auth_response" class="code-button margin-left-2">Example</button>
             <section id="saml_auth_response_tab1">
-                {% include snippets/saml/response.md %}
+                {% include snippets/saml/auth/response.md %}
             </section>
             <section id="saml_auth_response_tab2" hidden>
-                {% include snippets/saml/response_example.md %}
+                {% include snippets/saml/auth/response_example.md %}
             </section>
         </section>
     </div>
+      <a href="{{ site.baseurl }}/saml/logout/" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Logout</a>
 </div>
 
 

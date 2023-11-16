@@ -22,34 +22,14 @@ sidenav:
     href: "oidc/logout/"
 
 ---
-{% capture type_of_service %}
-  A type of service level<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> must be specified.
-
-- **`http://idmanagement.gov/ns/assurance/ial/1`**
-    Basic identity assurance, does not require identity verification (this is the most common value).
-- **`http://idmanagement.gov/ns/assurance/ial/2`**
-    Requires that the user has gone through identity verification<sup id="fnref:1:3" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
-{% endcapture %}
 {% capture aal_values %}
-  We default to requiring a user to be authenticated with a second factor:
-- **`urn:gov:gsa:ac:classes:sp:PasswordProtectedTransport:duo`**
-    This specifies that a user has been authenticated with a second factor. This value will be returned in the user attributes by default. We do not allow strict AAL 1, because it implies that a user did not authenticate with a second factor. This setting requires users to reauthenticate with a separate second factor (i.e. not a session secret) once every 30 days at a minimum.
-
-Stricter behavior can be specified by adding one of:
-
-  - **`http://idmanagement.gov/ns/assurance/aal/2`**
-      This is the same as the default behavior except users must reauthenticate with a separate second factor (i.e. not a session secret) once every 12 hours.
-  - **`http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true`**
-      This specifies that a user has been authenticated with a crytographically secure method, such as WebAuthn or using a PIV/CAC. Users must _always_ authenticate with a second factor.
-  - **`http://idmanagement.gov/ns/assurance/aal/2?hspd12=true`**
-      This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC). Users must _always_ authenticate with a second factor.
+ {% include snippets/auth_content/aal_values.md %}
+{% endcapture %}
+{% capture service_levels %}
+ {% include snippets/auth_content/service_levels.md %}
 {% endcapture %}
 {% capture loa_values %}
-  These are not recommended, and only for legacy compatibility.
-  - **`http://idmanagement.gov/ns/assurance/loa/1`**
-      Equivalent to IAL1
-  -  **`http://idmanagement.gov/ns/assurance/loa/3`**
-      Equivalent to identity verified account
+ {% include snippets/auth_content/loa_values.md %}
 {% endcapture %}
 {% capture code_challenge %}
 Correct Example
@@ -154,7 +134,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
   </div>
   <div class="grid-row dev-doc-row">
       <div class="usa-accordion">
-        {% include accordion.html content=type_of_service accordion_id="service_level_accordion"  title="Type of Service Level" id="service_level" %}
+        {% include accordion.html content=service_levels accordion_id="service_level_accordion"  title="Type of Service Level" id="service_level" %}
         {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
         {% include accordion.html content=loa_values accordion_id="loa_accordion" title="Level of Assurance (LOA) Values (Deprecated)" id="loa_values" %}
       </div>
