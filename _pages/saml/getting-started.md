@@ -4,20 +4,21 @@ lead: >
   Login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile){:class="usa-link--external"} with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/){:class="usa-link--external"}.
 redirect_from:
   - /configuring-your-sp/
+  - /saml/
 sidenav:
   - text: Getting started
     href: "/saml/getting-started/"
     links:
       - text: Configuration
-        href: "/saml/#configuration"
+        href: "/saml/getting-started/#configuration"
       - text: Metadata
-        href: "/saml/#metadata"
+        href: "/saml/getting-started/#metadata"
       - text: Signing Certificates
-        href: "/saml/#signing-certificates"
+        href: "/saml/getting-started/#signing-certificates"
       - text: Annual Certificate Rotation
-        href: "/saml/#annual-certificate-rotation"
+        href: "/saml/getting-started/#annual-certificate-rotation"
       - text: Example application
-        href: "/saml#example-application"
+        href: "/saml/getting-started/#example-application"
   - text: Authentication
     href: "/saml/authentication/"
   - text: Logout

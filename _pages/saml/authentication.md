@@ -12,9 +12,9 @@ sidenav:
     href: "/saml/authentication/"
     links:
         - text: Authentication request
-          href: "/saml/#authentication-request"
+          href: "/saml/authentication/#authentication-request"
         - text: Authentication response
-          href: "/saml/#authentication-response"
+          href: "/saml/authentication/#authentication-response"
   - text: Logout
     href: "/saml/logout/"
 saml_year: 2023

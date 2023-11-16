@@ -13,9 +13,9 @@ sidenav:
     href: "/saml/logout/"
     links:
       - text: Logout request
-        href: "/saml/#logout-request"
+        href: "/saml/logout/#logout-request"
       - text: Logout response
-        href: "/saml/#logout-response"
+        href: "/saml/logout/#logout-response"
 saml_year: 2023
 saml_last_year: 2022
 ---
