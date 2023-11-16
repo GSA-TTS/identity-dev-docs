@@ -113,4 +113,3 @@ if (samlLogoutTab1Button) {
   samlLogoutResponseTab1Button.addEventListener('click', showTabOneCode);
   samlLogoutResponseTab2Button.addEventListener('click', showTabTwoCode);
 }
-
