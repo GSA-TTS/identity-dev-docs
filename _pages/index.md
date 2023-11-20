@@ -6,13 +6,6 @@ permalink: /
 layout: home
 ---
 
-<section class="usa-section usa-section--dark">
-  <div class="grid-container">
-    <h1 class="usa-display">{{ page.title }}</h1>
-    <div class="usa-intro">{{ page.lead | markdownify }}</div>
-  </div>
-</section>
-
 <section class="usa-section grid-container" markdown="1">
 
   {% if site.temporary_alert %}
