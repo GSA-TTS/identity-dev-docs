@@ -6,7 +6,7 @@ primary:
   - text: OpenID Connect
     href: /oidc/getting-started/
   - text: SAML
-    href: /saml/
+    href: /saml/getting-started/
   - text: Attributes
     href: /attributes/
   - text: User Experience
