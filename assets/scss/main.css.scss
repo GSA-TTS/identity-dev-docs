@@ -43,13 +43,12 @@ main.usa-layout-docs {
 }
 
 .dev-doc-row {
-  border-bottom: 1px solid #CEDCED;
+  border-top: 1px solid #CEDCED;
   padding-bottom: 2rem;
   padding-top: 2rem;
 }
 
 .doc-sub-nav {
-  border-bottom: 1px solid #CEDCED;
   width: 100%;
   color: #205493;
   margin-bottom: 0px;
@@ -136,6 +135,10 @@ button.code-button:hover {
   white-space-collapse: preserve-breaks;
   background-color: inherit;
   padding-bottom: 4rem;
+}
+
+.long.markdown > .highlighter-rouge > .highlight > pre {
+  max-height: 480px;
 }
 
 .return-to-top-section {
