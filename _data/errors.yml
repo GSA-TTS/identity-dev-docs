@@ -195,3 +195,31 @@ oidc:
         There is no registered certificate that matches the signature of the `client_assertion` JWT that is being passed as part of the token. request.
         ##### What to do:
         - Ensure that the public certificate that matches the private key used to sign the JWT is registered in your application's configuration in the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
+  userinfo:
+    - title: Malformed Authorization header
+      id: malformed-auth-header
+      accordion-id: malformed_auth_header
+      content: |
+        ##### Why it's happening
+        The `userinfo` endpoint requires an Authorization Header that includes a Bearer token. The Bearer token value is the `access_token` value from the `token` endpoint response.
+        ##### What to do:
+        - Ensure you are sending an [Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization){:target="_blank"} in your request to the `userinfo` endpoint.
+        - Ensure the value of the header is `Bearer` followed by the [`access_token`](https://developers.login.gov/oidc/token/#access_token-string){:target="_blank"} that was returned by the `token` endpoint.
+    - title: No Authorization header provided
+      id: no-auth-header
+      accordion-id: no_auth_header
+      content: |
+        ##### Why it's happening
+        The `userinfo` endpoint requires an Authorization Header.
+        ##### What to do:
+        - Ensure you are sending an [Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization){:target="_blank"} in your request to the `userinfo` endpoint.
+        - Ensure the value of the header is `Bearer` followed by the [`access_token`](https://developers.login.gov/oidc/token/#access_token-string){:target="_blank"} that was returned by the `token` endpoint.
+    - title: Could not find authorization for the contents of the provided access_token or it may have expired
+      id: auth-header-contents-not-found
+      accordion-id: auth_header_contents_not_found
+      content: |
+        ##### Why it's happening
+        The Bearer token value that is being passed as part of the userinfo endpoint request does not match a live user session. The value may be wrong, or there may have been a long pause during the authentication attempt.
+        ##### What to do:
+        - Ensure the Authorization header value is `Bearer` followed by the [`access_token`](https://developers.login.gov/oidc/token/#access_token-string){:target="_blank"} that was returned by the `token` endpoint.
+         - Try another authentication attempt without pausing.
