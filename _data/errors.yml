@@ -125,7 +125,7 @@ oidc:
       accordion-id: token_expired
       content: |
         ##### Why it's happening
-        In the authentication response, a `code` value is returned that is then used in the `token` endpoint request. "The code is intended to be used within 15 minutes immediately after it is generated. This error may mean that the user paused for too long during the authentication attempt.
+        In the authentication response, a `code` value is returned that is then used in the `token` endpoint request. The code is intended to be used within 15 minutes immediately after it is generated. This error may mean that the user paused for too long during the authentication attempt.
         ##### What to do:
         - Try another authentication attempt without pausing.
     - title: Invalid audience claim
