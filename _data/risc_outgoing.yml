@@ -33,6 +33,75 @@
     }
   }
 
+- friendly_name: Account Disabled
+  direction: outgoing
+  event_type: https://schemas.openid.net/secevent/risc/event-type/account-disabled
+  spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#account-disabled"
+  description: >
+    Login.gov pushes this event when a user account suspended.
+  payload_schema: &iss_sub_schema
+    - key: subject
+      description: An event will include a **subject** object, with the following keys
+      properties:
+        - key: subject_type
+          type: string
+          description: >
+            Will be **iss-sub**, this indicates the **sub** is the subject provided by the original issuer (Login.gov)
+        - key: iss
+          type: string
+          description: >
+            This is Login.gov's issuer, the root URL for Login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
+        - key: sub
+          type: string
+          description: >
+            The UUID identifying the user. This is the same as the  `sub` inside the `id_token` JWT in the OpenID Token endpoint.
+        - key: reason
+          type: string
+          description: >
+            Optional, describes why was the account disabled..
+  example_payload: {
+    "https://schemas.openid.net/secevent/risc/event-type/account-disabled": {
+      "subject": {
+        "subject_type": "iss-sub",
+        "iss": "https://idp.int.identitysandbox.gov",
+        "sub": "<$SUB>"
+      },
+      "reason": "account-suspension",
+    }
+  }
+
+- friendly_name: Account Enabled
+  direction: outgoing
+  event_type: https://schemas.openid.net/secevent/risc/event-type/account-enabled
+  spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#account-enabled"
+  description: >
+    Login.gov pushes this event when a user account reinstated.
+  payload_schema: &iss_sub_schema
+    - key: subject
+      description: An event will include a **subject** object, with the following keys
+      properties:
+        - key: subject_type
+          type: string
+          description: >
+            Will be **iss-sub**, this indicates the **sub** is the subject provided by the original issuer (Login.gov)
+        - key: iss
+          type: string
+          description: >
+            This is Login.gov's issuer, the root URL for Login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
+        - key: sub
+          type: string
+          description: >
+            The UUID identifying the user. This is the same as the  `sub` inside the `id_token` JWT in the OpenID Token endpoint.
+  example_payload: {
+    "https://schemas.openid.net/secevent/risc/event-type/account-enabled": {
+      "subject": {
+        "subject_type": "iss-sub",
+        "iss": "https://idp.int.identitysandbox.gov",
+        "sub": "<$SUB>"
+      }
+    }
+  }
+
 - friendly_name: Identifier Recycled
   direction: outgoing
   event_type: https://schemas.openid.net/secevent/risc/event-type/identifier-recycled
