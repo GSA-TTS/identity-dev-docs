@@ -44,8 +44,8 @@ layout: home
     <hr class="text-primary-light border-solid measure-5 margin-x-0">
     <section class="usa-section usa-prose padding-top-5">
       <h2>Integration support for developers</h2>
-      <p class="measure-5 margin-x-0">
-        If you are with a government agency partner, check our <a href="{% link _pages/support.md %}" class="usa-link">FAQ</a> page for answers to the most common questions. If you need further technical assistance with an integration, you can <a href="{{site.baseurl}}/support/#contacting-partner-support/">contact Partner Support</a>.
+      <p class="measure-5 margin-x-0" markdown="1">
+        If you are with a government agency partner, check our [FAQ]({{ site.baseurl}}/support/#frequently-asked-questions) page for answers to the most common questions. If you need further technical assistance with an integration, you can [contact Partner Support]({{ site.baseurl}}/support/#contacting-partner-support).
       </p>
       <p class="measure-5 margin-x-0">
         For help signing in or verifying your identity with Login.gov, please visit the <a href="https://login.gov/help/" class="usa-link">Login.gov Help Center</a> or <a href="https://login.gov/contact/" class="usa-link">contact us</a>.
