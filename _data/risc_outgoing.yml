@@ -39,7 +39,7 @@
   spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#account-disabled"
   description: >
     Login.gov pushes this event when a user account suspended.
-  payload_schema: &iss_sub_schema
+  payload_schema:
     - key: subject
       description: An event will include a **subject** object, with the following keys
       properties:
@@ -54,7 +54,7 @@
         - key: sub
           type: string
           description: >
-            The UUID identifying the user. This is the same as the  `sub` inside the `id_token` JWT in the OpenID Token endpoint.
+            The UUID identifying the user. This is the same as the `sub` inside the `id_token` JWT in the OpenID Token endpoint.
         - key: reason
           type: string
           description: >
@@ -76,7 +76,7 @@
   spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#account-enabled"
   description: >
     Login.gov pushes this event when a user account reinstated.
-  payload_schema: &iss_sub_schema
+  payload_schema:
     - key: subject
       description: An event will include a **subject** object, with the following keys
       properties:
@@ -91,7 +91,7 @@
         - key: sub
           type: string
           description: >
-            The UUID identifying the user. This is the same as the  `sub` inside the `id_token` JWT in the OpenID Token endpoint.
+            The UUID identifying the user. This is the same as the `sub` inside the `id_token` JWT in the OpenID Token endpoint.
   example_payload: {
     "https://schemas.openid.net/secevent/risc/event-type/account-enabled": {
       "subject": {
