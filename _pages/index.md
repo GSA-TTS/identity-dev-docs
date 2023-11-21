@@ -6,8 +6,8 @@ permalink: /
 layout: home
 ---
 
-<section class="usa-section grid-container" markdown="1">
-  <div class="grid-col-9 grid-offset-2">
+<div class="grid-container">
+  <div class="desktop:grid-col-9 desktop:grid-offset-2 mobile:grid-col-auto mobile:padding-2">
     {% if site.temporary_alert %}
     <section class="usa-section" markdown="1">  
         {% include alert.html content=site.temporary_alert %}
@@ -41,7 +41,6 @@ layout: home
         </p>
       </li>
     </ol>
-
     <hr class="text-primary-light border-solid measure-5 margin-x-0">
     <section class="usa-section usa-prose padding-top-5">
       <h2>Integration support for developers</h2>
@@ -53,4 +52,4 @@ layout: home
       </p>
     </section>
   </div>
-</section>
+</div>
