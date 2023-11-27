@@ -515,6 +515,7 @@ Here is a list of common issues partners encounter that our team can assist with
 * Authentication failures while testing in sandbox environment
 * Questions about OIDC/SAML protocols
 * Problems with dashboard configuration (configuration not updating as expected)
+* Invalid PIV/CAC certificate errors (we may need to update certs on our end)
 * Problems updating or deploying a production configuration
 * Clarification about something in our developer docs
 * Any errors being returned by Login.gov during authentication
