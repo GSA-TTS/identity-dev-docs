@@ -25,7 +25,7 @@ sidenav:
 saml_year: 2023
 ---
 {% capture deployment_warning %}
-Please note: The deployment process can take up to two weeks to complete. You may wish to have a grace period between when we deploy and when you add the Login.gov button to your site.
+**Please note: The deployment process can take up to two weeks to complete. You may wish to have a grace period between when we deploy and when you add the Login.gov button to your site.**
 {% endcapture %}
 
 {% include alert.html content=deployment_warning alert_class="usa-alert--warning" %}
@@ -48,9 +48,9 @@ Depending on your agency’s integration additional items may be needed:
 
 - If this is a SAML integration (not OpenID Connect), then please ensure that:
 
-  -   Assertion Consumer Logout Service URL is defined.
+  -   **Assertion Consumer Logout Service URL** is defined.
 
-  -   SAML Assertion Encryption is enabled.
+  -   **SAML Assertion Encryption** is enabled.
 
         -   If you are using a service which does not support SAML encryption, then please submit a technical support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) for further guidance.
 
@@ -84,21 +84,21 @@ Before you can request deployment, you need to create a new and separate applica
 
 -   [Approved agency logo]({{site.baseurl}}/design-guidelines/#agency-logo-guidelines) for your app
 
-When you have the components required, follow these steps to create your production configuration app:
+**When you have the components required, follow these steps to create your production configuration app:**
 
 1.  [Create a new app on the](https://dashboard.int.identitysandbox.gov/) Login.gov Partner Dashboard. Select “Apps” from the top right menu, then select the “Create a new test app” button.
 
-2.  Enter the name of the app as it appears in your IAA in the "App Name" field - Do NOT use environment names such as "Prod" or "Production".
+2.  Enter the name of the app **as it appears in your IAA** in the "App Name" field - Do NOT use environment names such as "Prod" or "Production".
 
-3.  Enter the name of the app as it should appear to users in the "Friendly Name" field. **This is the app name a user will see when logging in.** 
+3.  Enter the name of the app **as it should appear to users** in the "Friendly Name" field. **This is the app name a user will see when logging in.** 
 
 4.  Next, choose an agency team for the app from the drop down menu
 
 5.  Select the authentication protocol that will be used by the service provider. 
 
-6.  Choose the level of service and default Authentication Assurance Level (AAL) from the drop down menus and select the correct attribute bundle. 
+6.  Choose the level of service and default Authentication Assurance Level (AAL) field from the drop down menus and select the correct attribute bundle. 
 
-7.  Enter the issuer, a unique string to identify the app in the Identity Provider (IdP) 
+7.  Enter the issuer, a unique string to identify the app in the Identity Provider (IdP). 
 
 8.  Upload your logo and public certificate file using the "Choose a file" buttons. Note: the public certificate file may not be required if you are using the OIDC PKCE flow.
 
@@ -115,17 +115,17 @@ If you encounter errors or have questions after completing these steps, please s
 
 You will need to configure your application to point to the following endpoint: 
 
--   OpenID Connect: `https://secure.login.gov/openid_connect/authorize`
+-   **OpenID Connect**: `https://secure.login.gov/openid_connect/authorize`
 
--   SAML: `https://secure.login.gov/api/saml/auth{{ page.saml_year }}`
+-   **SAML**: `https://secure.login.gov/api/saml/auth{{ page.saml_year }}`
 
 Our integration documentation includes endpoint urls for our sandbox environment `https://idp.int.identitysandbox.gov/`. Our production environment is located at `https://secure.login.gov/`. The URL path to each endpoint remains the same. Only the domain will change.  
 
 Please be aware that the IdP certificate (X509 Certificate) in the production environment is different from the IdP certificate in the sandbox environment. The production IdP certificates can be found here:
 
--   OpenID Connect: `https://secure.login.gov/api/openid_connect/certs`
+-   **OpenID Connect**: `https://secure.login.gov/api/openid_connect/certs`
 
--   SAML: `https://secure.login.gov/api/saml/metadata{{ page.saml_year }}`
+-   **SAML**: `https://secure.login.gov/api/saml/metadata{{ page.saml_year }}`
 
 ## Request deployment
 
@@ -142,7 +142,7 @@ You are ready to submit a launch request through the [Partner Support Help Desk]
 
 All changes to integrations between Login.gov and your application must be reviewed and deployed. 
 
-We ask for at least two weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require three weeks notice in order to allow the domain for outbound communication. 
+**We ask for at least two weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require three weeks notice in order to allow the domain for outbound communication.** 
 
 We recommend a grace period between deployment and implementation on your site. Regular deployments occur every Tuesday and Thursday by the close of the business day. If the regular deployment is scheduled for a holiday, then it will be completed on an alternate day.
 
@@ -158,7 +158,7 @@ If you wish to deploy an application to our staging environment, then create a �
 
 **Changes to the production app are not automatic and may take up to two weeks.**
 
-If you need to make any changes to your deployed integration, please update your production configuration app in the sandbox and test the changes you wish to deploy. After you have confirmed the change, you must submit a change request through the [Partner Support Help Desk](https://zendesk.login.gov) to ensure the change takes effect in production.
+If you need to make any changes to your deployed integration, please update your production configuration app in the sandbox and test the changes you wish to deploy. After you have confirmed the change, **you must submit a change request** through the [Partner Support Help Desk](https://zendesk.login.gov) to ensure the change takes effect in production.
 
 ### Certificate Rotation Process
 
@@ -168,7 +168,7 @@ If you are rotating your application’s public/private keypair, or want to add 
 
   Follow this process to initiate certificate rotation:
 
-  For OIDC integrations or SAML integrations sending signed requests:
+  **For OIDC integrations or SAML integrations sending signed requests:**
 
   1.  Add the new certificate to the application dashboard configuration.
 
@@ -179,7 +179,7 @@ If you are rotating your application’s public/private keypair, or want to add 
   4.  Once the new key pair is in use, please submit a request to remove the old certificate.
 
 
-  For SAML integrations not sending signed requests:
+  **For SAML integrations not sending signed requests:**
 
   1.  The final certificate rotation must be coordinated with Login.gov technical support.
 
@@ -189,7 +189,7 @@ If you are rotating your application’s public/private keypair, or want to add 
 
 
 {% capture expiration_date %}
-Note: Login.gov takes no action based on the expiration date of the certificate, and integrations with expired certificates continue to function.
+**Note: Login.gov takes no action based on the expiration date of the certificate, and integrations with expired certificates continue to function.**
 {% endcapture %}
 
 {% include alert.html content=expiration_date alert_class="usa-alert--warning" %}
