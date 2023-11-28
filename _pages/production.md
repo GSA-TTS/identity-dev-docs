@@ -46,23 +46,17 @@ Make sure you have the following items ready before you start the deployment pro
 
 Depending on your agency’s integration additional items may be needed:
 
-- If this is a SAML integration (not OpenID Connect), then please ensure that:
+- **If this is a SAML integration (not OpenID Connect), then please ensure that:**
 
-  -   **Assertion Consumer Logout Service URL** is defined.
+  -   Assertion Consumer Logout Service URL is defined.
 
-  -   **SAML Assertion Encryption** is enabled.
+  -   SAML Assertion Encryption is enabled.
 
         -   If you are using a service which does not support SAML encryption, then please submit a technical support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) for further guidance.
 
-- If this is an integration requesting identity proofed attributes, you must include a Failure to Proof URL. Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency and/or departments alternate methods of accessing your application.
+- **If this is an integration requesting identity proofed attributes, you must include a Failure to Proof URL.** Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency and/or departments alternate methods of accessing your application.
 
 If you have questions after reviewing this page, submit a technical support ticket through the [Partner Support Help Desk]({{ site.baseurl}}/support/#contacting-partner-support). You will need a [Login.gov production account](https://secure.login.gov) to submit technical support tickets. Your Login.gov production account and Login.gov sandbox (test environment) accounts are separate.
-
--   If this is a SAML integration (Not OpenID Connect), then please ensure that:
-
-    -   Assertion Consumer Logout Service URL is defined.
-
-    -   SAML Assertion Encryption is enabled.
 
 
 ## Confirm Interagency Agreement (IAA)
@@ -88,9 +82,9 @@ Before you can request deployment, you need to create a new and separate applica
 
 1.  [Create a new app on the](https://dashboard.int.identitysandbox.gov/) Login.gov Partner Dashboard. Select “Apps” from the top right menu, then select the “Create a new test app” button.
 
-2.  Enter the name of the app **as it appears in your IAA** in the "App Name" field - Do NOT use environment names such as "Prod" or "Production".
+2.  Enter the name of the app as it appears in your IAA in the "App Name" field. **Do NOT use environment names such as "Prod" or "Production".**
 
-3.  Enter the name of the app **as it should appear to users** in the "Friendly Name" field. **This is the app name a user will see when logging in.** 
+3.  Enter the name of the app as it should appear to users in the "Friendly Name" field. **This is the app name a user will see when logging in.** 
 
 4.  Next, choose an agency team for the app from the drop down menu
 
