@@ -25,7 +25,7 @@ sidenav:
 saml_year: 2023
 ---
 {% capture deployment_warning %}
-**Please note: The deployment process can take up to two weeks to complete. You may wish to have a grace period between when we deploy and when you add the Login.gov button to your site.**
+Please note: The deployment process can take up to two weeks to complete. You may wish to have a grace period between when we deploy and when you add the Login.gov button to your site.
 {% endcapture %}
 
 {% include alert.html content=deployment_warning alert_class="usa-alert--warning" %}
@@ -185,7 +185,7 @@ If you are rotating your application’s public/private keypair, or want to add 
 
 
 {% capture expiration_date %}
-**Note: Login.gov takes no action based on the expiration date of the certificate, and integrations with expired certificates continue to function.**
+Note: Login.gov takes no action based on the expiration date of the certificate, and integrations with expired certificates continue to function.
 {% endcapture %}
 
 {% include alert.html content=expiration_date alert_class="usa-alert--warning" %}
