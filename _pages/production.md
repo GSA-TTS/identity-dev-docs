@@ -1,7 +1,7 @@
 ---
 title: Production deployment
 lead: >
-  Once you’ve setup and tested your integration in [our dashboard](https://dashboard.int.identitysandbox.gov/), you can request deployment to the Login.gov production environment.
+  Once you’ve set up your integration in [our dashboard](https://dashboard.int.identitysandbox.gov/) and tested your application, you can request deployment to the Login.gov production environment.
 
 redirect_from:
   - /production-deployment/
