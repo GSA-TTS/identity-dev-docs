@@ -36,8 +36,8 @@ Make sure you have the following items ready before you start the deployment pro
 
 -   [Signed Interagency Agreement (IAA) listing this integration ](https://developers.login.gov/production/#confirm-iaa)
 
--   A new dedicated [application configuration within the Dashboard](https://dashboard.int.identitysandbox.gov/)
-    * Some partners choose to have two configurations, one that is intended for deployment to production and one which is purely for testing purposes.
+-   A dedicated [application configuration within the Dashboard](https://dashboard.int.identitysandbox.gov/)
+    * We recommend having two configurations, one that is intended for deployment to production and one which is purely for testing purposes.
     * All production urls should have .gov, .mil, or a dedicated .com address and point to an Authority to Operate (ATO) approved environment.
 
 -   A user account in the [Login.gov production environment](https://secure.login.gov)
@@ -88,7 +88,7 @@ Before you can request deployment, you need to create a new and separate applica
 
 4.  Enter the name of the app as it should appear to users in the "Friendly Name" field. **This is the app name a user will see when logging in.** 
 
-5.  Next, choose an agency team for the app from the drop down menu
+5.  Next, choose an agency team for the app from the drop down menu.
 
 6.  Select the authentication protocol that will be used by the service provider. 
 
