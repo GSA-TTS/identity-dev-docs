@@ -34,7 +34,7 @@ Please note: The deployment process can take up to two weeks to complete. You ma
 
 Make sure you have the following items ready before you start the deployment process:
 
--   [Signed Interagency Agreement (IAA) listing this integration ](https://developers.login.gov/production/#confirm-iaa)
+-   [Signed Interagency Agreement (IAA) listing this integration ]({{ site.baseurl}}/production/#confirm-interagency-agreement-iaa)
 
 -   A dedicated [application configuration within the Dashboard](https://dashboard.int.identitysandbox.gov/)
     * We recommend having two configurations, one that is intended for deployment to production and one which is purely for testing purposes.
@@ -42,7 +42,7 @@ Make sure you have the following items ready before you start the deployment pro
 
 -   A user account in the [Login.gov production environment](https://secure.login.gov)
 
--   You must include an agency logo for your application. [Learn more about our logo guidelines.](https://developers.login.gov/design-guidelines/#agency-logo-guidelines)
+-   You must include an agency logo for your application. [Learn more about our logo guidelines.]({{ site.baseurl}}/design-guidelines/#agency-logo-guidelines)
 
 Depending on your agency’s integration additional items may be needed:
 
