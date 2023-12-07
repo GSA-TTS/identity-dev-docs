@@ -7,6 +7,9 @@ url: https://developers.login.gov
 # temporary_alert: "The Login.gov sandbox (<b>not production</b>) will be unavailable from <b>5-6p ET on Tuesday, January 31st, 2023</b> for maintenance."
 temporary_alert: false
 
+# GSA Office of Strategic Communication (OSC) Google Analytics
+osc_analytics_ga_measurement_id: null
+
 plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
