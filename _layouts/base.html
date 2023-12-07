@@ -2,6 +2,9 @@
 
 <html lang="en">
   <head>
+    {% include google_analytics.html %}
+    {% include osc_analytics.html %}
+    {% include dap.html %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -158,7 +161,7 @@
           </div>
         </div>
       </footer>
-  
+
     <script src="{{ site.baseurl }}/assets/js/toggle_view.js"></script>
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
     <script src="{{ site.baseurl }}/assets/js/anchor.js"></script>
@@ -170,9 +173,5 @@
         '#main-content h4:not(.usa-accordion__heading)'
       ].join(', '));
     </script>
-
-    {% include dap.html %}
-    {% include google_analytics.html %}
-    {% include osc_analytics.html %}
   </body>
 </html>
