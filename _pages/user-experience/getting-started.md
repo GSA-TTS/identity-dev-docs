@@ -23,27 +23,27 @@ sidenav:
 ##  Getting started
 There are several decisions during the integration process that affect how your users experience Login.gov. In this User Experience guide, we will outline what options you have available to your application, and the configurations in Login.gov [dashboard](https://dashboard.int.identitysandbox.gov/) that impact users.
 
-{% capture application_req_1 %}
+{% capture button_ux %}
 [Design your application's sign-in and sign-out buttons]({{site.baseurl}}/user-experience/sign-in-sign-out/). This will include a [global sign-in button]({{site.baseurl}}/user-experience/sign-in-sign-out/), and optionally, [a sign-in page]({{site.baseurl}}/user-experience/sign-in-sign-out/) before the user is directed to Login.gov.
 {% endcapture %}
 
-{% capture application_req_2 %}
+{% capture failure_to_proof_ux %}
 All partners with identity verification will [create a Failure to Proof URL]({{site.baseurl}}/user-experience/failure-proof/) for users who cannot pass identity proofing with Login.gov. This URL is configured in the sandbox dashboard, but may require designing a new page or process on your agency's website or application.
 {% endcapture %}
 
-{% capture application_req_3 %}
+{% capture faq_ux %}
 [Optional: Add FAQ content to inform users about Login.gov]({{site.baseurl}}/user-experience/faq-content/)
 {% endcapture %}
 
-{% capture dashboard_req_1 %}
+{% capture logo_ux %}
 [Add your agency logo]({{site.baseurl}}/user-experience/agency-logo/) to help users understand the partnership between Login.gov and your agency.
 {% endcapture %}
 
-{% capture dashboard_req_2 %}
+{% capture cancel_url_ux %}
 [Determine your application’s Cancel URL]({{site.baseurl}}/user-experience/cancel-url/)
 {% endcapture %}
 
-{% capture dashboard_req_3 %}
+{% capture dashboard_failure_to_proof %}
 [Identity Verification: Create a Failure to Proof URL]({{site.baseurl}}/user-experience/failure-proof/)
 {% endcapture %}
 
@@ -52,13 +52,13 @@ All partners with identity verification will [create a Failure to Proof URL]({{s
 
 <ul>
   <li class="usa-icon-list__item">
-    {% include green_icon.html content=application_req_1 %}       
+    {% include green_icon.html content=button_ux %}       
   </li>
   <li class="usa-icon-list__item">
-    {% include green_icon.html content=application_req_2 %}
+    {% include green_icon.html content=failure_to_proof_ux %}
   </li>
   <li class="usa-icon-list__item">
-    {% include green_icon.html content=application_req_3 %}
+    {% include green_icon.html content=faq_ux %}
   </li>
 </ul>
 
@@ -66,13 +66,13 @@ All partners with identity verification will [create a Failure to Proof URL]({{s
 
 <ul class="padding-bottom-4">
  <li class="usa-icon-list__item">
-    {% include green_icon.html content=dashboard_req_1 %}
+    {% include green_icon.html content=logo_ux %}
  </li>
  <li class="usa-icon-list__item">
-    {% include green_icon.html content=dashboard_req_2 %}
+    {% include green_icon.html content=cancel_url_ux %}
  </li>
  <li class="usa-icon-list__item">
-    {% include green_icon.html content=dashboard_req_3 %}
+    {% include green_icon.html content=dashboard_failure_to_proof %}
  </li>
 </ul>
 
