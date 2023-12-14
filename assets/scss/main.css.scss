@@ -122,6 +122,14 @@ button.code-button:hover {
   top: 2rem;
 }
 
+.green-bottom-border {
+  border-bottom: green 4px solid;
+}
+
+.red-bottom-border {
+  border-bottom: red 4px solid;
+}
+
 
 .parameters {
   margin-top: 0px;
@@ -163,6 +171,10 @@ button.code-button:hover {
   position: relative;
   margin-top: 2rem;
   padding-top: 1rem;
+}
+
+.agency-logo-width{
+  width: 230px;
 }
 
 @media (min-width: 1024px) {

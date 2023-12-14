@@ -32,7 +32,7 @@ All partners with identity verification will [create a Failure to Proof URL]({{s
 {% endcapture %}
 
 {% capture faq_ux %}
-[Optional: Add FAQ content to inform users about Login.gov]({{site.baseurl}}/user-experience/faq-content/)
+Optional: [Add FAQ content to inform users about Login.gov]({{site.baseurl}}/user-experience/faq-content/)
 {% endcapture %}
 
 {% capture logo_ux %}
@@ -50,7 +50,7 @@ All partners with identity verification will [create a Failure to Proof URL]({{s
 
 ### Add to your agency's application or website
 
-<ul>
+<ul class="usa-icon-list"">
   <li class="usa-icon-list__item">
     {% include green_icon.html content=button_ux %}       
   </li>
@@ -64,7 +64,7 @@ All partners with identity verification will [create a Failure to Proof URL]({{s
 
 ### Configure in the [dashboard](https://dashboard.int.identitysandbox.gov/)
 
-<ul class="padding-bottom-4">
+<ul class="usa-icon-list padding-bottom-4">
  <li class="usa-icon-list__item">
     {% include green_icon.html content=logo_ux %}
  </li>
