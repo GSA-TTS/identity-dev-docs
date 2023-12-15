@@ -50,7 +50,7 @@ Optional: [Add FAQ content to inform users about Login.gov]({{site.baseurl}}/use
 
 ### Add to your agency's application or website
 
-<ul class="usa-icon-list"">
+<ul class="usa-icon-list">
   <li class="usa-icon-list__item">
     {% include green_icon.html content=button_ux %}       
   </li>
