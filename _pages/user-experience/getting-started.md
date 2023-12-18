@@ -50,7 +50,7 @@ Optional: [Add FAQ content to inform users about Login.gov]({{site.baseurl}}/use
 
 ### Add to your agency's application or website
 
-<ul class="usa-icon-list">
+<ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
     {% include green_icon.html content=button_ux %}       
   </li>
@@ -64,7 +64,7 @@ Optional: [Add FAQ content to inform users about Login.gov]({{site.baseurl}}/use
 
 ### Configure in the [dashboard](https://dashboard.int.identitysandbox.gov/)
 
-<ul class="usa-icon-list padding-bottom-4">
+<ul class="usa-icon-list padding-bottom-4 padding-top-2">
  <li class="usa-icon-list__item">
     {% include green_icon.html content=logo_ux %}
  </li>
