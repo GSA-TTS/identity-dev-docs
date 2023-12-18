@@ -17,7 +17,7 @@ layout: home
     <ol class="usa-process-list usa-prose margin-bottom-4">
       <li class="usa-process-list__item">
         <p>
-          Your integration with Login.gov starts in the <a href="https://dashboard.int.identitysandbox.gov/" class="usa-link">dashboard</a> where you can reigster your app.
+          Your integration with Login.gov starts in the <a href="https://dashboard.int.identitysandbox.gov/" class="usa-link">dashboard</a> where you can register your app.
         </p>
       </li>
       <li class="usa-process-list__item">
