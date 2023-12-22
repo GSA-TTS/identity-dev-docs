@@ -157,7 +157,9 @@ To simulate issues with proofing vendor responses, create a YAML file that inclu
 | Parse | parse error in vendor response |
 | Time | vendor timeout |
 
-To simulate failure to verify a zipcode, enter “00000” for the user's zipcode.
+To simulate failure to verify a zipcode, enter `00000` for the user's zipcode.
+
+See also: [Individual state MVA errors](#individual-state-mva-errors)
 
 Sample YAML file:
 {% include yaml_download.md filename="proofing_vendor_error.yml" %}
@@ -166,8 +168,14 @@ Sample YAML file:
 
 Login.gov collects the document number of a drivers license or state ID card automatically during the proofing process. This document is checked against issuing source data, along with user information, such as address.
 
-To simulate a verification failure, submit `00000000` as the `state_id_number` for [any jurisdiction](https://github.com/18F/identity-idp/blob/2022-07-21T171117/config/application.yml.default#L21) where issuing source verification is enabled.
+To simulate a verification failure, submit `00000000` as the `state_id_number` and [any jurisdiction](https://github.com/18F/identity-idp/blob/2022-07-21T171117/config/application.yml.default#L21) where issuing source verification is enabled for `state_id_jurisdiction`.
 
+### Individual state MVA errors
+
+To simulate an individual state yielding an error when asked to verify a drivers license, use `mvatimeout` for `state_id_number` and `WA` for `state_id_jurisdiction`. You can use [any jurisdiction](https://github.com/18F/identity-idp/blob/2022-07-21T171117/config/application.yml.default#L21) where issuing source verification is enabled for `state_id_jurisdiction`, for example `WA`.
+
+Sample YAML file:
+{% include yaml_download.md filename="individual_state_error.yml" %}
 ### Phone number verification
 
 Login.gov collects a phone number during the proofing process. In the production environment, Login.gov checks that this phone number is associated with the applicant. The following phone numbers simulate specific events:
