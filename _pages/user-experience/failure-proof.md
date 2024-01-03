@@ -42,8 +42,8 @@ The Failure to Proof URL is shown to users throughout the identity proofing proc
 <figure>
   <img src="{{ site.baseurl }}/assets/img/missing-docs.png"
        alt='A section of a Login.gov page with the heading "Are you missing one of these items?" and three links: "See a list of accepted state-issued IDs", "Learn more about verifying by phone or mail", and "Get help at Partner Agency"."'
-       class="display-block grid-col flex-auto flex-align-center margin-y-4">
-  <figcaption>An example of what users see when they do not meet the requirements to complete identity verification with Login.gov. The term “Partner Agency” will be replaced by what the agency configures for this portion of their integration.</figcaption>
+       class="display-block grid-col flex-auto flex-align-center margin-y-4 shadow-2">
+  <figcaption class="text-left">An example of what users see when they do not meet the requirements to complete identity verification with Login.gov. The term “Partner Agency” will be replaced by what the agency configures for this portion of their integration.</figcaption>
 </figure>
 
 ### Where should the Failure to Proof URL take users?
