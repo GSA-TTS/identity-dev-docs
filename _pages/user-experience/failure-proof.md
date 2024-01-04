@@ -58,4 +58,4 @@ Want to discuss options for your Failure to Proof URL? <a
   Contact us
 </a>
 
-[Next step: Check out our knowledge articles]({{ site.baseurl }}/user-experience/knowledge-articles/)
+[Next step: Create knowledge articles for Login.gov customer support]({{ site.baseurl }}/user-experience/knowledge-articles/)
