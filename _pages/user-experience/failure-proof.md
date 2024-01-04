@@ -36,8 +36,8 @@ The Failure to Proof URL is shown to users throughout the identity proofing proc
 - Users might navigate to this page if they don’t have a valid state-issued ID or Social Security number.
 - The Failure to Proof URL is available for users who are not able  to capture or upload photos of their ID.
 - Users see the Failure to Proof URL when they encounter errors verifying their ID, personal information, or phone number. Examples of this include:
-- Users who enter valid information, but are not able to pass Login.gov’s proofing process because we cannot verify their information.
-- Users who have run out of attempts to verify their information.
+  - Users who enter valid information, but are not able to pass Login.gov’s proofing process because we cannot verify their information.
+  - Users who have run out of attempts to verify their information.
 
 <figure>
   <img src="{{ site.baseurl }}/assets/img/missing-docs.png"
