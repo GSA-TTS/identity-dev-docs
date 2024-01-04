@@ -22,7 +22,7 @@ sidenav:
 
 ## Add FAQ content to inform users about Login.gov (Optional)
 
-When you first integrate with Login.gov, we recommend adding frequently asked questions (FAQ) content to ensure that users are able to understand that your application uses Login.gov as a sign-in service.. The next few sections outline plain language for agencies to leverage when creating that content.
+When you first integrate with Login.gov, we recommend adding frequently asked questions (FAQ) content to ensure that users are able to understand that your application uses Login.gov as a sign-in service. The next few sections outline plain language for agencies to leverage when creating that content.
 
 ### What is Login.gov?
 Login.gov is a sign in service that offers secure and private online access to government programs, such as federal benefits, services and applications. With a Login.gov account, you can sign in to multiple government websites with the same email address and password. Learn more about Login.gov.
@@ -43,10 +43,10 @@ Login.gov requires you to use a multifactor authentication method. You can selec
     >Learn more about the different authentication methods you can use</a>.
 
 ### How do I sign in to [APPLICATION] after I create my Login.gov account?
-Every time you click on Sign In on the APPLICATION site, you’ll go to the Login.gov sign in page. Enter your Login.gov email address, password and use your two-factor authentication method. . Once you enter this information correctly, you’ll be signed in and automatically directed back to the APPLICATION site.
+Every time you click on Sign In on the APPLICATION site, you’ll go to the Login.gov sign in page. Enter your Login.gov email address, password and use your two-factor authentication method. Once you enter this information correctly, you’ll be signed in and automatically directed back to the APPLICATION site.
 
 ### Can I use my existing [APPLICATION] username and password to sign in?
-No. Your old username and password will no longer work. You must create a new account or use your existing Login.gov to sign in. We’ll connect your new Login.gov account with your existing [APPLICATION] profile during the process.
+No. Your old username and password will no longer work. You must create a new account or use your existing Login.gov account to sign in. We’ll connect your new Login.gov account with your existing [APPLICATION] profile during the process.
 
 ### What if I already have a Login.gov account?
 If you already have a Login.gov account, you don’t need to create a second one. Use your existing Login.gov email address, password and a two-factor authentication method to sign in to [APPLICATION].
