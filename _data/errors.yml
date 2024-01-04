@@ -20,7 +20,7 @@ oidc:
         Check the `acr_values` parameter in your authentication request and ensure that you are passing either:
         - `http://idmanagement.gov/ns/assurance/ial/1` for Authentication Only applications, OR;
         - `http://idmanagement.gov/ns/assurance/ial/2` for Identity-Verification Permitted applications.
-        Learn more about IAL Service Level values here: [https://developers.login.gov/oidc/authorization/#service_level]https://developers.login.gov/oidc/authorization/#service_level){:target="_blank"}
+        Learn more about IAL Service Level values here: [https://developers.login.gov/oidc/authorization/#service_level](https://developers.login.gov/oidc/authorization/#service_level){:target="_blank"}
     - title: The acr_values are not authorized
       id: oidc-missing-acr-values
       accordion-id: missing_acr
