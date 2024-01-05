@@ -52,17 +52,20 @@ Some partners have created knowledge base articles that they post on their websi
 - Which support topics should the user contact your agency for help with vs. Login.gov.
 - If existing users will need to create a new account or if they will be able to link their agency account to the Login.gov account.
 
-The Login.gov customer support team can assist users with account creation questions, but they cannot support any agency-specific issues. It is important that users are able to find correct and timely help. Consider including a few support examples along with the link to the Login.gov help center (https://www.login.gov/help/). For example:
+The Login.gov customer support team can assist users with account creation questions, but they cannot support any agency-specific issues. It is important that users are able to find correct and timely help. Consider including a few support examples along with the link to the Login.gov help center (https://www.login.gov/help/).
 
-**Contact Login.gov to:**
+For example:
+
+
+> **Contact Login.gov to:**
 - Help you create a Login.gov account
 - Share information about authentication options
 - Help you troubleshoot why you are unable to access your account
 - Provide instructions to reset your password or delete your account
 
-Login.gov cannot reset your password, delete your account, or change your account information.
+> Login.gov cannot reset your password, delete your account, or change your account information.
 
-**Contact the agency partner to:**
+> **Contact the agency partner to:**
 - Perform agency specific tasks, like uploading your resume, completing applications or scheduling an appointment with that agency
 - Resolve technical issues with a partner agency website
 - Access your personal agency specific information such as application status, services, eligibility or payments
