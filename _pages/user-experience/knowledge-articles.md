@@ -24,26 +24,10 @@ sidenav:
 
 As you prepare to launch your integration with Login.gov, it is important to consider how your agency will support new users. Here are some suggestions to consider:
 
-<ul>
-  <li>
-    Announce the upcoming change on your site and include a time frame rather than exact date.
-  </li>
-  <li>
-    Link to the <a
-    class="usa-link usa-link--external"
-    rel="noreferrer"
-    target="_blank"
-    href="https://www.login.gov/create-an-account/"
-    >Create an account</a>
-    page at Login.gov so users can read more about creating an account.
-  </li>
-  <li>
-    Include contact information for your help desk or a link to the Login.gov help center (https://www.login.gov/help/)  on a dedicated help page.
-  </li>
-  <li>
-    Be sure to communicate the go-live date with the Login.gov customer support center so agents are prepared for a spike in new account creation support cases.
-  </li>
-</ul>
+- Announce the upcoming change on your site and include a time frame rather than exact date.
+- Link to the [Create an account](https://www.login.gov/create-an-account/){:class="usa-link--external" rel="noreferrer" target="_blank"} page at Login.gov so users can read more about creating an account.
+- Include contact information for your help desk or a link to the Login.gov help center (<https://www.login.gov/help/>) on a dedicated help page.
+- Be sure to communicate the go-live date with the Login.gov customer support center so agents are prepared for a spike in new account creation support cases.
 
 Some partners have created knowledge base articles that they post on their website, send to users directly by the agency’s customer support team, or forward to the Login.gov customer support team. These can be especially helpful if your integration includes any additional authentication steps on your agency's side. Here are some topics for knowledge articles:
 
