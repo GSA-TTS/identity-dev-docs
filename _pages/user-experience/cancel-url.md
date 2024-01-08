@@ -25,11 +25,11 @@ sidenav:
 
 ---
 
-## Determine your application’s Return to service provider URL
+## Determine your application’s return to service provider URL
 
 When a user does not authenticate successfully, they should be returned to the service provider application to restart the authentication process. It is important that the user returns to a familiar site and that they have a clear path back to the authentication workflow.
 
-Depending on the type of integration (OIDC or SAML) you will need to set the redirect_uri or the return_to_sp_url.
+Depending on the type of integration (OIDC or SAML) you will need to set the `redirect_uri` or the `return_to_sp_url`.
 
 ### OIDC Redirect URI:
 
