@@ -40,18 +40,23 @@ The Login.gov customer support team can assist users with account creation quest
 
 For example:
 
-
-> **Contact Login.gov to:**
+{% capture example %}
+**Contact Login.gov to:**
 - Help you create a Login.gov account
 - Share information about authentication options
 - Help you troubleshoot why you are unable to access your account
 - Provide instructions to reset your password or delete your account
 
-> Login.gov cannot reset your password, delete your account, or change your account information.
+Login.gov cannot reset your password, delete your account, or change your account information.
 
-> **Contact the agency partner to:**
+**Contact the agency partner to:**
 - Perform agency specific tasks, like uploading your resume, completing applications or scheduling an appointment with that agency
 - Resolve technical issues with a partner agency website
 - Access your personal agency specific information such as application status, services, eligibility or payments
+{% endcapture %}
+
+<div class="usa-prose margin-left-3">
+ {{ example | markdownify }}
+</div>
 
 [Next step: Create FAQ content]({{ site.baseurl }}/user-experience/faq-content/)
