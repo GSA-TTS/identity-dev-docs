@@ -215,11 +215,17 @@ Content-Type: application/json
 
 ### Configuration
 
-To configure your application to receive notifications from Login.gov, supply Login.gov with a URL to POST to. The URL must be publicly accessible with HTTPS using a certificate signed by a trusted certificate authority.
+To configure your application to receive notifications from Login.gov, you must supply Login.gov with a URL.
+
+The URL must:
+* Be publicly accessible with HTTPS,
+* Allow POST requests from Login.gov,
+* Use a certificate signed by a trusted certificate authority, and
+* Must use port 443 (if specifying a port).
 
 #### Agency integration environment:
 
-- Use the dashboard to supply a `push_notification_url` for your application
+- Use the dashboard to register the `push_notification_url` for your application
 - Your `push_notification_url` will be automatically added to the integration environment's outbound proxy allowlist by 5PM UTC.
 
 #### Production environment:
