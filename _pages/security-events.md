@@ -219,6 +219,7 @@ To configure your application to receive notifications from Login.gov, you must 
 
 The URL must:
 * Be publicly accessible with HTTPS,
+* Allow POST requests from Login.gov,
 * Use a certificate signed by a trusted certificate authority, and
 * Must use port 443 (if specifying a port).
 
