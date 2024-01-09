@@ -32,6 +32,12 @@ Login.gov supports [RP-Initiated Logout](https://openid.net/specs/openid-connect
 
 Login.gov does not support Single Logout (SLO). The logout action will terminate the user’s session at Login.gov but will not end any other potentially active sessions within service provider applications. For example, if a user signs in to applications A and B through Login.gov, a logout request from A will end their Login.gov session, but will not affect the session in application B.
 
+**User experience impact:**
+
+As per the OIDC spec, Login.gov will display a Logout confirmation screen to users on logout. Users will need to click a button to complete the logout process. This protects against forged logout request attacks.
+
+If the user does not click the button, they will **not** be redirected back to your application.
+
 ### Logout request
 
 To log out a user, send them to the `/openid_connect/logout` endpoint with the following parameters:
@@ -66,9 +72,6 @@ To log out a user, send them to the `/openid_connect/logout` endpoint with the f
     </div>
     </div>
 </div>
-
-Note that, as per the spec, Login.gov will display a Logout confirmation screen to users on logout; users will need to click a button to complete the logout process. This protects against forged logout request attacks. If the user does not click the button, they will not be redirected back to your application.
-
 
 ### Logout response
 
