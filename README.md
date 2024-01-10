@@ -58,3 +58,7 @@ This site uses the [U.S. Web Design Standards](https://standards.usa.gov). To up
 2. Copy contents to `assets/`
 3. Rename directory to `uswds`
 4. Download latest [anchor.js](https://github.com/bryanbraun/anchorjs) and put in `assets/js/`
+
+#### YAML files
+
+When updating a `yml` file, you only need to update the version in the `/assets` directory. This is symlinked to the `_includes` directory.
