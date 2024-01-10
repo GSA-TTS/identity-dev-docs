@@ -93,7 +93,9 @@ Login.gov prompts users to upload the front and back of their documents during p
 
 #### Data testing
 
-A YAML file can be uploaded instead of a State ID image to trigger different behaviors. You will upload this text file for the front and back for the State ID, and possibly the selfie. The YAML file can be used to simulate the reading of certain attributes from the State ID or selfie. Here is an example YAML file that does that:
+⚠️ Only the YAML file in the `back` upload box is used on submission. For that reason, it's good practice to upload the same yaml file in all three upload boxes to avoid confusion when testing.
+
+A YAML file can be uploaded instead of a State ID image to trigger different behaviors. You will upload the same YAML file for the front and back of the State ID, and also the selfie (if that field appears). Different YAML files can be used to simulate the reading of certain attributes from the State ID or selfie. Here is an example YAML file that does that:
 
 {% include yaml_download.md filename="proofing.yml" %}
 
