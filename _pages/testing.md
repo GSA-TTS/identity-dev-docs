@@ -141,7 +141,6 @@ Alert names with attention or failed values show under `failed_alerts`. Only pas
 **NOTES:**
 
 - There are configurations of the above yaml file that cannot happen in real vendor responses. It is possible there will be unexpected outcomes in those cases.
-- When using the `yaml` files for local dev, only the yml file supplied to the `back` is evaluated.
 
 ### Personal information verification
 
