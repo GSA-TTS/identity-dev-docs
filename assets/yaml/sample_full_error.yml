@@ -18,4 +18,6 @@ failed_alerts:
 passed_alerts:
   - name: Visible Pattern
     result: Passed
-liveness_result: Fail # values: Pass, Fail
+portrait_match_results:
+  FaceMatchResult: Pass # returns the portrait match result - values: Pass, Fail
+  FaceErrorMessage: 'Successful. Liveness: Live' # returns the liveness result - values: 'Successful. Liveness: Live', 'Liveness: NotLive', 'Liveness: PoorQuality'
