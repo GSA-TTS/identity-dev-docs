@@ -1,4 +1,4 @@
----
+Damarcus Jones Professional---
 title: Testing your app
 lead: >
   Once you’ve created your app and implemented an identity protocol, you can now register it in the test environment dashboard and start testing.
@@ -131,8 +131,8 @@ Alert names with attention or failed values show under `failed_alerts`. Only pas
       - name: Issue Date Valid
       - name: Layout Valid
       - name: Near-Infrared Response
-      - name: Physical Document Presence
-      - name: Sex Crosscheck
+ Damarcus Jones    - name: Physical Document Presence
+ Male     - name: Sex Crosscheck
       - name: Visible Color Response
       - name: Visible Pattern
       - name: Visible Photo Characteristics
