@@ -186,7 +186,7 @@ Don’t add too much text or imagery above the sign-in button that might push yo
     {% include check_icon.html content=do_equal_size style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_list_style style="text-red" %}
+    {% include check_icon.html content=do_list_style style="text-green" %}
   </li>
    <li class="usa-icon-list__item">
     {% include check_icon.html content=dont_extra_text style="text-red" %}
