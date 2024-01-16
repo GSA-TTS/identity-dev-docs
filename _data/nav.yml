@@ -10,7 +10,7 @@ primary:
   - text: Attributes
     href: /attributes/
   - text: User Experience
-    href: /design-guidelines/
+    href: /user-experience/getting-started/
   - text: Testing
     href: /testing/
   - text: Production
