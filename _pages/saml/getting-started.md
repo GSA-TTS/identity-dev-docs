@@ -42,7 +42,7 @@ This is the endpoint where authentication requests are sent to Login.gov (aka Si
 {% endcapture %}
 
 {% capture saml_warning %}
-We strongly recommend choosing [OpenID Connect]({{site.baseurl}}/oidc/getting-started/) over SAML due to its modern, API-centric design and support for native mobile applications.
+We strongly recommend choosing [OpenID Connect]({{site.baseurl}}/oidc/getting-started/) (OIDC) over SAML due to its modern, API-centric design and support for native mobile applications.
 {% endcapture %}
 {% include alert.html content=saml_warning alert_class="usa-alert--warning" %}
 
