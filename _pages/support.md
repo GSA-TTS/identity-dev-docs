@@ -283,12 +283,12 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
       <p>
         Refer to the Login.gov Developer’s Guide for a list of accepted Authentication Context Class Reference values and ensure one or more of these values (and no others) are being sent in all authentication requests:
       </p>
-      <div><a target="_blank" href="https://developers.login.gov/oidc/#ial-values">OIDC IAL Values</a></div>
-      <div><a target="_blank" href="https://developers.login.gov/oidc/#aal-values">OIDC AAL Values</a></div>
-      <div><a target="_blank" href="https://developers.login.gov/oidc/#request-parameters">OIDC User Attributes</a> - see "scope"</div>
-      <div><a target="_blank" href="https://developers.login.gov/saml/#identity-assurance-level-ial">SAML IAL Values</a></div>
-      <div><a target="_blank" href="https://developers.login.gov/saml/#authentication-assurance-level-aal">SAML AAL Values</a></div>
-      <div><a target="_blank" href="https://developers.login.gov/saml/#attributes">SAML User Attributes</a></div>
+      <div><a target="_blank" href="/oidc/authorization#service_level">OIDC IAL Values</a></div>
+      <div><a target="_blank" href="/oidc/authorization#request-parameters">OIDC AAL Values</a></div>
+      <div><a target="_blank" href="/oidc/authorization#request-parameters">OIDC User Attributes</a> - see "scope"</div>
+      <div><a target="_blank" href="/saml/authentication#authentication-request">SAML IAL Values</a></div>
+      <div><a target="_blank" href="/saml/authentication#authentication-request">SAML AAL Values</a></div>
+      <div><a target="_blank" href="/saml/authentication#authentication-request">SAML User Attributes</a></div>
       <h5>Important Note for SAML Service Providers:</h5>
       <p>
         Login.gov requires AAL2 at minimum by default and so cannot accept AAL1 values for the Authentication Context Class Reference value unless the incoming requests allows Login.gov to increase the AAL to 2. For SAML requests, this means defining the optional Comparison field in the RequestedAuthContext SAML field as “minimum” or “better”. See below for a sample SAML request with an AAL of 1 and the optional Comparison field.
