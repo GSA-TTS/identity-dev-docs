@@ -1,7 +1,7 @@
 ---
 title: OpenID Connect
 lead: >
-    [OpenID Connect](http://openid.net){:class="usa-link--external"} is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](http://openid.net/specs/openid-connect-core-1_0.html){:class="usa-link--external"} of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov){:class="usa-link--external"}.
+    [OpenID Connect](http://openid.net){:class="usa-link--external"} (OIDC) is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](http://openid.net/specs/openid-connect-core-1_0.html){:class="usa-link--external"} of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov){:class="usa-link--external"}.
 sidenav:
   - text: Getting started
     href: "oidc/getting-started/"
@@ -114,7 +114,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
           <h4 class="parameters">access_token<span class="text-normal"> (string)</span></h4>
         </div>
         <div class="grid-col-7">
-          An opaque token used to access the <a href="{{ site.baseurl }}/oidc/#user-info" class="usa-link">user info endpoint</a>.
+          An unique token used to access the <a href="{{ site.baseurl }}/oidc/#user-info" class="usa-link">user info endpoint</a>.
         </div>
       </div>
     </div>
@@ -175,7 +175,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
           <h4 class="parameters">aud <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">
-          The audience, which will be the <code class="language-plaintext highlighter-rouge">client_id</code>
+          The audience, which will be the <code class="language-plaintext highlighter-rouge">client_id</code>.
         </div>
       </div>
     </div>
