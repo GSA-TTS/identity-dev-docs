@@ -450,7 +450,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
       <p>
         If the <span class="text-bold">Signature</span> and <span class="text-bold">SigAlg</span> URL parameters (and associated values) are present, your authentication request is signed.
         <br/>
-        If the signature is not part of the URL, it may be part of the SAML request. To check this, you will need to decode the data sent via the <span class="text-bold">SAMLRequest</span> parameter. The easiest way to do this is the "SAML Tracer" browser plugin. Our <a class="usa-link" href="https://dashboard.int.identitysandbox.gov/tools">web-based tool</a> can also help with this. Once decoded, you should see a section that contains all the relevant signature-related information and should be enclosed in a tag like:
+        If the signature is not part of the URL, it may be part of the SAML request. To check this, you will need to decode the data sent via the <span class="text-bold">SAMLRequest</span> parameter. The easiest way to do this is the "SAML Tracer" browser plugin. Our <a class="usa-link" href="https://dashboard.int.identitysandbox.gov/tools/saml_request">web-based tool</a> can also help with this. Once decoded, you should see a section that contains all the relevant signature-related information and should be enclosed in a tag like:
       </p>
 <div markdown="1">
 ```xml
@@ -469,7 +469,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 </div>
       <h5>Check validity of signature</h5>
       <p>
-        There may be other reasons Login.gov cannot successfully validate your application’s signatures using the information you have provided in the Login.gov Partner Dashboard for the application. We have created a <a class="usa-link" href="https://dashboard.int.identitysandbox.gov/tools"> web-based tool</a> that lets you check this easily.
+        There may be other reasons Login.gov cannot successfully validate your application’s signatures using the information you have provided in the Login.gov Partner Dashboard for the application. We have created a <a class="usa-link" href="https://dashboard.int.identitysandbox.gov/tools/saml_request"> web-based tool</a> that lets you check this easily.
         <br/><br/>
         If you find your signature cannot be validated using this process, you will have to investigate what may be causing these problems and make changes on your side until validation succeeds.
       </p>

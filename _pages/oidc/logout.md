@@ -28,7 +28,7 @@ sidenav:
 
 ## Logout
 
-Login.gov supports [RP-Initiated Logout](https://openid.net/specs/openid-connect-session-1_0.html#RPLogout){:class="usa-link--external"}, allowing clients to log users out of their current Login.gov session and redirect them back to the Relying Party.
+Login.gov supports [RP-Initiated Logout](https://openid.net/specs/openid-connect-rpinitiated-1_0.html){:class="usa-link--external"}, allowing clients to log users out of their current Login.gov session and redirect them back to the Relying Party.
 
 Login.gov does not support Single Logout (SLO). The logout action will terminate the user’s session at Login.gov but will not end any other potentially active sessions within service provider applications. For example, if a user signs in to applications A and B through Login.gov, a logout request from A will end their Login.gov session, but will not affect the session in application B.
 
