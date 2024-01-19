@@ -4,7 +4,7 @@ lead: >
   Login.gov user accounts are either identity proofed or self-asserted. Login.gov continues to work toward achieving certification of compliance with NIST's IAL2 standard from a third-party assessment organization.
 ---
 
-Here are the possible attributes that can be requested at a given IAL. This table contains the available user attributes, the IAL they are associated with, and how they can be accessed in OpenID Connect and SAML.
+Here are the possible attributes that can be requested at a given IAL. This table contains the available user attributes, the IAL they are associated with, and how they can be accessed in OpenID Connect (OIDC) and SAML.
 
 It is important to expect any number of characters in the `(string)` datatype unless directly followed by a number such as `(string36)`. Strings are encrypted and stored in a text datatype with a maximum length of 65,535 bytes.
 
@@ -55,7 +55,7 @@ Requires the `email` scope.
     </tr>
     <tr>
 <td markdown="1">
-**All emails**<br />All of the email addresses on the user's account
+**All emails**<br />All of the email addresses on the user's account.
 </td>
 <td markdown="1">
 ![checkmark][checkmark]
@@ -175,7 +175,7 @@ Requires the `address` scope.
     </tr>
     <tr>
 <td markdown="1">
-  **Phone<sup>*</sup>**<br />The user's phone number formatted as [E.164](https://en.wikipedia.org/wiki/E.164), for example: `+18881112222`
+  **Phone<sup>*</sup>**<br />The user's phone number formatted as [E.164](https://en.wikipedia.org/wiki/E.164), for example: `+18881112222`.
 </td>
 <td></td>
 <td markdown="1">
@@ -192,7 +192,7 @@ Requires the `phone` scope.
     </tr>
     <tr>
 <td markdown="1">
-**Date of birth**<br />Formatted as [ISO 8601:2004](https://en.wikipedia.org/wiki/ISO_8601), for example: `YYYY-MM-DD`
+**Date of birth**<br />Formatted as [ISO 8601:2004](https://en.wikipedia.org/wiki/ISO_8601), for example: `YYYY-MM-DD`.
 </td>
 <td></td>
 <td markdown="1">
@@ -228,7 +228,7 @@ Requires the `social_security_number` scope.
     <tr>
 <td markdown="1">
   **Verification timestamp<sup>*</sup>** <br />
-When the user's identity was last verified (or empty if it has never been verified)
+When the user's identity was last verified (or empty if it has never been verified).
 </td>
 <td markdown="1">
 ![checkmark][checkmark]
@@ -262,7 +262,7 @@ Requires the `profile:verified_at` scope.
 `x509_presented` (string)
 `x509_subject` (string)
 
-Requires the `x509` scope
+Requires the `x509` scope.
 </td>
 <td markdown="1">
 n/a
@@ -300,7 +300,7 @@ Requires the `x509:issuer` scope.
 <td markdown="1">
 `x509_subject` (string)
 
-Requires the `x509:subject` scope
+Requires the `x509:subject` scope.
 </td>
 <td markdown="1">
 `x509_subject`
