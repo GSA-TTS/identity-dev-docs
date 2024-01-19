@@ -19,10 +19,6 @@ RSpec.describe 'all pages' do
         expect(doc).to link_to_valid_headers
       end
 
-      it 'links to valid internal pages' do
-        expect(doc).to link_to_valid_internal_pages
-      end
-
       it 'includes analytics tags' do
         expect(doc.to_s).to include('https://www.google-analytics.com/analytics.js')
         expect(doc.to_s).to include('https://dap.digitalgov.gov')

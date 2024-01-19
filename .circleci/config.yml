@@ -33,7 +33,9 @@ jobs:
           command: |
             make clean
             make test
-
+      - run:
+          name: Run htmlproofer (no external links)
+          command: bundle exec scripts/htmlproofer --internal
       - run:
           name: Lint JavaScript
           command: make lint-js
