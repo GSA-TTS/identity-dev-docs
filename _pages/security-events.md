@@ -115,7 +115,7 @@ JWTs must be signed by the client application's private key using **RS256**, the
         This is Login.gov's issuer, the root URL for Login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
 
       * **sub**
-        The UUID identifying the user. This is provided as the `sub` inside the `id_token` JWT in the [OpenID Token endpoint]({{site.baseurl}}/#token-response).
+        The UUID identifying the user. This is provided as the `sub` inside the `id_token` JWT in the [OpenID Token endpoint](/oidc/token/#token-response).
 
   * **occurred_at**
     Time at which the security event occurred, an integer timestamp representing the number of seconds since the Unix Epoch. This optional field can be used to back-date reports of events, if they are not detected immediately.
@@ -274,7 +274,7 @@ Example:
 
 ### Request
 
-Login.gov will make a POST request to your app's `push_notification_url`, see [Configuration](#configuration) for more details on setting that up. The JWT will be signed with Login.gov's private key. See the OpenID Connect guide for information on how to get Login.gov's public key from the [Certificates Endpoint](/oidc/#certificates).
+Login.gov will make a POST request to your app's `push_notification_url`, see [Configuration](#configuration) for more details on setting that up. The JWT will be signed with Login.gov's private key. See the OpenID Connect guide for information on how to get Login.gov's public key from the [Certificates Endpoint](/oidc/certificates/).
 
 If your app had the client ID of `urn:gov:gsa:openidconnect:test:risc:sets` and was configured to receive events at `https://agency.example.gov/events`, and a user freed up `email@example.com` Login.gov would make a request like this.
 

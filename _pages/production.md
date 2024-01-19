@@ -42,7 +42,7 @@ Make sure you have the following items ready before you start the deployment pro
 
 -   A user account in the [Login.gov production environment](https://secure.login.gov)
 
--   You must include an agency logo for your application. [Learn more about our logo guidelines.]({{ site.baseurl}}/design-guidelines/#agency-logo-guidelines)
+-   You must include an agency logo for your application. [Learn more about our logo guidelines.](/user-experience/agency-logo/)
 
 Depending on your agency’s integration additional items may be needed:
 
@@ -76,7 +76,7 @@ Before you can request deployment, you need to create a new and separate applica
 
 -   ATO approved environment
 
--   [Approved agency logo]({{site.baseurl}}/design-guidelines/#agency-logo-guidelines) for your app
+-   [Approved agency logo](/user-experience/agency-logo/) for your app
 
 **When you have the components required, follow these steps to create your production configuration app:**
 

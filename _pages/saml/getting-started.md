@@ -1,7 +1,7 @@
 ---
 title: SAML developer guide
 lead: >
-  Login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile){:class="usa-link--external"} with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/){:class="usa-link--external"}.
+  Login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_browser_SSO_profile){:class="usa-link--external"} with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/){:class="usa-link--external"}.
 redirect_from:
   - /configuring-your-sp/
   - /saml/
@@ -206,7 +206,7 @@ The {{ page.saml_last_year }} certificates for idp.int.identitysandbox.gov and s
 
 The Login.gov team has created an example client to speed up your development, all open source in the public domain: [identity-saml-sinatra](https://github.com/18F/identity-saml-sinatra){:class="usa-link--external"}.
 
-[Next step: Authentication]({{site.baseurl}}/saml/authentication/)
+[Next step: Authentication](/saml/authentication/)
 
 </div>
 </div>
