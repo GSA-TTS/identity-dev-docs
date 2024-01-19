@@ -46,7 +46,7 @@ Make sure you have the following items ready before you start the deployment pro
 
 Depending on your agency’s integration additional items may be needed:
 
-- **If this is a SAML integration (not OpenID Connect), then please ensure that:**
+- **If this is a SAML integration (not OIDC), then please ensure that:**
 
   -   Assertion Consumer Logout Service URL is defined.
 
@@ -111,7 +111,7 @@ If you encounter errors or have questions after completing these steps, please s
 
 You will need to configure your application to point to the following endpoint: 
 
--   **OpenID Connect**: `https://secure.login.gov/openid_connect/authorize`
+-   **OpenID Connect** (OIDC): `https://secure.login.gov/openid_connect/authorize`
 
 -   **SAML**: `https://secure.login.gov/api/saml/auth{{ page.saml_year }}`
 
@@ -119,7 +119,7 @@ Our integration documentation includes endpoint urls for our sandbox environment
 
 Please be aware that the IdP certificate (X509 Certificate) in the production environment is different from the IdP certificate in the sandbox environment. The production IdP certificates can be found here:
 
--   **OpenID Connect**: `https://secure.login.gov/api/openid_connect/certs`
+-   **OpenID Connect** (OIDC): `https://secure.login.gov/api/openid_connect/certs`
 
 -   **SAML**: `https://secure.login.gov/api/saml/metadata{{ page.saml_year }}`
 
