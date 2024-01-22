@@ -77,7 +77,7 @@ The user info response will be a JSON object containing [user attributes]({{ sit
                 </ul> 
             </div>
         </div>
-        <a href="/oidc/certificates/" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Certificates</a>
+        <a href="{{ '/oidc/certificates/' | prepend: site.baseurl }}" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Certificates</a>
     </div>
     <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-4">
         <section class="code-snippet-section margin-top-2 position-relative z-index-1">
@@ -91,6 +91,6 @@ The user info response will be a JSON object containing [user attributes]({{ sit
         </section>
         </section>
     </div>
-    <a href="/oidc/certificates/" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Certificates</a>
+    <a href="{{ '/oidc/certificates/' | prepend: site.baseurl }}" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Certificates</a>
 </div>
 

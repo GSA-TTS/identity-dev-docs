@@ -126,7 +126,7 @@ A proofed identity request at AAL3 for email, phone, first name, last name, and 
         <h2 id="authentication-response">Authentication response</h2>
         <p>After the user authenticates, Login.gov will redirect and POST a form back to your registered Assertion Consumer Service URL:</p>
         <p>The SAMLResponse is a base64-encoded XML payload that contains encrypted data.</p>
-          <a href="/saml/logout/" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Logout</a>
+          <a href="{{ '/saml/logout/' | prepend: site.baseurl }}" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Logout</a>
     </div>
     <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-5">
         <section class="margin-top-2 position-relative z-index-1">
@@ -140,7 +140,7 @@ A proofed identity request at AAL3 for email, phone, first name, last name, and 
             </section>
         </section>
     </div>
-      <a href="/saml/logout/" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Logout</a>
+      <a href="{{ '/saml/logout/' | prepend: site.baseurl }}" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Logout</a>
 </div>
 
 

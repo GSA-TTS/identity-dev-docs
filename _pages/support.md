@@ -42,7 +42,7 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
         Generally, a site will place a login button on their site. When the user clicks this button they redirect to Login.gov where they can sign in or create an account. The Login.gov site will be branded with the agency logo and can include help text for migrating existing users.
         After authenticating with Login.gov they are redirected back to the agency with a unique UUID or email address that identifies the user.
         <br/>
-        Please see our <a href="/overview/" target="_blank">overview documentation</a> for more details.
+        Please see our <a href="{{ '/overview/' | prepend: site.baseurl }}" target="_blank">overview documentation</a> for more details.
       </p>
     </div>
   </div>
@@ -283,12 +283,12 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
       <p>
         Refer to the Login.gov Developer’s Guide for a list of accepted Authentication Context Class Reference values and ensure one or more of these values (and no others) are being sent in all authentication requests:
       </p>
-      <div><a target="_blank" href="/oidc/authorization/#service_level">OIDC IAL Values</a></div>
-      <div><a target="_blank" href="/oidc/authorization/#aal_values">OIDC AAL Values</a></div>
-      <div><a target="_blank" href="/oidc/authorization/#scope_possible_values">OIDC User Attributes</a> - see "scope"</div>
-      <div><a target="_blank" href="/saml/authentication/#service_level">SAML IAL Values</a></div>
-      <div><a target="_blank" href="/saml/authentication/#aal_values">SAML AAL Values</a></div>
-      <div><a target="_blank" href="/saml/authentication/#attributes">SAML User Attributes</a></div>
+      <div><a target="_blank" href="{{ '/oidc/authorization/#service_level' | prepend: site.baseurl }}">OIDC IAL Values</a></div>
+      <div><a target="_blank" href="{{ '/oidc/authorization/#aal_values' | prepend: site.baseurl }}">OIDC AAL Values</a></div>
+      <div><a target="_blank" href="{{ '/oidc/authorization/#scope_possible_values' | prepend: site.baseurl }}">OIDC User Attributes</a> - see "scope"</div>
+      <div><a target="_blank" href="{{ '/saml/authentication/#service_level' | prepend: site.baseurl }}">SAML IAL Values</a></div>
+      <div><a target="_blank" href="{{ '/saml/authentication/#aal_values' | prepend: site.baseurl }}">SAML AAL Values</a></div>
+      <div><a target="_blank" href="{{ '/saml/authentication/#attributes' | prepend: site.baseurl }}">SAML User Attributes</a></div>
       <h5>Important Note for SAML Service Providers:</h5>
       <p>
         Login.gov requires AAL2 at minimum by default and so cannot accept AAL1 values for the Authentication Context Class Reference value unless the incoming requests allows Login.gov to increase the AAL to 2. For SAML requests, this means defining the optional Comparison field in the RequestedAuthContext SAML field as “minimum” or “better”. See below for a sample SAML request with an AAL of 1 and the optional Comparison field.
@@ -335,7 +335,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 </div>
       <h5>Solution:</h5>
       <p>
-        Refer to the <a target="_blank" href="/saml/getting-started/#configuration">Login.gov Developers Guide</a> for the acceptable values for the NameIdFormat SAML field. Update the Login.gov Identity Provider configuration within your Service Provider to specify the correct NameIDFormat field.
+        Refer to the <a target="_blank" href="{{ '/saml/getting-started/#configuration' | prepend: site.baseurl }}">Login.gov Developers Guide</a> for the acceptable values for the NameIdFormat SAML field. Update the Login.gov Identity Provider configuration within your Service Provider to specify the correct NameIDFormat field.
         <br/><br/>
         For SAML Service Providers, see <a href="#other-tips--tools">Other Tips & Tools</a> for help with decoding SAML Requests.
       </p>

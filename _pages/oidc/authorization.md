@@ -126,7 +126,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <h4 id="acr_values" class="parameters">acr_values</h4>
     </div>
     <div class="grid-col-7">
-        The Authentication Context Class Reference requests can be used to specify the type of service level<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="/attributes/">user attributes</a> will be available in the <a class="usa-link" href="/oidc/user-info/#user-info-response">user info response</a>.
+        The Authentication Context Class Reference requests can be used to specify the type of service level<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="{{ '/attributes/' | prepend: site.baseurl }}">user attributes</a> will be available in the <a class="usa-link" href="{{ '/oidc/user-info/#user-info-response' | prepend: site.baseurl }}">user info response</a>.
       <p>
         Multiple values can be joined with a space (before being URI-escaped in the final URL).
       </p>
@@ -206,7 +206,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
           <h4 class="parameters clearfix">scope</h4>
         </div>
         <div class="grid-col-7">
-            A space-separated string of the scopes being requested. (Keep in mind the blank space “ “ should be encoded with “+”.) The authorization page will display the list of attributes being requested from the user. Applications should aim to request the fewest <a class="usa-link" href="/attributes/">user attributes</a> and smallest scope needed.
+            A space-separated string of the scopes being requested. (Keep in mind the blank space “ “ should be encoded with “+”.) The authorization page will display the list of attributes being requested from the user. Applications should aim to request the fewest <a class="usa-link" href="{{ '/attributes/' | prepend: site.baseurl }}">user attributes</a> and smallest scope needed.
         </div>
       </div>
       <div class="grid-row">
@@ -235,7 +235,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
           of the <code class="language-plaintext highlighter-rouge">id_token</code> and mitigate 
           <a class="usa-link usa-link usa-link--external" href="https://en.wikipedia.org/wiki/Replay_attack">replay attacks</a>. 
           This value should include per-session state and be unguessable by attackers. This value will be present in the 
-          <code class="language-plaintext highlighter-rouge">id_token</code> of the <a class="usa-link" href="/oidc/token/#token-response">token endpoint response</a>, 
+          <code class="language-plaintext highlighter-rouge">id_token</code> of the <a class="usa-link" href="{{ '/oidc/token/#token-response' | prepend: site.baseurl }}">token endpoint response</a>, 
           where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. 
           Read more about <a class="usa-link usa-link--external" href="https://openid.net/specs/openid-connect-core-1_0.html#NonceNotes">nonce implementation</a> in the spec.
         </div>
@@ -266,7 +266,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-9 mobile:grid-col-full">
     {{ authorization_response | markdownify }}
-    <a href="/oidc/token/" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Token</a>
+    <a href="{{ '/oidc/token/' | prepend: site.baseurl }}" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Token</a>
   </div>
   <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-3">
     <div class="margin-top-2 position-relative z-index-1">
@@ -280,5 +280,5 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       </section>
     </div>
   </div>
-  <a href="/oidc/token/" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Token</a>
+  <a href="{{ '/oidc/token/' | prepend: site.baseurl }}" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Token</a>
 </div>

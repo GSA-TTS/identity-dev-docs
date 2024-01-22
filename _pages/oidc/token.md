@@ -70,7 +70,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
           <h4 class="parameters clearfix">code</h4>
         </div>
         <div class="grid-col-7 padding-bottom-2">
-            The authorization code returned by the <a class="usa-link" href="/oidc/authorization/#authorization-response">authorization response</a>.
+            The authorization code returned by the <a class="usa-link" href="{{ '/oidc/authorization/#authorization-response' | prepend: site.baseurl }}">authorization response</a>.
         </div>
       </div>
     </div>
@@ -114,7 +114,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
           <h4 id="access_token-string" class="parameters">access_token<span class="text-normal"> (string)</span></h4>
         </div>
         <div class="grid-col-7">
-          An unique token used to access the <a href="{{ site.baseurl }}/oidc/#user-info" class="usa-link">user info endpoint</a>.
+          An unique token used to access the <a href="{{ '/oidc/user-info/' | prepend: site.baseurl }}" class="usa-link">user info endpoint</a>.
         </div>
       </div>
     </div>
@@ -144,7 +144,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
           <h4 class="parameters">id_token <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">
-          A signed <a href="https://jwt.io/" class="usa-link usa-link--external">JWT</a> that contains basic attributes about the user and it is signed using the <code class="language-plaintext highlighter-rouge">RS256</code> algorithm. The public key used to verify this JWT is available from the <a href="/oidc/certificates/" class="usa-link">certificates</a> endpoint.
+          A signed <a href="https://jwt.io/" class="usa-link usa-link--external">JWT</a> that contains basic attributes about the user and it is signed using the <code class="language-plaintext highlighter-rouge">RS256</code> algorithm. The public key used to verify this JWT is available from the <a href="{{ '/oidc/certificates/' | prepend: site.baseurl }}" class="usa-link">certificates</a> endpoint.
         </div>
       </div>
     </div>
@@ -165,7 +165,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
           <h4 class="parameters">sub <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">
-          The subject identifier, the UUID of the Login.gov user (see <a href="/attributes/" class="usa-link">user attributes</a>).
+          The subject identifier, the UUID of the Login.gov user (see <a href="{{ '/attributes/' | prepend: site.baseurl }}" class="usa-link">user attributes</a>).
         </div>
       </div>
     </div>
@@ -185,7 +185,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
           <h4 class="parameters">acr <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">       
-          The Authentication Context Class Reference value of the returned claims, from the original <a href="/oidc/authorization/" class="usa-link">authorization request</a>.
+          The Authentication Context Class Reference value of the returned claims, from the original <a href="{{ '/oidc/authorization/' | prepend: site.baseurl }}" class="usa-link">authorization request</a>.
         </div>
       </div>
     </div>
@@ -255,11 +255,11 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
           <h4 class="parameters">nonce <span class="text-normal">(number)</span></h4>
         </div>
         <div class="grid-col-7">       
-          The nonce value provided by the client in the <a class="usa-link" href="/oidc/authorization/">authorization request</a>. A unique value, at least 22 characters in length, used to verify the integrity of the <code class="language-plaintext highlighter-rouge">id_token</code> and mitigate <a href="https://en.wikipedia.org/wiki/Replay_attack" class="usa-link usa-link--external">replay attacks</a>. This value should include per-session state and be unguessable by attackers. Read more about <a href="https://openid.net/specs/openid-connect-core-1_0.html#NonceNotes" class="usa-link usa-link--external">nonce implementation</a> in the spec.
+          The nonce value provided by the client in the <a class="usa-link" href="{{ '/oidc/authorization/' | prepend: site.baseurl }}">authorization request</a>. A unique value, at least 22 characters in length, used to verify the integrity of the <code class="language-plaintext highlighter-rouge">id_token</code> and mitigate <a href="https://en.wikipedia.org/wiki/Replay_attack" class="usa-link usa-link--external">replay attacks</a>. This value should include per-session state and be unguessable by attackers. Read more about <a href="https://openid.net/specs/openid-connect-core-1_0.html#NonceNotes" class="usa-link usa-link--external">nonce implementation</a> in the spec.
         </div>
       </div>
     </div>
-    <a href="/oidc/user-info/" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: User info</a>
+    <a href="{{ '/oidc/user-info/' | prepend: site.baseurl }}" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: User info</a>
   </div>
   <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-4">
     <section class="code-snippet-section margin-top-2 position-relative z-index-1">
@@ -273,5 +273,5 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
       </section>
     </section>
   </div>
-  <a href="/oidc/user-info/" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: User info</a>
+  <a href="{{ '/oidc/user-info/' | prepend: site.baseurl }}" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: User info</a>
 </div>
