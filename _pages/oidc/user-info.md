@@ -1,7 +1,7 @@
 ---
 title: OpenID Connect
 lead: >
-    [OpenID Connect](http://openid.net){:class="usa-link--external"} is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](http://openid.net/specs/openid-connect-core-1_0.html){:class="usa-link--external"} of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov){:class="usa-link--external"}.
+    [OpenID Connect](http://openid.net){:class="usa-link--external"} (OIDC) is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](http://openid.net/specs/openid-connect-core-1_0.html){:class="usa-link--external"} of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov){:class="usa-link--external"}.
 sidenav:
   - text: Getting started
     href: "oidc/getting-started/"
@@ -23,11 +23,11 @@ sidenav:
 {% capture front_matter %}
 ## User info
 
-The user info endpoint is used to retrieve [user attributes]({{ site.baseurl }}/attributes/). Clients use the `access_token` from the [token response]({{ site.baseurl }}/oidc/token/#token-response) as a bearer token in the [HTTP Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization){:class="usa-link--external"}. To request attributes, send an HTTP GET request to the `/api/openid_connect/userinfo` endpoint, for example:
+The user info endpoint is used to retrieve [user attributes]({{ site.baseurl }}/attributes/). Clients use the `access_token` from the [token response]({{ site.baseurl }}/oidc/token/#token-response) as a bearer token in the [HTTP Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization){:class="usa-link--external"}. To request attributes, send an HTTP GET request to the `/api/openid_connect/userinfo` endpoint. View an example request and response in the side panel.
 
 ### User info response
 
-The user info response will be a JSON object containing [user attributes]({{ site.baseurl }}/attributes/). Login.gov supports some of the [standard claims](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims){:class="usa-link--external"} from OpenID Connect 1.0. In addition to the user attributes, the following information will also be present:
+The user info response will be a JSON object containing [user attributes]({{ site.baseurl }}/attributes/). Login.gov supports some of the [standard claims](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims){:class="usa-link--external"} from OIDC 1.0. In addition to the user attributes, the following information will also be present:
 {% endcapture %}
 
 <div class="grid-row grid-gap">
