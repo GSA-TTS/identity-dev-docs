@@ -244,23 +244,6 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters clearfix" id="verified_within">verified_within</h4>
-          <span class="text-italic clearfix">optional, for identity verified</span>
-          <span class="text-italic">requests only</span>
-        </div>
-        <div class="grid-col-7">
-          Specifies how recently the user’s information must be verified. For example, if your application requires that the user’s data must have been verified within the last year, you can set the value to <code class="language-plaintext highlighter-rouge">verified_within=1y</code>, and customers whose data is older than that will go through the identity verification process again before continuing back to your application.
-        </div>
-      </div>
-      <div class="grid-row">
-        <div class="usa-accordion padding-top-2">
-          {% include accordion.html content=verified_possible_values accordion_id="verified_accordion" id="verified_possible_values" title="Possible Values" %}
-        </div>
-      </div>
-    </div>
-    <div class="dev-doc-row">
-      <div class="grid-row">
-        <div class="grid-col-5">
           <h4 class="parameters clearfix">locale</h4><span class="float-left text-italic">optional</span>
         </div>
         <div class="grid-col-7">
