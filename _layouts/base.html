@@ -20,8 +20,8 @@
     <meta property="og:title" content="{{ title }}">
 
     {% if page.lead -%}
-      <meta name="description" content="{{ page.lead | strip_html }}">
-      <meta property="og:description" content="{{ page.lead | strip_html }}">
+      <meta name="description" content="{{ page.lead | markdownify | strip_html | strip }}">
+      <meta property="og:description" content="{{ page.lead | markdownify | strip_html | strip }}">
     {% endif -%}
 
     <meta name="twitter:card" value="summary">
