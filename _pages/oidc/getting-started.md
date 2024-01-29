@@ -49,7 +49,7 @@ Login.gov supports two ways of authenticating clients: **private_key_jwt** and *
 
 ### Unsupported methods
 
-The following implementation methods of OIDC are not supported by Login.gov for security reasons. 
+The following implementation methods of OIDC are not supported by Login.gov for security reasons.
 
 - **Implicit flow** is [not recommended by the OAuth group](https://oauth.net/2/grant-types/implicit/){:class="usa-link--external"}.
 - **client_secret_param** is not supported because it requires managing a shared secret in two places, both the client and the server. Private_key_jwt flow involves sharing public keys with the server and PKCE has a one-time secret.
@@ -58,7 +58,7 @@ The following implementation methods of OIDC are not supported by Login.gov for 
 
 You are able to test authentication methods in real time with a testing account in our sandbox environment. To start, navigate to the [Login Partner Dashboard Sandbox](https://dashboard.int.identitysandbox.gov) and follow the steps below:
 
-- Select the “Sign-in” button to create a new account. Anyone with a .gov or .mil email address may request an account. 
+- Select the “Sign-in” button to create a new account. Anyone with a .gov or .mil email address may request an account.
 - Create a new team - see [Testing](/testing/) page for instructions.
 -  Create a certificate - before creating your application you'll need to create a certificate that will be used to sign your requests. You can create a certificate using openssl. The example command to create the certificate from your terminal is:
     - `openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out public.crt`
