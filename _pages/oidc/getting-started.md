@@ -68,8 +68,8 @@ It is important to note that your Login.gov production account and your Login.go
 
 ### Auto-discovery
 
-Consistent with the specification, Login.gov provides a JSON endpoint for OIDC auto-discovery at 
-`/.well-known/openid-configuration`. 
+Consistent with the specification, Login.gov provides a JSON endpoint for OIDC auto-discovery at
+`/.well-known/openid-configuration`.
 
 Integration URI:
 - [https://idp.int.identitysandbox.gov/.well-known/openid-configuration](https://idp.int.identitysandbox.gov/.well-known/openid-configuration)
