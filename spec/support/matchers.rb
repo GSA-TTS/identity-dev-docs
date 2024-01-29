@@ -50,36 +50,6 @@ RSpec::Matchers.define :link_to_valid_headers do
   end
 end
 
-RSpec::Matchers.define :link_to_valid_internal_pages do
-  missing_pages = []
-
-  match do |actual|
-    doc = actual
-
-    doc.css('a[href^="/"]').each do |a|
-      page = a[:href]
-
-      begin
-        unless File.exists? "_site#{page.gsub(/#.*$/, '')}" then fail "Could not find file \`#{path}\`" end
-      rescue
-        missing_pages << page
-      end
-
-      uri = URI.parse(page)
-
-      if File.extname(uri.path).empty? && !uri.path.end_with?('/')
-        fail "Link needs to end in a trailing slash but doesn't #{page}"
-      end
-    end
-
-    expect(missing_pages).to be_empty
-  end
-
-  failure_message do |actual|
-    "expected that #{actual.url} would link to valid pages:\n#{missing_pages.join("\n")}"
-  end
-end
-
 RSpec::Matchers.define :have_unique_ids do
   duplicate_ids = Set.new
 

@@ -13,6 +13,9 @@ clean:
 test: build
 	bundle exec rspec spec
 
+htmlproofer:
+	bundle exec scripts/htmlproofer
+
 build-site:
 	bundle exec jekyll build
 

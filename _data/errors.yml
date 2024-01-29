@@ -20,7 +20,7 @@ oidc:
         Check the `acr_values` parameter in your authentication request and ensure that you are passing either:
         - `http://idmanagement.gov/ns/assurance/ial/1` for Authentication Only applications, OR;
         - `http://idmanagement.gov/ns/assurance/ial/2` for Identity-Verification Permitted applications.
-        Learn more about IAL Service Level values here: [https://developers.login.gov/oidc/authorization/#service_level](https://developers.login.gov/oidc/authorization/#service_level){:target="_blank"}
+        Learn more about IAL Service Level values here: [https://developers.login.gov/oidc/authorization/#service_level](/oidc/authorization/#service_level){:target="_blank"}
     - title: The acr_values are not authorized
       id: oidc-missing-acr-values
       accordion-id: missing_acr
@@ -42,7 +42,7 @@ oidc:
         ##### What to do:
         - Check the `acr_values` parameter in your authentication request.
         - Ensure that you are passing in the appropriate IAL Service Level value as well as any Authentication Assurance (AAL) values you might want for your application.
-        More information about the `acr_values` parameter can be found here: [https://developers.login.gov/oidc/authorization/#acr_values](https://developers.login.gov/oidc/authorization/#acr_values){:target="_blank"}
+        More information about the `acr_values` parameter can be found here: [https://developers.login.gov/oidc/authorization/#acr_values](/oidc/authorization/#acr_values){:target="_blank"}
     - title: No valid scope values found
       id: oidc-no-scope
       accordion-id: no_scope
@@ -52,7 +52,7 @@ oidc:
         ##### What to do:
         - Check the `scope` parameter in your authentication request.
         - Ensure you are passing in `openid` as well as at least one other attribute.
-        More information about the different types of attributes can be found here: [https://developers.login.gov/attributes/](https://developers.login.gov/attributes){:target="_blank"}
+        More information about the different types of attributes can be found here: [https://developers.login.gov/attributes/](/attributes/){:target="_blank"}
     - title: No valid prompt values found
       id: oidc-no-prompt
       accordion-id: no_prompt
@@ -62,7 +62,7 @@ oidc:
         ##### What to do:
         - Check the `prompt` parameter in your authentication request.
         - Ensure you are passing `select_account` as the value.
-        More information about the `prompt` request parameter can be found here: [https://developers.login.gov/oidc/authorization/#prompt](https://developers.login.gov/oidc/authorization/#prompt){:target="_blank"}
+        More information about the `prompt` request parameter can be found here: [https://developers.login.gov/oidc/authorization/#prompt](/oidc/authorization/#prompt){:target="_blank"}
     - title: redirect_uri is invalid
       id: oidc-invalid-redirect
       accordion-id: invalid_redirect
@@ -90,7 +90,7 @@ oidc:
         ##### What to do:
         - Check the `scope` parameter in your authentication request.
         - If your application is an *Authentication Only* application, ensure you are only passing in IAL1 attributes.
-        More information about the different types of attributes can be found here: [https://developers.login.gov/attributes/](https://developers.login.gov/attributes/){:target="_blank"}
+        More information about the different types of attributes can be found here: [https://developers.login.gov/attributes/](/attributes/){:target="_blank"}
   logout:
     - title: client_id was not recognized
       id: client-id-not-recognized
@@ -118,7 +118,7 @@ oidc:
         We are no longer supporting the id_token_hint attribute as a method of logging out.
         ##### What to do:
         - Update your logout request to utilize the client_id attribute.
-        More information about the logout request parameters can be found here: [https://developers.login.gov/oidc/logout/#logout-request](https://developers.login.gov/oidc/logout/#logout-request){:target="_blank"}.
+        More information about the logout request parameters can be found here: [https://developers.login.gov/oidc/logout/#logout-request](/oidc/logout/#logout-request){:target="_blank"}.
   token:
     - title: Code is expired
       id: token-expired
@@ -139,7 +139,7 @@ oidc:
         Integration environment value: `https://idp.int.identitysandbox.gov/api/openid_connect/token`
         Production environment value: `https://secure.login.gov/api/openid_connect/token`
 
-        More information about the client assertion values can be found here: [https://developers.login.gov/oidc/token/#client_assertion](https://developers.login.gov/oidc/token/#client_assertion){:target="_blank"}.
+        More information about the client assertion values can be found here: [https://developers.login.gov/oidc/token/#client_assertion](/oidc/token/#client_assertion){:target="_blank"}.
     - title: Client must authenticate via PKCE or private_key_jwt, missing either code_challenge or client_assertion
       id: pkce-or-private-key
       accordion-id: pkce_or_private_key
@@ -153,8 +153,8 @@ oidc:
         If your integration is private_key_jwt:
         - Ensure you are sending `client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer` as part of your token request.
 
-        More information about token request values can be found here: [https://developers.login.gov/oidc/token/#request-parameters](https://developers.login.gov/oidc/token/#request-parameters){:target="_blank"}.
-    - title: Code is invalid because doesn’t match any user. Please see our documentation at https://developers.login.gov/oidc/#token
+        More information about token request values can be found here: [https://developers.login.gov/oidc/token/#request-parameters](/oidc/token/#request-parameters){:target="_blank"}.
+    - title: Code is invalid because doesn’t match any user. Please see our documentation at [https://developers.login.gov/oidc/#token](/oidc/#token)
       id: invalid-code
       accordion-id: invalid_code
       content: |
@@ -180,7 +180,7 @@ oidc:
       accordion-id: invalid_iat
       content: |
         ##### Why it's happening
-        The [`iat`](https://developers.login.gov/oidc/token/#iat-number) value in the `client_assertion` JWT is the time at which the JWT was issued. It takes the format of an integer timestamp representing the number of seconds since the Unix Epoch. This error means that it is:
+        The [`iat`](/oidc/token/#iat-number) value in the `client_assertion` JWT is the time at which the JWT was issued. It takes the format of an integer timestamp representing the number of seconds since the Unix Epoch. This error means that it is:
         - Not an integer or floating point Unix timestamp, OR
         - It is not an integer/timestamp that is in the past.
 
@@ -204,7 +204,7 @@ oidc:
         The `userinfo` endpoint requires an Authorization Header that includes a Bearer token. The Bearer token value is the `access_token` value from the `token` endpoint response.
         ##### What to do:
         - Ensure you are sending an [Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization){:target="_blank" .usa-link--external} in your request to the `userinfo` endpoint.
-        - Ensure the value of the header is `Bearer` followed by the [`access_token`](https://developers.login.gov/oidc/token/#access_token-string){:target="_blank"} that was returned by the `token` endpoint.
+        - Ensure the value of the header is `Bearer` followed by the [`access_token`](/oidc/token/#access_token-string){:target="_blank"} that was returned by the `token` endpoint.
     - title: No Authorization header provided
       id: no-auth-header
       accordion-id: no_auth_header
@@ -213,7 +213,7 @@ oidc:
         The `userinfo` endpoint requires an Authorization Header.
         ##### What to do:
         - Ensure you are sending an [Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization){:target="_blank" .usa-link--external} in your request to the `userinfo` endpoint.
-        - Ensure the value of the header is `Bearer` followed by the [`access_token`](https://developers.login.gov/oidc/token/#access_token-string){:target="_blank"} that was returned by the `token` endpoint.
+        - Ensure the value of the header is `Bearer` followed by the [`access_token`](/oidc/token/#access_token-string){:target="_blank"} that was returned by the `token` endpoint.
     - title: Could not find authorization for the contents of the provided access_token or it may have expired
       id: auth-header-contents-not-found
       accordion-id: auth_header_contents_not_found
@@ -221,5 +221,5 @@ oidc:
         ##### Why it's happening
         The Bearer token value that is being passed as part of the userinfo endpoint request does not match a live user session. The value may be wrong, or there may have been a long pause during the authentication attempt.
         ##### What to do:
-        - Ensure the Authorization header value is `Bearer` followed by the [`access_token`](https://developers.login.gov/oidc/token/#access_token-string){:target="_blank" .usa-link--external} that was returned by the `token` endpoint.
+        - Ensure the Authorization header value is `Bearer` followed by the [`access_token`](/oidc/token/#access_token-string){:target="_blank" .usa-link--external} that was returned by the `token` endpoint.
          - Try another authentication attempt without pausing.

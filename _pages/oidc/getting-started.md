@@ -1,7 +1,7 @@
 ---
 title: OpenID Connect
 lead: >
-   [OpenID Connect](http://openid.net){:class="usa-link--external"} (OIDC) is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](http://openid.net/specs/openid-connect-core-1_0.html){:class="usa-link--external"} of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov){:class="usa-link--external"}.
+   [OpenID Connect](https://openid.net){:class="usa-link--external"} (OIDC) is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](https://openid.net/specs/openid-connect-core-1_0.html){:class="usa-link--external"} of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov){:class="usa-link--external"}.
 redirect_from:
   - /openid-connect/
   - /oidc/
@@ -49,7 +49,7 @@ Login.gov supports two ways of authenticating clients: **private_key_jwt** and *
 
 ### Unsupported methods
 
-The following implementation methods of OIDC are not supported by Login.gov for security reasons. 
+The following implementation methods of OIDC are not supported by Login.gov for security reasons.
 
 - **Implicit flow** is [not recommended by the OAuth group](https://oauth.net/2/grant-types/implicit/){:class="usa-link--external"}.
 - **client_secret_param** is not supported because it requires managing a shared secret in two places, both the client and the server. Private_key_jwt flow involves sharing public keys with the server and PKCE has a one-time secret.
@@ -58,8 +58,8 @@ The following implementation methods of OIDC are not supported by Login.gov for 
 
 You are able to test authentication methods in real time with a testing account in our sandbox environment. To start, navigate to the [Login Partner Dashboard Sandbox](https://dashboard.int.identitysandbox.gov) and follow the steps below:
 
-- Select the “Sign-in” button to create a new account. Anyone with a .gov or .mil email address may request an account. 
-- Create a new team - see [Testing](https://developers.login.gov/testing/) page for instructions.
+- Select the “Sign-in” button to create a new account. Anyone with a .gov or .mil email address may request an account.
+- Create a new team - see [Testing](/testing/) page for instructions.
 -  Create a certificate - before creating your application you'll need to create a certificate that will be used to sign your requests. You can create a certificate using openssl. The example command to create the certificate from your terminal is:
     - `openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out public.crt`
 - Create an application, at which point you will need to decide between private_key_jwt or PKCE.
@@ -68,8 +68,8 @@ It is important to note that your Login.gov production account and your Login.go
 
 ### Auto-discovery
 
-Consistent with the specification, Login.gov provides a JSON endpoint for OIDC auto-discovery at 
-`/.well-known/openid-configuration`. 
+Consistent with the specification, Login.gov provides a JSON endpoint for OIDC auto-discovery at
+`/.well-known/openid-configuration`.
 
 Integration URI:
 - [https://idp.int.identitysandbox.gov/.well-known/openid-configuration](https://idp.int.identitysandbox.gov/.well-known/openid-configuration)

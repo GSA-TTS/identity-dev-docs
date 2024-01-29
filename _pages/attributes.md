@@ -83,12 +83,12 @@ Requires the `email` scope.
 <td markdown="1">
 `ial` (url, urn)
 
-See [OpenID Connect IAL values](https://developers.login.gov/oidc/#ial-values)
+See [OpenID Connect IAL values](/oidc/authorization/#service_level)
 </td>
 <td markdown="1">
 `ial` (url, urn)
 
-See [SAML IAL values](https://developers.login.gov/saml/#identity-assurance-level-ial)
+See [SAML IAL values](/saml/authentication/#service_level)
 </td>
     </tr>
     <tr>
@@ -104,12 +104,12 @@ See [SAML IAL values](https://developers.login.gov/saml/#identity-assurance-leve
 <td markdown="1">
 `aal` (url, urn)
 
-See [OpenID Connect AAL values](https://developers.login.gov/oidc/#aal-values)
+See [OpenID Connect AAL values](/oidc/authorization/#aal_values)
 </td>
 <td markdown="1">
 `aal` (url, urn)
 
-See [SAML AAL values](https://developers.login.gov/saml/#authentication-assurance-level-aal)
+See [SAML AAL values](/saml/authentication/#aal_values)
 </td>
     </tr>
     <tr>

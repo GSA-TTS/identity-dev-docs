@@ -42,7 +42,7 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
         Generally, a site will place a login button on their site. When the user clicks this button they redirect to Login.gov where they can sign in or create an account. The Login.gov site will be branded with the agency logo and can include help text for migrating existing users.
         After authenticating with Login.gov they are redirected back to the agency with a unique UUID or email address that identifies the user.
         <br/>
-        Please see our <a href="https://developers.login.gov/overview/" target="_blank">overview documentation</a> for more details.
+        Please see our <a href="{{ '/overview/' | prepend: site.baseurl }}" target="_blank">overview documentation</a> for more details.
       </p>
     </div>
   </div>
@@ -221,13 +221,13 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
       <p>
         Login.gov recognizes incoming requests from Service Providers by validating the Issuer (for SAML) or ClientID (for OIDC) field sent in the request and checking it against Service Providers registered with Login.gov. The Issuer for each Service Provider is defined in the Issuer field on the Login.gov Dashboard.
         <br/><br/>
-        <img src="{{ site.baseurl }}/assets/img/dashboard_issuer.png">
+        <img alt="Screenshot of issuer field on Login.gov dashboard" src="/assets/img/dashboard_issuer.png" />
         <br/><br/>
         This error occurs when Login.gov receives a request from a Service Provider that contains an Issuer/ClientID field that is not registered with Login.gov. The Issuer/ClientID defined in the request must match EXACTLY the Issuer defined in the Dashboard.
       </p>
       <h5>Solution:</h5>
       <p>
-        Double check the SAML/OIDC request to Login.gov and confirm that the Issuer/ClientID field matches exactly what is defined in the Login.gov Dashboard. See <a href="{{ site.baseurl }}/support/#other-tips--tools">Other Tips & Tools</a> for help with decoding SAML Requests.
+        Double check the SAML/OIDC request to Login.gov and confirm that the Issuer/ClientID field matches exactly what is defined in the Login.gov Dashboard. See <a href="#other-tips--tools">Other Tips & Tools</a> for help with decoding SAML Requests.
         <br/><br/>
         Note that certain Service Providers will not allow partners to set or change the Issuer value after the application is configured (e.g. MS Power Apps Portal). In this case, the best option would be to create the Login.gov Dashboard configuration after the Service Provider application has defined the Issuer and use that Issuer in the Dashboard.
       </p>
@@ -283,12 +283,12 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
       <p>
         Refer to the Login.gov Developer’s Guide for a list of accepted Authentication Context Class Reference values and ensure one or more of these values (and no others) are being sent in all authentication requests:
       </p>
-      <div><a target="_blank" href="https://developers.login.gov/oidc/#ial-values">OIDC IAL Values</a></div>
-      <div><a target="_blank" href="https://developers.login.gov/oidc/#aal-values">OIDC AAL Values</a></div>
-      <div><a target="_blank" href="https://developers.login.gov/oidc/#request-parameters">OIDC User Attributes</a> - see "scope"</div>
-      <div><a target="_blank" href="https://developers.login.gov/saml/#identity-assurance-level-ial">SAML IAL Values</a></div>
-      <div><a target="_blank" href="https://developers.login.gov/saml/#authentication-assurance-level-aal">SAML AAL Values</a></div>
-      <div><a target="_blank" href="https://developers.login.gov/saml/#attributes">SAML User Attributes</a></div>
+      <div><a target="_blank" href="{{ '/oidc/authorization/#service_level' | prepend: site.baseurl }}">OIDC IAL Values</a></div>
+      <div><a target="_blank" href="{{ '/oidc/authorization/#aal_values' | prepend: site.baseurl }}">OIDC AAL Values</a></div>
+      <div><a target="_blank" href="{{ '/oidc/authorization/#scope_possible_values' | prepend: site.baseurl }}">OIDC User Attributes</a> - see "scope"</div>
+      <div><a target="_blank" href="{{ '/saml/authentication/#service_level' | prepend: site.baseurl }}">SAML IAL Values</a></div>
+      <div><a target="_blank" href="{{ '/saml/authentication/#aal_values' | prepend: site.baseurl }}">SAML AAL Values</a></div>
+      <div><a target="_blank" href="{{ '/saml/authentication/#attributes' | prepend: site.baseurl }}">SAML User Attributes</a></div>
       <h5>Important Note for SAML Service Providers:</h5>
       <p>
         Login.gov requires AAL2 at minimum by default and so cannot accept AAL1 values for the Authentication Context Class Reference value unless the incoming requests allows Login.gov to increase the AAL to 2. For SAML requests, this means defining the optional Comparison field in the RequestedAuthContext SAML field as “minimum” or “better”. See below for a sample SAML request with an AAL of 1 and the optional Comparison field.
@@ -309,7 +309,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
         Service Providers that cannot accommodate either sending a specific Authentication Context Class Reference or sending the optional Comparison field cannot currently be integrated with Login.gov.
       </p>
       <p>
-        See Section 3.3.2.2.1 of the <a target="_blank" href="http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf">SAML spec for more information.</a>
+        See Section 3.3.2.2.1 of the <a target="_blank" href="https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf">SAML spec for more information.</a>
       </p>
     </div>
   </div>
@@ -335,9 +335,9 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 </div>
       <h5>Solution:</h5>
       <p>
-        Refer to the <a target="_blank" href="https://developers.login.gov/saml/#configuration">Login.gov Developers Guide</a> for the acceptable values for the NameIdFormat SAML field. Update the Login.gov Identity Provider configuration within your Service Provider to specify the correct NameIDFormat field.
+        Refer to the <a target="_blank" href="{{ '/saml/getting-started/#configuration' | prepend: site.baseurl }}">Login.gov Developers Guide</a> for the acceptable values for the NameIdFormat SAML field. Update the Login.gov Identity Provider configuration within your Service Provider to specify the correct NameIDFormat field.
         <br/><br/>
-        For SAML Service Providers, see <a href="{{ site.baseurl }}/support/#other-tips--tools)">Other Tips & Tools</a> for help with decoding SAML Requests.
+        For SAML Service Providers, see <a href="#other-tips--tools">Other Tips & Tools</a> for help with decoding SAML Requests.
       </p>
     </div>
   </div>
@@ -450,7 +450,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
       <p>
         If the <span class="text-bold">Signature</span> and <span class="text-bold">SigAlg</span> URL parameters (and associated values) are present, your authentication request is signed.
         <br/>
-        If the signature is not part of the URL, it may be part of the SAML request. To check this, you will need to decode the data sent via the <span class="text-bold">SAMLRequest</span> parameter. The easiest way to do this is the "SAML Tracer" browser plugin. Our <a class="usa-link" href="http://dashboard.int.identitysandbox.gov/tools">web-based tool</a> can also help with this. Once decoded, you should see a section that contains all the relevant signature-related information and should be enclosed in a tag like:
+        If the signature is not part of the URL, it may be part of the SAML request. To check this, you will need to decode the data sent via the <span class="text-bold">SAMLRequest</span> parameter. The easiest way to do this is the "SAML Tracer" browser plugin. Our <a class="usa-link" href="https://dashboard.int.identitysandbox.gov/tools/saml_request">web-based tool</a> can also help with this. Once decoded, you should see a section that contains all the relevant signature-related information and should be enclosed in a tag like:
       </p>
 <div markdown="1">
 ```xml
@@ -469,7 +469,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 </div>
       <h5>Check validity of signature</h5>
       <p>
-        There may be other reasons Login.gov cannot successfully validate your application’s signatures using the information you have provided in the Login.gov Partner Dashboard for the application. We have created a <a class="usa-link" href="http://dashboard.int.identitysandbox.gov/tools"> web-based tool</a> that lets you check this easily.
+        There may be other reasons Login.gov cannot successfully validate your application’s signatures using the information you have provided in the Login.gov Partner Dashboard for the application. We have created a <a class="usa-link" href="https://dashboard.int.identitysandbox.gov/tools/saml_request"> web-based tool</a> that lets you check this easily.
         <br/><br/>
         If you find your signature cannot be validated using this process, you will have to investigate what may be causing these problems and make changes on your side until validation succeeds.
       </p>

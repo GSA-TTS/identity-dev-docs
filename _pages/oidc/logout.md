@@ -1,7 +1,7 @@
 ---
 title: OpenID Connect
 lead: >
-    [OpenID Connect](http://openid.net){:class="usa-link--external"} (OIDC) is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](http://openid.net/specs/openid-connect-core-1_0.html){:class="usa-link--external"} of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov){:class="usa-link--external"}.
+    [OpenID Connect](https://openid.net){:class="usa-link--external"} (OIDC) is a simple identity layer built on top of the OAuth 2.0 protocol. Login.gov supports [version 1.0](https://openid.net/specs/openid-connect-core-1_0.html){:class="usa-link--external"} of the specification and conforms to the [iGov Profile](https://openid.net/wg/igov){:class="usa-link--external"}.
 sidenav:
   - text: Getting started
     href: "oidc/getting-started/"
@@ -28,7 +28,7 @@ sidenav:
 
 ## Logout
 
-Login.gov supports [RP-Initiated Logout](https://openid.net/specs/openid-connect-session-1_0.html#RPLogout){:class="usa-link--external"}, allowing clients to log users out of their current Login.gov session and redirect them back to the Relying Party.
+Login.gov supports [RP-Initiated Logout](https://openid.net/specs/openid-connect-rpinitiated-1_0.html){:class="usa-link--external"}, allowing clients to log users out of their current Login.gov session and redirect them back to the Relying Party.
 
 Login.gov does not support Single Logout (SLO). The logout action will terminate the user’s session at Login.gov but will not end any other potentially active sessions within service provider applications. For example, if a user signs in to applications A and B through Login.gov, a logout request from A will end their Login.gov session, but will not affect the session in application B.
 

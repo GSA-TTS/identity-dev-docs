@@ -7,6 +7,7 @@ gem 'jekyll-redirect-from'
 gem 'jekyll-sitemap'
 
 group :test do
+  gem 'html-proofer', '~> 4.0'
   gem 'rspec'
   gem 'nokogiri', '>= 1.10.5'
 end
