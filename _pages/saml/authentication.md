@@ -37,7 +37,7 @@ saml_last_year: 2022
 The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the type of identity verification<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, AAL (Authentication Assurance Level) and attributes requested.
 {% endcapture %}
 {% capture attributes %}
-To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes](/attributes/) for the list of attributes that can be requested.
+To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes]({{ '/attributes/' | prepend: site.baseurl }}) for the list of attributes that can be requested.
 
 #### Example specifying IAL, AAL, and attributes
 

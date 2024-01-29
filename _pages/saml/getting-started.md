@@ -206,7 +206,7 @@ The {{ page.saml_last_year }} certificates for idp.int.identitysandbox.gov and s
 
 The Login.gov team has created an example client to speed up your development, all open source in the public domain: [identity-saml-sinatra](https://github.com/18F/identity-saml-sinatra){:class="usa-link--external"}.
 
-[Next step: Authentication](/saml/authentication/)
+[Next step: Authentication]({{ '/saml/authentication/' | prepend: site.baseurl }})
 
 </div>
 </div>
