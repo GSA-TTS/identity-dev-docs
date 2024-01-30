@@ -34,9 +34,7 @@ There are several decisions during the integration process that affect how your 
 All partners with identity verification will [create a Failure to Proof URL]({{site.baseurl}}/user-experience/failure-proof/) for users who cannot pass identity proofing with Login.gov. This URL is configured in the sandbox dashboard, but may require designing a new page or process on your agency's website or application.
 {% endcapture %}
 
-{% capture knowledge_articles_ux %}
 Include a link to the [self-service Login.gov help center](https://login.gov/help/). (Do not publish the help center phone number on your application.) 
-{% endcapture %}
 
 {% capture faq_ux %}
 Optional: [Add FAQ content to inform users about Login.gov]({{site.baseurl}}/user-experience/faq-content/)
