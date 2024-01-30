@@ -554,7 +554,7 @@ There are some cases where our team is unable to help, typically either for secu
   </h3>
   <div id="user-support" class="usa-accordion__container">
 <div class="usa-accordion__content" markdown="1">
-If you receive a complaint from a user having trouble logging in or managing their account, it is best to direct them to [submit a help ticket to user support](https://www.login.gov/contact/).
+If you receive a complaint from a user having trouble logging in or managing their account, it is best to direct them to the Login.gov help center at https://www.login.gov/help/. Do not publish Login.gov contact center phone numbers. 
 </div>
   </div>
 </div>
