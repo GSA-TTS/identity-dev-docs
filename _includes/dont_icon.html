@@ -1,0 +1,13 @@
+{% comment %}
+include
+- content
+{% endcomment %}
+<div class="usa-icon-list__icon text-green">
+  <svg role="img" class="usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27">
+    <path d="M12.5 0C5.5875 0 0 5.5875 0 12.5C0 19.4125 5.5875 25 12.5 25C19.4125 25 25 19.4125 25 12.5C25 5.5875 19.4125 0 12.5 0ZM18.75 16.9875L16.9875 18.75L12.5 14.2625L8.0125 18.75L6.25 16.9875L10.7375 12.5L6.25 8.0125L8.0125 6.25L12.5 10.7375L16.9875 6.25L18.75 8.0125L14.2625 12.5L18.75 16.9875Z" fill="#E21C3D"/>
+    </svg>
+</div>
+<div class="usa-icon-list__content">
+{{ include.content | markdownify }}
+</div>
+

@@ -15,14 +15,14 @@ sidenav:
     href: "user-experience/failure-proof/"
   - text: Knowledge articles
     href: "user-experience/knowledge-articles/"
-  - text: FAQ content 
+  - text: FAQ content
     href: "user-experience/faq-content/"
 
 ---
 
 ## Design your application's sign-in and sign-out buttons
 
-The sign-in button on your application initiates authentication with Login.gov, and takes users to the initial screen on Login.gov to sign in or create an account. 
+The sign-in button on your application initiates authentication with Login.gov, and takes users to the initial screen on Login.gov to sign in or create an account.
 
 ### Requirements for all buttons
 
@@ -45,7 +45,7 @@ Don't use an icon instead of a text label. Buttons may include the Login.gov log
 
 <ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_label style="text-green" %}       
+    {% include check_icon.html content=do_button_label style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
     {% include check_icon.html content=do_state_styling style="text-green" %}
@@ -54,10 +54,10 @@ Don't use an icon instead of a text label. Buttons may include the Login.gov log
     {% include check_icon.html content=do_font_styling style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=dont_external_link style="text-red" %}
+    {% include dont_icon.html content=dont_external_link %}
   </li>
    <li class="usa-icon-list__item">
-    {% include check_icon.html content=dont_icon style="text-red" %}
+    {% include dont_icon.html content=dont_icon %}
   </li>
 </ul>
 
@@ -78,7 +78,7 @@ Do use the white button with an outline on light backgrounds that don’t provid
 
 <ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_height style="text-green" %}       
+    {% include check_icon.html content=do_button_height style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
     {% include check_icon.html content=do_button_center style="text-green" %}
@@ -177,7 +177,7 @@ Don’t add too much text or imagery above the sign-in button that might push yo
 
 <ul class="usa-icon-list padding-top-4">
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_styling style="text-green" %}       
+    {% include check_icon.html content=do_button_styling style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
     {% include check_icon.html content=do_sign_in_label style="text-green" %}
