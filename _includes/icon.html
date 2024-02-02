@@ -2,13 +2,9 @@
 include
 - style
 - icon_name
-- content
 {% endcomment %}
-<div class="usa-icon-list__icon {{include.style}}">
-  <svg role="img" class="usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<div class="{{include.style}}">
+  <svg role="img" class="usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
     <use xlink:href="{{site.baseurl}}/assets/img/sprite.svg#{{include.icon_name}}"></use>
   </svg>
-</div>
-<div class="usa-icon-list__content">
-{{ include.content | markdownify }}
 </div>
