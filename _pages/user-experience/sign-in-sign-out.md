@@ -45,19 +45,19 @@ Don't use an icon instead of a text label. Buttons may include the Login.gov log
 
 <ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_button_label  style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_label style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_state_styling  style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_state_styling style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_font_styling  style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_font_styling style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="cancel" content=dont_external_link  style="text-red" %}
+    {% include icon_list.html icon_name="cancel" content=dont_external_link style="text-red" %}
   </li>
    <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="cancel" content=dont_icon  style="text-red" %}
+    {% include icon_list.html icon_name="cancel" content=dont_icon style="text-red" %}
   </li>
 </ul>
 
@@ -78,16 +78,16 @@ Do use the white button with an outline on light backgrounds that don’t provid
 
 <ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_button_height  style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_height style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_button_center  style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_center style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_contrast  style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_contrast style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_button_white  style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_white style="text-green" %}
   </li>
 </ul>
 
@@ -202,16 +202,16 @@ Don’t add too much text or imagery above the sign-in button that might push yo
 
 <ul class="usa-icon-list padding-top-4">
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_button_styling  style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_styling style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_sign_in_label  style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_sign_in_label style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_equal_size  style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_equal_size style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_list_style  style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_list_style style="text-green" %}
   </li>
    <li class="usa-icon-list__item">
     {% include icon_list.html icon_name="cancel" content=dont_extra_text style="text-red" %}
