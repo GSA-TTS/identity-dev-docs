@@ -18,7 +18,7 @@ sidenav:
     href: "user-experience/failure-proof/"
   - text: Knowledge articles
     href: "user-experience/knowledge-articles/"
-  - text: FAQ content 
+  - text: FAQ content
     href: "user-experience/faq-content/"
 
 ---
@@ -35,7 +35,7 @@ All partners with identity verification will [create a Failure to Proof URL]({{s
 {% endcapture %}
 
 {% capture link_to_helpdesk %}
-Include a link to the [self-service Login.gov help center](https://login.gov/help/). (Do not publish the help center phone number on your application.) 
+Include a link to the [self-service Login.gov help center](https://login.gov/help/). (Do not publish the help center phone number on your application.)
 {% endcapture %}
 
 {% capture faq_ux %}
@@ -59,16 +59,16 @@ Optional: [Add FAQ content to inform users about Login.gov]({{site.baseurl}}/use
 
 <ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=button_ux style="text-green" %}       
+    {% include icon.html icon_name="check_circle" content=button_ux style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=failure_to_proof_ux style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=failure_to_proof_ux style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=link_to_helpdesk style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=link_to_helpdesk style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=faq_ux style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=faq_ux style="text-green" %}
   </li>
 </ul>
 
@@ -76,13 +76,13 @@ Optional: [Add FAQ content to inform users about Login.gov]({{site.baseurl}}/use
 
 <ul class="usa-icon-list padding-bottom-4 padding-top-2">
  <li class="usa-icon-list__item">
-    {% include check_icon.html content=logo_ux style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=logo_ux style="text-green" %}
  </li>
  <li class="usa-icon-list__item">
-    {% include check_icon.html content=cancel_url_ux style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=cancel_url_ux style="text-green" %}
  </li>
  <li class="usa-icon-list__item">
-    {% include check_icon.html content=dashboard_failure_to_proof style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=dashboard_failure_to_proof style="text-green" %}
  </li>
 </ul>
 

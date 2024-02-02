@@ -45,19 +45,19 @@ Don't use an icon instead of a text label. Buttons may include the Login.gov log
 
 <ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_label style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=do_button_label  style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_state_styling style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=do_state_styling  style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_font_styling style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=do_font_styling  style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include dont_icon.html content=dont_external_link %}
+    {% include icon.html icon_name="cancel" content=dont_external_link  style="text-red" %}
   </li>
    <li class="usa-icon-list__item">
-    {% include dont_icon.html content=dont_icon %}
+    {% include icon.html icon_name="cancel" content=dont_icon  style="text-red" %}
   </li>
 </ul>
 
@@ -78,16 +78,16 @@ Do use the white button with an outline on light backgrounds that don’t provid
 
 <ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_height style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=do_button_height  style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_center style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=do_button_center  style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_contrast style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=do_contrast  style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_white style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=do_button_white  style="text-green" %}
   </li>
 </ul>
 
@@ -120,11 +120,13 @@ When using Login.gov to authenticate your users, we recommend implementing one o
       alt='An example agency website header with the button "Sign in with Login.gov" at top right'
       class="display-block grid-col-auto green-bottom-border" />
     <div class="text-green float-left">
-      <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-      </div>
-      <div class="margin-left-3 font-body-xs">
-        <span class="text-uppercase text-bold text-green ">Do</span>: Place a sign-in button at the top right of website headers.
+      <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <use xlink:href="{{site.baseurl}}/assets/img/sprite.svg#check_circle"></use>
+      </svg>
     </div>
+    <div class="margin-left-3 font-body-xs">
+      <span class="text-uppercase text-bold text-green ">Do</span>: Place a sign-in button at the top right of website headers.
+  </div>
 </div>
 </div>
 <div class="grid-row margin-top-2 padding-bottom-2">
@@ -133,9 +135,11 @@ When using Login.gov to authenticate your users, we recommend implementing one o
         alt='An example agency website header with two buttons labeled "Menu options" and "Sign in" at top right"'
         class="display-block grid-col-auto green-bottom-border" />
     <div class="text-green float-left">
-      <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-      </div>
-      <div class="margin-left-3 maxw-mobile-lg font-body-xs">
+      <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <use xlink:href="{{site.baseurl}}/assets/img/sprite.svg#check_circle"></use>
+      </svg>
+    </div>
+    <div class="margin-left-3 maxw-mobile-lg font-body-xs">
       <span class="text-uppercase text-bold text-green">Do</span>: Use your own site’s global navigation styling if “Sign in” appears within a list of menu options in the header.
     </div>
   </div>
@@ -151,10 +155,12 @@ Some agency partners decide to implement a sign-in page on their application pri
   <img src="{{ site.baseurl }}/assets/img/global-sign-in.png"
        alt='An example agency website page with the heading "Sign in" and three full width buttons labeled "Sign in with Login.gov" and "Sign in with [alternate provider]"'
        class="display-block grid-col-auto green-bottom-border" />
-  <div class="text-green float-left">
-    <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-    </div>
-    <div class="margin-left-3 font-body-xs">
+ <div class="text-green float-left">
+    <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <use xlink:href="{{site.baseurl}}/assets/img/sprite.svg#check_circle"></use>
+    </svg>
+  </div>
+  <div class="margin-left-3 font-body-xs">
     <span class="text-uppercase text-bold text-green">Do</span>: Design sign-in options that are equal in size. Stacked, solid-colored buttons work best because the stacking supports responsive layouts and mobile views.
   </div>
 </div>
@@ -177,19 +183,19 @@ Don’t add too much text or imagery above the sign-in button that might push yo
 
 <ul class="usa-icon-list padding-top-4">
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_styling style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=do_button_styling  style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_sign_in_label style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=do_sign_in_label  style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_equal_size style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=do_equal_size  style="text-green" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_list_style style="text-green" %}
+    {% include icon.html icon_name="check_circle" content=do_list_style  style="text-green" %}
   </li>
    <li class="usa-icon-list__item">
-    {% include check_icon.html content=dont_extra_text style="text-red" %}
+    {% include icon.html icon_name="cancel" content=dont_extra_text style="text-red" %}
   </li>
 </ul>
 
@@ -210,9 +216,11 @@ Users need a clearly marked button to sign out after a user has signed in to you
        alt='An example agency website header with two buttons labeled "Menu options" and "Sign out" at top right'
        class="display-block grid-col-auto green-bottom-border" />
   <div class="text-green float-left">
-    <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-    </div>
-    <div class="margin-left-3 font-body-xs">
+    <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <use xlink:href="{{site.baseurl}}/assets/img/sprite.svg#check_circle"></use>
+    </svg>
+  </div>
+  <div class="margin-left-3 font-body-xs">
     <span class="text-uppercase text-bold text-green">Do</span>: The Sign-out button style should match the Sign-in button.
   </div>
 </div>
