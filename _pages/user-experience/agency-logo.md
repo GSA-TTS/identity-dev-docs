@@ -60,7 +60,7 @@ Your agency logo will appear to the right of the Login.gov logo in your integrat
       <figcaption class="usa-image-example__figcaption">
         <ul class="usa-icon-list usa-icon-list--size-xs">
           <li class="usa-icon-list__item">
-            {% include icon_list.html icon_name="cancel" style="text-red" content=dont_content %}
+            {% include icon_list.html icon_name="cancel" style="text-error" content=dont_content %}
           </li>
         </ul>
       </figcaption>

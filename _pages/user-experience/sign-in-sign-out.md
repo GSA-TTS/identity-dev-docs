@@ -54,10 +54,10 @@ Don't use an icon instead of a text label. Buttons may include the Login.gov log
     {% include icon_list.html icon_name="check_circle" content=do_font_styling style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="cancel" content=dont_external_link style="text-red" %}
+    {% include icon_list.html icon_name="cancel" content=dont_external_link style="text-error" %}
   </li>
    <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="cancel" content=dont_icon style="text-red" %}
+    {% include icon_list.html icon_name="cancel" content=dont_icon style="text-error" %}
   </li>
 </ul>
 
@@ -214,7 +214,7 @@ Don’t add too much text or imagery above the sign-in button that might push yo
     {% include icon_list.html icon_name="check_circle" content=do_list_style style="text-success" %}
   </li>
    <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="cancel" content=dont_extra_text style="text-red" %}
+    {% include icon_list.html icon_name="cancel" content=dont_extra_text style="text-error" %}
   </li>
 </ul>
 
