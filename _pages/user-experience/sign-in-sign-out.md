@@ -116,13 +116,13 @@ When using Login.gov to authenticate your users, we recommend implementing one o
 
 {% capture top_right %}
 <span markdown="1">
-  <span class="image-example__do-dont">Do</span>: Place a sign-in button at the top right of website headers.
+  <span class="image-example__do-dont">DO</span>: Place a sign-in button at the top right of website headers.
 </span>
 {% endcapture %}
 
 {% capture global_nav %}
 <span markdown="1">
-  <span class="image-example__do-dont">Do</span>: Use your own site’s global navigation styling if “Sign in” appears within a list of menu options in the header.
+  <span class="image-example__do-dont">DO</span>: Use your own site’s global navigation styling if “Sign in” appears within a list of menu options in the header.
 </span>
 {% endcapture %}
 
@@ -166,7 +166,7 @@ Some agency partners decide to implement a sign-in page on their application pri
 
 {% capture signin_page %}
 <span markdown="1">
-  <span class="image-example__do-dont">Do</span>: Design sign-in options that are equal in size. Stacked, solid-colored buttons work best because the stacking supports responsive layouts and mobile views.
+  <span class="image-example__do-dont">DO</span>: Design sign-in options that are equal in size. Stacked, solid-colored buttons work best because the stacking supports responsive layouts and mobile views.
 </span>
 {% endcapture %}
 
@@ -224,7 +224,7 @@ Users need a clearly marked button to sign out after a user has signed in to you
 
 {% capture match_buttons %}
 <span markdown="1">
-  <span class="image-example__do-dont">Do</span>: The Sign-out button style should match the Sign-in button.
+  <span class="image-example__do-dont">DO</span>: The Sign-out button style should match the Sign-in button.
 </span>
 {% endcapture %}
 
