@@ -8,7 +8,7 @@ Here are the possible attributes that can be requested at a given IAL. This tabl
 
 It is important to expect any number of characters in the `(string)` datatype unless directly followed by a number such as `(string36)`. Strings are encrypted and stored in a text datatype with a maximum length of 65,535 bytes.
 
-<!-- the checkmark is semantic, so needs a title and aria-labelledby -->
+<!-- the checkmark is semantic, so needs slightly different tags than the generic icon -->
 {% capture checkmark %}
 <div class="text-primary">
   <svg role="img" class="usa-icon usa-icon--size-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  aria-label="Checkmark">
