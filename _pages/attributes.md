@@ -11,8 +11,7 @@ It is important to expect any number of characters in the `(string)` datatype un
 <!-- the checkmark is semantic, so needs a title and aria-labelledby -->
 {% capture checkmark %}
 <div class="text-primary">
-  <svg role="img" class="usa-icon usa-icon--size-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  aria-labelledby="checkmark">
-    <title id="checkmark">Checkmark</title>
+  <svg role="img" class="usa-icon usa-icon--size-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  aria-label="Checkmark">
      <use xlink:href="{{site.baseurl}}/assets/img/sprite.svg#check"></use>
   </svg>
 </div>
