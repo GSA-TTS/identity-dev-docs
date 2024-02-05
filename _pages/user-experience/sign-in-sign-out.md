@@ -177,7 +177,7 @@ Some agency partners decide to implement a sign-in page on their application pri
     <figcaption class="usa-image-example__figcaption">
       <ul class="usa-icon-list usa-icon-list--size-xs">
         <li class="usa-icon-list__item">
-          {% include icon_list.html icon_name="check_circle" style="text-green" content=top_right %}
+          {% include icon_list.html icon_name="check_circle" style="text-green" content=signin_page %}
         </li>
       </ul>
     </figcaption>
