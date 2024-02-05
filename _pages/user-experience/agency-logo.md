@@ -48,7 +48,7 @@ Your agency logo will appear to the right of the Login.gov logo in your integrat
       <figcaption class="usa-image-example__figcaption">
         <ul class="usa-icon-list usa-icon-list--size-xs">
           <li class="usa-icon-list__item">
-            {% include icon_list.html icon_name="check_circle" style="text-green" content=do_content %}
+            {% include icon_list.html icon_name="check_circle" style="text-success" content=do_content %}
           </li>
         </ul>
       </figcaption>
@@ -72,10 +72,10 @@ Your agency logo will appear to the right of the Login.gov logo in your integrat
 
 <ul class="usa-icon-list padding-top-2 padding-bottom-2">
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content="Upload a logo that is high contrast on a transparent background" style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content="Upload a logo that is high contrast on a transparent background" style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content="Only .svg files are accepted" style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content="Only .svg files are accepted" style="text-success" %}
   </li>
 </ul>
 

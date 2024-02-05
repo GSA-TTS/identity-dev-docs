@@ -59,16 +59,16 @@ Optional: [Add FAQ content to inform users about Login.gov]({{site.baseurl}}/use
 
 <ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=button_ux style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=button_ux style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=failure_to_proof_ux style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=failure_to_proof_ux style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=link_to_helpdesk style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=link_to_helpdesk style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=faq_ux style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=faq_ux style="text-success" %}
   </li>
 </ul>
 
@@ -76,13 +76,13 @@ Optional: [Add FAQ content to inform users about Login.gov]({{site.baseurl}}/use
 
 <ul class="usa-icon-list padding-bottom-4 padding-top-2">
  <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=logo_ux style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=logo_ux style="text-success" %}
  </li>
  <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=cancel_url_ux style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=cancel_url_ux style="text-success" %}
  </li>
  <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=dashboard_failure_to_proof style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=dashboard_failure_to_proof style="text-success" %}
  </li>
 </ul>
 

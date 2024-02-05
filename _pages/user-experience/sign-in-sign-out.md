@@ -45,13 +45,13 @@ Don't use an icon instead of a text label. Buttons may include the Login.gov log
 
 <ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_button_label style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_label style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_state_styling style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_state_styling style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_font_styling style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_font_styling style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
     {% include icon_list.html icon_name="cancel" content=dont_external_link style="text-red" %}
@@ -78,16 +78,16 @@ Do use the white button with an outline on light backgrounds that don’t provid
 
 <ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_button_height style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_height style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_button_center style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_center style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_contrast style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_contrast style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_button_white style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_white style="text-success" %}
   </li>
 </ul>
 
@@ -134,7 +134,7 @@ When using Login.gov to authenticate your users, we recommend implementing one o
       <figcaption class="usa-image-example__figcaption">
         <ul class="usa-icon-list usa-icon-list--size-xs">
           <li class="usa-icon-list__item">
-            {% include icon_list.html icon_name="check_circle" style="text-green" content=top_right %}
+            {% include icon_list.html icon_name="check_circle" style="text-success" content=top_right %}
           </li>
         </ul>
       </figcaption>
@@ -150,7 +150,7 @@ When using Login.gov to authenticate your users, we recommend implementing one o
       <figcaption class="usa-image-example__figcaption">
         <ul class="usa-icon-list usa-icon-list--size-xs">
           <li class="usa-icon-list__item">
-            {% include icon_list.html icon_name="check_circle" style="text-green" content=global_nav %}
+            {% include icon_list.html icon_name="check_circle" style="text-success" content=global_nav %}
           </li>
         </ul>
       </figcaption>
@@ -177,7 +177,7 @@ Some agency partners decide to implement a sign-in page on their application pri
     <figcaption class="usa-image-example__figcaption">
       <ul class="usa-icon-list usa-icon-list--size-xs">
         <li class="usa-icon-list__item">
-          {% include icon_list.html icon_name="check_circle" style="text-green" content=signin_page %}
+          {% include icon_list.html icon_name="check_circle" style="text-success" content=signin_page %}
         </li>
       </ul>
     </figcaption>
@@ -202,16 +202,16 @@ Don’t add too much text or imagery above the sign-in button that might push yo
 
 <ul class="usa-icon-list padding-top-4">
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_button_styling style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_styling style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_sign_in_label style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_sign_in_label style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_equal_size style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_equal_size style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content=do_list_style style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_list_style style="text-success" %}
   </li>
    <li class="usa-icon-list__item">
     {% include icon_list.html icon_name="cancel" content=dont_extra_text style="text-red" %}
@@ -245,7 +245,7 @@ Users need a clearly marked button to sign out after a user has signed in to you
       <figcaption class="usa-image-example__figcaption">
         <ul class="usa-icon-list usa-icon-list--size-xs">
           <li class="usa-icon-list__item">
-            {% include icon_list.html icon_name="check_circle" style="text-green" content=match_buttons %}
+            {% include icon_list.html icon_name="check_circle" style="text-success" content=match_buttons %}
           </li>
         </ul>
       </figcaption>
