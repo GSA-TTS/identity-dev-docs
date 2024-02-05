@@ -11,11 +11,11 @@ Login.gov is a FedRAMP moderate approved multifactor authentication and identity
 
 ## User flow
 
-<figure>
+<figure class="margin-0 text-center measure-3">
   <img src="{{ site.baseurl }}/assets/img/oidc-ial1-flow.png"
        alt="A diagram flow of IAL1 walkthrough experience"
-       class="display-block grid-col flex-auto flex-align-center margin-y-4">
-  <figcaption>Fig. 1: IAL1 flow</figcaption>
+       class="display-block grid-col flex-auto flex-align-center margin-top-4 margin-bottom-1">
+  <figcaption class="font-sans-2xs">Fig. 1: IAL1 flow</figcaption>
 </figure>
 
 * Once you have successfully integrated your application with the Login.gov environment, users start at your application and are redirected back to Login.gov via [OpenID Connect (OIDC)]({{ site.baseurl }}/oidc/) or [SAML]({{ site.baseurl }}/saml/) protocols.
