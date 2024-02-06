@@ -1,0 +1,10 @@
+{% comment %}
+include
+- style
+- icon_name
+{% endcomment %}
+<div class="{{include.style}}">
+  <svg role="img" class="usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+    <use xlink:href="{{site.baseurl}}/assets/img/sprite.svg#{{include.icon_name}}"></use>
+  </svg>
+</div>

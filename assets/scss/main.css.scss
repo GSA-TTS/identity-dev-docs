@@ -19,29 +19,6 @@ main.usa-layout-docs {
   word-wrap: break-word;
 }
 
-.usa-prose {
-  figure {
-    max-width: 64ex;
-    margin-left: 0;
-    margin-right: 0;
-    text-align: center;
-
-    img {
-      width: 100%;
-      margin-bottom: 0.5em;
-    }
-
-    figcaption {
-      font-size: 0.8em;
-    }
-  }
-
-// Upstream fix: https://github.com/uswds/uswds/pull/5187
-.usa-alert .usa-alert__body::before {
-    height: units(2);
-  }
-}
-
 .dev-doc-row {
   border-top: 1px solid #CEDCED;
   padding-bottom: 2rem;

@@ -18,7 +18,7 @@ sidenav:
     href: "user-experience/failure-proof/"
   - text: Knowledge articles
     href: "user-experience/knowledge-articles/"
-  - text: FAQ content 
+  - text: FAQ content
     href: "user-experience/faq-content/"
 
 ---
@@ -29,24 +29,42 @@ All applications are required to add a logo, which is uploaded in the Partner Da
 
 Your agency logo will appear to the right of the Login.gov logo in your integration. This helps to ensure users understand the partnership between Login.gov and your integration with our service.
 
-<div class="grid-row">
-  <div class="float-left agency-logo-width">
-    <img src="{{ site.baseurl }}/assets/img/do_logo.svg" alt="An example agency logo in black on a white background" class="display-block green-bottom-border">
-      <div class="text-green float-left">
-        <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-      </div>
-      <div class="margin-left-3">
-        <span class="text-uppercase text-bold text-green">Do</span>: Add a logo that is high contrast on a transparent background.
-      </div>
+{% capture do_content %}
+<span markdown="1">
+  <span class="image-example__do-dont">DO: </span> Add a logo that is high contrast on a transparent background.
+</span>
+{% endcapture %}
+
+{% capture dont_content %}
+<span markdown="1">
+  <span class="image-example__do-dont">DON'T: </span>Add a background color behind your logo.
+</span>
+{% endcapture %}
+
+<div class="grid-row grid-gap">
+  <div class="usa-image-example usa-image-example--correct">
+    <figure class="usa-image-example__figure">
+      <img class="usa-image-example__image" alt="An example agency logo in black on a white background" src="{{ site.baseurl }}/assets/img/do_logo.svg" />
+      <figcaption class="usa-image-example__figcaption">
+        <ul class="usa-icon-list usa-icon-list--size-xs">
+          <li class="usa-icon-list__item">
+            {% include icon_list.html icon_name="check_circle" style="text-success" content=do_content %}
+          </li>
+        </ul>
+      </figcaption>
+    </figure>
   </div>
-  <div class="float-left margin-left-4 agency-logo-width">
-    <img src="{{ site.baseurl }}/assets/img/dont_logo.svg" alt="An example agency logo in grey on a light grey background" class="display-block float-left red-bottom-border">
-    <div class="text-red float-left">
-      <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
-    </div>
-    <div class="margin-left-3">
-      <span class="text-uppercase text-bold text-red">Don't</span>: Add a background color behind your logo.
-    </div>
+  <div class="usa-image-example usa-image-example--incorrect">
+    <figure class="usa-image-example__figure">
+      <img class="usa-image-example__image" src="{{ site.baseurl }}/assets/img/dont_logo.svg" alt="An example agency logo in grey on a light grey background" />
+      <figcaption class="usa-image-example__figcaption">
+        <ul class="usa-icon-list usa-icon-list--size-xs">
+          <li class="usa-icon-list__item">
+            {% include icon_list.html icon_name="cancel" style="text-error" content=dont_content %}
+          </li>
+        </ul>
+      </figcaption>
+    </figure>
   </div>
 </div>
 
@@ -54,17 +72,11 @@ Your agency logo will appear to the right of the Login.gov logo in your integrat
 
 <ul class="usa-icon-list padding-top-2 padding-bottom-2">
   <li class="usa-icon-list__item">
-    {% include green_icon.html content="Upload a logo that is high contrast on a transparent background" %}       
+    {% include icon_list.html icon_name="check_circle" content="Upload a logo that is high contrast on a transparent background" style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include green_icon.html content="Only .svg files are accepted" %}
+    {% include icon_list.html icon_name="check_circle" content="Only .svg files are accepted" style="text-success" %}
   </li>
 </ul>
 
 [Next step: Determine your application’s Cancel URL]({{ site.baseurl }}/user-experience/cancel-url/)
-
-
-
-
-
-

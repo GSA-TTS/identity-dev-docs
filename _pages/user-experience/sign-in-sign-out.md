@@ -45,19 +45,19 @@ Don't use an icon instead of a text label. Buttons may include the Login.gov log
 
 <ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_label style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_label style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_state_styling style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_state_styling style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_font_styling style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_font_styling style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include dont_icon.html content=dont_external_link %}
+    {% include icon_list.html icon_name="cancel" content=dont_external_link style="text-error" %}
   </li>
    <li class="usa-icon-list__item">
-    {% include dont_icon.html content=dont_icon %}
+    {% include icon_list.html icon_name="cancel" content=dont_icon style="text-error" %}
   </li>
 </ul>
 
@@ -78,16 +78,16 @@ Do use the white button with an outline on light backgrounds that don’t provid
 
 <ul class="usa-icon-list padding-top-2">
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_height style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_height style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_center style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_center style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_contrast style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_contrast style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_white style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_white style="text-success" %}
   </li>
 </ul>
 
@@ -114,30 +114,47 @@ Do use the white button with an outline on light backgrounds that don’t provid
 
 When using Login.gov to authenticate your users, we recommend implementing one official button using “Sign in” as the call-to-action. Users are familiar with the sign-in button placed on the top right of website headers. Placing your sign-in button in this location takes advantage of this common pattern and can be carried throughout the entire application. We also recommend placing the global sign-in button at the top on mobile devices, either within or next to the mobile menu.
 
+{% capture top_right %}
+<span markdown="1">
+  <span class="image-example__do-dont">DO</span>: Place a sign-in button at the top right of website headers.
+</span>
+{% endcapture %}
+
+{% capture global_nav %}
+<span markdown="1">
+  <span class="image-example__do-dont">DO</span>: Use your own site’s global navigation styling if “Sign in” appears within a list of menu options in the header.
+</span>
+{% endcapture %}
+
+<div class="grid-row margin-bottom-2">
+  <div class="usa-image-example--correct">
+    <figure class="usa-image-example__figure">
+      <img class="usa-image-example__image" src="{{ site.baseurl }}/assets/img/sign-in-button.svg"
+      alt='An example agency website header with the button "Sign in with Login.gov" at top right'/>
+      <figcaption class="usa-image-example__figcaption">
+        <ul class="usa-icon-list usa-icon-list--size-xs">
+          <li class="usa-icon-list__item">
+            {% include icon_list.html icon_name="check_circle" style="text-success" content=top_right %}
+          </li>
+        </ul>
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
 <div class="grid-row">
- <div class="maxw-mobile-lg">
-  <img src="{{ site.baseurl }}/assets/img/sign-in-button.svg"
-      alt='An example agency website header with the button "Sign in with Login.gov" at top right'
-      class="display-block grid-col-auto green-bottom-border" />
-    <div class="text-green float-left">
-      <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-      </div>
-      <div class="margin-left-3 font-body-xs">
-        <span class="text-uppercase text-bold text-green ">Do</span>: Place a sign-in button at the top right of website headers.
-    </div>
-</div>
-</div>
-<div class="grid-row margin-top-2 padding-bottom-2">
-  <div class="maxw-mobile-lg">
-    <img src="{{ site.baseurl }}/assets/img/sign-in-menu.svg"
-        alt='An example agency website header with two buttons labeled "Menu options" and "Sign in" at top right"'
-        class="display-block grid-col-auto green-bottom-border" />
-    <div class="text-green float-left">
-      <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-      </div>
-      <div class="margin-left-3 maxw-mobile-lg font-body-xs">
-      <span class="text-uppercase text-bold text-green">Do</span>: Use your own site’s global navigation styling if “Sign in” appears within a list of menu options in the header.
-    </div>
+  <div class="usa-image-example usa-image-example--correct">
+    <figure class="usa-image-example__figure">
+      <img class="usa-image-example__image usa-image-example__image--bordered" src="{{ site.baseurl }}/assets/img/sign-in-menu.svg"
+        alt='An example agency website header with two buttons labeled "Menu options" and "Sign in" at top right"'/>
+      <figcaption class="usa-image-example__figcaption">
+        <ul class="usa-icon-list usa-icon-list--size-xs">
+          <li class="usa-icon-list__item">
+            {% include icon_list.html icon_name="check_circle" style="text-success" content=global_nav %}
+          </li>
+        </ul>
+      </figcaption>
+    </figure>
   </div>
 </div>
 
@@ -147,16 +164,24 @@ After a user signs in, a sign-out button labeled “Sign out” replaces the sig
 
 Some agency partners decide to implement a sign-in page on their application prior to redirecting their users to Login.gov, especially to present multiple sign-in options.
 
-<div class="maxw-mobile-lg">
-  <img src="{{ site.baseurl }}/assets/img/global-sign-in.png"
-       alt='An example agency website page with the heading "Sign in" and three full width buttons labeled "Sign in with Login.gov" and "Sign in with [alternate provider]"'
-       class="display-block grid-col-auto green-bottom-border" />
-  <div class="text-green float-left">
-    <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-    </div>
-    <div class="margin-left-3 font-body-xs">
-    <span class="text-uppercase text-bold text-green">Do</span>: Design sign-in options that are equal in size. Stacked, solid-colored buttons work best because the stacking supports responsive layouts and mobile views.
-  </div>
+{% capture signin_page %}
+<span markdown="1">
+  <span class="image-example__do-dont">DO</span>: Design sign-in options that are equal in size. Stacked, solid-colored buttons work best because the stacking supports responsive layouts and mobile views.
+</span>
+{% endcapture %}
+
+<div class="usa-image-example--correct">
+  <figure class="usa-image-example__figure">
+    <img class="usa-image-example__image" src="{{ site.baseurl }}/assets/img/global-sign-in.png"
+      alt='An example agency website page with the heading "Sign in" and three full width buttons labeled "Sign in with Login.gov" and "Sign in with [alternate provider]"'/>
+    <figcaption class="usa-image-example__figcaption">
+      <ul class="usa-icon-list usa-icon-list--size-xs">
+        <li class="usa-icon-list__item">
+          {% include icon_list.html icon_name="check_circle" style="text-success" content=signin_page %}
+        </li>
+      </ul>
+    </figcaption>
+  </figure>
 </div>
 
 {% capture do_button_styling %}
@@ -177,19 +202,19 @@ Don’t add too much text or imagery above the sign-in button that might push yo
 
 <ul class="usa-icon-list padding-top-4">
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_button_styling style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_button_styling style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_sign_in_label style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_sign_in_label style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_equal_size style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_equal_size style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include check_icon.html content=do_list_style style="text-green" %}
+    {% include icon_list.html icon_name="check_circle" content=do_list_style style="text-success" %}
   </li>
    <li class="usa-icon-list__item">
-    {% include check_icon.html content=dont_extra_text style="text-red" %}
+    {% include icon_list.html icon_name="cancel" content=dont_extra_text style="text-error" %}
   </li>
 </ul>
 
@@ -197,23 +222,34 @@ Don’t add too much text or imagery above the sign-in button that might push yo
 
 Users need a clearly marked button to sign out after a user has signed in to your application. This button replaces the Sign-in button on the interface, preferably in the same location. The Sign-out button style should match the Sign-in button.
 
-<div class="grid-row margin-top-2 padding-bottom-2">
-  <div class="maxw-mobile-lg">
-    <img src="{{ site.baseurl }}/assets/img/sign-out-button.png"
-        alt='An example agency website header with the button "Sign out" at top right'
-        class="display-block grid-col-auto green-bottom-border" />
+{% capture match_buttons %}
+<span markdown="1">
+  <span class="image-example__do-dont">DO</span>: The Sign-out button style should match the Sign-in button.
+</span>
+{% endcapture %}
+
+<div class="grid-row">
+  <div class="usa-image-example usa-image-example--correct">
+    <figure class="usa-image-example__figure">
+      <img class="usa-image-example__image usa-image-example__image--bordered" src="{{ site.baseurl }}/assets/img/sign-out-button.png"
+        alt='An example agency website header with the button "Sign out" at top right' />
+    </figure>
   </div>
 </div>
-
-<div class="maxw-mobile-lg padding-bottom-2">
-  <img src="{{ site.baseurl }}/assets/img/sign-out-menu.png"
+<div class="grid-row">
+  <div class="usa-image-example usa-image-example--correct">
+    <figure class="usa-image-example__figure">
+      <img class="usa-image-example__image usa-image-example__image--bordered" src="{{ site.baseurl }}/assets/img/sign-out-menu.png"
        alt='An example agency website header with two buttons labeled "Menu options" and "Sign out" at top right'
        class="display-block grid-col-auto green-bottom-border" />
-  <div class="text-green float-left">
-    <svg role="img" class="height-3 usa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-    </div>
-    <div class="margin-left-3 font-body-xs">
-    <span class="text-uppercase text-bold text-green">Do</span>: The Sign-out button style should match the Sign-in button.
+      <figcaption class="usa-image-example__figcaption">
+        <ul class="usa-icon-list usa-icon-list--size-xs">
+          <li class="usa-icon-list__item">
+            {% include icon_list.html icon_name="check_circle" style="text-success" content=match_buttons %}
+          </li>
+        </ul>
+      </figcaption>
+    </figure>
   </div>
 </div>
 

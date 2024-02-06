@@ -1,0 +1,15 @@
+{% comment %}
+include
+- style
+- icon_name
+- content
+{% endcomment %}
+
+{% capture full_style %}
+{{include.style}} usa-icon-list__icon
+{% endcapture %}
+
+{% include icon.html style=full_style icon_name=include.icon_name %}
+<div class="usa-icon-list__content text-left">
+{{ include.content | markdownify }}
+</div>
