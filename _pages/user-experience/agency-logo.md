@@ -56,7 +56,7 @@ Your agency logo will appear to the right of the Login.gov logo in your integrat
   </div>
   <div class="usa-image-example usa-image-example--incorrect">
     <figure class="usa-image-example__figure">
-      <img class="usa-image-example__image src="{{ site.baseurl }}/assets/img/dont_logo.svg" alt="An example agency logo in grey on a light grey background" />
+      <img class="usa-image-example__image" src="{{ site.baseurl }}/assets/img/dont_logo.svg" alt="An example agency logo in grey on a light grey background" />
       <figcaption class="usa-image-example__figcaption">
         <ul class="usa-icon-list usa-icon-list--size-xs">
           <li class="usa-icon-list__item">
