@@ -16,8 +16,8 @@ sidenav:
         href: "/saml/logout/#logout-request"
       - text: Logout response
         href: "/saml/logout/#logout-response"
-saml_year: 2023
-saml_last_year: 2022
+saml_year: 2024
+saml_last_year: 2023
 ---
 <div class="grid-row grid-gap">
     <div class="desktop:grid-col-7 mobile:grid-col-full" markdown="1">

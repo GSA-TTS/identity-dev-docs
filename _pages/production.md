@@ -22,7 +22,7 @@ sidenav:
     href: "#changes-to-production-applications"
   - text: Certificate Rotation Process
     href: "#certificate-rotation-process"
-saml_year: 2023
+saml_year: 2024
 ---
 {% capture deployment_warning %}
 Please note: The deployment process can take up to two weeks to complete. You may wish to have a grace period between when we deploy and when you add the Login.gov button to your site.
@@ -136,9 +136,9 @@ Once you have:
 
 You are ready to submit a launch request through the [Partner Support Help Desk](https://zendesk.login.gov). 
 
-All changes to integrations between Login.gov and your application must be reviewed and deployed. 
+All changes to integrations between Login.gov and your application must be reviewed and deployed.
 
-**We ask for at least two weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require three weeks notice in order to allow the domain for outbound communication.** 
+**We ask for at least two weeks notice for new integrations and changes to existing integrations. Push Notification URLs may require three weeks notice in order to allow the domain for outbound communication.**
 
 We recommend a grace period between deployment and implementation on your site. Regular deployments occur every Tuesday and Thursday by the close of the business day. If the regular deployment is scheduled for a holiday, then it will be completed on an alternate day.
 
@@ -154,7 +154,7 @@ If you need to make any changes to your deployed integration, please update your
 
 ### Certificate Rotation Process
 
-If you are rotating your application’s public/private keypair, or want to add an additional public certificate, please follow the instructions below to add the new certificate to your application’s Login.gov configuration. 
+If you are rotating your application’s public/private keypair, or want to add an additional public certificate, please follow the instructions below to add the new certificate to your application’s Login.gov configuration.
 
 **Please note that from the time you notify Login.gov of your intent to rotate certificates, it can take up to 2 weeks for the new certificate to be available in production.**
 
