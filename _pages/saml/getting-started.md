@@ -23,8 +23,6 @@ sidenav:
     href: "/saml/authentication/"
   - text: Logout
     href: "/saml/logout/"
-saml_year: 2024
-saml_last_year: 2023
 ---
 {% capture nameid %}
 The NameID is the unique identifier used to identify a user across multiple sessions. The format is the standard v4 random UUID (Universally Unique Identifier) in compliance with [RFC 4122](https://tools.ietf.org/html/rfc4122){:class="usa-link--external"}. For example:
@@ -33,12 +31,12 @@ The NameID is the unique identifier used to identify a user across multiple sess
 
 {% capture login %}
 This is the endpoint where authentication requests are sent to Login.gov (aka Single Sign-on Service). For example:
-`<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.int.identitysandbox.gov/api/saml/auth{{ page.saml_year }}"/>`
+`<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.int.identitysandbox.gov/api/saml/auth{{ site.data.saml.year.current }}"/>`
 {% endcapture %}
 
 {% capture logout %}
   The single logout service URL is used to contact the Single logout profile (aka Single Logout Service). For example:
-  `<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.int.identitysandbox.gov/api/saml/logout{{ page.saml_year }}" />`
+  `<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.int.identitysandbox.gov/api/saml/logout{{ site.data.saml.year.current }}" />`
 {% endcapture %}
 
 {% capture saml_warning %}
@@ -93,16 +91,16 @@ Here are values needed to configure your service provider (SP) to work with Logi
 
 ### Metadata
 
-Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf){:class="usa-link--external"}, Login.gov's metadata for our sandbox environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata{{ page.saml_year }}](https://idp.int.identitysandbox.gov/api/saml/metadata{{ page.saml_year }}).
+Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf){:class="usa-link--external"}, Login.gov's metadata for our sandbox environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}](https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}).
 
 ### Signing Certificates
 Below you can find the X509 certificates used by the Login.gov IdP to sign SAML requests. **Do not enter these certificates in the Dashboard when configuring an application for testing** - you can follow the instructions in our [testing article]({% link _pages/testing.md %}#creating-a-public-certificate) to generate a client certificate.
 
 <div class="usa-accordion--bordered">
-  <button class="usa-accordion__button" aria-controls="sandbox-cert-{{ page.saml_year }}">
-  View {{ page.saml_year }} <strong>sandbox</strong> certificate
+  <button class="usa-accordion__button" aria-controls="sandbox-cert-{{ site.data.saml.year.current }}">
+  View {{ site.data.saml.year.current }} <strong>sandbox</strong> certificate
   </button>
-  <div id="sandbox-cert-{{ page.saml_year }}" class="usa-accordion__content" markdown="1">
+  <div id="sandbox-cert-{{ site.data.saml.year.current }}" class="usa-accordion__content" markdown="1">
 ```
 -----BEGIN CERTIFICATE-----
 MIID7TCCAtWgAwIBAgIUYePi2i1UjRg3fIK0FG15rZaSOvAwDQYJKoZIhvcNAQEL
@@ -133,10 +131,10 @@ AA==
 </div>
 
 <div class="usa-accordion--bordered margin-top-2">
-  <button class="usa-accordion__button" aria-controls="production-cert-{{ page.saml_year }}">
-  View {{ page.saml_year }} <strong>production</strong> certificate
+  <button class="usa-accordion__button" aria-controls="production-cert-{{ site.data.saml.year.current }}">
+  View {{ site.data.saml.year.current }} <strong>production</strong> certificate
   </button>
-  <div id="production-cert-{{ page.saml_year }}" class="usa-accordion__content" markdown="1">
+  <div id="production-cert-{{ site.data.saml.year.current }}" class="usa-accordion__content" markdown="1">
 ```
 -----BEGIN CERTIFICATE-----
 MIIDzzCCAregAwIBAgIUBedAGri4qfIqwYynVBmUJ598viAwDQYJKoZIhvcNAQEL
@@ -169,12 +167,12 @@ McTTfASiTYMiQCZX/hZNyfUF1g==
 
 The Login.gov SAML certificate is valid for just over one year. Every spring, Login.gov adds new SAML endpoints with the current year that use a new signing certificate.
 
-  - `/api/saml/auth{{ page.saml_last_year }}` becomes `/api/saml/auth{{ page.saml_year }}`
-  - `/api/saml/logout{{ page.saml_last_year }}` becomes `/api/saml/logout{{ page.saml_year }}`
+  - `/api/saml/auth{{ site.data.saml.year.previous }}` becomes `/api/saml/auth{{ site.data.saml.year.current }}`
+  - `/api/saml/logout{{ site.data.saml.year.previous }}` becomes `/api/saml/logout{{ site.data.saml.year.current }}`
 
 The certificates are issued to create an overlap period of about a month, during which all partners using SAML should migrate at their convenience to the new endpoint URLs for the current year.
 
-The {{ page.saml_last_year }} certificates for idp.int.identitysandbox.gov and secure.login.gov each expire on April 1, {{ page.saml_year }}. So the transition from {{ page.saml_last_year }} to {{ page.saml_year }} endpoints should take place in February or March {{ page.saml_year }}.
+The {{ site.data.saml.year.previous }} certificates for idp.int.identitysandbox.gov and secure.login.gov each expire on April 1, {{ site.data.saml.year.current }}. So the transition from {{ site.data.saml.year.previous }} to {{ site.data.saml.year.current }} endpoints should take place in February or March {{ site.data.saml.year.current }}.
 
 #### Example application
 

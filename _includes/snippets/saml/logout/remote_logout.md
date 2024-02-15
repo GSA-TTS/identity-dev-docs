@@ -1,7 +1,3 @@
-{% comment %}
-include
-- saml_year
-{% endcomment %}
 {% capture remote_logout %}
 Login.gov also offers a remote / back channel logout endpoint if your application needs to log users out without redirecting them back to Login.gov. This is still **not** true Single Logout (SLO), it will only terminate a given user's session with Login.gov. You must still manage the session for your application separately.
 
@@ -10,7 +6,7 @@ For remote logout, you must include a `SessionIndex` element in the SAML request
 To log a user out using a back channel request, send a **POST** request from your application to the remote logout URL with a `SAMLRequest` parameter:
 
 ```bash
-https://idp.int.identitysandbox.gov/api/saml/remotelogout{{ saml_year }}?SAMLRequest=${SAML_REQUEST}
+https://idp.int.identitysandbox.gov/api/saml/remotelogout{{ site.data.saml.year.current }}?SAMLRequest=${SAML_REQUEST}
 ```
 
 The `SAMLRequest` parameter is a url-encoded, base64-encoded, deflate-compressed XML payload of a `<samlp:LogoutRequest>`.
