@@ -21,7 +21,7 @@ sidenav:
 {% capture content %}
 ## Certificates
 
-Login.gov's public key, used to verify signed JWTs (such as the `id_token`), is available in [JWK](https://tools.ietf.org/html/rfc7517){:class="usa-link--external"} format at the `/api/openid_connect/certs` endpoint. 
+Login.gov's public key, used to verify signed JWTs (such as the `id_token`), is available in [JWK](https://tools.ietf.org/html/rfc7517){:class="usa-link--external"} format at the `/api/openid_connect/certs` endpoint.
 
 This public key is rotated periodically (on at least an annual basis). It is important to assume the `/api/openid_connect/certs` endpoint could contain multiple JWKs when rotating application signing keys. Be sure to use the JWK endpoint dynamically through [auto-discovery](/oidc/getting-started/#auto-discovery) rather than hardcoding the public key. This ensures that your application will not require manual intervention when the Login.gov public key is rotated.
 {% endcapture %}

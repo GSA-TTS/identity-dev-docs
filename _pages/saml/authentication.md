@@ -17,9 +17,6 @@ sidenav:
           href: "/saml/authentication/#authentication-response"
   - text: Logout
     href: "/saml/logout/"
-saml_year: 2023
-saml_last_year: 2022
-
 ---
 {% capture aal_values %}
  {% include snippets/auth_content/aal_values.md %}

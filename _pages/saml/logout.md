@@ -16,8 +16,6 @@ sidenav:
         href: "/saml/logout/#logout-request"
       - text: Logout response
         href: "/saml/logout/#logout-response"
-saml_year: 2023
-saml_last_year: 2022
 ---
 <div class="grid-row grid-gap">
     <div class="desktop:grid-col-7 mobile:grid-col-full" markdown="1">
@@ -64,7 +62,7 @@ Note: the SAMLResponse does not contain a signature since it's simply acknowledg
     Remote logout (deprecated)
     </button>
     <div id="attributes" class="usa-accordion__content">
-        {% include snippets/saml/logout/remote_logout.md saml_year=page.saml_year %}
+        {% include snippets/saml/logout/remote_logout.md %}
     </div>
   </div>
 </div>
