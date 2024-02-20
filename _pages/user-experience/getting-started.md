@@ -10,6 +10,8 @@ sidenav:
     href: "user-experience/getting-started/"
   - text: Sign-in and sign-out buttons
     href: "user-experience/sign-in-sign-out/"
+  - text: Help text guidance
+    href: "user-experience/help-text/"
   - text: Your agency logo
     href: "user-experience/agency-logo/"
   - text: Cancel URL
