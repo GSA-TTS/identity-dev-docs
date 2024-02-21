@@ -252,7 +252,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">nonce <span class="text-normal">(number)</span></h4>
+          <h4 class="parameters">nonce <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">       
           The nonce value provided by the client in the <a class="usa-link" href="{{ '/oidc/authorization/' | prepend: site.baseurl }}">authorization request</a>. A unique value, at least 22 characters in length, used to verify the integrity of the <code class="language-plaintext highlighter-rouge">id_token</code> and mitigate <a href="https://en.wikipedia.org/wiki/Replay_attack" class="usa-link usa-link--external">replay attacks</a>. This value should include per-session state and be unguessable by attackers. Read more about <a href="https://openid.net/specs/openid-connect-core-1_0.html#NonceNotes" class="usa-link usa-link--external">nonce implementation</a> in the spec.
