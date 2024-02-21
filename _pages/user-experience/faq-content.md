@@ -27,7 +27,7 @@ sidenav:
 When you first integrate with Login.gov, we recommend adding frequently asked questions (FAQ) content to ensure that users are able to understand that your application uses Login.gov as a sign-in service. The next few sections outline plain language for agencies to leverage when creating that content.
 
 ### What is Login.gov?
-Login.gov is a sign in service that offers secure and private online access to government programs, such as federal benefits, services and applications. With a Login.gov account, you can sign in to multiple government websites with the same email address and password. Learn more about Login.gov.
+Login.gov is a sign in service that offers secure and private online access to government programs, such as federal benefits, services and applications. With a Login.gov account, you can sign in to multiple government websites with the same email address and password. [Learn more about Login.gov](https://login.gov/).
 
 ### Why is [YOUR APPLICATION] using Login.gov?
 [APPLICATION] chose Login.gov as their sign-in provider as a security measure. This service requires you to use an email address, password and two-factor authentication, sometimes referred to as multi-factor authentication, to sign-in. The use of two-factor authentication is an added layer of security to protect your private and sensitive information from hackers and password compromises.
