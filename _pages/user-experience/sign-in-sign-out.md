@@ -7,6 +7,8 @@ sidenav:
     href: "user-experience/getting-started/"
   - text: Sign-in and sign-out buttons
     href: "user-experience/sign-in-sign-out/"
+  - text: Help text guidance
+    href: "user-experience/help-text/"
   - text: Your agency logo
     href: "user-experience/agency-logo/"
   - text: Cancel URL
@@ -253,4 +255,4 @@ Users need a clearly marked button to sign out after a user has signed in to you
   </div>
 </div>
 
-[Next step: Add your agency logo]({{ site.baseurl }}/user-experience/agency-logo/)
+[Next step: Help text guidance]({{ site.baseurl }}/user-experience/help-text/)
