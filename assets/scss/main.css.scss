@@ -146,12 +146,6 @@ button.code-button:hover {
   width: 230px;
 }
 
-.usa-alert {
-  .usa-alert__body::before {
-    height: 1rem;
-  }
-}
-
 @media (min-width: 1024px) {
   .code-snippet-column {
     background-color: transparent;
