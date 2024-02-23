@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "prebuild:css": "mkdir -p _site/assets/css",
-    "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css --load-path=node_modules/@18f/identity-design-system/packages",
+    "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css",
     "watch:css": "npm run build:css -- --watch",
     "pages": "npm run build:css",
     "lint": "eslint ."
@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/18F/identity-dev-docs#readme",
   "dependencies": {
-    "@18f/identity-build-sass": "^1.1.0",
-    "@18f/identity-design-system": "^7.1.0"
+    "@18f/identity-build-sass": "^3.0.0",
+    "@18f/identity-design-system": "^8.1.2"
   },
   "devDependencies": {
     "@18f/eslint-plugin-identity": "^2.0.0",
