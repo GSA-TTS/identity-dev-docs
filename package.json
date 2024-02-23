@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "prebuild:css": "mkdir -p _site/assets/css",
-    "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css --load-path=node_modules/@18f/identity-design-system/packages",
+    "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css",
     "watch:css": "npm run build:css -- --watch",
     "pages": "npm run build:css",
     "lint": "eslint ."
