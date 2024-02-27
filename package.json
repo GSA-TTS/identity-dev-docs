@@ -10,13 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/18F/identity-dev-docs.git"
+    "url": "git+https://github.com/GSA-TTS/identity-dev-docs.git"
   },
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/18F/identity-dev-docs/issues"
+    "url": "https://github.com/GSA-TTS/identity-dev-docs/issues"
   },
-  "homepage": "https://github.com/18F/identity-dev-docs#readme",
+  "homepage": "https://github.com/GSA-TTS/identity-dev-docs#readme",
   "dependencies": {
     "@18f/identity-build-sass": "^3.0.0",
     "@18f/identity-design-system": "^8.1.2"

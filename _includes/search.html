@@ -1,4 +1,4 @@
-<!-- borrowed heavily from https://github.com/18F/identity-site/blob/main/_includes/search.html -->
+<!-- borrowed heavily from https://github.com/GSA-TTS/identity-site/blob/main/_includes/search.html -->
 <form
   accept-charset="UTF-8"
   action="https://search.usa.gov/search"
@@ -8,9 +8,21 @@
   role="search"
 >
   <input name="utf8" type="hidden" value="&#x2713;" />
-  <input type="hidden" name="affiliate" id="affiliate" value="developers-login-gov" autocomplete="off" />
+  <input
+    type="hidden"
+    name="affiliate"
+    id="affiliate"
+    value="developers-login-gov"
+    autocomplete="off"
+  />
   <label class="usa-sr-only" for="search-field-{{ include.id }}">Search</label>
-  <input type="search" name="query" id="search-field-{{ include.id }}" autocomplete="off" class="usa-input" />
+  <input
+    type="search"
+    name="query"
+    id="search-field-{{ include.id }}"
+    autocomplete="off"
+    class="usa-input"
+  />
   <button class="usa-button" type="submit" name="commit" value="Search" data-disable-with="Search">
     <span class="usa-search__submit-text">Search</span>
   </button>
