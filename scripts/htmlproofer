@@ -5,7 +5,7 @@ require 'html-proofer'
 require 'optparse'
 require 'jekyll'
 
-proofer_options = { ignore_urls: [%r{\Ahttps://github.com/18F/identity-dev-docs/edit}] }
+proofer_options = { ignore_urls: [%r{\Ahttps://github.com/GSA-TTS/identity-dev-docs/edit}] }
 OptionParser.new do |opt|
   opt.on('--internal') { proofer_options[:disable_external] = true }
   opt.on('--external') { proofer_options[:external_only] = true }
