@@ -43,6 +43,16 @@ oidc:
         - Check the `acr_values` parameter in your authentication request.
         - Ensure that you are passing in the appropriate IAL Service Level value as well as any Authentication Assurance (AAL) values you might want for your application.
         More information about the `acr_values` parameter can be found here: [https://developers.login.gov/oidc/authorization/#acr_values](/oidc/authorization/#acr_values){:target="_blank"}
+    - title: No acceptable vots found
+      id: oidc-no-vot
+      accordion-id: no_vot
+      content: |
+        ##### Why it's happening
+        The vectors of trust found in the VTR parameter are not valid
+        ##### What to do:
+        - Check the `vot` parameter in your authentication request.
+        - If you are requesting proofing vectors reach out to your account manager to make sure your application is authorized for IdV.
+        More information about the vectors of trust can be found here:
     - title: No valid scope values found
       id: oidc-no-scope
       accordion-id: no_scope

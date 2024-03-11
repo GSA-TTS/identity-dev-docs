@@ -113,8 +113,8 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-9 mobile:grid-col-full">
     <h2 class="margin-top-neg-1">Authorization</h2>
-      <p>The authorization endpoint handles authentication and authorization of a user. 
-      To present the Login.gov authorization page to a user, direct them to the 
+      <p>The authorization endpoint handles authentication and authorization of a user.
+      To present the Login.gov authorization page to a user, direct them to the
       <code class="language-plaintext highlighter-rouge">/openid_connect/authorize</code>. View an example for <strong>private_key_jwt</strong> or <strong>PKCE</strong> in the side panel.</p>
   <h3 class="margin-top-4" id="request-parameters">Request Parameters</h3>
   <ul class="doc-sub-nav">
@@ -130,6 +130,10 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <p>
         Multiple values can be joined with a space (before being URI-escaped in the final URL).
       </p>
+      <p>
+        If the <code class="language-plaintext highlighter-rouge">vtr</code> parameter is passed then the value of that
+        parameter will take precedence over <code class="language-plaintext highlighter-rouge">acr_values</code>.
+      </p>
     </div>
   </div>
   <div class="grid-row dev-doc-row">
@@ -139,9 +143,35 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         {% include accordion.html content=loa_values accordion_id="loa_accordion" title="Level of Assurance (LOA) Values (Deprecated)" id="loa_values" %}
       </div>
       <p id="fn:1">
-        1. Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization. 
+        1. Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization.
         <a href="#fnref:1">↩</a>1 <a href="#fnref:1:2">↩</a>2 <a href="#fnref:1:3">↩</a>3
       </p>
+    </div>
+    <div class="grid-row dev-doc-row">
+      <div class="grid-col-5">
+        <h4 id="vtr" class="parameters">vtr</h4>
+      </div>
+      <div class="grid-col-7">
+          A JSON encoded array of Vectors of Trust used to specify the authentication and proofing features that are used to
+          authenticate and proof the user.  These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="{{ '/attributes/' | prepend: site.baseurl }}">user attributes</a> will be available in the <a class="usa-link" href="{{ '/oidc/user-info/#user-info-response' | prepend: site.baseurl }}">user info response</a>.
+        <p>
+          If the <code class="language-plaintext highlighter-rouge">vtr</code> parameter is passed then the
+          <code class="language-plaintext highlighter-rouge">vtm</code> parameter is required.
+        </p>
+      </div>
+    </div>
+    <div class="grid-row dev-doc-row">
+      <div class="grid-col-5">
+        <h4 id="vtr" class="parameters">vtm</h4>
+      </div>
+      <div class="grid-col-7">
+          A URL linking to the Trustmark for the <code class="language-plaintext highlighter-rouge">vtr</code> parameter.
+          This should be set to <a class="usa-link" href="{{ '/vot-trust-framework/' | prepend: site.baseurl }}">
+          https://developer.login.gov/vot-trust-framework</a>.
+        <p>
+          This parameter should only be sent if a <code class="language-plaintext highlighter-rouge">vtr</code> parameter is included as well.
+        </p>
+      </div>
     </div>
     <div class="grid-row dev-doc-row">
       <div class="grid-col-5">
@@ -162,7 +192,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       </div>
       <div class="grid-row">
         <div class="usa-accordion padding-top-2">
-            {% include accordion.html content=code_challenge accordion_id="code_challenge_accordion" title="Code Challenge Example" id="code_challenge" %}  
+            {% include accordion.html content=code_challenge accordion_id="code_challenge_accordion" title="Code Challenge Example" id="code_challenge" %}
         </div>
       </div>
     </div>
@@ -231,12 +261,12 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
           <h4 class="parameters clearfix">nonce</h4>
         </div>
         <div class="grid-col-7">
-          A unique value, at least 22 characters in length, used to verify the integrity 
-          of the <code class="language-plaintext highlighter-rouge">id_token</code> and mitigate 
-          <a class="usa-link usa-link usa-link--external" href="https://en.wikipedia.org/wiki/Replay_attack">replay attacks</a>. 
-          This value should include per-session state and be unguessable by attackers. This value will be present in the 
-          <code class="language-plaintext highlighter-rouge">id_token</code> of the <a class="usa-link" href="{{ '/oidc/token/#token-response' | prepend: site.baseurl }}">token endpoint response</a>, 
-          where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request. 
+          A unique value, at least 22 characters in length, used to verify the integrity
+          of the <code class="language-plaintext highlighter-rouge">id_token</code> and mitigate
+          <a class="usa-link usa-link usa-link--external" href="https://en.wikipedia.org/wiki/Replay_attack">replay attacks</a>.
+          This value should include per-session state and be unguessable by attackers. This value will be present in the
+          <code class="language-plaintext highlighter-rouge">id_token</code> of the <a class="usa-link" href="{{ '/oidc/token/#token-response' | prepend: site.baseurl }}">token endpoint response</a>,
+          where clients will verify that the nonce claim value is equal to the value of the nonce parameter sent in the authentication request.
           Read more about <a class="usa-link usa-link--external" href="https://openid.net/specs/openid-connect-core-1_0.html#NonceNotes">nonce implementation</a> in the spec.
         </div>
       </div>
