@@ -39,9 +39,6 @@ The user info response will be a JSON object containing [user attributes]({{ sit
             </div>
             <div class="grid-col-7">
                 The issuer of the response, which will be the URL of the Login.gov IdP, for example: <code class="language-plaintext highlighter-rouge">https://idp.int.identitysandbox.gov</code>
-                <ul>
-                    <li>Requires <code class="language-plaintext highlighter-rouge">profile</code> or <code class="language-plaintext highlighter-rouge">profile:name</code> scopes</li>
-                </ul> 
             </div>
         </div>
         <div class="dev-doc-row grid-row">
