@@ -13,7 +13,7 @@ sidenav:
 
 Vectors of trust are a combination of individual components. Each component describes a feature or requirement for the user during the transaction. For example, a component may specify that identity-proofing or that a particular MFA method must be used.
 
-Vector components are made up of a upper-case letter followed by a lower-case letter or a number. For example, `P1` or `C2`. A vector of trust is made by combining these components and arranging them into a period-separated list. For example, `C1.C2.P1.Pb`.
+Vector components are made up of a upper-case letter followed by a lower-case letter or a number. For example, `P1` or `Ca`. A vector of trust is made by combining these components and arranging them into a period-separated list. For example, `C1.C2.P1.Pb`.
 
 In OIDC vectors of trust are specified using the `vtr` parameter in the authorization request. The `vtr` parameter is a JSON array of vectors. If multiple vectors are included Login.gov will use the first vector specified to determine the requirements for authenticating and identity proofing the user.
 
