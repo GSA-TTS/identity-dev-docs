@@ -290,10 +290,10 @@ n/a
 <td markdown="1">
 `x509_issuer` (string)
 
-Requires the `x509:issuer` scope.
+Requires the `x509:issuer` or `x509` scope.
 </td>
 <td markdown="1">
-`x509_issuer`
+`x509_issuer` (string)
 </td>
     </tr>
     <tr>
@@ -309,10 +309,10 @@ Requires the `x509:issuer` scope.
 <td markdown="1">
 `x509_subject` (string)
 
-Requires the `x509:subject` scope.
+Requires the `x509:subject` or `x509` scope.
 </td>
 <td markdown="1">
-`x509_subject`
+`x509_subject` (string)
 </td>
     </tr>
     <tr>
@@ -326,12 +326,12 @@ Requires the `x509:subject` scope.
 {{ checkmark }}
 </td>
 <td markdown="1">
-`x509_presented` (string)
+`x509_presented` (boolean)
 
-Requires the `x509:presented` scope.
+Requires the `x509:presented` or `x509` scope.
 </td>
 <td markdown="1">
-`x509_presented`
+`x509_presented` (string)
 </td>
     </tr>
   </tbody>
