@@ -33,7 +33,7 @@ describe('accessibility', () => {
     port = await getPort();
     browser = await puppeteer.launch();
     server = createServer((request, response) =>
-      handler(request, response, { public: publicPath }),
+      handler(request, response, { public: '_site' }),
     ).listen(port);
   });
 
