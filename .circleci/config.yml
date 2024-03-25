@@ -1,6 +1,7 @@
 # Ruby CircleCI 2.0 configuration file
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 version: 2
+
 commands:
   node-install:
     steps:
@@ -15,6 +16,7 @@ commands:
       - run:
           name: Print Node.js version
           command: node -v
+
 jobs:
   build:
     docker:
