@@ -16,9 +16,6 @@ const paths = glob
   .map((path) => `/${path}/`);
 
 describe('accessibility', () => {
-  /** @type {string} */
-  let publicPath;
-
   /** @type {Server} */
   let server;
 
@@ -29,7 +26,6 @@ describe('accessibility', () => {
   let browser;
 
   before(async () => {
-    publicPath = sitepath.relative(process.cwd(), sitepath.resolve('../../_site'));
     port = await getPort();
     browser = await puppeteer.launch();
     server = createServer((request, response) =>
