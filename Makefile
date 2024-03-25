@@ -12,8 +12,7 @@ clean:
 
 test: build
 	bundle exec rspec spec
-	# must fix existing accessibility errors before uncommenting e2e tests
-	# node --test spec/e2e/
+	node --test spec/e2e/
 
 htmlproofer:
 	bundle exec scripts/htmlproofer
