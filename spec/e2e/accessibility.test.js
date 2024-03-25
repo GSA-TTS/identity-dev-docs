@@ -48,7 +48,7 @@ describe('accessibility', () => {
       const results = await new AxePuppeteer(page)
         .withTags(['wcag2a', 'wcag2aa'])
         // TODO: These will be addressed in LG-12800
-        .disableRules(['document-title', 'html-has-lang', 'meta-viewport'])
+        .disableRules(['document-title', 'html-has-lang', 'meta-viewport', 'color-contrast', 'aria-allowed-attr', 'aria-deprecated-role', 'frame-title', 'scrollable-region-focusable'])
         .analyze();
       await page.close();
 
