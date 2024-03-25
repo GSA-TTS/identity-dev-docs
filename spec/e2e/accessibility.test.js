@@ -5,38 +5,36 @@ import glob from 'fast-glob';
 import puppeteer from 'puppeteer';
 import { AxePuppeteer } from '@axe-core/puppeteer';
 import { createServer } from 'http';
-import path from 'path';
+import sitepath from 'path';
 import handler from 'serve-handler';
 import getPort from 'get-port';
-import { Server } from 'node:http';
 
 const paths = glob
-	.sync('_site/**/index.html')
-	.map((path) => dirname(relative('_site', path)))
+  .sync('_site/**/index.html')
+  .map((path) => dirname(relative('_site', path)))
   .filter((path) => path !== '.')
   .map((path) => `/${path}/`);
 
-
 describe('accessibility', () => {
   /** @type {string} */
-	let publicPath;
+  let publicPath;
 
-	/** @type {Server} */
+  /** @type {Server} */
   let server;
 
-	/** @type {number} */
+  /** @type {number} */
   let port;
 
-	/** @type {import('puppeteer').Browser} */
+  /** @type {import('puppeteer').Browser} */
   let browser;
 
   before(async () => {
-    publicPath = path.relative(process.cwd(), path.resolve('../../_site'));
+    publicPath = sitepath.relative(process.cwd(), sitepath.resolve('../../_site'));
     port = await getPort();
     browser = await puppeteer.launch();
     server = createServer((request, response) =>
-			handler(request, response, { public: publicPath }),
-		).listen(port);
+      handler(request, response, { public: publicPath }),
+    ).listen(port);
   });
 
   after(async () => {
