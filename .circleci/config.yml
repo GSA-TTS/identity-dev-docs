@@ -1,6 +1,20 @@
 # Ruby CircleCI 2.0 configuration file
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 version: 2
+commands:
+  node-install:
+    steps:
+      - run:
+          name: Switch Node.js version
+          command: |
+            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+            export NVM_DIR="$HOME/.nvm"
+            . "$NVM_DIR/nvm.sh" --install --latest-npm
+            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV;
+            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV;
+      - run:
+          name: Print Node.js version
+          command: node -v
 jobs:
   build:
     docker:
@@ -10,6 +24,7 @@ jobs:
     working_directory: ~/identity-dev-docs
     steps:
       - checkout
+      - node-install
 
       - restore_cache:
           key: v2-identity-dev-docs-{{ checksum "package-lock.json" }}-{{ checksum "Gemfile.lock" }}
