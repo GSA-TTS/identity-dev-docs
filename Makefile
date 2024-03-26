@@ -12,6 +12,7 @@ clean:
 
 test: build
 	bundle exec rspec spec
+	node --test spec/e2e/
 
 htmlproofer:
 	bundle exec scripts/htmlproofer

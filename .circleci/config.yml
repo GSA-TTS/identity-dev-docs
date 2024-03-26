@@ -5,11 +5,24 @@ jobs:
   build:
     docker:
       # Specify the Ruby version you desire here
-      - image: cimg/ruby:3.1-node
+      - image: cimg/ruby:3.1-browsers
 
     working_directory: ~/identity-dev-docs
     steps:
       - checkout
+      
+      - run:
+          name: Switch Node.js version
+          command: |
+            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+            export NVM_DIR="$HOME/.nvm"
+            . "$NVM_DIR/nvm.sh" --install --latest-npm
+            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV;
+            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV;
+      
+      - run:
+          name: Print Node.js version
+          command: node -v
 
       - restore_cache:
           key: v2-identity-dev-docs-{{ checksum "package-lock.json" }}-{{ checksum "Gemfile.lock" }}
