@@ -101,7 +101,7 @@ Before you can request deployment, you need to create a new and separate applica
 
 11. Specify the sign-in, sign-up, and forgot password help text users will encounter in your app. This step is optional but encouraged to ensure better usability. Take a look at the [Partner Support Help Desk](https://zendesk.login.gov) for a good example of help text.    
 
-12. Once all fields are complete select the "Create app" button. Make sure you test your application first before 
+12. Once all fields are complete select the "Create app" button.
 
 If you encounter errors or have questions after completing these steps, please submit a technical support ticket through the [Partner Support Help Desk.]({{ site.baseurl}}/support/#contacting-partner-support)
 
