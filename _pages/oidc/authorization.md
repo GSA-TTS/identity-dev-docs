@@ -123,6 +123,10 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <p>
         Multiple values can be joined with a space (before being URI-escaped in the final URL).
       </p>
+      <p>
+        If the <code class="language-plaintext highlighter-rouge">vtr</code> parameter is passed then the value of that
+        parameter will take precedence over <code class="language-plaintext highlighter-rouge">acr_values</code>.
+      </p>
     </div>
   </div>
   <div class="grid-row dev-doc-row">
@@ -135,6 +139,32 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         1. Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization.
         <a href="#fnref:1">↩</a>1 <a href="#fnref:1:2">↩</a>2 <a href="#fnref:1:3">↩</a>3
       </p>
+    </div>
+    <div class="grid-row dev-doc-row">
+      <div class="grid-col-5">
+        <h4 id="vtr" class="parameters">vtr</h4>
+      </div>
+      <div class="grid-col-7">
+          A JSON encoded array of Vectors of Trust used to specify the authentication and proofing features that are used to
+          authenticate and proof the user.  These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="{{ '/attributes/' | prepend: site.baseurl }}">user attributes</a> will be available in the <a class="usa-link" href="{{ '/oidc/user-info/#user-info-response' | prepend: site.baseurl }}">user info response</a>.
+        <p>
+          If the <code class="language-plaintext highlighter-rouge">vtr</code> parameter is passed then the
+          <code class="language-plaintext highlighter-rouge">vtm</code> parameter is required.
+        </p>
+      </div>
+    </div>
+    <div class="grid-row dev-doc-row">
+      <div class="grid-col-5">
+        <h4 id="vtr" class="parameters">vtm</h4>
+      </div>
+      <div class="grid-col-7">
+          A URL linking to the Trustmark for the <code class="language-plaintext highlighter-rouge">vtr</code> parameter.
+          This should be set to <a class="usa-link" href="{{ '/vot-trust-framework/' | prepend: site.baseurl }}">
+          https://developer.login.gov/vot-trust-framework</a>.
+        <p>
+          This parameter should only be sent if a <code class="language-plaintext highlighter-rouge">vtr</code> parameter is included as well.
+        </p>
+      </div>
     </div>
     <div class="grid-row dev-doc-row">
       <div class="grid-col-5">
