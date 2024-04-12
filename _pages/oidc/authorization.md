@@ -119,7 +119,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <h4 id="acr_values" class="parameters">acr_values</h4>
     </div>
     <div class="grid-col-7">
-        The Authentication Context Class Reference requests can be used to specify the type of service level<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="{{ '/attributes/' | prepend: site.baseurl }}">user attributes</a> will be available in the <a class="usa-link" href="{{ '/oidc/user-info/#user-info-response' | prepend: site.baseurl }}">user info response</a>.
+        The Authentication Context Class Reference requests can be used to specify the type of service level<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">*</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="{{ '/attributes/' | prepend: site.baseurl }}">user attributes</a> will be available in the <a class="usa-link" href="{{ '/oidc/user-info/#user-info-response' | prepend: site.baseurl }}">user info response</a>.
       <p>
         Multiple values can be joined with a space (before being URI-escaped in the final URL).
       </p>
@@ -131,10 +131,6 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
         {% include accordion.html content=loa_values accordion_id="loa_accordion" title="Level of Assurance (LOA) Values (Deprecated)" id="loa_values" %}
       </div>
-      <p id="fn:1">
-        1. Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization.
-        <a href="#fnref:1">↩</a>1 <a href="#fnref:1:2">↩</a>2 <a href="#fnref:1:3">↩</a>3
-      </p>
     </div>
     <div class="grid-row dev-doc-row">
       <div class="grid-col-5">
@@ -272,6 +268,11 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         {% include snippets/oidc/auth/failure.md %}
       </section>
     </div>
+  </div>
+  <div class="desktop:grid-col-9 mobile:grid-col-full">
+    <p id="fn:1">
+      *Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization.
+    </p>
   </div>
   <a href="{{ '/oidc/token/' | prepend: site.baseurl }}" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Token</a>
 </div>
