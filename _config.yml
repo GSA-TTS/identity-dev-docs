@@ -32,8 +32,6 @@ sass:
     - node_modules
 
 exclude:
-  - Dockerfile
-  - docker-compose.yml
   - README.md
   - CONTRIBUTING.md
   - Makefile
