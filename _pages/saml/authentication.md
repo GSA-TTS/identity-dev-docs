@@ -31,7 +31,7 @@ sidenav:
 `<samlp:AuthnRequest>:SAML_REQUEST = urlEncode(base64(deflate(payload)))`
 {% endcapture %}
 {% capture saml_tag %}
-The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the type of identity verification<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, AAL (Authentication Assurance Level) and attributes requested.
+The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the type of identity verification<sup role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">&#42;</a></sup>, AAL (Authentication Assurance Level) and attributes requested.
 {% endcapture %}
 {% capture attributes %}
 To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes]({{ '/attributes/' | prepend: site.baseurl }}) for the list of attributes that can be requested.
@@ -73,13 +73,6 @@ A proofed identity request at AAL3 for email, phone, first name, last name, and 
                 {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
                 {% include accordion.html content=attributes accordion_id="attributes_accordion" title="Attributes" id="attributes" %}
                 {% include accordion.html content=loa_values accordion_id="loa_accordion" title="Level of Assurance (LOA) Values (Deprecated)" id="loa_values" %}
-            </div>
-            <div class="footnotes" role="doc-endnotes">
-                <ol>
-                    <li id="fn:1" role="doc-endnote">
-                    Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization. <a href="./#fnref:1" class="reversefootnote" aria-label="Back to content 1" role="doc-backlink">&#8617;<sup>1</sup></a> <a href="#fnref:1:2" class="reversefootnote" aria-label="Back to content 2" role="doc-backlink">&#8617;<sup>2</sup></a>
-                    </li>
-                </ol>
             </div>
         </div>
         <div class="dev-doc-row">
@@ -137,7 +130,10 @@ A proofed identity request at AAL3 for email, phone, first name, last name, and 
             </section>
         </section>
     </div>
-      <a href="{{ '/saml/logout/' | prepend: site.baseurl }}" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Logout</a>
+    <div class="desktop:grid-col-7 mobile:grid-col-full" role="doc-endnotes">
+        <p id="fn:1" role="doc-endnote">&#42;Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization.</p>
+    </div>
+    <a href="{{ '/saml/logout/' | prepend: site.baseurl }}" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Logout</a>
 </div>
 
 
