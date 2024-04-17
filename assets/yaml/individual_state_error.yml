@@ -1,5 +1,4 @@
 document:
-  type: license
   first_name: Susan
   last_name: Smith
   middle_name: Q
@@ -8,8 +7,11 @@ document:
   city: Bayside
   state: NY
   zipcode: '11364'
-  dob: 10/06/1938
+  dob: '1938-10-06'
   phone: +1 314-555-1212
   state_id_number: "mvatimeout"
   state_id_type: "drivers_license"
   state_id_jurisdiction: "WA"
+  state_id_expiration: '2030-01-01'
+  state_id_issued: '2020-01-01'
+  issuing_country_code: 'US'
