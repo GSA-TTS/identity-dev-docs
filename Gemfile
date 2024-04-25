@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby File.read('.ruby-version').strip
+
 gem 'jekyll', '~> 4.3.0'
 gem 'jekyll-sass-converter', '~> 3.0.0'
 gem 'kramdown-parser-gfm', '~> 1.0'

@@ -115,5 +115,8 @@ DEPENDENCIES
   nokogiri (>= 1.10.5)
   rspec
 
+RUBY VERSION
+   ruby 3.2.4p170
+
 BUNDLED WITH
    2.4.10

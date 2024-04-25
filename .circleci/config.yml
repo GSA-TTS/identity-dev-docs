@@ -5,7 +5,7 @@ jobs:
   build:
     docker:
       # Specify the Ruby version you desire here
-      - image: cimg/ruby:3.1-browsers
+      - image: cimg/ruby:3.2-browsers
 
     working_directory: ~/identity-dev-docs
     steps:
