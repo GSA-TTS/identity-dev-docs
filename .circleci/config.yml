@@ -1,61 +1,39 @@
 # Ruby CircleCI 2.0 configuration file
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
-version: 2
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.4.8
+  node: circleci/node@5.2.0
+  ruby: circleci/ruby@2.1.2
 jobs:
   build:
     docker:
       # Specify the Ruby version you desire here
       - image: cimg/ruby:3.2-browsers
-
-    working_directory: ~/identity-dev-docs
+    environment:
+      BUNDLE_JOBS: '3'
+      BUNDLE_RETRY: '3'
     steps:
-      - checkout
-      
-      - run:
-          name: Switch Node.js version
-          command: |
-            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-            export NVM_DIR="$HOME/.nvm"
-            . "$NVM_DIR/nvm.sh" --install --latest-npm
-            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV;
-            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV;
-      
+      - node/install
       - run:
           name: Print Node.js version
           command: node -v
-
-      - restore_cache:
-          key: v2-identity-dev-docs-{{ checksum "package-lock.json" }}-{{ checksum "Gemfile.lock" }}
-
+      - checkout
+      - browser-tools/install-chromedriver
+      - node/install-packages
+      - ruby/install-deps
       - run:
-          name: Install dependencies
-          command: |
-            gem install bundler
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
-            npm ci
-
-      # Store bundle cache
-      - save_cache:
-          key: v2-identity-dev-docs-{{ checksum "package-lock.json" }}-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
-            - ~/.npm
-
-      - run:
-          name: Run Tests
+          name: Test Setup
           command: |
             make clean
-            make test
+            make build
+      - ruby/rspec-test:
+          include: spec/*_spec.rb
+      - run: npm run test
+
       - run:
           name: Run htmlproofer (no external links)
           command: bundle exec scripts/htmlproofer --internal
       - run:
           name: Lint JavaScript
           command: make lint-js
-
-      # collect reports
-      - store_test_results:
-          path: /tmp/test-results
-      - store_artifacts:
-          path: /tmp/test-results
-          destination: test-results

@@ -7,7 +7,8 @@
     "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css",
     "watch:css": "npm run build:css -- --watch",
     "pages": "npm run build:css",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "node --test spec/e2e/**"
   },
   "repository": {
     "type": "git",
