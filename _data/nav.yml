@@ -19,3 +19,15 @@ primary:
     href: /security-events/
   - text: Support
     href: /support/
+footer:
+  agencies:
+    become_a_partner: '$BASE_URL/partners/'
+    developer_guide: 'https://developers.login.gov'
+  learn:
+    about_us: '$LOCALE_BASE_URL/about-us/'
+    accessibility: '$LOCALE_BASE_URL/accessibility/'
+    join_us: '$LOCALE_BASE_URL/join/'
+    policies: '$LOCALE_BASE_URL/policy/'
+  support:
+    contact_us: '$LOCALE_BASE_URL/contact/'
+    help_center: '$LOCALE_BASE_URL/help/'

@@ -141,26 +141,7 @@
 
     {{ content }}
 
-      <footer class="usa-footer usa-footer--slim position-relative z-100" role="contentinfo" aria-label="GSA footer">
-        <div class="usa-footer__secondary-section">
-          <div class="grid-container">
-            <div class="usa-footer__logo grid-row grid-gap-2">
-              <div class="grid-col-auto">
-                <img src="{{ site.baseurl }}/assets/img/gsa-logo-rev.svg"
-                  alt="U.S. General Services Administration logo"
-                  class="usa-footer__logo-img usa-footer__slim usa-footer__medium"
-                  role="img">
-              </div>
-              <div class="grid-col-auto">
-                <h3 class="usa-footer__logo-heading">U.S. General Services Administration</h3>
-              </div>
-              <div class="grid-col-fill text-right">
-                <a href="https://status.login.gov/">System Status</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+    {% include footer.html %}
 
     <script src="{{ site.baseurl }}/assets/js/toggle_view.js"></script>
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>

@@ -1,0 +1,59 @@
+@use 'uswds-core' as *;
+@use 'variables' as *;
+
+.footer {
+  background-color: color('primary-lightest');
+}
+
+.container, .usa-identifier__container {
+  max-width: 75rem;
+  margin: {
+    left: auto;
+    right: auto
+  }
+  padding: {
+    left: 3.5rem;
+    right: 3.5rem;
+  }
+}
+
+.footer-navigation {
+  @include u-padding-top(2);
+  @include u-padding-bottom(5);
+
+  ul {
+    @include unstyled-list;
+  }
+
+  h2,
+  a {
+    font-size: $base-font-sm;
+    color: color('primary-dark');
+  }
+}
+
+.footer-navigation__section h2 {
+  margin: 0;
+}
+
+.footer-navigation__section a {
+  @include u-margin-top(2);
+  display: block;
+}
+
+.system-status {
+  @include u-border-top(1px, 'primary-light');
+  @include u-padding-top(2);
+  @include u-margin-top(1);
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: '';
+    width: 1.75rem;
+    height: 1.75rem;
+    display: inline-block;
+    margin-right: 0.25rem;
+    background: url(../img/icon-system-status.svg) left center no-repeat;
+  }
+}
