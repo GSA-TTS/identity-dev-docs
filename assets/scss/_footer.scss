@@ -26,9 +26,11 @@
   }
 }
 
-.footer-navigation__section {
-  display: flex;
-  justify-content: end;
+@include at-media('tablet') {
+  .footer-navigation__section {
+    display: flex;
+    justify-content: end;
+  }
 }
 
 .system-status {
