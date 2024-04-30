@@ -1,9 +1,8 @@
-{% assign logo_alt = include.logo_alt | default: site.data.settings.identifier.accessible_labels.login_gov_logo %}
 <div class="footer-navigation container grid-row">
   <div class="grid-col-12 margin-y-2 tablet:grid-col-auto">
     <img
       src="{{ site.baseurl }}/assets/img/logo.svg"
-      alt="{{ logo_alt }}"
+      alt="Login.gov logo"
       width="191"
       height="27"
     />
@@ -11,7 +10,7 @@
   <div class="grid-col-fill"></div>
   <div class="grid-col-12 tablet:grid-col-auto">
     <div class="system-status">
-      <a class="" href="https://status.login.gov">{{ site.data.settings.nav.system_status }}</a>
+      <a class="" href="https://status.login.gov">Login.gov system status</a>
     </div>
   </div>
 </div>
