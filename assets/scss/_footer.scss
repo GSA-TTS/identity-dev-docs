@@ -1,22 +1,16 @@
 @use 'uswds-core' as *;
 
-$base-font-size: 1rem;
-$base-font-sm: ($base-font-size * 0.8125);
-
 .footer {
+  @include u-padding(0);
   background-color: color('primary-lightest');
 }
 
-.container, .usa-identifier__container {
-  max-width: 75rem;
-  margin: {
-    left: auto;
-    right: auto
-  }
-  padding: {
-    left: 3.5rem;
-    right: 3.5rem;
-  }
+.usa-identifier p {
+  @include u-margin(0);
+}
+
+.usa-identifier__container {
+  @include u-padding(0);
 }
 
 .footer-navigation {
@@ -27,32 +21,25 @@ $base-font-sm: ($base-font-size * 0.8125);
     @include unstyled-list;
   }
 
-  h2,
   a {
-    font-size: $base-font-sm;
     color: color('primary-dark');
   }
 }
 
-.footer-navigation__section h2 {
-  margin: 0;
-}
-
-.footer-navigation__section a {
-  @include u-margin-top(2);
-  display: block;
+.footer-navigation__section {
+  display: flex;
+  justify-content: end;
 }
 
 .system-status {
   @include u-padding-top(2);
-  display: flex;
-  align-items: center;
 
   &::before {
     content: '';
     width: 1.75rem;
     height: 1.75rem;
     display: inline-block;
+    vertical-align: middle;
     margin-right: 0.25rem;
     background: url(../img/icon-system-status.svg) left center no-repeat;
   }

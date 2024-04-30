@@ -1,7 +1,7 @@
-<footer class="footer">
+<footer class="footer grid-container">
   {% include footer-navigation.html %}
-  <div class="usa-identifier">
-    <section class="usa-identifier__section usa-identifier__section--masthead"
+  <div class="usa-identifier grid-row">
+    <section class="usa-identifier__section usa-identifier__section--masthead grid-col-10 grid-offset-1"
       aria-label="Agency identifier">
       <div class="usa-identifier__container">
         <div class="usa-identifier__logos">
@@ -13,12 +13,12 @@
         <div class="usa-identifier__identity" aria-label="Agency description">
           <p class="usa-identifier__identity-domain">Login.gov</p>
           <p class="usa-identifier__identity-disclaimer">
-            An official website of the <a class="usa-link" href="https://www.gsa.gov">General Services Administration</a>
+            An official website of the <a href="https://www.gsa.gov" class="usa-link">General Services Administration</a>
           </p>
         </div>
       </div>
     </section>
-    <nav class="usa-identifier__section usa-identifier__section--required-links"
+    <nav class="usa-identifier__section usa-identifier__section--required-links grid-col-10 grid-offset-1"
       aria-label="Important links">
       <div class="usa-identifier__container">
         <ul class="usa-identifier__required-links-list">
@@ -64,12 +64,12 @@
         </ul>
       </div>
     </nav>
-    <section class="usa-identifier__section usa-identifier__section--usagov"
+    <section class="usa-identifier__section usa-identifier__section--usagov grid-col-10 grid-offset-1"
       aria-label="U.S. governement information and services">
       <div class="usa-identifier__container">
-        <div class="usa-identifier__usagov-description">
+        <p class="usa-identifier__usagov-description">
           Looking for U.S. government information and services?
-        </div>
+        </p>
         <a href="https://www.usa.gov/" class="usa-link">
           Visit USA.gov
         </a>
