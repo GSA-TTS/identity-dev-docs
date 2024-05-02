@@ -1,0 +1,56 @@
+@use 'uswds-core' as *;
+
+.footer {
+  @include u-padding(0);
+  background-color: color('primary-lightest');
+}
+
+.footer-navigation {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @include u-padding-top(3);
+  @include u-padding-right(2);
+  @include u-padding-bottom(3);
+  @include u-padding-left(2);
+
+  @include at-media('desktop') {
+    @include u-padding-right(4);
+    @include u-padding-left(4);
+  }
+
+  ul {
+    @include unstyled-list;
+  }
+
+  a {
+    color: color('primary-dark');
+  }
+}
+
+.footer-navigation__section {
+  flex: 0 0 100%;
+
+  @include at-media('tablet') {
+    display: flex;
+    flex-basis: auto;
+  }
+}
+
+.usa-identifier__usagov-description {
+  @include u-margin(0);
+}
+
+.system-status {
+  @include u-padding-top(2);
+
+  &::before {
+    content: '';
+    width: 1.75rem;
+    height: 1.75rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.25rem;
+    background: url(../img/icon-system-status.svg) left center no-repeat;
+  }
+}
