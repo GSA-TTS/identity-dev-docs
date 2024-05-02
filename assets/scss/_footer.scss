@@ -1,21 +1,8 @@
 @use 'uswds-core' as *;
 
-$widescreen: 1400px;
-
 .footer {
   @include u-padding(0);
   background-color: color('primary-lightest');
-}
-
-.footer-navigation, .usa-identifier__inner {
-  max-width: $widescreen;
-
-  @include at-media('widescreen') {
-    margin: {
-      left: auto;
-      right: auto;
-    }
-  }
 }
 
 .footer-navigation {
@@ -52,19 +39,6 @@ $widescreen: 1400px;
 
 .usa-identifier__usagov-description {
   @include u-margin(0);
-}
-
-.usa-identifier__inner {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.usa-identifier__section {
-  flex: 1 1 auto;
-}
-
-.usa-identifier__section--masthead, .usa-identifier__section--usagov {
-  flex-grow: 0;
 }
 
 .system-status {
