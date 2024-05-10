@@ -17,7 +17,7 @@ layout: home
     <ol class="usa-process-list usa-prose margin-bottom-4">
       <li class="usa-process-list__item">
         <p>
-          Your integration with Login.gov starts in the <a href="https://developers.login.gov/testing/#using-the-sandbox" class="usa-link">dashboard</a> where you can register your app.
+          Your integration with Login.gov starts in the <a href="{{ site.baseurl }}/testing/#using-the-sandbox" class="usa-link">dashboard</a> where you can register your app.
         </p>
       </li>
       <li class="usa-process-list__item">
