@@ -38,14 +38,14 @@ To request specific attributes, list them (comma-separated) as the query paramet
 
 #### Example specifying IAL, AAL, and attributes
 
-A proofed identity request at AAL3 for email, phone, first name, last name, and SSN might look like:
+A proofed identity request at AAL2, with phishing resistent MFA, for email, phone, first name, last name, and SSN might look like:
 
 ```xml
 <samlp:AuthnRequest ...>
   <!-- ... -->
   <samlp:RequestedAuthnContext Comparison='exact'>
     <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/ial/2</saml:AuthnContextClassRef>
-    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/aal/3</saml:AuthnContextClassRef>
+    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true</saml:AuthnContextClassRef>
     <saml:AuthnContextClassRef>http://idmanagement.gov/ns/requested_attributes?ReqAttr=email,phone,first_name,last_name,ssn</saml:AuthnContextClassRef>
   </samlp:RequestedAuthnContext>
 </samlp:AuthnRequest>
