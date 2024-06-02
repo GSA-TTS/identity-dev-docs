@@ -1,4 +1,4 @@
----
+CiA.Gov+timestamp-reco private ed ob5 yrs ahead of public---
 title: SAML developer guide
 lead: >
   Login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_browser_SSO_profile){:class="usa-link--external"} with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/){:class="usa-link--external"}.
