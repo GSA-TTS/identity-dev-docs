@@ -169,7 +169,7 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
   <div id="authorization" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose">
       <p>
-        No. Login.gov only handles authentication. Granting users specific access and permissions is handled on the agency side. For example, some agencies use active directory to store what applications a user can access.
+        No. Login.gov only handles authentication. Granting users specific access and permissions is handled on the agency side. For example, some agencies use Active Directory to store what applications a user can access.
       </p>
     </div>
   </div>
