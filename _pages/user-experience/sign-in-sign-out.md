@@ -94,7 +94,7 @@ Do use the white button with an outline on light backgrounds that don’t provid
 </ul>
 
 <div class="lookbook-embed-container margin-top-4">
-<iframe class="lookbook-embed" src="https://idp.dev.identitysandbox.gov/components/embed/login_button/workbench?_options=%257B%2522scenarios%2522%253A%255B%2522workbench%2522%255D%252C%2522panels%2522%253A%255B%2522params%2522%252C%2522output%2522%255D%257D"></iframe>
+<iframe title="Login.gov button lookbook" class="lookbook-embed" src="https://idp.dev.identitysandbox.gov/components/embed/login_button/workbench?_options=%257B%2522scenarios%2522%253A%255B%2522workbench%2522%255D%252C%2522panels%2522%253A%255B%2522params%2522%252C%2522output%2522%255D%257D"></iframe>
 </div>
 
 ### Login.gov logos

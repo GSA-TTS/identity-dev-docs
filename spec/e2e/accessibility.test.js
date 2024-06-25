@@ -48,13 +48,7 @@ describe('accessibility', () => {
         .withTags(['wcag2a', 'wcag2aa'])
         // TODO: These will be addressed in LG-12800
         .disableRules([
-          'document-title',
-          'html-has-lang',
-          'meta-viewport',
-          'color-contrast',
-          'aria-allowed-attr',
-          'aria-deprecated-role',
-          'frame-title',
+          // 'aria-deprecated-role',
           'scrollable-region-focusable',
         ])
         .analyze();

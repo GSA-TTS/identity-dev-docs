@@ -270,7 +270,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
     </div>
   </div>
   <div class="desktop:grid-col-9 mobile:grid-col-full">
-    <p id="fn:1" role="doc-endnote">&#42;Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization.</p>
+    <p id="fn:1" role="note">&#42;Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization.</p>
   </div>
   <a href="{{ '/oidc/token/' | prepend: site.baseurl }}" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Token</a>
 </div>
