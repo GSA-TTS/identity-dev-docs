@@ -15,6 +15,8 @@
 @forward "uswds";
 @forward "footer";
 
+$block-background-color: #fafafa;
+
 main.usa-layout-docs {
   word-wrap: break-word;
 }
@@ -136,7 +138,7 @@ button.code-button:hover {
 }
 
 .code-snippet-column {
-  background-color: #f0f0f0;
+  background-color: $block-background-color;
   position: relative;
   margin-top: 2rem;
   padding-top: 1rem;
@@ -164,7 +166,7 @@ button.code-button:hover {
     display: block;
     z-index: -1;
     position: absolute;
-    background-color: #f0f0f0;
+    background-color: $block-background-color;
     top: 0;
     margin-top: -4rem;
     bottom: -15rem;

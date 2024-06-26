@@ -48,8 +48,7 @@ describe('accessibility', () => {
         .withTags(['wcag2a', 'wcag2aa'])
         // TODO: These will be addressed in LG-12800
         .disableRules([
-          // 'aria-deprecated-role',
-          'scrollable-region-focusable',
+          // 'scrollable-region-focusable',
         ])
         .analyze();
       await page.close();
