@@ -46,10 +46,6 @@ describe('accessibility', () => {
       await page.goto(`http://localhost:${port}${path}`);
       const results = await new AxePuppeteer(page)
         .withTags(['wcag2a', 'wcag2aa'])
-        // TODO: These will be addressed in LG-12800
-        .disableRules([
-          // 'scrollable-region-focusable',
-        ])
         .analyze();
       await page.close();
 
