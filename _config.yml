@@ -26,6 +26,9 @@ collections:
 # Build settings
 kramdown:
   hard_wrap: true
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    formatter: HTMLLegacyA11y
 
 sass:
   load_paths:
