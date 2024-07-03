@@ -46,13 +46,11 @@ describe('accessibility', () => {
       // redirects are causing testing issues
       const file = await readFile(`./_site${path}index.html`, { encoding: 'utf8' });
       if (file.match('<meta http-equiv="refresh"')) {
-        return console.log(`redirect skipped: ${path}`);
+        return;
       }
       const page = await browser.newPage();
       await page.goto(`http://localhost:${port}${path}`);
-      const results = await new AxePuppeteer(page)
-        .withTags(['wcag2a', 'wcag2aa'])
-        .analyze();
+      const results = await new AxePuppeteer(page).withTags(['wcag2a', 'wcag2aa']).analyze();
       await page.close();
 
       assert.deepStrictEqual(results.violations, []);
