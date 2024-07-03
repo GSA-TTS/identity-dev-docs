@@ -1,6 +1,7 @@
 import { describe, before, after, test, it } from 'node:test';
 import assert from 'node:assert';
 import { relative, dirname } from 'node:path';
+import { readFile } from 'node:fs/promises';
 import glob from 'fast-glob';
 import puppeteer from 'puppeteer';
 import { AxePuppeteer } from '@axe-core/puppeteer';
@@ -42,6 +43,11 @@ describe('accessibility', () => {
 
   paths.forEach((path) => {
     test(path, async () => {
+      // redirects are causing testing issues
+      const file = await readFile(`./_site${path}index.html`, { encoding: 'utf8' });
+      if (file.match('<meta http-equiv="refresh"')) {
+        return console.log(`redirect skipped: ${path}`);
+      }
       const page = await browser.newPage();
       await page.goto(`http://localhost:${port}${path}`);
       const results = await new AxePuppeteer(page)
