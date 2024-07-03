@@ -2,6 +2,7 @@ import { describe, before, after, test, it } from 'node:test';
 import assert from 'node:assert';
 import { relative, dirname } from 'node:path';
 import { readFile } from 'node:fs/promises';
+import { stdout } from 'node:process';
 import glob from 'fast-glob';
 import puppeteer from 'puppeteer';
 import { AxePuppeteer } from '@axe-core/puppeteer';
@@ -46,7 +47,7 @@ describe('accessibility', () => {
       // redirects are causing testing issues
       const file = await readFile(`./_site${path}index.html`, { encoding: 'utf8' });
       if (file.match('<meta http-equiv="refresh"')) {
-        return;
+        return stdout.write(`redirect skipped: ${path}`);
       }
       const page = await browser.newPage();
       await page.goto(`http://localhost:${port}${path}`);
