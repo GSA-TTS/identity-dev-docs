@@ -1,7 +1,6 @@
 import { describe, before, after, test, it } from 'node:test';
 import assert from 'node:assert';
 import { readFileSync } from 'node:fs';
-import { stdout } from 'node:process';
 import puppeteer from 'puppeteer';
 import { AxePuppeteer } from '@axe-core/puppeteer';
 import { createServer } from 'http';
@@ -11,8 +10,8 @@ import getPort from 'get-port';
 // only test canonical paths
 const paths = (() => {
   const file = readFileSync('./_site/sitemap.xml', { encoding: 'utf8' });
-  const pathMatch = file.matchAll(/[\.gov|\:4000](\/[A-Za-z-]+\/?[A-Za-z-]*\/)<\/loc/g);
-  const foundPaths =  Array.from(pathMatch).map(a => a[1]);
+  const pathMatch = file.matchAll(/[.gov|:4000](\/[A-Za-z-]+\/?[A-Za-z-]*\/)<\/loc/g);
+  const foundPaths = Array.from(pathMatch).map((a) => a[1]);
   foundPaths.unshift('/');
   return foundPaths;
 })();
