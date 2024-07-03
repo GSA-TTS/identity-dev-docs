@@ -1,6 +1,7 @@
 require 'rouge'
 
 # Include tabindex for accessibility reasons
+# See: https://github.com/rouge-ruby/rouge?tab=readme-ov-file#formatters
 class Rouge::Formatters::HTMLPygmentsA11y < Rouge::Formatters::HTMLPygments
   def stream(tokens, &b)
     yield %(<div class="highlight"><pre class="#{@css_class}"><code tabindex="0">)

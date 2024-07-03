@@ -28,12 +28,9 @@ Run the tests:
 make test
 ```
 
-This site uses the [U.S. Web Design System](https://designsystem.digital.gov/). To update them:
+This site uses the anchor.js. To update it:
 
-1. Download the [latest release](https://designsystem.digital.gov/download)
-2. Copy contents to `assets/`
-3. Rename directory to `uswds`
-4. Download latest [anchor.js](https://github.com/bryanbraun/anchorjs) and put in `assets/js/`
+  - Download latest [anchor.js](https://github.com/bryanbraun/anchorjs) and put in `assets/js/`
 
 #### YAML files
 
