@@ -107,8 +107,10 @@
           </div>
           <nav role="navigation" class="usa-nav border-top-none">
             <div class="usa-nav__inner">
-              <button class="usa-nav__close">
-                <img src="{{ site.baseurl }}/assets/img/close.svg" alt="Close" role="img">
+              <button class="usa-nav__close" aria-label="close">
+                <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+                  <use xlink:href="/assets/img/sprite.svg#close"></use>
+                </svg>
               </button>
               <div class="usa-nav__secondary">
                 <ul class="usa-nav__secondary-links"></ul>

@@ -1,20 +1,21 @@
 import { describe, before, after, test, it } from 'node:test';
 import assert from 'node:assert';
-import { relative, dirname } from 'node:path';
-import { readFile } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import { stdout } from 'node:process';
-import glob from 'fast-glob';
 import puppeteer from 'puppeteer';
 import { AxePuppeteer } from '@axe-core/puppeteer';
 import { createServer } from 'http';
 import handler from 'serve-handler';
 import getPort from 'get-port';
 
-const paths = glob
-  .sync('_site/**/index.html')
-  .map((path) => dirname(relative('_site', path)))
-  .filter((path) => path !== '.')
-  .map((path) => `/${path}/`);
+// only test canonical paths
+const paths = (() => {
+  const file = readFileSync('./_site/sitemap.xml', { encoding: 'utf8' });
+  const pathMatch = file.matchAll(/[\.gov|\:4000](\/[A-Za-z-]+\/?[A-Za-z-]*\/)<\/loc/g);
+  const foundPaths =  Array.from(pathMatch).map(a => a[1]);
+  foundPaths.unshift('/');
+  return foundPaths;
+})();
 
 describe('accessibility', () => {
   /** @type {Server} */
@@ -44,11 +45,6 @@ describe('accessibility', () => {
 
   paths.forEach((path) => {
     test(path, async () => {
-      // redirects are causing testing issues
-      const file = await readFile(`./_site${path}index.html`, { encoding: 'utf8' });
-      if (file.match('<meta http-equiv="refresh"')) {
-        return stdout.write(`redirect skipped: ${path}`);
-      }
       const page = await browser.newPage();
       await page.goto(`http://localhost:${port}${path}`);
       const results = await new AxePuppeteer(page).withTags(['wcag2a', 'wcag2aa']).analyze();

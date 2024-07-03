@@ -148,6 +148,11 @@ button.code-button:hover {
   width: 230px;
 }
 
+.usa-nav__close .usa-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
 @media (min-width: 1024px) {
   .code-snippet-column {
     background-color: transparent;
@@ -192,19 +197,5 @@ button.code-button:hover {
   .usa-header--extended .usa-nav__inner.usa-nav__inner__no-margin {
     margin-left: 0px;
     max-width: 100%;
-  }
-}
-
-// Upstream: https://gitlab.login.gov/lg/identity-design-system/-/merge_requests/2
-.highlight code{
-  .m,
-  .mb,
-  .mf,
-  .mh,
-  .mi,
-  .mo,
-  .sr,
-  .il {
-    color: color('accent-cool-darker');
   }
 }
