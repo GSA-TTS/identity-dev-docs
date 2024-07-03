@@ -14,6 +14,9 @@ test: build
 	bundle exec rspec spec
 	node --test spec/e2e/**
 
+test-a11y:
+	node --test spec/e2e/accessibility.test.js
+
 htmlproofer:
 	bundle exec scripts/htmlproofer
 
