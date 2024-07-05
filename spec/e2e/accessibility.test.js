@@ -10,7 +10,7 @@ import getPort from 'get-port';
 // only test canonical paths
 const paths = (() => {
   const file = readFileSync('./_site/sitemap.xml', { encoding: 'utf8' });
-  const pathMatch = file.matchAll(/<loc>(.+?)<\/loc>/g);
+  const pathMatch = file.matchAll(/<loc>(.+?\/)<\/loc>/g);
   return Array.from(pathMatch).map(([, url]) => new URL(url).pathname);
 })();
 

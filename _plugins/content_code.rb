@@ -4,7 +4,7 @@ require 'rouge'
 # See: https://github.com/rouge-ruby/rouge?tab=readme-ov-file#formatters
 class Rouge::Formatters::HTMLPygmentsA11y < Rouge::Formatters::HTMLPygments
   def stream(tokens, &b)
-    yield %(<div class="highlight"><pre class="#{@css_class}"><code tabindex="0">)
+    yield %(<div class="highlight"><pre class="#{@css_class}" tabindex="0"><code>)
     @inner.stream(tokens, &b)
     yield "</code></pre></div>"
   end
