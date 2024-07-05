@@ -10,10 +10,8 @@ import getPort from 'get-port';
 // only test canonical paths
 const paths = (() => {
   const file = readFileSync('./_site/sitemap.xml', { encoding: 'utf8' });
-  const pathMatch = file.matchAll(/[.gov|:4000](\/[A-Za-z-]+\/?[A-Za-z-]*\/)<\/loc/g);
-  const foundPaths = Array.from(pathMatch).map((a) => a[1]);
-  foundPaths.unshift('/');
-  return foundPaths;
+  const pathMatch = file.matchAll(/<loc>(.+?\/)<\/loc>/g);
+  return Array.from(pathMatch).map(([, url]) => new URL(url).pathname);
 })();
 
 describe('accessibility', () => {
