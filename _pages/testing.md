@@ -25,7 +25,7 @@ sidenav:
 
 ## About the Login.gov sandbox
 
-Login.gov provides an open sandbox environment to create and test integrations between Login.gov and your applications. **Note that the Login.gov Sandbox environment is a free service with an availability target of M-F, 8a-5p ET.** While the environment may be available outside of those windows, it is not guaranteed and may become unavailable with no advance notice. You may reach out to the [Partner Support Help Desk](https://zendesk.login.gov) for additional information about these outages.
+Login.gov provides an open sandbox environment to create and test integrations between Login.gov and your applications. **Note that the Login.gov Sandbox environment is a free service with an availability target of M-F, 8a-5p ET.** While it is typically online within that window, there are occasional hiccups that should resolve quickly on their own. The environment may at times be available outside of this window, but it is not guaranteed and may become unavailable with no advance notice.
 
 In the sandbox environment, our [Dashboard](https://dashboard.int.identitysandbox.gov) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
 
