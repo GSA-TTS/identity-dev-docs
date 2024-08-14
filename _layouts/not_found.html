@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en" class="not-found">
+  <head>
+    {% include google_analytics.html %}
+    {% include osc_analytics.html %}
+    {% include dap.html %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% capture title -%}
+      {% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif -%}
+    {% endcapture -%}
+
+    <title>{{ title }}</title>
+    <meta property="og:title" content="{{ title }}">
+
+    {% if page.lead -%}
+      <meta name="description" content="{{ page.lead | markdownify | strip_html | strip }}">
+      <meta property="og:description" content="{{ page.lead | markdownify | strip_html | strip }}">
+    {% endif -%}
+
+    <meta name="twitter:card" value="summary">
+    <meta property="og:type" content="article">
+
+    <link rel="shortcut icon" type="image/ico" href="{{ site.baseurl }}/assets/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+  </head>
+
+  <body class="not-found">
+  {{ content }}
+  </body>
+</html>
