@@ -28,8 +28,8 @@ sidenav:
 {% capture service_levels %}
  {% include snippets/auth_content/service_levels.md %}
 {% endcapture %}
-{% capture loa_values %}
- {% include snippets/auth_content/loa_values.md %}
+{% capture deprecated_values %}
+ {% include snippets/auth_content/deprecated_values.md %}
 {% endcapture %}
 {% capture code_challenge %}
 Correct Example
@@ -129,7 +129,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <div class="usa-accordion">
         {% include accordion.html content=service_levels accordion_id="service_level_accordion"  title="Type of Service Level" id="service_level" %}
         {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
-        {% include accordion.html content=loa_values accordion_id="loa_accordion" title="Level of Assurance (LOA) Values (Deprecated)" id="loa_values" %}
+        {% include accordion.html content=deprecated_values accordion_id="deprecated_accordion" title="Deprecated Service Level Values" id="deprecated_values" %}
       </div>
     </div>
     <div class="grid-row dev-doc-row">

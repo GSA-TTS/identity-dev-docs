@@ -1,10 +1,13 @@
 {% capture type_of_service %}
-  A type of service level<sup role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">&#42;</a></sup> must be specified.
-
-- **`http://idmanagement.gov/ns/assurance/ial/1`**
-    Basic identity assurance, does not require identity verification (this is the most common value).
-- **`http://idmanagement.gov/ns/assurance/ial/2`**
-    Requires that the user has gone through identity verification<sup role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">&#42;</a></sup>
+A type of service level must be specified.
+- **`urn:acr.login.gov:auth-only`**
+  Requires basic identity assurance.
+- **`urn:acr.login.gov:verified`**
+  Requires basic identity verification. This option is not compliant with NIST’s IAL2 standard.
+- **`urn:acr.login.gov:verified-facial-match-required`**
+  Requires identity verification with facial match.
+- **`urn:acr.login.gov:verified-facial-match-preferred`**
+  Requires identity verification. If a user has *already* had their identity verified, only basic identity verification is required. However, if the user has *not yet* had their identity verified, facial matching identity verification is required.
 {% endcapture %}
 <div markdown="1">
 {{ type_of_service | markdownify }}
