@@ -51,6 +51,4 @@ y+0Uv+X9Bk3S+y/6ba+v
 </samlp:Response>
 ```
 {% endcapture %}
-<div markdown="1" data-example="example" class="markdown long">
 {{ example | markdownify }}
-</div>

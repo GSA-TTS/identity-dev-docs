@@ -54,57 +54,57 @@ A proofed identity request at AAL2, with phishing resistent MFA, for email, phon
 {% capture decrypted_response %}
 ```xml
 <Assertion xmlns="urn:oasis:names:tc:SAML:2.0:assertion" ID="_b7a3ca0f-25a4-4365-af81-da8f04740564" IssueInstant="2024-09-18T16:20:36Z" Version="2.0">
-<Issuer>https://idp.int.identitysandbox.gov/api/saml</Issuer>
-<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <Issuer>https://idp.int.identitysandbox.gov/api/saml</Issuer>
+  <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
     <ds:SignedInfo>
-    <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-    <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
-    <ds:Reference URI="#_b7a3ca0f-25a4-4365-af81-da8f04740564">
+      <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+      <ds:Reference URI="#_b7a3ca0f-25a4-4365-af81-da8f04740564">
         <ds:Transforms>
-        <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-        <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+          <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+          <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
         </ds:Transforms>
         <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
         <ds:DigestValue>5uICLRmnTHr/Ma7+uphAjCf86rmR+P6QELBf2C53mIc=</ds:DigestValue>
-    </ds:Reference>
+      </ds:Reference>
     </ds:SignedInfo>
     <ds:SignatureValue>XT9CguQWKBvbqVsJ+Khu5/eyl09JVhHkUuyFHa98ViZUBVgL/Hc9gzwUr43CA7OVOO+uMfCc6WvPKeADF9w9kqJaUgsi8LiKC/nfDCY6+UiRoep2zmXyFJRAvrD/HbgVfayx/4Nn3ponRPZ/T/oezhimssFF66m+/UAwJekO9kuob+5n+uaOiFOMuHEycSdASH/iFnTSR1ajdo6AaLomG6YT8zJbuRzcKmesouAKPiQCJFt2cgstEs1zw8dvTgmozy4qd/0aMiZ52eGcXoORD8VZOQiY63HT8F4wkhk5eGU05sFcyfpg7dXNtKOfCddHwyngmgmPhpRN30ew5njg7w==</ds:SignatureValue>
     <ds:KeyInfo>
-    <ds:X509Data>
+      <ds:X509Data>
         <ds:X509Certificate>MIID+TCCAuGgAwIBAgIUUS6s9Rb+KY0fT0qKKgqPPJij/HMwDQYJKoZIhvcNAQELBQAwgYsxCzAJBgNVBAYTAlVTMR0wGwYDVQQIDBREaXN0cmljdCBvZiBDb2x1bWJpYTETMBEGA1UEBwwKV2FzaGluZ3RvbjEMMAoGA1UECgwDR1NBMRIwEAYDVQQLDAlMb2dpbi5nb3YxJjAkBgNVBAMMHWxvZ2luLmdvdi5pZGVudGl0eXNhbmRib3guZ292MB4XDTI0MDEyMjIwMTcwN1oXDTI1MDQwMTIwMTcwN1owgYsxCzAJBgNVBAYTAlVTMR0wGwYDVQQIDBREaXN0cmljdCBvZiBDb2x1bWJpYTETMBEGA1UEBwwKV2FzaGluZ3RvbjEMMAoGA1UECgwDR1NBMRIwEAYDVQQLDAlMb2dpbi5nb3YxJjAkBgNVBAMMHWxvZ2luLmdvdi5pZGVudGl0eXNhbmRib3guZ292MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhmcFFn4b56vHlGBQ1Lx6AXz17sqKnCc6sJ+9csP1RtQBI0NpPHB2z9Di1PNk/ElK7V7yh3uMu4FJYw30GZFUl2f/ttsDkNHrwfh/jzbMNjrOSc0P25oem4uOUfeGH9jtMhKa+HZLOaOmcyWFKkYR2mwacEbQJ1CWviHtP8AzHUPSbHklAmusRLuygTjq0+QRJZgSezGqwU1L3ixPq+gMzPtMS+fxsMOVo2eosip440gz4rcqUUogtD2hV8EQi3+GIkGYuMTS81ug/385TCPEhzWMnNmDi3HykOZeRNb4GfCYw0Yx+v+cb7BPD5EdxUHNwliHvSiRAeYqLjBjuNUfKQIDAQABo1MwUTAdBgNVHQ4EFgQUusictYnNM2TbIt5STz2lkYN1sI8wHwYDVR0jBBgwFoAUusictYnNM2TbIt5STz2lkYN1sI8wDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEATuLF4kHeP7FY9Wzm3DfF+m/5wUhJEtbsF8J9Wq8duhQ4/gtZVJgMDUKLsnSDLCtWiRlsFXquI8tlo32JsVo5NfZI9WYsub7192iCYpqE+x5G+94tt5vAayoF7GKGPxatyldxAQUz7RUzwqas7NCYXQ0p7wZrMqF8z2yvaUgL55v8TJIb7RP+D8b47Cmzx7IYmx3Co30vZWysQe61Bv880hG11YJsBAc0hmyWlokJYZZVm+xcjKkm6aFyyAbeCe0Kh68QU7f9YkpFv/sW2RIvZ/Z0gvxjJE+YJBwOwPDDHdkb0ZmKOJvlaabi5lkTZvUtTHXb5Hu7DxRRt91dm77MlQ==</ds:X509Certificate>
-    </ds:X509Data>
+      </ds:X509Data>
     </ds:KeyInfo>
-</ds:Signature>
-<Subject>
+  </ds:Signature>
+  <Subject>
     <NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">34abda40-d5aa-4259-9f17-a3757fd2e094</NameID>
     <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
-    <SubjectConfirmationData InResponseTo="_bf054c05-5b2c-4773-a6a9-9ba075a87bc9" NotOnOrAfter="2024-09-18T16:23:36Z" Recipient="https://sp.int.identitysandbox.gov/auth/saml/callback"/>
+      <SubjectConfirmationData InResponseTo="_bf054c05-5b2c-4773-a6a9-9ba075a87bc9" NotOnOrAfter="2024-09-18T16:23:36Z" Recipient="https://sp.int.identitysandbox.gov/auth/saml/callback"/>
     </SubjectConfirmation>
-</Subject>
-<Conditions NotBefore="2024-09-18T16:20:31Z" NotOnOrAfter="2024-09-18T17:20:36Z">
+  </Subject>
+  <Conditions NotBefore="2024-09-18T16:20:31Z" NotOnOrAfter="2024-09-18T17:20:36Z">
     <AudienceRestriction>
-    <Audience>urn:gov:gsa:SAML:2.0.profiles:sp:sso:identitysandbox</Audience>
+      <Audience>urn:gov:gsa:SAML:2.0.profiles:sp:sso:identitysandbox</Audience>
     </AudienceRestriction>
-</Conditions>
-<AttributeStatement>
+  </Conditions>
+  <AttributeStatement>
     <Attribute Name="uuid" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" FriendlyName="uuid">
-    <AttributeValue>34abda40-d5aa-4259-9f17-a3757fd2e094</AttributeValue>
+      <AttributeValue>34abda40-d5aa-4259-9f17-a3757fd2e094</AttributeValue>
     </Attribute>
     <Attribute Name="email" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" FriendlyName="email">
-    <AttributeValue>subcriber@example.com</AttributeValue>
+      <AttributeValue>vraj@example.com</AttributeValue>
     </Attribute>
     <Attribute Name="aal" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" FriendlyName="aal">
-    <AttributeValue>http://idmanagement.gov/ns/assurance/aal/2</AttributeValue>
+      <AttributeValue>http://idmanagement.gov/ns/assurance/aal/2</AttributeValue>
     </Attribute>
     <Attribute Name="ial" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" FriendlyName="ial">
-    <AttributeValue>http://idmanagement.gov/ns/assurance/ial/1</AttributeValue>
+      <AttributeValue>http://idmanagement.gov/ns/assurance/ial/1</AttributeValue>
     </Attribute>
-</AttributeStatement>
-<AuthnStatement AuthnInstant="2024-09-18T16:20:36Z" SessionIndex="_b7a3ca0f-25a4-4365-af81-da8f04740564">
+  </AttributeStatement>
+  <AuthnStatement AuthnInstant="2024-09-18T16:20:36Z" SessionIndex="_b7a3ca0f-25a4-4365-af81-da8f04740564">
     <AuthnContext>
-    <AuthnContextClassRef>http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true</AuthnContextClassRef>
+      <AuthnContextClassRef>http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true</AuthnContextClassRef>
     </AuthnContext>
-</AuthnStatement>
+  </AuthnStatement>
 </Assertion>
 ```
 {% endcapture %}
