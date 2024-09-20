@@ -16,7 +16,7 @@
               <ds:X509Certificate>
 MIIDgDCCAmgCCQCwpieA9CKuDDANBgkqhkiG9w0BAQUFADCBgTEYMBYGA1UEAwwP
 U1AgU2luYXRyYSBEZW1vMQwwCgYDVQQKDANHU0ExDDAKBgNVBAsMAzE4ZjETMBEG
-<!-- X509Certificate elided -->
+<!-- X509Certificate abridged -->
 IYOalU+bIBpQt6EGN/mWBu7yZtgxKULZamJUUpd5xpcPcGKwf59etPVMTSxgeeQY
 MFjibtIlMmAweHgIqDyF2s8Etz8hlcKrXIUAK5CoMvgUn41V
 
@@ -41,7 +41,7 @@ Lykqm6G3d8d7gn7oC08WI6YDrB5Kzo6hF/eaveOjtw==
         <CipherValue>cIGCpOu5tXI1RuBj32Sas6saN5brvkYea2QYgIAFNi6NgHngIs4JAkcTGxRg
 U9Vyfb2F3kndo5hBJaLmnKjLlwZRCBwoVfYfiaKUumH+igiPeyfcOGi617bN
 dpylxgT3Exg/g8qX5V02nIibCvlgO9tm9mPL5Rx0EZ32HMOc+Q62TF7F3e6X
-<!-- CipherValue elided -->
+<!-- CipherValue abridged -->
 2SWxCSIh0QLjt0Sos4ixK58eYc0p+8wbJnks14GzDGA07qJenT4NKxIIU2wW
 y+0Uv+X9Bk3S+y/6ba+v
 </CipherValue>
