@@ -112,18 +112,19 @@
                   <use xlink:href="/assets/img/sprite.svg#close"></use>
                 </svg>
               </button>
-              <div class="usa-nav__secondary">
-                <ul class="usa-nav__secondary-links"></ul>
+              <div class="usa-nav__secondary desktop:padding-right-2">
                 <section aria-label="Search component">
                   {% include search.html id="header-nav" %}
                 </section>
               </div>
-              <ul class="usa-nav__primary usa-accordion">
+              <ul class="usa-nav__primary usa-accordion flex-justify">
+                <a href="https://dashboard.int.identitysandbox.gov/" class="mobile:display-block desktop:display-none usa-button flex-align-self-center" type="button">Go to Dashboard</a>
                 {% include nav/list.html
                   links = site.data.nav.primary
                   li_class = 'usa-nav__primary-item'
                   subnav_ul_class = 'desktop:display-none usa-sidenav__sublist'
                 %}
+                <a href="https://dashboard.int.identitysandbox.gov/" class="mobile:display-none desktop:display-inline usa-button flex-align-self-center" type="button">Go to Dashboard</a>
               </ul>
             </div>
           </nav>
