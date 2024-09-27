@@ -103,6 +103,9 @@
                 <em class="usa-logo__text">Developers</em>
               </a>
             </div>
+            <section class="desktop:display-block mobile:display-none" aria-label="Search component">
+              {% include search.html id="header-nav" %}
+            </section>
             <button class="usa-menu-btn">Menu</button>
           </div>
           <nav role="navigation" class="usa-nav border-top-none">
@@ -113,7 +116,7 @@
                 </svg>
               </button>
               <div class="usa-nav__secondary desktop:padding-right-2">
-                <section aria-label="Search component">
+                <section class="mobile:display-block desktop:display-none" aria-hidden="true">
                   {% include search.html id="header-nav" %}
                 </section>
               </div>
@@ -124,7 +127,9 @@
                   li_class = 'usa-nav__primary-item'
                   subnav_ul_class = 'desktop:display-none usa-sidenav__sublist'
                 %}
-                <a href="https://dashboard.int.identitysandbox.gov/" class="mobile:display-none desktop:display-inline usa-button flex-align-self-center" type="button">Go to Dashboard</a>
+                <div class="desktop:margin-right-neg-2 grid-row flex-fill flex-justify-end">
+                  <a href="https://dashboard.int.identitysandbox.gov/" class="mobile:display-none desktop:display-inline usa-button flex-align-self-center" type="button">Go to Dashboard</a>
+                </div>
               </ul>
             </div>
           </nav>
