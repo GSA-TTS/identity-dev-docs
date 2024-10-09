@@ -137,7 +137,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         <h4 class="parameters">client_id</h4>
       </div>
       <div class="grid-col-7">
-        The unique identifier for the client. This will be registered with the Login.gov IdP in advance.
+        Also known as the issuer, this is the unique identifier for the client. This will be registered with the Login.gov IdP in advance.
       </div>
     </div>
     <div class="dev-doc-row pkce-only" hidden>
