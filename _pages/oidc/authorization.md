@@ -119,7 +119,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <h4 id="acr_values" class="parameters">acr_values</h4>
     </div>
     <div class="grid-col-7">
-        The Authentication Context Class Reference requests can be used to specify the type of service level<sup role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">&#42;</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="{{ '/attributes/' | prepend: site.baseurl }}">user attributes</a> will be available in the <a class="usa-link" href="{{ '/oidc/user-info/#user-info-response' | prepend: site.baseurl }}">user info response</a>.
+        The Authentication Context Class Reference requests can be used to specify the type of service level<sup><a href="#fn:1" class="footnote" rel="footnote">&#42;</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="{{ '/attributes/' | prepend: site.baseurl }}">user attributes</a> will be available in the <a class="usa-link" href="{{ '/oidc/user-info/#user-info-response' | prepend: site.baseurl }}">user info response</a>.
       <p>
         Multiple values can be joined with a space (before being URI-escaped in the final URL).
       </p>
