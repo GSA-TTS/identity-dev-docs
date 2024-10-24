@@ -22,6 +22,15 @@ main.usa-layout-docs {
   word-wrap: break-word;
 }
 
+main#main-content {
+  padding-top: 0;
+  border-top: none;
+}
+
+.usa-section > .lg-hero {
+  margin-bottom: 2rem;
+}
+
 .dev-doc-row {
   border-top: 1px solid #CEDCED;
   padding-bottom: 2rem;
@@ -152,6 +161,12 @@ button.code-button:hover {
 .usa-nav__close .usa-icon {
   width: 1.3rem;
   height: 1.3rem;
+}
+
+@media (min-width: 640px) {
+  .usa-section > .lg-hero {
+    margin-bottom: 4rem;
+  }
 }
 
 @media (min-width: 1024px) {

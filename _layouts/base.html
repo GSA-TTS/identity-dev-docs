@@ -133,18 +133,6 @@
             </div>
           </nav>
       </header>
-      {% if page.lead %}
-      <header aria-label="hero" class="usa-dark-background usa-section usa-section--dark">
-          <div class="grid-container">
-            <div class="grid-row">
-              <div class="grid-col-9 grid-offset-2">
-                    <h1 class="usa-display">{{ page.title }}</h1>
-                    <div class="usa-intro">{{ page.lead | markdownify }}</div>
-              </div>
-            </div>
-          </div>
-      </header>
-      {% endif %}
 
     {{ content }}
 

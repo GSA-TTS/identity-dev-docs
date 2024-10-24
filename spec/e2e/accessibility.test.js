@@ -44,7 +44,15 @@ describe('accessibility', () => {
     test(path, async () => {
       const page = await browser.newPage();
       await page.goto(`http://localhost:${port}${path}`);
-      const results = await new AxePuppeteer(page).withTags(['wcag2a', 'wcag2aa']).analyze();
+      const results = await new AxePuppeteer(page).withTags([
+        'wcag2a',
+        'wcag2aa',
+        'wcag21a',
+        'wcag21aa',
+        'wcag22a',
+        'wcag22aa',
+        'best-practice',
+      ]).analyze();
       await page.close();
 
       assert.deepStrictEqual(results.violations, []);

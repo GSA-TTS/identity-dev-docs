@@ -15,6 +15,6 @@ include
       {{ include.title }}
     </button>
 </h4>
-<div id="{{ include.accordion_id }}" class="usa-accordion__content usa-prose">
+<div id="{{ include.accordion_id }}" class="usa-accordion__content usa-prose" hidden="until-found">
     {{ include.content | markdownify }}
 </div>
