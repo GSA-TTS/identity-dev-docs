@@ -28,13 +28,13 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
 
 ## Frequently Asked Questions
 
-<div class="usa-accordion usa-accordion--bordered">
-  <h4 class="usa-accordion__heading" id="how-does-it-work">
+<dl class="usa-accordion usa-accordion--bordered">
+  <dt class="usa-accordion__heading" id="how-does-it-work">
     <button class="usa-accordion__button" aria-controls="flow">
       How does Login.gov work with my site?
     </button>
-  </h4>
-  <div id="flow" class="usa-accordion__container">
+  </dt>
+  <dd id="flow" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" aria-expanded="true">
       <p>
         We encourage you to create an account directly on  <a class="usa-link usa-link--external" rel="noreferrer" target="_blank" href="https://secure.login.gov/">Login.gov</a> or an agency partner like <a class="usa-link usa-link--external" rel="noreferrer" target="_blank" href="https://www.usajobs.gov/">USAJobs</a> to see Login.gov in action.
@@ -45,141 +45,141 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
         Please see our <a href="{{ '/overview/' | prepend: site.baseurl }}" target="_blank">overview documentation</a> for more details.
       </p>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="track">
+  <dt class="usa-accordion__heading" id="track">
     <button class="usa-accordion__button" aria-controls="user-key">
       What unique key can we use to track users?
     </button>
-  </h4>
-  <div id="user-key" class="usa-accordion__container">
+  </dt>
+  <dd id="user-key" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <p>
         We offer email address and UUID. Since a user can change their email address we recommend tracking users by UUID.
       </p>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="change-email">
+  <dt class="usa-accordion__heading" id="change-email">
     <button class="usa-accordion__button" aria-controls="email">
       Can a user change their email address?
     </button>
-  </h4>
-  <div id="email" class="usa-accordion__container">
+  </dt>
+  <dd id="email" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <p>
         Yes. We recommend using UUID as the primary key to track users because the email address can change.
       </p>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="unique-uuid">
+  <dt class="usa-accordion__heading" id="unique-uuid">
     <button class="usa-accordion__button" aria-controls="uuid">
       Does every user have a unique UUID?
     </button>
-  </h4>
-  <div id="uuid" class="usa-accordion__container">
+  </dt>
+  <dd id="uuid" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <p>
         Every user has a unique UUID per agency for privacy reasons. This means that the same user can return a different UUID depending on which agency they are signing in to. These UUIDs are also globally unique. We do offer sharing of UUIDs between agencies with user consent on a case by case basis.
       </p>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="manage-sessions">
+  <dt class="usa-accordion__heading" id="manage-sessions">
     <button class="usa-accordion__button" aria-controls="sessions">
       How does Login.gov manage sessions?
     </button>
-  </h4>
-  <div id="sessions" class="usa-accordion__container">
+  </dt>
+  <dd id="sessions" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <p>
         Once a user is authenticated on Login.gov and passed back to the agency it is up to the agency to manage the user's session.<br/>
         We do not remotely invalidate or expire a user's session.
       </p>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="ip">
+  <dt class="usa-accordion__heading" id="ip">
     <button class="usa-accordion__button" aria-controls="ip-address">
       What are the Login.gov IP addresses?
     </button>
-  </h4>
-  <div id="ip-address" class="usa-accordion__container">
+  </dt>
+  <dd id="ip-address" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <p>
         Login.gov makes no guarantees on IP addresses or ranges. Please use the DNS when querying Login.gov for the latest IPs.
       </p>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="error">
+  <dt class="usa-accordion__heading" id="error">
     <button class="usa-accordion__button" aria-controls="4xx-error">
     Why is my OIDC or SAML request returning a 4xx error?
     </button>
-  </h4>
-  <div id="4xx-error" class="usa-accordion__container">
+  </dt>
+  <dd id="4xx-error" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <p>
         Check the error that was returned. Generally we return the specific errors in the HTML, JSON, or in the redirect url.
       </p>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="no-error">
+  <dt class="usa-accordion__heading" id="no-error">
     <button class="usa-accordion__button" aria-controls="request-error">
       I do not see an error being returned for my request. Why is my request failing?
     </button>
-  </h4>
-  <div id="request-error" class="usa-accordion__container">
+  </dt>
+  <dd id="request-error" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <p>
         Please contact the engineers at Login.gov via <a href="https://zendesk.login.gov" class="usa-link usa-link--external" rel="noreferrer" target="_blank">Zendesk</a>. They can help diagnose your problem further.
       </p>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="2-fa">
+  <dt class="usa-accordion__heading" id="2-fa">
     <button class="usa-accordion__button" aria-controls="2fa">
       Can we turn off two factor authentication?
     </button>
-  </h4>
-  <div id="2fa" class="usa-accordion__container">
+  </dt>
+  <dd id="2fa" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       No.
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="cannot-embed">
+  <dt class="usa-accordion__heading" id="cannot-embed">
     <button class="usa-accordion__button" aria-controls="embed">
       Can I embed Login.gov on my site?
     </button>
-  </h4>
-  <div id="embed" class="usa-accordion__container">
+  </dt>
+  <dd id="embed" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       No. Login.gov only works via redirects to and from an agency site.
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="authorize">
+  <dt class="usa-accordion__heading" id="authorize">
     <button class="usa-accordion__button" aria-controls="authorization">
       Does Login.gov handle authorization?
     </button>
-  </h4>
-  <div id="authorization" class="usa-accordion__container">
+  </dt>
+  <dd id="authorization" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <p>
         No. Login.gov only handles authentication. Granting users specific access and permissions is handled on the agency side. For example, some agencies use Active Directory to store what applications a user can access.
       </p>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="nist-standards">
+  <dt class="usa-accordion__heading" id="nist-standards">
     <button class="usa-accordion__button" aria-controls="nist-800-63">
       Does Login.gov meet the NIST 800-63 standards for Identity Assurance Levels (IAL) and Authenticator Assurance Levels (AAL)?
     </button>
-  </h4>
-  <div id="nist-800-63" class="usa-accordion__container">
+  </dt>
+  <dd id="nist-800-63" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <p>
         For our Login.gov basic authentication accounts (IAL1), we rely on the user having access to an email address, password, and a secure multi-factor authentication method (AAL2 or higher) such as a phone, authentication app or PIV/CAC where they can receive a secure code to use to sign in to their account.
@@ -187,21 +187,21 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
         For identity proofing, in addition to meeting the above requirements for IAL1/AAL2, we ask users to upload a photograph of their state-issued ID and share their address, phone number and other personal information which is then verified against authoritative sources. Login.gov identity proofing services do not meet NIST IAL2 standards at this time. We continue to work toward achieving certification of compliance with the IAL2 standard from a third-party assessment organization.
       </p>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="status">
+  <dt class="usa-accordion__heading" id="status">
     <button class="usa-accordion__button" aria-controls="statuspage">
       Where can I check the status of Login.gov?
     </button>
-  </h4>
-  <div id="statuspage" class="usa-accordion__container">
+  </dt>
+  <dd id="statuspage" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <p>
         Login.gov has a public status page available at <a href="https://status.login.gov/">https://status.login.gov/</a> where you can subscribe to incident notifications via email, SMS, Slack, or RSS.
       </p>
     </div>
-  </div>
-</div>
+  </dd>
+</dl>
 
 ## Troubleshooting
 
@@ -209,13 +209,13 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
 
 ### Login.gov Errors
 
-<div class="usa-accordion usa-accordion--bordered">
-  <h4 class="usa-accordion__heading" id="unauthorized">
+<dl class="usa-accordion usa-accordion--bordered">
+  <dt class="usa-accordion__heading" id="unauthorized">
     <button class="usa-accordion__button" aria-controls="unauthorizedserviceprovider">
       Unauthorized Service Provider
     </button>
-  </h4>
-  <div id="unauthorizedserviceprovider" class="usa-accordion__container">
+  </dt>
+  <dd id="unauthorizedserviceprovider" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <h5>Background</h5>
       <p>
@@ -264,14 +264,14 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 ```
 </div>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading">
+  <dt class="usa-accordion__heading">
     <button class="usa-accordion__button" aria-controls="unauthorizedauthenticationcontext">
       Unauthorized Authentication Context
     </button>
-  </h4>
-  <div id="unauthorizedauthenticationcontext" class="usa-accordion__container">
+  </dt>
+  <dd id="unauthorizedauthenticationcontext" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <h5>Background:</h5>
       <p>
@@ -312,14 +312,14 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
         See Section 3.3.2.2.1 of the <a target="_blank" href="https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf">SAML spec for more information.</a>
       </p>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading">
+  <dt class="usa-accordion__heading">
     <button class="usa-accordion__button" aria-controls="nameidformatunrecognized">
       NameID Format Unrecognized
     </button>
-  </h4>
-  <div id="nameidformatunrecognized" class="usa-accordion__container">
+  </dt>
+  <dd id="nameidformatunrecognized" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" hidden="until-found">
       <h5>Background:</h5>
       <p>
@@ -340,18 +340,18 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
         For SAML Service Providers, see <a href="#other-tips--tools">Other Tips & Tools</a> for help with decoding SAML Requests.
       </p>
     </div>
-  </div>
-</div>
+  </dd>
+</dl>
 
 ### Browser Console Errors
 
-<div class="usa-accordion usa-accordion--bordered">
-  <h4 class="usa-accordion__heading" id="redirects">
+<dl class="usa-accordion usa-accordion--bordered">
+  <dt class="usa-accordion__heading" id="redirects">
     <button class="usa-accordion__button" aria-controls="csp">
       Content Security Policy (CSP) Directive Violations
     </button>
-  </h4>
-  <div id="csp" class="usa-accordion__container">
+  </dt>
+  <dd id="csp" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" aria-expanded="true">
       <h5>Background:</h5>
       <p>
@@ -366,31 +366,31 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
         Use the Network tab of your web browser to identify which redirect (302) is hanging or failing. Add that uri to the list of Redirect URIs in your Login.gov Dashboard configuration.
       </p>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="supported-browsers">
+  <dt class="usa-accordion__heading" id="supported-browsers">
     <button class="usa-accordion__button" aria-controls="supportedbrowsers">
       Supported browsers
     </button>
-  </h4>
-  <div id="supportedbrowsers" class="usa-accordion__container">
-    <div class="usa-accordion__content">
+  </dt>
+  <dd id="supportedbrowsers" class="usa-accordion__container">
+    <div class="usa-accordion__content" hidden="until-found">
       <p>
         Login.gov uses the <a class="usa-link" href="https://designsystem.digital.gov/">US Web Design System (USWDS) </a> components on our websites. The current version (USWDS 3) supports the newest versions of Chrome, Firefox, and Safari. Internet Explorer 11 (IE11) is no longer officially supported and therefore is not recommended for use with Login.gov. If you experience issues connecting with Login.gov, try using one of the recommended browsers before contacting technical support.
       </p>
     </div>
-  </div>
-</div>
+  </dd>
+</dl>
 
 ### Other Application Issues
 
-<div class="usa-accordion usa-accordion--bordered">
-  <h4 class="usa-accordion__heading" id="auth-tokens">
+<dl class="usa-accordion usa-accordion--bordered">
+  <dt class="usa-accordion__heading" id="auth-tokens">
     <button class="usa-accordion__button" aria-controls="authtoken">
       Login.gov Tokens
     </button>
-  </h4>
-  <div id="authtoken" class="usa-accordion__container">
+  </dt>
+  <dd id="authtoken" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" aria-expanded="true">
       <h5>Background:</h5>
       <p>
@@ -401,19 +401,19 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
         When Service Providers receive a successful authentication response from Login.gov, they should create their own session tokens within their application in order to track their users’ sessions.
       </p>
     </div>
-  </div>
-</div>
+  </dd>
+</dl>
 
 ### Other Tips & Tools
 
-<div class="usa-accordion usa-accordion--bordered">
+<dl class="usa-accordion usa-accordion--bordered">
 
-  <h4 class="usa-accordion__heading" id="decoding">
+  <dt class="usa-accordion__heading" id="decoding">
     <button class="usa-accordion__button" aria-controls="tipstools">
       Decoding SAML Requests
     </button>
-  </h4>
-  <div id="tipstools" class="usa-accordion__container">
+  </dt>
+  <dd id="tipstools" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose" aria-expanded="true">
       <p>
         SAML requests from browser consoles are URI encoded, base-64-encoded, and deflate-compressed. Here are steps to obtain a human-readable version of your SAML request.
@@ -423,15 +423,15 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
       <li>Take the returned value from the URI decoder and use a base-64-decode and inflate tool (eg. <a target="_blank" href="https://www.samltool.com/decode.php">SAML Tool</a>).</li>
       </ol>
     </div>
-  </div>
+  </dd>
 
-  <h4 class="usa-accordion__heading" id="saml-signature">
+  <dt class="usa-accordion__heading" id="saml-signature">
     <button class="usa-accordion__button" aria-controls="samlsignaturetroubleshooting">
       SAML Signature Troubleshooting
     </button>
-  </h4>
-  <div id="samlsignaturetroubleshooting" class="usa-accordion__container">
-    <div class="usa-accordion__content" aria-expanded="true">
+  </dt>
+  <dd id="samlsignaturetroubleshooting" class="usa-accordion__container">
+    <div class="usa-accordion__content" hidden="until-found" aria-expanded="true">
       <p>
         Login.gov uses the cryptographic signatures of authentication requests to determine which public certificate to use when encrypting data in the SAML response. If the signature is not present, or cannot be validated successfully, you will encounter problems when you rotate your application’s key pair.
       </p>
@@ -474,8 +474,8 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
         If you find your signature cannot be validated using this process, you will have to investigate what may be causing these problems and make changes on your side until validation succeeds.
       </p>
     </div>
-  </div>
-</div>
+  </dd>
+</dl>
 
 ## Contacting Partner Support
 
@@ -483,14 +483,14 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 
 If you prefer using Slack, we have a slack channel for partners, **#login-partner-support**. You can request access to this channel by opening a Zendesk ticket. This channel includes other partners and Login.gov engineers that occasionally chime in. It should not be used as a substitute to Zendesk.
 
-<div class="usa-accordion usa-accordion--bordered">
-  <h4 class="usa-accordion__heading">
+<dl class="usa-accordion usa-accordion--bordered">
+  <dt class="usa-accordion__heading">
     <button class="usa-accordion__button" aria-controls="zendesk-guidelines">
      Zendesk Guidelines
     </button>
-  </h4>
-  <div id="zendesk-guidelines" class="usa-accordion__container">
-<div class="usa-accordion__content" markdown="1">
+  </dt>
+  <dd id="zendesk-guidelines" class="usa-accordion__container">
+<div class="usa-accordion__content" hidden="until-found" markdown="1">
 Before submitting your Zendesk ticket, please review the developer documentation on our website. Often the answers we will provide can be found there. 
 When submitting a Zendesk ticket, particularly in cases when you are encountering an error, you can minimize your time to resolve the issue by providing the following information:
 
@@ -502,14 +502,14 @@ When submitting a Zendesk ticket, particularly in cases when you are encounterin
 
 It is also **highly recommended** to include someone we can contact from your technical team when creating the Zendesk ticket in case we have further questions about how your application was configured. 
 </div>
-  </div>
-  <h4 class="usa-accordion__heading">
+  </dd>
+  <dt class="usa-accordion__heading">
     <button class="usa-accordion__button" aria-controls="issues-we-can-help-with">
       Issues We Can Help With
     </button>
-  </h4>
-  <div id="issues-we-can-help-with" class="usa-accordion__container">
-<div class="usa-accordion__content" markdown="1">
+  </dt>
+  <dd id="issues-we-can-help-with" class="usa-accordion__container">
+<div class="usa-accordion__content" hidden="until-found" markdown="1">
 Here is a list of common issues partners encounter that our team can assist with. This isn’t a comprehensive list but questions that fall into these categories can usually be answered. 
 
 * Authentication failures while testing in sandbox environment
@@ -526,14 +526,14 @@ Here is a list of common issues partners encounter that our team can assist with
 * Feedback you want to share about your experience using the developer docs / dashboard (we are always looking to improve)
 * Any bugs you encounter in the dashboard or developer docs (broken links, user management issues, etc)
 </div> 
-  </div>
-  <h4 class="usa-accordion__heading">
+  </dd>
+  <dt class="usa-accordion__heading">
     <button class="usa-accordion__button" aria-controls="issues-we-cannot-help-with">
       Issues We Cannot Help With
     </button>
-  </h4>
-  <div id="issues-we-cannot-help-with" class="usa-accordion__container">
-<div class="usa-accordion__content" markdown="1">
+  </dt>
+  <dd id="issues-we-cannot-help-with" class="usa-accordion__container">
+<div class="usa-accordion__content" hidden="until-found" markdown="1">
 There are some cases where our team is unable to help, typically either for security or capacity reasons. We cannot assist with the following issues:
 
 * Setting up your integration for you (while we can provide additional tips and guidelines, we do not have the bandwidth nor access to your internal tools to provide this service)
@@ -546,15 +546,15 @@ There are some cases where our team is unable to help, typically either for secu
 * Providing access to the dashboard (for security purposes, the dashboard is self service and anyone with a .gov / .mil address can provide access - [View Product Deployment for further instructions](https://developers.login.gov/production/#before-deployment))
 * You’ve found a vulnerability and want to report it (Instead, please submit through [Login.gov Security Vulnerability Disclosure](https://docs.google.com/forms/d/e/1FAIpQLScuo4xCzBlpLnoq7-bDAVAxtJci03by7S-Q-Z_JUBDloK01QA/viewform)) 
 </div>
-  </div>
-  <h4 class="usa-accordion__heading">
+  </dd>
+  <dt class="usa-accordion__heading">
     <button class="usa-accordion__button" aria-controls="user-support">
       Issues To Direct To User Support
     </button>
-  </h4>
-  <div id="user-support" class="usa-accordion__container">
-<div class="usa-accordion__content" markdown="1">
+  </dt>
+  <dd id="user-support" class="usa-accordion__container">
+<div class="usa-accordion__content" hidden="until-found" markdown="1">
 If you receive a complaint from a user having trouble logging in or managing their account, it is best to direct them to the Login.gov help center at [https://www.login.gov/help/](https://www.login.gov/help/). Do not publish the Login.gov contact center phone number. 
 </div>
-  </div>
-</div>
+  </dd>
+</dl>
