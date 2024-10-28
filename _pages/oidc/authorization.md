@@ -150,9 +150,9 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         </div>
       </div>
       <div class="grid-row">
-        <div class="usa-accordion padding-top-2">
+        <dl class="usa-accordion padding-top-2">
             {% include accordion.html content=code_challenge accordion_id="code_challenge_accordion" title="Code Challenge Example" id="code_challenge" %}
-        </div>
+        </dl>
       </div>
     </div>
     <div class="dev-doc-row pkce-only" hidden>
@@ -199,9 +199,9 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         </div>
       </div>
       <div class="grid-row">
-        <div class="usa-accordion padding-top-2">
+        <dl class="usa-accordion padding-top-2">
           {% include accordion.html content=scope_possible_values accordion_id="scope_accordion" id="scope_possible_values" title="Possible Values" %}
-        </div>
+        </dl>
       </div>
     </div>
     <div class="dev-doc-row">
