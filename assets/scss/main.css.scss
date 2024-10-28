@@ -18,6 +18,10 @@
 
 $block-background-color: #fafafa;
 
+dd {
+  margin-left: 0;
+}
+
 main.usa-layout-docs {
   word-wrap: break-word;
 }
@@ -147,6 +151,10 @@ button.code-button:hover {
 
 .agency-logo-width{
   width: 230px;
+}
+
+.usa-nav {
+  float: none;
 }
 
 .usa-nav__close .usa-icon {

@@ -31,7 +31,7 @@ sidenav:
 `<samlp:AuthnRequest>:SAML_REQUEST = urlEncode(base64(deflate(payload)))`
 {% endcapture %}
 {% capture saml_tag %}
-The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the type of identity verification<sup role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">&#42;</a></sup>, AAL (Authentication Assurance Level) and attributes requested.
+The `<saml:AuthnContextClassRef>` tags (nested under `//samlp:AuthnRequest/samlp:RequestedAuthnContext/`) specify the type of identity verification<sup><a href="#fn:1" class="footnote" rel="footnote">&#42;</a></sup>, AAL (Authentication Assurance Level) and attributes requested.
 {% endcapture %}
 {% capture attributes %}
 To request specific attributes, list them (comma-separated) as the query parameter for `http://idmanagement.gov/ns/requested_attributes?ReqAttr=`. See the [user attributes]({{ '/attributes/' | prepend: site.baseurl }}) for the list of attributes that can be requested.
@@ -68,12 +68,12 @@ A proofed identity request at AAL2, with phishing resistent MFA, for email, phon
                     {{ saml_tag | markdownify }}
                 </div>
             </div>
-            <div class="usa-accordion">
+            <dl class="usa-accordion">
                 {% include accordion.html content=service_levels accordion_id="service_level_accordion"  title="Type of Service Level" id="service_level" %}
                 {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
                 {% include accordion.html content=attributes accordion_id="attributes_accordion" title="Attributes" id="attributes" %}
                 {% include accordion.html content=loa_values accordion_id="loa_accordion" title="Level of Assurance (LOA) Values (Deprecated)" id="loa_values" %}
-            </div>
+            </dl>
         </div>
         <div class="dev-doc-row">
             <div class="grid-row">

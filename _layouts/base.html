@@ -93,7 +93,7 @@
     <div class="usa-overlay"></div>
       <header class="usa-header usa-header--extended" role="banner">
           <div class="usa-navbar">
-            <div class="usa-logo" id="basic-logo">
+            <h1 class="usa-logo" id="basic-logo">
               <a href="{{ '/' | prepend: site.baseurl }}" title="Home" aria-label="Home">
                 <img src="{{ site.baseurl }}/assets/img/login-gov-logo.svg"
                   class="usa-logo__img"
@@ -101,7 +101,7 @@
                   role="img">
                 <em class="usa-logo__text">Developers</em>
               </a>
-            </div>
+            </h1>
             <section class="desktop:display-block mobile:display-none" aria-label="Search component">
               {% include search.html id="header-nav" %}
             </section>
@@ -116,7 +116,7 @@
               </button>
               <div class="usa-nav__secondary desktop:padding-right-2">
                 <section class="mobile:display-block desktop:display-none" aria-hidden="true">
-                  {% include search.html id="header-nav" %}
+                  {% include search.html id="header-nav-mobile" %}
                 </section>
               </div>
               <ul class="usa-nav__primary usa-accordion flex-justify">
@@ -132,19 +132,19 @@
               </ul>
             </div>
           </nav>
-      </header>
-      {% if page.lead %}
-      <header aria-label="hero" class="usa-dark-background usa-section usa-section--dark">
-          <div class="grid-container">
-            <div class="grid-row">
-              <div class="grid-col-9 grid-offset-2">
-                    <h1 class="usa-display">{{ page.title }}</h1>
-                    <div class="usa-intro">{{ page.lead | markdownify }}</div>
+          {% if page.lead %}
+          <div aria-label="hero" class="usa-dark-background usa-section usa-section--dark">
+              <div class="grid-container">
+                <div class="grid-row">
+                  <div class="grid-col-9 grid-offset-2">
+                        <h1 class="usa-display">{{ page.title }}</h1>
+                        <div class="usa-intro">{{ page.lead | markdownify }}</div>
+                  </div>
+                </div>
               </div>
-            </div>
           </div>
+          {% endif %}
       </header>
-      {% endif %}
 
     {{ content }}
 

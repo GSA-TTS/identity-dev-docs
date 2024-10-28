@@ -119,18 +119,18 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <h4 id="acr_values" class="parameters">acr_values</h4>
     </div>
     <div class="grid-col-7">
-        The Authentication Context Class Reference requests can be used to specify the type of service level<sup role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">&#42;</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="{{ '/attributes/' | prepend: site.baseurl }}">user attributes</a> will be available in the <a class="usa-link" href="{{ '/oidc/user-info/#user-info-response' | prepend: site.baseurl }}">user info response</a>.
+        The Authentication Context Class Reference requests can be used to specify the type of service level<sup><a href="#fn:1" class="footnote" rel="footnote">&#42;</a></sup> or the AAL (Authentication Assurance Level) for the user. These and the <code class="language-plaintext highlighter-rouge">scope</code> determine which <a class="usa-link" href="{{ '/attributes/' | prepend: site.baseurl }}">user attributes</a> will be available in the <a class="usa-link" href="{{ '/oidc/user-info/#user-info-response' | prepend: site.baseurl }}">user info response</a>.
       <p>
         Multiple values can be joined with a space (before being URI-escaped in the final URL).
       </p>
     </div>
   </div>
   <div class="grid-row dev-doc-row">
-      <div class="usa-accordion">
+      <dl class="usa-accordion">
         {% include accordion.html content=service_levels accordion_id="service_level_accordion"  title="Type of Service Level" id="service_level" %}
         {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
         {% include accordion.html content=loa_values accordion_id="loa_accordion" title="Level of Assurance (LOA) Values (Deprecated)" id="loa_values" %}
-      </div>
+      </dl>
     </div>
     <div class="grid-row dev-doc-row">
       <div class="grid-col-5">
@@ -150,9 +150,9 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         </div>
       </div>
       <div class="grid-row">
-        <div class="usa-accordion padding-top-2">
+        <dl class="usa-accordion padding-top-2">
             {% include accordion.html content=code_challenge accordion_id="code_challenge_accordion" title="Code Challenge Example" id="code_challenge" %}
-        </div>
+        </dl>
       </div>
     </div>
     <div class="dev-doc-row pkce-only" hidden>
@@ -199,9 +199,9 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         </div>
       </div>
       <div class="grid-row">
-        <div class="usa-accordion padding-top-2">
+        <dl class="usa-accordion padding-top-2">
           {% include accordion.html content=scope_possible_values accordion_id="scope_accordion" id="scope_possible_values" title="Possible Values" %}
-        </div>
+        </dl>
       </div>
     </div>
     <div class="dev-doc-row">
