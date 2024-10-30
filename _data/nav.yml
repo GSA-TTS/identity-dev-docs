@@ -19,3 +19,26 @@ primary:
     href: /security-events/
   - text: Support
     href: /support/
+footer_sections:
+- heading: For agencies
+  links:
+  - label: Become a Partner
+    url: '$BASE_URL/partners/'
+  - label: Developer Guide
+    url: '/'
+- heading: Learn
+  links:
+  - label: About us
+    url: '$BASE_URL/about-us/'
+  - label: Accessibility
+    url: '$BASE_URL/accessibility/'
+  - label: Join us
+    url: '$BASE_URL/join/'
+  - label: Privacy & Security
+    url: '$BASE_URL/policy/'
+- heading: Support
+  links:
+    - label: Contact us
+      url: '$BASE_URL/contact/'
+    - label: Help Center
+      url: '$BASE_URL/help/'
