@@ -133,6 +133,8 @@ Once you have:
 
 3. Confirmed that you have a logo uploaded to your production configuration in the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/). **An uploaded logo is required for the deployment process.**
 
+4. Submitted a [Support Ticket](https://zendesk.login.gov) ticket requesting use of the facial match feature in production, if your application intends to use our identity verification with facial match.
+
 You are ready to submit a launch request through the [Partner Support Help Desk](https://zendesk.login.gov). 
 
 All changes to integrations between Login.gov and your application must be reviewed and deployed.
