@@ -18,6 +18,10 @@
 
 $block-background-color: #fafafa;
 
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
 dd {
   margin-left: 0;
 }
