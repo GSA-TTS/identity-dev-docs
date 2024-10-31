@@ -24,8 +24,8 @@ sidenav:
 {% capture service_levels %}
  {% include snippets/auth_content/service_levels.md %}
 {% endcapture %}
-{% capture loa_values %}
- {% include snippets/auth_content/loa_values.md %}
+{% capture deprecated_values %}
+ {% include snippets/auth_content/deprecated_values.md %}
 {% endcapture %}
 {% capture saml_request_intro %}
 `<samlp:AuthnRequest>:SAML_REQUEST = urlEncode(base64(deflate(payload)))`
@@ -72,8 +72,8 @@ A proofed identity request at AAL2, with phishing resistent MFA, for email, phon
                 {% include accordion.html content=service_levels accordion_id="service_level_accordion"  title="Type of Service Level" id="service_level" %}
                 {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
                 {% include accordion.html content=attributes accordion_id="attributes_accordion" title="Attributes" id="attributes" %}
-                {% include accordion.html content=loa_values accordion_id="loa_accordion" title="Level of Assurance (LOA) Values (Deprecated)" id="loa_values" %}
-            </dl>
+                {% include accordion.html content=deprecated_values accordion_id="deprecated_accordion" title="Deprecated Service Values" id="deprecated_values" %}
+            </div>
         </div>
         <div class="dev-doc-row">
             <div class="grid-row">
@@ -129,9 +129,6 @@ A proofed identity request at AAL2, with phishing resistent MFA, for email, phon
                 {% include snippets/saml/auth/response_example.md %}
             </section>
         </section>
-    </div>
-    <div class="desktop:grid-col-7 mobile:grid-col-full">
-        <p id="fn:1" role="note">&#42;Login.gov continues to work toward achieving certification of compliance with NIST’s IAL2 standard from a third-party assessment organization.</p>
     </div>
     <a href="{{ '/saml/logout/' | prepend: site.baseurl }}" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Logout</a>
 </div>
