@@ -3,7 +3,7 @@
   - **`http://idmanagement.gov/ns/assurance/ial/1`**
       Basic identity assurance, does not require identity verification (this is the most common value). Equivalent to `urn:acr.login.gov:auth-only`.
   - **`http://idmanagement.gov/ns/assurance/ial/2`**
-      Requires that the user has gone through basic identity verification.Equivalent to `urn:acr.login.gov:verified`.
+      Requires that the user has gone through basic identity verification. Equivalent to `urn:acr.login.gov:verified`.
       
       Does not meet NIST 800-63-3 IAL2 standard.
   - **`http://idmanagement.gov/ns/assurance/loa/1`**
