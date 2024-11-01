@@ -3,7 +3,7 @@
 {
   "sub": "b2d2d115-1d7e-4579-b9d6-f8e84f4f56ca",
   "iss": "https://idp.int.identitysandbox.gov",
-  "acr": "http://idmanagement.gov/ns/assurance/ial/1",
+  "acr": "urn:acr.login.gov:auth-only",
   "nonce": "aad0aa969c156b2dfa685f885fac7083",
   "aud": "urn:gov:gsa:openidconnect:development",
   "jti": "jC7NnU8dNNV5lisQBm1jtA",

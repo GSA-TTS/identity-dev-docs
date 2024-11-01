@@ -44,7 +44,7 @@ A proofed identity request at AAL2, with phishing resistent MFA, for email, phon
 <samlp:AuthnRequest ...>
   <!-- ... -->
   <samlp:RequestedAuthnContext Comparison='exact'>
-    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/ial/2</saml:AuthnContextClassRef>
+    <saml:AuthnContextClassRef>urn:acr.login.gov:verified</saml:AuthnContextClassRef>
     <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true</saml:AuthnContextClassRef>
     <saml:AuthnContextClassRef>http://idmanagement.gov/ns/requested_attributes?ReqAttr=email,phone,first_name,last_name,ssn</saml:AuthnContextClassRef>
   </samlp:RequestedAuthnContext>
