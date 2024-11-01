@@ -9,7 +9,7 @@ jobs:
   build:
     docker:
       # Specify the Ruby version you desire here
-      - image: cimg/ruby:3.2-browsers
+      - image: cimg/ruby:3.2.5-browsers
     environment:
       BUNDLE_JOBS: '3'
       BUNDLE_RETRY: '3'
