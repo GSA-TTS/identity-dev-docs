@@ -126,12 +126,11 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
     </div>
   </div>
   <div class="grid-row dev-doc-row">
-      <dl class="usa-accordion">
-        {% include accordion.html content=service_levels accordion_id="service_level_accordion"  title="Type of Service Level" id="service_level" %}
-        {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
-        {% include accordion.html content=deprecated_values accordion_id="deprecated_accordion" title="Deprecated Service Values" id="deprecated_values" %}
-      </div>
-    </div>
+    <dl class="usa-accordion">
+      {% include accordion.html content=service_levels accordion_id="service_level_accordion"  title="Type of Service Level" id="service_level" %}
+      {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
+      {% include accordion.html content=deprecated_values accordion_id="deprecated_accordion" title="Deprecated Service Values" id="deprecated_values" %}
+    </dl>
     <div class="grid-row dev-doc-row">
       <div class="grid-col-5">
         <h4 class="parameters">client_id</h4>

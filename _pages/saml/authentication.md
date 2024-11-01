@@ -73,7 +73,7 @@ A proofed identity request at AAL2, with phishing resistent MFA, for email, phon
                 {% include accordion.html content=aal_values accordion_id="aal_accordion" title="Authentication Assurance (AAL) Values" id="aal_values" %}
                 {% include accordion.html content=attributes accordion_id="attributes_accordion" title="Attributes" id="attributes" %}
                 {% include accordion.html content=deprecated_values accordion_id="deprecated_accordion" title="Deprecated Service Values" id="deprecated_values" %}
-            </div>
+            </dl>
         </div>
         <div class="dev-doc-row">
             <div class="grid-row">
