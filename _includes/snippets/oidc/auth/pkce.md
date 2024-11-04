@@ -1,7 +1,7 @@
 {% capture pkce %}
 ```bash
 https://idp.int.identitysandbox.gov/openid_connect/authorize?
-  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
+  acr_values=urn:acr.login.gov:auth-only&
   client_id=${CLIENT_ID}&
   code_challenge=${CODE_CHALLENGE}&
   code_challenge_method=S256&
