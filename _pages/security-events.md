@@ -225,7 +225,7 @@ The URL must:
 
 #### Agency integration environment:
 
-- Use the dashboard to register the `push_notification_url` for your application
+- Use the portal to register the `push_notification_url` for your application
 - Your `push_notification_url` will be automatically added to the integration environment's outbound proxy allowlist by 5PM UTC.
 
 #### Production environment:

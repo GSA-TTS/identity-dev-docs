@@ -219,17 +219,17 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
     <div class="usa-accordion__content usa-prose">
       <h5>Background</h5>
       <p>
-        Login.gov recognizes incoming requests from Service Providers by validating the Issuer (for SAML) or ClientID (for OIDC) field sent in the request and checking it against Service Providers registered with Login.gov. The Issuer for each Service Provider is defined in the Issuer field on the Login.gov Dashboard.
+        Login.gov recognizes incoming requests from Service Providers by validating the Issuer (for SAML) or ClientID (for OIDC) field sent in the request and checking it against Service Providers registered with Login.gov. The Issuer for each Service Provider is defined in the Issuer field on the Login.gov Portal.
         <br/><br/>
-        <img alt="Screenshot of issuer field on Login.gov dashboard" src="/assets/img/dashboard_issuer.png" />
+        <img alt="Screenshot of issuer field on Login.gov portal" src="/assets/img/dashboard_issuer.png" />
         <br/><br/>
-        This error occurs when Login.gov receives a request from a Service Provider that contains an Issuer/ClientID field that is not registered with Login.gov. The Issuer/ClientID defined in the request must match EXACTLY the Issuer defined in the Dashboard.
+        This error occurs when Login.gov receives a request from a Service Provider that contains an Issuer/ClientID field that is not registered with Login.gov. The Issuer/ClientID defined in the request must match EXACTLY the Issuer defined in the Portal.
       </p>
       <h5>Solution:</h5>
       <p>
-        Double check the SAML/OIDC request to Login.gov and confirm that the Issuer/ClientID field matches exactly what is defined in the Login.gov Dashboard. See <a href="#other-tips--tools">Other Tips & Tools</a> for help with decoding SAML Requests.
+        Double check the SAML/OIDC request to Login.gov and confirm that the Issuer/ClientID field matches exactly what is defined in the Login.gov Portal. See <a href="#other-tips--tools">Other Tips & Tools</a> for help with decoding SAML Requests.
         <br/><br/>
-        Note that certain Service Providers will not allow partners to set or change the Issuer value after the application is configured (e.g. MS Power Apps Portal). In this case, the best option would be to create the Login.gov Dashboard configuration after the Service Provider application has defined the Issuer and use that Issuer in the Dashboard.
+        Note that certain Service Providers will not allow partners to set or change the Issuer value after the application is configured (e.g. MS Power Apps Portal). In this case, the best option would be to create the Login.gov Portal configuration after the Service Provider application has defined the Issuer and use that Issuer in the Portal.
       </p>
 
 <!-- markdown has to be formatted left-aligned -->
@@ -359,11 +359,11 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
         <br/><br/>
         The <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/form-action">CSP form-action</a> directive restricts which URLs can be used as the target of form submissions from a given context. Certain Chromium-based internet browsers (e.g. Google Chrome and Microsoft Edge) enforce the form-action directive through the entire redirect chain (if any). Other non-Chromium-based browsers only check the first redirect in the chain (e.g. Firefox). For Chromium-based browsers, upon form submission, any attempts to redirect to a url not explicitly listed as a form-action source will violate the CSP directive and cause a failure to load and a console error.
         <br/><br/>
-        This error occurs when Service Providers attempt to redirect users to a url that is not registered in the Redirect URLs field in the <a target="_blank" href="https://dashboard.int.identitysandbox.gov/">Login.gov Dashboard</a> configuration. All urls that users could be redirected to, even as a passthrough, need to be included in the list of Redirect URLs.
+        This error occurs when Service Providers attempt to redirect users to a url that is not registered in the Redirect URLs field in the <a target="_blank" href="https://dashboard.int.identitysandbox.gov/">Login.gov Portal</a> configuration. All urls that users could be redirected to, even as a passthrough, need to be included in the list of Redirect URLs.
       </p>
       <h5>Solution:</h5>
       <p>
-        Use the Network tab of your web browser to identify which redirect (302) is hanging or failing. Add that uri to the list of Redirect URIs in your Login.gov Dashboard configuration.
+        Use the Network tab of your web browser to identify which redirect (302) is hanging or failing. Add that uri to the list of Redirect URIs in your Login.gov Portal configuration.
       </p>
     </div>
   </dd>
@@ -469,7 +469,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 </div>
       <h5>Check validity of signature</h5>
       <p>
-        There may be other reasons Login.gov cannot successfully validate your application’s signatures using the information you have provided in the Login.gov Partner Dashboard for the application. We have created a <a class="usa-link" href="https://dashboard.int.identitysandbox.gov/tools/saml_request"> web-based tool</a> that lets you check this easily.
+        There may be other reasons Login.gov cannot successfully validate your application’s signatures using the information you have provided in the Login.gov Partner Portal for the application. We have created a <a class="usa-link" href="https://dashboard.int.identitysandbox.gov/tools/saml_request"> web-based tool</a> that lets you check this easily.
         <br/><br/>
         If you find your signature cannot be validated using this process, you will have to investigate what may be causing these problems and make changes on your side until validation succeeds.
       </p>
@@ -494,7 +494,7 @@ If you prefer using Slack, we have a slack channel for partners, **#login-partne
 Before submitting your Zendesk ticket, please review the developer documentation on our website. Often the answers we will provide can be found there. 
 When submitting a Zendesk ticket, particularly in cases when you are encountering an error, you can minimize your time to resolve the issue by providing the following information:
 
- * Link to your dashboard configuration
+ * Link to your portal configuration
  * Screenshots of all error messages
  * What browser you were using
  * Time the error(s) occurred or if it is ongoing
@@ -514,7 +514,7 @@ Here is a list of common issues partners encounter that our team can assist with
 
 * Authentication failures while testing in sandbox environment
 * Questions about OIDC/SAML protocols
-* Problems with dashboard configuration (configuration not updating as expected)
+* Problems with portal configuration (configuration not updating as expected)
 * Invalid PIV/CAC certificate errors (we may need to update certs on our end)
 * Problems updating or deploying a production configuration
 * Clarification about something in our developer docs
@@ -523,8 +523,8 @@ Here is a list of common issues partners encounter that our team can assist with
 * Troubles with redirecting back to your application / Service Provider
 * Trouble reading or receiving expected user attributes 
 * Users being unable to sign into production Service Provider (these are top priority to resolve, assuming it is related to Login.gov) 
-* Feedback you want to share about your experience using the developer docs / dashboard (we are always looking to improve)
-* Any bugs you encounter in the dashboard or developer docs (broken links, user management issues, etc)
+* Feedback you want to share about your experience using the developer docs / portal (we are always looking to improve)
+* Any bugs you encounter in the portal or developer docs (broken links, user management issues, etc)
 </div> 
   </dd>
   <dt class="usa-accordion__heading">
@@ -543,7 +543,7 @@ There are some cases where our team is unable to help, typically either for secu
 * Debugging network connection issues (if the connection isn’t going through, we cannot see it on our end and thus have very limited ability to troubleshoot) 
 * Any kind of PII request (we do not give out PII for any reason) 
 * Debugging your internal server setup (we can try to direct you to documentation but our server knowledge is limited) 
-* Providing access to the dashboard (for security purposes, the dashboard is self service and anyone with a .gov / .mil address can provide access - [View Product Deployment for further instructions](https://developers.login.gov/production/#before-deployment))
+* Providing access to the portal (for security purposes, the portal is self service and anyone with a .gov / .mil address can provide access - [View Product Deployment for further instructions](https://developers.login.gov/production/#before-deployment))
 * You’ve found a vulnerability and want to report it (Instead, please submit through [Login.gov Security Vulnerability Disclosure](https://docs.google.com/forms/d/e/1FAIpQLScuo4xCzBlpLnoq7-bDAVAxtJci03by7S-Q-Z_JUBDloK01QA/viewform)) 
 </div>
   </dd>

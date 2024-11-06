@@ -27,7 +27,7 @@ sidenav:
 
 ## Add your agency logo
 
-All applications are required to add a logo, which is uploaded in the Partner Dashboard.
+All applications are required to add a logo, which is uploaded in the Partner Portal.
 
 Your agency logo will appear to the right of the Login.gov logo in your integration. This helps to ensure users understand the partnership between Login.gov and your integration with our service.
 

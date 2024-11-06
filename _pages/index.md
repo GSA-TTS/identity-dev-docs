@@ -17,7 +17,7 @@ layout: home
     <ol class="usa-process-list usa-prose margin-bottom-4">
       <li class="usa-process-list__item">
         <p>
-          Your integration with Login.gov starts in the <a href="{{ site.baseurl }}/testing/#using-the-sandbox" class="usa-link">dashboard</a> where you can register your app.
+          Your integration with Login.gov starts in the <a href="{{ site.baseurl }}/testing/#using-the-sandbox" class="usa-link">portal</a> where you can register your app.
         </p>
       </li>
       <li class="usa-process-list__item">
@@ -32,7 +32,7 @@ layout: home
       </li>
       <li class="usa-process-list__item">
         <p>
-          Configure your app in the dashboard and start <a href="{% link _pages/testing.md %}" class="usa-link">testing</a>! We have implementation guides and example apps to get you up and running quickly.
+          Configure your app in the portal and start <a href="{% link _pages/testing.md %}" class="usa-link">testing</a>! We have implementation guides and example apps to get you up and running quickly.
         </p>
       </li>
       <li class="usa-process-list__item">

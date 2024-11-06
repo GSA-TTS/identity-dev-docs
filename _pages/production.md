@@ -1,7 +1,7 @@
 ---
 title: Production deployment
 lead: >
-  Once you’ve set up your integration through [our dashboard](https://dashboard.int.identitysandbox.gov/) and tested, you can request deployment to the Login.gov production environment.
+  Once you’ve set up your integration through [our portal](https://dashboard.int.identitysandbox.gov/) and tested, you can request deployment to the Login.gov production environment.
 
 redirect_from:
   - /production-deployment/
@@ -35,7 +35,7 @@ Make sure you have the following items ready before you start the deployment pro
 
 -   [Signed Interagency Agreement (IAA) listing this integration ]({{ site.baseurl}}/production/#confirm-interagency-agreement-iaa)
 
--   A dedicated [application configuration within the Dashboard](https://dashboard.int.identitysandbox.gov/)
+-   A dedicated [application configuration within the Portal](https://dashboard.int.identitysandbox.gov/)
     * We recommend having two configurations, one that is intended for deployment to production and one which is purely for testing purposes.
     * All production urls should have .gov, .mil, or a dedicated .com address and point to an Authority to Operate (ATO) approved environment.
 
@@ -69,7 +69,7 @@ Please reach out to your agency IAA contact if you have any questions. If your a
 
 ## Production configuration process
 
-Before you can request deployment, you need to create a new and separate application on our dashboard. This new app will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
+Before you can request deployment, you need to create a new and separate application on our portal. This new app will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
 
 -   Signed IAA listing this integration 
 
@@ -79,7 +79,7 @@ Before you can request deployment, you need to create a new and separate applica
 
 **When you have the components required, follow these steps to create your production configuration app:**
 
-1.  [Create a new app on the](https://dashboard.int.identitysandbox.gov/) Login.gov Partner Dashboard. Select “Apps” from the top right menu, then select the “Create a new app” button.
+1.  [Create a new app on the](https://dashboard.int.identitysandbox.gov/) Login.gov Partner Portal. Select “Apps” from the top right menu, then select the “Create a new app” button.
 
 2. Select “YES” for production configuration - this configuration is for a production app.
 
@@ -131,7 +131,7 @@ Once you have:
 
 2. [Created a production configuration app]({{site.baseurl}}/production/#production-configuration-process).
 
-3. Confirmed that you have a logo uploaded to your production configuration in the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/). **An uploaded logo is required for the deployment process.**
+3. Confirmed that you have a logo uploaded to your production configuration in the [Partner Portal](https://dashboard.int.identitysandbox.gov/). **An uploaded logo is required for the deployment process.**
 
 You are ready to submit a launch request through the [Partner Support Help Desk](https://zendesk.login.gov). 
 
@@ -161,7 +161,7 @@ If you are rotating your application’s public/private keypair, or want to add 
 
   **For OIDC integrations or SAML integrations sending signed requests:**
 
-  1.  Add the new certificate to the application dashboard configuration.
+  1.  Add the new certificate to the application portal configuration.
 
   2.  Contact Login.gov technical support and request certificate addition.
 
@@ -174,7 +174,7 @@ If you are rotating your application’s public/private keypair, or want to add 
 
   1.  The final certificate rotation must be coordinated with Login.gov technical support.
 
-  2.  Add the new certificate to the application dashboard configuration.
+  2.  Add the new certificate to the application portal configuration.
 
   3.  Request coordination of the certificate rotation from Login.gov technical support.
 
