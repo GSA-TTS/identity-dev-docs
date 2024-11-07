@@ -298,7 +298,7 @@ https://idp.int.identitysandbox.gov/openid_connect/authorize?
 <samlp:AuthnRequest ...>
   <!-- ... -->
   <samlp:RequestedAuthnContext Comparison='minimum'>
-    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/ial/2</saml:AuthnContextClassRef>
+    <saml:AuthnContextClassRef>urn:acr.login.gov:verified</saml:AuthnContextClassRef>
     <saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</saml:AuthnContextClassRef>
     <saml:AuthnContextClassRef>http://idmanagement.gov/ns/requested_attributes?ReqAttr=email</saml:AuthnContextClassRef>
   </samlp:RequestedAuthnContext>

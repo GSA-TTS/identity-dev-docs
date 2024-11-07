@@ -18,8 +18,8 @@ oidc:
         No IAL Service Levels are present in the `acr_values` parameter of the authentication request.
         ##### What to do:
         Check the `acr_values` parameter in your authentication request and ensure that you are passing either:
-        - `http://idmanagement.gov/ns/assurance/ial/1` for Authentication Only applications, OR;
-        - `http://idmanagement.gov/ns/assurance/ial/2` for Identity-Verification Permitted applications.
+        - `urn:acr.login.gov:auth-only` for Authentication Only applications, OR;
+        - `urn:acr.login.gov:verified` for Identity-Verification Permitted applications.
         Learn more about IAL Service Level values here: [https://developers.login.gov/oidc/authorization/#service_level](/oidc/authorization/#service_level){:target="_blank"}
     - title: The acr_values are not authorized
       id: oidc-missing-acr-values

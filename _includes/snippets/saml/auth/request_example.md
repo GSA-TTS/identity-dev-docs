@@ -33,7 +33,7 @@
   <samlp:NameIDPolicy AllowCreate='true'
                       Format='urn:oasis:names:tc:SAML:1.1:nameid-format:persistent'/>
   <samlp:RequestedAuthnContext Comparison='exact'>
-    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/assurance/ial/1</saml:AuthnContextClassRef>
+    <saml:AuthnContextClassRef>urn:acr.login.gov:auth-only</saml:AuthnContextClassRef>
     <saml:AuthnContextClassRef>http://idmanagement.gov/ns/requested_attributes?ReqAttr=email,phone,first_name,last_name,ssn</saml:AuthnContextClassRef>
   </samlp:RequestedAuthnContext>
 </samlp:AuthnRequest>
