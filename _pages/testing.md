@@ -44,7 +44,7 @@ Please submit a support ticket through the [Partner Support Help Desk](https://z
 
 ## Using the sandbox
 
-1. Visit the Partner Portal at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov).
+1. Visit the Partner Portal at [portal.int.identitysandbox.gov](portal.int.identitysandbox.gov).
 1. Select the “Sign in” button in the upper-right corner to sign in or create a new account with the test Login.gov IdP in the sandbox environment hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov). **Please note that this is separate from your Login.gov production account.**
 1. Once you are logged into your sandbox account, create a new team by selecting the “Continue” button under “Create your first team." (If you have previously created a team you will select the “Create a new team” button.)
 1. If necessary, add users to that team by clicking the "Add users" button. **This is the opportunity to add contractors or anyone without a .gov or a .mil**
