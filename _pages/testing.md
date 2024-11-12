@@ -1,7 +1,7 @@
 ---
 title: Testing your app
 lead: >
-  Once you’ve created your app and implemented an identity protocol, you can now register it in the test environment portal and start testing.
+  Once you’ve created your app and implemented an identity protocol, you can now register it in the test environment partner portal and start testing.
 redirect_from:
   - /registering-your-sp/
   - /register/
@@ -25,9 +25,11 @@ sidenav:
 
 ## About the Login.gov sandbox
 
-Login.gov provides an open sandbox environment to create and test integrations between Login.gov and your applications. **Note that the Login.gov Sandbox environment is a free service with an availability target of M-F, 8a-5p ET.** While it is typically online within that window, there are occasional hiccups that should resolve quickly on their own. The environment may at times be available outside of this window, but it is not guaranteed and may become unavailable with no advance notice.
+The Login.gov sandbox is an open environment to create and test integrations between Login.gov and your applications.
 
-In the sandbox environment, our [Portal](https://dashboard.int.identitysandbox.gov) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
+**The Login.gov sandbox environment is supported M-F, 8a-5p ET.** The sandbox is typically available during these hours, though there occasional outages may occur.
+
+In the sandbox environment, our [partner portal](https://dashboard.int.identitysandbox.gov) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
 
 ## Getting access to the Login.gov sandbox
 
@@ -45,13 +47,14 @@ Please submit a support ticket through the [Partner Support Help Desk](https://z
 ## Using the sandbox
 
 1. Visit the Partner Portal at [portal.int.identitysandbox.gov](https://portal.int.identitysandbox.gov).
-1. Select the “Sign in” button in the upper-right corner to sign in or create a new account with the test Login.gov IdP in the sandbox environment hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov). **Please note that this is separate from your Login.gov production account.**
-1. Once you are logged into your sandbox account, create a new team by selecting the “Continue” button under “Create your first team." (If you have previously created a team you will select the “Create a new team” button.)
-1. If necessary, add users to that team by clicking the "Add users" button. **This is the opportunity to add contractors or anyone without a .gov or a .mil**
-1. After creating your team, select the Apps tab. This page is where you will find all of the test applications you and your team create.
-1. Select the “Create a new test app” button and fill out the form to register a new application with the Login.gov IdP in the test sandbox environment.
+1. Create a new Login.gov test account with the test Login.gov IdP in the sandbox environment hosted at [https://idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov). Your Login.gov test account is separate from your Login.gov production account.
+1. If you already have a Login.gov test account, click the “Sign in” button in the upper-right corner to sign in.
+1. You must create a team before you can create a new app. Create a new team by selecting the “Continue” button under “Create your first team." (If you have previously created a team  you can move on to step 5.)
+1. If necessary, add users to that team by clicking the "Add users" button. **This is the opportunity to add contractors or anyone without a .gov or a .mil email address.**
+1. After creating your team, select the Apps tab. This page is where you will find all of the applications you and your team create.
+1. Select the “Create a new app” button and follow the steps to register a new application with the Login.gov IdP in the test sandbox environment. If you have an existing app in progress, you will be prompted to continue that app or start a new app. You can only have one app creation in progress at a time. There are links to additional information throughout the form. We recommend reading through the descriptions carefully.
+1. To troubleshoot specific errors, please visit our error dictionary in the [troubleshooting section of our developer documentation]({% link _pages/support.md %}#troubleshooting). If the guidance there does not resolve the error, please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov).
 1. Start testing!
-1. If you need to troubleshoot an issue that is not covered in the [developer documentation]({% link _pages/index.md %}), please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov). We can also add you to our partner support Slack channel and the Login.gov team will help you along the way.
 1. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your application's promotion to production. **The move to production may take up to two weeks.**
 
 ## If you lost access to a sandbox team

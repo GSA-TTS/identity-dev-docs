@@ -1,7 +1,7 @@
 ---
 title: Production deployment
 lead: >
-  Once you’ve set up your integration through [our portal](https://dashboard.int.identitysandbox.gov/) and tested, you can request deployment to the Login.gov production environment.
+  Once you’ve set up your integration through [our partner portal](https://dashboard.int.identitysandbox.gov/) and tested, you can request deployment to the Login.gov production environment.
 
 redirect_from:
   - /production-deployment/
@@ -35,7 +35,7 @@ Make sure you have the following items ready before you start the deployment pro
 
 -   [Signed Interagency Agreement (IAA) listing this integration ]({{ site.baseurl}}/production/#confirm-interagency-agreement-iaa)
 
--   A dedicated [application configuration within the Portal](https://dashboard.int.identitysandbox.gov/)
+-   A dedicated [application configuration within the portal](https://dashboard.int.identitysandbox.gov/)
     * We recommend having two configurations, one that is intended for deployment to production and one which is purely for testing purposes.
     * All production urls should have .gov, .mil, or a dedicated .com address and point to an Authority to Operate (ATO) approved environment.
 
@@ -69,7 +69,7 @@ Please reach out to your agency IAA contact if you have any questions. If your a
 
 ## Production configuration process
 
-Before you can request deployment, you need to create a new and separate application on our portal. This new app will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
+Before you can request deployment, you need to create a new and separate application on our partner portal. This new app will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
 
 -   Signed IAA listing this integration 
 
@@ -81,29 +81,38 @@ Before you can request deployment, you need to create a new and separate applica
 
 1.  [Create a new app on the](https://dashboard.int.identitysandbox.gov/) Login.gov Partner Portal. Select “Apps” from the top right menu, then select the “Create a new app” button.
 
-2. Select “YES” for production configuration - this configuration is for a production app.
+2.  Choose an agency team for the app from the drop down menu. 
 
-3.  Enter the name of the app as it appears in your IAA in the "App Name" field. **Do NOT use environment names such as "Prod" or "Production".**
+3.  Select “Ready for Production” in the Dashboard Configuration section.
 
-4.  Enter the name of the app as it should appear to users in the "Friendly Name" field. **This is the app name a user will see when logging in.** 
+4.  Enter the name of the app as it appears in your IAA in the "App Name" field. **Do NOT use environment names such as "Prod" or "Production".**
 
-5.  Next, choose an agency team for the app from the drop down menu.
+5.  Enter the name of the app as it should appear to users in the "Friendly Name" field. **This is the app name a user will see when logging in.** 
 
-6.  Select the authentication protocol that will be used by the service provider. 
+6.  Select the Next button to move to the next steps.
 
-7.  Choose the level of service and default Authentication Assurance Level (AAL) field from the drop down menus and select the correct attribute bundle. 
+7.  Select the authentication protocol that will be used by the service provider: 
+    -   OpenID Connect Private Key JWT
+    -   OpenID Connect PKCE
+    -   SAML
 
-8.  Enter the issuer, a unique string to identify the app in the Identity Provider (IdP). 
+7.  Select the Identity Assurance Level, default Authentication Assurance Level (AAL), and the correct attribute bundle. Select the Next button to move on to Issuer.
 
-9.  Upload your logo and public certificate file using the "Choose a file" buttons. Note: the public certificate file may not be required if you are using the OIDC PKCE flow.
+8.  Enter the issuer, a unique string to identify the app in the Identity Provider (IdP). Select the Next button to move on to the next step.
 
-10. Enter the push notification URL and redirect URIs, if applicable. Please note that your redirect URIs must be secure (HTTPS) in order to be deployed to production. You can enter additional redirect URIs by selecting the “Add another URI” button.
+9.  Upload your logo file and public certificate file. Note: the public certificate file may not be required if you are using the OIDC PKCE flow. Select the Next button to move on to the next step.
 
-11. Specify the sign-in, sign-up, and forgot password help text users will encounter in your app. This step is optional but encouraged to ensure better usability. Take a look at the [Partner Support Help Desk](https://zendesk.login.gov) for a good example of help text.    
+10. If you selected the OIDC protocol enter the push notification URL and redirect URIs, if applicable. Please note that your redirect URIs must be secure (HTTPS) in order to be deployed to production. You can enter additional redirect URIs by selecting the “Add another URI” button.
+
+    If you selected the SAML protocol you will be prompted to enter the Assertion Consumer Service URL, Assertion Consumer Logout Service URL, SP Initiated Login URL, SAML Assertion Encryption, Signed Response Message Requested, Return to App URL, Push notification URL, and Redirect URIs.
+
+    Select the Next button to move on to the next step.</p>
+
+11. Select the sign-in, sign-up, and forgot password help text users will encounter in your app. This step is optional but encouraged to ensure better usability. Take a look at the [User Experience guidance]({% link _pages/user-experience/help-text.md %}) for a good example of help text.    
 
 12. Once all fields are complete select the "Create app" button.
 
-If you encounter errors or have questions after completing these steps, please submit a technical support ticket through the [Partner Support Help Desk.]({{ site.baseurl}}/support/#contacting-partner-support)
+Your inputs will be saved if you navigate away from the form. If you encounter errors or have questions after completing these steps, please submit a technical support ticket through the [Partner Support Help Desk.]({{ site.baseurl}}/support/#contacting-partner-support)
 
 ## Production endpoints
 
