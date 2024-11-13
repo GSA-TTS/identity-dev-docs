@@ -39,8 +39,8 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
     <p>View an example for <strong>private_key_jwt</strong> or <strong>PKCE</strong> in the side panel.</p>
     <h3 class="margin-top-4" id="request-parameters">Request Parameters</h3>
     <ul class="doc-sub-nav">
-      <li id="jwt-nav" class="doc-sub-nav-item code-button__selected margin-left-neg-3"><a href="{{ '/oidc/token/#token' | prepend: site.baseurl }}">JWT</a></li>
-      <li id="pkce-nav" class="doc-sub-nav-item margin-left-3"><a href="{{ '/oidc/token/pkce/#token' | prepend: site.baseurl }}">PKCE</a></li> 
+        <li id="jwt-nav" class="doc-sub-nav-item margin-left-neg-3"><a href="{% link _pages/oidc/token.md %}#token">JWT</a></li>
+        <li id="pkce-nav" class="doc-sub-nav-item code-button__selected margin-left-3"><a href="{% link _pages/oidc/token/pkce.md %}#token">PKCE</a></li> 
     </ul>
     <div class="dev-doc-row jwt-only">
       <div class="grid-row">
