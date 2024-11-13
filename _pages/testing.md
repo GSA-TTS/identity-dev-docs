@@ -1,7 +1,7 @@
 ---
 title: Testing your app
 lead: >
-  Once you’ve created your app and implemented an identity protocol, you can now register it in the test environment dashboard and start testing.
+  Once you’ve created your app and implemented an identity protocol, you can now register it in the test environment portal and start testing.
 redirect_from:
   - /registering-your-sp/
   - /register/
@@ -27,7 +27,7 @@ sidenav:
 
 Login.gov provides an open sandbox environment to create and test integrations between Login.gov and your applications. **Note that the Login.gov Sandbox environment is a free service with an availability target of M-F, 8a-5p ET.** While it is typically online within that window, there are occasional hiccups that should resolve quickly on their own. The environment may at times be available outside of this window, but it is not guaranteed and may become unavailable with no advance notice.
 
-In the sandbox environment, our [Dashboard](https://dashboard.int.identitysandbox.gov) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
+In the sandbox environment, our [Portal](https://dashboard.int.identitysandbox.gov) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
 
 ## Getting access to the Login.gov sandbox
 
@@ -40,11 +40,11 @@ You can create an account in the sandbox environment on your own.
 Ask your agency partner to help you gain access. Login.gov will not create an account or add you to a team; your partner must do this for you.
 
 **If you are with a government entity that is not a federal agency (a state or municipality) and do not have an email ending in .gov or .mil**
-Please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) to get access to the Dashboard.
+Please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) to get access to the Portal.
 
 ## Using the sandbox
 
-1. Visit the Partner Dashboard at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov).
+1. Visit the Partner Portal at [portal.int.identitysandbox.gov](https://portal.int.identitysandbox.gov).
 1. Select the “Sign in” button in the upper-right corner to sign in or create a new account with the test Login.gov IdP in the sandbox environment hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov). **Please note that this is separate from your Login.gov production account.**
 1. Once you are logged into your sandbox account, create a new team by selecting the “Continue” button under “Create your first team." (If you have previously created a team you will select the “Create a new team” button.)
 1. If necessary, add users to that team by clicking the "Add users" button. **This is the opportunity to add contractors or anyone without a .gov or a .mil**

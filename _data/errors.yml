@@ -8,7 +8,7 @@ oidc:
         The issuer (also known as the client id) provided does not match a service provider registered in the IdP.
         ##### What to do:
         - Ensure the authentication request has a `client_id` value
-        - Ensure that the `client_id` sent in the authentication request matches the one registered in your application on the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
+        - Ensure that the `client_id` sent in the authentication request matches the one registered in your application on the [Partner Portal](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
         - Ensure that the application configuration's `active` value is set to `true`.
     - title: Missing a valid IAL level
       id: oidc-missing-ial
@@ -31,7 +31,7 @@ oidc:
         If your application is Authentication Only, check the value of your `acr_values` parameter and ensure that it does **not** include `http://idmanagement.gov/ns/assurance/ial/2`.
         If you believe your application **SHOULD** be set to Identity Verification Permitted, please:
         - Reach out to your account manager to make sure your application is authorized for IdV. If it isn't, they can work with you to determine the right service level for your application.
-        - If your application **is** authorized for IdV, go to the dashboard and update the Level of Service value to "Identity Verification Permitted."
+        - If your application **is** authorized for IdV, go to the portal and update the Level of Service value to "Identity Verification Permitted."
         - If this is a production instance, submit a [Zendesk request](https://zendesk.login.gov){:target="_blank"} to deploy that change to production.
     - title: No acceptable acr_values found
       id: oidc-no-acr-values
@@ -70,7 +70,7 @@ oidc:
         ##### Why it's happening
         You have registered a redirect URI that cannot be parsed.
         ##### What to do:
-        - Check your application's configuration on the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
+        - Check your application's configuration on the [Partner Portal](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
         - Ensure that all registered redirect_uris are propertly formatted and use `https` protocol.
     - title: redirect_uri does not match registered redirect_uri
       id: oidc-redirect-match
@@ -79,7 +79,7 @@ oidc:
         ##### Why it's happening
         You have not registered the redirect_uri that you sent in your authentication request.
         ##### What to do:
-        - Check your application's configuration on the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/){:target="_blank"} and the `redirect_uri` passed through your authentication request.
+        - Check your application's configuration on the [Partner Portal](https://dashboard.int.identitysandbox.gov/){:target="_blank"} and the `redirect_uri` passed through your authentication request.
         - Ensure the `redirect_uri` that you are sending as part of your authentication request is registered. You must register every redirect uri that your application redirects through.
     - title: Unauthorized scope
       id: oidc-unauthotized-scope
@@ -100,7 +100,7 @@ oidc:
         The issuer (also known as the client id) provided does not match a service provider registered in the IdP.
         ##### What to do:
         - Ensure the logout request has a `client_id` value.
-        - Ensure that the `client_id` sent in the logout request matches the one registered in your application on the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
+        - Ensure that the `client_id` sent in the logout request matches the one registered in your application on the [Partner Portal](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
         - Ensure that the application configuration's `active` value is set to `true`.
     - title: client_id is missing
       id: client-id-missing
@@ -194,7 +194,7 @@ oidc:
         ##### Why it's happening
         There is no registered certificate that matches the signature of the `client_assertion` JWT that is being passed as part of the token. request.
         ##### What to do:
-        - Ensure that the public certificate that matches the private key used to sign the JWT is registered in your application's configuration in the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
+        - Ensure that the public certificate that matches the private key used to sign the JWT is registered in your application's configuration in the [Partner Portal](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
   userinfo:
     - title: Malformed Authorization header
       id: malformed-auth-header
