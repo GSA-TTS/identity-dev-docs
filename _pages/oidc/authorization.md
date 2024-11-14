@@ -90,10 +90,10 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
       <code class="language-plaintext highlighter-rouge">/openid_connect/authorize</code>. View an example for <strong>private_key_jwt</strong> or <strong>PKCE</strong> in the side panel.</p>
   <h3 class="margin-top-4" id="request-parameters">Request Parameters</h3>
   <ul class="doc-sub-nav">
-      <li id="jwt-nav" class="doc-sub-nav-item margin-left-neg-3">
+      <li id="jwt-nav" class="doc-sub-nav-item code-button__selected margin-left-neg-3">
         <a href="{% link _pages/oidc/authorization.md %}#authorization">JWT</a>
       </li>
-      <li id="pkce-nav" class="doc-sub-nav-item code-button__selected margin-left-3">
+      <li id="pkce-nav" class="doc-sub-nav-item margin-left-3">
         <a href="{% link _pages/oidc/authorization/pkce.md %}#authorization">PKCE</a>
       </li>
   </ul>
