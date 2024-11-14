@@ -23,7 +23,7 @@ sidenav:
 
 ---
 {% capture client_assertion %}
-A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s private key (minimum length of 2048 bits) associated with the public key uploaded to your application configuration within the Portal. The JWT should use the RS256 algorithm and containing the following claims:
+A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s private key (minimum length of 2048 bits) associated with the public key uploaded to your application configuration within the Dashboard. The JWT should use the RS256 algorithm and containing the following claims:
 - **iss** (string) — The issuer, which must be the `client_id`.
 - **sub** (string) — The subject, which must also be the `client_id`.
 - **aud** (string) — The audience, which should be (or, in the case of multiple audience values, include) the URL of the token endpoint, for example: `https://idp.int.identitysandbox.gov/api/openid_connect/token`
@@ -39,31 +39,9 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
     <p>View an example for <strong>private_key_jwt</strong> or <strong>PKCE</strong> in the side panel.</p>
     <h3 class="margin-top-4" id="request-parameters">Request Parameters</h3>
     <ul class="doc-sub-nav">
-        <li id="jwt-nav" class="doc-sub-nav-item code-button__selected margin-left-neg-3"><a href="{% link _pages/oidc/token.md %}#token">JWT</a></li>
-        <li id="pkce-nav" class="doc-sub-nav-item margin-left-3"><a href="{% link _pages/oidc/token/pkce.md %}#token">PKCE</a></li> 
+      <li id="jwt-nav" class="doc-sub-nav-item margin-left-neg-3"><a href="{% link _pages/oidc/token.md %}#token">JWT</a></li>
+      <li id="pkce-nav" class="doc-sub-nav-item code-button__selected margin-left-3"><a href="{% link _pages/oidc/token/pkce.md %}#token">PKCE</a></li> 
     </ul>
-    <div class="dev-doc-row jwt-only">
-      <div class="grid-row">
-        <div class="grid-col-5">
-          <h4 id="client_assertion" class="parameters">client_assertion</h4>
-          <span class="float-left text-italic">required for private_key_jwt</span>
-        </div>
-        <div class="grid-col-7">
-            {{ client_assertion | markdownify }}
-        </div>
-      </div>
-    </div>
-    <div class="dev-doc-row jwt-only">
-      <div class="grid-row">
-        <div class="grid-col-5">
-          <h4 class="parameters">client_assertion_type</h4>
-          <span class="float-left text-italic">required for private_key_jwt</span>
-        </div>
-        <div class="grid-col-7">
-          When using private_key_jwt, must be <code class="language-plaintext highlighter-rouge">urn:ietf:params:oauth:client-assertion-type:jwt-bearer</code>
-        </div>
-      </div>
-    </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
@@ -71,6 +49,16 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
         </div>
         <div class="grid-col-7 padding-bottom-2">
             The authorization code returned by the <a class="usa-link" href="{{ '/oidc/authorization/#authorization-response' | prepend: site.baseurl }}">authorization response</a>.
+        </div>
+      </div>
+    </div>
+    <div class="dev-doc-row pkce-only">
+      <div class="grid-row">
+        <div class="grid-col-5">
+          <h4 class="parameters clearfix">code_verifier</h4><span class="float-left text-italic">required for PKCE</span>
+        </div>
+        <div class="grid-col-7">
+            The original value (before the SHA256) generated for the authorization request for PKCE that corresponds to the <code class="language-plaintext highlighter-rouge">code_challenge</code>.
         </div>
       </div>
     </div>
@@ -84,9 +72,9 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
     </div>
   </div>
   <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-4">
-      <section id="jwt" class="code-snippet-section">
-        <span class="code-button code-button__selected margin-left-2">JWT Request</span>
-          {% include snippets/oidc/token/jwt.md %}
+      <section id="pkce" class="code-snippet-section">
+        <span class="code-button code-button__selected margin-left-2">PKCE Request</span>
+          {% include snippets/oidc/token/pkce.md %}
       </section>
   </div>
 </div>

@@ -34,14 +34,19 @@ main.usa-layout-docs {
 
 .doc-sub-nav {
   width: 100%;
-  color: #205493;
   margin-bottom: 0px;
 }
 
 .doc-sub-nav-item {
   display: inline-block;
+}
+
+.doc-sub-nav-item > a {
+  color: #205493;
+  text-decoration: none;
   cursor: pointer;
 }
+
 
 .usa-prose > ul > .doc-sub-nav-item {
   margin-bottom: 0px;
