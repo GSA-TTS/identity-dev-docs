@@ -105,7 +105,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
 
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-9 mobile:grid-col-full">
-    <h2 class="margin-top-neg-1">Authorization</h2>
+    <h2 id="authorization" class="margin-top-neg-1">Authorization</h2>
       <p>The authorization endpoint handles authentication and authorization of a user.
       To present the Login.gov authorization page to a user, direct them to the
       <code class="language-plaintext highlighter-rouge">/openid_connect/authorize</code>. View an example for <strong>private_key_jwt</strong> or <strong>PKCE</strong> in the side panel.</p>
