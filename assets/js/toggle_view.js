@@ -16,7 +16,6 @@ const samlLogoutTab2Button = document.getElementById('saml_logout_tab2_button');
 const samlLogoutResponseTab1Button = document.getElementById('saml_logout_response_tab1_button');
 const samlLogoutResponseTab2Button = document.getElementById('saml_logout_response_tab2_button');
 
-
 function hideTabTwoCode(evt) {
   const errorButton = document.getElementById(`${evt.currentTarget.dataset.selector}_tab2_button`);
   errorButton.classList.remove('code-button__selected');
@@ -46,7 +45,6 @@ function showTabTwoCode(evt) {
   codeSnippet.hidden = false;
   hideTabOneCode(evt);
 }
-
 
 // Event Listeners
 if (oidcAuthTab1Button) {
