@@ -1,7 +1,7 @@
 ---
 title: User attributes
 lead: >
-  Login.gov user accounts are either identity proofed or self-asserted. Login.gov continues to work toward achieving certification of compliance with NIST's IAL2 standard from a third-party assessment organization.
+  Login.gov user accounts are either identity proofed or self-asserted. 
 ---
 
 Here are the possible attributes that can be requested at a given IAL. This table contains the available user attributes, the IAL they are associated with, and how they can be accessed in OpenID Connect (OIDC) and SAML.
