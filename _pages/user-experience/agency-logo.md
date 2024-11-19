@@ -77,7 +77,7 @@ Your agency logo will appear to the right of the Login.gov logo in your integrat
     {% include icon_list.html icon_name="check_circle" content="Upload a logo that is high contrast on a transparent background" style="text-success" %}
   </li>
   <li class="usa-icon-list__item">
-    {% include icon_list.html icon_name="check_circle" content="Only .svg files are accepted" style="text-success" %}
+    {% include icon_list.html icon_name="check_circle" content="Both .svg and .png files up to 50 kB are accepted" style="text-success" %}
   </li>
 </ul>
 
