@@ -55,10 +55,10 @@
           type: string
           description: >
             The UUID identifying the user. This is the same as the `sub` inside the `id_token` JWT in the OpenID Token endpoint.
-        - key: reason
-          type: string
-          description: >
-            Optional, describes why was the account disabled..
+    - key: reason
+      type: string
+      description: >
+        Optional, describes why was the account disabled.
   example_payload: {
     "https://schemas.openid.net/secevent/risc/event-type/account-disabled": {
       "subject": {
