@@ -35,7 +35,7 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-8 mobile:grid-col-full">
     <h2 id="token">Token</h2>
-    <p>Clients use the token endpoint to exchange the authorization code for an  <code class="language-plaintext highlighter-rouge">access_token</code>. This token is needed to access the user info endpoint. To request a token, send a HTTP POST request to the /api/openid_connect/token endpoint.</p> 
+    <p>Your application client side uses the token endpoint to exchange the authorization code for an  <code class="language-plaintext highlighter-rouge">access_token</code>. This token is needed to access the user info endpoint. To request a token, send a HTTP POST request to the /api/openid_connect/token endpoint.</p> 
     <p>View an example for <strong>private_key_jwt</strong> or <strong>PKCE</strong> in the side panel.</p>
     <h3 class="margin-top-4" id="request-parameters">Request Parameters</h3>
     <ul class="doc-sub-nav">
