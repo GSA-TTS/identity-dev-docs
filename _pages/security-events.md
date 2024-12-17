@@ -324,7 +324,7 @@ s41MmdQzalGuKMX3Hr7Rn5xtnmJiQ5HQ7pcdCh5ZidWvw7VcblStN-rTLEBCUUO14pCfdAzVCs09Wb1W
   The type header will be set to **secevent+jwt**
 
 * **kid** (string)
-  The kid header provides a hint indicating which key was used to sign the JWT
+  The kid header provides a hint indicating which key was used to sign the JWT. The keys are listed in the [Certificates Endpoint](/oidc/certificates/).
 
 #### JWT Claims
 
