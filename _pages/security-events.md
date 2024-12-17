@@ -323,6 +323,9 @@ s41MmdQzalGuKMX3Hr7Rn5xtnmJiQ5HQ7pcdCh5ZidWvw7VcblStN-rTLEBCUUO14pCfdAzVCs09Wb1W
 * **typ** (string)
   The type header will be set to **secevent+jwt**
 
+* **kid** (string)
+  The kid header will be the kid for one of the keys specified in the [Certificates Endpoint](/oidc/certificates/).
+
 #### JWT Claims
 
 * **aud** (string)
