@@ -323,6 +323,9 @@ s41MmdQzalGuKMX3Hr7Rn5xtnmJiQ5HQ7pcdCh5ZidWvw7VcblStN-rTLEBCUUO14pCfdAzVCs09Wb1W
 * **typ** (string)
   The type header will be set to **secevent+jwt**
 
+* **kid** (string)
+  The kid header provides a hint indicating which key was used to sign the JWT
+
 #### JWT Claims
 
 * **aud** (string)
@@ -339,6 +342,9 @@ s41MmdQzalGuKMX3Hr7Rn5xtnmJiQ5HQ7pcdCh5ZidWvw7VcblStN-rTLEBCUUO14pCfdAzVCs09Wb1W
 
 * **events**
   An object containing an event, keyed by event type. The keys and values depend on the event types, see [Supported Outgoing Events](#supported-outgoing-events) for event types and their payloads.
+
+* **exp** (integer)
+  Time at which the JWT expires (12 hours after it was issued), an integer timestamp representing the number of seconds since the Unix Epoch.
 
 ### Response
 Login.gov will interpret any response other than a 200-level status as a failure, and will ignore any response body. Failure requests may be retried.
