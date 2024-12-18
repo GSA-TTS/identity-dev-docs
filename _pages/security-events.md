@@ -303,11 +303,11 @@ POST /events
 Host: agency.example.gov
 Content-Type: application/secevent+jwt
 Accept: application/json
-eyJ0eXAiOiJzZWNldmVudCtqd3QiLCJhbGciOiJSUzI1NiJ9
+eyJ0eXAiOiJzZWNldmVudCtqd3QiLCJraWQiOiJmNWNlMTIzOWUzOWQzZGE4MzZmOTYzYmNjZDg1Zjg1ZDU3ZDQzMzVjZmRjNmExNzAzOWYyNzQzNjFhMThiMTNjIiwiYWxnIjoiUlMyNTYifQ
 .
 eyJpc3MiOiJodHRwczovL2lkcC5pbnQuaWRlbnRpdHlzYW5kYm94Lmdvdi8iLCJqdGkiOiJhYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5eiIsImlhdCI6MTU5NTUzMjE3OCwiYXVkIjoiaHR0cHM6Ly9hZ2VuY3kuZXhhbXBsZS5nb3YvZXZlbnRzIiwiZXZlbnRzIjp7Imh0dHBzOi8vc2NoZW1hcy5vcGVuaWQubmV0L3NlY2V2ZW50L3Jpc2MvZXZlbnQtdHlwZS9pZGVudGlmaWVyLXJlY3ljbGVkIjp7InN1YmplY3QiOnsic3ViamVjdF90eXBlIjoiZW1haWwiLCJlbWFpbCI6ImVtYWlsQGV4YW1wbGUuY29tIn19fX0
 .
-s41MmdQzalGuKMX3Hr7Rn5xtnmJiQ5HQ7pcdCh5ZidWvw7VcblStN-rTLEBCUUO14pCfdAzVCs09Wb1WR8KqPwyTkmvYPiRMr2A_zr8VMKF1bfKhzLMhZnUB1N_elqJXJXjpUy9u7YnoT32VFtwp-8xmwb0g6esLYhVP4yPztAj4NxqQcy7vQ3xpEXiYcUBBKAoC6d3BkaeRSQziOQJQZQ93her8sj9XrvvlHCjqOz1QQd1uUnlV3p9rI13WDoyAHAL6tn_Dv3FqgiFgUWmh3wlsiVFHABUMUJy_XK3FeG5ULsmvNitmpQRIBjAmHLldZ3E5uNGatFQJscuxvlrhLA
+KS0KvsV0eIRIhvg8wGdN6luIgsXi4nqp9ZY3OF2ft2fUwsk5rk2O_e2-I2Lf8yj0HN1BQ8IIAChWB9_dv-FMAFhShcCpuSHP_dQzBXLATc57PC0fAOZwqAgBuwnB08Z6o_I0OyBZCla5SctYwk1mfK0Wyup7EHdszvuc3i8K5uJV0bPii-VKbJ3YFnMcJD3OVaU3CkaJTqnmdtxYb02uWvImK5D3H9aPgQgJUYsARN-qMmcn5vUGCxWXpMmV53X-Czcf9RGBiK4ZLHL4st2Sxjza3UzC_p_S82rff_g-pJvZbIXL_II02gF9jOsMXELfaX40_SFsnyY6HDCOy3HIAw
 ```
 
 #### HTTP Request
@@ -322,6 +322,9 @@ s41MmdQzalGuKMX3Hr7Rn5xtnmJiQ5HQ7pcdCh5ZidWvw7VcblStN-rTLEBCUUO14pCfdAzVCs09Wb1W
 
 * **typ** (string)
   The type header will be set to **secevent+jwt**
+
+* **kid** (string)
+  The kid header provides a hint indicating which key was used to sign the JWT. The keys are listed in the [Certificates Endpoint](/oidc/certificates/).
 
 #### JWT Claims
 
@@ -339,6 +342,9 @@ s41MmdQzalGuKMX3Hr7Rn5xtnmJiQ5HQ7pcdCh5ZidWvw7VcblStN-rTLEBCUUO14pCfdAzVCs09Wb1W
 
 * **events**
   An object containing an event, keyed by event type. The keys and values depend on the event types, see [Supported Outgoing Events](#supported-outgoing-events) for event types and their payloads.
+
+* **exp** (integer)
+  Time at which the JWT expires (12 hours after it was issued), an integer timestamp representing the number of seconds since the Unix Epoch.
 
 ### Response
 Login.gov will interpret any response other than a 200-level status as a failure, and will ignore any response body. Failure requests may be retried.
