@@ -91,9 +91,9 @@ When you have the components required, follow these steps to create your product
 
 1.  Select the authentication protocol that will be used by the service provider:
 
-- OpenID Connect Private Key JWT
-- OpenID Connect PKCE
-- SAML
+    - OpenID Connect Private Key JWT
+    - OpenID Connect PKCE
+    - SAML
 
 1.  Select the Identity Assurance Level (IAL), default Authentication Assurance Level (AAL), and the correct attribute bundle. Select the Next button to move on to the Issuer.
 
@@ -102,14 +102,12 @@ When you have the components required, follow these steps to create your product
 1.  Upload your logo file and public certificate file. Note: the public certificate file may not be required if you are using the OIDC PKCE flow.
 
 1. If you selected the OIDC protocol, enter the push notification URL and redirect URIs, if applicable. Please note that your redirect URIs must be secure (HTTPS) in order to be deployed to production. You can enter additional redirect URIs by selecting the “Add another URI” button.
-If you selected the SAML protocol, you will be prompted to enter the Assertion Consumer Service URL, Assertion Consumer Logout Service URL, SP Initiated Login URL, SAML Assertion Encryption, Signed Response Message Requested, Return to App URL, Push notification URL, and Redirect URIs.
-
-Select the Next button to move on to the final step.
-
+  - If you selected the SAML protocol, you will be prompted to enter the Assertion Consumer Service URL, Assertion Consumer Logout Service URL, SP Initiated Login URL, SAML Assertion Encryption, Signed Response Message Requested, Return to App URL, Push notification URL, and Redirect URIs.
+  - Select the Next button to move on to the final step.
 
 1. Select the sign-in, sign-up, and forgot password help text users will encounter in your app. This step is optional but encouraged to ensure better usability. Take a look at the [user experience guidance]({% link _pages/user-experience/help-text.md %}) for a good example of help text.    
 
-12. Once all fields are complete select the "Create app" button.
+1. Once all fields are complete select the "Create app" button.
 
 If you encounter errors or have questions after completing these steps, please submit a technical support ticket through the [Partner Support Help Desk.]({{ site.baseurl}}/support/#contacting-partner-support)
 
