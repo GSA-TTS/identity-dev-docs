@@ -95,7 +95,7 @@ When you have the components required, follow these steps to create your product
     - OpenID Connect PKCE
     - SAML
 
-1.  Select the Identity Assurance Level (IAL), default Authentication Assurance Level (AAL), and the correct attribute bundle. Select the Next button to move on to the Issuer.
+1.  Select the Identity Assurance Level (IAL), default Authentication Assurance Level (AAL), and the correct attribute bundle. Select the Next button to move on to the issuer.
 
 1.  Enter the issuer, a unique string to identify the app in the Identity Provider (IdP). Select the Next button to move on to the next step. 
 

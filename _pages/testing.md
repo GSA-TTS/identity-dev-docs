@@ -48,7 +48,7 @@ Please submit a support ticket through the [Partner Support Help Desk](https://z
 
 1. Visit the Partner Portal at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov).
 1. Create a new Login.gov test account with the test Login.gov IdP in the sandbox environment hosted at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov). Your Login.gov test account is separate from your Login.gov production account. 
-1. If you already have a Login.gov test account, click the “Sign in” button in the upper-right corner to sign in.
+1. If you already have a Login.gov test account, select the “Sign in” button in the upper-right corner to sign in.
 1. You must create a team before you can create a new app. Create a new team by selecting the “Continue” button under “Create your first team.” If you have previously created a team you can move on to the next step.
 1. If necessary, add users to that team by clicking the “Add users” button. This is the opportunity to add contractors or anyone without a .gov or a .mil email address.
 1. After creating your team, select the Apps tab. This page is where you will find all of the applications you and your team create.
