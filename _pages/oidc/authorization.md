@@ -38,6 +38,7 @@ Possible values are:
    - `address`
    - `email`
    - `all_emails`
+   - `locale`
    - `phone`
    - `profile:birthdate`
    - `profile:name`

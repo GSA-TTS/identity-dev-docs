@@ -1,7 +1,7 @@
 ---
 title: User attributes
 lead: >
-  Login.gov user accounts are either identity proofed or self-asserted. 
+  Login.gov user accounts are either identity proofed or self-asserted.
 ---
 
 Here are the possible attributes that can be requested at a given IAL. This table contains the available user attributes, the IAL they are associated with, and how they can be accessed in OpenID Connect (OIDC) and SAML.
@@ -77,6 +77,23 @@ Requires the `email` scope.
 </td>
 <td markdown="1">
 `all_emails` (array of strings)
+</td>
+    </tr>
+    <tr>
+<td markdown="1">
+**Locale**<br />The user's language preference.
+</td>
+<td>
+{{ checkmark }}
+</td>
+<td>
+{{ checkmark }}
+</td>
+<td markdown="1">
+`locale` (string, ISO 639-1 language code)
+</td>
+<td markdown="1">
+`locale` (string, ISO 639-1 language code)
 </td>
     </tr>
     <tr>
