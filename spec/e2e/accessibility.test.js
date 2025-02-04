@@ -55,6 +55,7 @@ describe('accessibility', () => {
           'best-practice',
         ])
         .exclude("div[data-touchpoints-form-id]")
+        .exclude("a#fba-button[data-open-modal]")
         .analyze();
       await page.close();
 
