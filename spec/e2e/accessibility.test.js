@@ -54,7 +54,7 @@ describe('accessibility', () => {
           'wcag22aa',
           'best-practice',
         ])
-        .exclude('div[data-touchpoints-form-id]')
+        .exclude("div[data-touchpoints-form-id]")
         .analyze();
       await page.close();
 
