@@ -45,37 +45,43 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters clearfix">code</h4>
+          <h4>code</h4>
         </div>
         <div class="grid-col-7 padding-bottom-2">
+          <p>
             The authorization code returned by the <a class="usa-link" href="{{ '/oidc/authorization/#authorization-response' | prepend: site.baseurl }}">authorization response</a>.
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row pkce-only">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters clearfix">code_verifier</h4><span class="float-left text-italic">required for PKCE</span>
+          <h4>code_verifier</h4><span class="text-italic">required for PKCE</span>
         </div>
         <div class="grid-col-7">
+          <p>
             The original value (before the SHA256) generated for the authorization request for PKCE that corresponds to the <code class="language-plaintext highlighter-rouge">code_challenge</code>.
+          </p>
         </div>
       </div>
     </div>
     <div class="grid-row dev-doc-row">
       <div class="grid-col-5">
-        <h4 class="parameters clearfix">grant_type</h4>
+        <h4>grant_type</h4>
       </div>
       <div class="grid-col-7">
+        <p>
           <code class="language-plaintext highlighter-rouge">authorization_code</code>
+        </p>
       </div>
     </div>
   </div>
   <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-4">
-      <section id="pkce" class="code-snippet-section">
-        <span class="code-button code-button__selected margin-left-2">PKCE Request</span>
-          {% include snippets/oidc/token/pkce.md %}
-      </section>
+    <section id="pkce" class="code-snippet-section">
+      <span class="code-button code-button__selected margin-left-2">PKCE Request</span>
+      {% include snippets/oidc/token/pkce.md %}
+    </section>
   </div>
 </div>
 <div class="grid-row grid-gap">
@@ -85,40 +91,48 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 id="access_token-string" class="parameters">access_token<span class="text-normal"> (string)</span></h4>
+          <h4 id="access_token-string">access_token<span class="text-normal"> (string)</span></h4>
         </div>
         <div class="grid-col-7">
-          An unique token used to access the <a href="{{ '/oidc/user-info/' | prepend: site.baseurl }}" class="usa-link">user info endpoint</a>.
+          <p>
+            An unique token used to access the <a href="{{ '/oidc/user-info/' | prepend: site.baseurl }}" class="usa-link">user info endpoint</a>.
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">token_type <span class="text-normal">(string)</span></h4>
+          <h4>token_type <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">
-          The type of access token, which will always be <code class="language-plaintext highlighter-rouge">Bearer</code>.
+          <p>
+            The type of access token, which will always be <code class="language-plaintext highlighter-rouge">Bearer</code>.
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">expires_in <span class="text-normal">(number)</span></h4>
+          <h4>expires_in <span class="text-normal">(number)</span></h4>
         </div>
         <div class="grid-col-7">
-          The number of seconds the access token will expire.
+          <p>
+            The number of seconds the access token will expire.
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">id_token <span class="text-normal">(string)</span></h4>
+          <h4>id_token <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">
-          A signed <a href="https://jwt.io/" class="usa-link usa-link--external">JWT</a> that contains basic attributes about the user and it is signed using the <code class="language-plaintext highlighter-rouge">RS256</code> algorithm. The public key used to verify this JWT is available from the <a href="{{ '/oidc/certificates/' | prepend: site.baseurl }}" class="usa-link">certificates</a> endpoint.
+          <p>
+            A signed <a href="https://jwt.io/" class="usa-link usa-link--external">JWT</a> that contains basic attributes about the user and it is signed using the <code class="language-plaintext highlighter-rouge">RS256</code> algorithm. The public key used to verify this JWT is available from the <a href="{{ '/oidc/certificates/' | prepend: site.baseurl }}" class="usa-link">certificates</a> endpoint.
+          </p>
         </div>
       </div>
     </div>
@@ -126,110 +140,132 @@ A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">iss <span class="text-normal">(string)</span></h4>
+          <h4>iss <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">
-         The issuer of the response, which will be the URL of the Login.gov IdP, for example: <code class="language-plaintext highlighter-rouge">https://idp.int.identitysandbox.gov</code>.
+          <p>
+            The issuer of the response, which will be the URL of the Login.gov IdP, for example: <code class="language-plaintext highlighter-rouge">https://idp.int.identitysandbox.gov</code>.
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">sub <span class="text-normal">(string)</span></h4>
+          <h4>sub <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">
-          The subject identifier, the UUID of the Login.gov user (see <a href="{{ '/attributes/' | prepend: site.baseurl }}" class="usa-link">user attributes</a>).
+          <p>
+            The subject identifier, the UUID of the Login.gov user (see <a href="{{ '/attributes/' | prepend: site.baseurl }}" class="usa-link">user attributes</a>).
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">aud <span class="text-normal">(string)</span></h4>
+          <h4>aud <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">
-          The audience, which will be the <code class="language-plaintext highlighter-rouge">client_id</code>.
+          <p>
+            The audience, which will be the <code class="language-plaintext highlighter-rouge">client_id</code>.
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">acr <span class="text-normal">(string)</span></h4>
+          <h4>acr <span class="text-normal">(string)</span></h4>
         </div>
-        <div class="grid-col-7">       
-          The Authentication Context Class Reference value of the returned claims, from the original <a href="{{ '/oidc/authorization/' | prepend: site.baseurl }}" class="usa-link">authorization request</a>.
-        </div>
-      </div>
-    </div>
-    <div class="dev-doc-row">
-      <div class="grid-row">
-        <div class="grid-col-5">
-          <h4 class="parameters">at_hash <span class="text-normal">(string)</span></h4>
-        </div>
-        <div class="grid-col-7">       
-          The access token hash, a URL-safe base-64 encoding of the left 128 bits of the SHA256 of the <code class="language-plaintext highlighter-rouge">access_token</code> value. Provided so the client can verify the <code class="language-plaintext highlighter-rouge">access_token</code> value.
+        <div class="grid-col-7">
+          <p>
+            The Authentication Context Class Reference value of the returned claims, from the original <a href="{{ '/oidc/authorization/' | prepend: site.baseurl }}" class="usa-link">authorization request</a>.
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">c_hash <span class="text-normal">(string)</span></h4>
+          <h4>at_hash <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">       
-          The code hash, a URL-safe base-64 encoding of the left 128 bits of the SHA256 of the authorization <code class="language-plaintext highlighter-rouge">code</code> value. Provided so the client can verify the <code class="language-plaintext highlighter-rouge">code</code> value.
+          <p>
+            The access token hash, a URL-safe base-64 encoding of the left 128 bits of the SHA256 of the <code class="language-plaintext highlighter-rouge">access_token</code> value. Provided so the client can verify the <code class="language-plaintext highlighter-rouge">access_token</code> value.
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">exp <span class="text-normal">(number)</span></h4>
+          <h4>c_hash <span class="text-normal">(string)</span></h4>
         </div>
         <div class="grid-col-7">       
-          The expiration time for this token, an integer timestamp representing the number of seconds since the Unix Epoch.
+          <p>
+            The code hash, a URL-safe base-64 encoding of the left 128 bits of the SHA256 of the authorization <code class="language-plaintext highlighter-rouge">code</code> value. Provided so the client can verify the <code class="language-plaintext highlighter-rouge">code</code> value.
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 id="iat-number" class="parameters">iat <span class="text-normal">(number)</span></h4>
+          <h4>exp <span class="text-normal">(number)</span></h4>
         </div>
         <div class="grid-col-7">       
-          Time at which the JWT was issued, an integer timestamp representing the number of seconds since the Unix Epoch.
+          <p>
+            The expiration time for this token, an integer timestamp representing the number of seconds since the Unix Epoch.
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">jti <span class="text-normal">(number)</span></h4>
+          <h4 id="iat-number">iat <span class="text-normal">(number)</span></h4>
         </div>
         <div class="grid-col-7">       
-          The JWT ID, a unique identifier for the token which can be used to prevent reuse of the token. Should be an unguessable, random string generated by the client.
+          <p>
+            Time at which the JWT was issued, an integer timestamp representing the number of seconds since the Unix Epoch.
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">nbf <span class="text-normal">(number)</span></h4>
+          <h4>jti <span class="text-normal">(number)</span></h4>
         </div>
         <div class="grid-col-7">       
-          The “not before” value, an integer timestamp of when the token will start to be valid (number of seconds since the Unix Epoch).
+          <p>
+            The JWT ID, a unique identifier for the token which can be used to prevent reuse of the token. Should be an unguessable, random string generated by the client.
+          </p>
         </div>
       </div>
     </div>
     <div class="dev-doc-row">
       <div class="grid-row">
         <div class="grid-col-5">
-          <h4 class="parameters">nonce <span class="text-normal">(string)</span></h4>
+          <h4>nbf <span class="text-normal">(number)</span></h4>
         </div>
         <div class="grid-col-7">       
-          The nonce value provided by the client in the <a class="usa-link" href="{{ '/oidc/authorization/' | prepend: site.baseurl }}">authorization request</a>. A unique value, at least 22 characters in length, used to verify the integrity of the <code class="language-plaintext highlighter-rouge">id_token</code> and mitigate <a href="https://en.wikipedia.org/wiki/Replay_attack" class="usa-link usa-link--external">replay attacks</a>. This value should include per-session state and be unguessable by attackers. Read more about <a href="https://openid.net/specs/openid-connect-core-1_0.html#NonceNotes" class="usa-link usa-link--external">nonce implementation</a> in the spec.
+          <p>
+            The “not before” value, an integer timestamp of when the token will start to be valid (number of seconds since the Unix Epoch).
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="dev-doc-row">
+      <div class="grid-row">
+        <div class="grid-col-5">
+          <h4>nonce <span class="text-normal">(string)</span></h4>
+        </div>
+        <div class="grid-col-7">       
+          <p>
+            The nonce value provided by the client in the <a class="usa-link" href="{{ '/oidc/authorization/' | prepend: site.baseurl }}">authorization request</a>. A unique value, at least 22 characters in length, used to verify the integrity of the <code class="language-plaintext highlighter-rouge">id_token</code> and mitigate <a href="https://en.wikipedia.org/wiki/Replay_attack" class="usa-link usa-link--external">replay attacks</a>. This value should include per-session state and be unguessable by attackers. Read more about <a href="https://openid.net/specs/openid-connect-core-1_0.html#NonceNotes" class="usa-link usa-link--external">nonce implementation</a> in the spec.
+          </p>
         </div>
       </div>
     </div>
