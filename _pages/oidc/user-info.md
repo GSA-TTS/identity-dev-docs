@@ -33,61 +33,69 @@ The user info response will be a JSON object containing [user attributes]({{ sit
 <div class="grid-row grid-gap">
   <div class="desktop:grid-col-8 mobile:grid-col-full">
     {{ front_matter | markdownify }}
-        <div class="dev-doc-row grid-row">
-            <div class="grid-col-5">
-                <h4 class="parameters">iss <span class="text-normal">(string)</span></h4>
-            </div>
-            <div class="grid-col-7">
-                The issuer of the response, which will be the URL of the Login.gov IdP, for example: <code class="language-plaintext highlighter-rouge">https://idp.int.identitysandbox.gov</code>
-            </div>
-        </div>
-        <div class="dev-doc-row grid-row">
-            <div class="grid-col-5">
-                <h4 class="parameters">email_verified <span class="text-normal">(boolean)</span></h4>
-            </div>
-            <div class="grid-col-7">
-                Whether the email has been verified. Currently, Login.gov only supports verified emails.
-                <ul>
-                    <li>Requires <code class="language-plaintext highlighter-rouge">email</code> scope</li>
-                </ul> 
-            </div>
-        </div>
-        <div class="dev-doc-row grid-row">
-            <div class="grid-col-5">
-                <h4 class="parameters">phone_verified <span class="text-normal">(boolean)</span></h4>
-            </div>
-            <div class="grid-col-7">
-                Whether the phone number has been verified. Currently, Login.gov only supports verified phones.
-                <ul>
-                    <li>Requires the <code class="language-plaintext highlighter-rouge">phone</code> scope and an identity verified account</li>
-                </ul> 
-            </div>
-        </div>
-        <div class="dev-doc-row grid-row">
-            <div class="grid-col-5">
-                <h4 class="parameters">verified_at <span class="text-normal">(number, null)</span></h4>
-            </div>
-            <div class="grid-col-7">
-                When the user's identity was last verified, as an integer timestamp representing the number of seconds since the Unix Epoch, or <code class="language-plaintext highlighter-rouge">null</code> if the account has never been verified.
-                <ul>
-                    <li>Requires the <code class="language-plaintext highlighter-rouge">profile:verified_at</code> scope</li>
-                </ul> 
-            </div>
-        </div>
-        <a href="{{ '/oidc/certificates/' | prepend: site.baseurl }}" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Certificates</a>
+    <div class="dev-doc-row grid-row">
+      <div class="grid-col-5">
+        <h4>iss <span class="text-normal">(string)</span></h4>
+      </div>
+      <div class="grid-col-7">
+        <p>
+          The issuer of the response, which will be the URL of the Login.gov IdP, for example: <code class="language-plaintext highlighter-rouge">https://idp.int.identitysandbox.gov</code>
+        </p>
+      </div>
     </div>
-    <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-4">
-        <section class="code-snippet-section margin-top-2 position-relative z-index-1">
-        <button id="oidc_user-info_tab1_button" data-selector="oidc_user-info" class="code-button code-button__selected margin-left-2">Request</button>
-        <button id="oidc_user-info_tab2_button" data-selector="oidc_user-info" class="code-button margin-left-2">Response</button>
-        <section id="oidc_user-info_tab1">
-            {% include snippets/oidc/user-info/request.md %}
-        </section>
-        <section id="oidc_user-info_tab2" hidden>
-            {% include snippets/oidc/user-info/response.md %}
-        </section>
-        </section>
+    <div class="dev-doc-row grid-row">
+      <div class="grid-col-5">
+        <h4>email_verified <span class="text-normal">(boolean)</span></h4>
+      </div>
+      <div class="grid-col-7">
+        <p>
+          Whether the email has been verified. Currently, Login.gov only supports verified emails.
+        </p>
+        <ul>
+          <li>Requires <code class="language-plaintext highlighter-rouge">email</code> scope</li>
+        </ul> 
+      </div>
     </div>
-    <a href="{{ '/oidc/certificates/' | prepend: site.baseurl }}" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Certificates</a>
+    <div class="dev-doc-row grid-row">
+      <div class="grid-col-5">
+        <h4>phone_verified <span class="text-normal">(boolean)</span></h4>
+      </div>
+      <div class="grid-col-7">
+        <p>
+          Whether the phone number has been verified. Currently, Login.gov only supports verified phones.
+        </p>
+        <ul>
+          <li>Requires the <code class="language-plaintext highlighter-rouge">phone</code> scope and an identity verified account</li>
+        </ul> 
+      </div>
+    </div>
+    <div class="dev-doc-row grid-row">
+      <div class="grid-col-5">
+        <h4>verified_at <span class="text-normal">(number, null)</span></h4>
+      </div>
+      <div class="grid-col-7">
+        <p>
+          When the user's identity was last verified, as an integer timestamp representing the number of seconds since the Unix Epoch, or <code class="language-plaintext highlighter-rouge">null</code> if the account has never been verified.
+        </p>
+        <ul>
+          <li>Requires the <code class="language-plaintext highlighter-rouge">profile:verified_at</code> scope</li>
+        </ul> 
+      </div>
+    </div>
+    <a href="{{ '/oidc/certificates/' | prepend: site.baseurl }}" class="usa-link margin-top-4 mobile:display-none desktop:display-block">Next step: Certificates</a>
+  </div>
+  <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-4">
+    <section class="code-snippet-section margin-top-2 position-relative z-index-1">
+    <button id="oidc_user-info_tab1_button" data-selector="oidc_user-info" class="code-button code-button__selected margin-left-2">Request</button>
+    <button id="oidc_user-info_tab2_button" data-selector="oidc_user-info" class="code-button margin-left-2">Response</button>
+    <section id="oidc_user-info_tab1">
+      {% include snippets/oidc/user-info/request.md %}
+    </section>
+    <section id="oidc_user-info_tab2" hidden>
+      {% include snippets/oidc/user-info/response.md %}
+    </section>
+    </section>
+  </div>
+  <a href="{{ '/oidc/certificates/' | prepend: site.baseurl }}" class="usa-link mobile:display-block desktop:display-none margin-top-2">Next step: Certificates</a>
 </div>
 
