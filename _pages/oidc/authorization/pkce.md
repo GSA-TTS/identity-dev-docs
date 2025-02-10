@@ -262,7 +262,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         </div>
         <div class="grid-col-7">
           <p>
-            If you know that a user would prefer one of our alternative language translations (currently Spanish or French), you can include the <code class="language-plaintext highlighter-rouge">locale</code> parameter to specify the language Login.gov should use (either <code class="language-plaintext highlighter-rouge">es</code> for Spanish or <code class="language-plaintext highlighter-rouge">fr</code> for French).
+            If you know that a user would prefer one of our alternative language translations (currently Spanish or French), you can include the <code class="language-plaintext highlighter-rouge">locale</code> parameter to specify the language Login.gov should use (either <code class="language-plaintext highlighter-rouge">ES</code> for Spanish or <code class="language-plaintext highlighter-rouge">FR</code> for French).
           </p>
         </div>
       </div>

@@ -92,7 +92,7 @@ A proofed identity request at AAL2, with phishing resistent MFA, for email, phon
           <h4>Language Selection</h4>
         </div>
         <div class="grid-col-7">
-          <p>If you know that a user would prefer one of our alternative language translations (currently Spanish or French), you can include the <code class="language-plaintext highlighter-rouge">locale</code> parameter to specify the language Login.gov should use (either <code class="language-plaintext highlighter-rouge">es</code> for Spanish or <code class="language-plaintext highlighter-rouge">fr</code> for French), e.g.:</p>
+          <p>If you know that a user would prefer one of our alternative language translations (currently Spanish or French), you can include the <code class="language-plaintext highlighter-rouge">locale</code> parameter to specify the language Login.gov should use (either <code class="language-plaintext highlighter-rouge">ES</code> for Spanish or <code class="language-plaintext highlighter-rouge">FR</code> for French), e.g.:</p>
           <p><code class="language-plaintext highlighter-rouge">https://idp.int.identitysandbox.gov/api/saml/auth2023?SAMLRequest=${SAML_REQUEST}&amp;locale=es</code></p>
         </div>
       </div>
