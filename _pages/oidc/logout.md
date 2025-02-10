@@ -24,7 +24,7 @@ sidenav:
 ---
 
 <div class="grid-row grid-gap">
-    <div class="desktop:grid-col-8 mobile:grid-col-full" markdown="1">
+  <div class="desktop:grid-col-8 mobile:grid-col-full" markdown="1">
 
 ## Logout
 
@@ -43,43 +43,52 @@ If the user does not click the button, they will **not** be redirected back to y
 To log out a user, send them to the `/openid_connect/logout` endpoint with the following parameters:
 
 <div class="dev-doc-row">
-    <div class="grid-row">
+  <div class="grid-row">
     <div class="grid-col-5">
-        <h4 class="parameters clearfix">client_id</h4>
+        <h4 class="clearfix">client_id</h4>
     </div>
     <div class="grid-col-7 padding-bottom-2">
+      <p>
         The unique identifier for the client. This will be registered with the Login.gov IdP in advance.
+      </p>
     </div>
-    </div>
+  </div>
 </div>
 <div class="dev-doc-row">
-    <div class="grid-row">
+  <div class="grid-row">
     <div class="grid-col-5">
-        <h4 class="parameters clearfix">post_logout_redirect_uri</h4>
+      <h4>post_logout_redirect_uri</h4>
     </div>
-    <div class="grid-col-7 padding-bottom-2">
+    <div class="grid-col-7">
+      <p>
         The URI Login.gov will redirect to after logout. <strong>This must also be registered with the Login.gov IdP in advance.</strong>
+      </p>
     </div>
-    </div>
+  </div>
 </div>
 <div class="dev-doc-row">
-    <div class="grid-row">
+  <div class="grid-row">
     <div class="grid-col-5">
-        <h4 class="parameters clearfix">state <span class="text-normal">(optional)</span></h4>
+        <h4>state <span class="text-normal">(optional)</span></h4>
     </div>
-    <div class="grid-col-7 padding-bottom-2">
+    <div class="grid-col-7">
+      <p>
         A unique value at least 22 characters in length used for maintaining state between the request and the callback. This value will be returned to the client on a successful logout as a parameter of <code class="language-plaintext highlighter-rouge">state</code> added to the redirect back to the <code class="language-plaintext highlighter-rouge">post_logout_redirect_uri</code>.
+      </p>
     </div>
-    </div>
+  </div>
 </div>
 
 ### Logout response
 
-In a **successful logout**, i.e. the request is valid and the user confirms that they want to log out, Login.gov will redirect the user to the provided `post_logout_redirect_uri` with the `state` parameter added to the URL. If the request is invalid, the user will be shown an error page. If the user declines to click the button on the confirmation page, they will not be redirected to the `post_logout_redirect_uri` and there will be no response to your application.
+In a **successful logout**, i.e. the request is valid and the user confirms that they want to log out, Login.gov will redirect the user to the provided `post_logout_redirect_uri` with the `state` parameter added to the URL. If the request is invalid, the user will be shown an error page. 
 
+If the user declines to click the button on the confirmation page, they will not be redirected to the `post_logout_redirect_uri` and there will be no response to your application.
 
-</div>
-<div class="usa-layout-docs__main code-snippet-column desktop:grid-col-4">
+  <!-- this tag closes the one started on line 27 -->
+  </div> 
+
+  <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-4">
     <div class="margin-top-2 code-snippet-section position-relative z-index-1">
       <button id="oidc_logout_tab1_button" data-selector="oidc_logout" class="code-button code-button__selected margin-left-2">Request</button>
       <button id="oidc_logout_tab2_button" data-selector="oidc_logout" class="code-button margin-left-2">Response</button>
@@ -90,5 +99,5 @@ In a **successful logout**, i.e. the request is valid and the user confirms that
         {% include snippets/oidc/logout/response.md %}
       </section>
     </div>
-  </div>
+  </div>  
 </div>

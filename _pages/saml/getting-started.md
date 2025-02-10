@@ -25,18 +25,24 @@ sidenav:
     href: "/saml/logout/"
 ---
 {% capture nameid %}
-The NameID is the unique identifier used to identify a user across multiple sessions. The format is the standard v4 random UUID (Universally Unique Identifier) in compliance with [RFC 4122](https://tools.ietf.org/html/rfc4122){:class="usa-link--external"}. For example:
-            `<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>`
+The NameID is the unique identifier used to identify a user across multiple sessions. The format is the standard v4 random UUID (Universally Unique Identifier) in compliance with [RFC 4122](https://tools.ietf.org/html/rfc4122){:class="usa-link--external"}. 
+
+For example:
+`<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>`
 {% endcapture %}
 
 {% capture login %}
-This is the endpoint where authentication requests are sent to Login.gov (aka Single Sign-on Service). For example:
+This is the endpoint where authentication requests are sent to Login.gov (aka Single Sign-on Service). 
+
+For example:
 `<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.int.identitysandbox.gov/api/saml/auth{{ site.data.saml.year.current }}"/>`
 {% endcapture %}
 
 {% capture logout %}
-  The single logout service URL is used to contact the Single logout profile (aka Single Logout Service). For example:
-  `<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.int.identitysandbox.gov/api/saml/logout{{ site.data.saml.year.current }}" />`
+The single logout service URL is used to contact the Single logout profile (aka Single Logout Service). 
+
+For example:
+`<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.int.identitysandbox.gov/api/saml/logout{{ site.data.saml.year.current }}" />`
 {% endcapture %}
 
 {% capture saml_warning %}
@@ -56,34 +62,34 @@ SAML is an established standard, but can be a bit complex. We recommend looking 
 Here are values needed to configure your service provider (SP) to work with Login.gov:
 
 <div class="dev-doc-row">
-    <div class="grid-row">
-        <div class="grid-col-5">
-            <h4 class="parameters clearfix">NameID Format</h4>
-        </div>
-        <div class="grid-col-7 margin-top-neg-2">
-            {{ nameid | markdownify }}
-        </div>
+  <div class="grid-row">
+    <div class="grid-col-5">
+      <h4>NameID Format</h4>
     </div>
+    <div class="grid-col-7">
+      {{ nameid | markdownify }}
+    </div>
+  </div>
 </div>
 <div class="dev-doc-row">
-    <div class="grid-row">
-        <div class="grid-col-5">
-            <h4 class="parameters clearfix">Login service URL and Binding</h4>
-        </div>
-        <div class="grid-col-7 margin-top-neg-2">
-            {{ login | markdownify }}
-        </div>
+  <div class="grid-row">
+    <div class="grid-col-5">
+      <h4>Login service URL and Binding</h4>
     </div>
+    <div class="grid-col-7">
+      {{ login | markdownify }}
+    </div>
+  </div>
 </div>
 <div class="dev-doc-row">
-    <div class="grid-row">
-        <div class="grid-col-5">
-            <h4 class="parameters clearfix">Logout service URL and Binding</h4>
-        </div>
-        <div class="grid-col-7 margin-top-neg-2">
-            {{ logout | markdownify}}
-        </div>
+  <div class="grid-row">
+    <div class="grid-col-5">
+      <h4>Logout service URL and Binding</h4>
     </div>
+    <div class="grid-col-7">
+      {{ logout | markdownify}}
+    </div>
+  </div>
 </div>
 
 ### x509 Public Certificate
@@ -98,7 +104,7 @@ Below you can find the X509 certificates used by the Login.gov IdP to sign SAML 
 
 <div class="usa-accordion--bordered">
   <button class="usa-accordion__button" aria-controls="sandbox-cert-{{ site.data.saml.year.current }}">
-  View {{ site.data.saml.year.current }} <strong>sandbox</strong> certificate
+    View {{ site.data.saml.year.current }} <strong>sandbox</strong> certificate
   </button>
   <div id="sandbox-cert-{{ site.data.saml.year.current }}" class="usa-accordion__content" markdown="1">
 ```
@@ -135,5 +141,5 @@ The Login.gov team has created an example client to speed up your development, a
 
 [Next step: Authentication]({{ '/saml/authentication/' | prepend: site.baseurl }})
 
-</div>
+  </div>
 </div>
