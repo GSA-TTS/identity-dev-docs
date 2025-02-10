@@ -55,7 +55,7 @@ Base64.encode64(code_challenge) # wrong and URL-unsafe encoding
 
 {% capture scope_possible_values %}
 Possible values are:
-   - `openid`
+   - `openid` (required)
    - `address`
    - `email`
    - `all_emails`
@@ -217,6 +217,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
           <p>
             A space-separated string of the scopes being requested. (Keep in mind the blank space “ “ should be encoded with “+”.) The authorization page will display the list of attributes being requested from the user. Applications should aim to request the fewest <a class="usa-link" href="{{ '/attributes/' | prepend: site.baseurl }}">user attributes</a> and smallest scope needed.
           </p>
+           <p>OIDC requests MUST contain the <code>openid</code> scope value.</p> 
         </div>
       </div>
       <div class="grid-row">
@@ -262,7 +263,7 @@ In an **unsuccessful authorization**, the URI will contain the parameters `error
         </div>
         <div class="grid-col-7">
           <p>
-            If you know that a user would prefer one of our alternative language translations (currently Spanish or French), you can include the <code class="language-plaintext highlighter-rouge">locale</code> parameter to specify the language Login.gov should use (either <code class="language-plaintext highlighter-rouge">ES</code> for Spanish or <code class="language-plaintext highlighter-rouge">FR</code> for French).
+            If you know that a user would prefer one of our alternative language translations (currently Spanish or French), you can include the <code class="language-plaintext highlighter-rouge">locale</code> parameter to specify the language Login.gov should use (either <code class="text-lowercase">ES</code> for Spanish or <code class="text-lowercase">FR</code> for French).
           </p>
         </div>
       </div>
