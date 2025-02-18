@@ -136,7 +136,8 @@ button.code-button:hover {
 
 .return-to-top-button {
   max-width: 160px;
-  top: 90%;
+  // 5.6rem puts it nicely above the feedback survey button if 90% does not
+  top: min(calc(100vh - 5.6rem), 90%);
 }
 
 .return-to-top-button > img {
