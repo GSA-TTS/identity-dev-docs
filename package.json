@@ -32,7 +32,7 @@
     "fast-glob": "^3.3.2",
     "get-port": "^7.1.0",
     "prettier": "3.0.3",
-    "puppeteer": "^22.11.2",
+    "puppeteer": "^22.15.0",
     "serve-handler": "^6.1.5"
   }
 }
