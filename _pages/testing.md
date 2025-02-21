@@ -90,7 +90,13 @@ While Login.gov partner support channels have provided some support for automate
 
 The Login.gov [sandbox test environment](https://idp.int.identitysandbox.gov/) is configured to pass most information that is entered during the proofing flow. This allows the proofing flow to be tested without the need to enter personally identifiable information (PII). There are [special values](https://developers.login.gov/testing/#personal-information-verification) that can be entered to simulate error states while testing in the Login.gov sandbox environment. **Never enter PII in the sandbox environment.**
 
-### Document upload
+### Testing the IAL2-compliant process (online facial matching or in-person proofing)
+
+If you are testing the IAL2-compliant flow and want to specifically test the online facial matching process, when you are prompted to take a photo of your ID with your phone, you can take a photo of anything that has the same shape as a US driver's license (metro card, loyalty card, arcade card, etc). You can use the front of the card for both the front and back photos. For the selfie, it's specifically looking for a face, so you need to use your real face. The photos are not sent to any external vendors.
+
+If your main goal is to end up with an IAL2-compliant account to test with, and you're not specifically testing the online facial matching process, then you can choose the in-person proofing option, and enter fake information. After the phone verification step, you will be presented with your USPS barcode, but you will not need to go to any post office. In the sandbox, you will automatically be verified at this point, and you should receive an email letting you know you were verified.
+
+### Testing document upload for the Basic IdV Service (without facial matching)
 
 Login.gov prompts users to upload the front and back of their documents during proofing through a few different methods. In the sandbox environment, any image file that is uploaded will pass.
 
