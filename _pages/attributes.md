@@ -20,7 +20,7 @@ It is important to expect any number of characters in the `(string)` datatype un
 <table>
   <thead>
     <th>Attribute</th>
-    <th>IAL1</th>
+    <th>Auth Only</th>
     <th>ID Proofed</th>
     <th>OpenID Connect</th>
     <th>SAML</th>
