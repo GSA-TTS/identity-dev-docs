@@ -184,7 +184,7 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
       <p>
         For our Login.gov basic authentication accounts (IAL1), we rely on the user having access to an email address, password, and a secure multi-factor authentication method (AAL2 or higher) such as a phone, authentication app or PIV/CAC where they can receive a secure code to use to sign in to their account.
         <br/><br/>
-        For identity proofing, in addition to meeting the above requirements for IAL1/AAL2, we ask users to upload a photograph of their state-issued ID and share their address, phone number and other personal information which is then verified against authoritative sources. For enhanced identity verification (IAL2), users are also required to provide a selfie. Login.gov uses proven facial matching technology that compares the selfie exclusively with the user’s photo ID-and does not use the image for any other purpose.
+        For identity proofing, in addition to meeting the above requirements for IAL1/AAL2, we ask users to upload a photograph of their state-issued ID and share their address, phone number and other personal information which is then verified against authoritative sources. For enhanced identity verification (IAL2), users are also required to provide a photo of themselves. Login.gov uses proven facial matching technology that compares the photo exclusively with the user’s photo ID-and does not use the image for any other purpose.
       </p>
     </div>
   </dd>
