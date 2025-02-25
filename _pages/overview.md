@@ -12,14 +12,14 @@ Login.gov is a FedRAMP moderate approved multifactor authentication and identity
 ## User flow
 
 <figure class="margin-0 text-center measure-3">
-  <img src="{{ site.baseurl }}/assets/img/oidc-ial1-flow.png"
+  <img src="{{ site.baseurl }}/assets/img/oidc-auth-flow.png"
        alt="A diagram flow of IAL1 walkthrough experience"
        class="display-block grid-col flex-auto flex-align-center margin-top-4 margin-bottom-1">
-  <figcaption class="font-sans-2xs">Fig. 1: IAL1 flow</figcaption>
+  <figcaption class="font-sans-2xs">Fig. 1: Authentication flow</figcaption>
 </figure>
 
 * Once you have successfully integrated your application with the Login.gov environment, users start at your application and are redirected back to Login.gov via [OpenID Connect (OIDC)]({{ site.baseurl }}/oidc/) or [SAML]({{ site.baseurl }}/saml/) protocols.
-* The attributes you pass into your application request will determine if the request will be processed at Identity Assurance Level 1 (IAL1) or as an identity proofed account. Identity proofed accounts require the user to complete additional steps to verify their identity in addition to the Multifactor Authentication (MFA). 
+* The service level you specify via the authentication request sent by your application will determine the type of verification required for the user’s account. Identity proofed accounts require the user to complete additional steps to verify their identity in addition to the Multifactor Authentication (MFA). 
 * New users will create an account corresponding to the identity assurance level requested. Returning users will present their existing Login.gov credentials to authenticate with Login.gov. A new user to your application will consent to their information being shared with your application upon creating an account.
 * Upon successful completion of the account creation and authentication, users will be redirected back to your application with the [user attributes]({{ '/attributes/' | prepend: site.baseurl }}) that correspond to their user level.
 *   With the attributes provided by Login.gov, your application will handle authorization of the user and assign roles and permissions.
