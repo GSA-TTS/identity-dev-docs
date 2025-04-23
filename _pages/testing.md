@@ -29,7 +29,7 @@ The Login.gov sandbox is an open environment to create and test integrations bet
 
  **The Login.gov sandbox environment is supported M-F, 8a-5p ET.** The sandbox is typically available during these hours, though outages may occur.
 
-In the sandbox environment, our [partner portal](https://dashboard.int.identitysandbox.gov) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
+In the sandbox environment, our [partner portal](https://portal.int.identitysandbox.gov/) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
 
 ## Getting access to the Login.gov sandbox
 
@@ -46,8 +46,8 @@ Please submit a support ticket through the [Partner Support Help Desk](https://z
 
 ## Using the sandbox
 
-1. Visit the Partner Portal at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov).
-1. Create a new Login.gov test account with the test Login.gov IdP in the sandbox environment hosted at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov). Your Login.gov test account is separate from your Login.gov production account. 
+1. Visit the Partner Portal at [https://portal.int.identitysandbox.gov/](https://portal.int.identitysandbox.gov/).
+1. Create a new Login.gov test account with the test Login.gov IdP in the sandbox environment hosted at [https://portal.int.identitysandbox.gov/](https://portal.int.identitysandbox.gov/). Your Login.gov test account is separate from your Login.gov production account. 
 1. If you already have a Login.gov test account, select the “Sign in” button in the upper-right corner to sign in.
 1. You must create a team before you can create a new app. Create a new team by selecting the “Continue” button under “Create your first team.” If you have previously created a team you can move on to the next step.
 1. If necessary, add users to that team by clicking the “Add users” button. This is the opportunity to add contractors or anyone without a .gov or a .mil email address.
