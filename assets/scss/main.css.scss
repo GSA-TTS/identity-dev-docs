@@ -211,3 +211,39 @@ button.code-button:hover {
     max-width: 100%;
   }
 }
+
+.lg-details-accordion  {
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  & > summary {
+    display: block;
+    background: transparent;
+    background-color: #0000;
+    background-position: right 1.25rem center;
+    background-image: url(../img/plus.svg), linear-gradient(#0000, #0000);
+    background-repeat: no-repeat;
+    border: 1px solid #cedced;
+    border-radius: .5rem;
+    color: #0071bb;
+    font-weight: 400;
+    line-height: 1.5;
+    box-shadow: none;
+    text-align: left;
+    cursor: pointer;
+    width: 90%;
+    margin: 0;
+    padding: 1rem 3.5rem 1rem 1.25rem;
+    background-size: 1rem;
+  }
+
+  &[open] {
+    & > summary {
+      background-image: url(../img/minus.svg), linear-gradient(#0000, #0000);
+    }
+    & > div {
+      position: relative;
+      top: -4rem;
+      padding-top: 4rem;
+    }
+  }
+}

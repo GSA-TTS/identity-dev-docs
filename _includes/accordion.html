@@ -5,15 +5,13 @@ include
 - title
 - id
 {% endcomment %}
-<dt class="usa-accordion__heading" id="{{ include.id }}">
-    <button
-      type="button"
-      class="usa-accordion__button"
+<details class='lg-details-accordion'>
+  <summary
       aria-controls="{{ include.accordion_id }}"
-    >
-      {{ include.title }}
-    </button>
-</dt>
-<dd id="{{ include.accordion_id }}" class="usa-accordion__content usa-prose">
+  >
+    {{ include.title }}
+  </summary>
+  <div id="{{ include.id }}">
     {{ include.content | markdownify }}
-</dd>
+  </div>
+</details>
