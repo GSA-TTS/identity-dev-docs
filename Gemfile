@@ -8,9 +8,17 @@ gem 'kramdown-parser-gfm', '~> 1.0'
 gem 'jekyll-redirect-from'
 gem 'jekyll-sitemap'
 
+group :development, :test do
+  gem 'pry-byebug'
+end
+
 group :test do
+  gem 'capybara'
   gem 'html-proofer', '~> 4.0'
+  gem 'nokogiri', '>= 1.10.5'
+  gem 'rackup' # required for `Capybara.server = :webrick`
+  gem 'rack-jekyll'
   gem 'rspec'
   gem 'rspec_junit_formatter', require: false
-  gem 'nokogiri', '>= 1.10.5'
+  gem 'selenium-webdriver'
 end
