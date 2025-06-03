@@ -1,0 +1,35 @@
+name: Tests
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  test:
+    name: Specs
+    runs-on: ubuntu-latest
+    env:
+      CI: 'true'
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - uses: actions/setup-node@v4
+      with:
+        cache: 'npm'
+    - name: Install NPM dependencies
+      run: npm ci
+    - name: Clean
+      run: make clean
+    - name: Build site
+      run: make build
+    - name: Run Ruby tests
+      run: bundle exec rspec
+    - name: Run HTMLProofer
+      run: bundle exec scripts/htmlproofer --internal
+    - name: Lint JavaScript
+      run: make lint-js
+    - name: Run NPM tests
+      run: npm run test
