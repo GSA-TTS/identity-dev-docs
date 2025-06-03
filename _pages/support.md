@@ -81,7 +81,7 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
   <dd id="uuid" class="usa-accordion__container">
     <div class="usa-accordion__content usa-prose">
       <p>
-        Every user has a unique UUID per agency for privacy reasons. This means that the same user can return a different UUID depending on which agency they are signing in to. These UUIDs are also globally unique. We do offer sharing of UUIDs between agencies with user consent on a case by case basis.
+        Every user has a unique UUID per agency for privacy reasons. This means that the same user can return a different UUID depending on which agency they are signing in to. These UUIDs are also globally unique.
       </p>
     </div>
   </dd>
