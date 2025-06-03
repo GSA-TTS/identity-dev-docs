@@ -26,7 +26,9 @@ describe('accessibility', () => {
 
   before(async () => {
     port = await getPort();
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({
+      args: ['--no-sandbox'],
+    });
     server = createServer((request, response) =>
       handler(request, response, { public: '_site' }),
     ).listen(port);
