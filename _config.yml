@@ -44,10 +44,13 @@ exclude:
   - .sass-cache/
   - .jekyll-cache/
   - assets/scss
+  - bin
   - gemfiles/
   - Gemfile
   - Gemfile.lock
   - node_modules/
+  - scripts
+  - spec
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/

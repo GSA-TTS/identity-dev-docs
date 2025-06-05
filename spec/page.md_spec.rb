@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 def redirect_page?(path)
@@ -6,7 +8,7 @@ end
 
 RSpec.describe 'all pages' do
   files = Dir.glob('_site/**/*.html')
-  files.reject! {|path| redirect_page?(path) }
+  files.reject! { |path| redirect_page?(path) }
   files.each do |page|
     describe page do
       let(:doc) { Nokogiri::HTML(File.new(page.to_s)) }
@@ -24,7 +26,7 @@ RSpec.describe 'all pages' do
         expect(doc.to_s).to include('https://www.googletagmanager.com/gtag/js')
       end
 
-      it 'does not include markdown markup in description meta tags', aggregate_failures: true do
+      it 'does not include markdown markup in description meta tags', :aggregate_failures do
         description = doc.at_css('meta[name=description]')
         expect(description[:content]).to_not(include('](')) if description
 

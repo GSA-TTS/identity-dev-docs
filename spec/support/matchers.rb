@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec::Matchers.define :open_external_links_in_new_window do
   missing_target_blank = []
 
@@ -5,7 +7,7 @@ RSpec::Matchers.define :open_external_links_in_new_window do
     doc = actual
 
     doc.css('a[href^=http]').each do |a|
-      next if !a.ancestors('nav').empty?
+      next unless a.ancestors('nav').empty?
 
       missing_target_blank << a[:href] if a[:target] != '_blank'
     end
@@ -59,9 +61,7 @@ RSpec::Matchers.define :have_unique_ids do
     ids = Set.new
 
     doc.css('[id]').each do |tag|
-      if ids.include?(tag[:id])
-        duplicate_ids << tag[:id]
-      end
+      duplicate_ids << tag[:id] if ids.include?(tag[:id])
 
       ids << tag[:id]
     end

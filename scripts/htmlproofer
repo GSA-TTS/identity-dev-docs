@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 # Run HTMLProofer via Ruby so we can do advanced things like ignore bad peer certificates which turn
 # up in external links.
 require 'html-proofer'
@@ -22,7 +24,7 @@ proofer_options.merge!(
   typhoeus: {
     ssl_verifypeer: false,
     ssl_verifyhost: 0,
-    followlocation: false,
+    followlocation: false
   },
   swap_urls: {
     "http://localhost:#{site_config['port']}" => 'https://developers.login.gov'
@@ -39,7 +41,6 @@ proofer.before_request do |request|
   # Some URLs behave differently if `accept-language` header is not included. Remove this in the
   # future if it's no longer needed.
   request.options[:headers]['Accept-Language'] = '*'
-  
 end
 
 proofer.run

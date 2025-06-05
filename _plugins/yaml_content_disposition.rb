@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'webrick'
 
 module Jekyll
@@ -5,7 +7,7 @@ module Jekyll
     class Serve
       class Servlet < WEBrick::HTTPServlet::FileHandler
         prepend(Module.new do
-          def do_GET(req, res)
+          def do_GET(req, res) # rubocop:disable Naming/MethodName
             res.header.merge!('Content-Disposition' => 'attachment') if req.path.end_with?('.yml')
             super
           end

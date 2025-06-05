@@ -1,0 +1,65 @@
+# The behavior of RuboCop can be controlled via the .rubocop.yml
+# configuration file. It makes it possible to enable/disable
+# certain cops (checks) and to alter their behavior if they accept
+# any parameters. The file can be placed either in your home
+# directory or in some project directory.
+#
+# RuboCop will start looking for the configuration file in the directory
+# where the inspected file is and continue its way up to the root directory.
+#
+# See https://docs.rubocop.org/rubocop/configuration
+
+plugins:
+- rubocop-capybara
+- rubocop-rspec
+
+AllCops:
+  NewCops: enable
+
+# Conveniences because we're using Jekyll
+
+RSpec/DescribeClass:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 15
+
+# end Jekyl-specific choices
+
+# Settings copied over from team preferences for Partner Portal
+
+RSpec/NotToNot:
+  EnforcedStyle: to_not
+
+Capybara/NegationMatcher:
+  EnforcedStyle: not_to
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+RSpec/ExpectChange:
+  # A couple people expressed a preference for block
+  EnforcedStyle: block
+
+Naming/RescuedExceptionsVariableName:
+  PreferredName: err
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: consistent
+
+Layout/DotPosition:
+  EnforcedStyle: leading
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Layout/FirstArgumentIndentation:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+# End team settings from Partner Portal
