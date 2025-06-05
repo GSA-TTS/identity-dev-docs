@@ -63,3 +63,8 @@ RSpec/MultipleExpectations:
   Enabled: false
 
 # End team settings from Partner Portal
+
+# Ruby 3.4 doesn't need this
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never

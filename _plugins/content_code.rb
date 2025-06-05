@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rouge'
 
 # Include tabindex for accessibility reasons

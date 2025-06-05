@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 RSpec::Matchers.define :open_external_links_in_new_window do
   missing_target_blank = []
 

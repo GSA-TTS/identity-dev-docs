@@ -19,6 +19,7 @@ GEM
     coderay (1.1.3)
     colorator (1.1.0)
     concurrent-ruby (1.3.4)
+    csv (3.3.5)
     diff-lcs (1.5.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
@@ -184,6 +185,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  csv
   html-proofer (~> 4.0)
   jekyll (~> 4.3.0)
   jekyll-redirect-from
@@ -202,7 +204,7 @@ DEPENDENCIES
   selenium-webdriver
 
 RUBY VERSION
-   ruby 3.2.5p208
+   ruby 3.4.1p0
 
 BUNDLED WITH
    2.6.9

@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
-
 # Run HTMLProofer via Ruby so we can do advanced things like ignore bad peer certificates which turn
 # up in external links.
 require 'html-proofer'
