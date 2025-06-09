@@ -1,7 +1,7 @@
 module Jekyll
   module CopyToDestination
     class CopyGenerator < Generator
-      def generate(site)
+      def generate(site) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
         folders = site.config['copy_to_destination'] || []
 
         static_files = folders.map do |relative_path|
