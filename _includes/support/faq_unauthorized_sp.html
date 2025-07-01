@@ -1,0 +1,46 @@
+<h5>Background</h5>
+<p>
+  Login.gov recognizes incoming requests from Service Providers by validating the Issuer (for SAML) or ClientID (for OIDC) field sent in the request and checking it against Service Providers registered with Login.gov. The Issuer for each Service Provider is defined in the Issuer field on the Login.gov Portal.
+  <br/><br/>
+  <img alt="Screenshot of issuer field on Login.gov portal" src="/assets/img/dashboard_issuer.png" />
+  <br/><br/>
+  This error occurs when Login.gov receives a request from a Service Provider that contains an Issuer/ClientID field that is not registered with Login.gov. The Issuer/ClientID defined in the request must match EXACTLY the Issuer defined in the Portal.
+</p>
+<h5>Solution:</h5>
+<p>
+  Double check the SAML/OIDC request to Login.gov and confirm that the Issuer/ClientID field matches exactly what is defined in the Login.gov Portal. See <a href="#other-tips--tools">Other Tips & Tools</a> for help with decoding SAML Requests.
+  <br/><br/>
+  Note that certain Service Providers will not allow partners to set or change the Issuer value after the application is configured (e.g. MS Power Apps Portal). In this case, the best option would be to create the Login.gov Portal configuration after the Service Provider application has defined the Issuer and use that Issuer in the Portal.
+</p>
+
+<!-- markdown has to be formatted left-aligned -->
+<div markdown="1">
+##### SAML Request Example
+
+```xml
+​​<samlp:AuthnRequest AssertionConsumerServiceURL='https://sp.int.identitysandbox.gov/auth/saml/callback?utf8=%E2%9C%93&amp;loa=1'
+                    Destination='https://idp.int.identitysandbox.gov/api/saml/auth'
+                    ID='_6fca7b78-9ab7-49f5-bd62-18c48eac3c68'
+                    IssueInstant='2017-02-23T20:36:17Z'
+                    Version='2.0'
+                    xmlns:saml='urn:oasis:names:tc:SAML:2.0:assertion'
+                    xmlns:samlp='urn:oasis:names:tc:SAML:2.0:protocol'>
+  <saml:Issuer>urn:gov:gsa:SAML:2.0.profiles:sp:sso:rails-int</saml:Issuer>
+  <!-- ... -->
+</samlp:AuthnRequest>
+
+```
+##### OIDC Request Example:
+
+```bash
+https://idp.int.identitysandbox.gov/openid_connect/authorize?
+  acr_values=http%3A%2F%2Fidmanagement.gov%2Fns%2Fassurance%2Fial%2F1&
+  client_id=${CLIENT_ID}&
+  nonce=${NONCE}&
+  prompt=select_account&
+  redirect_uri=${REDIRECT_URI}&
+  response_type=code&
+  scope=openid+email&
+  state=abcdefghijklmnopabcdefghijklmnop
+```
+</div>

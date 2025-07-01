@@ -1,0 +1,40 @@
+<h5>Background:</h5>
+<p>
+  For both SAML and OIDC, the Authentication Context Class Reference field can be used to define the Identity Assurance Level (IAL) and Authentication Assurance Level (AAL) on a per-request basis. It can also be used to define which user attributes should be returned from Login.gov upon successful authentication.
+  <br/><br/>
+  This error occurs when Login.gov receives a request containing an unrecognized or unauthorized Authentication Context Class Reference value.
+</p>
+<h5>Solution:</h5>
+<p>
+  Refer to the Login.gov Developer’s Guide for a list of accepted Authentication Context Class Reference values and ensure one or more of these values (and no others) are being sent in all authentication requests:
+</p>
+<div><a target="_blank" href="{{ '/oidc/authorization/#service_level' | prepend: site.baseurl }}">OIDC IAL Values</a></div>
+<div><a target="_blank" href="{{ '/oidc/authorization/#aal_values' | prepend: site.baseurl }}">OIDC AAL Values</a></div>
+<div><a target="_blank" href="{{ '/oidc/authorization/#scope_possible_values' | prepend: site.baseurl }}">OIDC User Attributes</a> - see "scope"</div>
+<div><a target="_blank" href="{{ '/saml/authentication/#service_level' | prepend: site.baseurl }}">SAML IAL Values</a></div>
+<div><a target="_blank" href="{{ '/saml/authentication/#aal_values' | prepend: site.baseurl }}">SAML AAL Values</a></div>
+<div><a target="_blank" href="{{ '/saml/authentication/#attributes' | prepend: site.baseurl }}">SAML User Attributes</a></div>
+<h5>Important Note for SAML Service Providers:</h5>
+<p>
+  Login.gov requires AAL2 at minimum by default and so cannot accept AAL1 values for the Authentication Context Class Reference value unless the incoming requests allows Login.gov to increase the AAL to 2. For SAML requests, this means defining the optional Comparison field in the RequestedAuthContext SAML field as “minimum” or “better”. See below for a sample SAML request with an AAL of 1 and the optional Comparison field.
+</p>
+
+<div markdown="1">
+```xml
+<samlp:AuthnRequest ...>
+  <!-- ... -->
+  <samlp:RequestedAuthnContext Comparison='minimum'>
+    <saml:AuthnContextClassRef>urn:acr.login.gov:verified</saml:AuthnContextClassRef>
+    <saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</saml:AuthnContextClassRef>
+    <saml:AuthnContextClassRef>http://idmanagement.gov/ns/requested_attributes?ReqAttr=email</saml:AuthnContextClassRef>
+  </samlp:RequestedAuthnContext>
+</samlp:AuthnRequest>
+```
+</div>
+
+<p class="text-bold">
+  Service Providers that cannot accommodate either sending a specific Authentication Context Class Reference or sending the optional Comparison field cannot currently be integrated with Login.gov.
+</p>
+<p>
+  See Section 3.3.2.2.1 of the <a target="_blank" href="https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf">SAML spec for more information.</a>
+</p>
