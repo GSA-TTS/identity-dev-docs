@@ -45,26 +45,29 @@ All logout requests must be signed — we require RSA SHA-256 signatures embedde
         </section>
     </div>
 </div>
-<div class="grid-row grid-gap">
-    <div class="desktop:grid-col-7 mobile:grid-col-full" markdown="1">
 
+<div class="grid-row grid-gap">
+    <div class="desktop:grid-col-7 mobile:grid-col-full">
+<div markdown="1">
 ### Logout response
 
 After, Login.gov will redirect and POST a form back to your registered Assertion Consumer Service Logout URL:
 
 Note: the SAMLResponse does not contain a signature since it's simply acknowledging the logout request.
-
-
-  <div class="usa-accordion--bordered margin-top-2">
-    <button class="usa-accordion__button" aria-controls="attributes">
-    Remote logout (deprecated)
-    </button>
-    <div id="attributes" class="usa-accordion__content">
-        {% include snippets/saml/logout/remote_logout.md %}
-    </div>
-  </div>
 </div>
- <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-5">
+
+{% capture remote_logout %}
+  {% include snippets/saml/logout/remote_logout.md %}
+{% endcapture %}
+      <div class="usa-accordion--bordered margin-top-2">
+        {% include accordion.html id="remotelogout"
+                                  accordion_id="remote-logout"
+                                  title="Remote logout (deprecated)"
+                                  content=remote_logout
+        %}
+      </div>
+    </div>
+    <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-5">
         <section class="code-snippet-section margin-top-2 position-relative z-index-1">
             <button id="saml_logout_response_tab1_button" data-selector="saml_logout_response" class="code-button code-button__selected margin-left-2">Request</button>
             <button id="saml_logout_response_tab2_button" data-selector="saml_logout_response" class="code-button margin-left-2">Example</button>
@@ -76,3 +79,4 @@ Note: the SAMLResponse does not contain a signature since it's simply acknowledg
             </section>
         </section>
     </div>
+</div>

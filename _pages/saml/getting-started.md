@@ -102,26 +102,40 @@ Consistent with the [SAML metadata specification](https://docs.oasis-open.org/se
 ### Signing Certificates
 Below you can find the X509 certificates used by the Login.gov IdP to sign SAML requests. **Do not enter these certificates in the Portal when configuring an application for testing** - you can follow the instructions in our [testing article]({% link _pages/testing.md %}#creating-a-public-certificate) to generate a client certificate.
 
-<div class="usa-accordion--bordered">
-  <button class="usa-accordion__button" aria-controls="sandbox-cert-{{ site.data.saml.year.current }}">
-    View {{ site.data.saml.year.current }} <strong>sandbox</strong> certificate
-  </button>
-  <div id="sandbox-cert-{{ site.data.saml.year.current }}" class="usa-accordion__content" markdown="1">
+{% capture saml_cert_sandbox_title %}
+  View {{ site.data.saml.year.current }} <strong>sandbox</strong> certificate
+{% endcapture %}
+{% capture saml_cert_sandbox_content %}
+<div id="sandbox-cert-{{ site.data.saml.year.current }}" markdown="1">
 ```
 {{ site.data.saml.certs.sandbox }}
 ```
-  </div>
+</div>
+{% endcapture %}
+<div class="usa-accordion--bordered margin-top-2">
+{% include accordion.html id="current-sandbox-saml-cert"
+                          accordion_id="current_sandbox_saml_cert"
+                          title=saml_cert_sandbox_title
+                          content=saml_cert_sandbox_content
+%}
 </div>
 
-<div class="usa-accordion--bordered margin-top-2">
-  <button class="usa-accordion__button" aria-controls="production-cert-{{ site.data.saml.year.current }}">
+{% capture saml_cert_production_title %}
   View {{ site.data.saml.year.current }} <strong>production</strong> certificate
-  </button>
-  <div id="production-cert-{{ site.data.saml.year.current }}" class="usa-accordion__content" markdown="1">
+{% endcapture %}
+{% capture saml_cert_production_content %}
+<div id="production-cert-{{ site.data.saml.year.current }}"  markdown="1">
 ```
 {{ site.data.saml.certs.production }}
 ```
-  </div>
+</div>
+{% endcapture %}
+<div class="usa-accordion--bordered margin-top-2">
+{% include accordion.html id="current-production-saml-cert"
+                          accordion_id="current_production_saml_cert"
+                          title=saml_cert_production_title
+                          content=saml_cert_production_content
+%}
 </div>
 
 #### Annual Certificate Rotation
