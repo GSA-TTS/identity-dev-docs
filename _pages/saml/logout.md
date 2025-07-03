@@ -59,13 +59,13 @@ Note: the SAMLResponse does not contain a signature since it's simply acknowledg
 {% capture remote_logout %}
   {% include snippets/saml/logout/remote_logout.md %}
 {% endcapture %}
-      <div class="usa-accordion--bordered margin-top-2">
+      <dl class="usa-accordion--bordered margin-top-2">
         {% include accordion.html id="remotelogout"
                                   accordion_id="remote-logout"
                                   title="Remote logout (deprecated)"
                                   content=remote_logout
         %}
-      </div>
+      </dl>
     </div>
     <div class="usa-layout-docs__main code-snippet-column desktop:grid-col-5">
         <section class="code-snippet-section margin-top-2 position-relative z-index-1">
