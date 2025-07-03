@@ -112,13 +112,12 @@ Below you can find the X509 certificates used by the Login.gov IdP to sign SAML 
 ```
 </div>
 {% endcapture %}
-<div class="usa-accordion--bordered margin-top-2">
+<dl class="usa-accordion--bordered margin-top-2">
 {% include accordion.html id="current-sandbox-saml-cert"
                           accordion_id="current_sandbox_saml_cert"
                           title=saml_cert_sandbox_title
                           content=saml_cert_sandbox_content
 %}
-</div>
 
 {% capture saml_cert_production_title %}
   View {{ site.data.saml.year.current }} <strong>production</strong> certificate
@@ -130,13 +129,12 @@ Below you can find the X509 certificates used by the Login.gov IdP to sign SAML 
 ```
 </div>
 {% endcapture %}
-<div class="usa-accordion--bordered margin-top-2">
 {% include accordion.html id="current-production-saml-cert"
                           accordion_id="current_production_saml_cert"
                           title=saml_cert_production_title
                           content=saml_cert_production_content
 %}
-</div>
+</dl>
 
 #### Annual Certificate Rotation
 
