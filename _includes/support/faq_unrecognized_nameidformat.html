@@ -1,0 +1,20 @@
+<h5>Background:</h5>
+<p>
+    For SAML Identity Providers, NameID is the unique identifier used to identify users across multiple sessions. The NameID Format field specifies the format of the NameID field and is defined and/or restricted by the Identity Provider.
+    <br/><br/>
+    This error occurs when Login.gov receives a SAML request with a NameIDPolicy who’se Format field does not match the NameIDFormat specified by Login.gov.
+</p>
+
+<div markdown="1">
+```xml
+<samlp:NameIDPolicy AllowCreate='true'
+                      Format='urn:oasis:names:tc:SAML:1.1:nameid-format:transient'/>
+```
+</div>
+
+<h5>Solution:</h5>
+<p>
+    Refer to the <a target="_blank" href="{{ '/saml/getting-started/#configuration' | prepend: site.baseurl }}">Login.gov Developers Guide</a> for the acceptable values for the NameIdFormat SAML field. Update the Login.gov Identity Provider configuration within your Service Provider to specify the correct NameIDFormat field.
+    <br/><br/>
+    For SAML Service Providers, see <a href="#other-tips--tools">Other Tips & Tools</a> for help with decoding SAML Requests.
+</p>
