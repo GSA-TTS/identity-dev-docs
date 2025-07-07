@@ -24,11 +24,13 @@
 <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 ```
 </div>
-    {% include alert.html alert_class="usa-alert--warning" content="If there is no indication of a signature within the request URL or the request SAML, the request is not signed." %}
-    <h5>Check the signature algorithm</h5>
-    <p>
-      One common reason for failing signature validation is the use of an unsupported hashing algorithm, like SHA1. <span class="text-bold">Login.gov only supports SHA256.</span> Using the methods described above, check whether your request either contains a SigAlg parameter indicating the use of SHA256, or your SAML includes a tag indicating this, for example:
-    </p>
+
+{% include alert.html alert_class="usa-alert--warning" content="If there is no indication of a signature within the request URL or the request SAML, the request is not signed." %}
+<h5>Check the signature algorithm</h5>
+<p>
+    One common reason for failing signature validation is the use of an unsupported hashing algorithm, like SHA1. <span class="text-bold">Login.gov only supports SHA256.</span> Using the methods described above, check whether your request either contains a SigAlg parameter indicating the use of SHA256, or your SAML includes a tag indicating this, for example:
+</p>
+
 <div markdown="1">
 ```xml
 <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
