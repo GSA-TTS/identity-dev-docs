@@ -11,7 +11,7 @@ RSpec.describe 'accordions on /oidc/authorization/', :js, type: :feature do
   end
 
   it 'is expanded with an anchor in the URL' do
-    visit '/oidc/authorization#service_level'
+    visit '/oidc/authorization#service_level_accordion'
     expect(page).to have_element('dt')
     expect(page).to have_element('dd')
     definition = find('#service_level ~ dd').text
@@ -19,7 +19,7 @@ RSpec.describe 'accordions on /oidc/authorization/', :js, type: :feature do
     accordion_button = find('#service_level > button')
     expect(accordion_button.native.attribute('aria-expanded')).to eq('true')
 
-    visit '/oidc/authorization#aal_values'
+    visit '/oidc/authorization#aal_accordion'
     next_definition = find('#aal_values ~ dd').text
     expect(next_definition).to include('http://idmanagement.gov/ns/assurance/aal/2')
   end
