@@ -34,7 +34,7 @@ footer_sections:
     url: '$BASE_URL/accessibility/'
   - label: Join us
     url: '$BASE_URL/join/'
-  - label: Privacy & Security
+  - label: Privacy &amp; Security
     url: '$BASE_URL/policy/'
 - heading: Support
   links:
