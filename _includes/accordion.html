@@ -12,6 +12,7 @@ include
       aria-controls="{{ include.accordion_id }}"
     >
       {{ include.title }}
+      <a href="#{{ include.accordion_id }}" class="accordion-link">#</a>
     </button>
 </dt>
 <dd id="{{ include.accordion_id }}" class="usa-accordion__content usa-prose">

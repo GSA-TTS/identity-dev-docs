@@ -12,14 +12,6 @@
     }
   };
 
-  const addAccordionLinks = (_event) => {
-    const accordions = Array.from(document.querySelectorAll('.usa-accordion__content'));
-    const aList = accordions.slice(1);
-    const accordionIdList = aList.reduce((a, v) => (a ? `${a}, #${v.id}` : `#${v.id}`), null);
-    window.anchors.add(accordionIdList);
-  };
-
   document.addEventListener('DOMContentLoaded', jumpToAccordion);
-  document.addEventListener('DOMContentLoaded', addAccordionLinks);
   window.addEventListener('hashchange', jumpToAccordion);
 })();
