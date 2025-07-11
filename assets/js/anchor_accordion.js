@@ -1,12 +1,14 @@
 (() => {
   const jumpToAccordion = (_event) => {
-    const urlHash = new URL(document.URL).hash;
-    const idFromHash = urlHash.match(/^#([A-Za-z0-9_-]+)$/);
-    if (idFromHash) {
-      const accordionBody = document.getElementById(idFromHash[1]);
-      const accordionHeading = accordionBody.previousElementSibling;
-      const accordionButton = accordionHeading.querySelector('.usa-accordion__heading > button');
-      if (accordionButton) {
+    const accordionId = new URL(document.URL).hash;
+    if (accordionId) {
+      const accordionButton = document.querySelector(
+         `${accordionId}.usa-accordion__heading > button`,
+      );
+      const accordionBody = document.querySelector(
+         `${accordionId}.usa-accordion__heading + dd`,
+      );
+      if (accordionButton && accordionBody.hidden) {
         accordionButton.click();
       }
     }
