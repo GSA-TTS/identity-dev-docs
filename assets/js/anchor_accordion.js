@@ -3,11 +3,9 @@
     const accordionId = new URL(document.URL).hash;
     if (accordionId) {
       const accordionButton = document.querySelector(
-         `${accordionId}.usa-accordion__heading > button`,
+        `${accordionId}.usa-accordion__heading > button`,
       );
-      const accordionBody = document.querySelector(
-         `${accordionId}.usa-accordion__heading + dd`,
-      );
+      const accordionBody = document.querySelector(`${accordionId}.usa-accordion__heading + dd`);
       if (accordionButton && accordionBody.hidden) {
         accordionButton.click();
       }
