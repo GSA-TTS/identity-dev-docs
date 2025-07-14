@@ -165,6 +165,15 @@ button.code-button:hover {
   height: 1.3rem;
 }
 
+.accordion-link {
+  display: none;
+  text-decoration: none;
+}
+
+.usa-accordion__heading:hover .accordion-link {
+  display: inline;
+}
+
 @media (min-width: 1024px) {
   .code-snippet-column {
     background-color: transparent;

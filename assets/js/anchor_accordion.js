@@ -1,16 +1,17 @@
 (() => {
-  const onChange = (_event) => {
-    const urlHash = new URL(document.URL).hash;
-    const idFromHash = urlHash.match(/^(#[A-Za-z0-9_-]+)$/);
-    if (idFromHash) {
-      const accordionHeading = document.querySelector(
-        `${idFromHash[1]}.usa-accordion__heading > button`,
+  const jumpToAccordion = (_event) => {
+    const accordionId = new URL(document.URL).hash;
+    if (accordionId) {
+      const accordionButton = document.querySelector(
+        `${accordionId}.usa-accordion__heading > button`,
       );
-      if (accordionHeading) {
-        accordionHeading.click();
+      const accordionBody = document.querySelector(`${accordionId}.usa-accordion__heading + dd`);
+      if (accordionButton && accordionBody.hidden) {
+        accordionButton.click();
       }
     }
   };
-  document.addEventListener('DOMContentLoaded', onChange);
-  window.addEventListener('hashchange', onChange);
+
+  document.addEventListener('DOMContentLoaded', jumpToAccordion);
+  window.addEventListener('hashchange', jumpToAccordion);
 })();
