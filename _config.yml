@@ -1,6 +1,6 @@
 # Site settings
 title: Login.gov
-description: Welcome to the Login.gov developer documentation!
+description: Welcome to the Login.gov Developer Guide
 github_repo_url: https://github.com/GSA-TTS/identity-dev-docs # enables "edit this page" button
 url: https://developers.login.gov
 
