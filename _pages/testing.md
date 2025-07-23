@@ -66,13 +66,22 @@ Login.gov does not manage user accounts. If you have lost access to a team:
 
 ### Creating a public certificate
 
-You can use the following OpenSSL command to generate a 2048-bit PEM-encoded public certificate for your application (with a 1-year validity period):
+You can use the following OpenSSL command to generate a self-signed 2048-bit PEM-encoded public certificate for your testing/sandbox application (with a 1-year validity period). Self-signed certificates should be for testing/sandbox purposes only. We recommend using Certificate Authority (CA) issued certificates for your production integration.
 
 ```
 openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out public.crt
 ```
 
-Make sure you're using the corresponding private key in your application to sign and/or validate requests and responses to/from Login.gov.
+The public certificate contains the public key, and the OpenSSL command also generates the private key. Together these are referred to as the public/private keypair. Make sure you're using the corresponding private key in your application to sign and/or validate requests and responses to/from Login.gov.
+
+The public/private keypair process is a crucial step in generating secure authentications. Please note the following:
+
+- The private key should be one of the most securely protected pieces of data in your Login.gov integration. If the private key is compromised, your integration will no longer be secure.
+- Only share the public key with Login.gov. Do not share the private key.
+- It is best practice to rotate your keypairs on a regular basis regardless of known compromise.
+- At minimum for OIDC, you must ensure that your authentication request is signed with the private key.
+- For SAML integrations, use the private key generated with your certificate for decryption or you will be unable to decrypt the response.
+
 
 ## Load Testing
 
