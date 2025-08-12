@@ -51,8 +51,14 @@ main.usa-layout-docs {
 }
 
 
-.usa-prose > ul > .doc-sub-nav-item {
-  margin-bottom: 0px;
+.usa-prose {
+  & > ul > .doc-sub-nav-item {
+    margin-bottom: 0px;
+  }
+
+  li.usa-process-list__item {
+    @include u-padding-bottom(3);
+  }
 }
 
 .code-button {
