@@ -28,7 +28,7 @@ sidenav:
     <li class="usa-process-list__item">
       <h3>Configure your application in the portal and start testing</h3>
       <p>
-        Utilize our <a class="usa-link" href="#integration-checklist">integration checklist</a> to verify you have all the necessary information for configuration. If you're not sure which options are right for your team, or if you're using a third-party application identity platform, please review our <a class="usa-link" href="{% link _pages/overview.md %}">integrations guide</a> for more information.
+        Utilize our <a class="usa-link" href="#integration-info-checklist">integration checklist</a> to verify you have all the necessary information for configuration. If you're not sure which options are right for your team, or if you're using a third-party application identity platform, please review our <a class="usa-link" href="{% link _pages/overview.md %}">integrations guide</a> for more information.
       </p>
     </li>
     <li class="usa-process-list__item">
