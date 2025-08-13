@@ -28,7 +28,7 @@ sidenav:
     <li class="usa-process-list__item">
       <h3>Configure your application in the portal and start testing</h3>
       <p>
-        Utilize our <a class="usa-link" href="#integration-info-checklist">integration checklist</a> to verify you have all the necessary information for configuration. If you're not sure which options are right for your team, or if you're using a third-party application identity platform, please review our <a class="usa-link" href="{% link _pages/overview.md %}">integrations guide</a> for more information.
+        Utilize our <a class="usa-link" href="#integration-info-checklist" aria-label="anchor">integration checklist</a> to verify you have all the necessary information for configuration. If you're not sure which options are right for your team, or if you're using a third-party application identity platform, please review our <a class="usa-link" href="{% link _pages/overview.md %}">integrations guide</a> for more information.
       </p>
     </li>
     <li class="usa-process-list__item">
@@ -43,8 +43,8 @@ sidenav:
 <section class="margin-top-3 margin-bottom-4">
   <h2 id="integration-info-checklist">Integration information checklist</h2>
   <div id="home-register-checklist-accordion" class="usa-accordion usa-accordion__heading usa-accordion--bordered margin-bottom-3 maxw-tablet">
-    <button class="usa-accordion__button padding-y-1" aria-expanded="true" aria-controls="home-register-checklist">
-      <h3 class="font-body-md text-normal line-height-sans-1">Information you need to register your application</h3>
+    <button class="usa-accordion__button" aria-expanded="true" aria-controls="home-register-checklist">
+      Information you need to register your application
     </button>
     <div id="home-register-checklist" class="usa-accordion__content">
       <ul class="usa-list list-style-checkbox">
