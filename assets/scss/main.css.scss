@@ -182,11 +182,16 @@ button.code-button:hover {
 
 .list-style-checkbox {
   & li {
+    position: relative;
+    list-style-type: none;
     padding-left: 0.5em;
 
-    &::marker {
-      font-size: 1.2em;
+    &:before {
       content: '☐';
+      position: absolute;
+      left: -0.85em;
+      top: -0.4ex;
+      font-size: 1.2em;
     }
   }
 }
