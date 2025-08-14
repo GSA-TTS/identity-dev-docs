@@ -51,8 +51,14 @@ main.usa-layout-docs {
 }
 
 
-.usa-prose > ul > .doc-sub-nav-item {
-  margin-bottom: 0px;
+.usa-prose {
+  & > ul > .doc-sub-nav-item {
+    margin-bottom: 0px;
+  }
+
+  li.usa-process-list__item {
+    @include u-padding-bottom(3);
+  }
 }
 
 .code-button {
@@ -172,6 +178,22 @@ button.code-button:hover {
 
 .usa-accordion__heading:hover .accordion-link {
   display: inline;
+}
+
+.list-style-checkbox {
+  & li {
+    position: relative;
+    list-style-type: none;
+    padding-left: 0.5em;
+
+    &:before {
+      content: '☐';
+      position: absolute;
+      left: -0.85em;
+      top: -0.4ex;
+      font-size: 1.2em;
+    }
+  }
 }
 
 @media (min-width: 1024px) {
