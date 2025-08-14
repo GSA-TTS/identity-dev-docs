@@ -6,6 +6,8 @@ sidenav:
   - text: Troubleshooting
     href: "#troubleshooting"
     links:
+      - text: OpenID Connect Errors
+        href: "#openid-connect-errors"
       - text: Login.gov Errors
         href: "#logingov-errors"
       - text: Browser Console Errors
