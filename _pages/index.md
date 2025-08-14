@@ -53,7 +53,7 @@ sidenav:
         <li>Implementation protocols (SAML or Open ID Connect)</li>
         <li>Service level as either Authentication only or Identity Verification</li>
         <li>Data you need to keep and collect and other <a class="usa-link" href="{% link _pages/attributes.md %}">user attributes</a></li>
-        <li><a class="usa-link" href="{% link _pages/oidc/authorization.md %}">Authentication assurance</a> levels</li>
+        <li><a class="usa-link" href="{% link _pages/oidc/authorization.md %}#aal_values">Authentication assurance</a> levels</li>
         <li>Agency logo file</li>
         <li>A public/private key pair and the <a class="usa-link" href="{% link _pages/testing.md %}#creating-a-public-certificate">public certificate</a> to validate your website and application’s authenticity</li>
         <li>Content for the “sign up”, “sign in”, and “forgot password” language if you do not want to use the pre-selected options. Custom “Help” text is optional.</li>
