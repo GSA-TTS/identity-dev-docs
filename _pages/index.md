@@ -43,10 +43,10 @@ sidenav:
 <section class="margin-top-3 margin-bottom-4">
   <h2 id="integration-info-checklist">Integration information checklist</h2>
   <div id="home-register-checklist-accordion" class="usa-accordion usa-accordion__heading usa-accordion--bordered margin-bottom-3 maxw-tablet">
-    <button class="usa-accordion__button" aria-expanded="true" aria-controls="home-register-checklist">
+    <button class="usa-accordion__button" aria-expanded="false" aria-controls="home-register-checklist">
       Information you need to register your application
     </button>
-    <div id="home-register-checklist" class="usa-accordion__content">
+    <div id="home-register-checklist" class="usa-accordion__content" hidden>
       <ul class="usa-list list-style-checkbox">
         <li>Inter-agency agreement application name</li>
         <li>Public-face, friendly application name</li>
