@@ -42,11 +42,14 @@ sidenav:
 <hr class="text-primary-light border-solid measure-5 margin-x-0">
 <section class="margin-top-3 margin-bottom-4">
   <h2 id="integration-info-checklist">Integration information checklist</h2>
-  <div id="home-register-checklist-accordion" class="usa-accordion usa-accordion__heading usa-accordion--bordered margin-bottom-3 maxw-tablet">
-    <button class="usa-accordion__button" aria-expanded="true" aria-controls="home-register-checklist">
-      Information you need to register your application
-    </button>
-    <div id="home-register-checklist" class="usa-accordion__content">
+  <dl class="usa-accordion usa-accordion--bordered maxw-tablet">
+    <dt id="integration-checklist-accordion" class="usa-accordion__heading margin-bottom-3">
+      <button class="usa-accordion__button" aria-expanded="false" aria-controls="home-register-checklist">
+        Information you need to register your application
+        <a href="#integration-checklist-accordion" class="accordion-link" aria-label="anchor" aria-describedby="#integration-checklist-accordion">#</a>
+      </button>
+    </dt>
+    <dd id="home-register-checklist" class="usa-accordion__content" hidden>
       <ul class="usa-list list-style-checkbox">
         <li>Inter-agency agreement application name</li>
         <li>Public-face, friendly application name</li>
@@ -58,8 +61,8 @@ sidenav:
         <li>A public/private key pair and the <a class="usa-link" href="{% link _pages/testing.md %}#creating-a-public-certificate">public certificate</a> to validate your website and application’s authenticity</li>
         <li>Content for the “sign up”, “sign in”, and “forgot password” language if you do not want to use the pre-selected options. Custom “Help” text is optional.</li>
       </ul>
-    </div>
-  </div>
+    </dd>
+  </dl>
 </section>
 <p class="measure-5 margin-x-0">
   This website is for agency partners or developers. If you need technical support please contact <a class="usa-link" href="{% link _pages/support.md %}#contacting-partner-support">Partner Support</a> or view our <a class="usa-link" href="{% link _pages/support.md %}#frequently-asked-questions">FAQ</a> page. If you are not an agency partner or developer, please visit the <a class="usa-link" href="https://login.gov/help/">Login.gov Help Center</a> or <a class="usa-link" href="https://login.gov/contact/">contact us</a> for help signing in to your account or verifying your identity.

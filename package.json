@@ -21,7 +21,7 @@
   "homepage": "https://github.com/GSA-TTS/identity-dev-docs#readme",
   "dependencies": {
     "@18f/identity-build-sass": "^3.0.0",
-    "@18f/identity-design-system": "^9.3.0"
+    "@18f/identity-design-system": "^9.4.0"
   },
   "devDependencies": {
     "@18f/eslint-plugin-identity": "^2.0.0",
