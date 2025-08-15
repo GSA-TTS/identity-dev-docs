@@ -29,10 +29,20 @@ RSpec.describe 'accordions', :js, type: :feature do
   context 'on /index' do
     it 'is not expanded by default' do
       visit '/'
-      accordion_button = find('.usa-accordion__button')
-      expect(page).to have(accordion_button)
+      accordion_button = page.find('#integration-checklist-accordion > button')
+      expect(accordion_button).to have_content('Information you need to register your application')
       expect(page).to_not have_css('.usa-accordion__content')
-      expect(accordion_button.native.attrbute('aria-expanded')).to eq('false')
+      expect(accordion_button.native.attribute('aria-expanded')).to eq('false')
+    end
+
+    it 'is expanded with an anchor in the URL' do
+      visit '/#integration-checklist-accordion'
+      accordion_button = page.find('#integration-checklist-accordion > button')
+      expect(accordion_button).to have_content('Information you need to register your application')
+      expect(page).to have_css('.usa-accordion__content')
+      definition = page.find('#integration-checklist-accordion ~ dd').text
+      expect(definition).to include 'Inter-agency agreement application name'
+      expect(accordion_button.native.attribute('aria-expanded')).to eq('true')
     end
   end
 end
