@@ -1,5 +1,6 @@
+### OpenID Connect Errors
+
 <div>
-  <h3>OpenID Connect Errors</h3>
   <h4>Authorization</h4>
   <dl class="usa-accordion usa-accordion--bordered">
     {% for error in site.data.errors.oidc.auth %}

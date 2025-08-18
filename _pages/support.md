@@ -6,6 +6,8 @@ sidenav:
   - text: Troubleshooting
     href: "#troubleshooting"
     links:
+      - text: OpenID Connect Errors
+        href: "#openid-connect-errors"
       - text: Login.gov Errors
         href: "#logingov-errors"
       - text: Browser Console Errors
@@ -138,7 +140,7 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
 
 ## Troubleshooting
 
-{% include support/oidc.html %}
+{% include support/oidc.md %}
 
 ### Login.gov Errors
 
