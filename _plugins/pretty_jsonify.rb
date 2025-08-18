@@ -3,11 +3,7 @@ require 'json'
 module LoginGov
   module PrettyJsonify
     def pretty_jsonify(input)
-      json = if input.kind_of?(String)
-        JSON.parse(input)
-      else
-        json
-      end
+      json = JSON.parse(input) if input.is_a?(String)
 
       JSON.pretty_generate(json)
     end
