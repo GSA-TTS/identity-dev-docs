@@ -140,7 +140,7 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
 
 ## Troubleshooting
 
-{% include support/oidc.html %}
+{% include support/oidc.md %}
 
 ### Login.gov Errors
 
