@@ -44,9 +44,7 @@ sidenav:
   <h2 id="integration-info-checklist">Integration information checklist</h2>
   <dl class="usa-accordion usa-accordion--bordered maxw-tablet">
     <dt id="integration-checklist-accordion" class="usa-accordion__heading margin-bottom-3">
-      <button class="usa-accordion__button" aria-expanded="false" aria-controls="home-register-checklist">
-        Information you need to register your application
-        <a href="#integration-checklist-accordion" class="accordion-link" aria-label="anchor" aria-describedby="#integration-checklist-accordion">#</a>
+      <button class="usa-accordion__button" aria-expanded="false" aria-controls="home-register-checklist">Information you need to register your application<a href="#integration-checklist-accordion" class="accordion-link" aria-label="anchor" aria-describedby="#integration-checklist-accordion">#</a>
       </button>
     </dt>
     <dd id="home-register-checklist" class="usa-accordion__content" hidden>
