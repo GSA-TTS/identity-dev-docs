@@ -14,9 +14,7 @@ describe('accordions', () => {
   before(async () => {
     port = await getPort();
     console.log(`http://localhost:${port}`);
-    browser = await puppeteer.launch({
-      headless:false
-    });
+    browser = await puppeteer.launch();
     server = createServer((req, res) => {
       handler(req, res, { public: '_site' });
     }).listen(port);
@@ -50,7 +48,7 @@ describe('accordions', () => {
         await accordionBtn.evaluate(el => el.getAttribute('aria-expanded')),
         'false',
         'aria-expanded incorrectly set to "true"',
-      )
+      );
     });
 
     await test('is expanded with an anchor in the URL', async () => {
@@ -78,6 +76,50 @@ describe('accordions', () => {
         'true',
         'aria-expanded incorrectly set to "false"',
       );
-    })
+    });
+  });
+
+  test('on /oidc/authorization/', async () => {
+    page = await browser.newPage();
+
+    await test('is not expanded by default', async () => {
+      await page.goto(`http://localhost:${port}/oidc/authorization`);
+      const accordionBtn = await page
+        .waitForSelector('#service_level > button');
+
+      assert(await page.waitForSelector('dt'));
+      assert(await page.waitForSelector('dd'));
+      isEqual(
+        await accordionBtn.evaluate(el => el.getAttribute('aria-expanded')),
+        'false',
+        'aria-expanded incorrectly set to "true"',
+      );
+    });
+
+    await test('is expanded with an anchor in the URL', async () => {
+      await page.goto(`http://localhost:${port}/oidc/authorization#service_level`);
+      const accordionBtn = await page
+        .waitForSelector('#service_level > button');
+      const levelDefinition = await page
+        .waitForSelector('#service_level ~ dd');
+
+      assert.match(
+        await levelDefinition.evaluate(el => el.innerText),
+        new RegExp('acr.login.gov:verified'),
+      );
+      isEqual(
+        await accordionBtn.evaluate(el => el.getAttribute('aria-expanded')),
+        'true',
+      );
+
+      await page.goto(`http://localhost:${port}/oidc/authorization#aal_values`);
+      const aalDefinition = await page
+        .waitForSelector('#aal_values ~ dd');
+
+      assert.match(
+        await aalDefinition.evaluate(el => el.innerText),
+        new RegExp('http://idmanagement.gov/ns/assurance/aal/2'),
+      );
+    });
   });
 });
