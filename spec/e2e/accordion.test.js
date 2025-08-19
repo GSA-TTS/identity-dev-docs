@@ -15,7 +15,9 @@ describe('accordions', () => {
 
   before(async () => {
     port = await getPort();
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({
+      args: ['--no-sandbox'],
+    });
     server = createServer((req, res) => {
       handler(req, res, { public: '_site' });
     }).listen(port);
@@ -33,17 +35,17 @@ describe('accordions', () => {
       const accordionBtn = await page.waitForSelector('#integration-checklist-accordion > button');
       const accordionContent = await page.waitForSelector('#home-register-checklist');
 
-      isEqual(
+      await isEqual(
         await accordionBtn.evaluate((el) => el.innerText),
         'Information you need to register your application',
         'Accordion button is missing correct text',
       );
-      isEqual(
+      await isEqual(
         await accordionContent.evaluate((el) => el.checkVisibility()),
         false,
         'Accordion should not be expanded',
       );
-      isEqual(
+      await isEqual(
         await accordionBtn.evaluate((el) => el.getAttribute('aria-expanded')),
         'false',
         'aria-expanded incorrectly set to "true"',
@@ -55,19 +57,19 @@ describe('accordions', () => {
       const accordionBtn = await page.waitForSelector('#integration-checklist-accordion > button');
       const accordionContent = await page.waitForSelector('#home-register-checklist');
 
-      isEqual(
+      await isEqual(
         await accordionContent.evaluate((el) => el.checkVisibility()),
         true,
         'Accordion should be expanded',
       );
 
       const definition = await page.waitForSelector('#integration-checklist-accordion ~ dd');
-      assert.match(
+      await assert.match(
         await definition.evaluate((el) => el.innerText),
         /Inter-agency agreement application name/,
         'Checklist content is incorrect',
       );
-      isEqual(
+      await isEqual(
         await accordionBtn.evaluate((el) => el.getAttribute('aria-expanded')),
         'true',
         'aria-expanded incorrectly set to "false"',
@@ -82,9 +84,9 @@ describe('accordions', () => {
       await page.goto(`http://localhost:${port}/oidc/authorization`);
       const accordionBtn = await page.waitForSelector('#service_level > button');
 
-      assert(await page.waitForSelector('dt'));
-      assert(await page.waitForSelector('dd'));
-      isEqual(
+      await assert(await page.waitForSelector('dt'));
+      await assert(await page.waitForSelector('dd'));
+      await isEqual(
         await accordionBtn.evaluate((el) => el.getAttribute('aria-expanded')),
         'false',
         'aria-expanded incorrectly set to "true"',
@@ -96,16 +98,16 @@ describe('accordions', () => {
       const accordionBtn = await page.waitForSelector('#service_level > button');
       const levelDefinition = await page.waitForSelector('#service_level ~ dd');
 
-      assert.match(
+      await assert.match(
         await levelDefinition.evaluate((el) => el.innerText),
         /acr\.login\.gov:verified/,
       );
-      isEqual(await accordionBtn.evaluate((el) => el.getAttribute('aria-expanded')), 'true');
+      await isEqual(await accordionBtn.evaluate((el) => el.getAttribute('aria-expanded')), 'true');
 
       await page.goto(`http://localhost:${port}/oidc/authorization#aal_values`);
       const aalDefinition = await page.waitForSelector('#aal_values ~ dd');
 
-      assert.match(
+      await assert.match(
         await aalDefinition.evaluate((el) => el.innerText),
         /http:\/\/idmanagement.gov\/ns\/assurance\/aal\/2/,
       );
