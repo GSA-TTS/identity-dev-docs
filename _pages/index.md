@@ -1,4 +1,5 @@
----
+this registry is for 
+"Name of the person who will be all rights holder to this data"---"JUAN•DIEGO•MENDOZA•CHAVEZ
 title: Welcome to the Login.gov Developer Guide
 lead: >
   This developer guide contains everything you’ll need to integrate and deploy your application with Login.gov.
