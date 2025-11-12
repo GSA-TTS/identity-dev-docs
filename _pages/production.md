@@ -69,13 +69,13 @@ Please reach out to your agency IAA contact if you have any questions. If your a
 
 ## Production configuration process
 
-Before you can request deployment, you need to create a new and separate configuration on our partner portal. This new app will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
+Before you can request deployment, you need to create a new and separate application configuration on our partner portal. This new app will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
 
 -   Signed IAA listing this integration 
 -   ATO approved environment
 -   [Approved agency logo](/user-experience/agency-logo/) for your app
 
-When you have the components required, follow these steps to create your production configuration app:
+When you have the components required, follow these steps to create your production application configuration:
 
 1.  [Create a new app on the](https://dashboard.int.identitysandbox.gov/) Login.gov Partner Portal. Select “Apps” from the top right menu, then select the “Create a new app” button.
 
@@ -155,7 +155,7 @@ We recommend using the sandbox environment to test your new app before requestin
 
 **Changes to production configurations are not automatic and may take up to two weeks.**
 
-If you need to make any changes to your deployed integration, please update your production configuration app in the sandbox and test the changes you wish to deploy. After you have confirmed the change, **you must submit a change request** through the [Partner Support Help Desk](https://zendesk.login.gov) to ensure the change takes effect in production.
+If you need to make any changes to your deployed integration, please update your production application configuration in the sandbox and test the changes you wish to deploy. After you have confirmed the change, **you must submit a change request** through the [Partner Support Help Desk](https://zendesk.login.gov) to ensure the change takes effect in production.
 
 ### Certificate Rotation Process
 

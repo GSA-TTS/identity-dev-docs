@@ -10,7 +10,7 @@ oidc:
         This specific error occurs when Login.gov receives an OIDC request from a Service Provider that contains a `client_id` that is either not registered or not active with Login.gov. The `client_id` specified in the request must match EXACTLY the Issuer defined in the Portal.
         ##### What to do:
         - Ensure the authentication request has a `client_id` value
-        - Ensure that the `client_id` sent in the authentication request matches the Issuer registered in your configuration on the [Partner Portal](https://portal.int.identitysandbox.gov/){:target="_blank"}.
+        - Ensure that the `client_id` sent in the authentication request matches the Issuer registered in your application's configuration on the [Partner Portal](https://portal.int.identitysandbox.gov/){:target="_blank"}.
         - Ensure that the application configuration's "Accessible" setting is set to "Yes".
         - See our video [How to Troubleshoot and Fix "Bad client_id" Error for OIDC Integrations](https://www.youtube.com/watch?v=MAgSnjp1aOE) for a detailed visual explanation.
     - title: Missing a valid IAL level

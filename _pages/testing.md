@@ -51,7 +51,7 @@ Please submit a support ticket through the [Partner Support Help Desk](https://z
 1. If you already have a Login.gov test account, select the “Sign in” button in the upper-right corner to sign in.
 1. You must create a team before you can create a new app. Create a new team by selecting the “Continue” button under “Create your first team.” If you have previously created a team you can move on to the next step.
 1. If necessary, add users to that team by clicking the “Add users” button. This is the opportunity to add contractors or anyone without a .gov or a .mil email address.
-1. After creating your team, select the Apps tab. This page is where you will find all of the configurations you and your team create.
+1. After creating your team, select the Apps tab. This page is where you will find all of the application configurations you and your team create.
 1. Select the “Create a new app” button and follow the steps to register a new application with the Login.gov IdP in the test sandbox environment. You can only have one app creation in progress at a time. There are links to additional information throughout the form. We recommend reading through the descriptions carefully.
 1. To troubleshoot specific errors, please visit our error dictionary in the [troubleshooting section of our developer documentation]({% link _pages/support.md %}). If the guidance there does not resolve the error, please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov/).
 1. Start testing!
