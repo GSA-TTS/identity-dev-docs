@@ -60,9 +60,9 @@ You are able to test authentication methods in real time with a testing account 
 
 - Select the “Sign-in” button to create a new account. Anyone with a .gov or .mil email address may request an account.
 - Create a new team - see [Testing](/testing/) page for instructions.
--  Create a certificate - before creating your application you'll need to create a certificate that will be used to sign your requests. You can create a certificate using openssl. The example command to create the certificate from your terminal is:
+-  Create a certificate - before creating your configuration you'll need to create a certificate that will be used to sign your requests. You can create a certificate using openssl. The example command to create the certificate from your terminal is:
     - `openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out public.crt`
-- Create an application, at which point you will need to decide between private_key_jwt or PKCE.
+- Create a configuration, at which point you will need to decide between private_key_jwt or PKCE.
 
 It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.
 

@@ -24,7 +24,7 @@ sidenav:
 
 ##  Help text guidance
 
-You may include help text to alert the users to specific information that will assist them in logging in, signing up, and logging out. The help text section of the app configuration workflow allows you to choose from the default help text options or request custom help text specific to your integration. 
+You may include help text to alert the users to specific information that will assist them in logging in, signing up, and logging out. The help text section of the configuration workflow allows you to choose from the default help text options or request custom help text specific to your integration.
 
 Custom help text should follow the guidelines below to be included in your integration: 
 

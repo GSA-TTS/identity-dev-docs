@@ -8,7 +8,7 @@ oidc:
         The issuer (also known as the client id) provided does not match a service provider registered in the IdP.
         ##### What to do:
         - Ensure the authentication request has a `client_id` value
-        - Ensure that the `client_id` sent in the authentication request matches the one registered in your application on the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
+        - Ensure that the `client_id` sent in the authentication request matches the one registered in your configuration on the [Partner Dashboard](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
         - Ensure that the application configuration's `active` value is set to `true`.
     - title: Missing a valid IAL level
       id: oidc-missing-ial
@@ -18,8 +18,8 @@ oidc:
         No IAL Service Levels are present in the `acr_values` parameter of the authentication request.
         ##### What to do:
         Check the `acr_values` parameter in your authentication request and ensure that you are passing either:
-        - `http://idmanagement.gov/ns/assurance/ial/1` for Authentication Only applications, OR;
-        - `http://idmanagement.gov/ns/assurance/ial/2` for Identity-Verification Permitted applications.
+        - `http://idmanagement.gov/ns/assurance/ial/1` for Authentication Only integrations, OR;
+        - `http://idmanagement.gov/ns/assurance/ial/2` for Identity-Verification Permitted integrations.
         Learn more about IAL Service Level values here: [https://developers.login.gov/oidc/authorization/#service_level](/oidc/authorization/#service_level){:target="_blank"}
     - title: The acr_values are not authorized
       id: oidc-missing-acr-values

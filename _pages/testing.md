@@ -49,7 +49,7 @@ Please submit a support ticket through the [Partner Support Help Desk](https://z
 1. Once you are logged into your sandbox account, create a new team by selecting the “Continue” button under “Create your first team." (If you have previously created a team you will select the “Create a new team” button.)
 1. If necessary, add users to that team by clicking the "Add users" button. **This is the opportunity to add contractors or anyone without a .gov or a .mil**
 1. After creating your team, select the Apps tab. This page is where you will find all of the test applications you and your team create.
-1. Select the “Create a new test app” button and fill out the form to register a new application with the Login.gov IdP in the test sandbox environment.
+1. Select the “Create a new test configuration” button and fill out the form to register a new application with the Login.gov IdP in the test sandbox environment.
 1. Start testing!
 1. If you need to troubleshoot an issue that is not covered in the [developer documentation]({% link _pages/index.md %}), please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov). We can also add you to our partner support Slack channel and the Login.gov team will help you along the way.
 1. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your application's promotion to production. **The move to production may take up to two weeks.**
