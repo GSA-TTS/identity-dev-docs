@@ -97,7 +97,7 @@ When you have the components required, follow these steps to create your product
 
 1.  Select the Identity Assurance Level (IAL), default Authentication Assurance Level (AAL), and the correct attribute bundle. Select the Next button to move on to the issuer.
 
-1.  Enter the issuer, a unique string to identify the app in the Identity Provider (IdP). Select the Next button to move on to the next step. \
+1.  Enter the issuer, a unique string to identify the app in the Identity Provider (IdP). Select the Next button to move on to the next step. 
 
 1.  Upload your logo file and public certificate file. Note: the public certificate file may not be required if you are using the OIDC PKCE flow.
 
