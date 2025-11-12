@@ -79,35 +79,35 @@ When you have the components required, follow these steps to create your product
 
 1.  [Create a new app on the](https://dashboard.int.identitysandbox.gov/) Login.gov Partner Portal. Select “Apps” from the top right menu, then select the “Create a new app” button.
 
-2. Choose an agency team for the app from the drop down menu.
+1. Choose an agency team for the app from the drop down menu.
 
-3. Select "Ready for Production" in the Dashboard Configuration section.
+1. Select "Ready for Production" in the Dashboard Configuration section.
 
-4.  Enter the name of the app as it appears in your IAA in the "Configuration name" field. Do NOT use environment names such as "Prod" or "Production".
+1.  Enter the name of the app as it appears in your IAA in the "Configuration name" field. Do NOT use environment names such as "Prod" or "Production".
 
-5.  Enter the name of the app as it should appear to users in the "Friendly name" field. This is the app name a user will see when logging in.
+1.  Enter the name of the app as it should appear to users in the "Friendly name" field. This is the app name a user will see when logging in.
 
-6.  Select the Next button to move to the next steps.
+1.  Select the Next button to move to the next steps.
 
-7.  Select the authentication protocol that will be used by the service provider:
+1.  Select the authentication protocol that will be used by the service provider:
 
     - OpenID Connect Private Key JWT
     - OpenID Connect PKCE
     - SAML
 
-8.  Select the Identity Assurance Level (IAL), default Authentication Assurance Level (AAL), and the correct attribute bundle. Select the Next button to move on to the issuer.
+1.  Select the Identity Assurance Level (IAL), default Authentication Assurance Level (AAL), and the correct attribute bundle. Select the Next button to move on to the issuer.
 
-9.  Enter the issuer, a unique string to identify the app in the Identity Provider (IdP). Select the Next button to move on to the next step. \
+1.  Enter the issuer, a unique string to identify the app in the Identity Provider (IdP). Select the Next button to move on to the next step. \
 
-10.  Upload your logo file and public certificate file. Note: the public certificate file may not be required if you are using the OIDC PKCE flow.
+1.  Upload your logo file and public certificate file. Note: the public certificate file may not be required if you are using the OIDC PKCE flow.
 
-11. If you selected the OIDC protocol, enter the push notification URL and redirect URIs, if applicable. Please note that your redirect URIs must be secure (HTTPS) in order to be deployed to production. You can enter additional redirect URIs by selecting the “Add another URI” button.
+1. If you selected the OIDC protocol, enter the push notification URL and redirect URIs, if applicable. Please note that your redirect URIs must be secure (HTTPS) in order to be deployed to production. You can enter additional redirect URIs by selecting the “Add another URI” button.
   - If you selected the SAML protocol, you will be prompted to enter the Assertion Consumer Service URL, Assertion Consumer Logout Service URL, SP Initiated Login URL, SAML Assertion Encryption, Signed Response Message Requested, Return to App URL, Push notification URL, and Redirect URIs.
   - Select the Next button to move on to the final step.
 
-12. Select the sign-in, sign-up, and forgot password help text users will encounter in your app. This step is optional but encouraged to ensure better usability. Take a look at the [user experience guidance]({% link _pages/user-experience/help-text.md %}) for a good example of help text.    
+1. Select the sign-in, sign-up, and forgot password help text users will encounter in your app. This step is optional but encouraged to ensure better usability. Take a look at the [user experience guidance]({% link _pages/user-experience/help-text.md %}) for a good example of help text.    
 
-13. Once all fields are complete select the "Create configuration" button.
+1. Once all fields are complete select the "Create configuration" button.
 
 If you encounter errors or have questions after completing these steps, please submit a technical support ticket through the [Partner Support Help Desk.]({{ site.baseurl}}/support/#contacting-partner-support)
 
