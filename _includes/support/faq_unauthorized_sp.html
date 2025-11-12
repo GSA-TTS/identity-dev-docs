@@ -1,0 +1,37 @@
+<h5>Background</h5>
+<p>
+  Login.gov recognizes incoming requests from Service Providers by validating the Issuer (for SAML) or ClientID (for OIDC) field sent in the request and checking it against Service Providers registered with Login.gov. The Issuer for each Service Provider is defined in the Issuer field on the Login.gov Portal.
+  <br/><br/>
+  <img alt="Screenshot of issuer field on Login.gov portal" src="/assets/img/dashboard_issuer.png" />
+  <br/><br/>
+  This specific error occurs when Login.gov receives a SAML request from a Service Provider that contains an Issuer field that is either not registered or not active with Login.gov. The Issuer defined in the request must match EXACTLY the Issuer defined in the Portal.
+</p>
+<h5>Solution:</h5>
+<p>
+  <ul>
+    <li>Double check your SAML request to Login.gov and confirm that the Issuer field matches exactly what is defined in the Login.gov <a href="https://portal.int.identitysandbox.gov/" class="usa-link">Partner Portal</a>.</li>
+    <li>Ensure that the application configuration’s "Accessible" setting is set to "Yes".</li>
+    <li>See our video <a href="https://www.youtube.com/watch?v=SzTRc_c_5I4" class="usa-link">How to Troubleshoot and Fix "Unauthorized Service Provider" Error for SAML Integrations</a> for a detailed visual explanation.</li>
+  </ul>
+
+  Note that certain Service Providers will not allow partners to set or change the Issuer value after the application is configured (e.g. MS Power Apps Portal). In this case, the best option would be to create the Login.gov Portal configuration after the Service Provider application has defined the Issuer and use that Issuer in the Portal.
+</p>
+
+<!-- markdown has to be formatted left-aligned -->
+<div markdown="1">
+##### SAML Request Example
+
+```xml
+​​<samlp:AuthnRequest AssertionConsumerServiceURL='https://sp.int.identitysandbox.gov/auth/saml/callback?utf8=%E2%9C%93&amp;loa=1'
+                    Destination='https://idp.int.identitysandbox.gov/api/saml/auth'
+                    ID='_6fca7b78-9ab7-49f5-bd62-18c48eac3c68'
+                    IssueInstant='2017-02-23T20:36:17Z'
+                    Version='2.0'
+                    xmlns:saml='urn:oasis:names:tc:SAML:2.0:assertion'
+                    xmlns:samlp='urn:oasis:names:tc:SAML:2.0:protocol'>
+  <saml:Issuer>urn:gov:gsa:SAML:2.0.profiles:sp:sso:rails-int</saml:Issuer>
+  <!-- ... -->
+</samlp:AuthnRequest>
+
+```
+</div>

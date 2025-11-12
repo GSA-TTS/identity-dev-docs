@@ -120,14 +120,14 @@
                 </section>
               </div>
               <ul class="usa-nav__primary usa-accordion flex-justify">
-                <a href="https://dashboard.int.identitysandbox.gov/" class="mobile:display-block desktop:display-none usa-button flex-align-self-center" type="button">Go to Dashboard</a>
+                <a href="https://dashboard.int.identitysandbox.gov/" class="mobile:display-block desktop:display-none usa-button flex-align-self-center" type="button">Go to Portal</a>
                 {% include nav/list.html
                   links = site.data.nav.primary
                   li_class = 'usa-nav__primary-item'
                   subnav_ul_class = 'desktop:display-none usa-sidenav__sublist'
                 %}
                 <div class="desktop:margin-right-neg-2 grid-row flex-fill flex-justify-end">
-                  <a href="https://dashboard.int.identitysandbox.gov/" class="mobile:display-none desktop:display-inline usa-button flex-align-self-center" type="button">Go to Dashboard</a>
+                  <a href="https://dashboard.int.identitysandbox.gov/" class="mobile:display-none desktop:display-inline usa-button flex-align-self-center" type="button">Go to Portal</a>
                 </div>
               </ul>
             </div>
@@ -153,7 +153,12 @@
     <script src="{{ site.baseurl }}/assets/js/toggle_view.js"></script>
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
     <script src="{{ site.baseurl }}/assets/js/anchor.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/anchor_accordion.js"></script>
+
     <script>
+      anchors.options = {
+        icon: '#'
+      };
       anchors.add([
         '#main-content h1:not(.usa-accordion__heading)',
         '#main-content h2:not(.usa-accordion__heading)',
@@ -161,5 +166,7 @@
         '#main-content h4:not(.usa-accordion__heading)'
       ].join(', '));
     </script>
+    
+    <script src="https://touchpoints.app.cloud.gov/touchpoints/c2c76249.js" async></script> 
   </body>
 </html>

@@ -12,6 +12,7 @@
   "email": "test@example.com",
   "email_verified": true,
   "all_emails": ["test@example.com", "test2@example.com"],
+  "locale": "en",
   "family_name": "Smith",
   "given_name": "John",
   "iss": "https://idp.int.identitysandbox.gov",

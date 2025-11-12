@@ -29,22 +29,36 @@ main.usa-layout-docs {
 .dev-doc-row {
   border-top: 1px solid #CEDCED;
   padding-bottom: 2rem;
-  padding-top: 2rem;
+
+  h4 {
+    margin-top: 1rem;
+  }
 }
 
 .doc-sub-nav {
   width: 100%;
-  color: #205493;
   margin-bottom: 0px;
 }
 
 .doc-sub-nav-item {
   display: inline-block;
+}
+
+.doc-sub-nav-item > a {
+  color: #205493;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.usa-prose > ul > .doc-sub-nav-item {
-  margin-bottom: 0px;
+
+.usa-prose {
+  & > ul > .doc-sub-nav-item {
+    margin-bottom: 0px;
+  }
+
+  li.usa-process-list__item {
+    @include u-padding-bottom(3);
+  }
 }
 
 .code-button {
@@ -88,12 +102,6 @@ button.code-button:hover {
   border-bottom: red 4px solid;
 }
 
-
-.parameters {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
 .markdown > .highlighter-rouge > .highlight > pre {
   overflow-wrap: break-word;
   text-wrap: wrap;
@@ -134,7 +142,8 @@ button.code-button:hover {
 
 .return-to-top-button {
   max-width: 160px;
-  top: 90%;
+  // 5.6rem puts it nicely above the feedback survey button if 90% does not
+  top: min(calc(100vh - 5.6rem), 90%);
 }
 
 .return-to-top-button > img {
@@ -160,6 +169,35 @@ button.code-button:hover {
 .usa-nav__close .usa-icon {
   width: 1.3rem;
   height: 1.3rem;
+}
+
+.accordion-link,
+.anchorjs-link {
+  @extend .usa-link; 
+  text-decoration: none;
+}
+.accordion-link {
+  display: none;
+}
+
+.usa-accordion__heading:hover .accordion-link {
+  display: inline;
+}
+
+.list-style-checkbox {
+  & li {
+    position: relative;
+    list-style-type: none;
+    padding-left: 0.5em;
+
+    &:before {
+      content: '☐';
+      position: absolute;
+      left: -0.85em;
+      top: -0.4ex;
+      font-size: 1.2em;
+    }
+  }
 }
 
 @media (min-width: 1024px) {

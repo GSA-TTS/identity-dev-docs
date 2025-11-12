@@ -56,7 +56,7 @@ The following implementation methods of OIDC are not supported by Login.gov for 
 
 ### Set up a Sandbox account
 
-You are able to test authentication methods in real time with a testing account in our sandbox environment. To start, navigate to the [Login Partner Dashboard Sandbox](https://dashboard.int.identitysandbox.gov) and follow the steps below:
+You are able to test authentication methods in real time with a testing account in our sandbox environment. To start, navigate to the [Login Partner Portal Sandbox](https://dashboard.int.identitysandbox.gov) and follow the steps below:
 
 - Select the “Sign-in” button to create a new account. Anyone with a .gov or .mil email address may request an account.
 - Create a new team - see [Testing](/testing/) page for instructions.

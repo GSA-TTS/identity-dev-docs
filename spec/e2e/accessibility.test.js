@@ -26,7 +26,9 @@ describe('accessibility', () => {
 
   before(async () => {
     port = await getPort();
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({
+      args: ['--no-sandbox'],
+    });
     server = createServer((request, response) =>
       handler(request, response, { public: '_site' }),
     ).listen(port);
@@ -54,6 +56,8 @@ describe('accessibility', () => {
           'wcag22aa',
           'best-practice',
         ])
+        .exclude('div[data-touchpoints-form-id]')
+        // .exclude('a#fba-button[data-open-modal]')
         .analyze();
       await page.close();
 

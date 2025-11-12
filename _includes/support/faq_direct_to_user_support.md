@@ -1,0 +1,1 @@
+If you receive a complaint from a user having trouble logging in or managing their account, it is best to direct them to the Login.gov help center at [https://www.login.gov/help/](https://www.login.gov/help/). Do not publish the Login.gov contact center phone number. 

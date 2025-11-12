@@ -1,7 +1,7 @@
 ---
 title: Testing your app
 lead: >
-  Once you’ve created your app and implemented an identity protocol, you can now register it in the test environment dashboard and start testing.
+  Once you’ve created your app and implemented an identity protocol, you can now register it in the test environment portal and start testing.
 redirect_from:
   - /registering-your-sp/
   - /register/
@@ -25,9 +25,11 @@ sidenav:
 
 ## About the Login.gov sandbox
 
-Login.gov provides an open sandbox environment to create and test integrations between Login.gov and your applications. **Note that the Login.gov Sandbox environment is a free service with an availability target of M-F, 8a-5p ET.** While it is typically online within that window, there are occasional hiccups that should resolve quickly on their own. The environment may at times be available outside of this window, but it is not guaranteed and may become unavailable with no advance notice.
+The Login.gov sandbox is an open environment to create and test integrations between Login.gov and your applications. 
 
-In the sandbox environment, our [Dashboard](https://dashboard.int.identitysandbox.gov) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
+ **The Login.gov sandbox environment is supported M-F, 8a-5p ET.** The sandbox is typically available during these hours, though outages may occur.
+
+In the sandbox environment, our [partner portal](https://portal.int.identitysandbox.gov/) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
 
 ## Getting access to the Login.gov sandbox
 
@@ -40,19 +42,20 @@ You can create an account in the sandbox environment on your own.
 Ask your agency partner to help you gain access. Login.gov will not create an account or add you to a team; your partner must do this for you.
 
 **If you are with a government entity that is not a federal agency (a state or municipality) and do not have an email ending in .gov or .mil**
-Please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) to get access to the Dashboard.
+Please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) to get access to the Portal.
 
 ## Using the sandbox
 
-1. Visit the Partner Dashboard at [https://dashboard.int.identitysandbox.gov](https://dashboard.int.identitysandbox.gov).
-1. Select the “Sign in” button in the upper-right corner to sign in or create a new account with the test Login.gov IdP in the sandbox environment hosted at [idp.int.identitysandbox.gov](https://idp.int.identitysandbox.gov). **Please note that this is separate from your Login.gov production account.**
-1. Once you are logged into your sandbox account, create a new team by selecting the “Continue” button under “Create your first team." (If you have previously created a team you will select the “Create a new team” button.)
-1. If necessary, add users to that team by clicking the "Add users" button. **This is the opportunity to add contractors or anyone without a .gov or a .mil**
-1. After creating your team, select the Apps tab. This page is where you will find all of the test applications you and your team create.
-1. Select the “Create a new test configuration” button and fill out the form to register a new application with the Login.gov IdP in the test sandbox environment.
+1. Visit the Partner Portal at [https://portal.int.identitysandbox.gov/](https://portal.int.identitysandbox.gov/).
+1. Create a new Login.gov test account with the test Login.gov IdP in the sandbox environment hosted at [https://portal.int.identitysandbox.gov/](https://portal.int.identitysandbox.gov/). Your Login.gov test account is separate from your Login.gov production account. 
+1. If you already have a Login.gov test account, select the “Sign in” button in the upper-right corner to sign in.
+1. You must create a team before you can create a new app. Create a new team by selecting the “Continue” button under “Create your first team.” If you have previously created a team you can move on to the next step.
+1. If necessary, add users to that team by clicking the “Add users” button. This is the opportunity to add contractors or anyone without a .gov or a .mil email address.
+1. After creating your team, select the Apps tab. This page is where you will find all of the configurations you and your team create.
+1. Select the “Create a new app” button and follow the steps to register a new application with the Login.gov IdP in the test sandbox environment. You can only have one app creation in progress at a time. There are links to additional information throughout the form. We recommend reading through the descriptions carefully.
+1. To troubleshoot specific errors, please visit our error dictionary in the [troubleshooting section of our developer documentation]({% link _pages/support.md %}). If the guidance there does not resolve the error, please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov/).
 1. Start testing!
-1. If you need to troubleshoot an issue that is not covered in the [developer documentation]({% link _pages/index.md %}), please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov). We can also add you to our partner support Slack channel and the Login.gov team will help you along the way.
-1. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your application's promotion to production. **The move to production may take up to two weeks.**
+1. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your configuration's promotion to production. **The move to production may take up to two weeks.**
 
 ## If you lost access to a sandbox team
 
@@ -63,13 +66,22 @@ Login.gov does not manage user accounts. If you have lost access to a team:
 
 ### Creating a public certificate
 
-You can use the following OpenSSL command to generate a 2048-bit PEM-encoded public certificate for your application (with a 1-year validity period):
+You can use the following OpenSSL command to generate a self-signed 2048-bit PEM-encoded public certificate for your testing/sandbox application (with a 1-year validity period). Self-signed certificates should be for testing/sandbox purposes only. We recommend using Certificate Authority (CA) issued certificates for your production integration.
 
 ```
 openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out public.crt
 ```
 
-Make sure you're using the corresponding private key in your application to sign and/or validate requests and responses to/from Login.gov.
+The public certificate contains the public key, and the OpenSSL command also generates the private key. Together these are referred to as the public/private keypair. Make sure you're using the corresponding private key in your application to sign and/or validate requests and responses to/from Login.gov.
+
+The public/private keypair process is a crucial step in generating secure authentications. Please note the following:
+
+- The private key should be one of the most securely protected pieces of data in your Login.gov integration. If the private key is compromised, your integration will no longer be secure.
+- Only share the public key with Login.gov. Do not share the private key.
+- It is best practice to rotate your keypairs on a regular basis regardless of known compromise.
+- At minimum for OIDC, you must ensure that your authentication request is signed with the private key.
+- For SAML integrations, use the private key generated with your certificate for decryption or you will be unable to decrypt the response.
+
 
 ## Load Testing
 
@@ -87,7 +99,13 @@ While Login.gov partner support channels have provided some support for automate
 
 The Login.gov [sandbox test environment](https://idp.int.identitysandbox.gov/) is configured to pass most information that is entered during the proofing flow. This allows the proofing flow to be tested without the need to enter personally identifiable information (PII). There are [special values](https://developers.login.gov/testing/#personal-information-verification) that can be entered to simulate error states while testing in the Login.gov sandbox environment. **Never enter PII in the sandbox environment.**
 
-### Document upload
+### Testing the IAL2-compliant process (online facial matching or in-person proofing)
+
+If you are testing the IAL2-compliant flow and want to specifically test the online facial matching process, when you are prompted to take a photo of your ID with your phone, you can take a photo of anything that has the same shape as a US driver's license (metro card, loyalty card, arcade card, etc). You can use the front of the card for both the front and back photos. For the selfie, it's specifically looking for a face, so you need to use your real face. The photos are not sent to any external vendors.
+
+If your main goal is to end up with an IAL2-compliant account to test with, and you're not specifically testing the online facial matching process, then you can choose the in-person proofing option, and enter fake information. After the phone verification step, you will be presented with your USPS barcode, but you will not need to go to any post office. In the sandbox, you will automatically be verified at this point, and you should receive an email letting you know you were verified.
+
+### Testing document upload for the Basic IdV Service (without facial matching)
 
 Login.gov prompts users to upload the front and back of their documents during proofing through a few different methods. In the sandbox environment, any image file that is uploaded will pass.
 
