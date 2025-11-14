@@ -35,7 +35,7 @@ Make sure you have the following items ready before you start the deployment pro
 
 -   [Signed Interagency Agreement (IAA) listing this integration ]({{ site.baseurl}}/production/#confirm-interagency-agreement-iaa)
 
--   A dedicated [integration configuration within the Portal](https://dashboard.int.identitysandbox.gov/)
+-   A dedicated [application configuration within the Portal](https://dashboard.int.identitysandbox.gov/)
     * We recommend having two configurations, one that is intended for deployment to production and one which is purely for testing purposes.
     * All production urls should have .gov, .mil, or a dedicated .com address and point to an Authority to Operate (ATO) approved environment.
 
@@ -69,13 +69,13 @@ Please reach out to your agency IAA contact if you have any questions. If your a
 
 ## Production configuration process
 
-Before you can request deployment, you need to create a new and separate integration configuration on our partner portal. This new app will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
+Before you can request deployment, you need to create a new and separate application on our partner portal. This new app will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
 
 -   Signed IAA listing this integration 
 -   ATO approved environment
 -   [Approved agency logo](/user-experience/agency-logo/) for your app
 
-When you have the components required, follow these steps to create your production integration configuration:
+When you have the components required, follow these steps to create your production configuration app:
 
 1.  [Create a new app on the](https://dashboard.int.identitysandbox.gov/) Login.gov Partner Portal. Select “Apps” from the top right menu, then select the “Create a new app” button.
 
@@ -83,9 +83,9 @@ When you have the components required, follow these steps to create your product
 
 1. Select "Ready for Production" in the Dashboard Configuration section.
 
-1.  Enter the name of the app as it appears in your IAA in the "Configuration name" field. Do NOT use environment names such as "Prod" or "Production".
+1.  Enter the name of the app as it appears in your IAA in the "App Name" field. Do NOT use environment names such as "Prod" or "Production".
 
-1.  Enter the name of the app as it should appear to users in the "Friendly name" field. This is the app name a user will see when logging in.
+1.  Enter the name of the app as it should appear to users in the "Friendly Name" field. This is the app name a user will see when logging in.
 
 1.  Select the Next button to move to the next steps.
 
@@ -107,7 +107,7 @@ When you have the components required, follow these steps to create your product
 
 1. Select the sign-in, sign-up, and forgot password help text users will encounter in your app. This step is optional but encouraged to ensure better usability. Take a look at the [user experience guidance]({% link _pages/user-experience/help-text.md %}) for a good example of help text.    
 
-1. Once all fields are complete select the "Create configuration" button.
+1. Once all fields are complete select the "Create app" button.
 
 If you encounter errors or have questions after completing these steps, please submit a technical support ticket through the [Partner Support Help Desk.]({{ site.baseurl}}/support/#contacting-partner-support)
 
@@ -135,7 +135,7 @@ Once you have:
 
 1. [Confirmed that this integration is listed in a signed IAA](https://login.gov/partners/get-started/#interagency-agreement-iaa-process). **Do not request deployment if you are not certain that your application is listed in a signed IAA.**
 
-2. [Created a production configuration]({{site.baseurl}}/production/#production-configuration-process).
+2. [Created a production configuration app]({{site.baseurl}}/production/#production-configuration-process).
 
 3. Confirmed that you have a logo uploaded to your production configuration in the [Partner Portal](https://dashboard.int.identitysandbox.gov/). **An uploaded logo is required for the deployment process.**
 
@@ -153,9 +153,9 @@ We recommend using the sandbox environment to test your new app before requestin
 
 ## Changes to production applications
 
-**Changes to production configurations are not automatic and may take up to two weeks.**
+**Changes to the production app are not automatic and may take up to two weeks.**
 
-If you need to make any changes to your deployed integration, please update your production integration configuration in the sandbox and test the changes you wish to deploy. After you have confirmed the change, **you must submit a change request** through the [Partner Support Help Desk](https://zendesk.login.gov) to ensure the change takes effect in production.
+If you need to make any changes to your deployed integration, please update your production configuration app in the sandbox and test the changes you wish to deploy. After you have confirmed the change, **you must submit a change request** through the [Partner Support Help Desk](https://zendesk.login.gov) to ensure the change takes effect in production.
 
 ### Certificate Rotation Process
 
