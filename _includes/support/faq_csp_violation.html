@@ -4,9 +4,9 @@
     <br/><br/>
     The <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/form-action">CSP form-action</a> directive restricts which URLs can be used as the target of form submissions from a given context. Certain Chromium-based internet browsers (e.g. Google Chrome and Microsoft Edge) enforce the form-action directive through the entire redirect chain (if any). Other non-Chromium-based browsers only check the first redirect in the chain (e.g. Firefox). For Chromium-based browsers, upon form submission, any attempts to redirect to a url not explicitly listed as a form-action source will violate the CSP directive and cause a failure to load and a console error.
     <br/><br/>
-    This error occurs when Service Providers attempt to redirect users to a url that is not registered in the Redirect URLs field in the <a target="_blank" href="https://dashboard.int.identitysandbox.gov/">Login.gov Portal</a> application's configuration. All urls that users could be redirected to, even as a passthrough, need to be included in the list of Redirect URLs.
+    This error occurs when Service Providers attempt to redirect users to a url that is not registered in the Redirect URLs field in the <a target="_blank" href="https://dashboard.int.identitysandbox.gov/">Login.gov Portal</a> configuration. All urls that users could be redirected to, even as a passthrough, need to be included in the list of Redirect URLs.
 </p>
 <h5>Solution:</h5>
 <p>
-    Use the Network tab of your web browser to identify which redirect (302) is hanging or failing. Add that uri to the list of Redirect URIs in your Login.gov Portal integration configuration.
+    Use the Network tab of your web browser to identify which redirect (302) is hanging or failing. Add that uri to the list of Redirect URIs in your Login.gov Portal configuration.
 </p>

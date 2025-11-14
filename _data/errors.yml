@@ -10,8 +10,8 @@ oidc:
         This specific error occurs when Login.gov receives an OIDC request from a Service Provider that contains a `client_id` that is either not registered or not active with Login.gov. The `client_id` specified in the request must match EXACTLY the Issuer defined in the Portal.
         ##### What to do:
         - Ensure the authentication request has a `client_id` value
-        - Ensure that the `client_id` sent in the authentication request matches the Issuer registered in your application's configuration on the [Partner Portal](https://portal.int.identitysandbox.gov/){:target="_blank"}.
-        - Ensure that the integration configuration's "Accessible" setting is set to "Yes".
+        - Ensure that the `client_id` sent in the authentication request matches the Issuer registered in your application on the [Partner Portal](https://portal.int.identitysandbox.gov/){:target="_blank"}.
+        - Ensure that the application configuration's "Accessible" setting is set to "Yes".
         - See our video [How to Troubleshoot and Fix "Bad client_id" Error for OIDC Integrations](https://www.youtube.com/watch?v=MAgSnjp1aOE) for a detailed visual explanation.
     - title: Missing a valid IAL level
       id: oidc-missing-ial
@@ -21,8 +21,8 @@ oidc:
         No IAL Service Levels are present in the `acr_values` parameter of the authentication request.
         ##### What to do:
         Check the `acr_values` parameter in your authentication request and ensure that you are passing either:
-        - `urn:acr.login.gov:auth-only` for Authentication Only integrations, OR;
-        - `urn:acr.login.gov:verified` for Identity-Verification Permitted integrations.
+        - `urn:acr.login.gov:auth-only` for Authentication Only applications, OR;
+        - `urn:acr.login.gov:verified` for Identity-Verification Permitted applications.
         Learn more about IAL Service Level values here: [https://developers.login.gov/oidc/authorization/#service_level](/oidc/authorization/#service_level){:target="_blank"}
     - title: The acr_values are not authorized
       id: oidc-missing-acr-values
@@ -104,7 +104,7 @@ oidc:
         ##### What to do:
         - Ensure the logout request has a `client_id` value.
         - Ensure that the `client_id` sent in the logout request matches the one registered in your application on the [Partner Portal](https://dashboard.int.identitysandbox.gov/){:target="_blank"}.
-        - Ensure that the integration configuration's `active` value is set to `true`.
+        - Ensure that the application configuration's `active` value is set to `true`.
     - title: client_id is missing
       id: client-id-missing
       accordion-id: client_id_missing
