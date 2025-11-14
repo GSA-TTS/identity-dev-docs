@@ -23,7 +23,7 @@ sidenav:
 
 ---
 {% capture client_assertion %}
-A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s private key (minimum length of 2048 bits) associated with the public key uploaded to your application configuration within the Portal. The JWT should use the RS256 algorithm and containing the following claims:
+A [JWT](https://jwt.io/){:class="usa-link--external"} signed with the client’s private key (minimum length of 2048 bits) associated with the public key uploaded to your integration configuration within the Portal. The JWT should use the RS256 algorithm and containing the following claims:
 - **iss** (string) — The issuer, which must be the `client_id`.
 - **sub** (string) — The subject, which must also be the `client_id`.
 - **aud** (string) — The audience, which should be (or, in the case of multiple audience values, include) the URL of the token endpoint, for example: `https://idp.int.identitysandbox.gov/api/openid_connect/token`
