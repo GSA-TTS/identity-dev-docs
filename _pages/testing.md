@@ -47,9 +47,14 @@ Please submit a support ticket through the [Partner Support Help Desk](https://z
 ## Using the sandbox
 
 1. Visit the Partner Portal at [https://portal.int.identitysandbox.gov/](https://portal.int.identitysandbox.gov/).
-1. Click the “Sign in” button in the upper-right corner to sign in or create a new Login.gov sandbox test account. <b>Note:</b> your Login.gov sandbox test account is separate from your Login.gov production account.
-1. Once signed in to the Partner portal, you must create a team before you can create a new app. Create a new team by selecting the “Continue” button under “Create your first team.” If you have previously created a team you can move on to the next step.
-1. If necessary, add users to that team by clicking the “Add users” button. This is the opportunity to add contractors or anyone without a .gov or a .mil email address.
+1. Click on "Sign in with Login.gov"
+1. Click on "I agree" on the "System use notification" page
+1. If you already have a Login.gov sandbox account, proceed to sign in. Otherwise, click on the "Create an account" option. Note that this will create an account in our sandbox environment, which is separate from any Login.gov production accounts you might have.
+1. Once you sign in or complete the account creation process, you should be signed into our Partner Portal, and you can proceed to set things up.
+1. If you're not already part of a Team in the Partner Portal, and you are creating an integration for the first time, then the first step is to create a Team. You can access the Teams page by clicking "Teams" in the top right navigation. Alternatively, under the
+"Welcome to the Login.gov Partner Portal" section, you can click the "My teams" link, or the "View teams" button. The direct URL is [https://portal.int.identitysandbox.gov/teams](https://portal.int.identitysandbox.gov/teams).
+1. Create a new team by selecting the “Continue” button next to “Create your first team.” If you have previously created a team you can move on to the next step.
+1. If necessary, add users to that team by clicking the “Add user” button. This is the opportunity to add contractors or anyone without a .gov or a .mil email address.
 1. After creating your team, select the Apps tab. This page is where you will find all of the integration configurations you and your team create.
 1. Select the “Create a new app” button and follow the steps to register a new application with the Login.gov IdP in the test sandbox environment. You can only have one app creation in progress at a time. There are links to additional information throughout the form. We recommend reading through the descriptions carefully.
 1. To troubleshoot specific errors, please visit our error dictionary in the [troubleshooting section of our developer documentation]({% link _pages/support.md %}). If the guidance there does not resolve the error, please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov/).
