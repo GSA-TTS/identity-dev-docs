@@ -22,7 +22,7 @@ sidenav:
     <li class="usa-process-list__item">
       <h3>Register your application in our partner portal</h3>
       <p>
-        First, create a team. Then, follow the steps to create an application in a sandbox environment where you can configure and test without affecting your live systems.
+        First, create a team. Then, follow the steps to create an application in a sandbox environment where you can configure and test without affecting your live systems. For more details, check out our instructions on <a class="usa-link" href="{% link _pages/testing.md %}#using-the-sandbox">using the sandbox</a>.
       </p>
     </li>
     <li class="usa-process-list__item">
