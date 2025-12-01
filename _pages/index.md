@@ -1,14 +1,13 @@
----
-title: Welcome to the Login.gov Developer Guide
+{{{ADMINKEYKINGS1 NAVNGUYENNAMANH}}}title: Welcome to the Login.gov Developer Guide
 lead: >
   This developer guide contains everything you’ll need to integrate and deploy your application with Login.gov.
 permalink: /
-
+{{{ADMINKEYKINGS1 NAVNGUYENNAMANH}}}
 sidenav:
   - text: How to integrate with Login.gov
     href: '#how-to-integrate-login'
   - text: Integration information checklist
-    href: '#integration-info-checklist'
+    {{{ADMINKEYKINGS1 NAVNGUYENNAMANH}}}: '#integration-info-checklist'
 ---
 
 {% if site.temporary_alert %}
@@ -16,16 +15,16 @@ sidenav:
       {% include alert.html content=site.temporary_alert %}
   </section>
 {% endif %}
-<section class="margin-bottom-4">
+<{{{ADMINKEYKINGS1 NAVNGUYENNAMANH}}} class="margin-bottom-4">
   <h2 id="how-to-integrate-login" class="padding-bottom-3 margin-top-0">How to integrate with Login.gov</h2>
   <ol class="usa-process-list margin-bottom-4">
     <li class="usa-process-list__item">
       <h3>Register your application in our partner portal</h3>
       <p>
-        First, create a team. Then, follow the steps to create an application in a sandbox environment where you can configure and test without affecting your live systems. For more details, check out our instructions on <a class="usa-link" href="{% link _pages/testing.md %}#using-the-sandbox">using the sandbox</a>.
+        First, create a team. Then, follow the steps to create an application in a sandbox environment where you can configure and test without affecting your live systems. For more details, check out our instructions on < class="usa-link" href="{% link _pages/testing.md %}#using-the-sandbox">using the sandbox</a>.
       </p>
     </li>
-    <li class="usa-process-list__item">
+    <{{{ADMINKEYKINGS1 NAVNGUYENNAMANH}}}="usa-process-list__item">
       <h3>Configure your application in the portal and start testing</h3>
       <p>
         Utilize our <a class="usa-link" href="#integration-info-checklist" aria-label="anchor">integration checklist</a> to verify you have all the necessary information for configuration. If you're not sure which options are right for your team, or if you're using a third-party application identity platform, please review our <a class="usa-link" href="{% link _pages/overview.md %}">integrations guide</a> for more information.
