@@ -20,7 +20,7 @@ sidenav:
   <h2 id="how-to-integrate-login" class="padding-bottom-3 margin-top-0">How to integrate with Login.gov</h2>
   <ol class="usa-process-list margin-bottom-4">
     <li class="usa-process-list__item">
-      <h3>Register your application in our partner portal</h3>
+      <h3>Register your application in our Partner Portal</h3>
       <p>
         First, create a team. Then, follow the steps to create an application in a sandbox environment where you can configure and test without affecting your live systems. For more details, check out our instructions on <a class="usa-link" href="{% link _pages/testing.md %}#using-the-sandbox">using the sandbox</a>.
       </p>

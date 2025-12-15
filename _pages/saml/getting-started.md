@@ -100,7 +100,7 @@ Here are values needed to configure your service provider (SP) to work with Logi
 Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf){:class="usa-link--external"}, Login.gov's metadata for our sandbox environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}](https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}).
 
 ### Signing Certificates
-Below you can find the X509 certificates used by the Login.gov IdP to sign SAML requests. **Do not enter these certificates in the Portal when configuring an application for testing** - you can follow the instructions in our [testing article]({% link _pages/testing.md %}#creating-a-public-certificate) to generate a client certificate.
+Below you can find the X509 certificates used by the Login.gov IdP to sign SAML requests. **Do not enter these certificates in the portal when configuring an application for testing** - you can follow the instructions in our [testing article]({% link _pages/testing.md %}#creating-a-public-certificate) to generate a client certificate.
 
 {% capture saml_cert_sandbox_title %}
   View {{ site.data.saml.year.current }} <strong>sandbox</strong> certificate

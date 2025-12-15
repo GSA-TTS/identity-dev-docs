@@ -29,7 +29,7 @@ The Login.gov sandbox is an open environment to create and test integrations bet
 
  **The Login.gov sandbox environment is supported M-F, 8a-5p ET.** The sandbox is typically available during these hours, though outages may occur.
 
-In the sandbox environment, our [partner portal](https://portal.int.identitysandbox.gov/) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
+In the sandbox environment, our [Partner Portal](https://portal.int.identitysandbox.gov/) is where you can manage your test applications. ***It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.***
 
 ## Getting access to the Login.gov sandbox
 
@@ -42,7 +42,7 @@ You can create an account in the sandbox environment on your own.
 Ask your agency partner to help you gain access. Login.gov will not create an account or add you to a team; your partner must do this for you.
 
 **If you are with a government entity that is not a federal agency (a state or municipality) and do not have an email ending in .gov or .mil**
-Please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) to get access to the Portal.
+Please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) to get access to the portal.
 
 ## Using the sandbox
 

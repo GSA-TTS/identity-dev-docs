@@ -28,7 +28,7 @@ Login.gov is a FedRAMP moderate approved multifactor authentication and identity
 
 This is the configuration for your application within Login.gov’s identity provider. In the sandbox environment, you will be able to determine the configuration yourself and decide what is the best fit for your needs. In the Login.gov production environment, we will manage the final configuration.
 To configure a test application in the sandbox environment:
-* Create an account in the [Login.gov Portal](https://portal.int.identitysandbox.gov). From here you will be able to test various configurations and determine what is right for your agency.
+* Create an account in the [Login.gov portal](https://portal.int.identitysandbox.gov). From here you will be able to test various configurations and determine what is right for your agency.
 * Select between [OIDC]({{ site.baseurl }}/oidc/) or [SAML]({{ site.baseurl }}/saml/) protocol implementation protocols and understand which user attributes are required.
 * If you have questions when testing your integration, read through our [FAQs]({{ site.baseurl }}/support/) or submit a ticket to our [technical support help desk]({{ site.baseurl}}/support/#contacting-partner-support).
 * Before submitting a request to move your application's configuration to production, review the [User experience]({{ site.baseurl }}/design-guidelines/) page and the [Production]({{ site.baseurl }}/production/) page. Additional requirements, like a [signed Interagency agreement]({{ site.baseurl }}/production/#confirm-interagency-agreement-iaa) (IAA) and [agency logo]({{ site.baseurl }}/user-experience/agency-logo/), are described in these pages.
