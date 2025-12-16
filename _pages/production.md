@@ -35,7 +35,7 @@ Make sure you have the following items ready before you start the deployment pro
 
 -   [Signed Interagency Agreement (IAA) listing this integration ]({{ site.baseurl}}/production/#confirm-interagency-agreement-iaa)
 
--   A dedicated [integration configuration within the Portal](https://dashboard.int.identitysandbox.gov/)
+-   A dedicated [integration configuration within the portal](https://dashboard.int.identitysandbox.gov/)
     * We recommend having two configurations, one that is intended for deployment to production and one which is purely for testing purposes.
     * All production urls should have .gov, .mil, or a dedicated .com address and point to an Authority to Operate (ATO) approved environment.
 
@@ -69,7 +69,7 @@ Please reach out to your agency IAA contact if you have any questions. If your a
 
 ## Production configuration process
 
-Before you can request deployment, you need to create a new and separate integration configuration on our partner portal. This new app will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
+Before you can request deployment, you need to create a new and separate integration configuration on our Partner Portal. This new app will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
 
 -   Signed IAA listing this integration 
 -   ATO approved environment
