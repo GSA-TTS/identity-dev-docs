@@ -5,7 +5,17 @@ sidenav:
     href: "#user-flow"
   - text: Service provider configuration
     href: "#service-provider-configuration"
+  - text: Service Levels
+    href: "#service-levels"
+  - text: Authentication Assurance Levels
+    href: "#authentication-assurance-levels"
 ---
+{% capture type_of_service %}
+  {% include snippets/auth_content/service_levels.md %}
+{% endcapture %}
+{% capture aal_values %}
+  {% include snippets/auth_content/aal_values.md %}
+{% endcapture %}
 
 Login.gov is a FedRAMP moderate approved multifactor authentication and identity proofing platform that makes online interactions with the U.S. government simple, efficient and intuitive.
 
@@ -32,3 +42,17 @@ To configure a test application in the sandbox environment:
 * Select between [OIDC]({{ site.baseurl }}/oidc/) or [SAML]({{ site.baseurl }}/saml/) protocol implementation protocols and understand which user attributes are required.
 * If you have questions when testing your integration, read through our [FAQs]({{ site.baseurl }}/support/) or submit a ticket to our [technical support help desk]({{ site.baseurl}}/support/#contacting-partner-support).
 * Before submitting a request to move your application's configuration to production, review the [User experience]({{ site.baseurl }}/design-guidelines/) page and the [Production]({{ site.baseurl }}/production/) page. Additional requirements, like a [signed Interagency agreement]({{ site.baseurl }}/production/#confirm-interagency-agreement-iaa) (IAA) and [agency logo]({{ site.baseurl }}/user-experience/agency-logo/), are described in these pages.
+
+## Service Levels
+
+Service Level, or Identity Assurance Level, determines what information is used to confirm a user's identity.
+
+<div class="usa-prose" markdown="1">
+{{ type_of_service }}
+</div>
+
+## Authentication Assurance Levels
+
+Authentication Assurance Level determines what second factors are allowed for user sign-in.
+
+{{ aal_values }}

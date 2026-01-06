@@ -23,13 +23,13 @@ sidenav:
 
 ---
 {% capture aal_values %}
- {% include snippets/auth_content/aal_values.md %}
+  {% include snippets/auth_content/aal_values.md %}
 {% endcapture %}
 {% capture service_levels %}
- {% include snippets/auth_content/service_levels.md %}
+  {% include snippets/auth_content/service_levels.md %}
 {% endcapture %}
 {% capture deprecated_values %}
- {% include snippets/auth_content/deprecated_values.md %}
+  {% include snippets/auth_content/deprecated_values.md %}
 {% endcapture %}
 {% capture code_challenge %}
 Correct Example
