@@ -12,6 +12,6 @@ Stricter behavior can be specified by adding one of:
   - **`http://idmanagement.gov/ns/assurance/aal/2?hspd12=true`**
       This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC). Users must _always_ authenticate with a second factor.
 {% endcapture %}
-<div markdown="1">
+
 {{ aal_values | markdownify }}
-</div>
+

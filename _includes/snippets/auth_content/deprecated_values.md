@@ -12,6 +12,5 @@
   - **`http://idmanagement.gov/ns/assurance/loa/3`**
       Equivalent to `urn:acr.login.gov:verified`.
 {% endcapture %}
-<div markdown="1">
+
 {{ deprecated_values | markdownify }}
-</div>

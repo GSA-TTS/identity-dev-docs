@@ -17,6 +17,5 @@
     
     Authentications for users who verify with facial matching will meet NIST 800-63-3 IAL2 standard. Authentication for users who do not do facial matching will not meet NIST 800-63-3 IAL2 standard.
 {% endcapture %}
-<div markdown="1">
+
 {{ type_of_service | markdownify }}
-</div>
