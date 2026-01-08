@@ -5,9 +5,9 @@ sidenav:
     href: "#user-flow"
   - text: Service provider configuration
     href: "#service-provider-configuration"
-  - text: Service Levels
+  - text: Service levels
     href: "#service-levels"
-  - text: Authentication Assurance Levels
+  - text: Authentication assurance levels
     href: "#authentication-assurance-levels"
 ---
 {% capture type_of_service %}
@@ -47,9 +47,7 @@ To configure a test application in the sandbox environment:
 
 Service Level, or Identity Assurance Level, determines what information is used to confirm a user's identity.
 
-<div class="usa-prose" markdown="1">
 {{ type_of_service }}
-</div>
 
 ## Authentication Assurance Levels
 
