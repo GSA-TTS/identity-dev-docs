@@ -8,7 +8,7 @@ Stricter behavior can be specified by adding one of:
   - **`http://idmanagement.gov/ns/assurance/aal/2`**
       This is the same as the default behavior except users must authenticate with a separate second factor (i.e. not a remembered device).
   - **`http://idmanagement.gov/ns/assurance/aal/2?phishing_resistant=true`**
-      This specifies that a user has been authenticated with a crytographically secure method. We currently support security keys, face or touch unlock, and PIV/CAC. Users must _always_ authenticate with a second factor.
+      This specifies that a user has been authenticated with a crpytographically secure method. We currently support security keys, face or touch unlock, and PIV/CAC. Users must _always_ authenticate with a second factor.
   - **`http://idmanagement.gov/ns/assurance/aal/2?hspd12=true`**
       This specifies that a user has been authenticated with an HSPD12 credential (requires PIV/CAC). Users must _always_ authenticate with a second factor.
 {% endcapture %}
