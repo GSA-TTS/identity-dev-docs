@@ -26,7 +26,7 @@ sidenav:
 ---
 
 ##  Getting started
-There are several decisions during the integration process that affect how your users experience Login.gov. In this User Experience guide, we will outline what options you have available to your application, and the configurations in Login.gov [portal](https://dashboard.int.identitysandbox.gov/) that impact users.
+There are several decisions during the integration process that affect how your users experience Login.gov. In this User Experience guide, we will outline what options you have available to your application, and the configurations in Login.gov [portal](https://portal.int.identitysandbox.gov/) that impact users.
 
 {% capture button_ux %}
 [Design your application's sign-in and sign-out buttons]({{site.baseurl}}/user-experience/sign-in-sign-out/). This will include a [global sign-in button]({{site.baseurl}}/user-experience/sign-in-sign-out/), and optionally, [a sign-in page]({{site.baseurl}}/user-experience/sign-in-sign-out/) before the user is directed to Login.gov.
@@ -74,7 +74,7 @@ Optional: [Add FAQ content to inform users about Login.gov]({{site.baseurl}}/use
   </li>
 </ul>
 
-### Configure in the [portal](https://dashboard.int.identitysandbox.gov/)
+### Configure in the [portal](https://portal.int.identitysandbox.gov/)
 
 <ul class="usa-icon-list padding-bottom-4 padding-top-2">
  <li class="usa-icon-list__item">

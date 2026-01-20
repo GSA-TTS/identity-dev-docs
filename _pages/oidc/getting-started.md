@@ -56,15 +56,12 @@ The following implementation methods of OIDC are not supported by Login.gov for 
 
 ### Set up a Sandbox account
 
-You are able to test authentication methods in real time with a testing account in our sandbox environment. To start, navigate to the [Login Partner Portal Sandbox](https://dashboard.int.identitysandbox.gov) and follow the steps below:
+You are able to test authentication methods in real time with a testing account in our sandbox environment. To start, follow the steps in the [Using the sandbox](https://developers.login.gov/testing/#using-the-sandbox) section to create your Login.gov sandbox account, your Team in the Partner Portal, and your app within your Team.
 
-- Select the “Sign-in” button to create a new account. Anyone with a .gov or .mil email address may request an account.
-- Create a new team - see [Testing](/testing/) page for instructions.
--  Create a certificate - before creating your configuration you'll need to create a certificate that will be used to sign your requests. You can create a certificate using openssl. The example command to create the certificate from your terminal is:
-    - `openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out public.crt`
-- Create a configuration, at which point you will need to decide between private_key_jwt or PKCE.
+If you chose to integrate your app using the OIDC private_key_jwt protocol, you will need to create a private key that will be used to sign your request to our token endpoint, and a corresponding public certificate that you will upload to your app in the Partner Portal. Login.gov will use your public certificate to verify the signature in your request.
 
-It is important to note that your Login.gov production account and your Login.gov sandbox account are two separate accounts.
+More details on how to create this public/private keypair are available in the [Creating a public certificate](https://developers.login.gov/testing/#creating-a-public-certificate) section of our Testing documentation.
+
 
 ### Auto-discovery
 

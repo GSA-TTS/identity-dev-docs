@@ -1,7 +1,7 @@
 ---
 title: Production deployment
 lead: >
-  Once you’ve set up your integration through [our portal](https://dashboard.int.identitysandbox.gov/) and tested, you can request deployment to the Login.gov production environment.
+  Once you’ve set up your integration through [our portal](https://portal.int.identitysandbox.gov/) and tested, you can request deployment to the Login.gov production environment.
 
 redirect_from:
   - /production-deployment/
@@ -35,7 +35,7 @@ Make sure you have the following items ready before you start the deployment pro
 
 -   [Signed Interagency Agreement (IAA) listing this integration ]({{ site.baseurl}}/production/#confirm-interagency-agreement-iaa)
 
--   A dedicated [integration configuration within the portal](https://dashboard.int.identitysandbox.gov/)
+-   A dedicated [integration configuration within the portal](https://portal.int.identitysandbox.gov/)
     * We recommend having two configurations, one that is intended for deployment to production and one which is purely for testing purposes.
     * All production urls should have .gov, .mil, or a dedicated .com address and point to an Authority to Operate (ATO) approved environment.
 
@@ -77,7 +77,7 @@ Before you can request deployment, you need to create a new and separate integra
 
 When you have the components required, follow these steps to create your production integration configuration:
 
-1.  [Create a new app on the](https://dashboard.int.identitysandbox.gov/) Login.gov Partner Portal. Select “Apps” from the top right menu, then select the “Create a new app” button.
+1.  [Create a new app on the](https://portal.int.identitysandbox.gov/) Login.gov Partner Portal. Select “Apps” from the top right menu, then select the “Create a new app” button.
 
 1. Choose an agency team for the app from the drop down menu.
 
@@ -137,7 +137,7 @@ Once you have:
 
 2. [Created a production configuration]({{site.baseurl}}/production/#production-configuration-process).
 
-3. Confirmed that you have a logo uploaded to your production configuration in the [Partner Portal](https://dashboard.int.identitysandbox.gov/). **An uploaded logo is required for the deployment process.**
+3. Confirmed that you have a logo uploaded to your production configuration in the [Partner Portal](https://portal.int.identitysandbox.gov/). **An uploaded logo is required for the deployment process.**
 
 You are ready to submit a launch request through the [Partner Support Help Desk](https://zendesk.login.gov). 
 
@@ -167,22 +167,34 @@ If you are rotating your application’s public/private keypair, or want to add 
 
   **For OIDC integrations or SAML integrations sending signed requests:**
 
-  1.  Add the new certificate to the application portal configuration.
+  1. Generate your new public/private keypair.
 
-  2.  Contact Login.gov technical support and request certificate addition.
+  2. Upload your new public certificate in the Login.gov Portal production configuration for your app.
 
-  3.  Once certificate deployment is confirmed, rotate the key pair at your convenience.
+  3. Do **not** make **any other** changes on your end in your systems. Do **not** start using the new private key on your end.
 
-  4.  Once the new key pair is in use, please submit a request to remove the old certificate.
+  4. Submit a Zendesk ticket to ask us to deploy your new public certificate to production. As a reminder, it can take up to 2 weeks for us to process any production configuration changes.
+
+  5. Wait for us to confirm that your new certificate has been deployed to production.
+
+  6. Once we confirm your new certificate is available in production, test the existing Production app to make sure everything still works with the old certificate and private key. In other words, don't make any changes yet. At this point, we're just confirming that having multiple certificates in production on the Login.gov side is perfectly fine. The reason this is safe when requests are properly signed is because we use the signature of the  request to determine which public certificate to use.
+
+  7. Once you are confident everything is still working with the old setup, then you can start using the new private key on your end (the one that corresponds to the new cert you uploaded in step 2)
+
+  8. Test the app again with the new cert and private key to make sure everything still works.
+
+  9.  Once the new key pair is in use, please submit a request to remove the old certificate.
 
 
   **For SAML integrations not sending signed requests:**
 
-  1.  The final certificate rotation must be coordinated with Login.gov technical support.
+  1.  Watch this video to learn [How and Why to Sign your SAML Requests](https://www.youtube.com/watch?v=i3BzLQ_PULU)
 
-  2.  Add the new certificate to the application portal configuration.
+  2. If you're still not able to sign your requests, first make sure to test your new public/private keypair in your sandbox configuration by making sure it only contains your new public certificate, and removing all other certificates.
 
-  3.  Request coordination of the certificate rotation from Login.gov technical support.
+  3. Follow the same steps in the section above, but in step 4, provide the reason why you are not able to sign your SAML requests, and a date and time during business hours where we can coordinate the deployment of your certificate to minimize downtime.
+
+  3. Once we deploy your certificate, steps 6-8 above will not apply.
 
 
 {% capture expiration_date %}
