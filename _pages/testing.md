@@ -49,9 +49,9 @@ Please submit a support ticket through the [Partner Support Help Desk](https://z
 1. Visit the Partner Portal at [https://portal.int.identitysandbox.gov/](https://portal.int.identitysandbox.gov/).
 1. Click on "Sign in with Login.gov"
 1. Click on "I agree" on the "System use notification" page
-1. If you already have a Login.gov sandbox account, proceed to sign in. Otherwise, click on the "Create an account" option. Note that this will create an account in our sandbox environment, which is separate from any Login.gov production accounts you might have.
+1. If you already have a Login.gov **sandbox** account, proceed to sign in. Otherwise, click on the "Create an account" option. This will create an account in our sandbox environment, which is separate from any Login.gov production accounts you might have. Due to spam issues, we do not allow creating **sandbox** accounts with the following email domains: aol.com, bellsouth.net, outlook.com, and yahoo.com. This limitation does not apply to our production environment.
 1. Once you sign in or complete the account creation process, you should be signed into our Partner Portal, and you can proceed to set things up.
-1. If you're not already part of a Team in the Partner Portal, and you are creating an integration for the first time, then the first step is to create a Team. You can access the Teams page by clicking "Teams" in the top right navigation. Alternatively, under the
+1. If you're not already part of a Team in the Partner Portal, and you are creating an integration for the first time, then the first step is to create a Team. Note that only users with .gov or .mil emails can create Teams. You can access the Teams page by clicking "Teams" in the top right navigation. Alternatively, under the
 "Welcome to the Login.gov Partner Portal" section, you can click the "My teams" link, or the "View teams" button. The direct URL is [https://portal.int.identitysandbox.gov/teams](https://portal.int.identitysandbox.gov/teams).
 1. Create a new team by selecting the “Continue” button next to “Create your first team.” If you have previously created a team you can move on to the next step.
 1. If necessary, add users to that team by clicking the “Add user” button. This is the opportunity to add contractors or anyone without a .gov or a .mil email address.
