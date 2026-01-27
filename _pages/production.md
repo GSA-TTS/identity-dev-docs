@@ -29,6 +29,14 @@ Please note: The deployment process can take up to two weeks to complete. You ma
 
 {% include alert.html content=deployment_warning alert_class="usa-alert--warning" %}
 
+## We're here to assist
+
+Our dedicated Onboarding Team is available to ensure your production launch goes smoothly. If you haven’t already, get in touch by submitting a ticket request to the [Partner Support Help Desk](https://zendesk.login.gov/) to:
+- Launch a new application under a new integration
+- Launch a new application under an existing integration (i.e. under a “broker application”)
+- Make a configuration change to your existing integration
+
+
 ## Before deployment
 
 Make sure you have the following items ready before you start the deployment process:

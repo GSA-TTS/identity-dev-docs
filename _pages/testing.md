@@ -1,7 +1,8 @@
 ---
 title: Testing your app
 lead: >
-  Once you’ve created your app and implemented an identity protocol, you can now register it in the test environment portal and start testing.
+  Once you’ve created your app and implemented an identity protocol, you can register it in the Partner Portal and start testing in our sandbox environment.<br /><br />
+  Login.gov has a dedicated onboarding team to support you through the testing and launch. Reach out at the <a href="https://zendesk.login.gov/">Partner Support Help Desk</a>.
 redirect_from:
   - /registering-your-sp/
   - /register/
