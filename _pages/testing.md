@@ -211,4 +211,4 @@ Login.gov collects a phone number during the proofing process. In the production
 * `703-555-5888` - simulates a timeout during verification
 * `703-555-5999` - simulates a phone number that couldn't be contacted
 
-Use any other phone number for typical testing purposes.
+Use any other phone number for typical testing purposes
