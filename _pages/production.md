@@ -159,6 +159,12 @@ We recommend a grace period between deployment and implementation on your site. 
 
 We recommend using the sandbox environment to test your new app before requesting deployment. Many partners choose to create a separate staging app in our sandbox environment for testing because changes in the sandbox environment take effect immediately without waiting for review and deployment. You can determine and implement changes quickly and without submitting a support ticket.
 
+### Service provider notification failure
+
+If you see this error during deployment, your configuration has been saved successfully, but there was an error deploying your configuration to our sandbox environment. At this time, testing is not possible.
+
+You can wait 15-30 minutes for our system to retry automatically, or contact the [Partner Support Help Desk](https://zendesk.login.gov) if the issue continues. Many deployment notifications resolve on their own without additional action.
+
 ## Changes to production applications
 
 **Changes to production configurations are not automatic and may take up to two weeks.**
