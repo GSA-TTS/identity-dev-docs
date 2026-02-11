@@ -1,4 +1,5 @@
 # Login.gov Dev Docs
+[![DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/GSA-TTS/identity-dev-docs)
 
 [View it live ❯](https://developers.login.gov/)
 
