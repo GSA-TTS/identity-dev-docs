@@ -18,8 +18,8 @@ sidenav:
     href: "#request-deployment"
   - text: Staging environment
     href: "#staging-environment"
-  - text: Changes to production applications
-    href: "#changes-to-production-applications"
+  - text: Changes to production configurations
+    href: "#changes-to-production-configurations"
   - text: Certificate Rotation Process
     href: "#certificate-rotation-process"
 ---
