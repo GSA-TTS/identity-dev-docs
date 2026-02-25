@@ -77,23 +77,23 @@ Please reach out to your agency IAA contact if you have any questions. If your a
 
 ## Production configuration process
 
-Before you can request deployment, you need to create a new and separate integration configuration on our Partner Portal. This new app will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
+Before you can request deployment, you need to create a new and separate integration configuration on our Partner Portal. This new configuration will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
 
 -   Signed IAA listing this integration 
 -   ATO approved environment
--   [Approved agency logo](/user-experience/agency-logo/) for your app
+-   [Approved agency logo](/user-experience/agency-logo/) for your application
 
 When you have the components required, follow these steps to create your production integration configuration:
 
-1.  [Create a new app on the](https://portal.int.identitysandbox.gov/) Login.gov Partner Portal. Select “Apps” from the top right menu, then select the “Create a new app” button.
+1.  [Create a new configuration on the](https://portal.int.identitysandbox.gov/) Login.gov Partner Portal. Select “Configurations” from the top menu, then select the “Create a new configuration” button.
 
-1. Choose an agency team for the app from the drop down menu.
+1. Choose an agency team for the configuration from the drop down menu.
 
 1. Select "Ready for Production" in the Dashboard Configuration section.
 
-1.  Enter the name of the app as it appears in your IAA in the "Configuration name" field. Do NOT use environment names such as "Prod" or "Production".
+1.  Enter the name of the application as it appears in your IAA in the "Configuration name" field. Do NOT use environment names such as "Prod" or "Production".
 
-1.  Enter the name of the app as it should appear to users in the "Friendly name" field. This is the app name a user will see when logging in.
+1.  Enter the name of the application as it should appear to users in the "Friendly name" field. This is the name a user will see when logging in.
 
 1.  Select the Next button to move to the next steps.
 
@@ -105,7 +105,7 @@ When you have the components required, follow these steps to create your product
 
 1.  Select the Identity Assurance Level (IAL), default Authentication Assurance Level (AAL), and the correct attribute bundle. Select the Next button to move on to the issuer.
 
-1.  Enter the issuer, a unique string to identify the app in the Identity Provider (IdP). Select the Next button to move on to the next step. 
+1.  Enter the issuer, a unique string to identify the application in the Identity Provider (IdP). Select the Next button to move on to the next step. 
 
 1.  Upload your logo file and public certificate file. Note: the public certificate file may not be required if you are using the OIDC PKCE flow.
 
@@ -113,7 +113,7 @@ When you have the components required, follow these steps to create your product
   - If you selected the SAML protocol, you will be prompted to enter the Assertion Consumer Service URL, Assertion Consumer Logout Service URL, SP Initiated Login URL, SAML Assertion Encryption, Signed Response Message Requested, Return to App URL, Push notification URL, and Redirect URIs.
   - Select the Next button to move on to the final step.
 
-1. Select the sign-in, sign-up, and forgot password help text users will encounter in your app. This step is optional but encouraged to ensure better usability. Take a look at the [user experience guidance]({% link _pages/user-experience/help-text.md %}) for a good example of help text.    
+1. Select the sign-in, sign-up, and forgot password help text users will encounter when accessing your application. This step is optional but encouraged to ensure better usability. Take a look at the [user experience guidance]({% link _pages/user-experience/help-text.md %}) for a good example of help text.    
 
 1. Once all fields are complete select the "Create configuration" button.
 
@@ -157,7 +157,7 @@ We recommend a grace period between deployment and implementation on your site. 
 
 ## Staging environment
 
-We recommend using the sandbox environment to test your new app before requesting deployment. Many partners choose to create a separate staging app in our sandbox environment for testing because changes in the sandbox environment take effect immediately without waiting for review and deployment. You can determine and implement changes quickly and without submitting a support ticket.
+We recommend using the sandbox environment to test your new configuration before requesting deployment. Many partners choose to create a separate staging application in our sandbox environment for testing because changes in the sandbox environment take effect immediately without waiting for review and deployment. You can determine and implement changes quickly and without submitting a support ticket.
 
 ### Service provider notification failure
 
@@ -165,7 +165,7 @@ If you see this error during deployment, your configuration has been saved succe
 
 You can wait 15-30 minutes for our system to retry automatically, or contact the [Partner Support Help Desk](https://zendesk.login.gov) if the issue continues. Many deployment notifications resolve on their own without additional action.
 
-## Changes to production applications
+## Changes to production configurations
 
 **Changes to production configurations are not automatic and may take up to two weeks.**
 
@@ -189,7 +189,7 @@ If you are rotating your application’s public/private keypair, or want to add 
 
   1. Generate your new public/private keypair.
 
-  2. Upload your new public certificate in the Login.gov Portal production configuration for your app.
+  2. Upload your new public certificate in the Login.gov Portal production configuration for your application.
 
   3. Do **not** make **any other** changes on your end in your systems. Do **not** start using the new private key on your end.
 
@@ -197,11 +197,11 @@ If you are rotating your application’s public/private keypair, or want to add 
 
   5. Wait for us to confirm that your new certificate has been deployed to production.
 
-  6. Once we confirm your new certificate is available in production, test the existing Production app to make sure everything still works with the old certificate and private key. In other words, don't make any changes yet. At this point, we're just confirming that having multiple certificates in production on the Login.gov side is perfectly fine. The reason this is safe when requests are properly signed is because we use the signature of the  request to determine which public certificate to use.
+  6. Once we confirm your new certificate is available in production, test the existing Production application to make sure everything still works with the old certificate and private key. In other words, don't make any changes yet. At this point, we're just confirming that having multiple certificates in production on the Login.gov side is perfectly fine. The reason this is safe when requests are properly signed is because we use the signature of the  request to determine which public certificate to use.
 
   7. Once you are confident everything is still working with the old setup, then you can start using the new private key on your end (the one that corresponds to the new cert you uploaded in step 2)
 
-  8. Test the app again with the new cert and private key to make sure everything still works.
+  8. Test the application again with the new cert and private key to make sure everything still works.
 
   9.  Once the new key pair is in use, please submit a request to remove the old certificate.
 

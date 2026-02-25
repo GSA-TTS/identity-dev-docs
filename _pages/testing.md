@@ -1,7 +1,7 @@
 ---
-title: Testing your app
+title: Testing your integration
 lead: >
-  Once you’ve created your app and implemented an identity protocol, you can register it in the Partner Portal and start testing in our sandbox environment.<br /><br />
+  Once you’ve created your application and implemented an identity protocol, you can register it in the Partner Portal and start testing in our sandbox environment.<br /><br />
   Login.gov has a dedicated onboarding team to support you through the testing and launch. Reach out at the <a href="https://zendesk.login.gov/">Partner Support Help Desk</a>.
 redirect_from:
   - /registering-your-sp/
@@ -26,7 +26,7 @@ sidenav:
 
 ## About the Login.gov sandbox
 
-The Login.gov sandbox is an open environment to create and test integrations between Login.gov and your applications. 
+The Login.gov sandbox is an open environment to create and test integrations between Login.gov and your applications.
 
  **The Login.gov sandbox environment is supported M-F, 8a-5p ET.** The sandbox is typically available during these hours, though outages may occur.
 
@@ -56,8 +56,8 @@ Please submit a support ticket through the [Partner Support Help Desk](https://z
 "Welcome to the Login.gov Partner Portal" section, you can click the "My teams" link, or the "View teams" button. The direct URL is [https://portal.int.identitysandbox.gov/teams](https://portal.int.identitysandbox.gov/teams).
 1. Create a new team by selecting the “Continue” button next to “Create your first team.” If you have previously created a team you can move on to the next step.
 1. If necessary, add users to that team by clicking the “Add user” button. This is the opportunity to add contractors or anyone without a .gov or a .mil email address.
-1. After creating your team, select the Apps tab. This page is where you will find all of the integration configurations you and your team create.
-1. Select the “Create a new app” button and follow the steps to register a new application with the Login.gov IdP in the test sandbox environment. You can only have one app creation in progress at a time. There are links to additional information throughout the form. We recommend reading through the descriptions carefully.
+1. After creating your team, select the Configurations tab. This page is where you will find all of the integration configurations you and your team create.
+1. Select the “Create a new configuration” button and follow the steps to register a new application with the Login.gov IdP in the test sandbox environment. You can only have one configuration creation in progress at a time. There are links to additional information throughout the form. We recommend reading through the descriptions carefully.
 1. To troubleshoot specific errors, please visit our error dictionary in the [troubleshooting section of our developer documentation]({% link _pages/support.md %}). If the guidance there does not resolve the error, please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov/).
 1. Start testing!
 1. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your configuration's promotion to production. **The move to production may take up to two weeks.**
@@ -94,7 +94,7 @@ Our sandbox environment is smaller than our production environment and it is sha
 
 ## Automated Testing
 
-**Login.gov cannot provide specific recommendations for automated testing.** This is especially true for applications using identity verification, because we are frequently making updates to the code and the flow is likely to change and could unexpectedly break your tests.
+**Login.gov cannot provide specific recommendations for automated testing.** This is especially true for applications using our identity verification service, because we are frequently making updates to the code and the flow is likely to change and could unexpectedly break your tests.
 
 If you are looking for recommendations for automated testing, we do not have any specific advice. There are many different frameworks and automated testing suites available to choose from, and our partners usually pick based on their own unique needs. **Regardless of which suite you choose, it should be noted that you cannot bypass the MFA portion of the flow.** It is intentionally designed this way for security purposes and another reason why we recommend stubbing out our flow.
 
