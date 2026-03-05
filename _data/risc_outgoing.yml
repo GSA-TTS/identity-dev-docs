@@ -228,7 +228,7 @@
   payload_schema:
     *iss_sub_schema
   example_payload: {
-    "https://schemas.login.gov/secevent/risc/event-type/mfa-limit-account-locked": {
+    "https://schemas.login.gov/secevent/risc/event-type/reproof-completed": {
       "subject": {
         "subject_type": "iss-sub",
         "iss": "https://idp.int.identitysandbox.gov",
