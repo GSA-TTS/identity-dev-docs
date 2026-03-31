@@ -42,7 +42,7 @@ The [OpenID RISC Profile][openid-risc-events-profile] defines some very specific
 
 ### Auto-discovery
 
-Login.gov provides a JSON endpoint for OpenID Connect auto-discovery at `/.well-known/risc-configuration`. In our agency integration environment, this is available at <https://idp.int.identitysandbox.gov/.well-known/risc-configuration>
+Login.gov provides a JSON endpoint for OpenID Connect auto-discovery at `/.well-known/risc-configuration`. In our agency integration environment, this is available at <https://idp.int.identitysandbox.gov/.well-known/risc-configuration>. In production, the URL is <https://secure.login.gov/.well-known/risc-configuration>.
 
 ### Supported Incoming Events
 
@@ -88,7 +88,7 @@ JWTs must be signed by the client application's private key using **RS256**, the
 #### JWT Claims
 
 * **aud** (required)
-  The audience for this JWT, which is the full URL for the `/api/risc/security_events` endpoint. In the agency integration environment, this is `https://idp.int.identitysandbox.gov/api/risc/security_events`
+  The audience for this JWT, which is the full URL for the `/api/risc/security_events` endpoint. In the agency integration environment, this is `https://idp.int.identitysandbox.gov/api/risc/security_events`. In production, this is `https://secure.login.gov/api/risc/security_events`.
 
 * **iat**
   Time at which the JWT was issued, an integer timestamp representing the number of seconds since the Unix Epoch.
@@ -112,7 +112,8 @@ JWTs must be signed by the client application's private key using **RS256**, the
         Must be **iss-sub**, this indicates the **sub** is the subject provided by the original issuer (Login.gov)
 
       * **iss**
-        This is Login.gov's issuer, the root URL for Login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
+        This is Login.gov's issuer, the root URL for Login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`. In production, this is `https://secure.login.gov/`.
+
 
       * **sub**
         The UUID identifying the user. This is provided as the `sub` inside the `id_token` JWT in the [OpenID Token endpoint]({{ '/oidc/token/#token-response' | prepend: site.baseurl }}).
@@ -276,21 +277,23 @@ Example:
 
 Login.gov will make a POST request to your app's `push_notification_url`, see [Configuration](#configuration) for more details on setting that up. The JWT will be signed with Login.gov's private key. See the OpenID Connect guide for information on how to get Login.gov's public key from the [Certificates Endpoint](/oidc/certificates/).
 
-If your app had the client ID of `urn:gov:gsa:openidconnect:test:risc:sets` and was configured to receive events at `https://agency.example.gov/events`, and a user freed up `email@example.com` Login.gov would make a request like this.
+If your app had the client ID of `urn:gov:gsa:openidconnect:test:risc:sets` and was configured to receive events at `https://agency.example.gov/events`, and a user deleted their Login.gov account, Login.gov would make a request like the one below.
 
 With a JWT payload:
 
 ```json
 {
   "iss": "https://idp.int.identitysandbox.gov/",
-  "jti": "abcdefghijklmnopqrstuvwxyz",
   "iat": 1595532178,
+  "exp": 1775025745,
+  "jti": "abcdefghijklmnopqrstuvwxyz",
   "aud": "https://agency.example.gov/events",
   "events": {
-    "https://schemas.openid.net/secevent/risc/event-type/identifier-recycled": {
+    "https://schemas.openid.net/secevent/risc/event-type/account-purged": {
       "subject": {
-        "subject_type": "email",
-        "email": "email@example.com"
+        "subject_type": "iss-sub",
+        "iss": "https://idp.int.identitysandbox.gov",
+        "sub": "123d4f56-jkl7-891011-t12vw-y13a1415d1617ghi19"
       }
     }
   }
@@ -335,7 +338,7 @@ KS0KvsV0eIRIhvg8wGdN6luIgsXi4nqp9ZY3OF2ft2fUwsk5rk2O_e2-I2Lf8yj0HN1BQ8IIAChWB9_d
   Time at which the JWT was issued, an integer timestamp representing the number of seconds since the Unix Epoch.
 
 * **iss** (string)
-  The issuer of this SET, which will be Login.gov's issuer, the root URL for Login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`
+  The issuer of this SET, which will be Login.gov's issuer, the root URL for Login.gov. In the agency integration environment, this is `https://idp.int.identitysandbox.gov`. In production, this is `https://secure.login.gov`.
 
 * **jti** (required)
   JWT Identifier. This will be a random, unique identifier for this event, you should be able to de-duplicate based on this.
