@@ -102,50 +102,6 @@
     }
   }
 
-- friendly_name: Identifier Recycled
-  direction: outgoing
-  event_type: https://schemas.openid.net/secevent/risc/event-type/identifier-recycled
-  spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#rfc.section.2.6"
-  description: >
-    Login.gov pushes this event when a user removes an email address from their account, freeing up the email address as an identifier.
-  payload_schema: &email_schema
-    - key: subject
-      description: An event will include a **subject** object, with the following keys
-      properties:
-        - key: subject_type
-          type: string
-          description: >
-            Will be **email**
-        - key: email
-          type: string
-          description: >
-            This is the email address that no longer belongs to any user.
-  example_payload: {
-    "https://schemas.openid.net/secevent/risc/event-type/identifier-recycled": {
-      "subject": {
-        "subject_type": "email",
-        "email": "<$EMAIL>"
-      }
-    }
-  }
-
-- friendly_name: Identifier Changed
-  direction: outgoing
-  event_type: https://schemas.openid.net/secevent/risc/event-type/identifier-changed
-  spec_url: "https://openid.net/specs/openid-risc-event-types-1_0-ID1.html#rfc.section.2.5"
-  description: >
-    Login.gov pushes this event when a user changes the email address associated with their account.
-  payload_schema:
-    *email_schema
-  example_payload: {
-    "https://schemas.openid.net/secevent/risc/event-type/identifier-changed": {
-      "subject": {
-        "subject_type": "email",
-        "email": "<$EMAIL>"
-      }
-    }
-  }
-
 - friendly_name: Account Locked Due to MFA (Multi-Factor Authentication) Limit Reached
   event_type: https://schemas.login.gov/secevent/risc/event-type/mfa-limit-account-locked
   spec_url:
