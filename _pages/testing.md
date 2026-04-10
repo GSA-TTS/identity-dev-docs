@@ -15,6 +15,8 @@ sidenav:
     href: "#using-the-sandbox"
   - text: If you lost access to a sandbox team
     href: "#if-you-lost-access-to-a-sandbox-team"
+  - text: Creating a public certificate
+    href: "#creating-a-public-certificate"
   - text: Load Testing
     href: "#load-testing"
   - text: Automated Testing
@@ -83,9 +85,9 @@ The public/private keypair process is a crucial step in generating secure authen
 
 - The private key should be one of the most securely protected pieces of data in your Login.gov integration. If the private key is compromised, your integration will no longer be secure.
 - Only share the public key with Login.gov. Do not share the private key.
-- It is best practice to rotate your keypairs on a regular basis regardless of known compromise.
-- At minimum for OIDC, you must ensure that your authentication request is signed with the private key.
-- For SAML integrations, use the private key generated with your certificate for decryption or you will be unable to decrypt the response.
+- It is best practice to rotate your keypairs on a regular basis regardless of known compromise. NIST recommends rotating every 90 days to 6 months. For production applications, make sure to review the [step-by-step instructions for certificate rotation](/production/#certificate-rotation-process) well in advance of your certificate's expiration.
+- For OIDC integrations using `private_key_jwt`, your request to our token endpoint must include a JWT signed with a private key that matches a public certificate that you uploaded to your config in the Partner Portal.
+- For SAML integrations, you will use the private key generated with your certificate to sign your SAML requests to Login.gov, and to decrypt the responses you receive from Login.gov.
 
 
 ## Load Testing
