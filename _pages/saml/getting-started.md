@@ -15,12 +15,12 @@ sidenav:
         href: "/saml/getting-started/#x509-public-certificate"
       - text: How your app can access the Login.gov certificate
         href: "/saml/getting-started/#how-your-app-can-access-the-logingov-certificate"
+      - text: Metadata
+        href: "/saml/getting-started/#metadata"
       - text: Signing Certificates
         href: "/saml/getting-started/#signing-certificates"
       - text: Annual Certificate Rotation
         href: "/saml/getting-started/#annual-certificate-rotation"
-      - text: Rotating Your Public Certificates
-        href: "/saml/getting-started/#rotating-your-public-certificates"
       - text: Example application
         href: "/saml/getting-started/#example-application"
   - text: Authentication
@@ -98,25 +98,23 @@ Here are values needed to configure your service provider (SP) to work with Logi
 
 ### x509 Public Certificate
 
-For SAML integrations, there are two different public certificates used:
+This section refers to the Login.gov certificate that we use to sign our SAML response back to the partner app. This allows the partner app to validate the authenticity of SAML responses received from Login.gov. We update this certificate once a year, as explained in the [Annual Certificate Rotation](#annual-certificate-rotation) section below.
 
-1. The Login.gov certificate that we use to sign our SAML response back to the partner app. This allows the partner app to validate the authenticity of SAML responses received from Login.gov. We update this certificate once a year, as explained in the [Annual Certificate Rotation](#annual-certificate-rotation) section below.
-
-2. Your public certificate that you upload to the Login.gov Partner Portal. This is the certificate that matches the private key on your end that you use to sign your SAML requests to Login.gov. This allows Login.gov to validate the authenticity of your SAML requests.
-
-Your public certificate is also used by Login.gov to encrypt our SAML response back to your app. Your app then uses the corresponding private key to decrypt the response.
-
-You can follow the instructions in our [testing article]({% link _pages/testing.md %}#creating-a-public-certificate) to generate your public/private keypair.
+For your own public certificates that you upload to the Login.gov Partner Portal, please refer to our [Certificate Rotation Process](/production/#certificate-rotation-process), and to the [Creating a public certificate](/testing/#creating-a-public-certificate) section for more details.
 
 ### How your app can access the Login.gov certificate
 
-The easiest and recommended way is via our metadata endpoint. Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf){:class="usa-link--external"}, Login.gov's metadata for our sandbox environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}](https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}). Our production metadata endpoint is available at [https://secure.login.gov/api/saml/metadata{{ site.data.saml.year.current }}](https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}).
+The easiest and recommended way is via our metadata endpoint. See details in the [Metadata](#metadata) section below.
 
-This means that you don't have to manually copy our certificate from this page and then upload it to your systems once a year, during our [Annual Certificate Rotation](#annual-certificate-rotation). Instead, you can simply update the year in the metadata URL.
+Otherwise, you can download our certificates from the [Signing Certificates](#signing-certificates) section.
 
-If your systems don't support ingesting the metadata via a URL, there typically is an option to upload a file. In that case, you would visit our metadata endpoint in your browser, then right-click anywhere inside the page, and select "Save As". The default filename will be metadata{{ site.data.saml.year.current }}.xml
+By using our metadata endpoint, you won't have to manually get our certificate from this page and upload it to your systems once a year during our [Annual Certificate Rotation](#annual-certificate-rotation). Instead, simply update the year in the metadata URL.
 
-If there aren't any metadata options available to you, you will need to manually copy the certificate from the next section, then either paste it on your end, or save it to a file with a .crt extension, then upload it on your end so your app can access it.
+### Metadata
+
+Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf){:class="usa-link--external"}, Login.gov's metadata for our sandbox environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}](https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}). Our production metadata endpoint is available at [https://secure.login.gov/api/saml/metadata{{ site.data.saml.year.current }}](https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}).
+
+If your systems don't support ingesting the metadata via a URL, an option to upload a file is typically available. In that case, you would visit our metadata endpoint in your browser, then right-click anywhere inside the page, and select "Save As." The default filename will be metadata{{ site.data.saml.year.current }}.xml
 
 ### Signing Certificates
 Below you can find the X509 certificates used by the Login.gov IdP to sign our SAML **response** back to your app. This allows your app to validate that the response you received did indeed come from Login.gov.
@@ -168,10 +166,6 @@ The Login.gov SAML certificate is valid for just over one year. Every spring, Lo
 The certificates are issued to create an overlap period of about a month, during which all partners using SAML should migrate at their convenience to the new endpoint URLs for the current year.
 
 The {{ site.data.saml.year.previous }} certificates for idp.int.identitysandbox.gov and secure.login.gov each expire on April 1, {{ site.data.saml.year.current }}. So the transition from {{ site.data.saml.year.previous }} to {{ site.data.saml.year.current }} endpoints should take place in February or March {{ site.data.saml.year.current }}.
-
-### Rotating Your Public Certificates
-
-Note that **your** public certificates (the ones that you use to sign your SAML requests to Login.gov, and that you upload to the Partner Portal) have expiration dates as well, that you set. When it's time for you to change your certificates, there is a specific process to follow in a specific order to avoid downtime. Please make sure to review the [step-by-step instructions for certificate rotation](/production/#certificate-rotation-process) well in advance of your certificate's expiration.
 
 ### Example application
 
