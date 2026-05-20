@@ -63,5 +63,5 @@ sidenav:
   </dl>
 </section>
 <p class="measure-5 margin-x-0">
-  This website is for agency partners or developers. If you need technical support please contact <a class="usa-link" href="{% link _pages/support.md %}#contacting-partner-support">Partner Support</a> or view our <a class="usa-link" href="{% link _pages/support.md %}#frequently-asked-questions">FAQ</a> page. If you are not an agency partner or developer, please visit the <a class="usa-link" href="https://login.gov/help/">Login.gov Help Center</a> or <a class="usa-link" href="https://login.gov/contact/">contact us</a> for help signing in to your account or verifying your identity.
+  This website is for agency partners or developers. If you need technical support please contact <a class="usa-link" href="{% link _pages/support.md %}#contacting-partner-support">Partner Support</a> or view our <a class="usa-link" href="{% link _pages/support.md %}#frequently-asked-questions">FAQ</a> page. If you are not an agency partner or developer, please visit the <a class="usa-link" href="https://login.gov/help/">Login.gov Help Center</a> or <a class="usa-link" href="https://login.gov/contact/">contact us</aariar> for help signing in to your account or verifying your identity.
 </p>
