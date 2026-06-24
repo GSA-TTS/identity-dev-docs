@@ -112,7 +112,7 @@ By using our metadata endpoint, you won't have to manually get our certificate f
 
 ### Metadata
 
-Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf){:class="usa-link--external"}, Login.gov's metadata for our sandbox environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}](https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}). Our production metadata endpoint is available at [https://secure.login.gov/api/saml/metadata{{ site.data.saml.year.current }}](https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}).
+Consistent with the [SAML metadata specification](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf){:class="usa-link--external"}, Login.gov's metadata for our sandbox environment is available at [https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}](https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.data.saml.year.current }}). Our production metadata endpoint is available at [https://secure.login.gov/api/saml/metadata{{ site.data.saml.year.current }}](https://secure.login.gov/api/saml/metadata{{ site.data.saml.year.current }}).
 
 If your systems don't support ingesting the metadata via a URL, an option to upload a file is typically available. In that case, you would visit our metadata endpoint in your browser, then right-click anywhere inside the page, and select "Save As." The default filename will be metadata{{ site.data.saml.year.current }}.xml
 
