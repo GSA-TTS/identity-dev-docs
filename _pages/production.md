@@ -66,7 +66,7 @@ Depending on your agency’s integration, additional items may be needed:
 
         -   If you are using a service which does not support SAML encryption, please submit a technical support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) for further guidance.
 
-- **If this is an integration requesting identity proofed attributes, you must include a Failure to Proof URL.** Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency and/or department's alternate methods of accessing your application.
+- **If this is an integration requesting identity proofed attributes, you must include a [Failure to Proof URL](/user-experience/failure-proof/).** Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency and/or department's alternate methods of accessing your application.
 
 If you have questions after reviewing this page, submit a technical support ticket through the [Partner Support Help Desk]({{ site.baseurl}}/support/#contacting-partner-support). You will need a [Login.gov production account](https://secure.login.gov) to submit technical support tickets. Your Login.gov production account and Login.gov sandbox (test environment) accounts are separate.
 
@@ -117,7 +117,7 @@ When you have the components required, follow these steps to create your product
   - If you selected the SAML protocol, you will be prompted to enter the Assertion Consumer Service URL, Assertion Consumer Logout Service URL, SP Initiated Login URL, SAML Assertion Encryption, Signed Response Message Requested, Return to App URL, Push notification URL, and Redirect URIs.
   - Select the Next button to move on to the final step.
 
-1. Select the sign-in, sign-up, and forgot password help text users will encounter when accessing your application. This step is optional but encouraged to ensure better usability. Take a look at the [user experience guidance]({% link _pages/user-experience/help-text.md %}) for a good example of help text.    
+1. Select the sign-in, sign-up, and forgot password help text users will encounter when accessing your application. This step is optional but encouraged to ensure better usability. Take a look at the [user experience guidance]({% link _pages/user-experience/help-text.md %}) for a good example of help text.
 
 1. Once all fields are complete select the "Create configuration" button.
 
@@ -125,14 +125,13 @@ If you encounter errors or have questions after completing these steps, please s
 
 ## Production endpoints
 
+You will need to configure your application to point to the following endpoint:
 
-You will need to configure your application to point to the following endpoint: 
+- **OpenID Connect**: `https://secure.login.gov/openid_connect/authorize`
 
--   **OpenID Connect**: `https://secure.login.gov/openid_connect/authorize`
+- **SAML**: `https://secure.login.gov/api/saml/auth{{ site.data.saml.year.current }}`
 
--   **SAML**: `https://secure.login.gov/api/saml/auth{{ site.data.saml.year.current }}`
-
-Our integration documentation includes endpoint urls for our sandbox environment `https://idp.int.identitysandbox.gov/`. Our production environment is located at `https://secure.login.gov/`. The URL path to each endpoint remains the same. Only the domain will change.  
+Our integration documentation includes endpoint urls for our sandbox environment `https://idp.int.identitysandbox.gov/`. Our production environment is located at `https://secure.login.gov/`. The URL path to each endpoint remains the same. Only the domain will change.
 
 Please be aware that the IdP certificate (X509 Certificate) in the production environment is different from the IdP certificate in the sandbox environment. The production IdP certificates can be found here:
 
@@ -142,7 +141,6 @@ Please be aware that the IdP certificate (X509 Certificate) in the production en
 
 ## Request deployment
 
-
 Once you have:
 
 1. [Confirmed that this integration is listed in a signed IAA](https://login.gov/partners/get-started/#interagency-agreement-iaa-process). **Do not request deployment if you are not certain that your application is listed in a signed IAA.**
@@ -151,7 +149,7 @@ Once you have:
 
 3. Confirmed that you have a logo uploaded to your production configuration in the [Partner Portal](https://portal.int.identitysandbox.gov/). **An uploaded logo is required for the deployment process.**
 
-You are ready to submit a launch request through the [Partner Support Help Desk](https://zendesk.login.gov). 
+You are ready to submit a [launch request](https://zendesk.login.gov/hc/en-us/requests/new?ticket_form_id=5663417357332) through the Partner Support Help Desk.
 
 All changes to integrations between Login.gov and your application must be reviewed and deployed.
 
@@ -191,13 +189,13 @@ If you are rotating your application’s public/private keypair, or want to add 
 
   **For OIDC integrations or SAML integrations sending signed requests:**
 
-  1. Generate your new public/private keypair.
+  1. Generate your new public/private keypair. Make sure the expiration is not more than 3 years as required by [NIST 800-57 Part 1 Rev. 5](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf).
 
   2. Upload your new public certificate in the Login.gov Portal production configuration for your application.
 
   3. Do **not** make **any other** changes on your end in your systems. Do **not** start using the new private key on your end.
 
-  4. Submit a Zendesk ticket to ask us to deploy your new public certificate to production. As a reminder, it can take up to 2 weeks for us to process any production configuration changes.
+  4. Submit a [Zendesk ticket](https://zendesk.login.gov/hc/en-us/requests/new?ticket_form_id=5664085973908) to ask us to deploy your new public certificate to production. As a reminder, it can take up to 2 weeks for us to process any production configuration changes.
 
   5. Wait for us to confirm that your new certificate has been deployed to production.
 
