@@ -30,7 +30,7 @@ sidenav:
 ---
 
 ## Identity Verification: Create a Failure to Proof URL
-Applications using Login.gov's identity verification are required to provide an alternative method of accessing services to support users who are unable to complete Login.gov’s identity verification process. This is based on existing [OMB M-23-22 policy](https://bidenwhitehouse.archives.gov/wp-content/uploads/2023/09/M-23-22-Delivering-a-Digital-First-Public-Experience.pdf) that requires agencies to offer these alternative channels for access to services.
+Applications using Login.gov's identity verification services are required to provide an alternative method of accessing agency services to support users who are unable to complete Login.gov’s identity verification process. This is based on existing [OMB M-23-22 policy](https://bidenwhitehouse.archives.gov/wp-content/uploads/2023/09/M-23-22-Delivering-a-Digital-First-Public-Experience.pdf) that requires agencies to offer these alternative channels for access to services.
 
 Our Alternative IdV Playbook, which is provided to you during onboarding, explains this in detail. This page serves as a high-level overview.
 
