@@ -57,7 +57,7 @@ A user will only end up on your Failure to Proof page if they manually choose to
 2) Start over from the beginning
 3) Exit Login.gov
 
-If they choose to exit Login.gov, we will send them to the Failure to Proof URL that you configured in the Partner Portal.
+If the user chooses to exit Login.gov, we will send them to the Failure to Proof URL that you configured in the Partner Portal.
 
 The two most common reasons a user would choose to exit the verification process are:
 
