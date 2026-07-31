@@ -38,7 +38,7 @@
   @include u-margin(0);
 }
 
-.system-status {
+.system-status, .release-notes {
   @include u-border-top(1px, 'primary-light');
   @include u-padding-top(2);
   @include u-margin-top(1);
@@ -52,6 +52,17 @@
     display: inline-block;
     vertical-align: middle;
     margin-right: 0.25rem;
+  }
+}
+
+.system-status {
+  &::before {
     background: url(../img/icon-system-status.svg) left center no-repeat;
+  }
+}
+
+.release-notes {
+  &::before {
+    background: url(../img/icon-campaign.svg) left center no-repeat;
   }
 }
