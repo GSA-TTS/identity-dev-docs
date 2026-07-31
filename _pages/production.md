@@ -66,7 +66,7 @@ Depending on your agency’s integration, additional items may be needed:
 
         -   If you are using a service which does not support SAML encryption, please submit a technical support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) for further guidance.
 
-- **If this is an integration requesting identity proofed attributes, you must include a [Failure to Proof URL](/user-experience/failure-proof/).** Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency and/or department's alternate methods of accessing your application.
+- **If this is an integration requesting identity proofed attributes, you must include a [Failure to Proof URL](/user-experience/failure-proof/).** Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency's alternate methods of accessing your application.
 
 If you have questions after reviewing this page, submit a technical support ticket through the [Partner Support Help Desk]({{ site.baseurl}}/support/#contacting-partner-support). You will need a [Login.gov production account](https://secure.login.gov) to submit technical support tickets. Your Login.gov production account and Login.gov sandbox (test environment) accounts are separate.
 
@@ -75,7 +75,7 @@ If you have questions after reviewing this page, submit a technical support tick
 
 You must have a signed IAA with Login.gov with your integration explicitly listed in it in order to deploy to production. You will need to provide the IAA number this application will be billed under. The IAA number format will include GTC-Order-Mod (e.g. LGABCFY210001-0001-0000), where GTC stands for General Terms & Conditions. You may also hear these referred to as forms 7600A and 7600B.
 
-- If this is an integration requesting identity proofed attributes, you must include a [Failure to Proof URL](/user-experience/failure-proof/). Users will be redirected to this URL if they choose to cancel the identity verification process. This page should communicate your agency and/or department's alternate methods of accessing your application.
+- If this is an integration requesting identity proofed attributes, you must include a [Failure to Proof URL](/user-experience/failure-proof/). Users will be redirected to this URL if they choose to cancel the identity verification process. This page should communicate your agency's alternate methods of accessing your application.
 
 Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit a partner interest form](https://www.login.gov/partners/business-inquiries/) to begin the IAA process, which can take up to 6 weeks to complete. [Learn more about the IAA process.](https://login.gov/partners/get-started/#interagency-agreement-iaa-process)
 
