@@ -41,11 +41,11 @@ Our dedicated Onboarding Team is available to ensure your production launch goes
 
 Make sure you have the following items ready before you start the deployment process:
 
--   [Signed Interagency Agreement (IAA) listing this integration ]({{ site.baseurl}}/production/#confirm-interagency-agreement-iaa)
+-   [Signed Interagency Agreement (IAA) listing this integration]({{ site.baseurl}}/production/#confirm-interagency-agreement-iaa)
 
 -   A dedicated [integration configuration within the portal](https://portal.int.identitysandbox.gov/)
     * We recommend having two configurations, one that is intended for deployment to production and one which is purely for testing purposes.
-    * All production urls should have .gov, .mil, or a dedicated .com address and point to an Authority to Operate (ATO) approved environment.
+    * All production URLs should have .gov, .mil, or a dedicated .com address and point to an Authority to Operate (ATO) approved environment.
 
 -   A user account in the [Login.gov production environment](https://secure.login.gov)
 
@@ -56,17 +56,17 @@ Make sure you have the following items ready before you start the deployment pro
   - Positive serial number at least 16 characters in length
   - Minimum length of 2048 bits
 
-Depending on your agency’s integration additional items may be needed:
+Depending on your agency’s integration, additional items may be needed:
 
-- **If this is a SAML integration (not OpenID Connect), then please ensure that:**
+- **If this is a SAML integration (not OpenID Connect), please ensure that:**
 
   -   Assertion Consumer Logout Service URL is defined.
 
   -   SAML Assertion Encryption is enabled.
 
-        -   If you are using a service which does not support SAML encryption, then please submit a technical support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) for further guidance.
+        -   If you are using a service which does not support SAML encryption, please submit a technical support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) for further guidance.
 
-- **If this is an integration requesting identity proofed attributes, you must include a Failure to Proof URL.** Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency and/or departments alternate methods of accessing your application.
+- **If this is an integration requesting identity proofed attributes, you must include a [Failure to Proof URL](/user-experience/failure-proof/).** Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency's alternate methods of accessing your application.
 
 If you have questions after reviewing this page, submit a technical support ticket through the [Partner Support Help Desk]({{ site.baseurl}}/support/#contacting-partner-support). You will need a [Login.gov production account](https://secure.login.gov) to submit technical support tickets. Your Login.gov production account and Login.gov sandbox (test environment) accounts are separate.
 
@@ -75,50 +75,49 @@ If you have questions after reviewing this page, submit a technical support tick
 
 You must have a signed IAA with Login.gov with your integration explicitly listed in it in order to deploy to production. You will need to provide the IAA number this application will be billed under. The IAA number format will include GTC-Order-Mod (e.g. LGABCFY210001-0001-0000), where GTC stands for General Terms & Conditions. You may also hear these referred to as forms 7600A and 7600B.
 
--   If this is an integration requesting identity proofed attributes, you must include a Failure to Proof URL. Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency and/or departments alternate methods of accessing your application.
-
+- If this is an integration requesting identity proofed attributes, you must include a [Failure to Proof URL](/user-experience/failure-proof/). Users will be redirected to this URL if they choose to cancel the identity verification process. This page should communicate your agency's alternate methods of accessing your application.
 
 Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit a partner interest form](https://www.login.gov/partners/business-inquiries/) to begin the IAA process, which can take up to 6 weeks to complete. [Learn more about the IAA process.](https://login.gov/partners/get-started/#interagency-agreement-iaa-process)
 
 ## Production configuration process
 
-Before you can request deployment, you need to create a new and separate integration configuration on our Partner Portal. This new configuration will include your production certificate, urls, and logo. When starting this process you need the following items ready to go:
+Before you can request deployment, you need to create a new and separate integration configuration on our Partner Portal. This new configuration will include your production certificate, URLs, and logo. When starting this process you need the following items ready to go:
 
--   Signed IAA listing this integration 
--   ATO approved environment
--   [Approved agency logo](/user-experience/agency-logo/) for your application
+- Signed IAA listing this integration
+- ATO approved environment
+- [Approved agency logo](/user-experience/agency-logo/) for your application
 
 When you have the components required, follow these steps to create your production integration configuration:
 
-1.  [Create a new configuration on the](https://portal.int.identitysandbox.gov/) Login.gov Partner Portal. Select “Configurations” from the top menu, then select the “Create a new configuration” button.
+1. [Create a new configuration on the](https://portal.int.identitysandbox.gov/) Login.gov Partner Portal. Select “Configurations” from the top menu, then select the “Create a new configuration” button.
 
 1. Choose an agency team for the configuration from the drop down menu.
 
 1. Select "Ready for Production" in the Dashboard Configuration section.
 
-1.  Enter the name of the application as it appears in your IAA in the "Configuration name" field. Do NOT use environment names such as "Prod" or "Production".
+1. Enter the name of the application as it appears in your IAA in the "Configuration name" field. Do NOT use environment names such as "Prod" or "Production".
 
-1.  Enter the name of the application as it should appear to users in the "Friendly name" field. This is the name a user will see when logging in.
+1. Enter the name of the application as it should appear to users in the "Friendly name" field. This is the name a user will see when logging in.
 
-1.  Select the Next button to move to the next steps.
+1. Select the Next button to move to the next steps.
 
-1.  Select the authentication protocol that will be used by the service provider:
+1. Select the authentication protocol that will be used by the service provider:
 
     - OpenID Connect Private Key JWT
     - OpenID Connect PKCE
     - SAML
 
-1.  Select the Identity Assurance Level (IAL), default Authentication Assurance Level (AAL), and the correct attribute bundle. Select the Next button to move on to the issuer.
+1. Select the Identity Assurance Level (IAL), default Authentication Assurance Level (AAL), and the default attribute bundle if using SAML. For OIDC, the attributes can only be requested via the `scope` parameter in the authentication request. Select the Next button to move on to the issuer.
 
-1.  Enter the issuer, a unique string to identify the application in the Identity Provider (IdP). Select the Next button to move on to the next step. 
+1. Enter the issuer, a unique string to identify the application in the Identity Provider (IdP). Select the Next button to move on to the next step.
 
-1.  Upload your logo file and public certificate file. Note: the public certificate file may not be required if you are using the OIDC PKCE flow.
+1. Upload your logo file and public certificate file. The public certificate must adhere to the guidelines in [NIST 800-57 Part 1 Rev. 5](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf), namely an expiration date of 1 to 3 years depending on use and risk factors. Note: the public certificate file may not be required if you are using the OIDC PKCE flow.
 
 1. If you selected the OIDC protocol, enter the push notification URL and redirect URIs, if applicable. Please note that your redirect URIs must be secure (HTTPS) in order to be deployed to production. You can enter additional redirect URIs by selecting the “Add another URI” button.
   - If you selected the SAML protocol, you will be prompted to enter the Assertion Consumer Service URL, Assertion Consumer Logout Service URL, SP Initiated Login URL, SAML Assertion Encryption, Signed Response Message Requested, Return to App URL, Push notification URL, and Redirect URIs.
   - Select the Next button to move on to the final step.
 
-1. Select the sign-in, sign-up, and forgot password help text users will encounter when accessing your application. This step is optional but encouraged to ensure better usability. Take a look at the [user experience guidance]({% link _pages/user-experience/help-text.md %}) for a good example of help text.    
+1. Select the sign-in, sign-up, and forgot password help text users will encounter when accessing your application. This step is optional but encouraged to ensure better usability. Take a look at the [user experience guidance]({% link _pages/user-experience/help-text.md %}) for a good example of help text.
 
 1. Once all fields are complete select the "Create configuration" button.
 
@@ -126,14 +125,13 @@ If you encounter errors or have questions after completing these steps, please s
 
 ## Production endpoints
 
+You will need to configure your application to point to the following endpoint:
 
-You will need to configure your application to point to the following endpoint: 
+- **OpenID Connect**: `https://secure.login.gov/openid_connect/authorize`
 
--   **OpenID Connect**: `https://secure.login.gov/openid_connect/authorize`
+- **SAML**: `https://secure.login.gov/api/saml/auth{{ site.data.saml.year.current }}`
 
--   **SAML**: `https://secure.login.gov/api/saml/auth{{ site.data.saml.year.current }}`
-
-Our integration documentation includes endpoint urls for our sandbox environment `https://idp.int.identitysandbox.gov/`. Our production environment is located at `https://secure.login.gov/`. The URL path to each endpoint remains the same. Only the domain will change.  
+Our integration documentation includes endpoint urls for our sandbox environment `https://idp.int.identitysandbox.gov/`. Our production environment is located at `https://secure.login.gov/`. The URL path to each endpoint remains the same. Only the domain will change.
 
 Please be aware that the IdP certificate (X509 Certificate) in the production environment is different from the IdP certificate in the sandbox environment. The production IdP certificates can be found here:
 
@@ -143,7 +141,6 @@ Please be aware that the IdP certificate (X509 Certificate) in the production en
 
 ## Request deployment
 
-
 Once you have:
 
 1. [Confirmed that this integration is listed in a signed IAA](https://login.gov/partners/get-started/#interagency-agreement-iaa-process). **Do not request deployment if you are not certain that your application is listed in a signed IAA.**
@@ -152,7 +149,7 @@ Once you have:
 
 3. Confirmed that you have a logo uploaded to your production configuration in the [Partner Portal](https://portal.int.identitysandbox.gov/). **An uploaded logo is required for the deployment process.**
 
-You are ready to submit a launch request through the [Partner Support Help Desk](https://zendesk.login.gov). 
+You are ready to submit a [launch request](https://zendesk.login.gov/hc/en-us/requests/new?ticket_form_id=5663417357332) through the Partner Support Help Desk.
 
 All changes to integrations between Login.gov and your application must be reviewed and deployed.
 
@@ -192,13 +189,13 @@ If you are rotating your application’s public/private keypair, or want to add 
 
   **For OIDC integrations or SAML integrations sending signed requests:**
 
-  1. Generate your new public/private keypair.
+  1. Generate your new public/private keypair. Make sure the expiration is not more than 3 years as required by [NIST 800-57 Part 1 Rev. 5](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf).
 
   2. Upload your new public certificate in the Login.gov Portal production configuration for your application.
 
   3. Do **not** make **any other** changes on your end in your systems. Do **not** start using the new private key on your end.
 
-  4. Submit a Zendesk ticket to ask us to deploy your new public certificate to production. As a reminder, it can take up to 2 weeks for us to process any production configuration changes.
+  4. Submit a [Zendesk ticket](https://zendesk.login.gov/hc/en-us/requests/new?ticket_form_id=5664085973908) to ask us to deploy your new public certificate to production. As a reminder, it can take up to 2 weeks for us to process any production configuration changes.
 
   5. Wait for us to confirm that your new certificate has been deployed to production.
 
