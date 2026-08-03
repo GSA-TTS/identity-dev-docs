@@ -45,6 +45,16 @@ The user info response will be a JSON object containing [user attributes]({{ sit
     </div>
     <div class="dev-doc-row grid-row">
       <div class="grid-col-5">
+        <h4>auth_time <span class="text-normal">(number)</span></h4>
+      </div>
+      <div class="grid-col-7">
+        <p>
+          The timestamp of the user's last authentication event (seconds since the Unix Epoc).
+        </p>
+      </div>
+    </div>
+    <div class="dev-doc-row grid-row">
+      <div class="grid-col-5">
         <h4>email_verified <span class="text-normal">(boolean)</span></h4>
       </div>
       <div class="grid-col-7">

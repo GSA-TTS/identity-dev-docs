@@ -20,7 +20,8 @@
   "phone_verified": true,
   "social_security_number": "111223333",
   "sub": "b2d2d115-1d7e-4579-b9d6-f8e84f4f56ca",
-  "verified_at": 1577854800
+  "verified_at": 1577854800,
+  "auth_time": 1577874300
 }
 ```
 {% endcapture %}
