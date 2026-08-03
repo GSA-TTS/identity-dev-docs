@@ -5,6 +5,19 @@ title: Release Notes
 
 <dl class="usa-accordion usa-accordion--bordered">
 
+{% include accordion.html id="track-2026-08-03"
+                          accordion_id="user-key-2026-08-03"
+                          title="2026-08-03"
+                          content="
+### User-Facing Improvements
+* Bring back long form on edit flow for prod
+
+### Bug Fixes
+* Revert changes introduced in c0eca546ba89213f6860cb486e54706743a13d2a
+* Add X-padding to Tabs on ≥ Tablet size
+* Align Disk and S3 sources and replace non-existent method call"
+%}
+
 {% include accordion.html id="track-2026-07-22"
                           accordion_id="user-key-2026-07-22"
                           title="2026-07-22"
