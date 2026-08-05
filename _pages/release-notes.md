@@ -5,6 +5,15 @@ title: Release Notes
 
 <dl class="usa-accordion usa-accordion--bordered">
 
+{% include accordion.html id="track-2026-08-05"
+                          accordion_id="user-key-2026-08-05"
+                          title="2026-08-05"
+                          content="
+### User-Facing Improvements
+* Switch charting library to Highcharts for better Accessibility
+"
+%}
+
 {% include accordion.html id="track-2026-07-29"
                           accordion_id="user-key-2026-07-29"
                           title="2026-07-29"
