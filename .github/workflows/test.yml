@@ -16,7 +16,7 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-node@v5
       with:
         cache: 'npm'
     - name: Install NPM dependencies
