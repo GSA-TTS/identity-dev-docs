@@ -98,7 +98,7 @@ Requires the `email` scope.
     </tr>
     <tr>
 <td markdown="1">
-**IAL**<br />Identity Assurance Level [NIST 800-63-3](https://pages.nist.gov/800-63-3/).
+**IAL**<br />Identity Assurance Level [NIST 800-63-4](https://pages.nist.gov/800-63-4/).
 </td>
 <td>
 {{ checkmark }}
@@ -119,7 +119,7 @@ See [SAML IAL values](/saml/authentication/#service_level)
     </tr>
     <tr>
 <td markdown="1">
-**AAL**<br />Authenticator Assurance Level [NIST 800-63-3](https://pages.nist.gov/800-63-3/).
+**AAL**<br />Authenticator Assurance Level [NIST 800-63-4](https://pages.nist.gov/800-63-4/).
 </td>
 <td>
 {{ checkmark }}
