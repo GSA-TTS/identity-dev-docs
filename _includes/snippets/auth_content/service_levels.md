@@ -7,7 +7,7 @@
 - **`urn:acr.login.gov:verified`**
     Requires that the user has gone through basic identity verification without facial matching.
     
-    This meets the NIST 800-63-4 IAL1 standard, but does not meet the NIST 800-63-3 IAL2 standard.
+    This meets the NIST 800-63-4 IAL1 standard, but does not meet the NIST 800-63-3/4 IAL2 standard.
 - **`urn:acr.login.gov:verified-facial-match-required`**
     Requires identity verification with facial match for **all** users. Even if a user has been previously verified without facial matching, they will be required to go through verification with facial match.
     
