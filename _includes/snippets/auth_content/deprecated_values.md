@@ -5,7 +5,7 @@
   - **`http://idmanagement.gov/ns/assurance/ial/2`**
       Requires that the user has gone through basic identity verification. Equivalent to `urn:acr.login.gov:verified`.
       
-      Does not meet NIST 800-63-3 or NIST 800-63-4 IAL2 standard.
+      Does not meet NIST 800-63-3/4 IAL2 standard.
   - **`http://idmanagement.gov/ns/assurance/loa/1`**
        Equivalent to `urn:acr.login.gov:auth-only`.
 
