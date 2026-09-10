@@ -6,6 +6,15 @@ title: Partner Portal Release Notes
 
 <dl class="usa-accordion usa-accordion--bordered">
 
+{% include accordion.html id="track-2026-09-10"
+                          accordion_id="user-key-2026-09-10"
+                          title="2026-09-10"
+                          content="
+### Bug Fixes
+* Webkit browsers do not allow `display: none` on <options>
+* Fix crash when uploading a non-PEM file as a certificate"
+%}
+
 {% include accordion.html id="track-2026-09-02"
                           accordion_id="user-key-2026-09-02"
                           title="2026-09-02"
