@@ -11,7 +11,7 @@ title: Partner Portal Release Notes
                           title="2026-09-16"
                           content="
 ### User-Facing Improvements
-* Reparts are no longer in Beta.
+* Reports are no longer in Beta.
 * Use captions for formatting and keep description with downloaded charts
 
 ### Bug Fixes
