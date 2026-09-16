@@ -6,6 +6,20 @@ title: Partner Portal Release Notes
 
 <dl class="usa-accordion usa-accordion--bordered">
 
+{% include accordion.html id="track-2026-09-16"
+                          accordion_id="user-key-2026-09-16"
+                          title="2026-09-16"
+                          content="
+### User-Facing Improvements
+* Reparts are no longer in Beta.
+* Use captions for formatting and keep description with downloaded charts
+
+### Bug Fixes
+* Fraudsters Blocked Labels
+* Broken redirect
+* Revert changes introduced in c24005c5565877d28c2a86229c48e5828371ca45"
+%}
+
 {% include accordion.html id="track-2026-09-10"
                           accordion_id="user-key-2026-09-10"
                           title="2026-09-10"
