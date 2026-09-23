@@ -12,7 +12,7 @@ title: Partner Portal Release Notes
                           content="
 ### User-Facing Improvements
 * Add Issuer to heading
-* Reparts are no longer in Beta.
+* Reports are no longer in Beta.
 
 ### Bug Fixes
 * Previously Proofed
