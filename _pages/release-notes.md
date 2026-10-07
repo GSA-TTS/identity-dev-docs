@@ -13,6 +13,18 @@ title: Partner Portal Release Notes
 ### User-Facing Improvements
 * Update design system to version 9.6, which includes a variety of modest site layout improvements
 * Use Select placeholder before user input"
+
+{% include accordion.html id="track-2026-09-23"
+                          accordion_id="user-key-2026-09-23"
+                          title="2026-09-23"
+                          content="
+### User-Facing Improvements
+* Add Issuer to heading
+* Reports are no longer in Beta.
+
+### Bug Fixes
+* Previously Proofed
+* Issuer Heading"
 %}
 
 {% include accordion.html id="track-2026-09-16"
