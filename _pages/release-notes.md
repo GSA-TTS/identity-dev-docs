@@ -12,7 +12,7 @@ title: Partner Portal Release Notes
                           content="
 ### User-Facing Improvements
 * Update design system to version 9.6, which includes a variety of modest site layout improvements
-* Use Select placeholder before user input
+* Use Select placeholder before user input"
 %}
 
 {% include accordion.html id="track-2026-09-23"
@@ -21,7 +21,7 @@ title: Partner Portal Release Notes
                           content="
 ### User-Facing Improvements
 * Add Issuer to heading
-* Reports are no longer in Beta.
+* Reports are no longer in Beta."
 %}
 
 {% include accordion.html id="track-2026-09-16"
