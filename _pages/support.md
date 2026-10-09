@@ -25,7 +25,7 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
     class="usa-link usa-link--external"
     rel="noreferrer"
     target="_blank"
-    href="https://zendesk.login.gov"
+    href="https://partners.login.gov/hc/en-us/requests/new"
     >Partner Support Help Desk</a>.
 
 ## Frequently Asked Questions
@@ -94,7 +94,7 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
                           accordion_id="request-error"
                           title="I do not see an error being returned for my request. Why is my request failing?"
                           content="<p>
-      Please contact the engineers at Login.gov via <a href=\"https://zendesk.login.gov\" class=\"usa-link usa-link--external\" rel=\"noreferrer\" target=\"_blank\">Zendesk</a>. They can help diagnose your problem further.
+      Please contact the Login.gov Partnerships Team via the <a href=\"https://partners.login.gov/hc/en-us/requests/new\" class=\"usa-link usa-link--external\" rel=\"noreferrer\" target=\"_blank\">Partners site</a>. They can help diagnose your problem further.
     </p>"
 %}
 
@@ -250,18 +250,18 @@ If you have technical questions that are not covered by these FAQ's, submit a ti
 
 ## Contacting Partner Support
 
-**The best way to reach out to the integration experience team is [via our Zendesk portal](https://zendesk.login.gov/)**. We understand email may be more convenient, but it is important that attachments and other information about your issue stay together.  Attachments and email threads can become confusing when forwarded in a Zendesk ticket. For these reasons, we encourage partners to use our [Zendesk portal](https://zendesk.login.gov/) rather than other methods whenever possible. 
+**The best way to reach out to the Partnerships team is via our [Partners site](https://partners.login.gov/hc/en-us/requests/new)**. We understand email may be more convenient, but it is important that attachments and other information about your issue stay together.
 
-If you prefer using Slack, we have a slack channel for partners, **#login-partner-support**. You can request access to this channel by opening a Zendesk ticket. This channel includes other partners and Login.gov engineers that occasionally chime in. It should not be used as a substitute to Zendesk.
+If you prefer using Slack, we have a slack channel for partners, **#login-partner-support**. You can request access to this channel by opening a [Partner Support request](https://partners.login.gov/hc/en-us/requests/new). This channel includes other partners and Login.gov engineers that occasionally chime in. It should not be used as a substitute to submitting a request on the Partners site.
 
 <dl class="usa-accordion usa-accordion--bordered">
 
 {% capture faq_zendesk %}
   {% include support/faq_zendesk_guidelines.md %}
 {% endcapture %}
-{% include accordion.html id="zendesk_guidelines"
-                          accordion_id="zendesk-guidelines"
-                          title="Zendesk Guidelines"
+{% include accordion.html id="partner_support_guidelines"
+                          accordion_id="partner-support-guidelines"
+                          title="Partner Support Guidelines"
                           content=faq_zendesk
 %}
 

@@ -35,7 +35,7 @@ oidc:
         If you believe your application **SHOULD** be set to Identity Verification Permitted, please:
         - Reach out to your account manager to make sure your application is authorized for IdV. If it isn't, they can work with you to determine the right service level for your application.
         - If your application **is** authorized for IdV, go to the portal and update the Level of Service value to "Identity Verification Permitted."
-        - If this is a production instance, submit a [Zendesk request](https://zendesk.login.gov){:target="_blank"} to deploy that change to production.
+        - If this is a production instance, submit a [Partner Support request](https://partners.login.gov/hc/en-us/requests/new?ticket_form_id=5664085973908){:target="_blank"} to deploy that change to production.
     - title: No acceptable acr_values found
       id: oidc-no-acr-values
       accordion-id: no_acr
