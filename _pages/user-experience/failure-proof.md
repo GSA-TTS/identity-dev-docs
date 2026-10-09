@@ -69,7 +69,7 @@ Want to discuss options for your Failure to Proof URL? <a
   class="usa-link usa-link--external"
   rel="noreferrer"
   target="_blank"
-  href="https://zendesk.login.gov">
+  href="https://partners.login.gov/hc/en-us/requests/new">
   Contact us
 </a>
 

@@ -2,7 +2,7 @@
 title: Testing your integration
 lead: >
   Once you’ve created your application and implemented an identity protocol, you can register it in the Partner Portal and start testing in our sandbox environment.<br /><br />
-  Login.gov has a dedicated onboarding team to support you through the testing and launch. Reach out at the <a href="https://zendesk.login.gov/">Partner Support Help Desk</a>.
+  Login.gov has a dedicated onboarding team to support you through the testing and launch. Reach out at the <a href="https://partners.login.gov/hc/en-us/requests/new">Partner Support Help Desk</a>.
 redirect_from:
   - /registering-your-sp/
   - /register/
@@ -45,7 +45,7 @@ You can create an account in the sandbox environment on your own.
 Ask your agency partner to help you gain access. Login.gov will not create an account or add you to a team; your partner must do this for you.
 
 **If you are with a government entity that is not a federal agency (a state or municipality) and do not have an email ending in .gov or .mil**
-Please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) to get access to the portal.
+Please submit a support ticket through the [Partner Support Help Desk](https://partners.login.gov/hc/en-us/requests/new) to get access to the portal.
 
 ## Using the sandbox
 
@@ -60,7 +60,7 @@ Please submit a support ticket through the [Partner Support Help Desk](https://z
 1. If necessary, add users to that team by clicking the “Manage users” button. This is the opportunity to add contractors or anyone without a .gov or a .mil email address.
 1. After creating your team, select the Configurations tab. This page is where you will find all of the integration configurations you and your team create.
 1. Select the “Create a new configuration” button and follow the steps to register a new application with the Login.gov IdP in the test sandbox environment. You can only have one configuration creation in progress at a time. There are links to additional information throughout the form. We recommend reading through the descriptions carefully.
-1. To troubleshoot specific errors, please visit our error dictionary in the [troubleshooting section of our developer documentation]({% link _pages/support.md %}). If the guidance there does not resolve the error, please submit a support ticket through the [Partner Support Help Desk](https://zendesk.login.gov/).
+1. To troubleshoot specific errors, please visit our error dictionary in the [troubleshooting section of our developer documentation]({% link _pages/support.md %}). If the guidance there does not resolve the error, please submit a support ticket through the [Partner Support Help Desk](https://partners.login.gov/hc/en-us/requests/new).
 1. Start testing!
 1. When you're ready to go to production, please [follow our production deployment instructions]({% link _pages/production.md %}). We'll manage your configuration's promotion to production. **The move to production may take up to two weeks.**
 
@@ -69,7 +69,7 @@ Please submit a support ticket through the [Partner Support Help Desk](https://z
 Login.gov does not manage user accounts. If you have lost access to a team:
 * Request someone on your team who still has access to re-add you.
 * If there is no one left with access, contact the partner agency's Login.gov Point of Contact and request that they re-add you to the team.
-* If they are unable to re-add you, request that they open up a ticket through the [Partner Support Help Desk](https://zendesk.login.gov) explaining the situation and confirming that you need access. They must include either the issuer or the link to the integration configuration.
+* If they are unable to re-add you, request that they open up a ticket through the [Partner Support Help Desk](https://partners.login.gov/hc/en-us/requests/new) explaining the situation and confirming that you need access. They must include either the issuer or the link to the integration configuration.
 
 ### Creating a public certificate
 

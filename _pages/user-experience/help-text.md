@@ -51,6 +51,6 @@ Custom help text should follow the guidelines below to be included in your integ
 </ul>
 
 
-To request custom help text, reach out to the [Partner Support Help Desk](https://zendesk.login.gov/).  
+To request custom help text, reach out to the [Partner Support Help Desk](https://partners.login.gov/hc/en-us/requests/new).
 
 [Next step: Add your agency logo]({{ site.baseurl }}/user-experience/agency-logo/)

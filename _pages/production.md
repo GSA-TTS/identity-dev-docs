@@ -31,7 +31,7 @@ Please note: The deployment process can take up to two weeks to complete. You ma
 
 ## We're here to assist
 
-Our dedicated Onboarding Team is available to ensure your production launch goes smoothly. If you haven’t already, get in touch by submitting a ticket request to the [Partner Support Help Desk](https://zendesk.login.gov/) to:
+Our dedicated Onboarding Team is available to ensure your production launch goes smoothly. If you haven’t already, get in touch by submitting a ticket request to the [Partner Support Help Desk](https://partners.login.gov/hc/en-us/requests/new) to:
 - Launch a new application under a new integration
 - Launch a new application under an existing integration (i.e. under a “broker application”)
 - Make a configuration change to your existing integration
@@ -64,7 +64,7 @@ Depending on your agency’s integration, additional items may be needed:
 
   -   SAML Assertion Encryption is enabled.
 
-        -   If you are using a service which does not support SAML encryption, please submit a technical support ticket through the [Partner Support Help Desk](https://zendesk.login.gov) for further guidance.
+        -   If you are using a service which does not support SAML encryption, please submit a technical support ticket through the [Partner Support Help Desk](https://partners.login.gov/hc/en-us/requests/new) for further guidance.
 
 - **If this is an integration requesting identity proofed attributes, you must include a [Failure to Proof URL](/user-experience/failure-proof/).** Users will be redirected to this URL if they fail to complete the identity verification process. This page should communicate your agency's alternate methods of accessing your application.
 
@@ -77,7 +77,7 @@ You must have a signed IAA with Login.gov with your integration explicitly liste
 
 - If this is an integration requesting identity proofed attributes, you must include a [Failure to Proof URL](/user-experience/failure-proof/). Users will be redirected to this URL if they choose to cancel the identity verification process. This page should communicate your agency's alternate methods of accessing your application.
 
-Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit a partner interest form](https://www.login.gov/partners/business-inquiries/) to begin the IAA process, which can take up to 6 weeks to complete. [Learn more about the IAA process.](https://login.gov/partners/get-started/#interagency-agreement-iaa-process)
+Please reach out to your agency IAA contact if you have any questions. If your agency does not already have an IAA, then ask your agency contact to [submit a partner interest form](https://partners.login.gov/hc/en-us/requests/new?ticket_form_id=5599398793108) to begin the IAA process, which can take up to 6 weeks to complete. [Learn more about the IAA process.](https://partners.login.gov/hc/en-us/p/get-started)
 
 ## Production configuration process
 
@@ -121,7 +121,7 @@ When you have the components required, follow these steps to create your product
 
 1. Once all fields are complete select the "Create configuration" button.
 
-If you encounter errors or have questions after completing these steps, please submit a technical support ticket through the [Partner Support Help Desk.]({{ site.baseurl}}/support/#contacting-partner-support)
+If you encounter errors or have questions after completing these steps, please submit a technical support ticket through the [Partner Support Help Desk](https://partners.login.gov/hc/en-us/requests/new).
 
 ## Production endpoints
 
@@ -143,13 +143,13 @@ Please be aware that the IdP certificate (X509 Certificate) in the production en
 
 Once you have:
 
-1. [Confirmed that this integration is listed in a signed IAA](https://login.gov/partners/get-started/#interagency-agreement-iaa-process). **Do not request deployment if you are not certain that your application is listed in a signed IAA.**
+1. [Confirmed that this integration is listed in a signed IAA](https://partners.login.gov/hc/en-us/p/get-started). **Do not request deployment if you are not certain that your application is listed in a signed IAA.**
 
 2. [Created a production configuration]({{site.baseurl}}/production/#production-configuration-process).
 
 3. Confirmed that you have a logo uploaded to your production configuration in the [Partner Portal](https://portal.int.identitysandbox.gov/). **An uploaded logo is required for the deployment process.**
 
-You are ready to submit a [launch request](https://zendesk.login.gov/hc/en-us/requests/new?ticket_form_id=5663417357332) through the Partner Support Help Desk.
+You are ready to submit a [launch request](https://partners.login.gov/hc/en-us/requests/new?ticket_form_id=5663417357332) through the Partner Support Help Desk.
 
 All changes to integrations between Login.gov and your application must be reviewed and deployed.
 
@@ -165,7 +165,7 @@ We recommend using the sandbox environment to test your new configuration before
 
 If you see this error during deployment, your configuration has been saved successfully, but there was an error deploying your configuration to our sandbox environment. At this time, testing is not possible.
 
-You can wait 15-30 minutes for our system to retry automatically, or contact the [Partner Support Help Desk](https://zendesk.login.gov) if the issue continues. Many deployment notifications resolve on their own without additional action.
+You can wait 15-30 minutes for our system to retry automatically, or contact the [Partner Support Help Desk](https://partners.login.gov/hc/en-us/requests/new) if the issue continues. Many deployment notifications resolve on their own without additional action.
 
 ## Changes to production configurations
 
@@ -175,7 +175,7 @@ If you need to make any changes to your deployed integration, here are the recom
 1. Make those changes in your **sandbox** configuration in the [Partner Portal](https://portal.int.identitysandbox.gov/), and test the changes.
 2. Once you've verified the changes are working as expected in the sandbox, make those changes in your production configuration in the Partner Portal.
 3. At the top of your production configuration in the Partner Portal, click on the "Submit a request" button.
-4. Select "Update my existing production integration" from the "How can we help you today?" dropdown. Here is a [direct link to the Zendesk form](https://zendesk.login.gov/hc/en-us/requests/new?ticket_form_id=5664085973908).
+4. Select "Update my existing production integration" from the "How can we help you today?" dropdown. Here is a [direct link to the form](https://partners.login.gov/hc/en-us/requests/new?ticket_form_id=5664085973908).
 5. Fill out the rest of the fields with details about the changes you made and submit the ticket.
 6. Wait for us to confirm that your changes have been deployed to our production environment. This can take up to two weeks.
 
@@ -195,7 +195,7 @@ If you are rotating your application’s public/private keypair, or want to add 
 
   3. Do **not** make **any other** changes on your end in your systems. Do **not** start using the new private key on your end.
 
-  4. Submit a [Zendesk ticket](https://zendesk.login.gov/hc/en-us/requests/new?ticket_form_id=5664085973908) to ask us to deploy your new public certificate to production. As a reminder, it can take up to 2 weeks for us to process any production configuration changes.
+  4. Submit a [ticket](https://partners.login.gov/hc/en-us/requests/new?ticket_form_id=5664085973908) to ask us to deploy your new public certificate to production. As a reminder, it can take up to 2 weeks for us to process any production configuration changes.
 
   5. Wait for us to confirm that your new certificate has been deployed to production.
 
