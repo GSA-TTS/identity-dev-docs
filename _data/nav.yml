@@ -30,7 +30,7 @@ footer_sections:
   links:
   - label: About us
     url: '$BASE_URL/about-us/'
-  - label: Accessibility
+  - label: Accessibility &amp; Languages
     url: '$BASE_URL/accessibility/'
   - label: Join us
     url: '$BASE_URL/join/'
