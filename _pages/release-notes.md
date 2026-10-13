@@ -6,17 +6,22 @@ title: Partner Portal Release Notes
 
 <dl class="usa-accordion usa-accordion--bordered">
 
+{% include accordion.html id="track-2026-10-07"
+                          accordion_id="user-key-2026-10-07"
+                          title="2026-10-07"
+                          content="
+### User-Facing Improvements
+* Update design system to version 9.6, which includes a variety of modest site layout improvements
+* Use Select placeholder before user input"
+%}
+
 {% include accordion.html id="track-2026-09-23"
                           accordion_id="user-key-2026-09-23"
                           title="2026-09-23"
                           content="
 ### User-Facing Improvements
 * Add Issuer to heading
-* Reports are no longer in Beta.
-
-### Bug Fixes
-* Previously Proofed
-* Issuer Heading"
+* Reports are no longer in Beta."
 %}
 
 {% include accordion.html id="track-2026-09-16"
