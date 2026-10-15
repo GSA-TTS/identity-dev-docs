@@ -6,6 +6,14 @@ title: Partner Portal Release Notes
 
 <dl class="usa-accordion usa-accordion--bordered">
 
+{% include accordion.html id="track-2026-10-15"
+                          accordion_id="user-key-2026-10-15"
+                          title="2026-10-15"
+                          content="
+### User-Facing Improvements
+* Update design system to version 9.6, which includes a variety of modest site layout improvements"
+%}
+
 {% include accordion.html id="track-2026-10-07"
                           accordion_id="user-key-2026-10-07"
                           title="2026-10-07"
