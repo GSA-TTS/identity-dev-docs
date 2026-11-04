@@ -6,6 +6,17 @@ title: Partner Portal Release Notes
 
 <dl class="usa-accordion usa-accordion--bordered">
 
+{% include accordion.html id="track-2026-11-04"
+                          accordion_id="user-key-2026-11-04"
+                          title="2026-11-04"
+                          content="
+### User-Facing Improvements
+* Show the previous month in the report date list only once the 4th of the month arrives
+
+### Bug Fixes
+* Link on the Teams->Users page directed to teams/all but that URL isn’t available to non-admins."
+%}
+
 {% include accordion.html id="track-2026-10-28"
                           accordion_id="user-key-2026-10-28"
                           title="2026-10-28"
