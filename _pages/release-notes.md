@@ -6,6 +6,19 @@ title: Partner Portal Release Notes
 
 <dl class="usa-accordion usa-accordion--bordered">
 
+{% include accordion.html id="track-2026-10-28"
+                          accordion_id="user-key-2026-10-28"
+                          title="2026-10-28"
+                          content="
+### User-Facing Improvements
+* Update bar chart colors with the goal of making the charts easier to read. Align bars and legend on IdV Path to Access Rate chart.
+* Chart fonts match rest of site
+* Add plain language metric descriptions to the CSV export
+
+### Bug Fixes
+* Link on the Teams->Users page directed to teams/all but that URL isn’t available to non-admins."
+%}
+
 {% include accordion.html id="track-2026-10-15"
                           accordion_id="user-key-2026-10-15"
                           title="2026-10-15"
