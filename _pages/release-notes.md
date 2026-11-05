@@ -11,7 +11,7 @@ title: Partner Portal Release Notes
                           title="2026-11-04"
                           content="
 ### User-Facing Improvements
-* Show the previous month in the report date list only once the 4th of the month arrives
+* Show the previous month in the report date list only once the 4th of the month arrives"
 %}
 
 {% include accordion.html id="track-2026-10-28"
