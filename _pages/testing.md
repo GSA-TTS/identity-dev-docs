@@ -106,7 +106,7 @@ While Login.gov partner support channels have provided some support for automate
 
 The Login.gov [sandbox test environment](https://idp.int.identitysandbox.gov/) is configured to pass most information that is entered during the proofing flow. This allows the proofing flow to be tested without the need to enter personally identifiable information (PII). There are [special values](https://developers.login.gov/testing/#personal-information-verification) that can be entered to simulate error states while testing in the Login.gov sandbox environment. **Never enter PII in the sandbox environment.**
 
-The only PII that needs to be entered in the sandbox is your phone number during the phone verification step, which requires sending a code to a real number.
+The only PII that needs to be entered in the sandbox is during the phone verification step, which requires sending a code to a real phone number.
 
 ### General testing advice
 
