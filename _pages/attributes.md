@@ -355,6 +355,6 @@ Requires the `x509:presented` or `x509` scope.
 </table>
 <sup>*</sup>Please note that only `phone` and `verified_at` IdV user attributes may be returned as null. `verified_at` is only available for integrations that are permitted to use our identity verification service. If the "Level of Service" in your Partner Portal configuration is "Authentication only," `verified_at` will always be `null`, even if the user is verified.
 
-<sup>*</sup>Read [this entire article](https://partners.login.gov/hc/en-us/articles/55151102583060-How-to-ensure-users-sign-in-with-the-correct-email-address-when-they-have-multiple-email-addresses-associated-with-their-Login-gov-account) for an important distinction between `email` and `all_emails`.
+<sup>*</sup>To learn the difference between `email` and `all_emails`, read [How to ensure users sign in with the correct email address](https://partners.login.gov/hc/en-us/articles/55151102583060-How-to-ensure-users-sign-in-with-the-correct-email-address-when-they-have-multiple-email-addresses-associated-with-their-Login-gov-account).
 
 [checkmark]: {{ site.baseurl }}/assets/img/check.svg

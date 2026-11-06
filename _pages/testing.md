@@ -104,19 +104,13 @@ While Login.gov partner support channels have provided some support for automate
 
 ## Testing identity proofing
 
-The Login.gov [sandbox test environment](https://idp.int.identitysandbox.gov/) is configured to pass most information that is entered during the proofing flow. This allows the proofing flow to be tested without the need to enter personally identifiable information (PII). There are [special values](https://developers.login.gov/testing/#personal-information-verification) that can be entered to simulate error states while testing in the Login.gov sandbox environment. **Never enter PII in the sandbox environment.**
+The Login.gov [sandbox test environment](https://idp.int.identitysandbox.gov/) is configured to pass most information that is entered during the proofing flow. This allows the proofing flow to be tested without the need to enter personally identifiable information (PII). There are [special values](https://developers.login.gov/testing/#personal-information-verification) that can be entered to simulate error states while testing in the Login.gov sandbox environment. **Never enter PII in the sandbox environment, other than a phone number you control.**
 
 The only PII that needs to be entered in the sandbox is during the phone verification step, which requires sending a code to a real phone number.
 
-### General testing advice
-
-In the sandbox, we provide a convenient feature that lets you upload any file instead of taking a photo of your ID and selfie. This feature is not available to anyone in production.
-
-If you need to test with specific user attributes, you can either use the [in-person proofing](#testing-in-person-proofing) option, or upload [YAML files](#data-testing) when prompted to take a photo of your ID and selfie.
-
 ### Testing the IAL2-compliant process with online facial matching
 
-To confirm that your application's authentication request is indeed specifying IAL2 verification, start by choosing the option to "Continue on this computer" and click "Upload photos".
+To confirm that your application's authentication request is indeed specifying IAL2 verification, start by choosing the option to "Continue on this computer" and click "Upload photos". Note that this option is only available in the sandbox.
 
 After choosing your ID type and uploading photos of your ID (any file will be accepted in the sandbox), make sure you see a screen that prompts you to take a selfie. If you don't see this screen, it means you are using the wrong ACR value in your authentication request. The values you should be using are listed here: [https://developers.login.gov/overview/#service-levels](https://developers.login.gov/overview/#service-levels)
 
@@ -133,6 +127,10 @@ After the phone verification step, you will be presented with your USPS barcode,
 To confirm that your application's authentication request is indeed specifying IAL1 verification, start by choosing the option to "Continue on this computer" and click "Upload photos".
 
 After choosing your ID type and uploading photos of your ID, make sure you **do not** see a screen that prompts you to take a selfie. If you do see the selfie screen, it means you are requesting IAL2 verification in your authentication request. The values you should be using are listed here: [https://developers.login.gov/overview/#service-levels](https://developers.login.gov/overview/#service-levels)
+
+### Testing with custom user attributes
+
+If you need to test with specific user attributes, you can either use the [in-person proofing](#testing-in-person-proofing) option, or upload [YAML files](#data-testing) when prompted to take a photo of your ID and selfie.
 
 #### Data testing
 
