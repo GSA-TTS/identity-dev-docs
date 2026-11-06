@@ -45,7 +45,7 @@ It is important to expect any number of characters in the `(string)` datatype un
     </tr>
     <tr>
 <td markdown="1">
-**Email**<br />The user's email address.
+**Email<sup>*</sup>**<br />The user's email address.
 </td>
 <td>
 {{ checkmark }}
@@ -64,7 +64,7 @@ Requires the `email` scope.
     </tr>
     <tr>
 <td markdown="1">
-**All emails**<br />All of the email addresses on the user's account.
+**All emails<sup>*</sup>**<br />All of the email addresses on the user's account.
 </td>
 <td>
 {{ checkmark }}
@@ -353,6 +353,8 @@ Requires the `x509:presented` or `x509` scope.
     </tr>
   </tbody>
 </table>
-<sup>*</sup> Please note that only `phone` and `verified_at` idV user attributes may be returned as null.
+<sup>*</sup>Please note that only `phone` and `verified_at` IdV user attributes may be returned as null. `verified_at` is only available for integrations that are permitted to use our identity verification service. If the "Level of Service" in your Partner Portal configuration is "Authentication only," `verified_at` will always be `null`, even if the user is verified.
+
+<sup>*</sup>Read [this entire article](https://partners.login.gov/hc/en-us/articles/55151102583060-How-to-ensure-users-sign-in-with-the-correct-email-address-when-they-have-multiple-email-addresses-associated-with-their-Login-gov-account) for an important distinction between `email` and `all_emails`.
 
 [checkmark]: {{ site.baseurl }}/assets/img/check.svg

@@ -87,6 +87,9 @@ The user info response will be a JSON object containing [user attributes]({{ sit
         <p>
           When the user's identity was last verified, as an integer timestamp representing the number of seconds since the Unix Epoch, or <code class="language-plaintext highlighter-rouge">null</code> if the account has never been verified.
         </p>
+        <p>
+          This attribute is only available for integrations that are permitted to use our identity verification service. If the "Level of Service" in your Partner Portal configuration is "Authentication only", this attribute will always be <code class="language-plaintext highlighter-rouge">null</code>, even if the user is verified.
+        </p>
         <ul>
           <li>Requires the <code class="language-plaintext highlighter-rouge">profile:verified_at</code> scope</li>
         </ul> 
