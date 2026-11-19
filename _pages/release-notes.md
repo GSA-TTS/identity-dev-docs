@@ -6,6 +6,15 @@ title: Partner Portal Release Notes
 
 <dl class="usa-accordion usa-accordion--bordered">
 
+{% include accordion.html id="track-2026-11-19"
+                          accordion_id="user-key-2026-11-19"
+                          title="2026-11-19"
+                          content="
+### User-Facing Improvements
+* Improve Zendesk form links based on current environment
+* Form-src blocking survey"
+%}
+
 {% include accordion.html id="track-2026-11-04"
                           accordion_id="user-key-2026-11-04"
                           title="2026-11-04"
