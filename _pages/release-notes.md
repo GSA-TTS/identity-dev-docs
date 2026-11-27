@@ -15,6 +15,15 @@ title: Partner Portal Release Notes
 * Form-src blocking survey"
 %}
 
+{% include accordion.html id="track-2026-11-16"
+                          accordion_id="user-key-2026-11-16"
+                          title="2026-11-16"
+                          content="
+### Bug Fixes
+* Clicking 'Back to Login.gov Partner Portal' in the IdP should go to the Portal landing page instead of returning a 503 error
+* Service provider updates shouldn't publish to the IdP when saving in a prod-like environment"
+%}
+
 {% include accordion.html id="track-2026-11-04"
                           accordion_id="user-key-2026-11-04"
                           title="2026-11-04"
